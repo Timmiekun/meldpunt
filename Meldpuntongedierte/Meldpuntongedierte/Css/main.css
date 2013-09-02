@@ -1,0 +1,270 @@
+﻿/*
+header-grijs: 545454
+achtegrond-grijd: f0f0f0
+oranje: ff5b42;
+*/
+
+header, footer, nav, article, section
+{
+  display: block;
+}
+
+html
+{
+  height: 100%;
+}
+body
+{
+  color: black;
+  font-family: Tahoma,arial;
+  font-size: 80%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+p
+{
+  margin: 0;
+  padding: 0;
+}
+
+
+.headerContent, .footerContent, .main
+{
+  width: 800px;
+  position: relative;
+  margin: 0px auto 0px auto;
+  background-color: white;
+}
+
+.footerContent, .headerContent
+{
+  box-shadow: 0px 6px 6px #333;
+}
+
+header nav, .footerContent
+{
+  background-color: #545454;
+}
+
+header nav
+{
+  padding: 20px 20px 0 20px;
+}
+
+header a
+{
+  text-decoration: none;
+  color: black;
+}
+
+.subtitle
+{
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  text-align: center;
+  font-size: 110%;
+}
+
+.underTitle
+{
+  font-size: 200%;
+  position: relative;
+  top: -31px;
+}
+
+.subtitle a
+{
+  border-bottom: 1px solid #ff5b42;
+  padding-bottom: 5px;
+  display: block;
+}
+
+header ul
+{
+  line-height: 36px;
+  margin: 0;
+  padding: 0;
+  clear: both;
+}
+
+header ul li
+{
+  display: inline-block;
+}
+
+header ul li a
+{
+  padding: 10px 20px;
+  background-color: #FF5B42;
+  color: white;
+  font-weight: bold;
+}
+
+.searchForm
+{
+  float: right;
+  margin-bottom: 50px;
+}
+
+.searchForm label
+{
+  color:White;
+  font-weight:bold;
+}
+
+.searchForm input[type=submit]
+{
+  border: 2px solid #EEE;
+  background-color: white;
+  cursor: pointer;
+}
+
+.MOlogo
+{
+  margin: 20px 10px 0px 20px;
+  position: relative;
+  top: 5px;
+}
+
+.main
+{
+  line-height: 130%;
+  box-shadow: 0px 6px 6px #333333;
+}
+
+.content
+{
+  padding: 20px;
+  width:500px;
+}
+
+.firstAlinea
+{
+  margin-bottom:10px;
+  font-weight:bold;
+}
+
+.content a
+{
+  color: #FF5B42;
+  text-decoration:none;
+}
+
+.descriptionList
+{
+  margin:0;
+  padding:20px 40px;
+  background-color:#fefefe;
+}
+
+.descriptionList li
+{
+  margin: 0 0 20px 0;  
+}
+
+.defaultList
+{
+  list-style-type: none;
+  margin-top: 40px;
+}
+
+.defaultList li h3
+{
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.caution
+{
+  background-color: #ffe;
+  border: 1px solid red;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.footerContent .disclaimer
+{
+  padding: 20px;
+  text-align: right;
+}
+
+footer a
+{
+  color: White;
+  text-decoration: none;
+}
+
+.phonenumberBig
+{
+  font-size: 200%;
+  color: #FF5B42;
+  padding: 10px 20px 10px 50px;
+  background-color: #FF5B42;
+  color:White;
+  border-radius: 25px;
+  position:relative;
+}
+
+.phonenumberBig img
+{
+  position: absolute;
+  top: 12px;
+  left: 13px;
+  height: 30px;
+}
+
+.phonenumberBig span
+{
+  position:absolute;
+  bottom: 2px;
+  right: 26px;
+  font-size: 11px;
+}
+
+#mainNav li
+{
+  position:relative;
+}
+
+.subnav
+{
+  position:absolute;
+  z-index:99;
+}
+
+.subnav li a,
+.subnav li
+{
+  width:100%;
+  display:block;
+}
+
+.subnav li a
+{
+  padding: 0 20px;
+}
+
+.ongedierteLijst li
+{
+  display:inline-block;  
+  line-height: 25px;
+}
+
+.ongedierteLijst li a
+{
+  color:White;
+  text-decoration:none;
+  background-color: #FF5B42;
+  padding: 10px;
+}

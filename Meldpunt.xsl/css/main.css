@@ -1,0 +1,198 @@
+﻿html
+{
+    height: 100%;
+}
+body
+{
+    color: black;
+    font-family: Tahoma,arial;
+    font-size: 80%;
+    height: 100%;
+}
+em
+{
+  font-style: normal;
+  font-weight:bold;
+}
+.main
+{
+    width: 500px;
+    position: relative;
+    margin: 100px auto 0px auto;
+    background-image: url(/images/back.gif);
+    background-repeat: repeat-y;
+    background-position: -1px 0px;
+    padding: 20px 10px 0px 10px;
+    border-right: 1px solid #83003C;
+    border-left: 1px solid #83003C;
+    line-height: 130%;
+}
+
+.content, .menu, #header, .footer
+{
+    background-color: #efefef;
+}
+.searchText
+{
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 22px;
+}
+
+.topBar
+{
+    position: absolute;
+    top: 20px;
+    left: 0px;
+    width: 100%;
+    height: 86px;
+    background-color: #83003c;
+    text-align: center;
+    font-weight: bold;
+    z-index: -1;
+}
+.topBar a
+{
+    color: white;
+    text-decoration: none;
+}
+.shadow
+{
+    width: 100%;
+    height: 8px;
+    background-image: url(/images/shadow.png);
+    position: absolute;
+    bottom: -8px;
+    left: 0px;
+}
+
+.topBar h2
+{
+    font-size: 25px;
+    margin-top: 30px;
+}
+.MOlogo
+{
+    position: absolute;
+    top: -80px;
+    right: 0px;
+    z-index: 2;
+}
+.content
+{
+    padding: 20px;
+    overflow: hidden;
+    clear: both;
+}
+.content p
+{
+    margin: 10px 0px;
+}
+
+h1
+{
+    margin: 10px 0px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+h2
+{
+    margin: 5px 0px;
+    font-size: 14px;
+}
+#header
+{
+    position: relative;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.zoekForm
+{
+    float: right;
+}
+.zoekForm input
+{
+    border: 1px solid #83003C;
+}
+.zoekForm .searchSubmit
+{
+    margin-left: 3px;
+}
+.menu
+{
+    position: absolute;
+    left: -180px;
+    width: 150px;
+    padding: 10px;
+    top: 20px;
+}
+
+.menu ul
+{
+    list-style-type: circle;
+    margin-left: 10px;
+}
+.menu ul li
+{
+    border-bottom: 1px solid #83003C;
+    padding: 5px 0;
+}
+
+.menu a
+{
+    color: #83003c;
+    font-weight: bold;
+    text-decoration: none;
+}
+.footer
+{
+    padding: 3px 0px;
+    font-size: 80%;
+    background-color:#83003C;    
+    color:White;    
+    clear: both;
+    margin: 10px -10px 0px -10px;    
+    text-align:right;
+}
+.footer p
+{
+    margin-right: 10px;
+}
+.footer a:hover,
+.footer a
+{
+    color:White;
+    text-decoration: none;
+}
+.defaultList
+{
+    list-style-type: disc;
+    margin: 10px;
+}
+.defaultList li
+{
+    margin-left: 10px;
+    cursor:pointer;
+}
+h3
+{
+    font-weight:normal;
+    padding-left: 10px;
+    font-weight:bold;
+}
+h3:hover
+{
+    text-decoration:underline;
+}
+.showDescription h3
+{
+    background-color: #83003C;
+    color:White;    
+}
+.description
+{
+    overflow:hidden;        
+    padding: 0px 10px;
+    border-bottom: 1px solid #EFEFEF;    
+}
