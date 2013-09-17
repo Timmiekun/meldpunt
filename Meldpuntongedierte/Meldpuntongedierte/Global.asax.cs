@@ -28,6 +28,12 @@ namespace Meldpuntongedierte
      );
 
       routes.MapRoute(
+         "PlaceSuggest", // Route name
+         "api/{action}", // URL with parameters
+         new { controller = "Api" } // Parameter defaults
+      );
+
+      routes.MapRoute(
          "Page", // Route name
          "{id}", // URL with parameters
          new { controller = "Home", action = "GetPage", id = UrlParameter.Optional } // Parameter defaults

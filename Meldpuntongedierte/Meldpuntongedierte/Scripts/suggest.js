@@ -1,38 +1,32 @@
-﻿var xhr = XHR();
-
-var suggest = {
+﻿var suggest = {
   suggestPlaatsen: [],
   timeout: null,
+
   getSuggests: function (evt, input) {
     if (this.timeout) {
       clearTimeout(this.timeout)
     }
     var inputValue = input.value;
     if (inputValue.length > 1) {
-      var url = "/getPlaatsNaam.aspx?plaats=" + inputValue;
+      var url = "/api/getPlaatsNaamSuggest?plaats=" + inputValue;
       this.timeout = setTimeout(function () {
-        xhr.open("GET", url, true);
-        xhr.onreadystatechange = suggest.handleSuggestXhr;
-        xhr.send(null);
+        $.ajax({
+          dataType: "json",
+          url: url,
+          success: function (data) {            
+            suggest.suggestPlaatsen = data;
+            suggest.fillSuggestBox();
+          },
+          error: function () { alert("xmlhttpproblem: " + xhr.status); }
+        });
       }, 600)
     }
   },
-  handleSuggestXhr: function () {
-    if (xhr.readyState == 4) {
-      if (xhr.status == 200) {
-        suggest.suggestPlaatsen = eval('[' + xhr.responseText + ']');
-        suggest.fillSuggestBox();
-      }
-      else {
-        alert("xmlhttpproblem: " + xhr.status);
-      }
-    }
-  },
+
   fillSuggestBox: function () {
     var suggestBox = document.getElementById('suggests');
     var content = ""
-    for (var x in suggest.suggestPlaatsen) {
-
+    for (var x = 0; x < suggest.suggestPlaatsen.length; x++) {
       var plaats = suggest.suggestPlaatsen[x];
       if (typeof (plaats) == "string")
         content += '<a href="/' + plaats + '">' + plaats + '</a>';
@@ -41,6 +35,7 @@ var suggest = {
     suggestBox.className = 'suggest-shown';
 
   },
+
   cancelEvent: function (evt) {
     if (evt.keyCode == 13) {
       console.log(evt.target.value);
@@ -54,6 +49,7 @@ var suggest = {
       }
     }
   },
+
   hide: function (evt) {
     var suggestBox = document.getElementById('suggests');
     evt = evt || window.event;
