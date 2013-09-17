@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages>
+  <page id="home">
+    <h1>
+      Welkom bij Meldpunt Ongedierte.
+    </h1>
+    <p>
+      Hoe werkt dit voor u het snelst? Via de woonplaats check wordt u direct doorgelinkt
+      naar de betreffende afdeling voor uw gemeente.
+    </p>
+    <p>
+      <em>Let op!</em>
+      <br />
+        Bij het gebruik maken van dit meldpunt verbindt het telefoonnummer dat na de woonplaats
+        verschijnt zich direct met de juiste afdeling voor de gemeente. Meldingen via dit
+        meldpunt mogen alleen betrekking hebben op onderstaande soorten bestrijdingen, te
+        weten;
+        <ul class="defaultList">
+          <li id="mieren">
+            <h3>
+              Mierenbestrijding
+            </h3>
+            <div class="description">
+              Mieren kunnen bestreden worden met een insecticide d.m.v. lage druktoepassing. De
+              bestrijdingsdeskundige brengt dit middel in de door hem gevonden nestingangen, waardoor
+              de kolonie in haar geheel geïnfecteerd wordt. Indien de openingen niet gevonden
+              kunnen worden, kan er behandeld worden met een lokaasgel. Deze gel wordt uit een
+              kitpatroon gedoseerd. Er zijn geen voorzorgsmaatregelen nodig bij een mierenbestrijding.
+            </div>
+          </li>
+          <li id="wespen">
+            <h3>
+              Wespenbestrijding
+            </h3>
+            <div class="description">
+              Wespen kunnen bestreden worden met een insecticide d.m.v. lage druktoepassing. De
+              bestrijdingsdeskundige brengt dit middel in de door hem gevonden nestingang, waardoor
+              de kolonie in haar geheel geïnfecteerd wordt. Er zijn geen voorzorgsmaatregelen
+              nodig bij een wespenbestrijding.
+            </div>
+          </li>
+          <li id="muizen">
+            <h3>
+              Muizenbestrijding
+            </h3>
+            <div class="description">
+              Muizen kunnen op diverse manieren bestreden worden. Om de beste methode te bepalen
+              zal de bestrijdingsdeskundige eerst een inspectie uitvoeren en de situatie in kaart
+              brengen. Vervolgens kan de bestrijding in gang worden gezet. Daarna worden er eventuele
+              maatregelen besproken die kunnen voorkomen dat er in de toekomst opnieuw sprake
+              is van een muizenplaag.
+            </div>
+          </li>
+          <li id="ratten">
+            <h3>
+              Rattenbestrijding
+            </h3>
+            <div class="description">
+              Ratten kunnen op diverse manieren bestreden worden. Om de beste methode te bepalen
+              zal de bestrijdingsdeskundige eerst een inspectie uitvoeren en de situatie in kaart
+              brengen. Vervolgens kan de bestrijding in gang worden gezet. Daarna worden er eventuele
+              maatregelen besproken die kunnen voorkomen dat er in de toekomst opnieuw sprake
+              is van een rattenplaag.
+            </div>
+          </li>
+          <li id="zilvervisjes">
+            <h3>
+              Zilver- en papiervisjesbestrijding
+            </h3>
+            <div class="description">
+              Zilver- en of Papiervisjes kunnen bestreden worden met een insecticide d.m.v. lage
+              druktoepassing. De bestrijdingsdeskundige brengt dit middel in alle naden en kieren.
+              U dient er zelf zorg voor te dragen dat alle kasten leeg geruimd worden, zodat vooral
+              daar in de kieren langs legplanken e.d. een residu van het middel achter kan blijven.
+              Tijdens de actie en twee uren aansluitend kunt u en de huisdieren de woning niet
+              betreden.
+            </div>
+          </li>
+          <li id="kakkerlakken">
+            <h3>
+              Kakkerlakkenbestrijding
+            </h3>
+            <div class="description">
+              Kakkerlakken kunnen bestreden worden met een insecticide d.m.v. een lokaasgel. De
+              bestrijdingsdeskundige brengt dit middel in de door hem gevonden strategische plaatsen,
+              waardoor de kolonie in haar geheel geïnfecteerd wordt. Er zijn geen voorzorgsmaatregelen
+              nodig bij een kakkerlakkenbestrijding.
+            </div>
+          </li>
+        </ul>
+      </p>
+    <p>
+      Kosten van bestrijding(en) kunnen ook via dit telefoonnummer opgevraagd worden.
+    </p>
+    <p>
+      Indien het één van bovenstaande acties betreft, kunt u nu uw plaatsnaam invullen.
+    </p>
+    
+  </page>
+
+  <page id="contact">
+    <h1>Contact</h1>
+    <p>
+      Voor het maken van een afspraak kunt u het beste telefonisch contact opnemen met het meldpunt.
+      Voor het juiste telefoonnummer voert u hierboven uw woonplaats in.
+      Voor algemene voorlichting kunt u het best uw vragen stellen per e-mail naar <em>info@meldpuntongedierte.nl</em>
+    </p>
+  </page>
+
+  <page id="werkwijze">
+    <h1>Werkwijze</h1>
+    <p>
+      Tijdens het telefoongesprek leggen we u uit
+      hoe een bestrijding in haar werk gaat, geven we uitleg over
+      eventuele voor- en nazorg en vertellen we u de daaraan gekoppelde kosten. Bij het maken van een afspraak voor een bestrijding vragen we om uw postcode en huisnummer.
+      Door de verkorte lijnen is er sprake van een snellere service dan de wijze van voorheen.
+      Meldingen via Meldpunt Ongedierte worden op volgorde boven
+      meldingen via andere kanalen gepositioneerd. Zodoende proberen we u zo snel mogelijk van dienst te zijn. Voor het verkrijgen van het juiste telefoonnummer verzoeken we u om hierboven uw woonplaats in te voeren.
+    </p>
+  </page>
+
+  <page id="houtaantasters">
+    <pages>
+      <page id="gewone-houtwormkever">
+        <h1>Gewone Houtwormkever ( Anobium punctatum Deg. )</h1>
+        <p>
+          De Gewone Houtworm heeft zijn naam te danken aan de vorm van de larven. Sporen ervan zijn in de meeste oudere huizen wel te vinden. De volwassen kevers zijn in de zomermaanden aktief, nadat ze zich uit het aangetaste hout naar binnen hebben geknaagd, waardoor de cikcelvormige vlieggaatjes ontstaan. Dit is ook het moment dat het boorpoeder uit het hout tevoorschijn komt. De kevers leven slechts enkele weken.ze kunnen vliegen en worden soms ook voor kleine vliegen aangezien. Direct na het uitvliegen paren ze en beginnen de wijfjes met het leggen van de eitjes. Deze worden nooit zomaar op een plat oppervlak gelegd, maar in spleten op de kopse kant van het hout of vaak ook in oude uitvlieggaatjes. Na drie tot vier dagen komen de eitjes uit en de kleine larven larven knagen zich direct in het hout naar binnen. Het onverteerbare deel van het hout laten ze in de gangen achter als kleine langwerpige bolletjes uitwerpselen. Al naargelang ze groeien, wordt de doorsnede van de gang groter. De larven verlaten het hout nooit en kunnen daarom ook nooit van het ene meubelstuk in het andere komen. De ontwikkeling duurt twee tot drie of zelfs meerdere jaren. Dit is sterk afhankelijk van de temperatuur en het vochtgehalte van het hout. Ook de soort van het hout speelt een rol. De optimale ontwikkelingstemperatuur is 22-23 graden. Ze kunnen zich echter ook bij lagere temperaturen ontwikkelen en kunnen daardoor hier te lande zich ook buitenshuis ontwikkelen. Het vochtgehalte van het hout is bepalend voor de ontwikkeling van de larven. In principe hoe vochtiger hoe beter, al moet het hout niet doordrenkt blijvenErnstige aantastingen vinden daarom vooral plaats in het houtwerk en de inventaris van keukens, kelders, schuren en stallen, waar het altijd wel wat vochtig is. Als de luchtvochtigheid constant onder de 50 graden blijft kunnen de larven zich niet ontwikkelen. Het droge klimaat in onze moderne woningen overleven ze daarom niet. De gewone houtworm kan zich in allerlei soorten hout ontwikkelen. Ze hebben echter een voorkeur voor de zachtere soorten en dringen gezond kernhout nooit binnen.
+          Sommige houtwormlarven kunnen in papier leven. Dat deze larven zich in dit soort materiaal kunnen ontwikkelen en zich dus vrijwel uitsluitend  met zuivere cellulose kunnen voeden, wordt mogelijk gemaakt door de aanwezigheid van speciale kolonies gistcellen in het darmkanaal. Deze breken de cellulose af tot verteerbare suikers en zorgen ook voor de benodigde aanvullingen met vitaminen en stikstof die de gistcellen uit de lucht kunnen opnemen.
+        </p>
+        <h2>Hoe kom ik van het probleem af ?</h2>
+        <p>
+          Net als voor de meeste andere houtaantastende insecten geldt ook voor houtwormen dat het een specialistische aanpak vergt om het te kunnen bestrijden. Wij voeren deze bestrijdingen niet uit. Er zijn bedrijven die zich hierin gespecialiseerd hebben. Voor meer informatie hierover kunt u bijvoorbeeld terecht bij Van Lierop. <a href="www.vanlierop.nl">www.vanlierop.nl</a>
+        </p>
+      </page>
+
+      <page id="heipaalkever">
+        <h1>
+          Heipaalkever ( Nacerdes melanura L. )
+        </h1>
+        <p>
+          Heipaalkevers lijken erg veel op een boktor, onder meer omdat ze ook zeer lange voelsprieten hebben. Toch horen ze tot een geheel andere groep kevers. Men is van mening dat ze oorspronkelijk uit het gebied rond de Grote Meren in de Verenigde Staten afkomstig zijn en met de scheepvaart over de gehele gematigde zone zijn verspreid. De volwassen kevers zijn ’s zomers te vinden. Omdat ze vaak tegelijkertijd midden op de dag in grote getale tevoorschijn komen, trekken ze nogal eens de aandacht. Ze zitten dan plotseling overal op huizen en komen soms ook door de ramen naar binnen. <br/>
+          Na de paring worden de eitjes in vochtig hout afgezet. De larven van de heipaalkever stellen namelijk bijzondere eisen aan het hout waarin ze leven. Ze hebben een voorkeur voor naaldhout dat nooit mag uitdrogen. Verder is het waarschijnlijk een levensvoorwaarde dat het hout door schimmels moet zijn aangetast. Het mag echter weer niet zo rot zijn dat het uit elkaar valt.
+          Indien heipaalkevers binnenshuis worden aangetroffen kunnen ze zoals gezegd van buiten afkomstig zijn, uitgekomen in scheepshout, beschoeiingen. In huis zelf kunnen ze echter ook leven in heipalen en in hout in vochtige kelders. Gewoonlijk wordt het aangetaste hout zodanig vernield dat het vervangen moet worden.<br/>
+          Het nieuw hout dat aangebracht wordt dient geïmpregneerd te zijn en men moet ervoor zorgen dat het vochtgehalte lager wordt, bijvoorbeeld door het verbeteren van de ventilatie.
+        </p>
+        <h2>Hoe kom ik van het probleem af ?</h2>
+        <p>
+          Net als voor de meeste andere houtaantastende insecten geldt ook voor heipaalkevers dat het een specialistische aanpak vergt om het te kunnen bestrijden. Wij voeren deze bestrijdingen niet uit. Er zijn bedrijven die zich hierin gespecialiseerd hebben. Voor meer informatie hierover kunt u bijvoorbeeld terecht bij Van Lierop. <a href="www.vanlierop.nl">www.vanlierop.nl</a>
+        </p>
+      </page>
+
+      <page id="huisboktor">
+        <h1>Huisboktor ( Hylotrupes bajulus L. )</h1>
+        <p>
+          Vanuit een economisch oogpunt gezien is de huisboktor verreweg de belangrijkste van de boktorren die binnenshuis hout kan aantasten. Dit is te danken aan het feit dat de larven zich hebben gespecialiseerd op het leven in oud en volkomen droog naaldhout. De volwassen huisboktor krijgt men slechts zelden te zien. Ze komen op zolders in de warmste periode van de zomer tevoorschijn, paren en leggen hun eitjes. Het wijfje kan wel 400 eitjes leggen die met behulp van een lange buigbare legboor diep in reten en spleten van het hout worden gelegd. Na verloop van een paar weken komen ze uit, waarop de larven zich onmiddellijk in het hout naar binnen werken en er zich jarenlang op los knagen. Hoelang de ontwikkeling van de larven en hoe groot ze zullen worden hangt onder meer af van de hoeveelheid voedsel die het hout bevat en van de temperatuur. De kortste periode hier te lande is drie jaar, maar huisboktorlarven kunnen ook tien jaar nodig hebben om volwassen te worden. De larven leven hoofdzakelijk in het spinthout. Ze knagen vaak tot ze dicht onder de oppervlakte zijn gekomen en er slechts een papierdun laagje hout tussen hen en de buitenwereld over is.<br/>
+          Als de larven op een goede dag volgroeid zijn verpoppen ze zich. Dat gebeurt in een speciale verpoppingsgang die met grove spaantjes is afgesloten. Voor ze in een pop veranderen knagen ze de uitvliegopening al geheel of ten dele open waardoor ze later als kever direct het hout kunnen verlaten. Het uitvlieggat, het boorpoeder en de houtspaantjes zijn gewoonlijk het eerste zichtbare teken van de aantasting van het hout door huisboktorren en er kan dus meer dan tien jaar zijn verlopen sinds het hout werd geïnfecteerd. Voordat het echter zover is heeft men de mogelijkheid gehad om te luisteren of er van aantasting sprake was. Indien men op een warme zomerdag heel stil op zolder staat waar het hout door boktorren is aangetast dan kan men duidelijk het raspende geluid van de knagende grote larven horen.<br/>
+          De volwassen boktor heeft een temperatuur van minstens 25 graden nodig om aktief te worden. Ze kunnen zich dus slechts in enkele zeer warme jaren op eigen kracht verspreiden, uitvliegen en nieuwe gebouwen aantasten. De verspreiding vindt zonder twijfel voor het grootste deel met onze hulp plaats. Onder ongelukkige omstandigheden kan het hout al bij de houthandelaar aangetast zijn. Indien men sloophout gebruikt, kan ook dat een broeinest vormen. De besmetting kan ook met kisten of meubels die tijdelijk op een met huisboktorren besmette zolder stonden plaats vinden. Huisboktorren komen hoofdzakelijk in kapconstructies voor, eenvoudig omdat de hoge zomertemperaturen die ze nodig hebben vooral op zolder te vinden is. Ze kunnen zich echter tot het andere houtwerk in huizen uitbreiden. Ook buitenshuis kunnen ze zich hier te lande handhaven in windschermen, schuttingen, telefoonpalen e.d., dus alleen op die plaatsen waar het hout door de zon door en door warm kan houden.
+        </p>
+        <h2>Hoe kom ik van het probleem af ?</h2>
+        <p>
+          Net als voor de meeste andere houtaantastende insecten geldt ook voor boktorren dat het een specialistische aanpak vergt om het te kunnen bestrijden. Wij voeren deze bestrijdingen niet uit. Er zijn bedrijven die zich hierin gespecialiseerd hebben. Voor meer informatie hierover kunt u bijvoorbeeld terecht bij Van Lierop. <a href="www.vanlierop.nl">www.vanlierop.nl</a>
+        </p>
+      </page>
+
+      <page id="spinthoutkever">
+        <h1>Spinthoutkever ( Familie Lyctidae )</h1>
+        <p>
+          Spinthoutkevers zijn tot 5 mm lange, slange bruine kevers. Ze zijn speciaal aangepast aan loofhoutsoorten met wijde porien, zoals bijvoorbeeld eiken, essen en walnoten, maar ook aan een groot aantal tropische houtsoorten en bamboe. De wijfjes leggen gewoonlijk de eitjes in de porien van het spinthout. De larven leven van de zetmeelhoudende inhoud van de cellen van het spinthout en veranderen daarbij het hout in een poederachtige massa die nog slechts door een dun laagje hout is omhuld. De volwassen larven knagen zich naar buiten tot vlak onder de oppervlakte, waar ze zich in een ovale verpoppingsruimte verpoppen. Zodra ze in volwassen kevers zijn veranderd verlaten ze door de kleine cirkelronde uitvliegopeningen het hout.
+          <br/>
+          De gehele ontwikkeling heeft gewoonlijk in de loop van één jaar plaats. Als schadelijk insect is de spinthoutkever in de loop der jaren steeds belangrijker geworden. Dit staat vooral in verband met de manier waarop tegenwoordig het hout wordt behandeld. Vroeger werd het jarenlang opgeslagen zodat de nog levende cellen van het hout de voedingsstoffen opgebruikten. De laatste jaren echter wordt het hout direct na het kappen met behulp van warmte gedroogd, waardoor de cellen afsterven, maar de zetmeelhoudende inhoud gespaard blijft. Hout dat op een dergelijke manier is behandeld blijft hierdoor voortdurend een geschikt object voor deze soorten. De spinthoutkever kunnen schade toebrengen aan plankjes van parket of panelen speciaal van eikenhout. Soms worden spinthoutkevers met tropische houtsoorten ingevoerd.
+        </p>
+        <h2>Hoe kom ik van het probleem af ?</h2>
+        <p>
+          Net als voor de meeste andere houtaantastende insecten geldt ook voor spinthoutkevers dat het een specialistische aanpak vergt om het te kunnen bestrijden. Wij voeren deze bestrijdingen niet uit. Er zijn bedrijven die zich hierin gespecialiseerd hebben. Voor meer informatie hierover kunt u bijvoorbeeld terecht bij Van Lierop. <a href="www.vanlierop.nl">www.vanlierop.nl</a>
+        </p>
+      </page>
+
+      <page id="veranderlijke-boktor">
+        <h1>Veranderlijke Boktor ( Phymatodes testaceus )</h1>
+        <p>
+          Van de veranderlijke boktor komen er veel kleurvarieteiten voor. Sommige hebben gelige dekvleugels, andere blauwe. De veranderlijke boktor tast hoofdzakelijk loofhout aan. Niet alleen beuken, maar ook berken en eiken. De volwassen kevers zal men gewoonlijk het eerst opmerken als ze in de kamer rond kruipen. Omdat de broedplaats noodzakelijkerwijs met bast bekleed moet zijn, moet men deze altijd in de haardblokken zoeken. De ovale uitvliegopeningen verraden waar de kevers vandaan gekomen zijn. Voor het huis betekenen de veranderlijke boktorren geen enkel risico. Als men echter stukken loofhout heeft liggen voor meubelmakerswerk doet men er goed aan om hiervan de bast te verwijderen omdat door de aantasting van de veranderlijke boktor de buitenste laag niet meer gebruikt kan worden.
+        </p>
+        <h2>Hoe kom ik van het probleem af ?</h2>
+        <p>
+          Indien er sprake is van de veranderlijke boktor, is zoals gezegd de kans groot dat het van openhaardhout afkomstig is. Ga na of er binnenshuis openhaardhout aanwezig is en inspecteer het hout goed op eventuele uitvliegopeningen. U kunt het hout opbranden of buiten bewaren.
+        </p>
+      </page>
+
+
+    </pages>
+  </page>
+
+
+</pages>

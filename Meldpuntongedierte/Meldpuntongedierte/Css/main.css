@@ -1,270 +1,198 @@
-﻿/*
-header-grijs: 545454
-achtegrond-grijd: f0f0f0
-oranje: ff5b42;
-*/
-
-header, footer, nav, article, section
+﻿html
 {
-  display: block;
-}
-
-html
-{
-  height: 100%;
+    height: 100%;
 }
 body
 {
-  color: black;
-  font-family: Tahoma,arial;
-  font-size: 80%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: #f0f0f0;
+    color: black;
+    font-family: Tahoma,arial;
+    font-size: 80%;
+    height: 100%;
 }
-
-p
+em
 {
-  margin: 0;
-  padding: 0;
-}
-
-
-.headerContent, .footerContent, .main
-{
-  width: 800px;
-  position: relative;
-  margin: 0px auto 0px auto;
-  background-color: white;
-}
-
-.footerContent, .headerContent
-{
-  box-shadow: 0px 6px 6px #333;
-}
-
-header nav, .footerContent
-{
-  background-color: #545454;
-}
-
-header nav
-{
-  padding: 20px 20px 0 20px;
-}
-
-header a
-{
-  text-decoration: none;
-  color: black;
-}
-
-.subtitle
-{
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  text-align: center;
-  font-size: 110%;
-}
-
-.underTitle
-{
-  font-size: 200%;
-  position: relative;
-  top: -31px;
-}
-
-.subtitle a
-{
-  border-bottom: 1px solid #ff5b42;
-  padding-bottom: 5px;
-  display: block;
-}
-
-header ul
-{
-  line-height: 36px;
-  margin: 0;
-  padding: 0;
-  clear: both;
-}
-
-header ul li
-{
-  display: inline-block;
-}
-
-header ul li a
-{
-  padding: 10px 20px;
-  background-color: #FF5B42;
-  color: white;
-  font-weight: bold;
-}
-
-.searchForm
-{
-  float: right;
-  margin-bottom: 50px;
-}
-
-.searchForm label
-{
-  color:White;
+  font-style: normal;
   font-weight:bold;
 }
-
-.searchForm input[type=submit]
-{
-  border: 2px solid #EEE;
-  background-color: white;
-  cursor: pointer;
-}
-
-.MOlogo
-{
-  margin: 20px 10px 0px 20px;
-  position: relative;
-  top: 5px;
-}
-
 .main
 {
-  line-height: 130%;
-  box-shadow: 0px 6px 6px #333333;
+    width: 500px;
+    position: relative;
+    margin: 100px auto 0px auto;
+    background-image: url(/images/back.gif);
+    background-repeat: repeat-y;
+    background-position: -1px 0px;
+    padding: 20px 10px 0px 10px;
+    border-right: 1px solid #83003C;
+    border-left: 1px solid #83003C;
+    line-height: 130%;
 }
 
+.content, .menu, #header, .footer
+{
+    background-color: #efefef;
+}
+.searchText
+{
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 22px;
+}
+
+.topBar
+{
+    position: absolute;
+    top: 20px;
+    left: 0px;
+    width: 100%;
+    height: 86px;
+    background-color: #83003c;
+    text-align: center;
+    font-weight: bold;
+    z-index: -1;
+}
+.topBar a
+{
+    color: white;
+    text-decoration: none;
+}
+.shadow
+{
+    width: 100%;
+    height: 8px;
+    background-image: url(/images/shadow.png);
+    position: absolute;
+    bottom: -8px;
+    left: 0px;
+}
+
+.topBar h2
+{
+    font-size: 25px;
+    margin-top: 30px;
+}
+.MOlogo
+{
+    position: absolute;
+    top: -80px;
+    right: 0px;
+    z-index: 2;
+}
 .content
 {
-  padding: 20px;
-  width:500px;
+    padding: 20px;
+    overflow: hidden;
+    clear: both;
 }
-
-.firstAlinea
+.content p
 {
-  margin-bottom:10px;
-  font-weight:bold;
+    margin: 10px 0px;
 }
 
-.content a
+h1
 {
-  color: #FF5B42;
-  text-decoration:none;
+    margin: 10px 0px;
+    font-weight: bold;
+    font-size: 18px;
 }
 
-.descriptionList
+h2
 {
-  margin:0;
-  padding:20px 40px;
-  background-color:#fefefe;
+    margin: 5px 0px;
+    font-size: 14px;
 }
-
-.descriptionList li
+#header
 {
-  margin: 0 0 20px 0;  
+    position: relative;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.zoekForm
+{
+    float: right;
+}
+.zoekForm input
+{
+    border: 1px solid #83003C;
+}
+.zoekForm .searchSubmit
+{
+    margin-left: 3px;
+}
+.menu
+{
+    position: absolute;
+    left: -180px;
+    width: 150px;
+    padding: 10px;
+    top: 20px;
 }
 
+.menu ul
+{
+    list-style-type: circle;
+    margin-left: 10px;
+}
+.menu ul li
+{
+    border-bottom: 1px solid #83003C;
+    padding: 5px 0;
+}
+
+.menu a
+{
+    color: #83003c;
+    font-weight: bold;
+    text-decoration: none;
+}
+.footer
+{
+    padding: 3px 0px;
+    font-size: 80%;
+    background-color:#83003C;    
+    color:White;    
+    clear: both;
+    margin: 10px -10px 0px -10px;    
+    text-align:right;
+}
+.footer p
+{
+    margin-right: 10px;
+}
+.footer a:hover,
+.footer a
+{
+    color:White;
+    text-decoration: none;
+}
 .defaultList
 {
-  list-style-type: none;
-  margin-top: 40px;
+    list-style-type: disc;
+    margin: 10px;
 }
-
-.defaultList li h3
+.defaultList li
 {
-  margin: 0;
-  padding: 0;
-  font-size: 13px;
-  cursor: pointer;
+    margin-left: 10px;
+    cursor:pointer;
 }
-
-.caution
+h3
 {
-  background-color: #ffe;
-  border: 1px solid red;
-  padding: 20px;
-  margin-bottom: 20px;
+    font-weight:normal;
+    padding-left: 10px;
+    font-weight:bold;
 }
-
-.footerContent .disclaimer
+h3:hover
 {
-  padding: 20px;
-  text-align: right;
+    text-decoration:underline;
 }
-
-footer a
+.showDescription h3
 {
-  color: White;
-  text-decoration: none;
+    background-color: #83003C;
+    color:White;    
 }
-
-.phonenumberBig
+.description
 {
-  font-size: 200%;
-  color: #FF5B42;
-  padding: 10px 20px 10px 50px;
-  background-color: #FF5B42;
-  color:White;
-  border-radius: 25px;
-  position:relative;
-}
-
-.phonenumberBig img
-{
-  position: absolute;
-  top: 12px;
-  left: 13px;
-  height: 30px;
-}
-
-.phonenumberBig span
-{
-  position:absolute;
-  bottom: 2px;
-  right: 26px;
-  font-size: 11px;
-}
-
-#mainNav li
-{
-  position:relative;
-}
-
-.subnav
-{
-  position:absolute;
-  z-index:99;
-}
-
-.subnav li a,
-.subnav li
-{
-  width:100%;
-  display:block;
-}
-
-.subnav li a
-{
-  padding: 0 20px;
-}
-
-.ongedierteLijst li
-{
-  display:inline-block;  
-  line-height: 25px;
-}
-
-.ongedierteLijst li a
-{
-  color:White;
-  text-decoration:none;
-  background-color: #FF5B42;
-  padding: 10px;
+    overflow:hidden;        
+    padding: 0px 10px;
+    border-bottom: 1px solid #EFEFEF;    
 }
