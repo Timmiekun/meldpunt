@@ -34,6 +34,12 @@ namespace Meldpuntongedierte
       );
 
       routes.MapRoute(
+       "PLaats", // Route name
+       "in/{plaats}", // URL with parameters
+       new { controller = "Plaats", action = "PLaats", id = UrlParameter.Optional } // Parameter defaults
+    );
+
+      routes.MapRoute(
          "Page", // Route name
          "{id}", // URL with parameters
          new { controller = "Home", action = "GetPage", id = UrlParameter.Optional } // Parameter defaults

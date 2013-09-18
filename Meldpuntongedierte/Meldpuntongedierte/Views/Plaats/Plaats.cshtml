@@ -1,0 +1,85 @@
+﻿@model Meldpunt.Models.PlaatsModel
+@{
+  ViewBag.Title = "Meldpuntongedierte in " + Model;
+}
+
+ <b>Welkom op het meldpunt ongedierte voor de gemeente @Model.Name</b>
+<p>Voor de gemeente @Model.Name kan het meldpunt ongedierte de onderstaande diensten verlenen:</p>
+  
+  <ul class="defaultList">
+          <li id="mieren">
+            <h3>
+              Mierenbestrijding
+            </h3>
+            <div class="description">
+              Mieren kunnen bestreden worden met een insecticide d.m.v. lage druktoepassing. De
+              bestrijdingsdeskundige brengt dit middel in de door hem gevonden nestingangen, waardoor
+              de kolonie in haar geheel geïnfecteerd wordt. Indien de openingen niet gevonden
+              kunnen worden, kan er behandeld worden met een lokaasgel. Deze gel wordt uit een
+              kitpatroon gedoseerd. Er zijn geen voorzorgsmaatregelen nodig bij een mierenbestrijding.
+            </div>
+          </li>
+          <li id="wespen">
+            <h3>
+              Wespenbestrijding
+            </h3>
+            <div class="description">
+              Wespen kunnen bestreden worden met een insecticide d.m.v. lage druktoepassing. De
+              bestrijdingsdeskundige brengt dit middel in de door hem gevonden nestingang, waardoor
+              de kolonie in haar geheel geïnfecteerd wordt. Er zijn geen voorzorgsmaatregelen
+              nodig bij een wespenbestrijding.
+            </div>
+          </li>
+          <li id="muizen">
+            <h3>
+              Muizenbestrijding
+            </h3>
+            <div class="description">
+              Muizen kunnen op diverse manieren bestreden worden. Om de beste methode te bepalen
+              zal de bestrijdingsdeskundige eerst een inspectie uitvoeren en de situatie in kaart
+              brengen. Vervolgens kan de bestrijding in gang worden gezet. Daarna worden er eventuele
+              maatregelen besproken die kunnen voorkomen dat er in de toekomst opnieuw sprake
+              is van een muizenplaag.
+            </div>
+          </li>
+          <li id="ratten">
+            <h3>
+              Rattenbestrijding
+            </h3>
+            <div class="description">
+              Ratten kunnen op diverse manieren bestreden worden. Om de beste methode te bepalen
+              zal de bestrijdingsdeskundige eerst een inspectie uitvoeren en de situatie in kaart
+              brengen. Vervolgens kan de bestrijding in gang worden gezet. Daarna worden er eventuele
+              maatregelen besproken die kunnen voorkomen dat er in de toekomst opnieuw sprake
+              is van een rattenplaag.
+            </div>
+          </li>
+          <li id="zilvervisjes">
+            <h3>
+              Zilver- en papiervisjesbestrijding
+            </h3>
+            <div class="description">
+              Zilver- en of Papiervisjes kunnen bestreden worden met een insecticide d.m.v. lage
+              druktoepassing. De bestrijdingsdeskundige brengt dit middel in alle naden en kieren.
+              U dient er zelf zorg voor te dragen dat alle kasten leeg geruimd worden, zodat vooral
+              daar in de kieren langs legplanken e.d. een residu van het middel achter kan blijven.
+              Tijdens de actie en twee uren aansluitend kunt u en de huisdieren de woning niet
+              betreden.
+            </div>
+          </li>
+          <li id="kakkerlakken">
+            <h3>
+              Kakkerlakkenbestrijding
+            </h3>
+            <div class="description">
+              Kakkerlakken kunnen bestreden worden met een insecticide d.m.v. een lokaasgel. De
+              bestrijdingsdeskundige brengt dit middel in de door hem gevonden strategische plaatsen,
+              waardoor de kolonie in haar geheel geïnfecteerd wordt. Er zijn geen voorzorgsmaatregelen
+              nodig bij een kakkerlakkenbestrijding.
+            </div>
+          </li>
+        </ul>
+
+<p>Indien een van de bovenstaande diensten overeen komt met uw wens kunt u bellen met:</p>
+<h1>Meldpunt Ongedierte @Model.Name: 0900-2556677</h1>
+<p>Kosten van bestrijding(en) kunnen ook via dit telefoonnummer opgevraagd worden.</p>

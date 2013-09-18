@@ -15,7 +15,8 @@ namespace Meldpunt.Services
   {
     private XmlDocument plaatsenDoc;
     string plaatsFile = "~/App_Data/plaatsen.xml";
-    List<string> plaatsen = new List<string>();
+
+    public List<string> Plaatsen = new List<string>();
 
     public PlaatsService()
     {
@@ -24,12 +25,12 @@ namespace Meldpunt.Services
       plaatsenDoc.Load(plaatsFile);
 
       foreach (XmlNode plaats in plaatsenDoc.DocumentElement.ChildNodes)
-        plaatsen.Add(plaats.InnerText);
+        Plaatsen.Add(plaats.InnerText);
     }
 
     public List<String> getSuggestion(string s)
     {
-      List<String> foundPlaces = plaatsen.FindAll(p => p.StartsWith(s,StringComparison.InvariantCultureIgnoreCase));
+      List<String> foundPlaces = Plaatsen.FindAll(p => p.StartsWith(s, StringComparison.InvariantCultureIgnoreCase));
       return foundPlaces;
     }
   }

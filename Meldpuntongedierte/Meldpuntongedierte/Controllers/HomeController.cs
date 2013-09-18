@@ -11,10 +11,12 @@ namespace Meldpuntongedierte.Controllers
   public class HomeController : Controller
   {
     private PageService pageService;
+    private PlaatsService plaatsService;
 
     public HomeController()
     {
       pageService = new PageService();
+      plaatsService = new PlaatsService();
     }
 
     public ActionResult Index()
@@ -26,6 +28,9 @@ namespace Meldpuntongedierte.Controllers
     public ActionResult GetPage(string id)
     {
       PageModel model = pageService.GetPage(id);
+      if (model == null)
+        return RedirectPermanent("/in/" + id);
+
       return View("index", model);
     }
   }

@@ -39,7 +39,7 @@ namespace Meldpunt.Services
     {
       XmlNode page = pagesDoc.DocumentElement.SelectSingleNode("//page[@id='" + pageId + "']");
       if (page == null)
-        throw new NotFoundException();
+        return null;
 
       return XmlToModel(page);
     }
