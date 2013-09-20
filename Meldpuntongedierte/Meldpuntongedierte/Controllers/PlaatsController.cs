@@ -17,6 +17,15 @@ namespace Meldpuntongedierte.Controllers
       plaatsService = new PlaatsService();
     }
 
+    public ActionResult Search(string plaats)
+    {
+      String found = plaatsService.Plaatsen.FirstOrDefault(p => p.StartsWith(plaats, StringComparison.CurrentCultureIgnoreCase));
+      if(!String.IsNullOrWhiteSpace(found))
+        return View("Plaats", new PlaatsModel { Name = found });
+
+      return new HttpNotFoundResult("plaats niet gevonden");
+    }
+
 
     public ActionResult Plaats(string plaats)
     {
