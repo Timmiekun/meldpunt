@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@using Meldpunt.Models;
+@{
+  List<PageModel> pagesForTabs = ViewBag.NavItems as List<PageModel>; 
+}
+
+<!DOCTYPE html>
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -31,6 +36,7 @@
 </head>
 <body>
   <div id="main" class="main">
+    
     <div id="header">
       <form method="post" action="/zoek" class="zoekForm">
       <input id="zoek" type="text" name="plaats" onkeyup="suggest.getSuggests(event,this);"><input
@@ -39,6 +45,7 @@
         class="suggest-hidden">
       </div>
     </div>
+    
     <div class="content">
       @RenderBody()
     </div>
@@ -46,10 +53,10 @@
     <div class="menu">
       <ul>
         <li><a href="/">Home</a></li>
-        <li><a href="/werkwijze">Werkwijze</a></li>
-        <li><a href="/contact">Contact</a></li>
+        @RenderSection("menu")        
       </ul>
     </div>
+    
     <div class="footer">
       <p class="disclaimer">0900-2556677 @*<a href="/sitemap">sitemap</a>*@</p>
     </div>
@@ -59,7 +66,12 @@
       <a href="/">Meldpunt Ongedierte</a></h2>
     <div class="shadow">
     </div>
+     @foreach (PageModel tabItem in pagesForTabs)
+      {
+       <a class="tabItem" href="/@tabItem.Id">@tabItem.Id</a>
+      }
   </div>
+
   <script type="text/javascript">
     var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
     document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));

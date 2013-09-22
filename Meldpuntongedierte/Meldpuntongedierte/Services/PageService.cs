@@ -29,9 +29,9 @@ namespace Meldpunt.Services
       return XmlToModel(pages);
     }
 
-    public List<PageModel> GetPagesForNav()
+    public List<PageModel> GetPagesForTabs()
     {
-      XmlNodeList pages = pagesDoc.DocumentElement.SelectNodes("page[not(@notinmenu='true')]");
+      XmlNodeList pages = pagesDoc.DocumentElement.SelectNodes("page[@tab='true']");
       return XmlToModel(pages);
     }
 
@@ -72,10 +72,17 @@ namespace Meldpunt.Services
     {
       PageModel p = new PageModel()
       {
-        Id = page.Attributes["id"].Value,
-        //Title = page.Attributes["title"].Value,
-        Content = page.InnerXml
+        Id = page.Attributes["id"].Value,        
+        Content = page.InnerXml,
+        SubPages = new List<PageModel>()
       };
+
+      XmlNodeList subPages = page.SelectNodes("pages/page");
+      if (subPages != null){
+          foreach(XmlNode subPage in subPages)
+            p.SubPages.Add(XmlToModel(subPage));
+      }
+
       return p;
     }
   }

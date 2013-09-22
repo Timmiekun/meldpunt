@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using Meldpunt.Services;
 using Meldpunt.Models;
 
-namespace Meldpuntongedierte.Controllers
+namespace Meldpunt.Controllers
 {
   public class PlaatsController : Controller
   {

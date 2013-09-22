@@ -55,6 +55,16 @@ em
     color: white;
     text-decoration: none;
 }
+.topBar .tabItem
+{
+  display:block;
+  float:left;
+  margin-right: 10px;
+  background-color:white;
+  color: #83003C;
+  padding: 3px 5px;
+}
+
 .shadow
 {
     width: 100%;

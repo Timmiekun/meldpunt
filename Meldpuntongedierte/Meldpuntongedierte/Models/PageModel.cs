@@ -17,6 +17,7 @@ namespace Meldpunt.Models
     public string Content { get; set; }
     public string Url { get { return Utils.Utils.UrlEncode(Title); } }
     public string FullText { get; set; }
+    public List<PageModel> SubPages { get; set; }
     public string Intro
     {
       get

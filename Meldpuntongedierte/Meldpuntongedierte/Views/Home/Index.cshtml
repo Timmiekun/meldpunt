@@ -1,6 +1,14 @@
-﻿@model Meldpunt.Models.PageModel
+﻿@using Meldpunt.Models;
+@model PageModel
 @{
   ViewBag.Title = "Home Page";
 }
 
+
 @Html.Raw(Model.Content)
+
+@section menu{
+  @foreach(PageModel item in Model.SubPages){
+    <li><a href="/@item.Id">@item.Id</a></li>
+  }
+}

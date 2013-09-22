@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using Meldpunt.Services;
 using Meldpunt.Models;
 
-namespace Meldpuntongedierte.Controllers
+namespace Meldpunt.Controllers
 {
   public class HomeController : Controller
   {
@@ -28,8 +28,10 @@ namespace Meldpuntongedierte.Controllers
     public ActionResult GetPage(string id)
     {
       PageModel model = pageService.GetPage(id);
+      // geen pagina? Dan een plaats
       if (model == null)
         return RedirectPermanent("/in/" + id);
+
 
       return View("index", model);
     }
