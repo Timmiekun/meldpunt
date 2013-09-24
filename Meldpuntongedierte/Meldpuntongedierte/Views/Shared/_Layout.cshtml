@@ -38,13 +38,6 @@
 <body>
   <div id="main" class="main">
 
-    <div id="tabs">
-    @foreach (PageModel tabItem in pagesForTabs)
-      {
-       <a class="tabItem" href="@tabItem.Url">@tabItem.Title</a>
-      }
-      </div>
-
       <div id="breadcrumbs">
         <a href="/">Home</a>
         @if (breadcrumbs.Count > 0)
@@ -62,10 +55,11 @@
       </div>
     
     <div id="header">
-      <form method="post" action="/zoek" class="zoekForm">
+      <span class="searchText">Ongedierte bestrijding in uw woonplaats?</span>
+      <form method="post" autocomplete="off" action="/zoek" class="zoekForm">
       <input id="zoek" type="text" name="plaats" onkeyup="suggest.getSuggests(event,this);"><input
         type="submit" value="zoek" class="searchSubmit"></form>
-      <span class="searchText">Ongedierte bestrijding in uw woonplaats?</span><div id="suggests"
+      <div id="suggests"
         class="suggest-hidden">
       </div>
     </div>
@@ -73,6 +67,18 @@
     <div class="content">
       @RenderBody()
     </div>
+
+     <div id="tabs">
+      @foreach (PageModel tabItem in pagesForTabs)
+        {
+          string className = "tabItem";
+          if (((string)ViewBag.Url).Contains(tabItem.Id))
+          {
+            className += " activeTab";
+          }
+        <a class="@className" href="@tabItem.Url">@tabItem.Title</a>
+        }
+      </div>
 
     <div class="menu">
       <ul>

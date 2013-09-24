@@ -1,6 +1,7 @@
 ﻿@model Meldpunt.Models.PlaatsModel
 @{
   ViewBag.Title = "Meldpuntongedierte in " + Model;
+  ViewBag.Url = Model.Name;
 }
 
  <b>Welkom op het meldpunt ongedierte voor de gemeente @Model.Name</b>
@@ -83,3 +84,7 @@
 <p>Indien een van de bovenstaande diensten overeen komt met uw wens kunt u bellen met:</p>
 <h1>Meldpunt Ongedierte @Model.Name: 0900-2556677</h1>
 <p>Kosten van bestrijding(en) kunnen ook via dit telefoonnummer opgevraagd worden.</p>
+
+@section menu{
+ 
+}
