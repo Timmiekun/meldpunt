@@ -1,121 +1,126 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <pages>
   <page id="home">
-    <h1>
-      Welkom bij Meldpunt Ongedierte.
-    </h1>
-    <p>
-      Hoe werkt dit voor u het snelst? Via de woonplaats check wordt u direct doorgelinkt
-      naar de betreffende afdeling voor uw gemeente.
-    </p>
-    <p>
-      <em>Let op!</em>
-      <br />
-      Bij het gebruik maken van dit meldpunt verbindt het telefoonnummer dat na de woonplaats
-      verschijnt zich direct met de juiste afdeling voor de gemeente. Meldingen via dit
-      meldpunt mogen alleen betrekking hebben op onderstaande soorten bestrijdingen, te
-      weten;
-      <ul class="defaultList">
-        <li id="mieren">
-          <h3>
-            Mierenbestrijding
-          </h3>
-          <div class="description">
-            Mieren kunnen bestreden worden met een insecticide d.m.v. lage druktoepassing. De
-            bestrijdingsdeskundige brengt dit middel in de door hem gevonden nestingangen, waardoor
-            de kolonie in haar geheel geïnfecteerd wordt. Indien de openingen niet gevonden
-            kunnen worden, kan er behandeld worden met een lokaasgel. Deze gel wordt uit een
-            kitpatroon gedoseerd. Er zijn geen voorzorgsmaatregelen nodig bij een mierenbestrijding.
-          </div>
-        </li>
-        <li id="wespen">
-          <h3>
-            Wespenbestrijding
-          </h3>
-          <div class="description">
-            Wespen kunnen bestreden worden met een insecticide d.m.v. lage druktoepassing. De
-            bestrijdingsdeskundige brengt dit middel in de door hem gevonden nestingang, waardoor
-            de kolonie in haar geheel geïnfecteerd wordt. Er zijn geen voorzorgsmaatregelen
-            nodig bij een wespenbestrijding.
-          </div>
-        </li>
-        <li id="muizen">
-          <h3>
-            Muizenbestrijding
-          </h3>
-          <div class="description">
-            Muizen kunnen op diverse manieren bestreden worden. Om de beste methode te bepalen
-            zal de bestrijdingsdeskundige eerst een inspectie uitvoeren en de situatie in kaart
-            brengen. Vervolgens kan de bestrijding in gang worden gezet. Daarna worden er eventuele
-            maatregelen besproken die kunnen voorkomen dat er in de toekomst opnieuw sprake
-            is van een muizenplaag.
-          </div>
-        </li>
-        <li id="ratten">
-          <h3>
-            Rattenbestrijding
-          </h3>
-          <div class="description">
-            Ratten kunnen op diverse manieren bestreden worden. Om de beste methode te bepalen
-            zal de bestrijdingsdeskundige eerst een inspectie uitvoeren en de situatie in kaart
-            brengen. Vervolgens kan de bestrijding in gang worden gezet. Daarna worden er eventuele
-            maatregelen besproken die kunnen voorkomen dat er in de toekomst opnieuw sprake
-            is van een rattenplaag.
-          </div>
-        </li>
-        <li id="zilvervisjes">
-          <h3>
-            Zilver- en papiervisjesbestrijding
-          </h3>
-          <div class="description">
-            Zilver- en of Papiervisjes kunnen bestreden worden met een insecticide d.m.v. lage
-            druktoepassing. De bestrijdingsdeskundige brengt dit middel in alle naden en kieren.
-            U dient er zelf zorg voor te dragen dat alle kasten leeg geruimd worden, zodat vooral
-            daar in de kieren langs legplanken e.d. een residu van het middel achter kan blijven.
-            Tijdens de actie en twee uren aansluitend kunt u en de huisdieren de woning niet
-            betreden.
-          </div>
-        </li>
-        <li id="kakkerlakken">
-          <h3>
-            Kakkerlakkenbestrijding
-          </h3>
-          <div class="description">
-            Kakkerlakken kunnen bestreden worden met een insecticide d.m.v. een lokaasgel. De
-            bestrijdingsdeskundige brengt dit middel in de door hem gevonden strategische plaatsen,
-            waardoor de kolonie in haar geheel geïnfecteerd wordt. Er zijn geen voorzorgsmaatregelen
-            nodig bij een kakkerlakkenbestrijding.
-          </div>
-        </li>
-      </ul>
-    </p>
-    <p>
-      Kosten van bestrijding(en) kunnen ook via dit telefoonnummer opgevraagd worden.
-    </p>
-    <p>
-      Indien het één van bovenstaande acties betreft, kunt u nu uw plaatsnaam invullen.
-    </p>
-
+    <content>
+      <h1>
+        Welkom bij Meldpunt Ongedierte.
+      </h1>
+      <p>
+        Hoe werkt dit voor u het snelst? Via de woonplaats check wordt u direct doorgelinkt
+        naar de betreffende afdeling voor uw gemeente.
+      </p>
+      <p>
+        <em>Let op!</em>
+        <br />
+        Bij het gebruik maken van dit meldpunt verbindt het telefoonnummer dat na de woonplaats
+        verschijnt zich direct met de juiste afdeling voor de gemeente. Meldingen via dit
+        meldpunt mogen alleen betrekking hebben op onderstaande soorten bestrijdingen, te
+        weten;
+        <ul class="defaultList">
+          <li id="mieren">
+            <h3>
+              Mierenbestrijding
+            </h3>
+            <div class="description">
+              Mieren kunnen bestreden worden met een insecticide d.m.v. lage druktoepassing. De
+              bestrijdingsdeskundige brengt dit middel in de door hem gevonden nestingangen, waardoor
+              de kolonie in haar geheel geïnfecteerd wordt. Indien de openingen niet gevonden
+              kunnen worden, kan er behandeld worden met een lokaasgel. Deze gel wordt uit een
+              kitpatroon gedoseerd. Er zijn geen voorzorgsmaatregelen nodig bij een mierenbestrijding.
+            </div>
+          </li>
+          <li id="wespen">
+            <h3>
+              Wespenbestrijding
+            </h3>
+            <div class="description">
+              Wespen kunnen bestreden worden met een insecticide d.m.v. lage druktoepassing. De
+              bestrijdingsdeskundige brengt dit middel in de door hem gevonden nestingang, waardoor
+              de kolonie in haar geheel geïnfecteerd wordt. Er zijn geen voorzorgsmaatregelen
+              nodig bij een wespenbestrijding.
+            </div>
+          </li>
+          <li id="muizen">
+            <h3>
+              Muizenbestrijding
+            </h3>
+            <div class="description">
+              Muizen kunnen op diverse manieren bestreden worden. Om de beste methode te bepalen
+              zal de bestrijdingsdeskundige eerst een inspectie uitvoeren en de situatie in kaart
+              brengen. Vervolgens kan de bestrijding in gang worden gezet. Daarna worden er eventuele
+              maatregelen besproken die kunnen voorkomen dat er in de toekomst opnieuw sprake
+              is van een muizenplaag.
+            </div>
+          </li>
+          <li id="ratten">
+            <h3>
+              Rattenbestrijding
+            </h3>
+            <div class="description">
+              Ratten kunnen op diverse manieren bestreden worden. Om de beste methode te bepalen
+              zal de bestrijdingsdeskundige eerst een inspectie uitvoeren en de situatie in kaart
+              brengen. Vervolgens kan de bestrijding in gang worden gezet. Daarna worden er eventuele
+              maatregelen besproken die kunnen voorkomen dat er in de toekomst opnieuw sprake
+              is van een rattenplaag.
+            </div>
+          </li>
+          <li id="zilvervisjes">
+            <h3>
+              Zilver- en papiervisjesbestrijding
+            </h3>
+            <div class="description">
+              Zilver- en of Papiervisjes kunnen bestreden worden met een insecticide d.m.v. lage
+              druktoepassing. De bestrijdingsdeskundige brengt dit middel in alle naden en kieren.
+              U dient er zelf zorg voor te dragen dat alle kasten leeg geruimd worden, zodat vooral
+              daar in de kieren langs legplanken e.d. een residu van het middel achter kan blijven.
+              Tijdens de actie en twee uren aansluitend kunt u en de huisdieren de woning niet
+              betreden.
+            </div>
+          </li>
+          <li id="kakkerlakken">
+            <h3>
+              Kakkerlakkenbestrijding
+            </h3>
+            <div class="description">
+              Kakkerlakken kunnen bestreden worden met een insecticide d.m.v. een lokaasgel. De
+              bestrijdingsdeskundige brengt dit middel in de door hem gevonden strategische plaatsen,
+              waardoor de kolonie in haar geheel geïnfecteerd wordt. Er zijn geen voorzorgsmaatregelen
+              nodig bij een kakkerlakkenbestrijding.
+            </div>
+          </li>
+        </ul>
+      </p>
+      <p>
+        Kosten van bestrijding(en) kunnen ook via dit telefoonnummer opgevraagd worden.
+      </p>
+      <p>
+        Indien het één van bovenstaande acties betreft, kunt u nu uw plaatsnaam invullen.
+      </p>
+    </content>
     <pages>
-      <page id="contact">
-        <h1>Contact</h1>
-        <p>
-          Voor het maken van een afspraak kunt u het beste telefonisch contact opnemen met het meldpunt.
-          Voor het juiste telefoonnummer voert u hierboven uw woonplaats in.
-          Voor algemene voorlichting kunt u het best uw vragen stellen per e-mail naar <em>info@meldpuntongedierte.nl</em>
-        </p>
+      <page id="contact" title="Contact">
+        <content>
+          <h1>Contact</h1>
+          <p>
+            Voor het maken van een afspraak kunt u het beste telefonisch contact opnemen met het meldpunt.
+            Voor het juiste telefoonnummer voert u hierboven uw woonplaats in.
+            Voor algemene voorlichting kunt u het best uw vragen stellen per e-mail naar <em>info@meldpuntongedierte.nl</em>
+          </p>
+        </content>
       </page>
 
-      <page id="werkwijze">
-        <h1>Werkwijze</h1>
-        <p>
-          Tijdens het telefoongesprek leggen we u uit
-          hoe een bestrijding in haar werk gaat, geven we uitleg over
-          eventuele voor- en nazorg en vertellen we u de daaraan gekoppelde kosten. Bij het maken van een afspraak voor een bestrijding vragen we om uw postcode en huisnummer.
-          Door de verkorte lijnen is er sprake van een snellere service dan de wijze van voorheen.
-          Meldingen via Meldpunt Ongedierte worden op volgorde boven
-          meldingen via andere kanalen gepositioneerd. Zodoende proberen we u zo snel mogelijk van dienst te zijn. Voor het verkrijgen van het juiste telefoonnummer verzoeken we u om hierboven uw woonplaats in te voeren.
-        </p>
+      <page id="werkwijze" title="Werkwijze">
+        <content>
+          <h1>Werkwijze</h1>
+          <p>
+            Tijdens het telefoongesprek leggen we u uit
+            hoe een bestrijding in haar werk gaat, geven we uitleg over
+            eventuele voor- en nazorg en vertellen we u de daaraan gekoppelde kosten. Bij het maken van een afspraak voor een bestrijding vragen we om uw postcode en huisnummer.
+            Door de verkorte lijnen is er sprake van een snellere service dan de wijze van voorheen.
+            Meldingen via Meldpunt Ongedierte worden op volgorde boven
+            meldingen via andere kanalen gepositioneerd. Zodoende proberen we u zo snel mogelijk van dienst te zijn. Voor het verkrijgen van het juiste telefoonnummer verzoeken we u om hierboven uw woonplaats in te voeren.
+          </p>
+        </content>
       </page>
     </pages>
   </page>
@@ -126,217 +131,239 @@
       <page id="houtaantasters">
         <pages>
           <page id="gewone-houtwormkever">
-            <h1>Gewone Houtwormkever ( Anobium punctatum Deg. )</h1>
-            <p>
-              De Gewone Houtworm heeft zijn naam te danken aan de vorm van de larven. Sporen ervan zijn in de meeste oudere huizen wel te vinden. De volwassen kevers zijn in de zomermaanden aktief, nadat ze zich uit het aangetaste hout naar binnen hebben geknaagd, waardoor de cikcelvormige vlieggaatjes ontstaan. Dit is ook het moment dat het boorpoeder uit het hout tevoorschijn komt. De kevers leven slechts enkele weken.ze kunnen vliegen en worden soms ook voor kleine vliegen aangezien. Direct na het uitvliegen paren ze en beginnen de wijfjes met het leggen van de eitjes. Deze worden nooit zomaar op een plat oppervlak gelegd, maar in spleten op de kopse kant van het hout of vaak ook in oude uitvlieggaatjes. Na drie tot vier dagen komen de eitjes uit en de kleine larven larven knagen zich direct in het hout naar binnen. Het onverteerbare deel van het hout laten ze in de gangen achter als kleine langwerpige bolletjes uitwerpselen. Al naargelang ze groeien, wordt de doorsnede van de gang groter. De larven verlaten het hout nooit en kunnen daarom ook nooit van het ene meubelstuk in het andere komen. De ontwikkeling duurt twee tot drie of zelfs meerdere jaren. Dit is sterk afhankelijk van de temperatuur en het vochtgehalte van het hout. Ook de soort van het hout speelt een rol. De optimale ontwikkelingstemperatuur is 22-23 graden. Ze kunnen zich echter ook bij lagere temperaturen ontwikkelen en kunnen daardoor hier te lande zich ook buitenshuis ontwikkelen. Het vochtgehalte van het hout is bepalend voor de ontwikkeling van de larven. In principe hoe vochtiger hoe beter, al moet het hout niet doordrenkt blijvenErnstige aantastingen vinden daarom vooral plaats in het houtwerk en de inventaris van keukens, kelders, schuren en stallen, waar het altijd wel wat vochtig is. Als de luchtvochtigheid constant onder de 50 graden blijft kunnen de larven zich niet ontwikkelen. Het droge klimaat in onze moderne woningen overleven ze daarom niet. De gewone houtworm kan zich in allerlei soorten hout ontwikkelen. Ze hebben echter een voorkeur voor de zachtere soorten en dringen gezond kernhout nooit binnen.
-              Sommige houtwormlarven kunnen in papier leven. Dat deze larven zich in dit soort materiaal kunnen ontwikkelen en zich dus vrijwel uitsluitend  met zuivere cellulose kunnen voeden, wordt mogelijk gemaakt door de aanwezigheid van speciale kolonies gistcellen in het darmkanaal. Deze breken de cellulose af tot verteerbare suikers en zorgen ook voor de benodigde aanvullingen met vitaminen en stikstof die de gistcellen uit de lucht kunnen opnemen.
-            </p>
-            <h2>Hoe kom ik van het probleem af ?</h2>
-            <p>
-              Net als voor de meeste andere houtaantastende insecten geldt ook voor houtwormen dat het een specialistische aanpak vergt om het te kunnen bestrijden. Wij voeren deze bestrijdingen niet uit. Er zijn bedrijven die zich hierin gespecialiseerd hebben. Voor meer informatie hierover kunt u bijvoorbeeld terecht bij Van Lierop. <a href="www.vanlierop.nl">www.vanlierop.nl</a>
-            </p>
+            <content>
+              <h1>Gewone Houtwormkever ( Anobium punctatum Deg. )</h1>
+              <p>
+                De Gewone Houtworm heeft zijn naam te danken aan de vorm van de larven. Sporen ervan zijn in de meeste oudere huizen wel te vinden. De volwassen kevers zijn in de zomermaanden aktief, nadat ze zich uit het aangetaste hout naar binnen hebben geknaagd, waardoor de cikcelvormige vlieggaatjes ontstaan. Dit is ook het moment dat het boorpoeder uit het hout tevoorschijn komt. De kevers leven slechts enkele weken.ze kunnen vliegen en worden soms ook voor kleine vliegen aangezien. Direct na het uitvliegen paren ze en beginnen de wijfjes met het leggen van de eitjes. Deze worden nooit zomaar op een plat oppervlak gelegd, maar in spleten op de kopse kant van het hout of vaak ook in oude uitvlieggaatjes. Na drie tot vier dagen komen de eitjes uit en de kleine larven larven knagen zich direct in het hout naar binnen. Het onverteerbare deel van het hout laten ze in de gangen achter als kleine langwerpige bolletjes uitwerpselen. Al naargelang ze groeien, wordt de doorsnede van de gang groter. De larven verlaten het hout nooit en kunnen daarom ook nooit van het ene meubelstuk in het andere komen. De ontwikkeling duurt twee tot drie of zelfs meerdere jaren. Dit is sterk afhankelijk van de temperatuur en het vochtgehalte van het hout. Ook de soort van het hout speelt een rol. De optimale ontwikkelingstemperatuur is 22-23 graden. Ze kunnen zich echter ook bij lagere temperaturen ontwikkelen en kunnen daardoor hier te lande zich ook buitenshuis ontwikkelen. Het vochtgehalte van het hout is bepalend voor de ontwikkeling van de larven. In principe hoe vochtiger hoe beter, al moet het hout niet doordrenkt blijvenErnstige aantastingen vinden daarom vooral plaats in het houtwerk en de inventaris van keukens, kelders, schuren en stallen, waar het altijd wel wat vochtig is. Als de luchtvochtigheid constant onder de 50 graden blijft kunnen de larven zich niet ontwikkelen. Het droge klimaat in onze moderne woningen overleven ze daarom niet. De gewone houtworm kan zich in allerlei soorten hout ontwikkelen. Ze hebben echter een voorkeur voor de zachtere soorten en dringen gezond kernhout nooit binnen.
+                Sommige houtwormlarven kunnen in papier leven. Dat deze larven zich in dit soort materiaal kunnen ontwikkelen en zich dus vrijwel uitsluitend  met zuivere cellulose kunnen voeden, wordt mogelijk gemaakt door de aanwezigheid van speciale kolonies gistcellen in het darmkanaal. Deze breken de cellulose af tot verteerbare suikers en zorgen ook voor de benodigde aanvullingen met vitaminen en stikstof die de gistcellen uit de lucht kunnen opnemen.
+              </p>
+              <h2>Hoe kom ik van het probleem af ?</h2>
+              <p>
+                Net als voor de meeste andere houtaantastende insecten geldt ook voor houtwormen dat het een specialistische aanpak vergt om het te kunnen bestrijden. Wij voeren deze bestrijdingen niet uit. Er zijn bedrijven die zich hierin gespecialiseerd hebben. Voor meer informatie hierover kunt u bijvoorbeeld terecht bij Van Lierop. <a href="www.vanlierop.nl">www.vanlierop.nl</a>
+              </p>
+            </content>
           </page>
 
           <page id="heipaalkever">
-            <h1>
-              Heipaalkever ( Nacerdes melanura L. )
-            </h1>
-            <p>
-              Heipaalkevers lijken erg veel op een boktor, onder meer omdat ze ook zeer lange voelsprieten hebben. Toch horen ze tot een geheel andere groep kevers. Men is van mening dat ze oorspronkelijk uit het gebied rond de Grote Meren in de Verenigde Staten afkomstig zijn en met de scheepvaart over de gehele gematigde zone zijn verspreid. De volwassen kevers zijn ’s zomers te vinden. Omdat ze vaak tegelijkertijd midden op de dag in grote getale tevoorschijn komen, trekken ze nogal eens de aandacht. Ze zitten dan plotseling overal op huizen en komen soms ook door de ramen naar binnen. <br/>
-              Na de paring worden de eitjes in vochtig hout afgezet. De larven van de heipaalkever stellen namelijk bijzondere eisen aan het hout waarin ze leven. Ze hebben een voorkeur voor naaldhout dat nooit mag uitdrogen. Verder is het waarschijnlijk een levensvoorwaarde dat het hout door schimmels moet zijn aangetast. Het mag echter weer niet zo rot zijn dat het uit elkaar valt.
-              Indien heipaalkevers binnenshuis worden aangetroffen kunnen ze zoals gezegd van buiten afkomstig zijn, uitgekomen in scheepshout, beschoeiingen. In huis zelf kunnen ze echter ook leven in heipalen en in hout in vochtige kelders. Gewoonlijk wordt het aangetaste hout zodanig vernield dat het vervangen moet worden.<br/>
-              Het nieuw hout dat aangebracht wordt dient geïmpregneerd te zijn en men moet ervoor zorgen dat het vochtgehalte lager wordt, bijvoorbeeld door het verbeteren van de ventilatie.
-            </p>
-            <h2>Hoe kom ik van het probleem af ?</h2>
-            <p>
-              Net als voor de meeste andere houtaantastende insecten geldt ook voor heipaalkevers dat het een specialistische aanpak vergt om het te kunnen bestrijden. Wij voeren deze bestrijdingen niet uit. Er zijn bedrijven die zich hierin gespecialiseerd hebben. Voor meer informatie hierover kunt u bijvoorbeeld terecht bij Van Lierop. <a href="www.vanlierop.nl">www.vanlierop.nl</a>
-            </p>
+            <content>
+              <h1>
+                Heipaalkever ( Nacerdes melanura L. )
+              </h1>
+              <p>
+                Heipaalkevers lijken erg veel op een boktor, onder meer omdat ze ook zeer lange voelsprieten hebben. Toch horen ze tot een geheel andere groep kevers. Men is van mening dat ze oorspronkelijk uit het gebied rond de Grote Meren in de Verenigde Staten afkomstig zijn en met de scheepvaart over de gehele gematigde zone zijn verspreid. De volwassen kevers zijn ’s zomers te vinden. Omdat ze vaak tegelijkertijd midden op de dag in grote getale tevoorschijn komen, trekken ze nogal eens de aandacht. Ze zitten dan plotseling overal op huizen en komen soms ook door de ramen naar binnen. <br/>
+                Na de paring worden de eitjes in vochtig hout afgezet. De larven van de heipaalkever stellen namelijk bijzondere eisen aan het hout waarin ze leven. Ze hebben een voorkeur voor naaldhout dat nooit mag uitdrogen. Verder is het waarschijnlijk een levensvoorwaarde dat het hout door schimmels moet zijn aangetast. Het mag echter weer niet zo rot zijn dat het uit elkaar valt.
+                Indien heipaalkevers binnenshuis worden aangetroffen kunnen ze zoals gezegd van buiten afkomstig zijn, uitgekomen in scheepshout, beschoeiingen. In huis zelf kunnen ze echter ook leven in heipalen en in hout in vochtige kelders. Gewoonlijk wordt het aangetaste hout zodanig vernield dat het vervangen moet worden.<br/>
+                Het nieuw hout dat aangebracht wordt dient geïmpregneerd te zijn en men moet ervoor zorgen dat het vochtgehalte lager wordt, bijvoorbeeld door het verbeteren van de ventilatie.
+              </p>
+              <h2>Hoe kom ik van het probleem af ?</h2>
+              <p>
+                Net als voor de meeste andere houtaantastende insecten geldt ook voor heipaalkevers dat het een specialistische aanpak vergt om het te kunnen bestrijden. Wij voeren deze bestrijdingen niet uit. Er zijn bedrijven die zich hierin gespecialiseerd hebben. Voor meer informatie hierover kunt u bijvoorbeeld terecht bij Van Lierop. <a href="http://www.vanlierop.nl">www.vanlierop.nl</a>
+              </p>
+            </content>
           </page>
 
           <page id="huisboktor">
-            <h1>Huisboktor ( Hylotrupes bajulus L. )</h1>
-            <p>
-              Vanuit een economisch oogpunt gezien is de huisboktor verreweg de belangrijkste van de boktorren die binnenshuis hout kan aantasten. Dit is te danken aan het feit dat de larven zich hebben gespecialiseerd op het leven in oud en volkomen droog naaldhout. De volwassen huisboktor krijgt men slechts zelden te zien. Ze komen op zolders in de warmste periode van de zomer tevoorschijn, paren en leggen hun eitjes. Het wijfje kan wel 400 eitjes leggen die met behulp van een lange buigbare legboor diep in reten en spleten van het hout worden gelegd. Na verloop van een paar weken komen ze uit, waarop de larven zich onmiddellijk in het hout naar binnen werken en er zich jarenlang op los knagen. Hoelang de ontwikkeling van de larven en hoe groot ze zullen worden hangt onder meer af van de hoeveelheid voedsel die het hout bevat en van de temperatuur. De kortste periode hier te lande is drie jaar, maar huisboktorlarven kunnen ook tien jaar nodig hebben om volwassen te worden. De larven leven hoofdzakelijk in het spinthout. Ze knagen vaak tot ze dicht onder de oppervlakte zijn gekomen en er slechts een papierdun laagje hout tussen hen en de buitenwereld over is.<br/>
-              Als de larven op een goede dag volgroeid zijn verpoppen ze zich. Dat gebeurt in een speciale verpoppingsgang die met grove spaantjes is afgesloten. Voor ze in een pop veranderen knagen ze de uitvliegopening al geheel of ten dele open waardoor ze later als kever direct het hout kunnen verlaten. Het uitvlieggat, het boorpoeder en de houtspaantjes zijn gewoonlijk het eerste zichtbare teken van de aantasting van het hout door huisboktorren en er kan dus meer dan tien jaar zijn verlopen sinds het hout werd geïnfecteerd. Voordat het echter zover is heeft men de mogelijkheid gehad om te luisteren of er van aantasting sprake was. Indien men op een warme zomerdag heel stil op zolder staat waar het hout door boktorren is aangetast dan kan men duidelijk het raspende geluid van de knagende grote larven horen.<br/>
-              De volwassen boktor heeft een temperatuur van minstens 25 graden nodig om aktief te worden. Ze kunnen zich dus slechts in enkele zeer warme jaren op eigen kracht verspreiden, uitvliegen en nieuwe gebouwen aantasten. De verspreiding vindt zonder twijfel voor het grootste deel met onze hulp plaats. Onder ongelukkige omstandigheden kan het hout al bij de houthandelaar aangetast zijn. Indien men sloophout gebruikt, kan ook dat een broeinest vormen. De besmetting kan ook met kisten of meubels die tijdelijk op een met huisboktorren besmette zolder stonden plaats vinden. Huisboktorren komen hoofdzakelijk in kapconstructies voor, eenvoudig omdat de hoge zomertemperaturen die ze nodig hebben vooral op zolder te vinden is. Ze kunnen zich echter tot het andere houtwerk in huizen uitbreiden. Ook buitenshuis kunnen ze zich hier te lande handhaven in windschermen, schuttingen, telefoonpalen e.d., dus alleen op die plaatsen waar het hout door de zon door en door warm kan houden.
-            </p>
-            <h2>Hoe kom ik van het probleem af ?</h2>
-            <p>
-              Net als voor de meeste andere houtaantastende insecten geldt ook voor boktorren dat het een specialistische aanpak vergt om het te kunnen bestrijden. Wij voeren deze bestrijdingen niet uit. Er zijn bedrijven die zich hierin gespecialiseerd hebben. Voor meer informatie hierover kunt u bijvoorbeeld terecht bij Van Lierop. <a href="www.vanlierop.nl">www.vanlierop.nl</a>
-            </p>
+            <content>
+              <h1>Huisboktor ( Hylotrupes bajulus L. )</h1>
+              <p>
+                Vanuit een economisch oogpunt gezien is de huisboktor verreweg de belangrijkste van de boktorren die binnenshuis hout kan aantasten. Dit is te danken aan het feit dat de larven zich hebben gespecialiseerd op het leven in oud en volkomen droog naaldhout. De volwassen huisboktor krijgt men slechts zelden te zien. Ze komen op zolders in de warmste periode van de zomer tevoorschijn, paren en leggen hun eitjes. Het wijfje kan wel 400 eitjes leggen die met behulp van een lange buigbare legboor diep in reten en spleten van het hout worden gelegd. Na verloop van een paar weken komen ze uit, waarop de larven zich onmiddellijk in het hout naar binnen werken en er zich jarenlang op los knagen. Hoelang de ontwikkeling van de larven en hoe groot ze zullen worden hangt onder meer af van de hoeveelheid voedsel die het hout bevat en van de temperatuur. De kortste periode hier te lande is drie jaar, maar huisboktorlarven kunnen ook tien jaar nodig hebben om volwassen te worden. De larven leven hoofdzakelijk in het spinthout. Ze knagen vaak tot ze dicht onder de oppervlakte zijn gekomen en er slechts een papierdun laagje hout tussen hen en de buitenwereld over is.<br/>
+                Als de larven op een goede dag volgroeid zijn verpoppen ze zich. Dat gebeurt in een speciale verpoppingsgang die met grove spaantjes is afgesloten. Voor ze in een pop veranderen knagen ze de uitvliegopening al geheel of ten dele open waardoor ze later als kever direct het hout kunnen verlaten. Het uitvlieggat, het boorpoeder en de houtspaantjes zijn gewoonlijk het eerste zichtbare teken van de aantasting van het hout door huisboktorren en er kan dus meer dan tien jaar zijn verlopen sinds het hout werd geïnfecteerd. Voordat het echter zover is heeft men de mogelijkheid gehad om te luisteren of er van aantasting sprake was. Indien men op een warme zomerdag heel stil op zolder staat waar het hout door boktorren is aangetast dan kan men duidelijk het raspende geluid van de knagende grote larven horen.<br/>
+                De volwassen boktor heeft een temperatuur van minstens 25 graden nodig om aktief te worden. Ze kunnen zich dus slechts in enkele zeer warme jaren op eigen kracht verspreiden, uitvliegen en nieuwe gebouwen aantasten. De verspreiding vindt zonder twijfel voor het grootste deel met onze hulp plaats. Onder ongelukkige omstandigheden kan het hout al bij de houthandelaar aangetast zijn. Indien men sloophout gebruikt, kan ook dat een broeinest vormen. De besmetting kan ook met kisten of meubels die tijdelijk op een met huisboktorren besmette zolder stonden plaats vinden. Huisboktorren komen hoofdzakelijk in kapconstructies voor, eenvoudig omdat de hoge zomertemperaturen die ze nodig hebben vooral op zolder te vinden is. Ze kunnen zich echter tot het andere houtwerk in huizen uitbreiden. Ook buitenshuis kunnen ze zich hier te lande handhaven in windschermen, schuttingen, telefoonpalen e.d., dus alleen op die plaatsen waar het hout door de zon door en door warm kan houden.
+              </p>
+              <h2>Hoe kom ik van het probleem af ?</h2>
+              <p>
+                Net als voor de meeste andere houtaantastende insecten geldt ook voor boktorren dat het een specialistische aanpak vergt om het te kunnen bestrijden. Wij voeren deze bestrijdingen niet uit. Er zijn bedrijven die zich hierin gespecialiseerd hebben. Voor meer informatie hierover kunt u bijvoorbeeld terecht bij Van Lierop. <a href="http://www.vanlierop.nl">www.vanlierop.nl</a>
+              </p>
+            </content>
           </page>
 
           <page id="spinthoutkever">
-            <h1>Spinthoutkever ( Familie Lyctidae )</h1>
-            <p>
-              Spinthoutkevers zijn tot 5 mm lange, slange bruine kevers. Ze zijn speciaal aangepast aan loofhoutsoorten met wijde porien, zoals bijvoorbeeld eiken, essen en walnoten, maar ook aan een groot aantal tropische houtsoorten en bamboe. De wijfjes leggen gewoonlijk de eitjes in de porien van het spinthout. De larven leven van de zetmeelhoudende inhoud van de cellen van het spinthout en veranderen daarbij het hout in een poederachtige massa die nog slechts door een dun laagje hout is omhuld. De volwassen larven knagen zich naar buiten tot vlak onder de oppervlakte, waar ze zich in een ovale verpoppingsruimte verpoppen. Zodra ze in volwassen kevers zijn veranderd verlaten ze door de kleine cirkelronde uitvliegopeningen het hout.
-              <br/>
-              De gehele ontwikkeling heeft gewoonlijk in de loop van één jaar plaats. Als schadelijk insect is de spinthoutkever in de loop der jaren steeds belangrijker geworden. Dit staat vooral in verband met de manier waarop tegenwoordig het hout wordt behandeld. Vroeger werd het jarenlang opgeslagen zodat de nog levende cellen van het hout de voedingsstoffen opgebruikten. De laatste jaren echter wordt het hout direct na het kappen met behulp van warmte gedroogd, waardoor de cellen afsterven, maar de zetmeelhoudende inhoud gespaard blijft. Hout dat op een dergelijke manier is behandeld blijft hierdoor voortdurend een geschikt object voor deze soorten. De spinthoutkever kunnen schade toebrengen aan plankjes van parket of panelen speciaal van eikenhout. Soms worden spinthoutkevers met tropische houtsoorten ingevoerd.
-            </p>
-            <h2>Hoe kom ik van het probleem af ?</h2>
-            <p>
-              Net als voor de meeste andere houtaantastende insecten geldt ook voor spinthoutkevers dat het een specialistische aanpak vergt om het te kunnen bestrijden. Wij voeren deze bestrijdingen niet uit. Er zijn bedrijven die zich hierin gespecialiseerd hebben. Voor meer informatie hierover kunt u bijvoorbeeld terecht bij Van Lierop. <a href="www.vanlierop.nl">www.vanlierop.nl</a>
-            </p>
+            <content>
+              <h1>Spinthoutkever ( Familie Lyctidae )</h1>
+              <p>
+                Spinthoutkevers zijn tot 5 mm lange, slange bruine kevers. Ze zijn speciaal aangepast aan loofhoutsoorten met wijde porien, zoals bijvoorbeeld eiken, essen en walnoten, maar ook aan een groot aantal tropische houtsoorten en bamboe. De wijfjes leggen gewoonlijk de eitjes in de porien van het spinthout. De larven leven van de zetmeelhoudende inhoud van de cellen van het spinthout en veranderen daarbij het hout in een poederachtige massa die nog slechts door een dun laagje hout is omhuld. De volwassen larven knagen zich naar buiten tot vlak onder de oppervlakte, waar ze zich in een ovale verpoppingsruimte verpoppen. Zodra ze in volwassen kevers zijn veranderd verlaten ze door de kleine cirkelronde uitvliegopeningen het hout.
+                <br/>
+                De gehele ontwikkeling heeft gewoonlijk in de loop van één jaar plaats. Als schadelijk insect is de spinthoutkever in de loop der jaren steeds belangrijker geworden. Dit staat vooral in verband met de manier waarop tegenwoordig het hout wordt behandeld. Vroeger werd het jarenlang opgeslagen zodat de nog levende cellen van het hout de voedingsstoffen opgebruikten. De laatste jaren echter wordt het hout direct na het kappen met behulp van warmte gedroogd, waardoor de cellen afsterven, maar de zetmeelhoudende inhoud gespaard blijft. Hout dat op een dergelijke manier is behandeld blijft hierdoor voortdurend een geschikt object voor deze soorten. De spinthoutkever kunnen schade toebrengen aan plankjes van parket of panelen speciaal van eikenhout. Soms worden spinthoutkevers met tropische houtsoorten ingevoerd.
+              </p>
+              <h2>Hoe kom ik van het probleem af ?</h2>
+              <p>
+                Net als voor de meeste andere houtaantastende insecten geldt ook voor spinthoutkevers dat het een specialistische aanpak vergt om het te kunnen bestrijden. Wij voeren deze bestrijdingen niet uit. Er zijn bedrijven die zich hierin gespecialiseerd hebben. Voor meer informatie hierover kunt u bijvoorbeeld terecht bij Van Lierop. <a href="http://www.vanlierop.nl">www.vanlierop.nl</a>
+              </p>
+            </content>
           </page>
 
           <page id="veranderlijke-boktor">
-            <h1>Veranderlijke Boktor ( Phymatodes testaceus )</h1>
-            <p>
-              Van de veranderlijke boktor komen er veel kleurvarieteiten voor. Sommige hebben gelige dekvleugels, andere blauwe. De veranderlijke boktor tast hoofdzakelijk loofhout aan. Niet alleen beuken, maar ook berken en eiken. De volwassen kevers zal men gewoonlijk het eerst opmerken als ze in de kamer rond kruipen. Omdat de broedplaats noodzakelijkerwijs met bast bekleed moet zijn, moet men deze altijd in de haardblokken zoeken. De ovale uitvliegopeningen verraden waar de kevers vandaan gekomen zijn. Voor het huis betekenen de veranderlijke boktorren geen enkel risico. Als men echter stukken loofhout heeft liggen voor meubelmakerswerk doet men er goed aan om hiervan de bast te verwijderen omdat door de aantasting van de veranderlijke boktor de buitenste laag niet meer gebruikt kan worden.
-            </p>
-            <h2>Hoe kom ik van het probleem af ?</h2>
-            <p>
-              Indien er sprake is van de veranderlijke boktor, is zoals gezegd de kans groot dat het van openhaardhout afkomstig is. Ga na of er binnenshuis openhaardhout aanwezig is en inspecteer het hout goed op eventuele uitvliegopeningen. U kunt het hout opbranden of buiten bewaren.
-            </p>
+            <content>
+              <h1>Veranderlijke Boktor ( Phymatodes testaceus )</h1>
+              <p>
+                Van de veranderlijke boktor komen er veel kleurvarieteiten voor. Sommige hebben gelige dekvleugels, andere blauwe. De veranderlijke boktor tast hoofdzakelijk loofhout aan. Niet alleen beuken, maar ook berken en eiken. De volwassen kevers zal men gewoonlijk het eerst opmerken als ze in de kamer rond kruipen. Omdat de broedplaats noodzakelijkerwijs met bast bekleed moet zijn, moet men deze altijd in de haardblokken zoeken. De ovale uitvliegopeningen verraden waar de kevers vandaan gekomen zijn. Voor het huis betekenen de veranderlijke boktorren geen enkel risico. Als men echter stukken loofhout heeft liggen voor meubelmakerswerk doet men er goed aan om hiervan de bast te verwijderen omdat door de aantasting van de veranderlijke boktor de buitenste laag niet meer gebruikt kan worden.
+              </p>
+              <h2>Hoe kom ik van het probleem af ?</h2>
+              <p>
+                Indien er sprake is van de veranderlijke boktor, is zoals gezegd de kans groot dat het van openhaardhout afkomstig is. Ga na of er binnenshuis openhaardhout aanwezig is en inspecteer het hout goed op eventuele uitvliegopeningen. U kunt het hout opbranden of buiten bewaren.
+              </p>
+            </content>
           </page>
 
         </pages>
       </page>
 
       <page id="kakkerlakken">
-        <h1>Kakkerlakken</h1>
-        <p>
-          Reeds in het steenkolentijdperk, zo’n 250 miljoen jaar geleden leefden er al
-          kakkerlakken die veel leken op de kakkerlakken die we vandaag de dag kennen.
-          Het zijn overigens maar een paar soorten van deze insectengroep die ze hun
-          kwalijke reputatie hebben bezorgd. Verreweg de meeste van de circa 4000 soorten
-          die er bekend zijn leven in de vrije natuur en komen vrijwel nooit met mensen
-          in contact. Ook in ons land leven er enkele kakkerlaksoorten in het vrije veld,
-          maar verreweg de meeste zijn tropische dieren. De in onze huizen levende soorten
-          zijn pas in de loop van de laatste eeuwen hierheen versleept en zijn hier
-          volkomen afhankelijk van onze verwarmde huizen en gebouwen.
-        </p>
-        <h2>Duitse kakkerlak ( Blattella germanica L. )</h2>
-        <p>
-          De Duitse kakkerlak is verreweg de meest algemene soort. Op de meeste mensen heeft het een afschrikwekkend effect om een kakkerlak op de keukentafel te zien, maar als men de tijd ervoor neemt om hem eens beter te bekijken, dan zal men ontdekken dat het een bijzonder dier is. Beide geslachten hebben goed ontwikkelde vleugels die het gehele achterlijf bedekken. Ze gebruiken ze echter niet om mee te vliegen. Ze benutten ze als een soort zweefvlakken als ze van de tafel of een plank omlaag naar de vloer springen. De wijfjes leggen hun eieren in een bruin beschermend kapsel. Een dergelijk kapsel is in 30 – 40 kleine ruimten verdeeld met in ieder een eitje. Bij de Duitse kakkerlak draagt het wijfje dit kapsel rond waarbij het uit de geslachtsopening steekt totdat de kleine vleugelloze jongen op het punt staan om uit te komen. Bij kamertemperatuur is voor de ontwikkeling tot volwassen kakkerlak circa een half jaar nodig. Kakkerlakken eten praktisch gesproken altijd. Ze zijn ’s nachts het meest actief. Als het licht is verschuilen ze zich in naden en kieren, vooral in de nabijheid van warmtebronnen zoals ovens, koelkastmotoren en verwarmingsleidingen. Kakkerlakken leven graag in groepen bij elkaar. De stof die ze aantrekt wordt door een bepaalde klier in de darmen afgescheiden. Ook het paringsgedrag bij de kakkerlakken wordt in sterke mate door geursignalen bepaald. De wijfjes scheiden geurstoffen af die in geringe mate de mannetjes aantrekken en in grotere hoeveelheden de paring zelf in gang zetten.
-        </p>
-        <p>
-          In ons land komt de Duitse kakkerlak het meest voor in restaurants, maar ze komen ook zo nu en dan voor in kantines, voedselverwerkende bedrijven en in de gewone keuken bij ons thuis.
-          Gewoonlijk is de directe schade die ze aanrichten gering, maar het kunnen wel degelijk ziekteoverbrengers zijn. Ze voeden zich met allerlei menselijk voedsel, uitwerpselen en vervuilde producten. De ziektekiemen herbergen ze in de inhoud van hun darmen. Dit is de rede dat de aanwezigheid van kakkerlakken een behoorlijk risico vormt, want de ziektekiemen die ze dragen tasten het insect niet aan maar worden lukraak verspreid door de uitwerpselen op voedsel en plaatsen waar voedsel bereid wordt. Op deze manier wordt de mens ermee geïnfecteerd. Daarnaast kunnen ze ook ziektekiemen verspreiden met hun poten en monddelen. In grotere aantallen kunnen ze ook een onaangename geur verspreiden.
-        </p>
-        <h2>
-          Hoe kom ik er vanaf ?
-        </h2>
-        <p>
-          Kakkerlakken zijn uiterst moeilijk te bestrijden zonder professionele middelen. Een goede hygiene kan een probleem voorkomen, maar wanneer ze er eenmaal zijn is ook dat vaak niet afdoende. Spuitbussen raden we sterk af. Er zullen ongetwijfeld een paar doden vallen, maar het merendeel wordt juist verschillende kanten opgedreven wat een grotere verspreiding tot gevolg heeft. Ook de eitjes bezitten een beschermend omhulsel die ertegen bestand is.
-        </p>
-        <p>Voor een bestrijding kunt u bij ons terecht voor het maken van een afspraak > 0900-2556677. Er hoeven geen voorzorgsmaatregelen getroffen te worden en tijdens de behandeling kunt u gewoon aanwezig zijn. De methode die wij toepassen is geheel veilig voor kinderen en huisdieren.</p>
+        <content>
+          <h1>Kakkerlakken</h1>
+          <p>
+            Reeds in het steenkolentijdperk, zo’n 250 miljoen jaar geleden leefden er al
+            kakkerlakken die veel leken op de kakkerlakken die we vandaag de dag kennen.
+            Het zijn overigens maar een paar soorten van deze insectengroep die ze hun
+            kwalijke reputatie hebben bezorgd. Verreweg de meeste van de circa 4000 soorten
+            die er bekend zijn leven in de vrije natuur en komen vrijwel nooit met mensen
+            in contact. Ook in ons land leven er enkele kakkerlaksoorten in het vrije veld,
+            maar verreweg de meeste zijn tropische dieren. De in onze huizen levende soorten
+            zijn pas in de loop van de laatste eeuwen hierheen versleept en zijn hier
+            volkomen afhankelijk van onze verwarmde huizen en gebouwen.
+          </p>
+          <h2>Duitse kakkerlak ( Blattella germanica L. )</h2>
+          <p>
+            De Duitse kakkerlak is verreweg de meest algemene soort. Op de meeste mensen heeft het een afschrikwekkend effect om een kakkerlak op de keukentafel te zien, maar als men de tijd ervoor neemt om hem eens beter te bekijken, dan zal men ontdekken dat het een bijzonder dier is. Beide geslachten hebben goed ontwikkelde vleugels die het gehele achterlijf bedekken. Ze gebruiken ze echter niet om mee te vliegen. Ze benutten ze als een soort zweefvlakken als ze van de tafel of een plank omlaag naar de vloer springen. De wijfjes leggen hun eieren in een bruin beschermend kapsel. Een dergelijk kapsel is in 30 – 40 kleine ruimten verdeeld met in ieder een eitje. Bij de Duitse kakkerlak draagt het wijfje dit kapsel rond waarbij het uit de geslachtsopening steekt totdat de kleine vleugelloze jongen op het punt staan om uit te komen. Bij kamertemperatuur is voor de ontwikkeling tot volwassen kakkerlak circa een half jaar nodig. Kakkerlakken eten praktisch gesproken altijd. Ze zijn ’s nachts het meest actief. Als het licht is verschuilen ze zich in naden en kieren, vooral in de nabijheid van warmtebronnen zoals ovens, koelkastmotoren en verwarmingsleidingen. Kakkerlakken leven graag in groepen bij elkaar. De stof die ze aantrekt wordt door een bepaalde klier in de darmen afgescheiden. Ook het paringsgedrag bij de kakkerlakken wordt in sterke mate door geursignalen bepaald. De wijfjes scheiden geurstoffen af die in geringe mate de mannetjes aantrekken en in grotere hoeveelheden de paring zelf in gang zetten.
+          </p>
+          <p>
+            In ons land komt de Duitse kakkerlak het meest voor in restaurants, maar ze komen ook zo nu en dan voor in kantines, voedselverwerkende bedrijven en in de gewone keuken bij ons thuis.
+            Gewoonlijk is de directe schade die ze aanrichten gering, maar het kunnen wel degelijk ziekteoverbrengers zijn. Ze voeden zich met allerlei menselijk voedsel, uitwerpselen en vervuilde producten. De ziektekiemen herbergen ze in de inhoud van hun darmen. Dit is de rede dat de aanwezigheid van kakkerlakken een behoorlijk risico vormt, want de ziektekiemen die ze dragen tasten het insect niet aan maar worden lukraak verspreid door de uitwerpselen op voedsel en plaatsen waar voedsel bereid wordt. Op deze manier wordt de mens ermee geïnfecteerd. Daarnaast kunnen ze ook ziektekiemen verspreiden met hun poten en monddelen. In grotere aantallen kunnen ze ook een onaangename geur verspreiden.
+          </p>
+          <h2>
+            Hoe kom ik er vanaf ?
+          </h2>
+          <p>
+            Kakkerlakken zijn uiterst moeilijk te bestrijden zonder professionele middelen. Een goede hygiene kan een probleem voorkomen, maar wanneer ze er eenmaal zijn is ook dat vaak niet afdoende. Spuitbussen raden we sterk af. Er zullen ongetwijfeld een paar doden vallen, maar het merendeel wordt juist verschillende kanten opgedreven wat een grotere verspreiding tot gevolg heeft. Ook de eitjes bezitten een beschermend omhulsel die ertegen bestand is.
+          </p>
+          <p>Voor een bestrijding kunt u bij ons terecht voor het maken van een afspraak > 0900-2556677. Er hoeven geen voorzorgsmaatregelen getroffen te worden en tijdens de behandeling kunt u gewoon aanwezig zijn. De methode die wij toepassen is geheel veilig voor kinderen en huisdieren.</p>
+        </content>
       </page>
     </pages>
   </page>
 
-  <page id="openbare ruimte" tab="true">
-    <h1>Openbare Ruimte</h1>
-    <p>De meeste diersoorten die wij in onze openbare ruimte aantreffen vormen geen 
-    bedreiging voor onze gezondheid. We kunnen daarom alleen maar zeer blij zijn met 
-    het brede scala aan diersoorten die de buitenwereld met ons delen. Er zijn echter 
-    enkele situaties denkbaar, waarbij een melding hiervan gewenst is. Dit zijn 
-    situaties waarbij de risico’s voor de volksgezondheid vergroot kunnen worden.</p>
-    <p>Wanneer er bijvoorbeeld regelmatig ratten gesignaleerd worden in bewoonde 
-    gebieden, is het van belang dat deze signaleringen gemeld worden bij de betreffende 
-    afdeling binnen uw gemeente. Zij kunnen de beheersing hiervan op de juiste manier 
-    coördineren.</p>
+  <page id="openbare-ruimte" tab="true">
+    <content>
+      <h1>Openbare Ruimte</h1>
+      <p>
+        De meeste diersoorten die wij in onze openbare ruimte aantreffen vormen geen
+        bedreiging voor onze gezondheid. We kunnen daarom alleen maar zeer blij zijn met
+        het brede scala aan diersoorten die de buitenwereld met ons delen. Er zijn echter
+        enkele situaties denkbaar, waarbij een melding hiervan gewenst is. Dit zijn
+        situaties waarbij de risico’s voor de volksgezondheid vergroot kunnen worden.
+      </p>
+      <p>
+        Wanneer er bijvoorbeeld regelmatig ratten gesignaleerd worden in bewoonde
+        gebieden, is het van belang dat deze signaleringen gemeld worden bij de betreffende
+        afdeling binnen uw gemeente. Zij kunnen de beheersing hiervan op de juiste manier
+        coördineren.
+      </p>
 
-    <p>
-      Via dezelfde weg kan ook de aanwezigheid van grote hoeveelheden 
-      eikenprocessierupsen in eikenbomen gemeld worden.
-    </p>
+      <p>
+        Via dezelfde weg kan ook de aanwezigheid van grote hoeveelheden
+        eikenprocessierupsen in eikenbomen gemeld worden.
+      </p>
 
-    <p>Wanneer er een bijenvolk gesignaleerd wordt op een ongelukkige plek, 
-    bijvoorbeeld waar kinderen spelen, dan kunt u een imker raadplegen (Gouden Gids). 
-    Deze kan het volk verplaatsen of meenemen.</p>
+      <p>
+        Wanneer er een bijenvolk gesignaleerd wordt op een ongelukkige plek,
+        bijvoorbeeld waar kinderen spelen, dan kunt u een imker raadplegen.
+        Deze kan het volk verplaatsen of meenemen.
+      </p>
 
-    <p>
-      Wanneer duiven, meeuwen of andere vogels tot veel overlast zorgen, kan dit 
-      alleen maar tegengegaan worden door niet te voeren. Wanneer u daarvoor 
-      afhankelijk bent van buurtbewoners, dient u onderling in gesprek te gaan om 
-      een gezamenlijke uitweg te vinden, bijvoorbeeld een speciaal hiervoor aangewezen 
-      voederplaats. Wanneer vogels uw eigendom bevuilen, kunt u dit voorkomen door 
-      vogelwering aan te brengen. U dient wel rekening te houden met de broedperiode 
-      van vogels. Ook wanneer ze tijdens deze periode nestelen in uw huis of tuin 
-      dienen ze met rust gelaten te worden.
-    </p>
+      <p>
+        Wanneer duiven, meeuwen of andere vogels tot veel overlast zorgen, kan dit
+        alleen maar tegengegaan worden door niet te voeren. Wanneer u daarvoor
+        afhankelijk bent van buurtbewoners, dient u onderling in gesprek te gaan om
+        een gezamenlijke uitweg te vinden, bijvoorbeeld een speciaal hiervoor aangewezen
+        voederplaats. Wanneer vogels uw eigendom bevuilen, kunt u dit voorkomen door
+        vogelwering aan te brengen. U dient wel rekening te houden met de broedperiode
+        van vogels. Ook wanneer ze tijdens deze periode nestelen in uw huis of tuin
+        dienen ze met rust gelaten te worden.
+      </p>
+    </content>
+
   </page>
 
   <page id="volksgezondheid" tab="true">
-    <h1>Gevaren van stedelijk ongedierte voor de volksgezondheid</h1>
-    <span id="docs-internal-guid-0bed6a6e-46cd-e207-b2a1-1e448b79e733">
-      <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-        <span style="font-size: 21px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Gevaren van stedelijk ongedierte voor de volksgezondheid</span>
-      </p>
-      <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-        <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
-      </p>
-      <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-        <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
-      </p>
-      <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-        <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;">Samenvatting WHO rapport</span>
-      </p>
-      <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-        <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
-      </p>
-      <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-        <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
-      </p>
-      <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-        <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Dit rapport toont onomstotelijk aan dat stedelijke gebieden in toenemende mate te kampen hebben met ongedierte en (voortvloeiend daaruit) met door ongedierte overgedragen ziekten. Dit complexe probleem van toenemende blootstelling heeft milieutechnische, structurele, institutionele, regulatorische, bestuurlijke, financiële, wetenschappelijke en klimatologische aspecten. Er zijn oplossingen gevonden waarmee de volksgezondheid beter kan worden beschermd, door invoering van een verbeterd systeem voor het bestrijden van ongedierte en van door ongedierte overgedragen ziekten. Deze oplossingen maken juridische actie, scholing, ontwikkeling van institutionele bevoegdheden en onderzoek op internationaal, nationaal en lokaal niveau noodzakelijk.</span>
-      </p>
-      <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-        <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
-      </p>
-      <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-        <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">De conclusies zijn gebaseerd op het momenteel beschikbare bewijs, maar het is van belang om te begrijpen dat er belangrijke factoren zijn (zoals de gevolgen die de klimaatverandering heeft voor het landschap, ecosystemen en de toekomstige patronen van bacillaire ziekten), die in de toekomst een grote rol zullen spelen.</span>
-      </p>
-      <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-        <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
-      </p>
-      <p dir="ltr" style="line-height:1;margin-top:0pt;margin-bottom:0pt;text-align: justify;">
-        <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Met name de klimaatverandering is relevant omdat hierdoor naar verwachting niet alleen de natuurlijke omgeving zal veranderen ten gevolge van overstromingen en droogtes, maar ook de stedelijke omgeving vanwege een veranderend gebruik van het land.</span>
-      </p>
-      <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-        <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
-      </p>
-      <p dir="ltr" style="line-height:1;margin-top:0pt;margin-bottom:0pt;text-align: justify;">
-        <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">De toekomst moet uitwijzen in welke mate deze factoren het risico van door ongedierte overgedragen ziekten zullen beïnvloeden. Toch kunnen de conclusies die in dit rapport worden getrokken, nationale overheden een beter begrip geven van de toenemende invloed die ongedierte in steden heeft op de volksgezondheid, en hen helpen om zich hierop technisch voor te bereiden en een plan van aanpak op te stellen.</span>
-      </p>
-      <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-        <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
-      </p>
-      <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-        <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Het bewijs dat in dit boek wordt gepresenteerd, is gebaseerd op een beoordeling van de huidige toestand van stedelijk ongedierte en de gezondheid in Europa en Noord-Amerika, en steunt voornamelijk op wetenschappelijk onderzoek en regulatorische benaderingen die in deze werelddelen zijn ontwikkeld. Toch kunnen de beschreven bewijzen en regulatorische benaderingen ook van pas komen in landen elders, afhankelijk van de nationale context.</span>
-      </p>
-      <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-        <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
-      </p>
-      <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-        <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
-      </p>
-      <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-        <span style="font-size: 16px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;">Juridische vereisten</span>
-      </p>
-      <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-        <span style="font-size: 16px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
-      </p>
-      <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-        <span style="font-size: 16px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
-      </p>
-      <p dir="ltr" style="line-height:1;margin-top:0pt;margin-bottom:0pt;text-align: justify;">
-        <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Een basisvereiste voor het doorvoeren van de juiste (en effectieve) preventieve en bestuurlijke maatregelen is, dat men over de juiste juridische vereisten beschikt die de betreffende ministeries en instanties in staat stellen om in actie te komen en die hen de bevoegdheden geven om op te treden.</span>
-      </p>
-      <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-        <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
-      </p>
-      <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-        <span style="font-size: 13px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;">Planning en constructie</span>
-      </p>
-      <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-        <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
-      </p>
-      <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-        <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Door het vervagen van de grens tussen stedelijke en landelijke gebieden worden uitdijende voorsteden gevoeliger voor ongedierte en de ziekten die dit meedraagt. Omdat veel zoönotische ziektekiemen (d.w.z. ziektekiemen die van dieren op mensen kunnen worden overdragen) eerder tussen vectoren en hun gastheren in landelijke gebieden zullen worden overgedragen, wordt het besmettingsrisico groter naarmate landelijke voorzieningen, zoals bosterreinen en recreatiegebieden, zich uitbreiden.</span>
-      </p>
-      <br />
+    <content>
+      <h1>Gevaren van stedelijk ongedierte voor de volksgezondheid</h1>
+      <span id="docs-internal-guid-0bed6a6e-46cd-e207-b2a1-1e448b79e733">
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 21px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Gevaren van stedelijk ongedierte voor de volksgezondheid</span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;">Samenvatting WHO rapport</span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Dit rapport toont onomstotelijk aan dat stedelijke gebieden in toenemende mate te kampen hebben met ongedierte en (voortvloeiend daaruit) met door ongedierte overgedragen ziekten. Dit complexe probleem van toenemende blootstelling heeft milieutechnische, structurele, institutionele, regulatorische, bestuurlijke, financiële, wetenschappelijke en klimatologische aspecten. Er zijn oplossingen gevonden waarmee de volksgezondheid beter kan worden beschermd, door invoering van een verbeterd systeem voor het bestrijden van ongedierte en van door ongedierte overgedragen ziekten. Deze oplossingen maken juridische actie, scholing, ontwikkeling van institutionele bevoegdheden en onderzoek op internationaal, nationaal en lokaal niveau noodzakelijk.</span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">De conclusies zijn gebaseerd op het momenteel beschikbare bewijs, maar het is van belang om te begrijpen dat er belangrijke factoren zijn (zoals de gevolgen die de klimaatverandering heeft voor het landschap, ecosystemen en de toekomstige patronen van bacillaire ziekten), die in de toekomst een grote rol zullen spelen.</span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1;margin-top:0pt;margin-bottom:0pt;text-align: justify;">
+          <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Met name de klimaatverandering is relevant omdat hierdoor naar verwachting niet alleen de natuurlijke omgeving zal veranderen ten gevolge van overstromingen en droogtes, maar ook de stedelijke omgeving vanwege een veranderend gebruik van het land.</span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1;margin-top:0pt;margin-bottom:0pt;text-align: justify;">
+          <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">De toekomst moet uitwijzen in welke mate deze factoren het risico van door ongedierte overgedragen ziekten zullen beïnvloeden. Toch kunnen de conclusies die in dit rapport worden getrokken, nationale overheden een beter begrip geven van de toenemende invloed die ongedierte in steden heeft op de volksgezondheid, en hen helpen om zich hierop technisch voor te bereiden en een plan van aanpak op te stellen.</span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Het bewijs dat in dit boek wordt gepresenteerd, is gebaseerd op een beoordeling van de huidige toestand van stedelijk ongedierte en de gezondheid in Europa en Noord-Amerika, en steunt voornamelijk op wetenschappelijk onderzoek en regulatorische benaderingen die in deze werelddelen zijn ontwikkeld. Toch kunnen de beschreven bewijzen en regulatorische benaderingen ook van pas komen in landen elders, afhankelijk van de nationale context.</span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 16px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;">Juridische vereisten</span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 16px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 16px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1;margin-top:0pt;margin-bottom:0pt;text-align: justify;">
+          <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Een basisvereiste voor het doorvoeren van de juiste (en effectieve) preventieve en bestuurlijke maatregelen is, dat men over de juiste juridische vereisten beschikt die de betreffende ministeries en instanties in staat stellen om in actie te komen en die hen de bevoegdheden geven om op te treden.</span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 13px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;">Planning en constructie</span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Door het vervagen van de grens tussen stedelijke en landelijke gebieden worden uitdijende voorsteden gevoeliger voor ongedierte en de ziekten die dit meedraagt. Omdat veel zoönotische ziektekiemen (d.w.z. ziektekiemen die van dieren op mensen kunnen worden overdragen) eerder tussen vectoren en hun gastheren in landelijke gebieden zullen worden overgedragen, wordt het besmettingsrisico groter naarmate landelijke voorzieningen, zoals bosterreinen en recreatiegebieden, zich uitbreiden.</span>
+        </p>
+        <br />
         <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;"></span>
         <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;text-align: right;">
           <span style="font-size: 9px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Samenvatting</span>
@@ -426,193 +453,194 @@
           <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;"> </span>
         </p>
         <br />
-          <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;"></span>
-          <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-            <span style="font-size: 9px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Gevaren van stedelijk ongedierte voor de volksgezondheid</span>
-          </p>
-          <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-            <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
-          </p>
-          <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-            <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
-          </p>
-          <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-            <span style="font-size: 16px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;">Melding, goedkeuring en publiek besef</span>
-          </p>
-          <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-            <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
-          </p>
-          <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-            <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
-          </p>
-          <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-            <span style="font-size: 13px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;">Melding</span>
-          </p>
-          <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-            <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
-          </p>
-          <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;margin-left: 2pt;">
-            <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Ten gevolge van verschillen tussen de lidstaten van de Europese Unie (EU), is het meldsysteem in Europa inconsistent. Lyme borreliosis bijvoorbeeld, de meest voorkomende door geleedpotigen overgedragen ziekte in Europa, moet in sommige EU-lidstaten worden gemeld en in andere niet. Het is daardoor buitengewoon moeilijk om betrouwbare epidemiologische gegevens te verzamelen. Waar ziekten moeten worden gemeld, variëren de regels voor aangifte vaak van land tot land, waardoor het onmogelijk is om gegevens te vergelijken. Ten slotte zijn gegevens meestal niet toegankelijk voor het publiek, worden ze niet in gemakkelijk toegankelijke databases bijgehouden of worden ze niet in een gebruiksvriendelijke vorm gepresenteerd. De volgende maatregelen kunnen helpen om deze situatie te verbeteren.</span>
-          </p>
-          <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-            <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;"> </span>
-          </p>
-          <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;margin-left: 38pt;text-indent: -18pt;">
-            <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">7.</span>
-            <span style="font-size: 9px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;</span>
-            <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Op internationaal niveau moet er overeenstemming worden bereikt over uitgebreide en genormaliseerde meldingsvereisten voor door ongedierte overgedragen ziekten, evenals andere adequate mechanismen om gegevens centraal te verzamelen en te analyseren, en om biologische en epidemiologische gegevens openbaar te maken. Door vroege melding verplicht te stellen (een duidelijke vereiste voor het ontwikkelen van adequaat volksgezondheidsbeleid) kunnen lidstaten correct worden geïnformeerd.</span>
-          </p>
-          <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-            <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
-          </p>
-          <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-            <span style="font-size: 13px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;">Goedkeuring</span>
-          </p>
-          <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-            <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
-          </p>
-          <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;margin-left: 2pt;">
-            <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Niet alleen zijn er internationale verschillen ten aanzien van de eisen voor de goedkeuring van pesticiden. De complexiteit en kosten voor de goedkeuring van pesticiden nemen voortdurend toe, wat tot gevolg heeft dat enerzijds veel bedrijven er momenteel van worden weerhouden om producten op de markt te brengen die efficiënter en goedkoper zouden zijn dan de bestaande, en anderzijds acceptabele producten die minder worden gebruikt, van de markt worden gehaald. Hierdoor neemt de kans toe dat het marktaanbod van de beste beschikbare pesticiden voor een specifieke toepassing aanzienlijk zal worden beperkt vanwege de kosten van de goedkeuringsprocedure. Het betekent ook dat de concurrentie op de markt voor pesticiden zal verschuiven naar grote internationale ondernemingen die het zich kunnen permitteren om hun pesticiden te laten goedkeuren. Dit heeft tot gevolg dat het aanbod aan pesticiden schraler wordt en de behandelingsmogelijkheden worden beperkt. Ook zullen methoden voor ongediertebestrijding die minder belangrijk of nieuw zijn, niet verder worden ontwikkeld omdat dit niet rendabel is of omdat het moeilijk is om ze goedgekeurd te krijgen. Wellicht is dit een manier om de situatie te verbeteren:</span>
-          </p>
-          <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-            <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;"> </span>
-          </p>
-          <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;margin-left: 38pt;text-indent: -18pt;">
-            <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">8.</span>
-            <span style="font-size: 9px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;</span>
-            <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">De kosten die worden berekend voor het verkrijgen van goedkeuringen voor pesticiden, moeten opnieuw worden overwogen en indien mogelijk worden verlaagd. Hierdoor kunnen meer efficiënte en goedkopere pesticiden worden ontwikkeld en geregistreerd, evenals pesticiden voor minder vaak voorkomende plagen. Goedkeuringstarieven moeten niet worden opgetrokken om niet verwante behoeften te dekken.</span>
-          </p>
-          <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-            <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
-          </p>
-          <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-            <span style="font-size: 13px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;">Publieke bewustheid</span>
-          </p>
-          <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-            <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
-          </p>
-          <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;margin-left: 2pt;">
-            <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Publieke informatie en educatie zijn essentieel voor een efficiënte en succesvolle ongediertebestrijding, zowel met betrekking tot preventie als beheersing. De meeste mensen zijn zich er niet van bewust hoe hun gewoonten, hun gedrag en veranderingen in hun woning commensaal ongedierte kunnen aantrekken en ideale leefomstandigheden opleveren waarin dit ongedierte gedijt. Ze weten meestal ook niet dat ongedierte ziektekiemen draagt en dat eenvoudige persoonlijke maatregelen kunnen worden genomen om het contact met ongedierte te vermijden.</span>
-          </p>
-          <br />
-            <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;"></span>
-            <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;margin-left: 2pt;text-align: right;">
-              <span style="font-size: 9px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Samenvatting</span>
-            </p>
-            <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-              <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
-            </p>
-            <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-              <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
-            </p>
-            <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;margin-left: 2pt;">
-              <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Bovendien weten ze vaak niet hoe ze met pesticiden moeten omgaan. Daarom is openbare voorlichting niet alleen een basisbehoefte, maar is het ook economisch verstandig, omdat deze voorlichting er in aanzienlijke mate toe bijdraagt om via particuliere acties ongedierteplagen te voorkomen. De volgende maatregel kan helpen om deze situatie te verbeteren.</span>
-            </p>
-            <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-              <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;"> </span>
-            </p>
-            <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;margin-left: 38pt;text-indent: -18pt;">
-              <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">9.</span>
-              <span style="font-size: 9px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;</span>
-              <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Er moet een informatiepakket worden ontwikkeld voor het publiek, om het er bewust van te maken hoe men zich door middel van eenvoudige hygiënische maatregelen en gedragsaanpassingen kan beschermen. Dergelijke informatie moet het publiek ook duidelijk maken hoe men pesticiden het beste kan bewaren en gebruiken, waardoor ook de risico’s van het opslag en gebruik hiervan kunnen worden beperkt.</span>
-            </p>
-            <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-              <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
-            </p>
-            <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-              <span style="font-size: 13px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;">Institutionele capaciteiten</span>
-            </p>
-            <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-              <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
-            </p>
-            <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;margin-left: 2pt;">
-              <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Up-to-date gegevens over de aanwezigheid en verdeling van ongedierte en van met ongedierte samenhangende ziekten zijn meestal schaars (of ontbreken zelfs geheel) in de EU. In het verleden waren het overheidsdepartementen en -instanties die plagen bestreden en gegevens verzamelden. Deze vorm van activiteit is echter langzaam (maar substantieel) verminderd (of zelfs beëindigd) vanwege bezuinigingen. Hoewel er al jarenlang sprake is van een toename van ongediertebestrijding, zijn overheidsinstanties niet vernieuwd en is er niet voldoende geïnvesteerd in adequaat personeel, apparatuur of financiële middelen om op te treden als controle-units om epidemiologische gegevens te verzamelen. Het is voor iedereen een probleem dat er in Europa geen nationale of internationale instellingen verantwoordelijk zijn voor het verzamelen van vectorverwante informatie en het coördineren van ongediertebestrijding. De volgende maatregelen kunnen helpen om deze situatie te verbeteren.</span>
-            </p>
-            <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-              <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;"> </span>
-            </p>
-            <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;margin-left: 38pt;text-indent: -18pt;">
-              <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">10.</span>
-              <span style="font-size: 9px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">
-                <span class="Apple-tab-span" style="white-space:pre;">	</span>
-              </span>
-              <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Het regionale WHO-kantoor voor EU-lidstaten zou, via de gezamenlijke inspanningen van hun instanties voor volksgezondheid, profiteren van: het ontwikkelen van het vermogen om met ongedierte samenhangende risico’s in stedelijke omgevingen aan te wijzen (d.w.z. ongedierte en door ongedierte overgedragen ziekten identificeren die momenteel voorkomen of die de kop zouden kunnen opsteken), het wijd-verspreid-zijn van de verschillende infecties bepalen en vastleggen, en bijhouden welke reservoirs van gastheersoorten er zijn evenals de geografische verspreiding van verschillende soorten ongedierte en hun overdrachttechnieken. Zij zouden ook gebruik kunnen maken van een geactualiseerde lijst met risicogebieden.</span>
-            </p>
-            <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-              <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
-            </p>
-            <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;margin-left: 38pt;text-indent: -18pt;">
-              <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">11.</span>
-              <span style="font-size: 9px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">
-                <span class="Apple-tab-span" style="white-space:pre;">	</span>
-              </span>
-              <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Overheden in de Europese regio zouden er (net als andere landen) voor moeten zorgen dat er controle-instanties komen met voldoende opgeleid personeel. Er moet een goed opgeleide volksgezondheidseenheid komen die kan omgaan met ongediertebestrijding en de behandeling van vectorziekten, zodat het publiek wordt beschermd tegen de gezondheidsrisico’s door stedelijk ongedierte. Deze speciale eenheid zou bijvoorbeeld goede diensten kunnen bewijzen op kwetsbare locaties, zoals zee- en luchthavens. Er zijn specialisten in onder meer entomologie, medische zoölogie, toxicologie, ecotoxicologie en gezondheidsmanagement nodig om: ongediertebestrijders op te leiden, te helpen bij het ontwikkelen van beheersingsprogramma’s (waaronder strategieën en het gebruik van pesticiden), afspraken te maken over actiedrempels en gedefinieerde beheersingsdoelen, en om te zorgen voor een harmonieuze samenwerking tussen alle belanghebbenden, waaronder overheidsdepartementen en -instanties, lokale overheden, het bedrijfsleven, consumentengroepen en het publiek.</span>
-            </p>
-            <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-              <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
-            </p>
-            <br />
-              <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"></span>
-              <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-                <span style="font-size: 9px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Gevaren van stedelijk ongedierte voor de volksgezondheid</span>
-              </p>
-              <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-                <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
-              </p>
-              <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-                <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
-              </p>
-              <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;margin-left: 38pt;text-indent: -18pt;">
-                <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">12.</span>
-                <span style="font-size: 9px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">
-                  <span class="Apple-tab-span" style="white-space:pre;">	</span>
-                </span>
-                <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Zowel op nationaal als lokaal niveau moeten autoriteiten worden aangewezen die informatie ten aanzien van vectorziekten beheren. De rol van partners evenals de mechanismen voor het coördineren van de inspanningen van partners, moeten worden geformuleerd en uitgewerkt. Hoewel er Europese instanties zijn die informatie over ziekten verzamelen, is er behoefte aan een supranationale organisatie die informatie over vectoren verzamelt, omdat het meeste werk op dit gebied op lokaal niveau (nationaal) wordt uitgevoerd en er geen sprake is van coördinatie.</span>
-              </p>
-              <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-                <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
-              </p>
-              <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-                <span style="font-size: 13px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;">Onderzoek</span>
-              </p>
-              <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-                <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
-              </p>
-              <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;margin-left: 2pt;">
-                <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Bestudering van de diverse hoofdstukken van dit rapport (zoals de gedeelten over teken, muskieten en vlooien) laat zien dat, hoewel de biologie en het gedrag van dergelijk ongedierte grondig in kaart is gebracht, de epidemiologie van de ziekten die zij overdragen (met name in het geval van recent opgekomen ziekten) nauwelijks wordt begrepen. Hoewel er een duidelijke behoefte aan een beter begrip bestaat, worden wetenschappers die zijn gespecialiseerd in de klassieke disciplines medische zoölogie en medische entomologie steeds zeldzamer doordat overheden en universiteiten hun beperkte financiële middelen meer en meer voor andere terreinen gebruiken. Door deze verschuiving wordt niet alleen het onderzoek in de klassieke disciplines verwaarloosd, maar is ook de kennis die dit onderzoek schraagt, langzaam maar onherroepelijk aan het verdwijnen. Bovendien hebben gezondheidsprofessionals en artsen het vaak te druk om zich te verdiepen in ongedierte en door ongedierte overgedragen ziekten, en op universiteiten is er zelden nog een specialist te vinden die kan worden geraadpleegd.</span>
-              </p>
-              <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-                <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;"> </span>
-              </p>
-              <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;margin-left: 2pt;">
-                <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Hetzelfde geldt voor ongediertecontrole en -beheersing. Particuliere bedrijven voor ongediertebestrijding zijn steeds minder (of helemaal niet meer) betrokken bij onderzoek en ontwikkeling, en de branche concentreert zich doorgaans op producten waarvoor al een markt bestaat.</span>
-              </p>
-              <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-                <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;"> </span>
-              </p>
-              <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;margin-left: 2pt;">
-                <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Het volgende, laatste punt in deze samenvatting, is een belangrijke conclusie van dit rapport.</span>
-              </p>
-              <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-                <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
-              </p>
-              <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;margin-left: 38pt;text-indent: -18pt;">
-                <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">13.</span>
-                <span style="font-size: 9px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">
-                  <span class="Apple-tab-span" style="white-space:pre;">	</span>
-                </span>
-                <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Overheden, programma’s voor de volksgezondheid en het algemene publiek zouden er baat bij hebben als wetenschappelijk onderzoek naar ongedierte wordt aangemoedigd, ondersteund en gepromoot. Dit zou leiden tot meer verfijnde kennis van de biologie, de ecologie en het gedrag van ongedierte en van de epidemiologie van door ongedierte overgedragen ziekten. Dit is dringend nodig, evenals meer doelmatige en specifieke gereedschappen en actieve ingrediënten voor de controle en beheersing van ongedierte.</span>
-              </p>
-              <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-                <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
-              </p>
-              <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
-                <span style="font-size: 15px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;"> </span>
-              </p>
-              <br />
-                <span style="font-size: 15px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;"></span>
-    </span>
+        <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;"></span>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 9px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Gevaren van stedelijk ongedierte voor de volksgezondheid</span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 16px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;">Melding, goedkeuring en publiek besef</span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 13px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;">Melding</span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;margin-left: 2pt;">
+          <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Ten gevolge van verschillen tussen de lidstaten van de Europese Unie (EU), is het meldsysteem in Europa inconsistent. Lyme borreliosis bijvoorbeeld, de meest voorkomende door geleedpotigen overgedragen ziekte in Europa, moet in sommige EU-lidstaten worden gemeld en in andere niet. Het is daardoor buitengewoon moeilijk om betrouwbare epidemiologische gegevens te verzamelen. Waar ziekten moeten worden gemeld, variëren de regels voor aangifte vaak van land tot land, waardoor het onmogelijk is om gegevens te vergelijken. Ten slotte zijn gegevens meestal niet toegankelijk voor het publiek, worden ze niet in gemakkelijk toegankelijke databases bijgehouden of worden ze niet in een gebruiksvriendelijke vorm gepresenteerd. De volgende maatregelen kunnen helpen om deze situatie te verbeteren.</span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;margin-left: 38pt;text-indent: -18pt;">
+          <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">7.</span>
+          <span style="font-size: 9px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;</span>
+          <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Op internationaal niveau moet er overeenstemming worden bereikt over uitgebreide en genormaliseerde meldingsvereisten voor door ongedierte overgedragen ziekten, evenals andere adequate mechanismen om gegevens centraal te verzamelen en te analyseren, en om biologische en epidemiologische gegevens openbaar te maken. Door vroege melding verplicht te stellen (een duidelijke vereiste voor het ontwikkelen van adequaat volksgezondheidsbeleid) kunnen lidstaten correct worden geïnformeerd.</span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 13px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;">Goedkeuring</span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;margin-left: 2pt;">
+          <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Niet alleen zijn er internationale verschillen ten aanzien van de eisen voor de goedkeuring van pesticiden. De complexiteit en kosten voor de goedkeuring van pesticiden nemen voortdurend toe, wat tot gevolg heeft dat enerzijds veel bedrijven er momenteel van worden weerhouden om producten op de markt te brengen die efficiënter en goedkoper zouden zijn dan de bestaande, en anderzijds acceptabele producten die minder worden gebruikt, van de markt worden gehaald. Hierdoor neemt de kans toe dat het marktaanbod van de beste beschikbare pesticiden voor een specifieke toepassing aanzienlijk zal worden beperkt vanwege de kosten van de goedkeuringsprocedure. Het betekent ook dat de concurrentie op de markt voor pesticiden zal verschuiven naar grote internationale ondernemingen die het zich kunnen permitteren om hun pesticiden te laten goedkeuren. Dit heeft tot gevolg dat het aanbod aan pesticiden schraler wordt en de behandelingsmogelijkheden worden beperkt. Ook zullen methoden voor ongediertebestrijding die minder belangrijk of nieuw zijn, niet verder worden ontwikkeld omdat dit niet rendabel is of omdat het moeilijk is om ze goedgekeurd te krijgen. Wellicht is dit een manier om de situatie te verbeteren:</span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;margin-left: 38pt;text-indent: -18pt;">
+          <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">8.</span>
+          <span style="font-size: 9px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;</span>
+          <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">De kosten die worden berekend voor het verkrijgen van goedkeuringen voor pesticiden, moeten opnieuw worden overwogen en indien mogelijk worden verlaagd. Hierdoor kunnen meer efficiënte en goedkopere pesticiden worden ontwikkeld en geregistreerd, evenals pesticiden voor minder vaak voorkomende plagen. Goedkeuringstarieven moeten niet worden opgetrokken om niet verwante behoeften te dekken.</span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 13px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;">Publieke bewustheid</span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;margin-left: 2pt;">
+          <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Publieke informatie en educatie zijn essentieel voor een efficiënte en succesvolle ongediertebestrijding, zowel met betrekking tot preventie als beheersing. De meeste mensen zijn zich er niet van bewust hoe hun gewoonten, hun gedrag en veranderingen in hun woning commensaal ongedierte kunnen aantrekken en ideale leefomstandigheden opleveren waarin dit ongedierte gedijt. Ze weten meestal ook niet dat ongedierte ziektekiemen draagt en dat eenvoudige persoonlijke maatregelen kunnen worden genomen om het contact met ongedierte te vermijden.</span>
+        </p>
+        <br />
+        <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;"></span>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;margin-left: 2pt;text-align: right;">
+          <span style="font-size: 9px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Samenvatting</span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;margin-left: 2pt;">
+          <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Bovendien weten ze vaak niet hoe ze met pesticiden moeten omgaan. Daarom is openbare voorlichting niet alleen een basisbehoefte, maar is het ook economisch verstandig, omdat deze voorlichting er in aanzienlijke mate toe bijdraagt om via particuliere acties ongedierteplagen te voorkomen. De volgende maatregel kan helpen om deze situatie te verbeteren.</span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;margin-left: 38pt;text-indent: -18pt;">
+          <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">9.</span>
+          <span style="font-size: 9px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;</span>
+          <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Er moet een informatiepakket worden ontwikkeld voor het publiek, om het er bewust van te maken hoe men zich door middel van eenvoudige hygiënische maatregelen en gedragsaanpassingen kan beschermen. Dergelijke informatie moet het publiek ook duidelijk maken hoe men pesticiden het beste kan bewaren en gebruiken, waardoor ook de risico’s van het opslag en gebruik hiervan kunnen worden beperkt.</span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 13px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;">Institutionele capaciteiten</span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;margin-left: 2pt;">
+          <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Up-to-date gegevens over de aanwezigheid en verdeling van ongedierte en van met ongedierte samenhangende ziekten zijn meestal schaars (of ontbreken zelfs geheel) in de EU. In het verleden waren het overheidsdepartementen en -instanties die plagen bestreden en gegevens verzamelden. Deze vorm van activiteit is echter langzaam (maar substantieel) verminderd (of zelfs beëindigd) vanwege bezuinigingen. Hoewel er al jarenlang sprake is van een toename van ongediertebestrijding, zijn overheidsinstanties niet vernieuwd en is er niet voldoende geïnvesteerd in adequaat personeel, apparatuur of financiële middelen om op te treden als controle-units om epidemiologische gegevens te verzamelen. Het is voor iedereen een probleem dat er in Europa geen nationale of internationale instellingen verantwoordelijk zijn voor het verzamelen van vectorverwante informatie en het coördineren van ongediertebestrijding. De volgende maatregelen kunnen helpen om deze situatie te verbeteren.</span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;margin-left: 38pt;text-indent: -18pt;">
+          <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">10.</span>
+          <span style="font-size: 9px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">
+            <span class="Apple-tab-span" style="white-space:pre;">	</span>
+          </span>
+          <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Het regionale WHO-kantoor voor EU-lidstaten zou, via de gezamenlijke inspanningen van hun instanties voor volksgezondheid, profiteren van: het ontwikkelen van het vermogen om met ongedierte samenhangende risico’s in stedelijke omgevingen aan te wijzen (d.w.z. ongedierte en door ongedierte overgedragen ziekten identificeren die momenteel voorkomen of die de kop zouden kunnen opsteken), het wijd-verspreid-zijn van de verschillende infecties bepalen en vastleggen, en bijhouden welke reservoirs van gastheersoorten er zijn evenals de geografische verspreiding van verschillende soorten ongedierte en hun overdrachttechnieken. Zij zouden ook gebruik kunnen maken van een geactualiseerde lijst met risicogebieden.</span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;margin-left: 38pt;text-indent: -18pt;">
+          <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">11.</span>
+          <span style="font-size: 9px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">
+            <span class="Apple-tab-span" style="white-space:pre;">	</span>
+          </span>
+          <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Overheden in de Europese regio zouden er (net als andere landen) voor moeten zorgen dat er controle-instanties komen met voldoende opgeleid personeel. Er moet een goed opgeleide volksgezondheidseenheid komen die kan omgaan met ongediertebestrijding en de behandeling van vectorziekten, zodat het publiek wordt beschermd tegen de gezondheidsrisico’s door stedelijk ongedierte. Deze speciale eenheid zou bijvoorbeeld goede diensten kunnen bewijzen op kwetsbare locaties, zoals zee- en luchthavens. Er zijn specialisten in onder meer entomologie, medische zoölogie, toxicologie, ecotoxicologie en gezondheidsmanagement nodig om: ongediertebestrijders op te leiden, te helpen bij het ontwikkelen van beheersingsprogramma’s (waaronder strategieën en het gebruik van pesticiden), afspraken te maken over actiedrempels en gedefinieerde beheersingsdoelen, en om te zorgen voor een harmonieuze samenwerking tussen alle belanghebbenden, waaronder overheidsdepartementen en -instanties, lokale overheden, het bedrijfsleven, consumentengroepen en het publiek.</span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <br />
+        <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"></span>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 9px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Gevaren van stedelijk ongedierte voor de volksgezondheid</span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;margin-left: 38pt;text-indent: -18pt;">
+          <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">12.</span>
+          <span style="font-size: 9px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">
+            <span class="Apple-tab-span" style="white-space:pre;">	</span>
+          </span>
+          <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Zowel op nationaal als lokaal niveau moeten autoriteiten worden aangewezen die informatie ten aanzien van vectorziekten beheren. De rol van partners evenals de mechanismen voor het coördineren van de inspanningen van partners, moeten worden geformuleerd en uitgewerkt. Hoewel er Europese instanties zijn die informatie over ziekten verzamelen, is er behoefte aan een supranationale organisatie die informatie over vectoren verzamelt, omdat het meeste werk op dit gebied op lokaal niveau (nationaal) wordt uitgevoerd en er geen sprake is van coördinatie.</span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 13px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;">Onderzoek</span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;margin-left: 2pt;">
+          <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Bestudering van de diverse hoofdstukken van dit rapport (zoals de gedeelten over teken, muskieten en vlooien) laat zien dat, hoewel de biologie en het gedrag van dergelijk ongedierte grondig in kaart is gebracht, de epidemiologie van de ziekten die zij overdragen (met name in het geval van recent opgekomen ziekten) nauwelijks wordt begrepen. Hoewel er een duidelijke behoefte aan een beter begrip bestaat, worden wetenschappers die zijn gespecialiseerd in de klassieke disciplines medische zoölogie en medische entomologie steeds zeldzamer doordat overheden en universiteiten hun beperkte financiële middelen meer en meer voor andere terreinen gebruiken. Door deze verschuiving wordt niet alleen het onderzoek in de klassieke disciplines verwaarloosd, maar is ook de kennis die dit onderzoek schraagt, langzaam maar onherroepelijk aan het verdwijnen. Bovendien hebben gezondheidsprofessionals en artsen het vaak te druk om zich te verdiepen in ongedierte en door ongedierte overgedragen ziekten, en op universiteiten is er zelden nog een specialist te vinden die kan worden geraadpleegd.</span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;margin-left: 2pt;">
+          <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Hetzelfde geldt voor ongediertecontrole en -beheersing. Particuliere bedrijven voor ongediertebestrijding zijn steeds minder (of helemaal niet meer) betrokken bij onderzoek en ontwikkeling, en de branche concentreert zich doorgaans op producten waarvoor al een markt bestaat.</span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;margin-left: 2pt;">
+          <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Het volgende, laatste punt in deze samenvatting, is een belangrijke conclusie van dit rapport.</span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;margin-left: 38pt;text-indent: -18pt;">
+          <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">13.</span>
+          <span style="font-size: 9px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">
+            <span class="Apple-tab-span" style="white-space:pre;">	</span>
+          </span>
+          <span style="font-size: 12px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Overheden, programma’s voor de volksgezondheid en het algemene publiek zouden er baat bij hebben als wetenschappelijk onderzoek naar ongedierte wordt aangemoedigd, ondersteund en gepromoot. Dit zou leiden tot meer verfijnde kennis van de biologie, de ecologie en het gedrag van ongedierte en van de epidemiologie van door ongedierte overgedragen ziekten. Dit is dringend nodig, evenals meer doelmatige en specifieke gereedschappen en actieve ingrediënten voor de controle en beheersing van ongedierte.</span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 17px; font-family: Arial; font-weight: bold; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
+          <span style="font-size: 15px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;"> </span>
+        </p>
+        <br />
+        <span style="font-size: 15px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;"></span>
+      </span>
+    </content>
   </page>
 
-  
+
 </pages>

@@ -28,12 +28,14 @@ namespace Meldpunt.ActionFilters
       if (viewResult != null)
       {
         // who knows.. could be handy
-        //List<String> breadCrumbs = new List<string>();
-        //foreach (string s in filterContext.HttpContext.Request.Path.Split('/'))
-        //  if (!String.IsNullOrWhiteSpace(s))
-        //    breadCrumbs.Add(s);
+        List<String> breadCrumbs = new List<string>();
+        foreach (string s in filterContext.HttpContext.Request.Path.Split('/'))
+          if (!String.IsNullOrWhiteSpace(s))
+            breadCrumbs.Add(s);
 
+        viewResult.ViewBag.BreadCrumbs = breadCrumbs;
         viewResult.ViewBag.NavItems = pageService.GetPagesForTabs();
+        
       }
 
       base.OnActionExecuted(filterContext);

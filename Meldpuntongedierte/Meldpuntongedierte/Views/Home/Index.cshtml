@@ -9,6 +9,6 @@
 
 @section menu{
   @foreach(PageModel item in Model.SubPages){
-    <li><a href="/@item.Id">@item.Id</a></li>
+    <li><a href="@item.Url">@item.Title</a></li>
   }
 }

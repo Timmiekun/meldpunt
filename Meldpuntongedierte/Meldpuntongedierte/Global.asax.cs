@@ -53,6 +53,18 @@ namespace Meldpunt
       );
 
       routes.MapRoute(
+        "SubPage", // Route name
+        "{a}/{id}", // URL with parameters
+        new { controller = "Home", action = "GetPage", id = UrlParameter.Optional } // Parameter defaults
+     );
+
+      routes.MapRoute(
+       "SubSubPage", // Route name
+       "{a}/{b}/{id}", // URL with parameters
+       new { controller = "Home", action = "GetPage", id = UrlParameter.Optional } // Parameter defaults
+    );
+
+      routes.MapRoute(
           "Default", // Route name
           "{controller}/{action}/{id}", // URL with parameters
           new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults

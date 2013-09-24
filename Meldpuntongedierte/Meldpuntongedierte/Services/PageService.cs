@@ -70,18 +70,32 @@ namespace Meldpunt.Services
 
     private PageModel XmlToModel(XmlNode page)
     {
-      PageModel p = new PageModel()
-      {
-        Id = page.Attributes["id"].Value,        
-        Content = page.InnerXml,
-        SubPages = new List<PageModel>()
-      };
+      List<PageModel> subpages = new List<PageModel>();
 
       XmlNodeList subPages = page.SelectNodes("pages/page");
       if (subPages != null){
           foreach(XmlNode subPage in subPages)
-            p.SubPages.Add(XmlToModel(subPage));
+            subpages.Add(XmlToModel(subPage));
       }
+
+      string id = page.Attributes["id"].Value;
+      string url = "/" + id;
+      XmlNode parent = page.SelectSingleNode("../../.");
+      while (parent != null && parent != page.OwnerDocument)
+      {
+        url = "/" + parent.Attributes["id"].Value + url;
+        parent = parent.SelectSingleNode("../../.");
+      }
+
+      PageModel p = new PageModel()
+      {
+        Id = id,
+        Content = page.SelectSingleNode("content") != null ? page.SelectSingleNode("content").InnerXml : "",
+        SubPages = subpages,
+        Url = Utils.Utils.UrlEncode(url)
+      };
+
+
 
       return p;
     }
