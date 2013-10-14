@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Configuration;
 using Meldpunt.Services;
+using Meldpunt.Models;
 
 namespace Meldpunt.ActionFilters
 {
@@ -28,10 +29,13 @@ namespace Meldpunt.ActionFilters
       if (viewResult != null)
       {
         // who knows.. could be handy
-        List<String> breadCrumbs = new List<string>();
+        List<PageModel> breadCrumbs = new List<PageModel>();
         foreach (string s in filterContext.HttpContext.Request.Path.Split('/'))
-          if (!String.IsNullOrWhiteSpace(s))
-            breadCrumbs.Add(s);
+          if (!String.IsNullOrWhiteSpace(s) && !s.Equals("in"))
+          {
+            PageModel p = pageService.GetPage(Utils.Utils.UrlEncode(s));
+            breadCrumbs.Add(p);
+          }
 
         viewResult.ViewBag.BreadCrumbs = breadCrumbs;
         viewResult.ViewBag.NavItems = pageService.GetPagesForTabs();
