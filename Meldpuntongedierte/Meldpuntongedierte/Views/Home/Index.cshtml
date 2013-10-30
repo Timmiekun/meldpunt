@@ -9,7 +9,13 @@
 @Html.Raw(Model.Content)
 
 @section menu{
-  @foreach(PageModel item in Model.SubPages){
-    <li><a href="@item.Url">@item.Title</a></li>
-  }
+  @if(Model.SubPages.Any()){
+  <div class="menu">
+      <ul> 
+        @foreach(PageModel item in Model.SubPages){
+          <li><a href="@item.Url">@item.Title</a></li>
+        }
+    </ul>
+  </div>
+    }
 }

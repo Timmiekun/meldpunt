@@ -5,7 +5,7 @@
 body
 {
   color: black;
-  font-family: Tahoma,arial;
+  font-family: Verdana, Tahoma, arial;
   font-size: 80%;
   height: 100%;
 }
@@ -17,9 +17,9 @@ em
 .main
 {
   background: white;
-  width: 600px;
+  width: 900px;
   position: relative;
-  margin: 110px auto 0px auto;
+  margin: 150px auto 0px auto;
   background-repeat: repeat-y;
   background-position: -1px 0px;
   padding: 20px 10px 0px 10px;
@@ -28,7 +28,7 @@ em
   border-right: 1px solid #83003c;
 }
 
-.content, .menu, .footer
+.content, .footer
 {
   background-color: #efefef;
 }
@@ -46,7 +46,7 @@ em
   top: 14px;
   left: 0px;
   width: 100%;
-  height: 86px;
+  height: 126px;
   background-color: #83003c;
   text-align: center;
   font-weight: bold;
@@ -85,7 +85,7 @@ em
 .topBar h2
 {
   font-size: 25px;
-  margin: 17px 0px 0px -250px;
+  margin: 17px 0px 0px 0px;
 }
 .MOlogo
 {
@@ -97,8 +97,10 @@ em
 .content
 {
   padding: 20px;
-  overflow: hidden;
-  clear: both;
+  overflow: hidden;    
+  float:right;
+  margin-bottom: 20px;
+  width:690px;  
 }
 .content p
 {
@@ -121,8 +123,8 @@ h2
 {
   position: absolute;
   padding: 10px;
-  top: -85px;
-  right: -300px;
+  top: 0px;
+  right: 0px;
   padding: 10px;
 }
 #breadcrumbs
@@ -143,35 +145,33 @@ h2
 }
 .menu
 {
-  position: absolute;
-  left: -180px;
-  width: 150px;
-  padding: 10px;
-  top: 55px;
+  position:relative;
+  left: -10px;
+  width: 180px;    
+  padding-top:20px;
 }
 
-.menu ul
-{
-  list-style-type: circle;
-  margin-left: 10px;
-}
 .menu ul li
 {
-  border-bottom: 1px solid #83003C;
-  padding: 5px 0;
   list-style-type: none;
 }
-.menu ul li:last-child
+.menu ul li a:before
 {
-  border-bottom: 1px solid #efefef;
+  content: "> ";
 }
 
 .menu a
 {
-  color: #83003c;
-  font-weight: bold;
+  display:block;
+  padding: 5px 5px 5px 10px;
+  color: #83003c;  
   text-decoration: none;
   text-transform: capitalize;
+  font-size:12px;
+}
+.menu a:hover
+{
+  background-color: #efefef;
 }
 .footer
 {

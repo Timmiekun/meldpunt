@@ -34,7 +34,8 @@ namespace Meldpunt.ActionFilters
           if (!String.IsNullOrWhiteSpace(s) && !s.Equals("in"))
           {
             PageModel p = pageService.GetPage(Utils.Utils.UrlEncode(s));
-            breadCrumbs.Add(p);
+            if(p!=null)
+              breadCrumbs.Add(p);
           }
 
         viewResult.ViewBag.BreadCrumbs = breadCrumbs;

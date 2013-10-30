@@ -2,127 +2,16 @@
 <pages>
   <page id="home">
     <content>
-      <h1>
-        Welkom bij Meldpunt Ongedierte.
-      </h1>
-      <p>
-        Hoe werkt dit voor u het snelst? Via de woonplaats check wordt u direct doorgelinkt
-        naar de betreffende afdeling voor uw gemeente.
+      <h1>Hoe wordt u het snelst geholpen?</h1>
+      <p>Voor ongediertebestrijding verzoeken wij u hierboven de naam van
+        uw woonplaats in te voeren. U wordt zo verwezen naar het juiste servicepunt en  telefoonnummer om iemand te woord te staan en het maken van een afspraak.
       </p>
-      <p>
-        <em>Let op!</em>
-        <br />
-        Bij het gebruik maken van dit meldpunt verbindt het telefoonnummer dat na de woonplaats
-        verschijnt zich direct met de juiste afdeling voor de gemeente. Meldingen via dit
-        meldpunt mogen alleen betrekking hebben op onderstaande soorten bestrijdingen, te
-        weten;
-        <ul class="defaultList">
-          <li id="mieren">
-            <h3>
-              Mierenbestrijding
-            </h3>
-            <div class="description">
-              Mieren kunnen bestreden worden met een insecticide d.m.v. lage druktoepassing. De
-              bestrijdingsdeskundige brengt dit middel in de door hem gevonden nestingangen, waardoor
-              de kolonie in haar geheel geïnfecteerd wordt. Indien de openingen niet gevonden
-              kunnen worden, kan er behandeld worden met een lokaasgel. Deze gel wordt uit een
-              kitpatroon gedoseerd. Er zijn geen voorzorgsmaatregelen nodig bij een mierenbestrijding.
-            </div>
-          </li>
-          <li id="wespen">
-            <h3>
-              Wespenbestrijding
-            </h3>
-            <div class="description">
-              Wespen kunnen bestreden worden met een insecticide d.m.v. lage druktoepassing. De
-              bestrijdingsdeskundige brengt dit middel in de door hem gevonden nestingang, waardoor
-              de kolonie in haar geheel geïnfecteerd wordt. Er zijn geen voorzorgsmaatregelen
-              nodig bij een wespenbestrijding.
-            </div>
-          </li>
-          <li id="muizen">
-            <h3>
-              Muizenbestrijding
-            </h3>
-            <div class="description">
-              Muizen kunnen op diverse manieren bestreden worden. Om de beste methode te bepalen
-              zal de bestrijdingsdeskundige eerst een inspectie uitvoeren en de situatie in kaart
-              brengen. Vervolgens kan de bestrijding in gang worden gezet. Daarna worden er eventuele
-              maatregelen besproken die kunnen voorkomen dat er in de toekomst opnieuw sprake
-              is van een muizenplaag.
-            </div>
-          </li>
-          <li id="ratten">
-            <h3>
-              Rattenbestrijding
-            </h3>
-            <div class="description">
-              Ratten kunnen op diverse manieren bestreden worden. Om de beste methode te bepalen
-              zal de bestrijdingsdeskundige eerst een inspectie uitvoeren en de situatie in kaart
-              brengen. Vervolgens kan de bestrijding in gang worden gezet. Daarna worden er eventuele
-              maatregelen besproken die kunnen voorkomen dat er in de toekomst opnieuw sprake
-              is van een rattenplaag.
-            </div>
-          </li>
-          <li id="zilvervisjes">
-            <h3>
-              Zilver- en papiervisjesbestrijding
-            </h3>
-            <div class="description">
-              Zilver- en of Papiervisjes kunnen bestreden worden met een insecticide d.m.v. lage
-              druktoepassing. De bestrijdingsdeskundige brengt dit middel in alle naden en kieren.
-              U dient er zelf zorg voor te dragen dat alle kasten leeg geruimd worden, zodat vooral
-              daar in de kieren langs legplanken e.d. een residu van het middel achter kan blijven.
-              Tijdens de actie en twee uren aansluitend kunt u en de huisdieren de woning niet
-              betreden.
-            </div>
-          </li>
-          <li id="kakkerlakken">
-            <h3>
-              Kakkerlakkenbestrijding
-            </h3>
-            <div class="description">
-              Kakkerlakken kunnen bestreden worden met een insecticide d.m.v. een lokaasgel. De
-              bestrijdingsdeskundige brengt dit middel in de door hem gevonden strategische plaatsen,
-              waardoor de kolonie in haar geheel geïnfecteerd wordt. Er zijn geen voorzorgsmaatregelen
-              nodig bij een kakkerlakkenbestrijding.
-            </div>
-          </li>
-        </ul>
-      </p>
-      <p>
-        Kosten van bestrijding(en) kunnen ook via dit telefoonnummer opgevraagd worden.
-      </p>
-      <p>
-        Indien het één van bovenstaande acties betreft, kunt u nu uw plaatsnaam invullen.
-      </p>
-    </content>
-    <pages>
-      <page id="contact" title="Contact">
-        <content>
-          <h1>Contact</h1>
-          <p>
-            Voor het maken van een afspraak kunt u het beste telefonisch contact opnemen met het meldpunt.
-            Voor het juiste telefoonnummer voert u hierboven uw woonplaats in.
-            Voor algemene voorlichting kunt u het best uw vragen stellen per e-mail naar <em>info@meldpuntongedierte.nl</em>
-          </p>
-        </content>
-      </page>
+      
+      <p>Voor algemene informatie en advies over ongediertebestrijding kunt u telefonisch contact opnemen via ons centraal telefoonnummer <b>0900-2556677</b>.
+      Indien nodig verbinden wij u door met onze bestrijdingsdeskundige voor het vinden van een oplossing.</p>
 
-      <page id="werkwijze" title="Werkwijze">
-        <content>
-          <h1>Werkwijze</h1>
-          <p>
-            Tijdens het telefoongesprek leggen we u uit
-            hoe een bestrijding in haar werk gaat, geven we uitleg over
-            eventuele voor- en nazorg en vertellen we u de daaraan gekoppelde kosten. Bij het maken van een afspraak voor een bestrijding vragen we om uw postcode en huisnummer.
-            Door de verkorte lijnen is er sprake van een snellere service dan de wijze van voorheen.
-            Meldingen via Meldpunt Ongedierte worden op volgorde boven
-            meldingen via andere kanalen gepositioneerd. Zodoende proberen we u zo snel mogelijk van dienst te zijn. Voor het verkrijgen van het juiste telefoonnummer verzoeken we u om hierboven uw woonplaats in te voeren.
-          </p>
-        </content>
-      </page>
-    </pages>
+      <p>Voor ongediertebestrijding namens een bedrijf, instelling of woningcorporatie, wendt u zich voorafgaand tot onze <a href="#">werkwijze</a>.</p>
+    </content>  
   </page>
 
   <page id="ongedierte-in-huis" tab="true">
@@ -928,6 +817,47 @@
     </pages>
   </page>
 
+  <page id="werkwijze" tab="true">
+    <pages>
+      <page id="bedrijven-en-instellingen">
+        <h1>Bedrijven en Instellingen</h1>
+        <p>Bedrijven en instellingen dienen er rekening mee te houden dat wij alleen incidentele bestrijdingen uitvoeren. Wanneer er sprake is van structurele problemen met ongedierte of een verhoogd risico op de aanwezigheid ervan, bijvoorbeeld in de voedingsmiddelenindustrie, dan dient u op zoek te gaan naar een bedrijf wat gespecialiseerd is in het opzetten van een gecontinueerd beheersplan. Wij kunnen hierin slechts adviseren.</p>
+        <p>Wanneer er sprake is van muizen, ratten, kakkerlakken, wespen of mieren in de bedrijfsruimte of woonvoorziening, dan belt u naar het telefoonnummer 0900-2556677. U krijgt een medewerker aan de telefoon die een afspraak met u maakt. Er wordt gevraagd naar de adresgegevens, factuurgegevens en een contactpersoon. Ook een indicatie betreffende de kosten worden besproken. Onze bestrijdingsdeskundige zal bij u langskomen om de inspectie, bestrijding en/of wering uit te voeren. Ook zullen de nodige adviezen gegeven worden om een eventueel soortgelijk probleem in de toekomst te voorkomen.</p>
+        <p>Onze bestrijdingen worden geheel volgens de veiligheidsnorm van de Nederlandse wetgeving uitgevoerd. Dit betekent dat wij enkel en alleen gediplomeerde bestrijdingstechnici naar u toe sturen en dat hun kennis met behulp van opleidingen continue voldoet aan nieuwe wetgeving en richtlijnen. Ook de middelen die wij toepassen voldoen aan de wetgeving en veiligheidseisen. De moderne bestrijdingsmiddelen kunnen en worden ook met de aanwezigheid van kinderen ( kinderdagverblijven) en huisdieren (wooneenheden) op geheel veilige wijze toegepast. Indien u meer inhoudelijke informatie behoeft omtrent onze werkwijze, kunt u een email sturen naar info@meldpuntongedierte.nl</p>
+      </page>
+      <page id="inwoners">
+        <h1>Bedrijven en Instellingen</h1>
+        <p>Wanneer er sprake is van muizen, ratten, kakkerlakken, wespen of mieren in huis of in uw tuin, dan belt u naar het telefoonnummer wat verschijnt na het intoetsen van uw gemeente of woonplaats. U krijgt een medewerker aan de telefoon die een afspraak met u maakt. Er wordt gevraagd naar uw adresgegevens en telefoonnummer. Ook de kosten worden besproken. Onze bestrijdingsdeskundige zal bij u langskomen om de inspectie, bestrijding en/of wering uit te voeren. Ook zullen de nodige adviezen gegeven worden om een eventueel soortgelijk probleem in de toekomst te voorkomen. De betaling wordt ter plekke voldaan. Indien een vervolgbezoek noodzakelijk is, kunt u dat bespreken met de bestrijdingsdeskundige.</p>
+        <p>
+          Voor ander ongedierte of plaagdieren, zoals zilvervisjes, papiervisjes, vlooien of bedwantsen kunt u het beste uzelf direct laten benaderen door de bestrijdingsdeskundige. Stuur hiervoor een e-mail met een omschrijving van het probleem, uw postcode, telefoonnummer en eventueel foto’s naar info@meldpuntongedierte.nl
+          <br/>  Uw email komt aan de hand van uw gegevens direct bij de juiste persoon terecht en hij zal contact met u opnemen om de voorzorgsmaatregelen met u te bespreken en het maken van een afspraak voor een bestrijding indien gewenst.
+        </p>
+        <p>Wanneer u het vermoeden heeft dat de aanwezigheid van ongedierte wordt veroorzaakt door de buren of het blijkt een gezamenlijk probleem, probeer dit dan met hen bespreekbaar te maken. Een bestrijding op grotere schaal kan meer effect hebben en bovendien kunnen de kosten gereduceerd worden door deze te delen. </p>
+        <p>Onze bestrijdingen worden geheel volgens de veiligheidsnormvan de Nederlandse wetgeving uitgevoerd. Dit betekent dat wij enkel en alleen gediplomeerde bestrijdingstechnici naar u toe sturen en dat hun kennis met behulp van opleidingen continu voldoet aan nieuwe wetgeving en richtlijnen. Ook de middelen die wij toepassen voldoen aan de wetgeving en veiligheidseisen. De moderne bestrijdingsmiddelen kunnen en worden ook met de aanwezigheid van kinderen en huisdieren op geheel veilige wijze toegepast. Indien u meer inhoudelijke informatie behoeft omtrent onze werkwijze, kunt u een email sturen naar info@meldpuntongedierte.nl</p>
+      </page>
+      <page id="vereniging-van-eigenaren">
+        <h1>Vereniging van Eigenaren</h1>
+        <p>Wanneer u eigenaar bent van een appartement en onderdeel uitmaakt van een VvE, dan kunnen wij in opdracht van het bestuur een bestrijding uitvoeren. Omdat ongedierte zich niet altijd specifiek ophoudt in één appartement, maar zich vaak verspreidt tussen de gezamenlijke ruimten, doen wij met behulp van de bewoners een inventarisatie. In overeenstemming met de bewoners voeren wij dan een inspectie uit. Nadat de omvang van het probleem duidelijk in kaart is gebracht, kan de bestrijding in gang gezet worden. De voortgang wordt na ieder bezoek met u en het bestuur gecommuniceerd.</p>
+        <p>
+          Een probleem met ongedierte, zoals zilvervisjes, papiervisjes, wespen, etc. kan zich ook afspelen in een individueel appartement. Goede voorbeelden hiervan zijn bedwantsen of vlooien die veroorzaakt kunnen zijn door een levenswijze die de kans op aanwezigheid hiervan vergroot. Bij vlooien kan bijvoorbeeld gedacht worden aan huisdieren. Veel reizen en overnachten in diverse hotels of hostels vergroot de kans op de onbedoelde aanwezigheid van bedwantsen. Ook kakkerlakken en muizen kunnen zich beperken tot enkel de leefomgeving waar ze goed gedijen. Voor zulke individuele gevallen raden we u aan een afspraak voor een bestrijding te maken via de particuliere weg.
+          <br/> Bij twijfel aan waar een probleem met ongedierte vandaan kan komen of waar de oorzaak ligt, kunnen we u helpen met het uitvoeren van een inspectie. De conclusies die worden getrokken door de bestrijdingsdeskundige, worden overlegd met het bestuur van de VvE, waarna een bestrijding via de juiste weg uitgevoerd kan worden.
+        </p>
+        <p>
+          Onze bestrijdingen worden geheel volgens de veiligheidsrichtlijnen van de Nederlandse wetgeving uitgevoerd. Dit betekent dat wij enkel en alleen gediplomeerde bestrijdingstechnici naar u toe sturen en dat hun kennis met behulp van opleidingen continue voldoet aan nieuwe wetgeving en richtlijnen. Ook de middelen die wij toepassen voldoen aan de wetgeving en veiligheidseisen. De moderne bestrijdingsmiddelen kunnen en worden ook met de aanwezigheid van kinderen en huisdieren op geheel veilige wijze toegepast. Indien u gerichte informatie behoeft, kunt u een email sturen naar info@meldpuntongedierte.nl
+          Vermeld hierin de soort overlast en omvang van het probleem.
+          U kunt ook contact opnemen via het centrale nummer 0900-2556677, waarna u doorverbonden wordt naar de desbetreffende afdeling.
+        </p>
+      </page>
+      <page id="woningbouwcorporaties">
+        <h1>Woningbouwcorporaties</h1>
+        <p>Onze ervaring is dat huurders vaak van mening zijn dat de verhuurder verantwoordelijk is voor de ongediertebestrijding. De aanwezigheid van ongedierte wordt door huurders immers vaak toegewezen aan bouwtechnische mankementen. Toch mag duidelijk zijn dat met het nastreven van een goede hygiëne een probleem met ongedierte vaak voorkomen wordt, ondanks dat het appartement of huis toegankelijk is voor ongedierte. Omdat het zelfs met nieuwbouwwoningen bijna onmogelijk is om woningen ontoegankelijk te houden voor ongedierte stellen wij ons nooit de vraag “hoe” ongedierte binnenkomt, maar “ waarom “ ongedierte binnenkomt. Door onszelf de juiste vraag te stellen kan de verantwoordelijkheid ook beter op de juiste plek terecht komen.</p>
+        <p>Wanneer onze bestrijdingsdeskundige een bestrijding uitvoert bij een huurwoning, zijn de kosten altijd voor de bewoner zelf, tenzij de opdracht aan ons wordt verstrekt door de woningcorporatie of verhuurder zelf. Uiteraard is het onze plicht om ook de aandacht op de wering van ongedierte te leggen en geven wij advies over hoe een soortgelijk probleem in de toekomst voorkomen kan worden. Onze bestrijdingstechnici hebben altijd klein materiaal bij zich ten behoeve van wering.</p>
+        <p>Wanneer wij ter plekke constateren dat de oorzaak van het probleem bij de buren kan liggen, proberen wij dat te communiceren met hen middels een brief met het verzoek contact met ons op te nemen. Ook zullen wij de verhuurder hiervan op de hoogte stellen. Indien er geen gehoor wordt gegeven door de vermoedelijke veroorzaker bespreken we dit met de verhuurder. Wanneer de oorzaak in de openbare ruimte ligt, dan zoeken we naar een oplossing met alle betrokken partijen.</p>
+        <p>De kortste weg om zo snel mogelijk tot een oplossing te kunnen komen, is de huurder het centrale telefoonnummer te verstrekken; 0900-2556677</p>
+      </page>
+    </pages>
+  </page>
+
   <page id="openbare-ruimte" tab="true">
     <content>
       <h1>Openbare Ruimte</h1>
@@ -1328,45 +1258,15 @@
     </content>
   </page>
 
-  <page id="werkwijze" tab="true">
-    <pages>
-      <page id="bedrijven-en-instellingen">
-        <h1>Bedrijven en Instellingen</h1>
-        <p>Bedrijven en instellingen dienen er rekening mee te houden dat wij alleen incidentele bestrijdingen uitvoeren. Wanneer er sprake is van structurele problemen met ongedierte of een verhoogd risico op de aanwezigheid ervan, bijvoorbeeld in de voedingsmiddelenindustrie, dan dient u op zoek te gaan naar een bedrijf wat gespecialiseerd is in het opzetten van een gecontinueerd beheersplan. Wij kunnen hierin slechts adviseren.</p>
-        <p>Wanneer er sprake is van muizen, ratten, kakkerlakken, wespen of mieren in de bedrijfsruimte of woonvoorziening, dan belt u naar het telefoonnummer 0900-2556677. U krijgt een medewerker aan de telefoon die een afspraak met u maakt. Er wordt gevraagd naar de adresgegevens, factuurgegevens en een contactpersoon. Ook een indicatie betreffende de kosten worden besproken. Onze bestrijdingsdeskundige zal bij u langskomen om de inspectie, bestrijding en/of wering uit te voeren. Ook zullen de nodige adviezen gegeven worden om een eventueel soortgelijk probleem in de toekomst te voorkomen.</p>
-        <p>Onze bestrijdingen worden geheel volgens de veiligheidsnorm van de Nederlandse wetgeving uitgevoerd. Dit betekent dat wij enkel en alleen gediplomeerde bestrijdingstechnici naar u toe sturen en dat hun kennis met behulp van opleidingen continue voldoet aan nieuwe wetgeving en richtlijnen. Ook de middelen die wij toepassen voldoen aan de wetgeving en veiligheidseisen. De moderne bestrijdingsmiddelen kunnen en worden ook met de aanwezigheid van kinderen ( kinderdagverblijven) en huisdieren (wooneenheden) op geheel veilige wijze toegepast. Indien u meer inhoudelijke informatie behoeft omtrent onze werkwijze, kunt u een email sturen naar info@meldpuntongedierte.nl</p>
-      </page>
-      <page id="inwoners">
-        <h1>Bedrijven en Instellingen</h1>
-        <p>Wanneer er sprake is van muizen, ratten, kakkerlakken, wespen of mieren in huis of in uw tuin, dan belt u naar het telefoonnummer wat verschijnt na het intoetsen van uw gemeente of woonplaats. U krijgt een medewerker aan de telefoon die een afspraak met u maakt. Er wordt gevraagd naar uw adresgegevens en telefoonnummer. Ook de kosten worden besproken. Onze bestrijdingsdeskundige zal bij u langskomen om de inspectie, bestrijding en/of wering uit te voeren. Ook zullen de nodige adviezen gegeven worden om een eventueel soortgelijk probleem in de toekomst te voorkomen. De betaling wordt ter plekke voldaan. Indien een vervolgbezoek noodzakelijk is, kunt u dat bespreken met de bestrijdingsdeskundige.</p>
-        <p>
-          Voor ander ongedierte of plaagdieren, zoals zilvervisjes, papiervisjes, vlooien of bedwantsen kunt u het beste uzelf direct laten benaderen door de bestrijdingsdeskundige. Stuur hiervoor een e-mail met een omschrijving van het probleem, uw postcode, telefoonnummer en eventueel foto’s naar info@meldpuntongedierte.nl
-        <br/>  Uw email komt aan de hand van uw gegevens direct bij de juiste persoon terecht en hij zal contact met u opnemen om de voorzorgsmaatregelen met u te bespreken en het maken van een afspraak voor een bestrijding indien gewenst.
-        </p>
-        <p>Wanneer u het vermoeden heeft dat de aanwezigheid van ongedierte wordt veroorzaakt door de buren of het blijkt een gezamenlijk probleem, probeer dit dan met hen bespreekbaar te maken. Een bestrijding op grotere schaal kan meer effect hebben en bovendien kunnen de kosten gereduceerd worden door deze te delen. </p>
-        <p>Onze bestrijdingen worden geheel volgens de veiligheidsnormvan de Nederlandse wetgeving uitgevoerd. Dit betekent dat wij enkel en alleen gediplomeerde bestrijdingstechnici naar u toe sturen en dat hun kennis met behulp van opleidingen continu voldoet aan nieuwe wetgeving en richtlijnen. Ook de middelen die wij toepassen voldoen aan de wetgeving en veiligheidseisen. De moderne bestrijdingsmiddelen kunnen en worden ook met de aanwezigheid van kinderen en huisdieren op geheel veilige wijze toegepast. Indien u meer inhoudelijke informatie behoeft omtrent onze werkwijze, kunt u een email sturen naar info@meldpuntongedierte.nl</p>
-      </page>
-      <page id="vereniging-van-eigenaren">
-        <h1>Vereniging van Eigenaren</h1>
-        <p>Wanneer u eigenaar bent van een appartement en onderdeel uitmaakt van een VvE, dan kunnen wij in opdracht van het bestuur een bestrijding uitvoeren. Omdat ongedierte zich niet altijd specifiek ophoudt in één appartement, maar zich vaak verspreidt tussen de gezamenlijke ruimten, doen wij met behulp van de bewoners een inventarisatie. In overeenstemming met de bewoners voeren wij dan een inspectie uit. Nadat de omvang van het probleem duidelijk in kaart is gebracht, kan de bestrijding in gang gezet worden. De voortgang wordt na ieder bezoek met u en het bestuur gecommuniceerd.</p>
-        <p>
-          Een probleem met ongedierte, zoals zilvervisjes, papiervisjes, wespen, etc. kan zich ook afspelen in een individueel appartement. Goede voorbeelden hiervan zijn bedwantsen of vlooien die veroorzaakt kunnen zijn door een levenswijze die de kans op aanwezigheid hiervan vergroot. Bij vlooien kan bijvoorbeeld gedacht worden aan huisdieren. Veel reizen en overnachten in diverse hotels of hostels vergroot de kans op de onbedoelde aanwezigheid van bedwantsen. Ook kakkerlakken en muizen kunnen zich beperken tot enkel de leefomgeving waar ze goed gedijen. Voor zulke individuele gevallen raden we u aan een afspraak voor een bestrijding te maken via de particuliere weg.
-         <br/> Bij twijfel aan waar een probleem met ongedierte vandaan kan komen of waar de oorzaak ligt, kunnen we u helpen met het uitvoeren van een inspectie. De conclusies die worden getrokken door de bestrijdingsdeskundige, worden overlegd met het bestuur van de VvE, waarna een bestrijding via de juiste weg uitgevoerd kan worden.
-        </p>
-        <p>
-          Onze bestrijdingen worden geheel volgens de veiligheidsrichtlijnen van de Nederlandse wetgeving uitgevoerd. Dit betekent dat wij enkel en alleen gediplomeerde bestrijdingstechnici naar u toe sturen en dat hun kennis met behulp van opleidingen continue voldoet aan nieuwe wetgeving en richtlijnen. Ook de middelen die wij toepassen voldoen aan de wetgeving en veiligheidseisen. De moderne bestrijdingsmiddelen kunnen en worden ook met de aanwezigheid van kinderen en huisdieren op geheel veilige wijze toegepast. Indien u gerichte informatie behoeft, kunt u een email sturen naar info@meldpuntongedierte.nl
-          Vermeld hierin de soort overlast en omvang van het probleem.
-          U kunt ook contact opnemen via het centrale nummer 0900-2556677, waarna u doorverbonden wordt naar de desbetreffende afdeling.
-        </p>
-      </page>
-      <page id="woningbouwcorporaties">
-        <h1>Woningbouwcorporaties</h1>
-        <p>Onze ervaring is dat huurders vaak van mening zijn dat de verhuurder verantwoordelijk is voor de ongediertebestrijding. De aanwezigheid van ongedierte wordt door huurders immers vaak toegewezen aan bouwtechnische mankementen. Toch mag duidelijk zijn dat met het nastreven van een goede hygiëne een probleem met ongedierte vaak voorkomen wordt, ondanks dat het appartement of huis toegankelijk is voor ongedierte. Omdat het zelfs met nieuwbouwwoningen bijna onmogelijk is om woningen ontoegankelijk te houden voor ongedierte stellen wij ons nooit de vraag “hoe” ongedierte binnenkomt, maar “ waarom “ ongedierte binnenkomt. Door onszelf de juiste vraag te stellen kan de verantwoordelijkheid ook beter op de juiste plek terecht komen.</p>
-        <p>Wanneer onze bestrijdingsdeskundige een bestrijding uitvoert bij een huurwoning, zijn de kosten altijd voor de bewoner zelf, tenzij de opdracht aan ons wordt verstrekt door de woningcorporatie of verhuurder zelf. Uiteraard is het onze plicht om ook de aandacht op de wering van ongedierte te leggen en geven wij advies over hoe een soortgelijk probleem in de toekomst voorkomen kan worden. Onze bestrijdingstechnici hebben altijd klein materiaal bij zich ten behoeve van wering.</p>
-        <p>Wanneer wij ter plekke constateren dat de oorzaak van het probleem bij de buren kan liggen, proberen wij dat te communiceren met hen middels een brief met het verzoek contact met ons op te nemen. Ook zullen wij de verhuurder hiervan op de hoogte stellen. Indien er geen gehoor wordt gegeven door de vermoedelijke veroorzaker bespreken we dit met de verhuurder. Wanneer de oorzaak in de openbare ruimte ligt, dan zoeken we naar een oplossing met alle betrokken partijen.</p>
-        <p>De kortste weg om zo snel mogelijk tot een oplossing te kunnen komen, is de huurder het centrale telefoonnummer te verstrekken; 0900-2556677</p>
-      </page>
-    </pages>
+  <page id="contact" title="Contact">
+    <content>
+      <h1>Contact</h1>
+      <p>
+        Voor het maken van een afspraak kunt u het beste telefonisch contact opnemen met het meldpunt.
+        Voor het juiste telefoonnummer voert u hierboven uw woonplaats in.
+        Voor algemene voorlichting kunt u het best uw vragen stellen per e-mail naar <em>info@meldpuntongedierte.nl</em>
+      </p>
+    </content>
   </page>
 
 </pages>
