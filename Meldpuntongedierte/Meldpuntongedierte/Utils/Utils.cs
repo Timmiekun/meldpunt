@@ -20,5 +20,13 @@ namespace Meldpunt.Utils
 
       return value.Substring(0, value.IndexOf(" ", length));
     }
+
+    public static string Capitalize(string s)
+    {
+      if(s.Length > 1)
+        return s.Substring(0,1).ToUpper() + s.Substring(1);
+      else
+        return s.ToUpper();
+    }
   }
 }

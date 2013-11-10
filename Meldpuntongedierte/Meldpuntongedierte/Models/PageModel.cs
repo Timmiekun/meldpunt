@@ -12,11 +12,13 @@ namespace Meldpunt.Models
   {
     private string host = "http://" + HttpContext.Current.Request.Url.Host + "/";
 
-    public string Title { get { return Id.Replace("-", " ").Trim(); } }
+    public string Title { get { return Utils.Utils.Capitalize(Id.Replace("-", " ").Trim()); } }
     public string Id { get; set; }
     public string Content { get; set; }
     public string Url { get; set; }
     public string FullText { get; set; }
+    public bool HasSublingMenu { get; set; }
+    public string ParentId { get; set; }    
     public List<PageModel> SubPages { get; set; }    
   }
 }

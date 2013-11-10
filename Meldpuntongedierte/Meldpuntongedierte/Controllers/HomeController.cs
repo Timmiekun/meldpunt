@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Meldpunt.Services;
 using Meldpunt.Models;
+using Meldpunt.Utils;
 
 namespace Meldpunt.Controllers
 {
@@ -28,10 +29,19 @@ namespace Meldpunt.Controllers
     public ActionResult GetPage(string id)
     {
       PageModel model = pageService.GetPage(id);
-      // geen pagina? Dan een plaats
-      if (model == null)
-        return RedirectPermanent("/in/" + id);
 
+      if (model == null)
+      {
+        throw new HttpException(404, "page not found");
+      }
+      else if (!model.SubPages.Any())
+      {
+        PageModel parent = pageService.GetPage(model.ParentId);
+        if(parent != null)
+          ViewBag.SubNav = parent.SubPages;
+      }
+      else
+        ViewBag.SubNav = model.SubPages;
 
       return View("index", model);
     }

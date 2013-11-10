@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Meldpunt.Services;
 using Meldpunt.Models;
+using Meldpunt.Utils;
 
 namespace Meldpunt.Controllers
 {
@@ -23,7 +24,8 @@ namespace Meldpunt.Controllers
       if(!String.IsNullOrWhiteSpace(found))
         return View("Plaats", new PlaatsModel { Name = found });
 
-      return new HttpNotFoundResult("plaats niet gevonden");
+      Response.StatusCode = 404;
+      return View("Nietgevonden", new PlaatsModel { Name = found });
     }
 
 
@@ -32,7 +34,7 @@ namespace Meldpunt.Controllers
       if(plaatsService.Plaatsen.Any(p=> p.Equals(plaats, StringComparison.InvariantCultureIgnoreCase)))
         return View("Plaats", new PlaatsModel { Name = plaats });
 
-      return new HttpNotFoundResult("plaats niet gevonden");
+      throw new HttpException(404, "plaats niet gevonden");
     }
   }
 }

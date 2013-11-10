@@ -19,7 +19,7 @@ em
   background: white;
   width: 900px;
   position: relative;
-  margin: 150px auto 0px auto;
+  margin: 0px auto 0px auto;
   background-repeat: repeat-y;
   background-position: -1px 0px;
   padding: 20px 10px 0px 10px;
@@ -42,41 +42,45 @@ em
 
 .topBar
 {
-  position: absolute;
-  top: 14px;
-  left: 0px;
-  width: 100%;
-  height: 126px;
+  width: 100%;  
   background-color: #83003c;
   text-align: center;
   font-weight: bold;
   z-index: -1;
   border-bottom: 10px solid #efefef;
+  
 }
 .topBar a
 {
   color: white;
   text-decoration: none;
 }
+#tabholder
+{
+  background-color:#ababab;   
+  position:relative;
+  top:1px;
+  margin-top:30px;
+}
 #tabs
 {
-  position: absolute;
-  left: 0px;
-  top: -36px;
+  margin: 0px auto 0 auto;
+  width:900px;
+  
+  overflow:hidden;
 }
-.tabItem
-{
-  background-color: #83003C;
-  color: white;
+.topBar .tabItem
+{ 
+  color: white; 
   font-weight: bold;
   text-decoration: none;
   display: block;
   float: left;
   margin-right: 10px;
-  padding: 5px 10px;
-  text-transform: capitalize;
+  padding: 5px 10px;  
 }
-.activeTab
+.topBar .tabItem:hover,
+.topBar .activeTab
 {
   background-color: #efefef;
   color: #83003C;
@@ -84,8 +88,19 @@ em
 
 .topBar h2
 {
-  font-size: 25px;
-  margin: 17px 0px 0px 0px;
+font-size: 15px;
+margin: 40px auto 0px auto;
+text-align: left;
+width: 400px;
+padding-left: 200px;
+font-family: Tohoma;
+}
+
+.topBar img
+{
+height: 100px;
+position: relative;
+
 }
 .MOlogo
 {
@@ -123,13 +138,14 @@ h2
 {
   position: absolute;
   padding: 10px;
-  top: 0px;
+  top: 5px;
   right: 0px;
   padding: 10px;
 }
 #breadcrumbs
 {
   margin-bottom: 20px;
+  padding-left: 190px;
 }
 #breadcrumbs a
 {
@@ -160,17 +176,27 @@ h2
   content: "> ";
 }
 
+.menu > ul > li.selected > a
+{
+  font-weight:bold;
+}
+
+.subNav
+{
+  margin-left: 10px;
+}
+
 .menu a
 {
   display:block;
-  padding: 5px 5px 5px 10px;
+  padding: 3px 5px 3px 10px;
   color: #83003c;  
-  text-decoration: none;
-  text-transform: capitalize;
+  text-decoration: none;  
   font-size:12px;
 }
 .menu a:hover
 {
+  xfont-weight:bold;
   background-color: #efefef;
 }
 .footer

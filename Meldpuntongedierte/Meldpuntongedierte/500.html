@@ -1,10 +1,4 @@
-﻿@using Meldpunt.Models;
-@{
-  List<PageModel> pagesForTabs = ViewBag.NavItems as List<PageModel>;
-  List<PageModel> breadcrumbs = ViewBag.BreadCrumbs as List<PageModel>;
-}
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -18,9 +12,9 @@
   <link type="text/css" rel="stylesheet" href="/css/main.css">
   <link type="text/css" rel="stylesheet" href="/css/suggest.css">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-  <script type="text/javascript" src="/Scripts/meldpunt.js">;</script>
-  <script type="text/javascript" src="/Scripts/suggest.js">;</script>
-  <script type="text/javascript" src="/Scripts/xmlhttp.js">;</script>
+  <script type="text/javascript" src="/Scripts/meldpunt.js">    ;</script>
+  <script type="text/javascript" src="/Scripts/suggest.js">    ;</script>
+  <script type="text/javascript" src="/Scripts/xmlhttp.js">    ;</script>
   <script type="text/javascript">
 
     var _gaq = _gaq || [];
@@ -36,68 +30,42 @@
   </script>
 </head>
 <body>
-
-   <div class="topBar">
-    <h2><a href="/"><img src="/Images/logo ultimo.gif" alt="Meldpunt ongedierte logo" /> Centraal Meldpunt Ongedierte</a></h2>    
+  <div class="topBar">
+    <h2>
+      <a href="/">
+        <img src="/Images/logo ultimo.gif" alt="Meldpunt ongedierte logo" />
+        Centraal Meldpunt Ongedierte</a></h2>
     <div id="tabholder">
       <div id="tabs">
-        @foreach (PageModel tabItem in pagesForTabs)
-          {
-            string className = "tabItem";
-            if (Request.Url.AbsolutePath.Contains(tabItem.Id))
-            {
-              className += " activeTab";
-            }
-          <a class="@className" href="@tabItem.Url">@tabItem.Title</a>
-          }
+        <a class="tabItem" href="/ongedierte-in-huis">Ongedierte in huis</a> <a class="tabItem"
+          href="/werkwijze">Werkwijze</a> <a class="tabItem" href="/openbare-ruimte">Openbare
+            ruimte</a> <a class="tabItem" href="/volksgezondheid">Volksgezondheid</a>
       </div>
     </div>
   </div>
-
-    
-
-
   <div id="main" class="main">
-
-  
-
-      <div id="breadcrumbs">
-        <a href="/">Home</a>
-        @if (breadcrumbs.Count > 0)
-        {          
-        <span> ></span>
-        }
-        @for (int i = 0; i < breadcrumbs.Count; i++ )
-        {
-          <a href="@breadcrumbs[i].Url">@breadcrumbs[i].Title</a>
-          if (i < breadcrumbs.Count - 1)
-          {
-            <span> > </span>
-          }
-        }
-      </div>
-    
-    <div id="header">      
+    <div id="breadcrumbs">
+      <a href="/">Home</a>
+    </div>
+    <div id="header">
       <form method="post" autocomplete="off" action="/zoek" class="zoekForm">
       <input id="zoek" placeholder=" b.v. Amsterdam" type="text" name="plaats" onkeyup="suggest.getSuggests(event,this);"><input
         type="submit" value="zoek" class="searchSubmit"></form>
-      <div id="suggests"
-        class="suggest-hidden">
+      <div id="suggests" class="suggest-hidden">
       </div>
     </div>
-    
     <div class="content">
-      @RenderBody()
+      <h2>
+        500!</h2>
+      <p>
+        Oeps! Daar ging iets verkeerd. Probeer het nog eens.</p>
     </div>
-    
-    @RenderSection("menu",false)        
-  
     <div class="footer">
-      <p class="disclaimer">&#160; @*<a href="/sitemap">sitemap</a>*@</p>
+      <p class="disclaimer">
+        &#160;
+      </p>
     </div>
   </div>
- 
-
   <script type="text/javascript">
     var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
     document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));

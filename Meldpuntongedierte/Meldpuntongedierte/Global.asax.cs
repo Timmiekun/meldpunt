@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Meldpunt.ActionFilters;
+using Meldpunt.Utils;
+using Meldpunt.Controllers;
 
 namespace Meldpunt
 {
@@ -21,6 +23,12 @@ namespace Meldpunt
     public static void RegisterRoutes(RouteCollection routes)
     {
       routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
+      routes.MapRoute(
+        "Http404", // Route name
+        "Error/404", // URL with parameters
+        new { controller = "Error", action = "http404" } // Parameter defaults
+      );
 
       routes.MapRoute(
         "Homepage", // Route name
@@ -80,6 +88,40 @@ namespace Meldpunt
       RegisterGlobalFilters(GlobalFilters.Filters);
 
       RegisterRoutes(RouteTable.Routes);
+    }
+
+    protected void Application_Error(Object sender, System.EventArgs e)
+    {
+      var exception = Server.GetLastError();
+      var httpException = exception as HttpException;
+      
+      var routeData = new RouteData();
+      routeData.Values["controller"] = "Error";      
+      if (httpException != null)
+      {
+        Response.Clear();
+        Server.ClearError();
+
+        Response.StatusCode = httpException.GetHttpCode();
+        switch (Response.StatusCode)
+        {
+          case 400:
+            routeData.Values["action"] = "Http404";
+            break;
+          case 403:
+            routeData.Values["action"] = "Http403";
+            break;
+          case 404:
+            routeData.Values["action"] = "Http404";
+            break;        
+        }
+
+        IController errorsController = new ErrorController();
+        var rc = new RequestContext(new HttpContextWrapper(Context), routeData);
+        errorsController.Execute(rc);
+      }
+
+    
     }
   }
 }
