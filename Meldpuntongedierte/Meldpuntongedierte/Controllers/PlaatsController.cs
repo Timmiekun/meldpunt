@@ -34,7 +34,8 @@ namespace Meldpunt.Controllers
       if(plaatsService.Plaatsen.Any(p=> p.Equals(plaats, StringComparison.InvariantCultureIgnoreCase)))
         return View("Plaats", new PlaatsModel { Name = plaats });
 
-      throw new HttpException(404, "plaats niet gevonden");
+      Response.StatusCode = 404;
+      return View("Nietgevonden", new PlaatsModel { Name = plaats });
     }
   }
 }

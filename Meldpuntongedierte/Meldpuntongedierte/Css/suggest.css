@@ -2,10 +2,10 @@
 {
   position: absolute;
   width: 196px;
-  top: 53px;
+  top: 37px;
   left: 12px;
   background-color: white;
-  border: 1px solid black;
+  border: 1px solid #ababab;
 }
 
 .suggest-hidden

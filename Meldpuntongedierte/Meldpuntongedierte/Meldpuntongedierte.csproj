@@ -107,14 +107,13 @@
     <Content Include="Css\reset.css" />
     <Content Include="Css\suggest.css" />
     <Content Include="Global.asax" />
+    <Content Include="Images\arrow-right.png" />
     <Content Include="Images\kakkerlak.jpg" />
     <Content Include="Images\logo MO.JPG" />
+    <Content Include="Images\logo ultimo.gif" />
     <Content Include="Images\Logo-text-2.png" />
     <Content Include="Images\Logo-text.png" />
     <Content Include="Images\Logo.png" />
-    <Content Include="Images\logoMOsmall.gif" />
-    <Content Include="Images\phone.png" />
-    <Content Include="Images\shadow.png" />
     <Content Include="Images\shadow_bottom.png" />
     <Content Include="Images\Wasp.JPG" />
     <Content Include="Scripts\suggest.js" />

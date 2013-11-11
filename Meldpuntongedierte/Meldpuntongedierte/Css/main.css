@@ -23,9 +23,9 @@ em
   background-repeat: repeat-y;
   background-position: -1px 0px;
   padding: 20px 10px 0px 10px;
-  line-height: 130%;  
-  border-left: 1px solid #83003c;
-  border-right: 1px solid #83003c;
+  line-height: 130%;
+  border-left: 1px solid #ababab;
+  border-right: 1px solid #ababab;
 }
 
 .content, .footer
@@ -42,13 +42,13 @@ em
 
 .topBar
 {
-  width: 100%;  
+  width: 100%;
   background-color: #83003c;
   text-align: center;
   font-weight: bold;
   z-index: -1;
   border-bottom: 10px solid #efefef;
-  
+  padding-top: 10px;
 }
 .topBar a
 {
@@ -57,30 +57,28 @@ em
 }
 #tabholder
 {
-  background-color:#ababab;   
-  position:relative;
-  top:1px;
-  margin-top:30px;
+  background-color: #ababab;
+  position: relative;
+  top: 1px;
+  margin-top: 30px;
 }
 #tabs
 {
   margin: 0px auto 0 auto;
-  width:900px;
-  
-  overflow:hidden;
+  width: 900px;
+  overflow: hidden;
 }
 .topBar .tabItem
-{ 
-  color: white; 
+{
+  color: white;
   font-weight: bold;
   text-decoration: none;
   display: block;
   float: left;
   margin-right: 10px;
-  padding: 5px 10px;  
+  padding: 5px 10px;
 }
-.topBar .tabItem:hover,
-.topBar .activeTab
+.topBar .tabItem:hover, .topBar .activeTab
 {
   background-color: #efefef;
   color: #83003C;
@@ -88,19 +86,31 @@ em
 
 .topBar h2
 {
-font-size: 15px;
-margin: 40px auto 0px auto;
-text-align: left;
-width: 400px;
-padding-left: 200px;
-font-family: Tohoma;
+  display: block;
+  font-size: 15px;
+  margin: 0px auto 0px auto;
+  text-align: left;
+  width: 300px;
+  font-family: Tohoma;
+  overflow: hidden;
+}
+
+.logo
+{
+  display: block;
+  float: left;
+}
+.logotext
+{
+  margin-top: 35px;
+  display: block;
+  float: left;
 }
 
 .topBar img
 {
-height: 100px;
-position: relative;
-
+  height: 100px;
+  position: relative;
 }
 .MOlogo
 {
@@ -112,10 +122,10 @@ position: relative;
 .content
 {
   padding: 20px;
-  overflow: hidden;    
-  float:right;
+  overflow: hidden;
+  float: right;
   margin-bottom: 20px;
-  width:690px;  
+  width: 680px;
 }
 .content p
 {
@@ -153,7 +163,7 @@ h2
 }
 .zoekForm input
 {
-  border: 1px solid #83003C;
+  border: 1px solid #ababab;
 }
 .zoekForm .searchSubmit
 {
@@ -161,24 +171,27 @@ h2
 }
 .menu
 {
-  position:relative;
+  position: relative;
   left: -10px;
-  width: 180px;    
-  padding-top:20px;
+  width: 190px;
+  padding-top: 20px;
 }
 
 .menu ul li
 {
   list-style-type: none;
+  padding-left: 15px;
+  background-image: url(/images/arrow-right.png);
+  background-repeat: no-repeat;
+  background-position: 5px 6px;
 }
-.menu ul li a:before
+.menu li:hover
 {
-  content: "> ";
+  background-color: #efefef;
 }
-
 .menu > ul > li.selected > a
 {
-  font-weight:bold;
+  font-weight: bold;
 }
 
 .subNav
@@ -188,17 +201,13 @@ h2
 
 .menu a
 {
-  display:block;
-  padding: 3px 5px 3px 10px;
-  color: #83003c;  
-  text-decoration: none;  
-  font-size:12px;
+  display: block;
+  padding: 3px 0px 3px 2px;
+  color: #83003c;
+  text-decoration: none;
+  font-size: 12px;
 }
-.menu a:hover
-{
-  xfont-weight:bold;
-  background-color: #efefef;
-}
+
 .footer
 {
   padding: 3px 0px;
