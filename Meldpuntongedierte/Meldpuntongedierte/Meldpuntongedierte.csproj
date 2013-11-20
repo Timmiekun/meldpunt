@@ -101,7 +101,9 @@
   <ItemGroup>
     <Content Include="500.html" />
     <Content Include="App_Data\gemeenten.xml" />
-    <Content Include="App_Data\pages.xml" />
+    <Content Include="App_Data\pages.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="App_Data\plaatsen.xml" />
     <Content Include="Css\main.css" />
     <Content Include="Css\reset.css" />
