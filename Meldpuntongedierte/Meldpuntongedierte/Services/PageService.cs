@@ -92,6 +92,9 @@ namespace Meldpunt.Services
       foreach (XmlNode t in page.SelectNodes("content//p"))
         text += " " + t.InnerText;
 
+      foreach (XmlNode t in page.SelectNodes("content//h1"))
+        text += " " + t.InnerText;
+
       PageModel p = new PageModel()
       {
         Id = id,
