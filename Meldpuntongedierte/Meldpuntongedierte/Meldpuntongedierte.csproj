@@ -121,6 +121,8 @@
     <Content Include="Images\Logo-text-2.png" />
     <Content Include="Images\Logo-text.png" />
     <Content Include="Images\Logo.png" />
+    <Content Include="Images\page_white_acrobat.png" />
+    <Content Include="Images\page_word.png" />
     <Content Include="Images\shadow_bottom.png" />
     <Content Include="Images\Wasp.JPG" />
     <Content Include="Scripts\suggest.js" />
@@ -159,6 +161,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Search\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Volksgezondheid.pdf" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

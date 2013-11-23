@@ -36,7 +36,7 @@ namespace Meldpunt
         new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
      );
 
-     
+
 
       routes.MapRoute(
        "Index", // Route name
@@ -52,7 +52,7 @@ namespace Meldpunt
 
       routes.MapRoute(
       "SearchPages", // Route name
-      "searchpages", // URL with parameters
+      "zoeken", // URL with parameters
       new { controller = "Search", action = "SearchPages" } // Parameter defaults
    );
 
@@ -114,9 +114,9 @@ namespace Meldpunt
     {
       var exception = Server.GetLastError();
       var httpException = exception as HttpException;
-      
+
       var routeData = new RouteData();
-      routeData.Values["controller"] = "Error";      
+      routeData.Values["controller"] = "Error";
       if (httpException != null)
       {
         Response.Clear();
@@ -133,7 +133,7 @@ namespace Meldpunt
             break;
           case 404:
             routeData.Values["action"] = "Http404";
-            break;        
+            break;
         }
 
         IController errorsController = new ErrorController();
@@ -141,7 +141,7 @@ namespace Meldpunt
         errorsController.Execute(rc);
       }
 
-    
+
     }
   }
 }

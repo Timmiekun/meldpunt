@@ -21,8 +21,8 @@ namespace Meldpunt.Controllers
     public ActionResult Search(string plaats)
     {
       String found = plaatsService.Plaatsen.FirstOrDefault(p => p.ToLower().Equals(plaats.ToLower()));
-      if(!String.IsNullOrWhiteSpace(found))
-        return View("Plaats", new PlaatsModel { Name = found });
+      if (!String.IsNullOrWhiteSpace(found))
+        return RedirectToAction("Plaats", new { plaats = plaats.Capitalize() });
 
       return RedirectToAction("SearchPages", "Search", new { q = plaats });
     }
@@ -31,7 +31,7 @@ namespace Meldpunt.Controllers
     public ActionResult Plaats(string plaats)
     {
       if(plaatsService.Plaatsen.Any(p=> p.Equals(plaats, StringComparison.InvariantCultureIgnoreCase)))
-        return View("Plaats", new PlaatsModel { Name = plaats });      
+        return View("Plaats", new PlaatsModel { Name = plaats.Capitalize() });      
 
       Response.StatusCode = 404;
       return View("Nietgevonden", new PlaatsModel { Name = plaats });

@@ -24,7 +24,7 @@ h1
 
 h2
 {
-  margin: 5px 0px;
+  margin: 20px 0px 5px 0px;
   font-size: 14px;
 }
 .pdf
@@ -306,3 +306,14 @@ h3:hover
   color: #83003c;
 }
 
+.phone
+{
+  font-size: 24px;
+  margin: 30px 0px;
+}
+
+.phone,
+.plaatsheader
+{
+  text-align: center;
+}
