@@ -37,6 +37,9 @@
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="Lucene.Net">
+      <HintPath>..\lib\Lucene.Net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -84,12 +87,14 @@
   <ItemGroup>
     <Compile Include="ActionFilters\GlobalActionFilter.cs" />
     <Compile Include="Controllers\ApiController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\PlaatsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\SearchResultModel.cs" />
     <Compile Include="Models\PlaatsModel.cs" />
     <Compile Include="Models\MailModel.cs" />
     <Compile Include="Models\PageModel.cs" />
@@ -151,6 +156,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Plaats\Nietgevonden.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Search\Index.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

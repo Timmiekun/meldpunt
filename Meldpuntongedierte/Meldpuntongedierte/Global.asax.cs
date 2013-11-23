@@ -43,13 +43,25 @@ namespace Meldpunt
     );
 
       routes.MapRoute(
+       "Index", // Route name
+       "index", // URL with parameters
+       new { controller = "Search", action = "Index" } // Parameter defaults
+    );
+
+      routes.MapRoute(
+      "SearchPages", // Route name
+      "searchpages", // URL with parameters
+      new { controller = "Search", action = "SearchPages" } // Parameter defaults
+   );
+
+      routes.MapRoute(
          "PlaceSuggest", // Route name
          "api/{action}", // URL with parameters
          new { controller = "Api" } // Parameter defaults
       );
 
       routes.MapRoute(
-       "PLaats", // Route name
+       "Plaats", // Route name
        "in/{plaats}", // URL with parameters
        new { controller = "Plaats", action = "PLaats", id = UrlParameter.Optional } // Parameter defaults
     );

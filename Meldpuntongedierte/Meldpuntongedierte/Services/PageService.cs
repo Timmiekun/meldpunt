@@ -88,6 +88,10 @@ namespace Meldpunt.Services
         parent = parent.SelectSingleNode("../../.");
       }
 
+      String text = "";
+      foreach (XmlNode t in page.SelectNodes("content//text()"))
+        text += " " + t.Value;
+
       PageModel p = new PageModel()
       {
         Id = id,
@@ -95,10 +99,9 @@ namespace Meldpunt.Services
         SubPages = subpages,
         Url = Utils.Utils.UrlEncode(url),
         ParentId = parentId,
-        HasSublingMenu = page.Attributes["haschildmenu"] != null && page.Attributes["haschildmenu"].Value == "true"
+        HasSublingMenu = page.Attributes["haschildmenu"] != null && page.Attributes["haschildmenu"].Value == "true",
+        FullText = text
       };
-
-
 
       return p;
     }

@@ -24,15 +24,14 @@ namespace Meldpunt.Controllers
       if(!String.IsNullOrWhiteSpace(found))
         return View("Plaats", new PlaatsModel { Name = found });
 
-      Response.StatusCode = 404;
-      return View("Nietgevonden", new PlaatsModel { Name = found });
+      return RedirectToAction("SearchPages", "Search", new { q = plaats });
     }
 
 
     public ActionResult Plaats(string plaats)
     {
       if(plaatsService.Plaatsen.Any(p=> p.Equals(plaats, StringComparison.InvariantCultureIgnoreCase)))
-        return View("Plaats", new PlaatsModel { Name = plaats });
+        return View("Plaats", new PlaatsModel { Name = plaats });      
 
       Response.StatusCode = 404;
       return View("Nietgevonden", new PlaatsModel { Name = plaats });
