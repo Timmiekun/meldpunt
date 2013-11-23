@@ -9,13 +9,11 @@
       </p>
 
       <p>
-        Voor alleen advies en informatie over ongedierte in huis en de bestrijding ervan raden we u aan om eerst te gaan naar <a href="#">ongedierte in huis</a>
+        Voor alleen advies en informatie over ongedierte in huis en de bestrijding ervan raden we u aan om eerst te gaan naar <a href="/ongedierte-in-huis">ongedierte in huis</a>
       </p>
 
-
-
       <p>
-        Voor ongediertebestrijding namens een bedrijf, instelling of woningcorporatie, wendt u zich voorafgaand alstublieft tot onze <a href="#">werkwijze</a>
+        Voor ongediertebestrijding namens een bedrijf, instelling of woningcorporatie, wendt u zich voorafgaand alstublieft tot onze <a href="/werkwijze">werkwijze</a>
       </p>
 
       <p>
@@ -1264,7 +1262,9 @@
   <page id="volksgezondheid" tab="true">
     <content>
       <h1>Gevaren van stedelijk ongedierte voor de volksgezondheid</h1>
-      <span id="docs-internal-guid-0bed6a6e-46cd-e207-b2a1-1e448b79e733">
+      <a href="/Volksgezondheid.pdf" class="pdf">Download de pdf</a>
+      <div class="hidden">
+        <span id="docs-internal-guid-0bed6a6e-46cd-e207-b2a1-1e448b79e733">
         <p dir="ltr" style="line-height:1.15;margin-top:0pt;margin-bottom:0pt;">
           <span style="font-size: 21px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Gevaren van stedelijk ongedierte voor de volksgezondheid</span>
         </p>
@@ -1616,7 +1616,8 @@
         <br />
         <span style="font-size: 15px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;"></span>
       </span>
-    </content>
+      </div>
+        </content>
   </page>
 
   <page id="contact" title="Contact">

@@ -14,6 +14,31 @@ em
   font-style: normal;
   font-weight: bold;
 }
+
+h1
+{
+  margin: 10px 0px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+h2
+{
+  margin: 5px 0px;
+  font-size: 14px;
+}
+.pdf
+{
+  background-image: url(/Images/page_white_acrobat.png);
+  padding-left: 20px;
+  background-position: left top;
+  background-repeat:no-repeat;
+}
+.hidden
+{
+  display: none;
+}
+
 .main
 {
   background: white;
@@ -27,6 +52,8 @@ em
   border-left: 1px solid #ababab;
   border-right: 1px solid #ababab;
 }
+
+
 
 .content, .footer
 {
@@ -131,19 +158,12 @@ em
 {
   margin: 10px 0px;
 }
-
-h1
+.content a
 {
-  margin: 10px 0px;
-  font-weight: bold;
-  font-size: 18px;
+  color: #83003c;
 }
 
-h2
-{
-  margin: 5px 0px;
-  font-size: 14px;
-}
+
 #header
 {
   position: absolute;
@@ -272,7 +292,7 @@ h3:hover
 
 .searchResults .url
 {
-  color:#ababab;
+  color: #ababab;
 }
 
 .searchResults li
@@ -282,7 +302,7 @@ h3:hover
 
 .searchResults h1 a
 {
-  text-decoration:none;
-  color:#83003c;  
+  text-decoration: none;
+  color: #83003c;
 }
 
