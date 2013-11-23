@@ -56,19 +56,33 @@ namespace Meldpunt.Controllers
       dir = FSDirectory.Open(indexPath);
       IndexSearcher searcher = new IndexSearcher(dir);
       QueryParser parser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30,"text", new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30));
+      QueryParser titleParser  = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, "title", new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30));
+      
 
       Query query = parser.Parse(q);
-      TopDocs results = searcher.Search(query, 50);
+      Query titleQuery = titleParser.Parse(q);
+      
+      BooleanQuery bq = new BooleanQuery();      
+      bq.Add(query, Occur.SHOULD);
+      bq.Add(titleQuery, Occur.SHOULD);
+
+      TopDocs results = searcher.Search(bq, 50);
 
       List<SearchResultModel> model = new List<SearchResultModel>();
       foreach (ScoreDoc d in results.ScoreDocs)
       {
-        Document result = searcher.Doc(d.Doc);                
+        Document result = searcher.Doc(d.Doc);
+        String intro = result.Get("text");
+        if (intro.Length > 200)
+        {
+          intro = intro.TruncateAtWord(200);
+          intro += " ...";
+        }
         model.Add(new SearchResultModel
         {
           Title = result.Get("title"),
           Url = result.Get("url"),
-          Intro = result.Get("text")
+          Intro = intro
            
         });
 

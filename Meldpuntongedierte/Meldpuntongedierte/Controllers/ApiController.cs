@@ -19,7 +19,8 @@ namespace Meldpunt.Controllers
 
     public JsonResult getPlaatsNaamSuggest(string plaats)
     {
-      return Json(plaatsService.getSuggestion(plaats), JsonRequestBehavior.AllowGet);
+      List<string> plaatsen = plaatsService.getSuggestion(plaats);
+      return Json(plaatsen, JsonRequestBehavior.AllowGet);
     }
   }
 }

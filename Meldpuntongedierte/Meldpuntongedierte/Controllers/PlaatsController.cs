@@ -20,7 +20,7 @@ namespace Meldpunt.Controllers
 
     public ActionResult Search(string plaats)
     {
-      String found = plaatsService.Plaatsen.FirstOrDefault(p => p.StartsWith(plaats, StringComparison.CurrentCultureIgnoreCase));
+      String found = plaatsService.Plaatsen.FirstOrDefault(p => p.ToLower().Equals(plaats.ToLower()));
       if(!String.IsNullOrWhiteSpace(found))
         return View("Plaats", new PlaatsModel { Name = found });
 

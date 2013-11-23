@@ -6,14 +6,15 @@
 
 @if (Model.Any())
 {
-<ul>
+<ul class="searchResults">
 @foreach (SearchResultModel result in Model)
 {
   <li>
   <article>
-    <h1>@result.Title</h1>
-    <p>@result.Intro.Substring(0, 200)</p>
-    <a href="@result.Url">@result.Url</a>
+    <h1><a href="@result.Title">@result.Title</a></h1>
+    <p class="url">@result.Url</p>
+    <p>@result.Intro</p>
+    
   </article>
   </li>
 }

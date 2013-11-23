@@ -13,7 +13,7 @@ namespace Meldpunt.Utils
       return Regex.Replace(s, @"\s", "-").ToLower();
     }
 
-    public static string TruncateAtWord(this string value, int length)
+    public static string TruncateAtWord(this String value, int length)
     {
       if (value == null || value.Length < length || value.IndexOf(" ", length) == -1)
         return value;

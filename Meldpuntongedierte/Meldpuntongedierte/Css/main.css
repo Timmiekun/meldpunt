@@ -258,3 +258,31 @@ h3:hover
   padding: 0px 10px;
   border-bottom: 1px solid #EFEFEF;
 }
+
+.searchResults h1
+{
+  font-size: 14px;
+  margin: 0;
+}
+
+.searchResults p
+{
+  margin: 0;
+}
+
+.searchResults .url
+{
+  color:#ababab;
+}
+
+.searchResults li
+{
+  margin-bottom: 20px;
+}
+
+.searchResults h1 a
+{
+  text-decoration:none;
+  color:#83003c;  
+}
+
