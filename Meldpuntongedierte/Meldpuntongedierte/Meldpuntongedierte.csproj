@@ -163,6 +163,7 @@
     <Content Include="Views\Search\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Views\Home\Plaats.cshtml" />
     <None Include="Volksgezondheid.pdf" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

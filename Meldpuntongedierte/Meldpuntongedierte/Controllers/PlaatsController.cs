@@ -30,11 +30,10 @@ namespace Meldpunt.Controllers
 
     public ActionResult Plaats(string plaats)
     {
-      if(plaatsService.Plaatsen.Any(p=> p.Equals(plaats, StringComparison.InvariantCultureIgnoreCase)))
-        return View("Plaats", new PlaatsModel { Name = plaats.Capitalize() });      
+      if (plaatsService.Plaatsen.Any(p => p.Equals(plaats, StringComparison.InvariantCultureIgnoreCase)))
+        return RedirectPermanent("/" + plaats);
 
-      Response.StatusCode = 404;
-      return View("Nietgevonden", new PlaatsModel { Name = plaats });
+      throw new HttpException(404, "page not found");
     }
   }
 }

@@ -1,7 +1,9 @@
 ﻿@using Meldpunt.Models;
+@using Meldpunt.Utils;
 @model PageModel
 @{
-  ViewBag.Title = "Home Page";
+  ViewBag.Title = Model.Title;
+  ViewBag.Description = Model.FullText.TruncateAtWord(200);
   ViewBag.Url = Model.Url;
   List<PageModel> subNav = ViewBag.SubNav as List<PageModel>;
 }

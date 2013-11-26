@@ -29,15 +29,20 @@ namespace Meldpunt.Controllers
     public ActionResult GetPage(string id)
     {
       PageModel model = pageService.GetPage(id);
+      String plaats = plaatsService.Plaatsen.Find(p => p.Equals(id, StringComparison.InvariantCultureIgnoreCase));
 
-      if (model == null)
+      if (model == null && String.IsNullOrWhiteSpace(plaats))
       {
         throw new HttpException(404, "page not found");
+      }
+      else if (model == null && !String.IsNullOrWhiteSpace(plaats))
+      {
+        return View("Plaats", new PlaatsModel { Name = plaats.Capitalize() });
       }
       else if (!model.SubPages.Any())
       {
         PageModel parent = pageService.GetPage(model.ParentId);
-        if(parent != null)
+        if (parent != null)
           ViewBag.SubNav = parent.SubPages;
       }
       else

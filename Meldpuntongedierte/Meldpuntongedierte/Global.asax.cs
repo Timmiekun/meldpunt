@@ -34,21 +34,19 @@ namespace Meldpunt
         "Homepage", // Route name
         "", // URL with parameters
         new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+      );
+
+      routes.MapRoute(
+         "Index", // Route name
+         "index", // URL with parameters
+         new { controller = "Search", action = "Index" } // Parameter defaults
+      );
+
+      routes.MapRoute(
+        "Search", // Route name
+        "zoek", // URL with parameters
+        new { controller = "Plaats", action = "Search" } // Parameter defaults
      );
-
-
-
-      routes.MapRoute(
-       "Index", // Route name
-       "index", // URL with parameters
-       new { controller = "Search", action = "Index" } // Parameter defaults
-    );
-
-      routes.MapRoute(
-      "Search", // Route name
-      "zoek", // URL with parameters
-      new { controller = "Plaats", action = "Search" } // Parameter defaults
-   );
 
       routes.MapRoute(
       "SearchPages", // Route name
