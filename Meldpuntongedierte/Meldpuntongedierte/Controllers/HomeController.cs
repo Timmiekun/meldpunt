@@ -28,27 +28,47 @@ namespace Meldpunt.Controllers
 
     public ActionResult GetPage(string id)
     {
-      PageModel model = pageService.GetPage(id);
-      String plaats = plaatsService.Plaatsen.Find(p => p.Equals(id, StringComparison.InvariantCultureIgnoreCase));
-
-      if (model == null && String.IsNullOrWhiteSpace(plaats))
+      // content page?
+      PageModel model = pageService.GetPage(id.XmlSafe());
+      if (model != null)
       {
-        throw new HttpException(404, "page not found");
-      }
-      else if (model == null && !String.IsNullOrWhiteSpace(plaats))
-      {
-        return View("Plaats", new PlaatsModel { Name = plaats.Capitalize() });
-      }
-      else if (!model.SubPages.Any())
-      {
+        if (model.SubPages.Any())
+        {
+          ViewBag.SubNav = model.SubPages;
+          return View("index", model);
+        }
+        
         PageModel parent = pageService.GetPage(model.ParentId);
         if (parent != null)
-          ViewBag.SubNav = parent.SubPages;
+          ViewBag.SubNav = parent.SubPages;          
+        
+        return View("index", model);
       }
-      else
-        ViewBag.SubNav = model.SubPages;
 
-      return View("index", model);
+      // gemeente page?
+      var gemeente = LocationUtils.placesByMunicipality.Where(m => m.Key.Equals(id));
+      if (gemeente.Any())
+      {
+        PlaatsModel plaatsModel = new PlaatsModel
+        {
+          Gemeentenaam = gemeente.First().Key.Capitalize(),
+          Plaatsen = gemeente.First().Value.ToList()
+        };
+        ViewBag.HidePhoneNumber = true;
+        return View("Plaats", plaatsModel);
+      }
+
+      // plaats to redirect?
+      var gemeentes = LocationUtils.placesByMunicipality.Where(m => m.Value.Any(p => p.Equals(id, StringComparison.CurrentCultureIgnoreCase)));
+      
+
+      if (gemeentes.Any())
+      {
+        String name = gemeentes.First().Key;
+        return RedirectPermanent("/" + name);
+      }
+
+      throw new HttpException(404, "page not found");
     }
   }
 }

@@ -39,7 +39,7 @@
 
    <div class="topBar">
     <h2>
-    <a class="logo" href="/"><img src="/Images/logo ultimo.gif" alt="Meldpunt ongedierte logo" /></a>
+    <a class="logo" href="/"><img src="/Images/24-11.png" alt="Meldpunt ongedierte logo" /></a>
     <a class="logotext" href="/">Centraal Meldpunt Ongedierte</a></h2>    
     <div id="tabholder">
       <div id="tabs">
@@ -92,6 +92,11 @@
       @RenderBody()
     </div>
     
+    @if (ViewBag.HidePhoneNumber == null)
+    {
+    <p class="phoneNumber">0900-2556677</p>
+    }
+
     @RenderSection("menu",false)        
   
     <div class="footer">

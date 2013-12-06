@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using System.Web.Mvc;
+using System.Linq;
 using System.Web.Security;
 using System.Xml;
 using Meldpunt.Models;
@@ -30,7 +31,7 @@ namespace Meldpunt.Services
 
     public List<String> getSuggestion(string s)
     {
-      List<String> foundPlaces = Plaatsen.FindAll(p => p.StartsWith(s, StringComparison.InvariantCultureIgnoreCase));
+      List<String> foundPlaces = LocationUtils.allPlaces.FindAll(p => p.StartsWith(s, StringComparison.InvariantCultureIgnoreCase));
       return foundPlaces;
     }
   }

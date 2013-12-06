@@ -101,6 +101,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\PlaatsService.cs" />
     <Compile Include="Services\PageService.cs" />
+    <Compile Include="Utils\LocationUtils.cs" />
     <Compile Include="Utils\Utils.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -114,10 +115,16 @@
     <Content Include="Css\reset.css" />
     <Content Include="Css\suggest.css" />
     <Content Include="Global.asax" />
+    <Content Include="Images\24-11.png" />
     <Content Include="Images\arrow-right.png" />
+    <Content Include="Images\call_20px.png" />
+    <Content Include="Images\call_35px.png" />
+    <Content Include="Images\call_50px.png" />
     <Content Include="Images\kakkerlak.jpg" />
     <Content Include="Images\logo MO.JPG" />
     <Content Include="Images\logo ultimo.gif" />
+    <Content Include="Images\logo-medium.png" />
+    <Content Include="Images\logo-small.png" />
     <Content Include="Images\Logo-text-2.png" />
     <Content Include="Images\Logo-text.png" />
     <Content Include="Images\Logo.png" />
@@ -164,6 +171,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Plaats.cshtml" />
+    <Content Include="App_Data\2012_Woonplaatsen_in_Nederland.csv" />
     <None Include="Volksgezondheid.pdf" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Meldpunt.Services;
 using Meldpunt.Models;
+using Meldpunt.Utils;
 
 namespace Meldpunt.Controllers
 {
@@ -19,7 +20,7 @@ namespace Meldpunt.Controllers
 
     public JsonResult getPlaatsNaamSuggest(string plaats)
     {
-      List<string> plaatsen = plaatsService.getSuggestion(plaats);
+      List<string> plaatsen = LocationUtils.allPlaces.FindAll(p => p.StartsWith(plaats, StringComparison.InvariantCultureIgnoreCase));
       return Json(plaatsen, JsonRequestBehavior.AllowGet);
     }
   }

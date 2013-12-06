@@ -29,7 +29,7 @@
     for (var x = 0; x < suggest.suggestPlaatsen.length; x++) {
       var plaats = suggest.suggestPlaatsen[x];
       if (typeof (plaats) == "string")
-        content += '<a href="/' + plaats + '">' + plaats + '</a>';
+        content += '<a href="/' + encodeURIComponent(plaats) + '">' + plaats + '</a>';
     }
     suggestBox.innerHTML = content;
     suggestBox.className = 'suggest-shown';

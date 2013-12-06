@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Configuration;
 using Meldpunt.Services;
 using Meldpunt.Models;
+using Meldpunt.Utils;
 
 namespace Meldpunt.ActionFilters
 {
@@ -33,7 +34,7 @@ namespace Meldpunt.ActionFilters
         foreach (string s in filterContext.HttpContext.Request.Path.Split('/'))
           if (!String.IsNullOrWhiteSpace(s) && !s.Equals("in"))
           {
-            PageModel p = pageService.GetPage(Utils.Utils.UrlEncode(s));
+            PageModel p = pageService.GetPage(s.XmlSafe());
             if(p!=null)
               breadCrumbs.Add(p);
           }

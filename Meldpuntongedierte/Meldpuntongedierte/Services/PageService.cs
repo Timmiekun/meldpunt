@@ -73,9 +73,10 @@ namespace Meldpunt.Services
       List<PageModel> subpages = new List<PageModel>();
 
       XmlNodeList subPages = page.SelectNodes("pages/page");
-      if (subPages != null){
-          foreach(XmlNode subPage in subPages)
-            subpages.Add(XmlToModel(subPage, false));
+      if (subPages != null)
+      {
+        foreach (XmlNode subPage in subPages)
+          subpages.Add(XmlToModel(subPage, false));
       }
 
       string id = page.Attributes["id"].Value;
@@ -100,7 +101,7 @@ namespace Meldpunt.Services
         Id = id,
         Content = page.SelectSingleNode("content") != null ? page.SelectSingleNode("content").InnerXml : "",
         SubPages = subpages,
-        Url = Utils.Utils.UrlEncode(url),
+        Url = url.XmlSafe(),
         ParentId = parentId,
         HasSublingMenu = page.Attributes["haschildmenu"] != null && page.Attributes["haschildmenu"].Value == "true",
         FullText = text

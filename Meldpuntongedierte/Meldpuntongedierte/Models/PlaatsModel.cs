@@ -10,6 +10,7 @@ namespace Meldpunt.Models
 {
   public class PlaatsModel
   {
-    public string Name { get; set; }
+    public string Gemeentenaam { get; set; }
+    public List<String> Plaatsen { get; set; }
   }
 }
