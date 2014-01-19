@@ -1,0 +1,41 @@
+﻿@using Meldpunt.Models;
+@using Meldpunt.Utils;
+@model List<PageModel>
+@{
+  ViewBag.Title = "Admin";
+  var locations = ViewBag.Locations;
+  Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<textarea>
+  
+</textarea>
+
+@section menu{
+<div class="menu">  
+  <ul>
+    @foreach (PageModel item in Model)
+    {
+      <li ><a href="@item.Url">@item.Title</a>
+        @if (item.SubPages.Any())
+        {
+          Html.RenderPartial("subPagesPartial", item);        
+        }
+      </li>
+    }
+  </ul>
+
+  <h2>Gemeenten</h2>
+  <ul>
+    @foreach(var kv in locations){
+       <li>
+       <a href=#>@kv.Key</a>
+       <div class="subNav">
+        @String.Join(", ", kv.Value)
+       </div>
+       </li>
+    }
+  </ul>
+
+</div>
+}

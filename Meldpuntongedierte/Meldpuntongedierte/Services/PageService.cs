@@ -23,6 +23,12 @@ namespace Meldpunt.Services
       pagesDoc.Load(pageFile);
     }
 
+    public List<PageModel> GetAllPagesTree()
+    {
+      XmlNodeList pages = pagesDoc.DocumentElement.SelectNodes("page");
+      return XmlToModel(pages, true);
+    }
+
     public List<PageModel> GetAllPages()
     {
       XmlNodeList pages = pagesDoc.DocumentElement.SelectNodes("//page");
@@ -60,11 +66,11 @@ namespace Meldpunt.Services
       return XmlToModel(pages);
     }
 
-    private List<PageModel> XmlToModel(XmlNodeList pages)
+    private List<PageModel> XmlToModel(XmlNodeList pages, bool deep = false)
     {
       List<PageModel> pageModels = new List<PageModel>();
       foreach (XmlNode n in pages)
-        pageModels.Add(XmlToModel(n));
+        pageModels.Add(XmlToModel(n, deep));
       return pageModels;
     }
 
@@ -76,7 +82,7 @@ namespace Meldpunt.Services
       if (subPages != null)
       {
         foreach (XmlNode subPage in subPages)
-          subpages.Add(XmlToModel(subPage, false));
+          subpages.Add(XmlToModel(subPage, true));
       }
 
       string id = page.Attributes["id"].Value;
@@ -101,7 +107,7 @@ namespace Meldpunt.Services
         Id = id,
         Content = page.SelectSingleNode("content") != null ? page.SelectSingleNode("content").InnerXml : "",
         SubPages = subpages,
-        Url = url.XmlSafe(),
+        Url = url.UrlEncode(),
         ParentId = parentId,
         HasSublingMenu = page.Attributes["haschildmenu"] != null && page.Attributes["haschildmenu"].Value == "true",
         FullText = text

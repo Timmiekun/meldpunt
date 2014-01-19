@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meldpuntongedierte", "Meldpuntongedierte\Meldpuntongedierte.csproj", "{D7740739-650C-4C92-AE4C-BA3B62D32B51}"
 EndProject
 Global

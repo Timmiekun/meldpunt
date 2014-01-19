@@ -8,6 +8,11 @@ namespace Meldpunt.Utils
 {
   public static class Utils
   {
+    public static string UrlEncode(this string s)
+    {
+      return Regex.Replace(s, @"\s", "-").ToLower();
+    }
+    
     public static string XmlSafe(this string s)
     {
       String re = Regex.Replace(s, "[^a-zA-Z0-9]+", "-").Trim('-').ToLower();

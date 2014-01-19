@@ -29,12 +29,14 @@ namespace Meldpunt.Utils
         // dien eerste twee regels hebben we nie nodig
         tr.ReadLine();
         tr.ReadLine();
+        tr.ReadLine();
+        tr.ReadLine();
         string line;
         while (!String.IsNullOrWhiteSpace((line = tr.ReadLine())))
         {
           string[] values = line.Split(';');
-          string plaats = values[0].ToLower().Trim('"');
-          string gemeente = values[3].ToLower().Trim('"');
+          string plaats = values[0].Trim('"');
+          string gemeente = values[3].Trim('"');
           allPlaces.Add(plaats);
 
           if (!placesByMunicipality.ContainsKey(gemeente))

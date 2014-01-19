@@ -63,8 +63,20 @@ namespace Meldpunt
       routes.MapRoute(
        "Plaats", // Route name
        "in/{plaats}", // URL with parameters
-       new { controller = "Plaats", action = "PLaats", id = UrlParameter.Optional } // Parameter defaults
+         new { controller = "Plaats", action = "PLaats", id = UrlParameter.Optional } // Parameter defaults
+      );
+
+      routes.MapRoute(
+       "EditPlaats", // Route name
+       "admin/plaats/{plaats}", // URL with parameters
+       new { controller = "Admin", action = "Plaats", id = UrlParameter.Optional } // Parameter defaults
     );
+
+      routes.MapRoute(
+        "Admin", // Route name
+        "admin/{action}", // URL with parameters
+        new { controller = "Admin", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+     );
 
       routes.MapRoute(
          "Page", // Route name
@@ -110,36 +122,38 @@ namespace Meldpunt
 
     protected void Application_Error(Object sender, System.EventArgs e)
     {
-      var exception = Server.GetLastError();
-      var httpException = exception as HttpException;
+#if debug
+        throw Server.GetLastError();
+#else
+        var exception = Server.GetLastError();
+        var httpException = exception as HttpException;
 
-      var routeData = new RouteData();
-      routeData.Values["controller"] = "Error";
-      if (httpException != null)
-      {
-        Response.Clear();
-        Server.ClearError();
-
-        Response.StatusCode = httpException.GetHttpCode();
-        switch (Response.StatusCode)
+        var routeData = new RouteData();
+        routeData.Values["controller"] = "Error";
+        if (httpException != null)
         {
-          case 400:
-            routeData.Values["action"] = "Http404";
-            break;
-          case 403:
-            routeData.Values["action"] = "Http403";
-            break;
-          case 404:
-            routeData.Values["action"] = "Http404";
-            break;
+            Response.Clear();
+            Server.ClearError();
+
+            Response.StatusCode = httpException.GetHttpCode();
+            switch (Response.StatusCode)
+            {
+                case 400:
+                    routeData.Values["action"] = "Http404";
+                    break;
+                case 403:
+                    routeData.Values["action"] = "Http403";
+                    break;
+                case 404:
+                    routeData.Values["action"] = "Http404";
+                    break;
+            }
+
+            IController errorsController = new ErrorController();
+            var rc = new RequestContext(new HttpContextWrapper(Context), routeData);
+            errorsController.Execute(rc);
+#endif
         }
-
-        IController errorsController = new ErrorController();
-        var rc = new RequestContext(new HttpContextWrapper(Context), routeData);
-        errorsController.Execute(rc);
-      }
-
-
     }
   }
 }
