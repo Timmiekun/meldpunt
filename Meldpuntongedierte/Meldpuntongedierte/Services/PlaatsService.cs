@@ -44,7 +44,7 @@ namespace Meldpunt.Services
         return null;
 
       string html = plaatsElement.SelectSingleNode("content").InnerText;
-      html = html.Trim().Substring(9, html.Length - 13);
+      // html = html.Trim().Substring(9, html.Length - 13);
 
       return new PlaatsModel
       {
@@ -58,9 +58,9 @@ namespace Meldpunt.Services
     {
       XmlElement plaats = (XmlElement)plaatsenDoc.SelectSingleNode("//plaats[@name='" + p.Gemeentenaam + "']");
 
-     
 
-      string html = String.Format(" <![CDATA[{0}]]>", p.Content);
+
+      string html = p.Content;// String.Format(" <![CDATA[{0}]]>", p.Content);
 
       if (plaats != null)
       {

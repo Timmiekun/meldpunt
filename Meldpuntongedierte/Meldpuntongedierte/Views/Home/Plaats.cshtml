@@ -8,9 +8,8 @@
 
 @if (!String.IsNullOrWhiteSpace(Model.Content) && Model.Published)
 {
-  <text>
-    @Html.Raw(Model.Content)
-  </text>
+  @Html.Raw(HttpUtility.HtmlDecode(Model.Content))
+
 }
 else{
 

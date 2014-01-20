@@ -127,6 +127,8 @@ namespace Meldpunt
       AreaRegistration.RegisterAllAreas();
 
       GlobalFilters.Filters.Add(new GlobalFilterAttribute());
+      // GlobalFilters.Filters.Add(new MustBeAdminAttribute());
+      
       RegisterGlobalFilters(GlobalFilters.Filters);
 
       RegisterRoutes(RouteTable.Routes);

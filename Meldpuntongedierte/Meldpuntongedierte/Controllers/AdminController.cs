@@ -6,9 +6,11 @@ using System.Web.Mvc;
 using Meldpunt.Services;
 using Meldpunt.Models;
 using Meldpunt.Utils;
+using Meldpunt.ActionFilters;
 
 namespace Meldpunt.Controllers
 {
+  [MustBeAdmin]
   public class AdminController : Controller
   {
     private PageService pageService;
