@@ -1,13 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <plaatsen>
-  <plaats name="Aa en Hunze" published="false">
-    <content>
-      <p>Ander <strong>verhaal</strong>, Sbappie?</p>
-      <ol>
-        <li>Punt 1</li>
-        <li>Punt 2</li>
-        <li>Punt3</li>
-      </ol>
-      <p>Goeie shit ouwe!</p></content>
+  <plaats name="Aa en Hunze" published="true">
+    <content> &lt;![CDATA[&lt;p&gt;&lt;span style="font-family: Verdana, Tahoma, arial; font-size: 13px; line-height: 16.639999389648438px; background-color: #efefef;"&gt;Onder de gemeente Aa en Hunze vallen de plaatsen: Amen, Anderen, Anloo, Annen, Annerveenschekanaal, Ballo&amp;euml;rveld, Balloo, Deurze, Eext, Eexterveen, Eexterveenschekanaal, Eexterzandvoort, Ekehaar, Eldersloo, Eleveld, Gasselte, Gasselternijveen, Gasselternijveenschemond, Gasteren, Geelbroek, Gieten, Gieterveen, Grolloo, Marwijksoord, Nieuw Annerveen, Nieuwediep, Nijlande, Nooitgedacht, Oud Annerveen, Papenvoort, Rolde, Schipborg, Schoonloo, Spijkerboor, Vredenheim&lt;/span&gt;&lt;/p&gt;]]&gt;</content>
+  </plaats>
+  <plaats name="Aalburg" published="true">
+    <content> &lt;![CDATA[&lt;h1 class="plaatsheader" style="margin: 10px 0px 20px; padding: 0px; border: 0px; outline: 0px; font-size: 18px; vertical-align: baseline; background-color: transparent; text-align: center; font-family: Verdana, Tahoma, arial; line-height: 16.639999389648438px;"&gt;Meldpunt Ongediertebestrijding S&amp;uacute;dwest Frysl&amp;acirc;n&lt;/h1&gt;
+&lt;h2 class="phone" style="margin: 30px 0px; padding: 0px; border: 0px; outline: 0px; font-size: 22px; vertical-align: baseline; background-color: transparent; color: #83003c; text-align: center; font-family: Verdana, Tahoma, arial; line-height: 16.639999389648438px;"&gt;0900-2556677&lt;/h2&gt;
+&lt;p style="margin: 10px 0px; padding: 0px; border: 0px; outline: 0px; font-size: 13px; vertical-align: baseline; background-color: transparent; font-family: Verdana, Tahoma, arial; line-height: 16.639999389648438px;"&gt;Onder de gemeente S&amp;uacute;dwest Frysl&amp;acirc;n vallen de plaatsen: Abbega, Allingawier, Arum, Blauwhuis, Bolsward, Breezanddijk, Burgwerd, Cornwerd, Dedgum, Exmorra, Ferwoude, Folsgare, Gaast, Gaastmeer, Gauw, Go&amp;euml;nga, Greonterp, Hartwerd, Heeg, Hemelum, Hichtum, Hieslum, Hindeloopen, Hommerts, Idsegahuizum, Idzega, IJlst, Indijk, It Heidenskip, Jutrijp, Kimswerd, Kornwerderzand, Koudum, Koufurderrige, Lo&amp;euml;nga, Lollum, Longerhouw, Makkum, Molkwerum, Nijhuizum, Nijland, Offingawier, Oosthem, Oppenhuizen, Oudega, Parrega, Piaam, Pingjum, Sandfirden, Scharnegoutum, Schettens, Schraard, Smallebrugge, Sneek, Stavoren, Tirns, Tjalhuizum, Tjerkwerd, Uitwellingerga, Warns, Westhem, Witmarsum, Wolsum, Wons, Workum, Woudsend, Ypecolsga, Ysbrechtum, Zurich&lt;/p&gt;
+&lt;p style="margin: 10px 0px; padding: 0px; border: 0px; outline: 0px; font-size: 13px; vertical-align: baseline; background-color: transparent; font-family: Verdana, Tahoma, arial; line-height: 16.639999389648438px;"&gt;Als u inwoner bent van de gemeente S&amp;uacute;dwest Frysl&amp;acirc;n en u heeft te maken met overlast van ongedierte, neem dan contact op met ons meldpunt via bovenstaand servicenummer.&lt;/p&gt;
+&lt;p&gt;&lt;strong style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 13px; vertical-align: baseline; background-color: transparent; font-family: Verdana, Tahoma, arial; line-height: 16.639999389648438px;"&gt;Let op!&lt;/strong&gt;&lt;/p&gt;
+&lt;p style="margin: 10px 0px; padding: 0px; border: 0px; outline: 0px; font-size: 13px; vertical-align: baseline; background-color: transparent; font-family: Verdana, Tahoma, arial; line-height: 16.639999389648438px;"&gt;Afspraken via dit telefoonnummer kunnen alleen betrekking hebben op onderstaande soorten bestrijdingen, te weten;&lt;/p&gt;
+&lt;ul class="defaultList" style="margin: 10px; padding: 0px; border: 0px; outline: 0px; font-size: 13px; vertical-align: baseline; background-color: transparent; list-style-position: initial; list-style-image: initial; font-family: Verdana, Tahoma, arial; line-height: 16.639999389648438px;"&gt;
+&lt;li id="ratten" style="margin: 0px 0px 0px 10px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-color: transparent; cursor: pointer;"&gt;
+&lt;h3 style="margin: 0px; padding: 0px 0px 0px 10px; border: 0px; outline: 0px; font-size: 13px; vertical-align: baseline; background-color: transparent;"&gt;Rattenbestrijding&lt;/h3&gt;
+&lt;/li&gt;
+&lt;li id="muizen" style="margin: 0px 0px 0px 10px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-color: transparent; cursor: pointer;"&gt;
+&lt;h3 style="margin: 0px; padding: 0px 0px 0px 10px; border: 0px; outline: 0px; font-size: 13px; vertical-align: baseline; background-color: transparent;"&gt;Muizenbestrijding&lt;/h3&gt;
+&lt;/li&gt;
+&lt;li id="kakkerlakken" style="margin: 0px 0px 0px 10px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-color: transparent; cursor: pointer;"&gt;
+&lt;h3 style="margin: 0px; padding: 0px 0px 0px 10px; border: 0px; outline: 0px; font-size: 13px; vertical-align: baseline; background-color: transparent;"&gt;Kakkerlakkenbestrijding&lt;/h3&gt;
+&lt;/li&gt;
+&lt;li id="wespen" style="margin: 0px 0px 0px 10px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-color: transparent; cursor: pointer;"&gt;
+&lt;h3 style="margin: 0px; padding: 0px 0px 0px 10px; border: 0px; outline: 0px; font-size: 13px; vertical-align: baseline; background-color: transparent;"&gt;Wespenbestrijding&lt;/h3&gt;
+&lt;/li&gt;
+&lt;li id="mieren" style="margin: 0px 0px 0px 10px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-color: transparent; cursor: pointer;"&gt;
+&lt;h3 style="margin: 0px; padding: 0px 0px 0px 10px; border: 0px; outline: 0px; font-size: 13px; vertical-align: baseline; background-color: transparent;"&gt;Mierenbestrijding&lt;/h3&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p style="margin: 10px 0px; padding: 0px; border: 0px; outline: 0px; font-size: 13px; vertical-align: baseline; background-color: transparent; font-family: Verdana, Tahoma, arial; line-height: 16.639999389648438px;"&gt;Houdt u er rekening mee dat aan iedere vorm van bestrijding kosten zijn verbonden.&lt;/p&gt;
+&lt;p style="margin: 10px 0px; padding: 0px; border: 0px; outline: 0px; font-size: 13px; vertical-align: baseline; background-color: transparent; font-family: Verdana, Tahoma, arial; line-height: 16.639999389648438px;"&gt;Voor overig ongedierte of plaagdieren brengen wij u in contact met onze bestrijdingsdeskundige. Indien nodig kan hij bij u langskomen voor een advies.&lt;/p&gt;
+&lt;p&gt;&lt;strong style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 13px; vertical-align: baseline; background-color: transparent; font-family: Verdana, Tahoma, arial; line-height: 16.639999389648438px;"&gt;Alvorens u contact opneemt voor het maken van een afspraak willen wij u graag op het volgende wijzen:&lt;/strong&gt;&lt;/p&gt;
+&lt;p style="margin: 10px 0px; padding: 0px; border: 0px; outline: 0px; font-size: 13px; vertical-align: baseline; background-color: transparent; font-family: Verdana, Tahoma, arial; line-height: 16.639999389648438px;"&gt;Ondanks dat vele dierplagen vaak alleen kunnen worden bestreden door de juiste vakkennis en specifieke middelen, kunnen sommige problemen eenvoudig opgelost worden door het inwinnen van de juiste informatie. Om u op weg te helpen, hebben wij bovenstaand een en ander uiteengezet onder&lt;a style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-color: transparent; color: #83003c;" href="../../ongedierte-in-huis"&gt;ongedierte in huis&lt;/a&gt;. U vindt hier informatie over iedere vorm van ongedierte welke veel voorkomt in en om het huis. Tevens vind u nuttige tips over wat u zelf kunt doen en belangrijke informatie over wat u vooral niet moet doen.&lt;/p&gt;
+&lt;p&gt;&lt;strong style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-size: 13px; vertical-align: baseline; background-color: transparent; font-family: Verdana, Tahoma, arial; line-height: 16.639999389648438px;"&gt;Voor algemene voorlichting kunt u ons ook benaderen via&amp;nbsp;&lt;a style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-color: transparent; color: #83003c;" href="mailto:info@meldpuntongedierte.nl"&gt;info@meldpuntongedierte.nl&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p style="margin: 10px 0px; padding: 0px; border: 0px; outline: 0px; font-size: 13px; vertical-align: baseline; background-color: transparent; font-family: Verdana, Tahoma, arial; line-height: 16.639999389648438px;"&gt;&lt;strong style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-color: transparent;"&gt;Voor ongediertebestrijding namens een bedrijf, instelling of woningcorporatie, wendt u zich voorafgaand tot&amp;nbsp;&lt;a style="margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-color: transparent; color: #83003c;" href="../../werkwijze"&gt;onze werkwijze&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;]]&gt;</content>
   </plaats>
 </plaatsen>

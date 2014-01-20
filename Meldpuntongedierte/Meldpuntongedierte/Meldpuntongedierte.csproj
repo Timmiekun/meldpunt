@@ -271,7 +271,7 @@
     <None Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.ttf" />
     <None Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.woff" />
     <Content Include="Views\Admin\EditPlaats.cshtml" />
-    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
     <None Include="Volksgezondheid.pdf" />
   </ItemGroup>
   <PropertyGroup>

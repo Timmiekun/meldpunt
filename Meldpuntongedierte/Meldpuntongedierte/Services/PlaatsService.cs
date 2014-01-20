@@ -43,10 +43,13 @@ namespace Meldpunt.Services
       if (plaatsElement == null)
         return null;
 
+      string html = plaatsElement.SelectSingleNode("content").InnerText;
+      html = html.Trim().Substring(9, html.Length - 13);
+
       return new PlaatsModel
       {
         Gemeentenaam = plaatsElement.Attributes["name"].Value,
-        Content = plaatsElement.SelectSingleNode("content").InnerXml,
+        Content = html,
         Published = plaatsElement.Attributes["published"].Value == "true"
       };
     }
@@ -54,10 +57,15 @@ namespace Meldpunt.Services
     internal void UpdateOrInsert(PlaatsModel p)
     {
       XmlElement plaats = (XmlElement)plaatsenDoc.SelectSingleNode("//plaats[@name='" + p.Gemeentenaam + "']");
+
+     
+
+      string html = String.Format(" <![CDATA[{0}]]>", p.Content);
+
       if (plaats != null)
       {
         plaats.SetAttribute("published", p.Published ? "true" : "false");
-        plaats.SelectSingleNode("content").InnerXml = p.Content;
+        plaats.SelectSingleNode("content").InnerText = html;
       }
       else
       {
@@ -65,13 +73,40 @@ namespace Meldpunt.Services
         plaats.SetAttribute("name", p.Gemeentenaam);
         plaats.SetAttribute("published", p.Published ? "true" : "false");
         XmlElement content = plaatsenDoc.CreateElement("content");
-        content.InnerXml = p.Content;
+        content.InnerText = html;
         plaats.AppendChild(content);
         plaatsenDoc.DocumentElement.AppendChild(plaats);
         
       }
 
       plaatsenDoc.Save(plaatsFile);
+    }
+
+    private bool IsValidXML(string value)
+    {
+      try
+      {
+        // Check we actually have a value
+        if (string.IsNullOrEmpty(value) == false)
+        {
+          // Try to load the value into a document
+          XmlDocument xmlDoc = new XmlDocument();
+
+          xmlDoc.LoadXml(value);
+
+          // If we managed with no exception then this is valid XML!
+          return true;
+        }
+        else
+        {
+          // A blank value is not valid xml
+          return false;
+        }
+      }
+      catch (System.Xml.XmlException)
+      {
+        return false;
+      }
     }
   }
 }
