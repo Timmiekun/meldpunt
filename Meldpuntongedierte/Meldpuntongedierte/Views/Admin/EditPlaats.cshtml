@@ -17,7 +17,7 @@
 
 <form method="post">   
   <label for="publish">
-    <input type="checkbox" /> publiceren
+    <input type="checkbox" name="publish" @if(Model.Published){<text>checked="checked"</text>}/> gepubliceerd
   </label>
   <textarea name="content">
     @Model.Content

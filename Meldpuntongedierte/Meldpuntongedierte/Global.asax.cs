@@ -43,16 +43,28 @@ namespace Meldpunt
       );
 
       routes.MapRoute(
-        "Search", // Route name
-        "zoek", // URL with parameters
-        new { controller = "Plaats", action = "Search" } // Parameter defaults
+          "Search", // Route name
+          "zoek", // URL with parameters
+          new { controller = "Plaats", action = "Search" } // Parameter defaults
+       );
+
+      routes.MapRoute(
+        "SearchPages", // Route name
+        "zoeken", // URL with parameters
+        new { controller = "Search", action = "SearchPages" } // Parameter defaults
      );
 
       routes.MapRoute(
-      "SearchPages", // Route name
-      "zoeken", // URL with parameters
-      new { controller = "Search", action = "SearchPages" } // Parameter defaults
-   );
+        "Login", // Route name
+        "login", // URL with parameters
+          new { controller = "Login", action = "Login", id = UrlParameter.Optional } // Parameter defaults
+       );
+
+      routes.MapRoute(
+       "Logout", // Route name
+       "logout", // URL with parameters
+         new { controller = "Login", action = "Logout", id = UrlParameter.Optional } // Parameter defaults
+      );
 
       routes.MapRoute(
          "PlaceSuggest", // Route name
@@ -63,7 +75,7 @@ namespace Meldpunt
       routes.MapRoute(
        "Plaats", // Route name
        "in/{plaats}", // URL with parameters
-         new { controller = "Plaats", action = "PLaats", id = UrlParameter.Optional } // Parameter defaults
+         new { controller = "Plaats", action = "Plaats", id = UrlParameter.Optional } // Parameter defaults
       );
 
       routes.MapRoute(

@@ -98,6 +98,7 @@
     <Compile Include="ActionFilters\GlobalActionFilter.cs" />
     <Compile Include="Controllers\ApiController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\PlaatsController.cs" />
@@ -270,6 +271,7 @@
     <None Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.ttf" />
     <None Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.woff" />
     <Content Include="Views\Admin\EditPlaats.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
     <None Include="Volksgezondheid.pdf" />
   </ItemGroup>
   <PropertyGroup>

@@ -6,10 +6,18 @@
   ViewBag.Url = Model.Gemeentenaam;
 }
 
+@if (!String.IsNullOrWhiteSpace(Model.Content) && Model.Published)
+{
+  <text>
+    @Html.Raw(Model.Content)
+  </text>
+}
+else{
+
 <h1 class="plaatsheader">Meldpunt Ongediertebestrijding @Model.Gemeentenaam</h1>
 <h2 class="phone">0900-2556677</h2>
  
- @if (Model.Plaatsen.Count > 1)
+ if (Model.Plaatsen.Count > 1)
  {
   <p>Onder de gemeente @Model.Gemeentenaam vallen de plaatsen: @String.Join(", ", Model.Plaatsen.Select(p => p.Capitalize()))</p>
  }
@@ -19,7 +27,6 @@
 <b>Let op!</b>
 
 <p>Afspraken via dit telefoonnummer kunnen alleen betrekking hebben op onderstaande soorten bestrijdingen, te weten;</p>
-
    
 <ul class="defaultList">          
           <li id="ratten">
@@ -95,3 +102,4 @@
 <p>
 <b>Voor ongediertebestrijding namens een bedrijf, instelling of woningcorporatie, wendt u zich voorafgaand tot <a href="/werkwijze">onze werkwijze</a>.</b>
 </p>
+}

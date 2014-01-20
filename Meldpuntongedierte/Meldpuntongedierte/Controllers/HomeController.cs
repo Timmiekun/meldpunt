@@ -49,11 +49,13 @@ namespace Meldpunt.Controllers
       var gemeente = LocationUtils.placesByMunicipality.Where(m => m.Key.Equals(id));
       if (gemeente.Any())
       {
-        PlaatsModel plaatsModel = new PlaatsModel
+        PlaatsModel plaatsModel = plaatsService.GetPlaats(id);
+        if (plaatsModel == null)
         {
-          Gemeentenaam = gemeente.First().Key.Capitalize(),
-          Plaatsen = gemeente.First().Value.ToList()
-        };
+          plaatsModel = new PlaatsModel { Gemeentenaam = gemeente.First().Key.Capitalize() };
+        }
+        plaatsModel.Plaatsen = gemeente.First().Value.ToList();
+        ViewBag.Locations = LocationUtils.placesByMunicipality.OrderBy(m => m.Key);
         ViewBag.HidePhoneNumber = true;
         return View("Plaats", plaatsModel);
       }
