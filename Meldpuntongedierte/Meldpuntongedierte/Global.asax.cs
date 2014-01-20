@@ -67,16 +67,16 @@ namespace Meldpunt
       );
 
       routes.MapRoute(
-       "EditPlaats", // Route name
-       "admin/plaats/{plaats}", // URL with parameters
-       new { controller = "Admin", action = "Plaats", id = UrlParameter.Optional } // Parameter defaults
-    );
+         "EditPlaats", // Route name
+         "admin/editplaats/{plaats}", // URL with parameters
+         new { controller = "Admin", action = "EditPlaats", id = UrlParameter.Optional } // Parameter defaults
+      );
 
       routes.MapRoute(
-        "Admin", // Route name
-        "admin/{action}", // URL with parameters
-        new { controller = "Admin", action = "Index", id = UrlParameter.Optional } // Parameter defaults
-     );
+         "Admin", // Route name
+         "admin/{action}", // URL with parameters
+         new { controller = "Admin", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+      );
 
       routes.MapRoute(
          "Page", // Route name
@@ -101,7 +101,7 @@ namespace Meldpunt
       "{a}/{b}/{c}/{id}", // URL with parameters
       new { controller = "Home", action = "GetPage", id = UrlParameter.Optional } // Parameter defaults
    );
-       
+
       routes.MapRoute(
           "Default", // Route name
           "{controller}/{action}/{id}", // URL with parameters
@@ -123,37 +123,37 @@ namespace Meldpunt
     protected void Application_Error(Object sender, System.EventArgs e)
     {
 #if debug
-        throw Server.GetLastError();
+                throw Server.GetLastError();
 #else
-        var exception = Server.GetLastError();
-        var httpException = exception as HttpException;
+      var exception = Server.GetLastError();
+      var httpException = exception as HttpException;
 
-        var routeData = new RouteData();
-        routeData.Values["controller"] = "Error";
-        if (httpException != null)
+      var routeData = new RouteData();
+      routeData.Values["controller"] = "Error";
+      if (httpException != null)
+      {
+        Response.Clear();
+        Server.ClearError();
+
+        Response.StatusCode = httpException.GetHttpCode();
+        switch (Response.StatusCode)
         {
-            Response.Clear();
-            Server.ClearError();
-
-            Response.StatusCode = httpException.GetHttpCode();
-            switch (Response.StatusCode)
-            {
-                case 400:
-                    routeData.Values["action"] = "Http404";
-                    break;
-                case 403:
-                    routeData.Values["action"] = "Http403";
-                    break;
-                case 404:
-                    routeData.Values["action"] = "Http404";
-                    break;
-            }
-
-            IController errorsController = new ErrorController();
-            var rc = new RequestContext(new HttpContextWrapper(Context), routeData);
-            errorsController.Execute(rc);
-#endif
+          case 400:
+            routeData.Values["action"] = "Http404";
+            break;
+          case 403:
+            routeData.Values["action"] = "Http403";
+            break;
+          case 404:
+            routeData.Values["action"] = "Http404";
+            break;
         }
+
+        IController errorsController = new ErrorController();
+        var rc = new RequestContext(new HttpContextWrapper(Context), routeData);
+        errorsController.Execute(rc);
+#endif
+      }
     }
   }
 }

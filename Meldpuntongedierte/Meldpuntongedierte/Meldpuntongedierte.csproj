@@ -269,6 +269,7 @@
     <None Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.eot" />
     <None Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.ttf" />
     <None Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.woff" />
+    <Content Include="Views\Admin\EditPlaats.cshtml" />
     <None Include="Volksgezondheid.pdf" />
   </ItemGroup>
   <PropertyGroup>

@@ -1,15 +1,29 @@
 ﻿@using Meldpunt.Models;
 @using Meldpunt.Utils;
-@model List<PageModel>
+@model PlaatsModel
 @{
   ViewBag.Title = "Admin";
   var locations = ViewBag.Locations;
   Layout = "~/Views/Shared/_Admin.cshtml";
 }
 
-<textarea>
-  
-</textarea>
+<h1>Gemeente @Model.Gemeentenaam</h1>
+
+ @if (Model.Plaatsen.Count > 1)
+ {
+  <p>Onder de gemeente @Model.Gemeentenaam vallen de plaatsen: @String.Join(", ", Model.Plaatsen.Select(p => p.Capitalize()))</p>
+ }
+
+
+<form method="post">   
+  <label for="publish">
+    <input type="checkbox" /> publiceren
+  </label>
+  <textarea name="content">
+    @Model.Content
+  </textarea>
+  <input type="submit" value="opslaan" />
+</form>
 
 @section menu{
 <div class="menu">  
