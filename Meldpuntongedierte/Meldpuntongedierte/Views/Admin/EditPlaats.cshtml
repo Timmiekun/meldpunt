@@ -9,6 +9,8 @@
 
 <h1>Gemeente @Model.Gemeentenaam</h1>
 
+<a class="viewPage" href="/@Model.Gemeentenaam" target="_blank">Pagina bekijken</a>
+
  @if (Model.Plaatsen.Count > 1)
  {
   <p>Onder de gemeente @Model.Gemeentenaam vallen de plaatsen: @String.Join(", ", Model.Plaatsen.Select(p => p.Capitalize()))</p>
@@ -20,7 +22,7 @@
     <input type="checkbox" name="publish" @if(Model.Published){<text>checked="checked"</text>}/> gepubliceerd
   </label>
   <textarea name="content">
-    @Html.Raw(Model.Content)
+    @Model.Content
   </textarea>
   <input type="submit" value="opslaan" />
 </form>

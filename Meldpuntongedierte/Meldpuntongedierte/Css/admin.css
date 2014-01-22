@@ -117,6 +117,12 @@ h2
   font-size: 12px;
 }
 
+.viewPage {
+  position:absolute;
+  top:30px;
+  right: 40px;
+}
+
 .footer
 {
   padding: 3px 0px;

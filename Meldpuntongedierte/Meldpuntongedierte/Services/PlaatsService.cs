@@ -44,7 +44,7 @@ namespace Meldpunt.Services
         return null;
 
       string html = plaatsElement.SelectSingleNode("content").InnerText;
-      // html = html.Trim().Substring(9, html.Length - 13);
+      //html = html.Trim().Substring(9, html.Length - 13);
 
       return new PlaatsModel
       {
@@ -60,12 +60,12 @@ namespace Meldpunt.Services
 
 
 
-      string html = p.Content;// String.Format(" <![CDATA[{0}]]>", p.Content);
+      string html = String.Format(" <![CDATA[{0}]]>", p.Content);
 
       if (plaats != null)
       {
         plaats.SetAttribute("published", p.Published ? "true" : "false");
-        plaats.SelectSingleNode("content").InnerText = html;
+        plaats.SelectSingleNode("content").InnerXml = html;
       }
       else
       {

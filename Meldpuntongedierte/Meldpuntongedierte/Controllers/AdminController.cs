@@ -71,7 +71,7 @@ namespace Meldpunt.Controllers
 
       plaatsService.UpdateOrInsert(p);
 
-      return EditPlaats(plaats);
+      return Redirect("/admin/editplaats/" + plaats);
     }
 
   }

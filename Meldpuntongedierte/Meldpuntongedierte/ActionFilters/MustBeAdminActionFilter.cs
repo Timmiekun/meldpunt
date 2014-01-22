@@ -26,7 +26,7 @@ namespace Meldpunt.ActionFilters
         return;
 
       //Redirect him to somewhere.
-      var redirectTarget = new RouteValueDictionary { { "action", "" }, { "controller", "" } };
+      var redirectTarget = new RouteValueDictionary { { "action", "" }, { "controller", "Login" } };
       filterContext.Result = new RedirectToRouteResult(redirectTarget);
     }
 
