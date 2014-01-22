@@ -43,8 +43,8 @@ namespace Meldpunt.Services
       if (plaatsElement == null)
         return null;
 
-      string html = plaatsElement.SelectSingleNode("content").InnerText;
-      //html = html.Trim().Substring(9, html.Length - 13);
+      string html = plaatsElement.SelectSingleNode("content").InnerXml;
+      html = html.Trim().Substring(9, html.Length - 12);
 
       return new PlaatsModel
       {
@@ -58,26 +58,25 @@ namespace Meldpunt.Services
     {
       XmlElement plaats = (XmlElement)plaatsenDoc.SelectSingleNode("//plaats[@name='" + p.Gemeentenaam + "']");
 
-
-
       string html = String.Format(" <![CDATA[{0}]]>", p.Content);
 
       if (plaats != null)
       {
         plaats.SetAttribute("published", p.Published ? "true" : "false");
-        plaats.SelectSingleNode("content").InnerXml = html;
+        plaats.SelectSingleNode("content").InnerXml = html;        
       }
       else
       {
         plaats = plaatsenDoc.CreateElement("plaats");
         plaats.SetAttribute("name", p.Gemeentenaam);
-        plaats.SetAttribute("published", p.Published ? "true" : "false");
         XmlElement content = plaatsenDoc.CreateElement("content");
-        content.InnerText = html;
+        content.InnerXml = html;
         plaats.AppendChild(content);
-        plaatsenDoc.DocumentElement.AppendChild(plaats);
-        
+        plaatsenDoc.DocumentElement.AppendChild(plaats);        
       }
+    
+      plaats.SetAttribute("published", p.Published ? "true" : "false");
+      plaats.SetAttribute("lastmodified", DateTime.Now.ToString("dd-MM-yyy"));
 
       plaatsenDoc.Save(plaatsFile);
     }

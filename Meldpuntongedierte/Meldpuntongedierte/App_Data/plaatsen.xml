@@ -1,14 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <plaatsen>
-  <plaats name="Aa en Hunze" published="true">
-    <content><![CDATA[<p><span style="font-family: Verdana, Tahoma, arial; font-size: 13px; line-height: 16.639999389648438px; background-color: #efefef;">Onder de gemeente Aa en Hunze vallen de plaatsen: Amen, Anderen, Anloo, Annen, Annerveenschekanaal, Ballo&euml;rveld, Balloo, Deurze, Eext, Eexterveen, Eexterveenschekanaal, Eexterzandvoort, Ekehaar, Eldersloo, Eleveld, Gasselte, Gasselternijveen, Gasselternijveenschemond, Gasteren, Geelbroek, Gieten, Gieterveen, Grolloo, Marwijksoord, Nieuw Annerveen, Nieuwediep, Nijlande, Nooitgedacht, Oud Annerveen, Papenvoort, Rolde, Schipborg, Schoonloo, Spijkerboor, Vredenheim</span></p>]]></content>
-  </plaats>
-  <plaats name="Aalburg" published="false">
-    <content> <![CDATA[<h1>Dit is een hele andere tekst!</h1>
-<h1>&nbsp;</h1>
-<p style="text-align: center;">Deze tekst kan ook!</p>
-<p style="text-align: center;">&nbsp;</p>
-<p style="text-align: left;">Of tekst met gekke tekens:</p>
-<p style="text-align: left;">Onder de gemeente Aalburg vallen de plaatsen: Babyloni&euml;nbroek, Drongelen, Eethen, Genderen, Meeuwen, Veen, Wijk en Aalburg</p>]]></content>
-  </plaats>
+ 
 </plaatsen>

@@ -6,21 +6,23 @@
   ViewBag.Url = Model.Gemeentenaam;
 }
 
-@if (!String.IsNullOrWhiteSpace(Model.Content) && Model.Published)
-{
-  @Html.Raw(Model.Content);
-}
-else{
-
 <h1 class="plaatsheader">Meldpunt Ongediertebestrijding @Model.Gemeentenaam</h1>
-<h2 class="phone">0900-2556677</h2>
+<h2 class="phone">0900-2800200</h2>
+
+
  
- if (Model.Plaatsen.Count > 1)
+ @if (Model.Plaatsen.Count > 1)
  {
   <p>Onder de gemeente @Model.Gemeentenaam vallen de plaatsen: @String.Join(", ", Model.Plaatsen.Select(p => p.Capitalize()))</p>
  }
 
 <p>Als u inwoner bent van de gemeente @Model.Gemeentenaam en u heeft te maken met overlast van ongedierte, neem dan contact op met ons meldpunt via bovenstaand servicenummer.</p>  
+
+@if (!String.IsNullOrWhiteSpace(Model.Content) && Model.Published)
+{
+  <h2>Nieuws</h2>
+  @Html.Raw(Model.Content);
+}
 
 <b>Let op!</b>
 
@@ -100,4 +102,3 @@ else{
 <p>
 <b>Voor ongediertebestrijding namens een bedrijf, instelling of woningcorporatie, wendt u zich voorafgaand tot <a href="/werkwijze">onze werkwijze</a>.</b>
 </p>
-}

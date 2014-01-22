@@ -263,6 +263,7 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Shared\subPagesPartial.cshtml" />
     <Content Include="Views\Shared\_Admin.cshtml" />
+    <None Include="Properties\PublishProfiles\Profile1.pubxml" />
     <None Include="Scripts\tinymce\langs\readme.md" />
     <None Include="Scripts\tinymce\skins\lightgray\fonts\readme.md" />
     <None Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-small.eot" />
@@ -274,6 +275,9 @@
     <Content Include="Views\Admin\EditPlaats.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <None Include="Volksgezondheid.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
