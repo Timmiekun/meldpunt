@@ -43,6 +43,18 @@ namespace Meldpunt.Controllers
         w.AddDocument(doc);
       }
 
+      foreach (var gemeente in LocationUtils.placesByMunicipality)
+      {
+        string fullText = String.Format("Onder de gemeente Utrecht vallen de plaatsen: {0}. Als u inwoner bent van de gemeente Utrecht en u heeft te maken met overlast van ongedierte, neem dan contact op met ons meldpunt het servicenummer: 0900-2800200", String.Join(", ", gemeente.Value.Select(p => p.Capitalize())));
+
+        Document doc = new Document();
+        doc.Add(new Field("title", gemeente.Key, Field.Store.YES, Field.Index.ANALYZED));
+        doc.Add(new Field("text", fullText, Field.Store.YES, Field.Index.ANALYZED));
+        doc.Add(new Field("url", "/" + gemeente.Key, Field.Store.YES, Field.Index.ANALYZED));
+
+        w.AddDocument(doc);
+      }
+
       w.Commit();
       w.Dispose();
       dir.Dispose();
@@ -52,6 +64,9 @@ namespace Meldpunt.Controllers
 
     public ActionResult SearchPages(String q)
     {
+      if (LocationUtils.IsLocation(q))
+        return Redirect("/" + q);
+
       indexPath = Server.MapPath("App_data/index");
       dir = FSDirectory.Open(indexPath);
       IndexSearcher searcher = new IndexSearcher(dir);

@@ -45,8 +45,8 @@ namespace Meldpunt.Controllers
         return View("index", model);
       }
 
-      // gemeente page?
-      var gemeente = LocationUtils.placesByMunicipality.Where(m => m.Key.Equals(id));
+      // gemeente page?      
+      var gemeente = LocationUtils.placesByMunicipality.Where(m => m.Key.Equals(id, StringComparison.CurrentCultureIgnoreCase));
       if (gemeente.Any())
       {
         PlaatsModel plaatsModel = plaatsService.GetPlaats(id);
