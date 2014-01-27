@@ -1,5 +1,5 @@
 ﻿var suggest = {
-  suggestPlaatsen: [],
+  suggests: {},
   timeout: null,
 
   getSuggests: function (evt, input) {
@@ -8,13 +8,13 @@
     }
     var inputValue = input.value;
     if (inputValue.length > 1) {
-      var url = "/api/getPlaatsNaamSuggest?plaats=" + inputValue;
+      var url = "/api/getSuggest?plaats=" + inputValue;
       this.timeout = setTimeout(function () {
         $.ajax({
           dataType: "json",
           url: url,
           success: function (data) {            
-            suggest.suggestPlaatsen = data;
+            suggest.suggests = data;
             suggest.fillSuggestBox();
           },
           error: function () { alert("xmlhttpproblem: " + xhr.status); }
@@ -26,10 +26,10 @@
   fillSuggestBox: function () {
     var suggestBox = document.getElementById('suggests');
     var content = ""
-    for (var x = 0; x < suggest.suggestPlaatsen.length; x++) {
-      var plaats = suggest.suggestPlaatsen[x];
-      if (typeof (plaats) == "string")
-        content += '<a href="/' + encodeURIComponent(plaats) + '">' + plaats + '</a>';
+    for (var x = 0; x < suggest.suggests.length; x++) {
+      var plaats = suggest.suggests[x];
+      if (plaats)
+        content += '<a href="' + plaats.Url + '">' + plaats.Title + '</a>';
     }
     suggestBox.innerHTML = content;
     suggestBox.className = 'suggest-shown';

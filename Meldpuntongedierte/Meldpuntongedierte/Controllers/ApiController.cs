@@ -11,17 +11,17 @@ namespace Meldpunt.Controllers
 {
   public class ApiController : Controller
   {
-    private PlaatsService plaatsService;
+    private SearchService searchService;
 
     public ApiController()
     {
-      plaatsService = new PlaatsService();
+      searchService = new SearchService();
     }
 
-    public JsonResult getPlaatsNaamSuggest(string plaats)
+    public JsonResult getSuggest(string plaats)
     {
-      List<string> plaatsen = LocationUtils.allPlaces.FindAll(p => p.StartsWith(plaats, StringComparison.InvariantCultureIgnoreCase));
-      return Json(plaatsen, JsonRequestBehavior.AllowGet);
+      List<SearchResultModel> suggests = searchService.Search(plaats + "*");
+      return Json(suggests, JsonRequestBehavior.AllowGet);
     }
   }
 }
