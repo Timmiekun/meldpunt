@@ -1,4 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <plaatsen>
- 
+  <plaats name="Aalburg" published="true" lastmodified="01-02-2014">
+    <content> <![CDATA[<p>Test</p>
+<p>&nbsp;</p>
+<p>Mooi verhaal..</p>
+<p>&nbsp;</p>
+<ul>
+<li>Lijsjte erbij</li>
+<li>Met items</li>
+<li>item3</li>
+</ul>]]></content>
+  </plaats>
 </plaatsen>

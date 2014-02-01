@@ -123,7 +123,7 @@
     <Content Include="App_Data\pages.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Data\plaatsen.xml" />
+    <None Include="App_Data\plaatsen.xml" />
     <Content Include="Css\admin.css" />
     <Content Include="Css\main.css" />
     <Content Include="Css\reset.css" />
