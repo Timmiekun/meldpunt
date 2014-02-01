@@ -91,6 +91,12 @@ namespace Meldpunt
       );
 
       routes.MapRoute(
+        "SiteMap", // Route name
+        "sitemap", // URL with parameters
+        new { controller = "Home", action = "SiteMap", id = UrlParameter.Optional } // Parameter defaults
+     );
+
+      routes.MapRoute(
          "Page", // Route name
          "{id}", // URL with parameters
          new { controller = "Home", action = "GetPage", id = UrlParameter.Optional } // Parameter defaults

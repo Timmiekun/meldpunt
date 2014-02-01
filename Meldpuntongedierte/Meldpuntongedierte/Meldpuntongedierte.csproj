@@ -102,7 +102,6 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
-    <Compile Include="Controllers\PlaatsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -167,9 +166,6 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Plaats\Plaats.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -177,9 +173,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Error\Http404.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Plaats\Nietgevonden.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Search\Index.cshtml" />
@@ -201,6 +194,7 @@
     <None Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.woff" />
     <Content Include="Views\Admin\EditPlaats.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Home\SiteMap.cshtml" />
     <None Include="Volksgezondheid.pdf" />
   </ItemGroup>
   <ItemGroup>

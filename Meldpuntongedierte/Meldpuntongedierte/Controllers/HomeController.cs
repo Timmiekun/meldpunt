@@ -26,6 +26,15 @@ namespace Meldpunt.Controllers
       return View(model);
     }
 
+    public ActionResult SiteMap()
+    {
+      ViewBag.Pages = pageService.GetAllPages();
+      ViewBag.Locations = plaatsService.GetAllPlaatModels();
+
+      Response.ContentType = "text/xml";
+      return View();
+    }
+
     public ActionResult GetPage(string id)
     {
       // content page?
