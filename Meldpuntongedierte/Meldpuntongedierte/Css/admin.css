@@ -1,55 +1,51 @@
-﻿html
-{
+﻿html {
   height: 100%;
 }
-body
-{
+
+body {
   color: black;
   font-family: Verdana, Tahoma, arial;
   font-size: 80%;
   height: 100%;
 }
-em
-{
+
+em {
   font-style: normal;
   font-weight: bold;
 }
 
-h1
-{
+h1 {
   margin: 10px 0px 20px 0px;
   font-weight: bold;
   font-size: 18px;
 }
 
-h2
-{
+h2 {
   font-size: 14px;
 }
-.pdf
-{
+
+.pdf {
   background-image: url(/Images/page_white_acrobat.png);
   padding-left: 20px;
   background-position: left top;
   background-repeat: no-repeat;
 }
-.hidden
-{
+
+.hidden {
   display: none;
 }
 
-.main
-{
+.main {
   background: white;
   position: relative;
   line-height: 130%;
 }
-.content, .footer
-{
+
+.content, .footer {
   background-color: #efefef;
 }
-.topBar
-{
+
+.topBar {
   width: 100%;
   background-color: #83003c;
   text-align: center;
@@ -58,27 +54,27 @@ h2
   border-bottom: 10px solid #efefef;
   padding-top: 10px;
 }
-.topBar h2
-{
-  color: White;
-  padding: 30px 0px;
-}
-.content
-{
+
+  .topBar h2 {
+    color: White;
+    padding: 30px 0px;
+  }
+
+.content {
   padding: 20px;
   overflow: hidden;
   margin-bottom: 20px;
 }
-.content p
-{
-  margin: 10px 0px;
-}
-.content a
-{
-  color: #83003c;
-}
-.menu
-{
+
+  .content p {
+    margin: 10px 0px;
+  }
+
+  .content a {
+    color: #83003c;
+  }
+
+.menu {
   position: relative;
   width: 250px;
   padding-top: 20px;
@@ -88,26 +84,23 @@ h2
   overflow-y: scroll;
 }
 
-.menu ul li
-{
-  list-style-type: none;
-  padding-left: 15px;
-  background-image: url(/images/arrow-right.png);
-  background-repeat: no-repeat;
-  background-position: 5px 6px;
-}
-.menu > ul > li.selected > a
-{
-  font-weight: bold;
-}
+  .menu ul li {
+    list-style-type: none;
+    padding-left: 15px;
+    background-image: url(/images/arrow-right.png);
+    background-repeat: no-repeat;
+    background-position: 5px 6px;
+  }
 
-.subNav
-{
+  .menu > ul > li.selected > a {
+    font-weight: bold;
+  }
+
+.subNav {
   margin-left: 10px;
 }
 
-.menu a
-{
+.menu a {
   display: block;
   padding: 3px 0px 3px 2px;
   color: #83003c;
@@ -116,13 +109,12 @@ h2
 }
 
 .viewPage {
-  position:absolute;
-  top:30px;
+  position: absolute;
+  top: 30px;
   right: 40px;
 }
 
-.footer
-{
+.footer {
   padding: 3px 0px;
   font-size: 80%;
   background-color: #83003C;
@@ -131,88 +123,80 @@ h2
   margin: 10px -10px 0px -10px;
   text-align: right;
 }
-.footer p
-{
-  margin-right: 10px;
-}
-.footer a:hover, .footer a
-{
-  color: White;
-  text-decoration: none;
-}
-.defaultList
-{
+
+  .footer p {
+    margin-right: 10px;
+  }
+
+  .footer a:hover, .footer a {
+    color: White;
+    text-decoration: none;
+  }
+
+.defaultList {
   list-style-type: disc;
   margin: 10px;
 }
-.defaultList li
-{
-  margin-left: 10px;
-  cursor: pointer;
-}
-h3
-{
+
+  .defaultList li {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+
+h3 {
   font-weight: normal;
   padding-left: 10px;
   font-weight: bold;
 }
-h3:hover
-{
-  text-decoration: underline;
-}
-.showDescription h3
-{
+
+  h3:hover {
+    text-decoration: underline;
+  }
+
+.showDescription h3 {
   background-color: #83003C;
   color: White;
 }
-.description
-{
+
+.description {
   overflow: hidden;
   padding: 0px 10px;
   border-bottom: 1px solid #EFEFEF;
 }
 
-.searchResults h1
-{
+.searchResults h1 {
   font-size: 14px;
   margin: 0;
 }
 
-.searchResults p
-{
+.searchResults p {
   margin: 0;
 }
 
-.searchResults .url
-{
+.searchResults .url {
   color: #ababab;
 }
 
-.searchResults li
-{
+.searchResults li {
   margin-bottom: 20px;
 }
 
-.searchResults h1 a
-{
+.searchResults h1 a {
   text-decoration: none;
   color: #83003c;
 }
 
-.phone
-{
+.phone {
   font-size: 22px;
   margin: 30px 0px;
   color: #83003c;
 }
 
-.phone, .plaatsheader
-{
+.phone, .plaatsheader {
   text-align: center;
 }
 
-.phoneNumber
-{
+.phoneNumber {
   position: absolute;
   top: 28px;
   left: 10px;
@@ -224,3 +208,12 @@ h3:hover
   padding-left: 25px;
   line-height: 20px;
 }
+
+.field {
+  margin-bottom: 20px;
+}
+
+
+  .field label {
+    font-weight: bold;
+  }

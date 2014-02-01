@@ -3,6 +3,9 @@
 @{
   ViewBag.Title = "Meldpuntongedierte in " + Model;
   ViewBag.Description = String.Format("Als u inwoner bent van de gemeente {0} en u heeft te maken met overlast van ongedierte, neem dan contact op met ons meldpunt via het servicenummer 0900 - 2556677", Model.Gemeentenaam);
+  if (!String.IsNullOrWhiteSpace(Model.MetaDescription)){
+    ViewBag.Description = Model.MetaDescription;
+  }
   ViewBag.Url = Model.Gemeentenaam;
 }
 
@@ -21,6 +24,7 @@
 @if (!String.IsNullOrWhiteSpace(Model.Content) && Model.Published)
 {
   <h2>Nieuws</h2>
+  <span class="lastModified">Laatst aangepast: @Model.LastModified.ToString("D", System.Globalization.CultureInfo.InvariantCulture)</span>
   @Html.Raw(Model.Content);
 }
 

@@ -44,7 +44,7 @@ namespace Meldpunt.Services
 
     public PlaatsModel GetPlaats(string plaats)
     {
-      XmlElement plaatsElement = (XmlElement)plaatsenDoc.SelectSingleNode("//plaats[@name='" + plaats + "']");
+      XmlElement plaatsElement = (XmlElement)plaatsenDoc.SelectSingleNode("//plaats[@name='" + plaats.Capitalize() + "']");
       if (plaatsElement == null)
         return null;      
 
@@ -58,54 +58,46 @@ namespace Meldpunt.Services
       XmlDocument d = LoadAsXml(html);
       string text = d != null ? d.InnerText : "";
 
+      DateTime lastModified = DateTime.ParseExact(plaatsElement.Attributes["lastmodified"].Value, "dd-MM-yyyy HH:mm", CultureInfo.InvariantCulture);
+
       return new PlaatsModel
       {
         Gemeentenaam = plaatsElement.Attributes["name"].Value,
         Content = html,
         Text = text,
+        MetaDescription = plaatsElement.SelectSingleNode("metadescription").InnerText,
+        LastModified = lastModified,
         Published = plaatsElement.Attributes["published"].Value == "true"
       };
     }
 
-    private XmlDocument LoadAsXml(string s)
-    {
-      XmlDocument d = new XmlDocument();
-      d.LoadXml("<content/>");
-      try
-      {
-        d.DocumentElement.InnerXml = s;
-        return d;
-      }
-      catch
-      {
-        return null;
-      }
-     
-    }
-
-    internal void UpdateOrInsert(PlaatsModel p)
+    public void UpdateOrInsert(PlaatsModel p)
     {
       XmlElement plaats = (XmlElement)plaatsenDoc.SelectSingleNode("//plaats[@name='" + p.Gemeentenaam + "']");
 
-      string html = String.Format(" <![CDATA[{0}]]>", p.Content);
+      string html = String.Format("<![CDATA[{0}]]>", p.Content);
 
       if (plaats != null)
       {
         plaats.SetAttribute("published", p.Published ? "true" : "false");
-        plaats.SelectSingleNode("content").InnerXml = html;        
+        plaats.SelectSingleNode("content").InnerXml = html;
+        plaats.SelectSingleNode("metadescription").InnerText = p.MetaDescription;
       }
       else
       {
         plaats = plaatsenDoc.CreateElement("plaats");
         plaats.SetAttribute("name", p.Gemeentenaam);
         XmlElement content = plaatsenDoc.CreateElement("content");
+        XmlElement metaDescription = plaatsenDoc.CreateElement("metadescription");
         content.InnerXml = html;
+        metaDescription.InnerText = p.MetaDescription;
         plaats.AppendChild(content);
+        plaats.AppendChild(metaDescription);
         plaatsenDoc.DocumentElement.AppendChild(plaats);        
       }
     
       plaats.SetAttribute("published", p.Published ? "true" : "false");
-      plaats.SetAttribute("lastmodified", DateTime.Now.ToString("dd-MM-yyy"));
+      plaats.SetAttribute("lastmodified", DateTime.Now.ToString("dd-MM-yyyy hh:mm"));
 
       plaatsenDoc.Save(plaatsFile);
     }
@@ -135,6 +127,22 @@ namespace Meldpunt.Services
       {
         return false;
       }
+    }
+
+    private XmlDocument LoadAsXml(string s)
+    {
+      XmlDocument d = new XmlDocument();
+      d.LoadXml("<content/>");
+      try
+      {
+        d.DocumentElement.InnerXml = s;
+        return d;
+      }
+      catch
+      {
+        return null;
+      }
+
     }
   }
 }

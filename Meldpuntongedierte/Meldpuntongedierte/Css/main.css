@@ -332,3 +332,8 @@ h3:hover
   padding-left: 25px;
   line-height: 20px;
 }
+
+.lastModified {
+  font-size: 9px;
+  color:gray;
+}

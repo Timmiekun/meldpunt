@@ -60,18 +60,12 @@ namespace Meldpunt.Controllers
     }
 
     [HttpPost, ValidateInput(false)]
-    public ActionResult EditPlaats(String plaats, String Content, String publish)
-    {
-      PlaatsModel p = new PlaatsModel
-      {
-        Gemeentenaam = plaats,
-        Content = Content,
-        Published = publish == "on"
-      };
+    public ActionResult EditPlaats(PlaatsModel p)
+    { 
 
       plaatsService.UpdateOrInsert(p);
 
-      return Redirect("/admin/editplaats/" + plaats);
+      return Redirect("/admin/editplaats/" + p.Gemeentenaam);
     }
 
   }

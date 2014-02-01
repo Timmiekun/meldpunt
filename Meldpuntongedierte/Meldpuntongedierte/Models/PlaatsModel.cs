@@ -14,6 +14,8 @@ namespace Meldpunt.Models
     public bool Published { get; set; }
     public String Content { get; set; }
     public String Text { get; set; }
+    public String MetaDescription { get; set; }
     public List<String> Plaatsen { get; set; }
+    public DateTime LastModified { get; set; }
   }
 }
