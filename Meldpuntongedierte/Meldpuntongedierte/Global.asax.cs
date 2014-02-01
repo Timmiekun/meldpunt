@@ -45,7 +45,7 @@ namespace Meldpunt
       routes.MapRoute(
           "Search", // Route name
           "zoek", // URL with parameters
-          new { controller = "Plaats", action = "Search" } // Parameter defaults
+          new { controller = "Search", action = "SearchPages" } // Parameter defaults
        );
 
       routes.MapRoute(

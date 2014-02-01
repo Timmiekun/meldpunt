@@ -48,7 +48,8 @@ namespace Meldpunt.Services
         w.AddDocument(doc);
       }
 
-      foreach (PlaatsModel plaats in plaatsService.GetAllPlaatModels()) {
+      foreach (PlaatsModel plaats in plaatsService.GetAllPlaatModels())
+      {
         Document doc = new Document();
         doc.Add(new Field("title", plaats.Gemeentenaam, Field.Store.YES, Field.Index.ANALYZED));
         doc.Add(new Field("text", plaats.Text, Field.Store.YES, Field.Index.ANALYZED));
@@ -75,23 +76,47 @@ namespace Meldpunt.Services
       dir.Dispose();
 
     }
+
     public List<SearchResultModel> Search(string q)
     {
       dir = FSDirectory.Open(indexPath);
       IndexSearcher searcher = new IndexSearcher(dir);
-      QueryParser parser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, "text", new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30));
-      QueryParser titleParser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, "title", new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30));
-
-
-      Query query = parser.Parse(q);
-      Query titleQuery = titleParser.Parse(q);
-
       BooleanQuery bq = new BooleanQuery();
-      bq.Add(query, Occur.SHOULD);
-      bq.Add(titleQuery, Occur.SHOULD);
+      int resultcount = 50;
 
-      TopDocs results = searcher.Search(bq, 50);
+      if (String.IsNullOrWhiteSpace(q))
+      {
+        QueryParser allParser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, "all", new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30));
+        Query all = allParser.Parse("all");
+        bq.Add(all, Occur.MUST);
+        resultcount = 1000;
+      }
+      else
+      {
 
+        // only one word? Then we can use wildcard
+        if (q.Split(' ').Length == 1)
+          q += "*";
+
+        QueryParser parser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, "text", new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30));
+        QueryParser titleParser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, "title", new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30));
+        Query query = parser.Parse(q);
+        Query titleQuery = titleParser.Parse(q);
+
+
+        bq.Add(query, Occur.SHOULD);
+        bq.Add(titleQuery, Occur.SHOULD);
+      }
+
+      TopDocs results = searcher.Search(bq, resultcount);
+
+      List<SearchResultModel> model = docsToModel(searcher, results);
+
+      return model;
+    }
+
+    private static List<SearchResultModel> docsToModel(IndexSearcher searcher, TopDocs results)
+    {
       List<SearchResultModel> model = new List<SearchResultModel>();
       foreach (ScoreDoc d in results.ScoreDocs)
       {
@@ -111,9 +136,7 @@ namespace Meldpunt.Services
         });
 
       }
-
       return model;
     }
-
   }
 }

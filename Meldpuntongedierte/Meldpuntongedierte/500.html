@@ -48,8 +48,8 @@
       <a href="/">Home</a>
     </div>
     <div id="header">
-      <form method="post" autocomplete="off" action="/zoek" class="zoekForm">
-      <input id="zoek" placeholder=" b.v. Amsterdam" type="text" name="plaats" onkeyup="suggest.getSuggests(event,this);"><input
+      <form method="get" autocomplete="off" action="/zoek" class="zoekForm">
+      <input id="zoek" placeholder=" b.v. Amsterdam" type="text" name="q" onkeyup="suggest.getSuggests(event,this);"><input
         type="submit" value="zoek" class="searchSubmit"></form>
       <div id="suggests" class="suggest-hidden">
       </div>

@@ -38,9 +38,6 @@ namespace Meldpunt.Controllers
 
     public ActionResult SearchPages(String q)
     {
-      if (LocationUtils.IsLocation(q))
-        return Redirect("/" + q);
-
       var model = searchService.Search(q);
 
       return View("index", model);
