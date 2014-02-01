@@ -65,10 +65,8 @@ h2
 }
 .content
 {
-  width: 800px;
   padding: 20px;
   overflow: hidden;
-  float: left;
   margin-bottom: 20px;
 }
 .content p

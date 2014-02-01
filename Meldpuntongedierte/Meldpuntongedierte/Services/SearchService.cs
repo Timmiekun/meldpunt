@@ -22,12 +22,14 @@ namespace Meldpunt.Services
   {
     private Directory dir;
     private PageService pageService;
+    private PlaatsService plaatsService;
     private String indexPath;
 
     public SearchService()
     {
       indexPath = HttpContext.Current.Server.MapPath("~/App_data/index");
       pageService = new PageService();
+      plaatsService = new PlaatsService();
     }
 
     public void Index()
@@ -41,6 +43,17 @@ namespace Meldpunt.Services
         doc.Add(new Field("title", page.Title, Field.Store.YES, Field.Index.ANALYZED));
         doc.Add(new Field("text", page.FullText, Field.Store.YES, Field.Index.ANALYZED));
         doc.Add(new Field("url", page.Url, Field.Store.YES, Field.Index.ANALYZED));
+        doc.Add(new Field("all", "all", Field.Store.NO, Field.Index.ANALYZED));
+
+        w.AddDocument(doc);
+      }
+
+      foreach (PlaatsModel plaats in plaatsService.GetAllPlaatModels()) {
+        Document doc = new Document();
+        doc.Add(new Field("title", plaats.Gemeentenaam, Field.Store.YES, Field.Index.ANALYZED));
+        doc.Add(new Field("text", plaats.Text, Field.Store.YES, Field.Index.ANALYZED));
+        doc.Add(new Field("url", "/" + plaats.Gemeentenaam, Field.Store.YES, Field.Index.ANALYZED));
+        doc.Add(new Field("all", "all", Field.Store.NO, Field.Index.ANALYZED));
 
         w.AddDocument(doc);
       }

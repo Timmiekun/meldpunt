@@ -29,7 +29,12 @@ namespace Meldpunt.Services
         Plaatsen.Add(plaats.InnerText);
     }
 
-
+    public IEnumerable<PlaatsModel> GetAllPlaatModels()
+    {
+      XmlNodeList plaatsElements = plaatsenDoc.SelectNodes("//plaats[@published='true']");
+      foreach (var plaats in plaatsElements)
+        yield return XmlToModel((XmlElement)plaats);
+    }
 
     public List<String> getSuggestion(string s)
     {
@@ -41,17 +46,41 @@ namespace Meldpunt.Services
     {
       XmlElement plaatsElement = (XmlElement)plaatsenDoc.SelectSingleNode("//plaats[@name='" + plaats + "']");
       if (plaatsElement == null)
-        return null;
+        return null;      
 
+      return XmlToModel(plaatsElement);
+    }
+
+    private PlaatsModel XmlToModel(XmlElement plaatsElement)
+    {
       string html = plaatsElement.SelectSingleNode("content").InnerXml;
       html = html.Trim().Substring(9, html.Length - 12);
+      XmlDocument d = LoadAsXml(html);
+      string text = d != null ? d.InnerText : "";
 
       return new PlaatsModel
       {
         Gemeentenaam = plaatsElement.Attributes["name"].Value,
         Content = html,
+        Text = text,
         Published = plaatsElement.Attributes["published"].Value == "true"
       };
+    }
+
+    private XmlDocument LoadAsXml(string s)
+    {
+      XmlDocument d = new XmlDocument();
+      d.LoadXml("<content/>");
+      try
+      {
+        d.DocumentElement.InnerXml = s;
+        return d;
+      }
+      catch
+      {
+        return null;
+      }
+     
     }
 
     internal void UpdateOrInsert(PlaatsModel p)
