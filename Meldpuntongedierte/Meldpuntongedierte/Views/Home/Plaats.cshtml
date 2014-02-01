@@ -1,7 +1,7 @@
 ﻿@using Meldpunt.Utils
 @model Meldpunt.Models.PlaatsModel
 @{
-  ViewBag.Title = "Meldpuntongedierte in " + Model;
+  ViewBag.Title = "Meldpuntongedierte in " + Model.Gemeentenaam;
   ViewBag.Description = String.Format("Als u inwoner bent van de gemeente {0} en u heeft te maken met overlast van ongedierte, neem dan contact op met ons meldpunt via het servicenummer 0900 - 2556677", Model.Gemeentenaam);
   if (!String.IsNullOrWhiteSpace(Model.MetaDescription)){
     ViewBag.Description = Model.MetaDescription;

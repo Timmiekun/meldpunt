@@ -53,7 +53,7 @@ namespace Meldpunt.Services
         Document doc = new Document();
         doc.Add(new Field("title", plaats.Gemeentenaam, Field.Store.YES, Field.Index.ANALYZED));
         doc.Add(new Field("text", plaats.Text, Field.Store.YES, Field.Index.ANALYZED));
-        doc.Add(new Field("url", "/" + plaats.Gemeentenaam, Field.Store.YES, Field.Index.ANALYZED));
+        doc.Add(new Field("url", "/" + plaats.Gemeentenaam, Field.Store.YES, Field.Index.ANALYZED));       
         doc.Add(new Field("all", "all", Field.Store.NO, Field.Index.ANALYZED));
 
         w.AddDocument(doc);
@@ -61,12 +61,14 @@ namespace Meldpunt.Services
 
       foreach (var gemeente in LocationUtils.placesByMunicipality)
       {
-        string fullText = String.Format("Onder de gemeente Utrecht vallen de plaatsen: {0}. Als u inwoner bent van de gemeente Utrecht en u heeft te maken met overlast van ongedierte, neem dan contact op met ons meldpunt het servicenummer: 0900-2800200", String.Join(", ", gemeente.Value.Select(p => p.Capitalize())));
+        string fullText = String.Format("Onder de gemeente {0} vallen de plaatsen: {1}. Als u inwoner bent van de gemeente {0} en u heeft te maken met overlast van ongedierte, neem dan contact op met ons meldpunt het servicenummer: 0900-2800200",gemeente.Key, String.Join(", ", gemeente.Value.Select(p => p.Capitalize())));
 
         Document doc = new Document();
         doc.Add(new Field("title", gemeente.Key, Field.Store.YES, Field.Index.ANALYZED));
         doc.Add(new Field("text", fullText, Field.Store.YES, Field.Index.ANALYZED));
         doc.Add(new Field("url", "/" + gemeente.Key, Field.Store.YES, Field.Index.ANALYZED));
+        if (gemeente.Value.Any())
+        doc.Add(new Field("locations", String.Join(" ", gemeente.Value), Field.Store.YES, Field.Index.ANALYZED));
 
         w.AddDocument(doc);
       }
@@ -99,13 +101,19 @@ namespace Meldpunt.Services
           q += "*";
 
         QueryParser parser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, "text", new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30));
-        QueryParser titleParser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, "title", new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30));
         Query query = parser.Parse(q);
-        Query titleQuery = titleParser.Parse(q);
-
-
+        query.Boost = 0.2f;
         bq.Add(query, Occur.SHOULD);
+
+        QueryParser titleParser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, "title", new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30));
+        Query titleQuery = titleParser.Parse(q);
+        titleQuery.Boost = 0.4f;
         bq.Add(titleQuery, Occur.SHOULD);
+
+        QueryParser locationsParser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, "locations", new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30));
+        Query locationsQuery = locationsParser.Parse(q);
+        locationsQuery.Boost = 0.4f;        
+        bq.Add(locationsQuery, Occur.SHOULD);
       }
 
       TopDocs results = searcher.Search(bq, resultcount);
