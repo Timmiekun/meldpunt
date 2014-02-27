@@ -35,13 +35,7 @@ namespace Meldpunt.Services
       foreach (var plaats in plaatsElements)
         yield return XmlToModel((XmlElement)plaats);
     }
-
-    public List<String> getSuggestion(string s)
-    {
-      List<String> foundPlaces = LocationUtils.allPlaces.FindAll(p => p.StartsWith(s, StringComparison.InvariantCultureIgnoreCase));
-      return foundPlaces;
-    }
-
+   
     public PlaatsModel GetPlaats(string plaats)
     {
       XmlElement plaatsElement = (XmlElement)plaatsenDoc.SelectSingleNode("//plaats[@name='" + plaats.Capitalize() + "']");

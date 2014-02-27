@@ -77,7 +77,7 @@ namespace Meldpunt.Controllers
       if (gemeentes.Any())
       {
         String name = gemeentes.First().Key;
-        return RedirectPermanent("/" + name);
+        return RedirectPermanent("/" + name.XmlSafe());
       }
 
       throw new HttpException(404, "page not found");
