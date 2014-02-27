@@ -37,8 +37,9 @@ namespace Meldpunt.Controllers
 
     public ActionResult GetPage(string id)
     {
+      id = id.XmlSafe();
       // content page?
-      PageModel model = pageService.GetPage(id.XmlSafe());
+      PageModel model = pageService.GetPage(id);
       if (model != null)
       {
         if (model.SubPages.Any())
@@ -55,7 +56,7 @@ namespace Meldpunt.Controllers
       }
 
       // gemeente page?      
-      var gemeente = LocationUtils.placesByMunicipality.Where(m => m.Key.Equals(id, StringComparison.CurrentCultureIgnoreCase));
+      var gemeente = LocationUtils.placesByMunicipality.Where(m => m.Key.XmlSafe().Equals(id, StringComparison.CurrentCultureIgnoreCase));
       if (gemeente.Any())
       {
         PlaatsModel plaatsModel = plaatsService.GetPlaats(id);
@@ -70,7 +71,7 @@ namespace Meldpunt.Controllers
       }
 
       // plaats to redirect?
-      var gemeentes = LocationUtils.placesByMunicipality.Where(m => m.Value.Any(p => p.Equals(id, StringComparison.CurrentCultureIgnoreCase)));
+      var gemeentes = LocationUtils.placesByMunicipality.Where(m => m.Value.Any(p => p.XmlSafe().Equals(id, StringComparison.CurrentCultureIgnoreCase)));
       
 
       if (gemeentes.Any())

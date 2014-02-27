@@ -20,7 +20,7 @@ namespace Meldpunt.Controllers
 
     public JsonResult getSuggest(string plaats)
     {
-      List<SearchResultModel> suggests = searchService.Search(plaats + "*");
+      List<SearchResultModel> suggests = searchService.Search(plaats);
       return Json(suggests, JsonRequestBehavior.AllowGet);
     }
   }

@@ -122,7 +122,7 @@
     <Content Include="App_Data\pages.xml">
       <SubType>Designer</SubType>
     </Content>
-    <None Include="App_Data\plaatsen.xml" />
+    <Content Include="App_Data\plaatsen.xml" />
     <Content Include="Css\admin.css" />
     <Content Include="Css\main.css" />
     <Content Include="Css\reset.css" />
@@ -183,6 +183,8 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Shared\subPagesPartial.cshtml" />
     <Content Include="Views\Shared\_Admin.cshtml" />
+    <None Include="Properties\PublishProfiles\meldpuntongedierte - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\meldpuntongedierte - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\Profile1.pubxml" />
     <None Include="Scripts\tinymce\langs\readme.md" />
     <None Include="Scripts\tinymce\skins\lightgray\fonts\readme.md" />
@@ -195,6 +197,7 @@
     <Content Include="Views\Admin\EditPlaats.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Home\SiteMap.cshtml" />
+    <Content Include="Views\Home\Leiden.cshtml" />
     <None Include="Volksgezondheid.pdf" />
   </ItemGroup>
   <ItemGroup>

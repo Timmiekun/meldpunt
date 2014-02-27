@@ -15,12 +15,13 @@ using Lucene.Net.Documents;
 using Lucene.Net.Analysis.Standard;
 using Lucene.Net.Search;
 using Lucene.Net.QueryParsers;
+using System.IO;
 
 namespace Meldpunt.Services
 {
   public class SearchService
   {
-    private Directory dir;
+    private Lucene.Net.Store.Directory dir;
     private PageService pageService;
     private PlaatsService plaatsService;
     private String indexPath;
@@ -34,6 +35,10 @@ namespace Meldpunt.Services
 
     public void Index()
     {
+      DirectoryInfo index = new DirectoryInfo(indexPath);
+      if (!index.Exists)
+        index.Create();
+      
       dir = FSDirectory.Open(indexPath);
       IndexWriter w = new IndexWriter(dir, new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30), true, IndexWriter.MaxFieldLength.UNLIMITED);
 
@@ -53,7 +58,7 @@ namespace Meldpunt.Services
         Document doc = new Document();
         doc.Add(new Field("title", plaats.Gemeentenaam, Field.Store.YES, Field.Index.ANALYZED));
         doc.Add(new Field("text", plaats.Text, Field.Store.YES, Field.Index.ANALYZED));
-        doc.Add(new Field("url", "/" + plaats.Gemeentenaam, Field.Store.YES, Field.Index.ANALYZED));       
+        doc.Add(new Field("url", "/" + plaats.Gemeentenaam.XmlSafe(), Field.Store.YES, Field.Index.ANALYZED));       
         doc.Add(new Field("all", "all", Field.Store.NO, Field.Index.ANALYZED));
 
         w.AddDocument(doc);
@@ -66,7 +71,7 @@ namespace Meldpunt.Services
         Document doc = new Document();
         doc.Add(new Field("title", gemeente.Key, Field.Store.YES, Field.Index.ANALYZED));
         doc.Add(new Field("text", fullText, Field.Store.YES, Field.Index.ANALYZED));
-        doc.Add(new Field("url", "/" + gemeente.Key, Field.Store.YES, Field.Index.ANALYZED));
+        doc.Add(new Field("url", "/" + gemeente.Key.XmlSafe(), Field.Store.YES, Field.Index.ANALYZED));
         if (gemeente.Value.Any())
         doc.Add(new Field("locations", String.Join(" ", gemeente.Value), Field.Store.YES, Field.Index.ANALYZED));
 
@@ -140,7 +145,6 @@ namespace Meldpunt.Services
           Title = result.Get("title"),
           Url = result.Get("url"),
           Intro = intro
-
         });
 
       }
