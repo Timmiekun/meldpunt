@@ -122,7 +122,9 @@
     <Content Include="App_Data\pages.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Data\plaatsen.xml" />
+    <Content Include="App_Data\plaatsen.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Css\admin.css" />
     <Content Include="Css\main.css" />
     <Content Include="Css\reset.css" />
@@ -145,6 +147,7 @@
     <Content Include="Images\page_word.png" />
     <Content Include="Images\shadow_bottom.png" />
     <Content Include="Images\Wasp.JPG" />
+    <Content Include="robots.txt" />
     <Content Include="Scripts\admin.js" />
     <Content Include="Scripts\suggest.js" />
     <Content Include="Scripts\xmlhttp.js" />
@@ -185,7 +188,7 @@
     <Content Include="Views\Shared\_Admin.cshtml" />
     <None Include="Properties\PublishProfiles\meldpuntongedierte - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\meldpuntongedierte - Web Deploy.pubxml" />
-    <None Include="Properties\PublishProfiles\Profile1.pubxml" />
+    <None Include="Properties\PublishProfiles\File.pubxml" />
     <None Include="Scripts\tinymce\langs\readme.md" />
     <None Include="Scripts\tinymce\skins\lightgray\fonts\readme.md" />
     <None Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-small.eot" />
