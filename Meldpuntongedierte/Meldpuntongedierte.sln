@@ -5,10 +5,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meldpuntongedierte", "Meldp
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		azure|Any CPU = azure|Any CPU
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D7740739-650C-4C92-AE4C-BA3B62D32B51}.azure|Any CPU.ActiveCfg = azure|Any CPU
+		{D7740739-650C-4C92-AE4C-BA3B62D32B51}.azure|Any CPU.Build.0 = azure|Any CPU
 		{D7740739-650C-4C92-AE4C-BA3B62D32B51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D7740739-650C-4C92-AE4C-BA3B62D32B51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7740739-650C-4C92-AE4C-BA3B62D32B51}.Release|Any CPU.ActiveCfg = Release|Any CPU

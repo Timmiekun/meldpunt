@@ -35,12 +35,12 @@ namespace Meldpunt.Services
       foreach (var plaats in plaatsElements)
         yield return XmlToModel((XmlElement)plaats);
     }
-   
+
     public PlaatsModel GetPlaats(string plaats)
     {
       XmlElement plaatsElement = (XmlElement)plaatsenDoc.SelectSingleNode("//plaats[@name='" + plaats + "']");
       if (plaatsElement == null)
-        return null;      
+        return null;
 
       return XmlToModel(plaatsElement);
     }
@@ -51,6 +51,9 @@ namespace Meldpunt.Services
       html = html.Trim().Substring(9, html.Length - 12);
       XmlDocument d = LoadAsXml(html);
       string text = d != null ? d.InnerText : "";
+      string title = "";
+      if(plaatsElement.SelectSingleNode("title")!=null)
+        title=plaatsElement.SelectSingleNode("title").InnerText;
 
       DateTime lastModified = DateTime.ParseExact(plaatsElement.Attributes["lastmodified"].Value, "dd-MM-yyyy HH:mm", CultureInfo.InvariantCulture);
 
@@ -61,7 +64,8 @@ namespace Meldpunt.Services
         Text = text,
         MetaDescription = plaatsElement.SelectSingleNode("metadescription").InnerText,
         LastModified = lastModified,
-        Published = plaatsElement.Attributes["published"].Value == "true"
+        Published = plaatsElement.Attributes["published"].Value == "true",
+        Title = title
       };
     }
 
@@ -76,20 +80,26 @@ namespace Meldpunt.Services
         plaats.SetAttribute("published", p.Published ? "true" : "false");
         plaats.SelectSingleNode("content").InnerXml = html;
         plaats.SelectSingleNode("metadescription").InnerText = p.MetaDescription;
+        if (plaats.SelectSingleNode("title") == null)
+          plaats.AppendChild(plaatsenDoc.CreateElement("title"));
+        plaats.SelectSingleNode("title").InnerText = p.Title;
       }
       else
       {
         plaats = plaatsenDoc.CreateElement("plaats");
-        plaats.SetAttribute("name", p.Gemeentenaam);
+        plaats.SetAttribute("name", p.Gemeentenaam.UrlEncode());
         XmlElement content = plaatsenDoc.CreateElement("content");
         XmlElement metaDescription = plaatsenDoc.CreateElement("metadescription");
+        XmlElement title = plaatsenDoc.CreateElement("title");
         content.InnerXml = html;
         metaDescription.InnerText = p.MetaDescription;
+        title.InnerText = p.Title;
         plaats.AppendChild(content);
         plaats.AppendChild(metaDescription);
-        plaatsenDoc.DocumentElement.AppendChild(plaats);        
+        plaats.AppendChild(title);
+        plaatsenDoc.DocumentElement.AppendChild(plaats);
       }
-    
+
       plaats.SetAttribute("published", p.Published ? "true" : "false");
       plaats.SetAttribute("lastmodified", DateTime.Now.ToString("dd-MM-yyyy hh:mm"));
 

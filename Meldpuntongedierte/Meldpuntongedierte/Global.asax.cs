@@ -142,9 +142,9 @@ namespace Meldpunt
 
     protected void Application_Error(Object sender, System.EventArgs e)
     {
-#if debug
-                throw Server.GetLastError();
-#else
+      #if debug
+                      throw Server.GetLastError();
+      #else
       var exception = Server.GetLastError();
       var httpException = exception as HttpException;
 

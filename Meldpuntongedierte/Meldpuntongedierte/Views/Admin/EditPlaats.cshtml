@@ -20,16 +20,22 @@
 <form method="post">   
   <div  class="field">
     <label for="publish">
-      @Html.CheckBoxFor(p => p.Published)
-      @*<input type="checkbox" name="Published" @if(Model.Published){<text>checked="checked"</text>}/>*@ 
+      @Html.CheckBoxFor(p => p.Published)      
       gepubliceerd
     </label>
+  </div>
+  
+  <div class="field">
+    <label for="MetaDescription">Title</label>
+    <input type="text" name="title" style="width:100%" value="@Model.Title" />
   </div>
   
   <div class="field">
     <label for="MetaDescription">Meta description</label>
     <textarea id="MetaDescription" style="width:100%;height: 40px;" name="MetaDescription" type="text" >@Model.MetaDescription</textarea>
   </div>
+
+   
 
   <div class="field">
     <label for="content">Content</label>
@@ -42,31 +48,15 @@
 </form>
 
 @section menu{
-<div class="menu">  
- @* <ul>
-    @foreach (PageModel item in Model)
-    {
-      <li ><a href="@item.Url">@item.Title</a>
-        @if (item.SubPages.Any())
-        {
-          Html.RenderPartial("subPagesPartial", item);        
-        }
-      </li>
-    }
-  </ul>*@
-
+ <div class="menu">
   <h2>Gemeenten</h2>
   <ul>
-    @foreach(var kv in locations){     
-        
+    @foreach(var kv in locations){
+      string url = ((string)kv.Key).UrlEncode();
        <li>
-       <a href="/admin/editplaats/@kv.Key">@kv.Key</a>
-       <div class="subNav">
-        @String.Join(", ", kv.Value)
-       </div>
+        <a href="/admin/editplaats/@url">@kv.Key</a>  
        </li>
     }
   </ul>
-
 </div>
 }

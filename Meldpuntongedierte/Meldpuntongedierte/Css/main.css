@@ -247,12 +247,12 @@ h2
   color: White;
   text-decoration: none;
 }
-.defaultList
+ul
 {
   list-style-type: disc;
   margin: 10px;
 }
-.defaultList li
+ul li
 {
   margin-left: 10px;
   cursor: pointer;

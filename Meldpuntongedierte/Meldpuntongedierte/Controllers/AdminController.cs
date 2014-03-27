@@ -33,10 +33,10 @@ namespace Meldpunt.Controllers
     public ActionResult EditPlaats(String plaats)
     {
       // gemeente page?
-      var gemeente = LocationUtils.placesByMunicipality.Where(m => m.Key.Equals(plaats));
+      var gemeente = LocationUtils.placesByMunicipality.Where(m => m.Key.UrlEncode().Equals(plaats.UrlEncode()));
       if (gemeente.Any())
       {
-        PlaatsModel plaatsModel = plaatsService.GetPlaats(plaats);
+        PlaatsModel plaatsModel = plaatsService.GetPlaats(plaats.UrlEncode());
         if (plaatsModel == null)
         {
           plaatsModel = new PlaatsModel { Gemeentenaam = gemeente.First().Key.Capitalize() };
