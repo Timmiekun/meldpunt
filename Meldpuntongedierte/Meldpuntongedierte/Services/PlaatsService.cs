@@ -71,7 +71,7 @@ namespace Meldpunt.Services
 
     public void UpdateOrInsert(PlaatsModel p)
     {
-      XmlElement plaats = (XmlElement)plaatsenDoc.SelectSingleNode("//plaats[@name='" + p.Gemeentenaam.UrlEncode() + "']");
+      XmlElement plaats = (XmlElement)plaatsenDoc.SelectSingleNode("//plaats[@name='" + p.Gemeentenaam.XmlSafe() + "']");
 
       string html = String.Format("<![CDATA[{0}]]>", p.Content);
 
@@ -87,7 +87,7 @@ namespace Meldpunt.Services
       else
       {
         plaats = plaatsenDoc.CreateElement("plaats");
-        plaats.SetAttribute("name", p.Gemeentenaam.UrlEncode());
+        plaats.SetAttribute("name", p.Gemeentenaam.XmlSafe());
         XmlElement content = plaatsenDoc.CreateElement("content");
         XmlElement metaDescription = plaatsenDoc.CreateElement("metadescription");
         XmlElement title = plaatsenDoc.CreateElement("title");

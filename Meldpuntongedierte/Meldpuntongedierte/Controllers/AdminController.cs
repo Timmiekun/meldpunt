@@ -33,10 +33,10 @@ namespace Meldpunt.Controllers
     public ActionResult EditPlaats(String plaats)
     {
       // gemeente page?
-      var gemeente = LocationUtils.placesByMunicipality.Where(m => m.Key.UrlEncode().Equals(plaats.UrlEncode()));
+      var gemeente = LocationUtils.placesByMunicipality.Where(m => m.Key.XmlSafe().Equals(plaats.XmlSafe()));
       if (gemeente.Any())
       {
-        PlaatsModel plaatsModel = plaatsService.GetPlaats(plaats.UrlEncode());
+        PlaatsModel plaatsModel = plaatsService.GetPlaats(plaats.XmlSafe());
         if (plaatsModel == null)
         {
           plaatsModel = new PlaatsModel { Gemeentenaam = gemeente.First().Key.Capitalize() };
@@ -65,7 +65,7 @@ namespace Meldpunt.Controllers
 
       plaatsService.UpdateOrInsert(p);
 
-      return Redirect("/admin/editplaats/" + p.Gemeentenaam);
+      return Redirect("/admin/editplaats/" + p.Gemeentenaam.XmlSafe());
     }
 
   }
