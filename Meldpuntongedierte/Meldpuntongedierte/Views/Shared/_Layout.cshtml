@@ -2,6 +2,11 @@
 @{
   List<PageModel> pagesForTabs = ViewBag.NavItems as List<PageModel>;
   List<PageModel> breadcrumbs = ViewBag.BreadCrumbs as List<PageModel>;
+  string logoText = ViewBag.HeaderTitle;
+  if (String.IsNullOrEmpty(logoText))
+  {
+    logoText = "Centraal Meldpunt Ongedierte";
+  }
 }
 
 <!DOCTYPE html>
@@ -39,8 +44,8 @@
 
    <div class="topBar">
     <h2>
-    <a class="logo" href="/"><img src="/Images/24-11.png" alt="Meldpunt ongedierte logo" /></a>
-    <a class="logotext" href="/">Centraal Meldpunt Ongedierte</a></h2>    
+    <a class="logo" href="/"><img src="/Images/Logo definitief voor website2.png" alt="Meldpunt ongedierte logo" /></a>
+    <a class="logotext" href="/">@logoText</a></h2>    
     <div id="tabholder">
       <div id="tabs">
         @foreach (PageModel tabItem in pagesForTabs)

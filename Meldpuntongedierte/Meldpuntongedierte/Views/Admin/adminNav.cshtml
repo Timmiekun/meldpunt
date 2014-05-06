@@ -1,0 +1,17 @@
+﻿@using Meldpunt.Models;
+@using Meldpunt.Utils;
+@model Dictionary<string, HashSet<string>>
+
+
+<div class="menu">
+  <h2>Gemeenten</h2>
+  <ul>
+    @foreach(var kv in Model){
+      string url = ((string)kv.Key).UrlEncode();
+       <li>
+        <a href="/admin/editplaats/@url">@kv.Key</a>  
+       </li>
+    }
+  </ul>
+</div>
+

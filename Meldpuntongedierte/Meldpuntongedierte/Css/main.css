@@ -114,11 +114,11 @@ h2
 .topBar h2
 {
   display: block;
-  font-size: 15px;
+  font-size: 13px;
   margin: 0px auto 0px auto;
   text-align: left;
   width: 300px;
-  font-family: Tohoma;
+  font-family: arial;
   overflow: hidden;
 }
 

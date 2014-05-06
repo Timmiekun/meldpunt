@@ -52,7 +52,7 @@
   <h2>Gemeenten</h2>
   <ul>
     @foreach(var kv in locations){
-      string url = ((string)kv.Key).UrlEncode();
+      string url = ((string)kv.Key).XmlSafe();
        <li>
         <a href="/admin/editplaats/@url">@kv.Key</a>  
        </li>

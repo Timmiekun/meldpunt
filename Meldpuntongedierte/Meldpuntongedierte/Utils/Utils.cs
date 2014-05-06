@@ -15,7 +15,7 @@ namespace Meldpunt.Utils
     
     public static string XmlSafe(this string s)
     {
-      String re = Regex.Replace(s, "[^a-zA-Z0-9]+", "-").Trim('-').ToLower();
+      String re = Regex.Replace(s, "[^\\p{L}A-Z0-9]+", "-").Trim('-').ToLower();
       return re;
     }
 

@@ -2,6 +2,7 @@
 @model Meldpunt.Models.PlaatsModel
 @{
   // Default values
+  ViewBag.HeaderTitle = "Meldpunt ongedierte";
   ViewBag.Title = "Meldpuntongedierte in " + Model.Gemeentenaam;
   ViewBag.Description = String.Format("Als u inwoner bent van de gemeente {0} en u heeft te maken met overlast van ongedierte, neem dan contact op met ons meldpunt via het servicenummer 0900 - 2556677", Model.Gemeentenaam);
   
@@ -26,16 +27,7 @@ else
   <h1 class="plaatsheader">Meldpunt Ongediertebestrijding @Model.Gemeentenaam</h1>
   <div class="phone">0900-2800200</div>
 
-
- 
-  if (Model.Plaatsen.Count > 1)
-  {
-  <p>Onder de gemeente @Model.Gemeentenaam vallen de plaatsen: @String.Join(", ", Model.Plaatsen.Select(p => p.Capitalize()))</p>
-  }
-
-  <p>Als u inwoner bent van de gemeente @Model.Gemeentenaam en u heeft te maken met overlast van ongedierte, neem dan contact op met ons meldpunt via bovenstaand servicenummer.</p>  
-
-
+  <p>Als u inwoner bent van de gemeente @Model.Gemeentenaam en u heeft te maken met overlast van ongedierte, dan kunt u contact opnemen met ons meldpunt via bovenstaand servicenummer.</p>
 
   <b>Let op!</b>
 
@@ -70,7 +62,7 @@ else
       <div class="description">
         Kakkerlakken kunnen bestreden worden met een insecticide d.m.v. een lokaasgel. De
               bestrijdingsdeskundige brengt dit middel in de door hem gevonden strategische plaatsen,
-              waardoor de kolonie in haar geheel geïnfecteerd wordt. Er zijn geen voorzorgsmaatregelen
+              waardoor de plaag in haar geheel geïnfecteerd wordt. Er zijn geen voorzorgsmaatregelen
               nodig bij een kakkerlakkenbestrijding.
       </div>
     </li>
@@ -103,7 +95,7 @@ else
 
   <b>Alvorens u contact opneemt voor het maken van een afspraak willen wij u graag op het volgende wijzen:</b>
 
-  <p>Ondanks dat vele dierplagen vaak alleen kunnen worden bestreden door de juiste vakkennis  en specifieke middelen, kunnen sommige problemen eenvoudig opgelost worden door het inwinnen van de juiste informatie. Om u op weg te helpen, hebben wij bovenstaand een en ander uiteengezet onder <a href="/ongedierte-in-huis">ongedierte in huis</a>. U vindt hier informatie over iedere vorm van ongedierte welke veel voorkomt in en om het huis. Tevens vind u nuttige tips over wat u zelf kunt doen en belangrijke informatie over wat u vooral niet moet doen.</p>
+  <p>Ondanks dat vele dierplagen vaak alleen kunnen worden bestreden met de juiste vakkennis  en specifieke middelen, kunnen sommige problemen eenvoudig opgelost worden door het inwinnen van de juiste informatie. Meldpunt ongedierte helpt u op weg met de informatie die u zoekt. Bovenaan deze pagina vindt u <a href="/ongedierte-in-huis">ongedierte in huis</a>. U vindt hier informatie over iedere vorm van ongedierte welke veel voorkomt in en om het huis. Tevens vindt u nuttige tips over wat u zelf kunt doen en belangrijke informatie over wat u vooral niet moet doen.</p>
 
   <b>Voor algemene voorlichting kunt u ons ook benaderen via <a href="mailto:info@meldpuntongedierte.nl">info@meldpuntongedierte.nl</a></b>
 
