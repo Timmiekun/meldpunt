@@ -69,22 +69,21 @@ h2
 
 .topBar
 {
-  width: 100%;
-  background-color: #83003c;
-  text-align: center;
+  width: 922px;
+  margin: 0 auto;    
   font-weight: bold;
   z-index: -1;
   border-bottom: 10px solid #efefef;
-  padding-top: 10px;
+  padding-top: 10px;  
 }
 .topBar a
 {
-  color: white;
+  color: black;
   text-decoration: none;
 }
 #tabholder
 {
-  background-color: #ababab;
+  background-color:#83003c;
   position: relative;
   top: 1px;
   margin-top: 30px;
@@ -116,8 +115,7 @@ h2
   display: block;
   font-size: 13px;
   margin: 0px auto 0px auto;
-  text-align: left;
-  width: 300px;
+  text-align: left;  
   font-family: arial;
   overflow: hidden;
 }

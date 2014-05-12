@@ -8,7 +8,7 @@ using Meldpunt.ActionFilters;
 using Meldpunt.Utils;
 using Meldpunt.Controllers;
 
-namespace Meldpunt
+namespace Meldpunt 
 {
   // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
   // visit http://go.microsoft.com/?LinkId=9394801
@@ -22,7 +22,7 @@ namespace Meldpunt
 
     public static void RegisterRoutes(RouteCollection routes)
     {
-           routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+      routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
       routes.MapRoute(
         "Http404", // Route name
@@ -134,7 +134,7 @@ namespace Meldpunt
 
       GlobalFilters.Filters.Add(new GlobalFilterAttribute());
       // GlobalFilters.Filters.Add(new MustBeAdminAttribute());
-      
+
       RegisterGlobalFilters(GlobalFilters.Filters);
 
       RegisterRoutes(RouteTable.Routes);
@@ -142,9 +142,9 @@ namespace Meldpunt
 
     protected void Application_Error(Object sender, System.EventArgs e)
     {
-      #if debug
+#if debug
                       throw Server.GetLastError();
-      #else
+#else
       var exception = Server.GetLastError();
       var httpException = exception as HttpException;
 
