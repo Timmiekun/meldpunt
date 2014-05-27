@@ -12,7 +12,8 @@ namespace Meldpunt.Models
   {
     private string host = "http://" + HttpContext.Current.Request.Url.Host + "/";
 
-    public string Title { get { return Utils.Utils.Capitalize(Id.Replace("-", " ").Trim()); } }
+    public string Title { get { return Utils.Utils.Capitalize(Id.Replace("-", " ").Trim());} }
+    public string HeaderTitle { get; set; }
     public string Id { get; set; }
     public string Content { get; set; }
     public string Url { get; set; }

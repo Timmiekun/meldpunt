@@ -6,6 +6,7 @@
   ViewBag.Description = Model.FullText.TruncateAtWord(200);
   ViewBag.Url = Model.Url;
   List<PageModel> subNav = ViewBag.SubNav as List<PageModel>;
+  List<List<PageModel>> regioPages = ViewBag.RegioPages as List<List<PageModel>>;
 }
 
 
@@ -13,29 +14,64 @@
 
 @section menu{
   @if (subNav != null && subNav.Any())
-  {
-    <div class="menu">      
-      <ul>        
-        @foreach(PageModel item in subNav){
-          
+  {    
+    <div class="menu">
+      <ul>
+        @foreach (PageModel item in subNav)
+        {
+
           string selected = "";
-          if (item.Id == Model.Id) {
+          if (item.Id == Model.Id)
+          {
             selected = "selected";
           }
           
-          <li class="@selected">            
+          <li class="@selected">
             <a href="@item.Url">@item.Title</a>
             @if (item.Id == Model.Id && item.SubPages.Any())
             {
               <ul class="subNav">
                 @foreach (PageModel subItem in item.SubPages)
-                 {
-                   <li><a href="@subItem.Url">@subItem.Title</a></li>
-                 }
-               </ul>
+                {
+                  <li><a href="@subItem.Url">@subItem.Title</a></li>
+                }
+              </ul>
             }
           </li>
         }
-    </ul>
-  </div>   
+      </ul>
+    </div>   
+  }
+  else
+  {
+    <div class="menu">
+      <ul>        
+        <li><a href="/ongedierte-in-huis/muizen/muizen-in-huis">Muizen in huis</a></li>
+        <li><a href="/ongedierte-in-huis/ratten">Rattenbestrijding</a></li>
+        <li><a href="/ongedierte-in-huis/mieren/mieren-in-huis">Mieren in huis</a></li>
+        <li><a href="/ongedierte-in-huis/wespen/wespennest-verwijderen">Wespennest verwijderen</a></li>
+        <li><a href="/stankoverlast">Stankoverlast</a></li>
+        <li><a href="/volksgezondheid">Ongedierte en volksgezondheid</a></li>
+        <li><a href="/wettelijke-kaders-en-verantwoordelijkheden">Wettelijke kaders en verantwoordelijkheden</a></li>
+      </ul>
+    </div>
+  }
 }
+
+
+ @section secondary{
+    @if(Model.Id == "home"){      
+      <div class="veiligheidsregios">
+        <h2>Regionale dienstverlening Meldpuntongedierte</h2>
+        @foreach (List<PageModel> list in regioPages)
+        {
+          <ul class="regiolist">
+            @foreach (PageModel p in list)
+            {
+              <li><a href="@p.Url">@p.HeaderTitle.Substring(20)</a></li>
+            }
+          </ul>
+        }
+      </div>
+    }
+  }

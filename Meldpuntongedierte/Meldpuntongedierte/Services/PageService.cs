@@ -102,6 +102,10 @@ namespace Meldpunt.Services
       foreach (XmlNode t in page.SelectNodes("content//h1"))
         text += " " + t.InnerText;
 
+      string headertitle = "";
+      if (page.SelectSingleNode("content/h1") != null)
+        headertitle = page.SelectSingleNode("content/h1").InnerText;
+
       PageModel p = new PageModel()
       {
         Id = id,
@@ -110,7 +114,8 @@ namespace Meldpunt.Services
         Url = url.UrlEncode(),
         ParentId = parentId,
         HasSublingMenu = page.Attributes["haschildmenu"] != null && page.Attributes["haschildmenu"].Value == "true",
-        FullText = text
+        FullText = text,
+        HeaderTitle = headertitle
       };
 
       return p;

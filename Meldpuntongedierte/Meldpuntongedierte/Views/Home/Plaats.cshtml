@@ -3,7 +3,7 @@
 @{
   // Default values
   ViewBag.HeaderTitle = "Meldpunt ongedierte";
-  ViewBag.Title = "Meldpuntongedierte in " + Model.Gemeentenaam;
+  ViewBag.Title = "Ongediertebestrijding " + Model.Gemeentenaam + " - Meldpunt Ongedierte " + Model.Gemeentenaam;
   ViewBag.Description = String.Format("Als u inwoner bent van de gemeente {0} en u heeft te maken met overlast van ongedierte, neem dan contact op met ons meldpunt via het servicenummer 0900 - 2556677", Model.Gemeentenaam);
   
   // Curated items
@@ -15,6 +15,20 @@
     ViewBag.Description = Model.MetaDescription;
   }
   ViewBag.Url = Model.Gemeentenaam;
+}
+
+@section menu{
+  <div class="menu">
+      <ul>        
+        <li><a href="/ongedierte-in-huis/muizen/muizen-in-huis">Muizen in huis</a></li>
+        <li><a href="/ongedierte-in-huis/ratten">Rattenbestrijding</a></li>
+        <li><a href="/ongedierte-in-huis/mieren/mieren-in-huis">Mieren in huis</a></li>
+        <li><a href="/ongedierte-in-huis/wespen/wespennest-verwijderen">Wespennest verwijderen</a></li>
+        <li><a href="/stankoverlast">Stankoverlast</a></li>
+        <li><a href="/volksgezondheid">Ongedierte en volksgezondheid</a></li>
+        <li><a href="/wettelijke-kaders-en-verantwoordelijkheden">Wettelijke kaders en verantwoordelijkheden</a></li>
+      </ul>
+    </div>
 }
 
 
@@ -100,6 +114,6 @@ else
   <b>Voor algemene voorlichting kunt u ons ook benaderen via <a href="mailto:info@meldpuntongedierte.nl">info@meldpuntongedierte.nl</a></b>
 
   <p>
-    <b>Voor ongediertebestrijding namens een bedrijf, instelling of woningcorporatie, wendt u zich voorafgaand tot <a href="/werkwijze">onze werkwijze</a>.</b>
+    <b>Voor ongediertebestrijding namens een bedrijf, instelling of woningcorporatie, wendt u zich voorafgaand tot <a href="/ongediertebestrijding">onze werkwijze</a>.</b>
   </p>
 }

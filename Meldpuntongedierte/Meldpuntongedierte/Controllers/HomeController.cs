@@ -23,7 +23,18 @@ namespace Meldpunt.Controllers
     public ActionResult Index()
     {
       PageModel model = pageService.GetPage("home");
+      ViewBag.RegioPages = Split(pageService.GetPage("regios").SubPages);
       return View(model);
+    }
+
+    public static List<List<PageModel>> Split(List<PageModel> source)
+    {
+      int numOfItemsPerList =  (int)Math.Ceiling(source.Count() / 3f);
+      return source
+          .Select((x, i) => new { Index = i, Value = x })
+          .GroupBy(x => x.Index / numOfItemsPerList)
+          .Select(x => x.Select(v => v.Value).ToList())
+          .ToList();
     }
 
     public ActionResult SiteMap()
@@ -38,6 +49,9 @@ namespace Meldpunt.Controllers
     public ActionResult GetPage(string id)
     {
       id = id.XmlSafe();
+      if (id == "home")
+        return Redirect("/");
+
       // content page?
       PageModel model = pageService.GetPage(id);
       if (model != null)
@@ -50,12 +64,23 @@ namespace Meldpunt.Controllers
         
         PageModel parent = pageService.GetPage(model.ParentId);
         if (parent != null)
-          ViewBag.SubNav = parent.SubPages;          
-        
+          ViewBag.SubNav = parent.SubPages;
+
         return View("index", model);
       }
 
-      // gemeente page?      
+      // gemeente page?
+      string prefix = "ongediertebestrijding-";      
+      
+      // begint de pagina niet met de prefix en is het een plaats? Dan redirecten naar de juiste url met prefix.
+      if (!id.StartsWith(prefix) && LocationUtils.IsLocation(id)) {
+          return RedirectPermanent(prefix + id);
+      }
+
+      // beginnen we wel met de prefix? Dan de prefix eraf halen om de plaatsnaam te vinden.
+      if (id.StartsWith(prefix))
+        id = id.Substring(prefix.Length);
+
       var gemeente = LocationUtils.placesByMunicipality.Where(m => m.Key.XmlSafe().Equals(id, StringComparison.CurrentCultureIgnoreCase));
       if (gemeente.Any())
       {

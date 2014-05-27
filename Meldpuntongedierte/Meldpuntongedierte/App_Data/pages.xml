@@ -1,59 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <pages>
-  <page id="home">
+  <page id="home" tab="true">
     <content>
-      <h1>Hoe wordt u het snelst geholpen?</h1>
+      <h1>Ongediertebestrijding</h1>
+      <h2>Hoe wordt u het snelst geholpen?</h2>
       <p>
         Voor ongediertebestrijding verzoeken wij u hierboven in de zoekbalk de naam van
         uw woonplaats in te voeren. U wordt zo verwezen naar het juiste servicepunt en  telefoonnummer om iemand te woord te staan en het eventueel maken van een afspraak.
       </p>
 
       <p>
-        Voor alleen advies en informatie over ongedierte in huis en/of de bestrijding ervan raden wij u aan om eerst te gaan naar <a href="/ongedierte-in-huis">ongedierte in huis</a>
+        Voor alleen advies en informatie over ongedierte in huis en/of de bestrijding ervan raden wij u aan om eerst naar <a href="/ongedierte-in-huis">ongedierte in huis</a> te gaan.
       </p>
 
       <p>
-        Voor ongediertebestrijding namens een bedrijf, instelling of woningcorporatie, wendt u zich voorafgaand alstublieft tot onze <a href="/werkwijze">werkwijze</a>
+        Voor ongediertebestrijding namens een bedrijf, instelling of woningcorporatie, wendt u zich voorafgaand alstublieft tot onze <a href="/ongediertebestrijding">werkwijze</a>
       </p>
 
-      <p>
-        <h2>Direct contact:</h2>
-
-        U kunt bellen met <em>0900-2556677</em> of een email sturen naar <em>
-          <a href="mailto:info@meldpuntongedierte.nl">info@meldpuntongedierte.nl</a>
-        </em>
+      <h2>Direct contact:</h2>
+      <p>U kunt bellen met <em>0900-2556677</em> of een email sturen naar
+        <br/>
+        <br/>
+        <em><a href="mailto:info@meldpuntongedierte.nl">info@meldpuntongedierte.nl</a></em>
       </p>
     </content>
-  </page>
-
-  <page id="contact" tab="true">
-    <content>
-      <h1>Contact</h1>
-      <p>
-        Voor het maken van een afspraak kunt u het beste telefonisch contact opnemen met het meldpunt.
-        Dit telefoonnummer is <b>0900-2556677</b>. Voor het servicepunt bij u in de buurt voert u hierboven in de zoekbalk uw woonplaats in.
-        Voor algemene voorlichting kunt u het best uw vragen stellen per e-mail naar <em>
-          <a href="mailto:info@meldpuntongedierte.nl">info@meldpuntongedierte.nl</a>
-        </em>
-      </p>
-    </content>
-  </page>
+  </page>  
 
   <page id="ongedierte-in-huis" tab="true">
     <content>
       <h1>Ongedierte in huis</h1>
       <p>
-        Om u zoveel mogelijk van dienst te kunnen zijn op afstand, hebben wij hiernaast de meest voorkomende plaagdieren en beestjes in huis voor u uiteengezet.
+        Om u zoveel mogelijk van dienst te kunnen zijn op afstand, hebben wij hiernaast de meest voorkomende ongedierte en plaagdieren in huis voor u uiteengezet.
       </p>
       <p>
-        Wij raden u aan dit aandachtig te lezen alvorens u overgaat tot maatregelen die het probleem kunnen verergeren of verplaatsen.
+        Wij raden u aan dit aandachtig te lezen alvorens u overgaat tot maatregelen die het probleem eventueel kunnen verergeren of verplaatsen.
       </p>
 
       <h2>Komt u er toch niet uit?</h2>
       <p>
         Ga naar de zoekbalk rechtsboven en voer uw woonplaats in voor het juiste servicenummer van de afdeling ongediertebestrijding bij u in de buurt.
       </p>
-
       <p>
         U kunt ook bellen met ons centraal meldpunt <em>0900-2556677</em> of een email sturen naar <em>
           <a href="mailto:info@meldpuntongedierte.nl">info@meldpuntongedierte.nl</a>
@@ -143,7 +129,7 @@
             oorzaak achterhalen en de juiste maatregelen treffen. U kunt hiervoor <a href="/contact">contact</a> opnemen
             met onze klantenservice. Na een grondige inspectie wordt het probleem in kaart gebracht
             en direct een bestrijding in gang gezet. Er zijn diverse manieren om de muizen te
-            bestrijden. De manier waarvoor gekozen wordt is sterk afhankelijk van de construktie
+            bestrijden. De manier waarvoor gekozen wordt is sterk afhankelijk van de constructie
             van het huis, de wensen van de bewoner, de oorzaak van het probleem en natuurlijk de
             aanwezigheid van kinderen en huisdieren.
           </p>
@@ -165,7 +151,7 @@
             huidig muizenprobleem kunnen dit soort maatregelen juist verplaatsen of verergeren.
           </p>
           <p>
-            Ook een <a href="/werkwijze/bedrijf-of-instelling">bedrijf of instelling</a> kunnen te maken hebben met muizen. Dit wordt meestal
+            Ook een <a href="/ongediertebestrijding/bedrijf-of-instelling">bedrijf of instelling</a> kan te maken hebben met muizen. Dit wordt meestal
             minder snel opgemerkt. Pas wanneer de aantallen zodanig oplopen dat ze zich gaan laten
             zien, wordt de overlast pas opgemerkt. Muizen in het bedrijf kunnen voor veel overlast
             zorgen en de werkplek ernstig verontreinigen. Het is dus belangrijk om hier snel melding
@@ -234,7 +220,7 @@
                 Door de vele natuurlijke vijanden en de kou die in de vrije natuur een rol spelen, worden
                 muizen aangetrokken door de relatief veilige en warme leefomgeving die onze huizen
                 beschikbaar stellen. Met name oude huizen bieden genoeg toegangswegen om binnen te
-                dringen. De construkties van onze gebouwen zijn zodanig gebouwd, dat muizen zich met
+                dringen. De constructies van onze gebouwen zijn zodanig gebouwd, dat muizen zich met
                 gemak kunnen verplaatsen tussen de diverse ruimtes. Zo kunnen ze op den duur zelfs hele
                 flatgebouwen en een hele rij woningen betreden.
               </p>
@@ -266,7 +252,7 @@
 
               <p>
                 Samengevat kunnen we concluderen dat muizen in huis zeer ongewenst zijn en dat er
-                voldoende redenen zijn een <a href="/ongedierte-in-huis/muizen/muizenbestrijding">muizenbestrijding</a> uit te laten voeren of in iedere geval er alles
+                voldoende redenen zijn een <a href="/ongedierte-in-huis/muizen/muizenbestrijding">muizenbestrijding</a> uit te laten voeren of in ieder geval er alles
                 aan te doen om verergering of verdere verspreiding te voorkomen. Neem hiervoor <a href="/contact">contact</a> op
                 met het Meldpunt Ongedierte. Na de bestrijding dienen de adviezen die door de deskundige
                 ter plekke gegeven worden, te worden opgevolgd om een soortgelijk probleem in de toekomst
@@ -299,7 +285,7 @@
                 De nadruk wordt steeds meer gelegd op preventie. Tegenwoordig wordt zelfs al tijdens
                 de bouwtekeningen rekening gehouden met de vraag hoe eventueel een muizenprobleem
                 voorkomen kan worden. Toch staat het grote merendeel van onze gebouwen nog steeds
-                als ‘kwetsbaar’ te boeken en moeten wij dus rekening blijven houden met de risico’s.
+                als ‘kwetsbaar’ te boek en moeten wij dus rekening blijven houden met de risico’s.
               </p>
 
               <p>
@@ -341,9 +327,9 @@
                 Een ander probleem wat regelmatig voorkomt is dat bewoners openingen in muren e.d.
                 afdichten welke als toegangswegen gebruikt werden door muizen. Het klinkt als een logische
                 oplossing, maar men moet zich realiseren dat muizen er alles aan zullen doen om in leven
-                te blijven en nieuwe wegen open knagen op zoek naar voedsel. Dit kunnen dus ook de
+                te blijven en nieuwe wegen open knagen op zoek naar voedsel. Dit kan dus ook bij de
                 buren zijn. Zodoende is de overlast niet verholpen maar verplaatst en leidt dit dus niet tot
-                een strukturele oplossing van het probleem. Het kan ook voorkomen dat muizen opgesloten
+                een strukturele oplossing van het probleem. Het kan ook gebeuren dat muizen opgesloten
                 raken en doodgaan tussen de muren. Het kadaver kan dan na enige dagen veel stankoverlast
                 veroorzaken. Om dit soort problemen te voorkomen treffen wij een combinatie van de juiste
                 maatregelen die per situatie verschillend is.
@@ -485,7 +471,7 @@
                 het beste is om te doen nadat de bestrijding is uitgevoerd.
               </p>
               <p>
-                <a href="/werkwijze">Lees meer over onze werkwijze.</a>
+                <a href="/ongediertebestrijding">Lees meer over onze werkwijze.</a>
               </p>
             </content>
           </page>          
@@ -636,18 +622,18 @@
             meestal niet iets wat binnen korte tijd ontstaan is. Mierenkolonies hebben vaak jarenlang de
             tijd gehad om zich te ontwikkelen totdat ze een stadium bereikt hebben waar we ze niet meer
             kunnen beheersen met de gangbare bestrijdingsmiddelen. Ze zitten dan waarschijnlijk met
-            grote hoeveelheden diep in de grond en zijn inmiddels ver doorgedrongen in de construktie
+            grote hoeveelheden diep in de grond en zijn inmiddels ver doorgedrongen in de constructie
             van het huis.
           </p>
 
           <p>
             <a href="/ongedierte-in-huis/mieren/mieren-bestrijden">Mieren bestrijden</a> is vrij eenvoudig wanneer men ze over de oppervlakte ziet wandelen, maar
-            wanneer het probleem zich inmiddels diep in de construktie heeft gemanifesteerd, zijn de
+            wanneer het probleem zich inmiddels diep in de constructie heeft gemanifesteerd, zijn de
             bekende huis- , tuin- en keukenmiddelen niet meer afdoende. Giftige mierenpoeder en kokend
             water zijn dan een druppel op een gloeiende plaat en lokdoosjes kunnen het probleem alleen
             maar verergeren. Ook het afdichten van naden en kieren waar ze lijken binnen te dringen
             is eigenlijk geen oplossing. Het beste is om een bestrijding uit te laten voeren door een
-            vakkundig iemand die de beschikking heeft tot middelen die bedoeld zijn om mierenkolonies
+            vakman die de beschikking heeft tot middelen die bedoeld zijn om mierenkolonies
             struktureel aan te pakken. U kunt hiervoor <a href="/contact">contact</a> opnemen met het Meldpunt Ongedierte.
           </p>
 
@@ -684,7 +670,7 @@
                 Het belangrijkste kenmerk van mieren is de sociale struktuur. Net als wespen hebben ze een
                 koningin, de werksters en de mannetjes. De koningin legt eieren, de werksters die daaruit
                 voortkomen gaan op zoek naar voedsel en bouwen de nesten verder uit. Onder de werksters
-                heerst ook meestal een duidelijke taakverdeling. Zo heb je werksters die zich toeleggen op het
+                heerst ook een duidelijke taakverdeling. Zo zijn er de werksters die zich toeleggen op het
                 verzamelen van voedsel, ‘soldaten’ die het zware werk verrichten zoals graven en tillen en
                 werksters die zich voornamelijk toeleggen op het verzorgen van de poppen en larven.
               </p>
@@ -733,7 +719,7 @@
               <p>
                 Deze wonderbaarlijke doorontwikkelde eigenschappen maken mieren een zeer interessant
                 diersoort voor zowel de wetenschap als voor hobbyisten die mieren zelfs als huisdieren
-                houden in speciaal daarvoor gebouwde construkties waarin de aktiviteit goed waargenomen
+                houden in speciaal daarvoor gebouwde constructies waarin de aktiviteit goed waargenomen
                 kan worden.
               </p>
             </content>
@@ -884,7 +870,7 @@
               </p>
 
               <p>
-                Het komt een enkele keer voor dat de mieren inmiddels zo diep in de construktie zijn
+                Het komt een enkele keer voor dat de mieren inmiddels zo diep in de constructie zijn
                 gedrongen, dat zelfs onze apparaten en middelen geen optimaal resultaat kunnen bieden
                 zonder dat er vooraf bouwtechnische maatregelen getroffen worden. Als dit het geval is,
                 dan zal de deskundige met u een plan van aanpak bespreken. Dit komt echter zelden voor.
@@ -943,7 +929,7 @@
 
           <p>
             Door de zwartgele kleuren en de typische lichaamsvorm zijn wespen gemakkelijk te
-            herkennen. Hier te lande komen zeven verschillende soorten sociaal levende wespen voor. De
+            herkennen. Hier in Nederland komen zeven verschillende soorten sociaal levende wespen voor. De
             soorten die voornamelijk in gebouwen en huizen gevonden worden zijn de Gewone wesp en
             de Duitse wesp. De <a href="/ongedierte-in-huis/wespen-hommels-en-bijen/wespen/levenswijze-van-wespen">levenswijze</a> van deze twee soorten verschillen niet veel van elkaar.
           </p>
@@ -964,7 +950,7 @@
           <h2>Wespennest in huis</h2>
 
           <p>
-            Omdat de koningin meestal de voorkeur geeft aan een beschutte plek is ons huis al snel een
+            Omdat de koningin meestal de voorkeur geeft aan een beschutte plek is ons huis een aantrekkelijk
             doelwit. Een <a href="/ongedierte-in-huis/wespen-hommels-en-bijen/wespen/wespennest-in-huis">wespennest in huis</a> gaat al snel opvallen. In de loop van de zomer zul je dan
             regelmatig wespen af en aan zien vliegen naar een specifieke opening in bijvoorbeeld het
             spouwmuur of onder het dakbeschot. Ook gebruiken ze regelmatig oude muizenholletjes
@@ -976,7 +962,7 @@
           <h2>Wespen in huis</h2>
 
           <p>
-            Het kan voorkomen dat men geconfronteerd wordt met veel <a href="/ongedierte-in-huis/wespen-hommels-en-bijen/wespen/wespen-in-huis">wespen in huis</a>. Vaak hangen ze
+            Het kan gebeuren dat men geconfronteerd wordt met veel <a href="/ongedierte-in-huis/wespen-hommels-en-bijen/wespen/wespen-in-huis">wespen in huis</a>. Vaak hangen ze
             in een nogal suffe toestand tegen het raam. Deze slome wespen zijn meestal afkomstig uit een
             wespennest die zich ergens in huis bevindt. Meestal is dit achter het dakbeschot of een holle
             ruimte achter bijvoorbeeld een dakkapel. De plek van het nest kan het beste gelokaliseerd
@@ -990,9 +976,9 @@
 
           <p>
             Wanneer het nest of de opening naar het nest zichtbaar is kan er een <a href="/ongedierte-in-huis/wespen-hommels-en-bijen/wespen/wespenbestrijding">wespenbestrijding</a>
-            plaatsvinden. Maak hiervoor een afspraak met het Meldpunt Ongedierte. 0900-2556677
-            Meestal kunnen we binnen een dag langskomen. Tijdens hoogzomer kan het soms iets
-            langer duren in verband met de drukte. Dicht nooit de in- en uitvliegopening af! Dit lost het
+            plaatsvinden. Neem hiervoor <a href="/contact">contact</a> op met het Meldpunt Ongedierte.
+            We streven naar een wachttijd van niet langer dan een dag. Maar in verband met de seizoensdrukte kan het soms wat langer duren.            
+            Dicht nooit de in- en uitvliegopening af! Dit lost het
             probleem niet op. Een nest kan tot wel duizenden individuen tellen en ze zijn in staat om zich
             door vele materialen heen te knagen. In sommige gevallen banen ze zich zelfs een weg binnen
             in huis met alle gevolgen van dien.
@@ -1015,10 +1001,10 @@
           <page id="levenswijze-van-wespen">
             <content>
               <h1>
-                De Gewone wesp ( Vespula vulgaris L. )
-                <br/>
-                De Duitse wesp ( Vespula Germanica F. )
+                De Gewone- en de Duitse wesp 
               </h1>
+
+              <strong>Vespula vulgaris L. en Vespula Germanica F.</strong>
 
               <p>
                 Het is vooral de arbeidsverdeling die bij het sociale leven opvalt. Deze bestaat bij de
@@ -1030,10 +1016,10 @@
               <h2>De cyclus</h2>
 
               <p>
-                In tegenstelling tot de honingbijen, hebben de wespen geen methode ontwikkeld om
+                In tegenstelling tot honingbijen, hebben wespen geen methode ontwikkeld om
                 voedsel voor de winter te verzamelen. Daarom zijn de volken op onze breedtegraad
                 éénjarig. In het najaar vallen ze uiteen en vriezen de werksters dood. Echter, voordat
-                het zover gekomen is, zijn er nieuwe koninginnen en mannetjes uitgekomen, die het
+                het zover gekomen is, zijn er nieuwe koninginnen en mannetjes uitgekomen die het
                 nest verlaten. De mannetjes gaan direct na de paring dood, maar de jonge bevruchte
                 koninginnen zoeken een beschut plekje om te overwinteren. ’s Winters kan men deze
                 slapende koninginnen op zolders en in schuurtjes verscholen aantreffen.
@@ -1065,13 +1051,13 @@
                 vruchtensap drinken. Vreemd genoeg worden ze ook door de larven gevoed. In ruil voor
                 het vliegenvlees breken de larven namelijk een suikerhoudende vloeistof uit die door de
                 volwassen wespen ijverig wordt opgelikt. Niet alleen worden de werksters hierdoor van
-                brandstof voorzien, deze voeding over en weer heeft ook zeker een sociale functie, die
+                brandstof voorzien, deze voeding over en weer heeft ook zeker een sociale functie die
                 voor het bijeenhouden van het volk zorg draagt. Het grootste gedeelte van de zomer
                 hebben de werksters het bijzonder druk met hun nuttige werk en merkt men eigenlijk
                 verbazend weinig van ze, zelfs als men een nest in huis heeft. Echter, in het najaar houdt
                 de zorg voor de larven op en de werksters die vanaf dat moment een lui leventje leiden
                 beginnen dan op te vallen bij hun zoektocht naar zoetigheden. Vaak gaat het meer om
-                de irritatie die ze veroorzaken dan dat er sprake is van enige schade. In bakkerijen,
+                de ergernis en angst die ze veroorzaken dan dat er sprake is van enige schade. In bakkerijen,
                 vruchtenwinkels en bij het verwerken van etenswaren kunnen ze een ernstige plaag
                 vormen. Omdat ze ook op aas, vuilnisemmers e.d. afkomen, zijn ze, net als vliegen
                 mogelijke ziekteverspreiders.
@@ -1089,11 +1075,11 @@
                 ontstaan doordat er een wespennest boven het plafond zit. Ook kan het veel overlast
                 veroorzaken doordat de aanvliegroute op een vervelende plek zit. Ze kunnen bovendien
                 erg agressief worden wanneer ze zich bedreigd voelen. Het komt ook vaak voor dat een
-                wespennest in spouwmuur zit.
+                wespennest in het spouwmuur zit.
               </p>
 
               <p>
-                Wij raden aan een wespennest door een vakkundig iemand te laten bestrijden. U kunt hiervoor
+                Wij raden aan om een wespennest op een vakkundige manier te laten bestrijden. U kunt hiervoor
                 <a href="/contact">contact</a> opnemen met het Meldpunt Ongedierte.
               </p>
 
@@ -1114,12 +1100,12 @@
 
               <p>
                 Wanneer men veel wespen in huis aantreft is dit vrijwel altijd het gevolg van een wespennest
-                dat zich ergens in de construktie van het huis bevindt. De wespen die gezien worden in
+                dat zich ergens in de constructie van het huis bevindt. De wespen die gezien worden in
                 huis, zijn altijd op zoek naar de weg naar buiten. Dit gaat vrijwel altijd goed, maar door
-                ongelukkige omstandigheden kan het voorkomen dat ze de weg naar buiten niet kunnen
+                ongelukkige omstandigheden kan het gebeuren dat ze de weg naar buiten niet kunnen
                 vinden. Meestal heeft dit te maken met het nest wat inmiddels zo groot is geworden dat het
                 voor de wespen zelf een blokkade vormt. Wespen gaan altijd op het licht af en wanneer er
-                geen genoeg lichtinval van buiten meer is, dan laten ze zich leiden door een andere lichtbron.
+                niet genoeg lichtinval van buiten meer is, dan laten ze zich leiden door een andere lichtbron.
                 Vaak zijn dit de ramen en deuren in huis. Daarom zien we ze meestal ook rondom deze
                 plekken verdwaasd rondkruipen.
               </p>
@@ -1185,7 +1171,7 @@
               <h1>Wespenbestrijding</h1>
 
               <p>
-                Een wespenbestrijding kan meestal alleen door een vakkundig iemand uitgevoerd worden.
+                Een wespenbestrijding kan meestal alleen door een vakman uitgevoerd worden.
                 Soms wagen mensen zelf een poging, maar dit heeft meestal weinig tot geen effect.
                 Bovendien is het erg risicovol. Als het misgaat, gaat het meestal ernstig mis. Wanneer wespen
                 zich bedreigd voelen zullen ze hun angel gebruiken. Dit is niet alleen pijnlijk, maar kan ook
@@ -1197,8 +1183,7 @@
               </p>
 
               <p>
-                Bel het Meldpunt Ongedierte voor het maken van een afspraak > 0900-2556677 of stuur een
-                e-mail naar <a href="mailto:info@meldpuntongedierte.nl">info@meldpuntongedierte.nl</a>.
+                U kunt hiervoor <a href="/contact">contact</a> op nemen met het Meldpunt Ongedierte.
               </p>
 
               <p>
@@ -1217,8 +1202,7 @@
               <p>
                 Let op! Een wespennest verwijderen kan pas geschieden nadat de wespen bestreden zijn. Als
                 er sprake is van een aktief nest is het zeer gevaarlijk om dicht in de buurt te komen. Laat het
-                eerst bestrijden door een vakkundig iemand. U kunt hiervoor een afspraak maken met het
-                Meldpunt Ongedierte. > 0900-2556677
+                eerst bestrijden door een vakman. U kunt hiervoor <a href="/contact">contact</a> op nemen met het Meldpunt Ongedierte
               </p>
 
               <p>
@@ -1257,7 +1241,7 @@
               </p>
 
               <p>
-                Een wespensteek kan erg pijnlijk zijn, maar is normaliter ongevaarlijk, omdat er slechts
+                Een wespensteek kan erg pijnlijk zijn, maar is normaliter ongevaarlijk omdat er slechts
                 bijzonder kleine hoeveelheden van de gifstof uitgestoten worden. In die gevallen dat mensen
                 ziek worden ten gevolge van een wespensteek is dit meestal het gevolg van het feit dat het gif
                 direct in een ader terecht gekomen is, of dat er sprake is van overgevoeligheid voor stoffen
@@ -2201,19 +2185,17 @@
     </pages>
   </page>
 
-  <page id="werkwijze" tab="true">
+  <page id="ongediertebestrijding" tab="true">
     <content>
-      <h1>Werkwijze</h1>
+      <h1>Ongediertebestrijding</h1>
       <p>
-        Op de eerste plaats proberen we om problemen rondom ongedierte te voorkomen. Indien we telefonisch geen afdoende advies kunnen geven, maken we een afspraak voor een inspectie en indien nodig een bestrijding. Tijdens de bestrijding leggen we ook de nadruk op hoe een soortgelijk probleem in de toekomst voorkomen kan worden. Na het in gang zetten van een bestrijding kunt u met de bestrijdingsdeskundige zelf bespreken hoe er eventueel gevolg aan gegeven kan worden.
+        Op de eerste plaats proberen we problemen rondom ongedierte te voorkomen. Indien we telefonisch geen afdoende advies kunnen geven, maken we een afspraak voor een inspectie en indien nodig een bestrijding. Tijdens de bestrijding leggen we ook de nadruk op hoe een soortgelijk probleem in de toekomst voorkomen kan worden. Na het in gang zetten van een bestrijding kunt u met de bestrijdingsdeskundige zelf bespreken hoe er eventueel gevolg aan gegeven kan worden.
       </p>
 
       <p>
         Tijdens het maken van de afspraak noteren we uw adresgegevens en telefoonnummer. De afspraak wordt gemaakt in een dagdeel van niet langer dan drie uur. Om privacy-redenen rijden onze bestrijdingstechnici zonder naamgeving op zowel de auto als de werkkleding.
       </p>
-      <p>
-        Links van deze pagina vindt u meer informatie over wat op u van toepassing kan zijn.
-      </p>
+      <p>Klik links op de pagina op wat voor u van toepassing is.</p>
     </content>
     <pages>
       <page id="inwoners">
@@ -2261,7 +2243,7 @@
           <p>Bedrijven en instellingen dienen er rekening mee te houden dat wij alleen incidentele bestrijdingen uitvoeren. Wanneer er sprake is van strukturele problemen met ongedierte of een verhoogd risico op de aanwezigheid ervan, bijvoorbeeld in de voedingsmiddelenindustrie, dan dient u op zoek te gaan naar een bedrijf wat gespecialiseerd is in het opzetten van een gecontinueerd beheersplan. Wij kunnen hierin slechts adviseren.</p>
 
           <h2>Werkwijze</h2>
-          <p>Wanneer er sprake is van muizen, ratten, kakkerlakken, wespen of mieren in uw bedrijf of woonvoorziening, dan voert u hierboven in de zoekbalk de plaatsnaam in van waar u gevestigd bent. Daarna verschijnt het juiste servicenummer die u kunt bellen voor het maken van een afspraak. Er wordt gevraagd naar de adresgegevens, factuurgegevens en een contactpersoon. Ook een indicatie betreffende de kosten worden besproken. Onze bestrijdingsdeskundige zal bij u langskomen om de inspectie, bestrijding en/of wering uit te voeren. Ook zullen de nodige adviezen gegeven worden om een eventueel soortgelijk probleem in de toekomst te voorkomen.</p>
+          <p>Wanneer er sprake is van muizen, ratten, kakkerlakken, wespen of mieren in uw bedrijf of woonvoorziening, dan voert u hierboven in de zoekbalk de plaatsnaam in van waar u gevestigd bent. Daarna verschijnt het juiste servicenummer die u kunt bellen voor het maken van een afspraak. Er wordt gevraagd naar de adresgegevens, factuurgegevens en een contactpersoon. Ook een indicatie betreffende de kosten worden besproken. Onze bestrijdingsdeskundige zal bij u langskomen om de inspectie, bestrijding en/of wering uit te voeren. Ook zullen de nodige adviezen gegeven worden om een eventueel soortgelijk probleem in de toekomst te kunnen voorkomen.</p>
 
           <h2>Veiligheidsrichtlijnen</h2>
           <p>Onze bestrijdingen worden geheel volgens de veiligheidsnormen van de Nederlandse wetgeving uitgevoerd. Dit betekent dat wij enkel en alleen gediplomeerde bestrijdingstechnici naar u toe sturen en dat hun kennis met behulp van opleidingen continu voldoet aan nieuwe wetgeving en richtlijnen. Ook de middelen die wij toepassen voldoen aan de wetgeving en veiligheidseisen. De moderne bestrijdingsmiddelen kunnen en worden ook met de aanwezigheid van kinderen ( kinderdagverblijven) en huisdieren (wooneenheden) op geheel veilige wijze toegepast. Meer informatie hierover kan ten alle tijden opgevraagd worden.</p>
@@ -2347,6 +2329,9 @@
         situaties waarbij de risico’s voor de volksgezondheid vergroot kunnen worden.
       </p>
 
+      <h2>Melding maken</h2>
+      <p>Voor ongedierte in de openbare ruimte zoals bijvoorbeeld ratten kunt u hiervan melding maken via het <b>14+ netnummer</b> of via de website van uw gemeente.</p>
+      
       <h2>Ratten</h2>
       <p>
         Door bijvoorbeeld een breuk in het riool kan het gebeuren dat enkele ratten op ongelukkige wijze tevoorschijn komen. Er zijn ook andere oorzaken denkbaar waardoor ratten in het straatbeeld terecht kunnen komen. Wanneer u dit signaleert, dan kunt u dit het beste melden via het lokale telefoonnummer van uw gemeente of via de website van uw gemeente.
@@ -2381,7 +2366,7 @@
     </content>
   </page>
 
-  <page id="stankoverlast" tab="true">
+  <page id="stankoverlast" >
     <content>
       <h1>Stankoverlast</h1>
       <p>Er zijn drie soorten stank van elkaar te onderscheiden die kunnen duiden op de aanwezigheid van ongedierte.</p>
@@ -2782,9 +2767,7 @@
         </span>
       </div>
     </content>
-  </page>
-
- 
+  </page> 
 
   <page id="zelf-bestrijden">
     <content>
@@ -2832,4 +2815,912 @@
     </content>
   </page>
 
+  <page id="wettelijke-kaders-en-verantwoordelijkheden">
+    <content>
+      <h1>Wettelijke kaders en verantwoordelijkheden</h1>
+      <p>
+        Wie is er verantwoordelijk voor overlast van ongedierte? Deze vraag is vrij eenvoudig te beantwoorden wanneer u zelf de aanwezigheid ervan veroorzaakt heeft. Als u bijvoorbeeld de afvalemmer altijd open laat en weinig doet aan bouwtechnische preventie kunt u in principe de schuld niet bij een ander leggen.</p>
+
+      <p>
+        De vraag wordt al moeilijker te beantwoorden wanneer bijvoorbeeld uw buurman dagelijks brood naar buiten gooit en u ondervindt vervolgens de overlast die het veroorzaakt omdat uw huis nu eenmaal betere schuilplekken biedt voor het ongedierte wat op het eten af komt.
+      </p>
+
+      <p>
+        Nog moeilijker wordt het wanneer er honderd meter verderop gebouwd wordt. Grote muizenpopulaties zijn hierdoor genoodzaakt een nieuwe leefomgeving te vinden. Ze vinden onderdak in diverse huizen en verplaatsen zich door de muren en het dakbeschot op zoek naar voedsel wat op verschillende plekken voorhanden is.
+      </p>
+
+      <p>
+        Het inschakelen van een bestrijdingsdienst is in veel gevallen noodzakelijk. Maar wie is er verantwoordelijk voor de kosten die dit met zich meebrengt? Wie moet bijdragen aan een oplossing? En wat als deze weigert hieraan bij te dragen? Deze vraag is niet altijd eenvoudig te beantwoorden.
+      </p>
+      <p>
+        Ondanks dat verantwoordelijkheden rondom ongedierte in de wet niet volledig afgebakend kunnen worden, hebben we toch de belangrijkste informatie die ondersteuning kan geven op het beantwoorden van deze vraag hieronder voor u uiteengezet.
+      </p>
+
+      <h2>Woningwet en Bouwverordening</h2>
+
+      <p>
+        In de 19e eeuw werden de woonomstandigheden door de bevolkingstoename steeds slechter en ongezonder. Mede daarom is in het jaar 1902 de woningwet in werking getreden. Daarin staat o.a. dat gemeenten verplicht zijn een bouwverordening op te stellen. Hierin staan voorschriften waaraan nieuwe bouwwerken en woningen zouden moeten voldoen evenals het gebruik ervan. Iedere gemeente heeft een eigen bouwverordening en kan worden gevonden op de website van de betreffende gemeente. Technische voorschriften waaraan bouwwerken moeten voldoen staan in het bouwbesluit. De nieuwste versie van het bouwbesluit is van 2012 en kan worden teruggevonden op de website van de rijksoverheid.
+      </p>
+
+      <p>
+        De voorschriften van het bouwbesluit hebben betrekking op veiligheid, gezondheid, bruikbaarheid en energiezuinigheid. Op het gebied van ongedierte wordt alleen de bescherming tegen ratten en muizen besproken, maar de technische voorschriften hiervoor bieden geen garantie op de volledige ontoegankelijkheid voor deze diersoorten omdat andere voorschriften ten aanzien van de veiligheid en bruikbaarheid hiervoor een obstakel vormen. De woningwet, de bouwverordening en het bouwbesluit bieden in de meeste gevallen dus te weinig houvast voor de gemiddelde discussie rondom ongedierte. Overlast van ongedierte heeft daarnaast vaak verschillende oorzaken en ook de kosten voor een bestrijding zijn meestal dermate laag dat de noodzaak ontbreekt om van bovenaf richtlijnen te geven die de aanwezigheid van ongedierte in huis volledig uit kunnen sluiten.
+      </p>
+      <h2>Volksgezondheid</h2>
+
+      <p>
+        Ongedierte en volksgezondheid worden vaak in samenhang gebracht omdat sommige soorten ongedierte ziektedragers kunnen zijn waarmee we besmet kunnen worden. Omdat de overheid verantwoordelijk is voor de volksgezondheid zijn inwoners al snel geneigd deze voor de bestrijding van ongedierte verantwoordelijk te houden. Toch kan de overheid niet aansprakelijk gesteld worden voor een individueel probleem rondom ongedierte, tenzij kan worden aangetoond dat de overheid dit veroorzaakt heeft. Een individueel probleem vormt tenslotte geen bedreiging voor de volksgezondheid. Als een ongedierteplaag zich echter dusdanig verspreid dat een hele buurt of wijk of zelfs het hele land geconfronteerd wordt met de risico’s op ziekten die een bepaald diersoort met zich meebrengt, denk aan bijvoorbeeld ratten ( ziekte van Weil ) of teken ( ziekte van Lyme ), pas dan kan worden gezegd dat het een bedreiging vormt voor de volksgezondheid. Wanneer ook de oorzaak niet duidelijk is, rest er alleen nog de overheid die verantwoordelijk kan worden gehouden voor het vinden van een oplossing.
+      </p>
+
+      <p>
+        In 2009 is er een <a href="/Volksgezondheid.pdf" class="pdf" target="_blank">rapport over volksgezondheid</a> verschenen welke meer inzicht geeft in de gevaren van ongedierte in stedelijk gebied.
+      </p>
+
+      <h2>De Gemeente</h2>
+      <p>
+        Ondanks dat de overheid meestal niet aangesproken kan worden op problemen rondom ongedierte, zijn er nog steeds gemeenten die wel degelijk aktie ondernemen wanneer er meldingen binnenkomen van individuele of kleinschalige aard die de eigen woning of enkele woningen betreft. Dit mag echter gezien worden als een service die de gemeente beschikbaar heeft, geen verantwoordelijkheid. Daarom worden door de gemeenten in deze gevallen bijna altijd kosten in rekening gebracht.
+      </p>
+      
+      <h2>Ratten</h2>
+
+      <p>
+        De benadering van <a href="/ongedierte-in-huis/ratten">Bruine ratten</a> vormen bij sommige gemeenten een uitzondering. Ook hierbij behouden zij het recht u door te verwijzen naar een particulier bedrijf voor de bestrijding zodra het uw eigen terrein betreft. Echter, omdat bruine ratten bekend staan als mogelijke dragers van de ‘Ziekte van Weil’ en ze de reputatie hebben schade toe te kunnen brengen aan de volksgezondheid - denk aan de pestepidemie van vroeger- , ziet de gemeente het soms ook als het om privaat terrein gaat als zijn taak om de risico’s die bruine ratten met zich meebrengen actief beheersbaar te houden. Strikt genomen zijn zij alleen verantwoordelijk voor de openbare ruimte, maar soms wordt overlast door ratten op privaat terrein dus ook door hen aangepakt. Toch mag de gemeente van u als inwoner verwachten dat u er op uw eigen terrein alles aan doet om een verergering van een eventueel rattenprobleem te voorkomen. Wanneer u een dusdanige leefomgeving beschikbaar stelt voor ratten waardoor ze zich ongestoord voort kunnen planten, kan de gemeente hier niet zomaar op aangesproken worden. De gemeente kan u zelfs middels een aanschrijven verplichten om zelf maatregelen te treffen. Voorafgaand hieraan wordt meestal een schriftelijk oordeel door een deskundige opgevraagd. Zo kan bijvoorbeeld Meldpunt Ongedierte in opdracht van de gemeente inspecteren, onderzoeken, rapporteren en schriftelijke conclusies vaststellen inzake de omvang van het probleem, de mogelijke oorzaken, de gevolgen en de risico’s die dit met zich meebrengt.
+      </p>
+
+      <h2>Huurder en Verhuurder</h2>
+
+      <p>
+        Bijna dagelijks ontvangen wij meldingen over geschillen tussen huurder en verhuurder door overlast van ongedierte. Ook hiervoor geldt dat de verantwoordelijkheden gezien de complexe problematiek wettelijk niet afgebakend kunnen worden.
+      </p>
+
+      <p>
+        Huurders en verhuurders tekenen een contract. Hierin staat in de meeste gevallen ook een paragraaf over ongedierte welke is afgeleid van het servicekostenbeleid van de huurcommissie.
+        Het bestrijden en/of voorkomen van ongedierte valt onder de kleine herstellingen die voor rekening zijn van de huurder, tenzij anders staat omschreven in het contract.
+        Daarnaast komt de plicht die de verhuurder heeft om een gebrek aan huurgenot te herstellen te vervallen wanneer de omstandigheid toe te rekenen is aan de huurder zelf. Bij ongedierte zoals bijvoorbeeld muizen of mieren ligt de oorzaak meestal bij onvoldoende hygiënische maatregelen, ook al is het gebouw of de woning toegankelijk. We hebben net gezien dat de woningwet, de bouwverordening en het bouwbesluit geen voldoende bouwtechnische verplichtingen kunnen leggen op het realiseren van een geheel ontoegankelijke woon- of bedrijfsruimte voor ongedierte. Ook de bedreiging van de volksgezondheid kan niet als excuus gebruikt worden gezien de relatief kleine omvang van het probleem. De overheid kan dus ook niet aansprakelijk gesteld worden. De kosten zullen dus bijna altijd in rekening worden gebracht bij de huurder zelf.
+      </p>
+
+      <p>
+        De verhuurder dient wel bij te dragen aan een oplossing als blijkt dat het ongedierte door andere huurders van de dezelfde verhuurder veroorzaakt wordt of wanneer blijkt dat het om een structureel probleem gaat die niet zomaar voor rekening van de huurder kan komen. Wanneer er bijvoorbeeld een rattenprobleem is vanwege een kapot riool of een probleem met stofluizen door schimmelvorming in een ventilatieschacht, dan kan de verhuurder daarop aangesproken worden. Wel moet eerst gekeken worden wat daadwerkelijk de oorzaak is van de aanwezigheid van ongedierte. een bestrijdingsdeskundige kan dit beoordelen aan de hand van een inspectie.
+      </p>
+    </content>
+  </page>
+
+  <page id="contact" tab="true">
+    <content>
+      <h1>Contact</h1>
+      <p>
+        Voor het maken van een afspraak kunt u het beste telefonisch contact opnemen met het meldpunt.
+        Dit telefoonnummer is <b>0900-2556677</b>.
+      </p>
+      <p>
+        Voor het servicepunt bij u in de buurt voert u hierboven in de <b>zoekbalk</b> uw woonplaats in.
+      </p>
+      <p>
+        Voor algemene voorlichting kunt u het best uw vragen stellen per e-mail naar <em>
+          <a href="mailto:info@meldpuntongedierte.nl">info@meldpuntongedierte.nl</a>
+        </em>
+      </p>
+    </content>
+  </page>
+
+  <page id="regios">
+    <content></content>
+    <pages>
+      <page id="gelderland-zuid">
+        <content>
+          <h1>Meldpunt Ongedierte Gelderland Zuid</h1>
+          <p>
+            Meldpunt Ongedierte Gelderland Zuid coördineert alle meldingen rondom ongedierte en
+            plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze
+            leefbaarheid en gezondheid. Toename of afname van ongewenste diersoorten in huis, in
+            een gebouw of in een buurt, kunnen op deze manier in kaart worden gebracht en indien
+            noodzakelijk worden gecommuniceerd met de betrokken partijen.
+          </p>
+
+          <h2>Ongediertebestrijding</h2>
+          <p>
+            Voor incidentele bestrijding van ongedierte bij u thuis, in de instelling of in het bedrijf kunt u
+            terecht bij onderstaande servicepunten :
+          </p>
+          <ul>
+            <li><a href="ongediertebestrijding-beuningen">Ongediertebestrijding Beuningen</a></li>
+            <li>
+              <a href="ongediertebestrijding-beuningen">Ongediertebestrijding Buren</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-culemborg">Ongediertebestrijding Culemborg</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-druten">Ongediertebestrijding Druten</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-geldermalsen">Ongediertebestrijding Geldermalsen</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-neder-Betuwe">Ongediertebestrijding Neder-Betuwe</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-nijmegen">Ongediertebestrijding Nijmegen</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-tiel">Ongediertebestrijding Tiel</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-wijchen">Ongediertebestrijding Wijchen</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-zaltbommel">Ongediertebestrijding Zaltbommel</a>
+            </li>
+          </ul>
+        </content>
+      </page>
+      <page id="hollands-midden">
+        <content>
+          <h1>Meldpunt Ongedierte Hollands Midden</h1>
+          <p>
+            Meldpunt Ongedierte Hollands Midden coördineert alle meldingen rondom ongedierte en
+            plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze
+            leefbaarheid en gezondheid. Toename of afname van ongewenste diersoorten in huis, in
+            een gebouw of in een buurt, kunnen op deze manier in kaart worden gebracht en indien
+            noodzakelijk worden gecommuniceerd met de betrokken partijen.
+          </p>
+
+          <h2>Ongediertebestrijding</h2>
+          <p>
+            Voor incidentele bestrijding van ongedierte bij u thuis, in de instelling of in het bedrijf kunt u
+            terecht bij onderstaande servicepunten :
+          </p>
+          <ul>
+            <li>
+              <a href="ongediertebestrijding-alphen-aan-den-rijn">Ongediertebestrijding Alphen aan den Rijn</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-bodegraven-reeuwijk">Ongediertebestrijding Bodegraven-Reeuwijk</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-boskoop">Ongediertebestrijding Boskoop</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-gouda">Ongediertebestrijding Gouda</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-hillegom">Ongediertebestrijding Hillegom</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-kaag-en-braassem">Ongediertebestrijding Kaag en Braassem</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-katwijk">Ongediertebestrijding Katwijk</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-leiden">Ongediertebestrijding Leiden</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-leiderdorp">Ongediertebestrijding Leiderdorp</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-nieuwkoop">Ongediertebestrijding Nieuwkoop</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-noordwijk">Ongediertebestrijding Noordwijk</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-oegstgeest">Ongediertebestrijding Oegstgeest</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-rijnwoude">Ongediertebestrijding Rijnwoude</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-voorschoten">Ongediertebestrijding Voorschoten</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-waddinxveen">Ongediertebestrijding Waddinxveen</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-zuidplas">Ongediertebestrijding Zuidplas</a>
+            </li>
+          </ul>
+        </content>
+      </page>
+      <page id="gooi-en-vechtstreek">
+        <content>
+          <h1>Meldpunt Ongedierte Gooi en Vechtstreek</h1>
+          <p>
+            Meldpunt Ongedierte Gooi en Vechtstreek coördineert alle meldingen rondom ongedierte en
+            plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze
+            leefbaarheid en gezondheid. Toename of afname van ongewenste diersoorten in huis, in
+            een gebouw of in een buurt, kunnen op deze manier in kaart worden gebracht en indien
+            noodzakelijk worden gecommuniceerd met de betrokken partijen.
+          </p>
+
+          <h2>Ongediertebestrijding</h2>
+          <p>
+            Voor incidentele bestrijding van ongedierte bij u thuis, in de instelling of in het bedrijf kunt u
+            terecht bij onderstaande servicepunten :
+          </p>
+          <ul>
+            <li>
+              <a href="ongediertebestrijding-blaricum">Ongediertebestrijding Blaricum</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-bussum">Ongediertebestrijding Bussum</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-hilversum">Ongediertebestrijding Hilversum</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-huizen">Ongediertebestrijding Huizen</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-muiden">Ongediertebestrijding Muiden</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-naarden">Ongediertebestrijding Naarden</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-laren">Ongediertebestrijding Laren</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-weesp">Ongediertebestrijding Weesp</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-wijdemeren">Ongediertebestrijding Wijdemeren</a>
+            </li>         
+          </ul>
+        </content>
+      </page>
+      <page id="brabant-noord">
+        <content>
+          <h1>Meldpunt Ongedierte Brabant-Noord</h1>
+          <p>
+            Meldpunt Ongedierte Gooi en Vechtstreek coördineert alle meldingen rondom ongedierte en
+            plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze
+            leefbaarheid en gezondheid. Toename of afname van ongewenste diersoorten in huis, in
+            een gebouw of in een buurt, kunnen op deze manier in kaart worden gebracht en indien
+            noodzakelijk worden gecommuniceerd met de betrokken partijen.
+          </p>
+
+          <h2>Ongediertebestrijding</h2>
+          <p>
+            Voor incidentele bestrijding van ongedierte bij u thuis, in de instelling of in het bedrijf kunt u
+            terecht bij onderstaande servicepunten :
+          </p>
+          <ul>
+            <li>
+              <a href="ongediertebestrijding-bernheze">Ongediertebestrijding Bernheze</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-boxtel">Ongediertebestrijding Boxtel</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-cuijk">Ongediertebestrijding Cuijk</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-den-bosch">Ongediertebestrijding Den Bosch</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-heusden">Ongediertebestrijding Heusden</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-landerd">Ongediertebestrijding Landerd</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-oss">Ongediertebestrijding Oss</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-uden">Ongediertebestrijding Uden</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-veghel">Ongediertebestrijding Veghel</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-vught">Ongediertebestrijding Vught</a>
+            </li>
+          </ul>
+        </content>
+      </page>
+      <page id="noord-holland-noord">
+        <content>
+          <h1>Meldpunt Ongedierte Noord-Holland Noord</h1>
+          <p>
+            Meldpunt Ongedierte Noord-Holland Noord coördineert alle meldingen rondom ongedierte en
+            plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze
+            leefbaarheid en gezondheid. Toename of afname van ongewenste diersoorten in huis, in
+            een gebouw of in een buurt, kunnen op deze manier in kaart worden gebracht en indien
+            noodzakelijk worden gecommuniceerd met de betrokken partijen.
+          </p>
+
+          <h2>Ongediertebestrijding</h2>
+          <p>
+            Voor incidentele bestrijding van ongedierte bij u thuis, in de instelling of in het bedrijf kunt u
+            terecht bij onderstaande servicepunten :
+          </p>
+          <ul>
+            <li>
+              <a href="ongediertebestrijding-alkmaar">Ongediertebestrijding Alkmaar</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-bergen">Ongediertebestrijding Bergen</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-castricum">Ongediertebestrijding Castricum</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-heerhugowaard">Ongediertebestrijding Heerhugowaard</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-koggenland">Ongediertebestrijding Koggenland</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-langedijk">Ongediertebestrijding Langedijk</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-medemblik">Ongediertebestrijding Medemblik</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-schagen">Ongediertebestrijding Schagen</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-schermer">Ongediertebestrijding Schermer</a>
+            </li>           
+          </ul>
+        </content>
+      </page>
+      <page id="rotterdam-rijnmond">
+        <content>
+          <h1>Meldpunt Ongedierte Rotterdam-Rijnmond</h1>
+          <p>
+            Meldpunt Ongedierte Rotterdam-Rijnmond coördineert alle meldingen rondom ongedierte en
+            plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze
+            leefbaarheid en gezondheid. Toename of afname van ongewenste diersoorten in huis, in
+            een gebouw of in een buurt, kunnen op deze manier in kaart worden gebracht en indien
+            noodzakelijk worden gecommuniceerd met de betrokken partijen.
+          </p>
+
+          <h2>Ongediertebestrijding</h2>
+          <p>
+            Voor incidentele bestrijding van ongedierte bij u thuis, in de instelling of in het bedrijf kunt u
+            terecht bij onderstaande servicepunten :
+          </p>
+          <ul>
+            <li>
+              <a href="ongediertebestrijding-albrandswaard">Ongediertebestrijding Albrandswaard</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-barendrecht">Ongediertebestrijding Barendrecht</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-capelle-aan-den-ijssel">Ongediertebestrijding Capelle aan den IJssel</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-krimpen-aan-den-ijssel">Ongediertebestrijding Krimpen aan den IJssel</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-lansingerland">Ongediertebestrijding Lansingerland</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-maassluis">Ongediertebestrijding Maassluis</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-ridderkerk">Ongediertebestrijding Ridderkerk</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-rotterdam">Ongediertebestrijding Rotterdam</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-schiedam">Ongediertebestrijding Schiedam</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-vlaardingen">Ongediertebestrijding Vlaardingen</a>
+            </li>
+          </ul>
+        </content>
+      </page>
+      <page id="brabant-zuidoost">
+        <content>
+          <h1>Meldpunt Ongedierte Brabant Zuidoost</h1>
+          <p>
+            Meldpunt Ongedierte Brabant Zuidoost coördineert alle meldingen rondom ongedierte en
+            plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze
+            leefbaarheid en gezondheid. Toename of afname van ongewenste diersoorten in huis, in
+            een gebouw of in een buurt, kunnen op deze manier in kaart worden gebracht en indien
+            noodzakelijk worden gecommuniceerd met de betrokken partijen.
+          </p>
+
+          <h2>Ongediertebestrijding</h2>
+          <p>
+            Voor incidentele bestrijding van ongedierte bij u thuis, in de instelling of in het bedrijf kunt u
+            terecht bij onderstaande servicepunten :
+          </p>
+          <ul>
+            <li>
+              <a href="ongediertebestrijding-asten">Ongediertebestrijding Asten</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-best">Ongediertebestrijding Best</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-deurne">Ongediertebestrijding Deurne</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-eindhoven">Ongediertebestrijding Eindhoven</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-geldrop-mierlo">Ongediertebestrijding Geldrop-Mierlo</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-gemert-bakel">Ongediertebestrijding Gemert-Bakel</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-helmond">Ongediertebestrijding Helmond</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-laarbeek">Ongediertebestrijding Laarbeek</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-oirschot">Ongediertebestrijding Oirschot</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-someren">Ongediertebestrijding Someren</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-valkenswaard">Ongediertebestrijding Valkenswaard</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-veldhoven">Ongediertebestrijding Veldhoven</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-waalre">Ongediertebestrijding Waalre</a>
+            </li>           
+          </ul>
+        </content>
+      </page>
+      <page id="amsterdam-amstelland">
+        <content>
+          <h1>Meldpunt Ongedierte Amsterdam-Amstelland</h1>
+          <p>
+            Meldpunt Ongedierte Amsterdam-Amstelland coördineert alle meldingen rondom ongedierte en
+            plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze
+            leefbaarheid en gezondheid. Toename of afname van ongewenste diersoorten in huis, in
+            een gebouw of in een buurt, kunnen op deze manier in kaart worden gebracht en indien
+            noodzakelijk worden gecommuniceerd met de betrokken partijen.
+          </p>
+
+          <h2>Ongediertebestrijding</h2>
+          <p>
+            Voor incidentele bestrijding van ongedierte bij u thuis, in de instelling of in het bedrijf kunt u
+            terecht bij onderstaande servicepunten :
+          </p>
+          <ul>
+            <li>
+              <a href="ongediertebestrijding-aalsmeer">Ongediertebestrijding Aalsmeer</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-amstelveen">Ongediertebestrijding Amstelveen</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-amsterdam">Ongediertebestrijding Amsterdam</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-diemen">Ongediertebestrijding Diemen</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-ouder-amstel">Ongediertebestrijding Ouder-Amstel</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-gemert-bakel">Ongediertebestrijding Gemert-Bakel</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-uithoorn">Ongediertebestrijding Uithoorn</a>
+            </li>           
+          </ul>
+        </content>
+      </page>
+      <page id="zuid-holland-zuid">
+        <content>
+          <h1>Meldpunt Ongedierte Zuid-Holland Zuid</h1>
+          <p>
+            Meldpunt Ongedierte Zuid-Holland Zuid coördineert alle meldingen rondom ongedierte en
+            plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze
+            leefbaarheid en gezondheid. Toename of afname van ongewenste diersoorten in huis, in
+            een gebouw of in een buurt, kunnen op deze manier in kaart worden gebracht en indien
+            noodzakelijk worden gecommuniceerd met de betrokken partijen.
+          </p>
+
+          <h2>Ongediertebestrijding</h2>
+          <p>
+            Voor incidentele bestrijding van ongedierte bij u thuis, in de instelling of in het bedrijf kunt u
+            terecht bij onderstaande servicepunten :
+          </p>
+          <ul>
+            <li>
+              <a href="ongediertebestrijding-alblasserdam">Ongediertebestrijding Alblasserdam</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-binnenmaas">Ongediertebestrijding Binnenmaas</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-dordrecht">Ongediertebestrijding Dordrecht</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-giessenlanden">Ongediertebestrijding Giessenlanden</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-gorinchem">Ongediertebestrijding Gorinchem</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-hardinxveld-giessendam">Ongediertebestrijding Hardinxveld-Giessendam</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-hendrik-ido-ambacht">Ongediertebestrijding Hendrik-Ido-Ambacht</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-papendrecht">Ongediertebestrijding Papendrecht</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-sliedrecht">Ongediertebestrijding Sliedrecht</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-zederik">Ongediertebestrijding Zederik</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-zwijndrecht">Ongediertebestrijding Zwijndrecht</a>
+            </li>
+          </ul>
+        </content>
+      </page>
+      <page id="midden-en-west-brabant">
+        <content>
+          <h1>Meldpunt Ongedierte Midden- en West-Brabant</h1>
+          <p>
+            Meldpunt Ongedierte Midden- en West-Brabant coördineert alle meldingen rondom ongedierte en
+            plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze
+            leefbaarheid en gezondheid. Toename of afname van ongewenste diersoorten in huis, in
+            een gebouw of in een buurt, kunnen op deze manier in kaart worden gebracht en indien
+            noodzakelijk worden gecommuniceerd met de betrokken partijen.
+          </p>
+
+          <h2>Ongediertebestrijding</h2>
+          <p>
+            Voor incidentele bestrijding van ongedierte bij u thuis, in de instelling of in het bedrijf kunt u
+            terecht bij onderstaande servicepunten :
+          </p>
+          <ul>
+            <li>
+              <a href="ongediertebestrijding-bergen-op-zoom">Ongediertebestrijding Bergen op Zoom</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-breda">Ongediertebestrijding Breda</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-etten-leur">Ongediertebestrijding Etten-Leur</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-dongen">Ongediertebestrijding Dongen</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-drimmelen">Ongediertebestrijding Drimmelen</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-gilze-rijen">Ongediertebestrijding Gilze-Rijen</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-goirle">Ongediertebestrijding Goirle</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-oisterwijk">Ongediertebestrijding Oisterwijk</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-oosterhout">Ongediertebestrijding Oosterhout</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-roosendaal">Ongediertebestrijding Roosendaal</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-steenbergen">Ongediertebestrijding Steenbergen</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-tilburg">Ongediertebestrijding Tilburg</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-waalwijk">Ongediertebestrijding Waalwijk</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-werkendam">Ongediertebestrijding Werkendam</a>
+            </li>
+          </ul>
+        </content>
+      </page>      
+      <page id="haaglanden">
+        <content>
+          <h1>Meldpunt Ongedierte Haaglanden</h1>
+          <p>
+            Meldpunt Ongedierte Haaglanden coördineert alle meldingen rondom ongedierte en
+            plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze
+            leefbaarheid en gezondheid. Toename of afname van ongewenste diersoorten in huis, in
+            een gebouw of in een buurt, kunnen op deze manier in kaart worden gebracht en indien
+            noodzakelijk worden gecommuniceerd met de betrokken partijen.
+          </p>
+
+          <h2>Ongediertebestrijding</h2>
+          <p>
+            Voor incidentele bestrijding van ongedierte bij u thuis, in de instelling of in het bedrijf kunt u
+            terecht bij onderstaande servicepunten :
+          </p>
+          <ul>
+            <li>
+              <a href="ongediertebestrijding-delft">Ongediertebestrijding Delft</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-den-haag">Ongediertebestrijding Den Haag</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-leidschendam-voorburg">Ongediertebestrijding Leidschendam-Voorburg</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-midden-delfland">Ongediertebestrijding Midden-Delfland</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-pijnacker-nootdorp">Ongediertebestrijding Pijnacker-Nootdorp</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-rijswijk">Ongediertebestrijding Rijswijk</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-westland">Ongediertebestrijding Westland</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-zoetermeer">Ongediertebestrijding Zoetermeer</a>
+            </li>
+          </ul>
+        </content>
+      </page>
+      <page id="flevoland">
+        <content>
+          <h1>Meldpunt Ongedierte Flevoland</h1>
+          <p>
+            Meldpunt Ongedierte Flevoland coördineert alle meldingen rondom ongedierte en
+            plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze
+            leefbaarheid en gezondheid. Toename of afname van ongewenste diersoorten in huis, in
+            een gebouw of in een buurt, kunnen op deze manier in kaart worden gebracht en indien
+            noodzakelijk worden gecommuniceerd met de betrokken partijen.
+          </p>
+
+          <h2>Ongediertebestrijding</h2>
+          <p>
+            Voor incidentele bestrijding van ongedierte bij u thuis, in de instelling of in het bedrijf kunt u
+            terecht bij onderstaande servicepunten :
+          </p>
+          <ul>
+            <li>
+              <a href="ongediertebestrijding-almere">Ongediertebestrijding Almere</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-dronten">Ongediertebestrijding Dronten</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-lelystad">Ongediertebestrijding Lelystad</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-zeewolde">Ongediertebestrijding Zeewolde</a>
+            </li>          
+          </ul>
+        </content>
+      </page>
+      <page id="gelderland-midden">
+        <content>
+          <h1>Meldpunt Gelderland Midden</h1>
+          <p>
+            Meldpunt Ongedierte Gelderland Midden coördineert alle meldingen rondom ongedierte en
+            plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze
+            leefbaarheid en gezondheid. Toename of afname van ongewenste diersoorten in huis, in
+            een gebouw of in een buurt, kunnen op deze manier in kaart worden gebracht en indien
+            noodzakelijk worden gecommuniceerd met de betrokken partijen.
+          </p>
+
+          <h2>Ongediertebestrijding</h2>
+          <p>
+            Voor incidentele bestrijding van ongedierte bij u thuis, in de instelling of in het bedrijf kunt u
+            terecht bij onderstaande servicepunten :
+          </p>
+          <ul>
+            <li>
+              <a href="ongediertebestrijding-arnhem">Ongediertebestrijding Arnhem</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-barneveld">Ongediertebestrijding Barneveld</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-ede">Ongediertebestrijding Ede</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-nijkerk">Ongediertebestrijding Nijkerk</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-overbetuwe">Ongediertebestrijding Overbetuwe</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-renkum">Ongediertebestrijding Renkum</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-rheden">Ongediertebestrijding Rheden</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-wageningen">Ongediertebestrijding Wageningen</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-zevenaar">Ongediertebestrijding Zevenaar</a>
+            </li>           
+          </ul>
+        </content>
+      </page>
+      <page id="kennemerland">
+        <content>
+          <h1>Meldpunt Ongedierte Kennemerland</h1>
+          <p>
+            Meldpunt Ongedierte Kennemerland coördineert alle meldingen rondom ongedierte en
+            plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze
+            leefbaarheid en gezondheid. Toename of afname van ongewenste diersoorten in huis, in
+            een gebouw of in een buurt, kunnen op deze manier in kaart worden gebracht en indien
+            noodzakelijk worden gecommuniceerd met de betrokken partijen.
+          </p>
+
+          <h2>Ongediertebestrijding</h2>
+          <p>
+            Voor incidentele bestrijding van ongedierte bij u thuis, in de instelling of in het bedrijf kunt u
+            terecht bij onderstaande servicepunten :
+          </p>
+          <ul>
+            <li>
+              <a href="ongediertebestrijding-haarlem">Ongediertebestrijding Haarlem</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-haarlemmermeer">Ongediertebestrijding Haarlemmermeer</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-heemskerk">Ongediertebestrijding Heemskerk</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-heemstede">Ongediertebestrijding Heemstede</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-hoofddorp">Ongediertebestrijding Hoofddorp</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-velsen">Ongediertebestrijding Velsen</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-uitgeest">Ongediertebestrijding Uitgeest</a>
+            </li>
+          
+          </ul>
+        </content>
+      </page>
+      <page id="utrecht">
+        <content>
+          <h1>Meldpunt Ongedierte Utrecht</h1>
+          <p>
+            Meldpunt Ongedierte Utrecht coördineert alle meldingen rondom ongedierte en
+            plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze
+            leefbaarheid en gezondheid. Toename of afname van ongewenste diersoorten in huis, in
+            een gebouw of in een buurt, kunnen op deze manier in kaart worden gebracht en indien
+            noodzakelijk worden gecommuniceerd met de betrokken partijen.
+          </p>
+
+          <h2>Ongediertebestrijding</h2>
+          <p>
+            Voor incidentele bestrijding van ongedierte bij u thuis, in de instelling of in het bedrijf kunt u
+            terecht bij onderstaande servicepunten :
+          </p>
+          <ul>
+            <li>
+              <a href="ongediertebestrijding-amersfoort">Ongediertebestrijding Amersfoort</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-baarn">Ongediertebestrijding Baarn</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-bunnik">Ongediertebestrijding Bunnik</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-de-Bilt">Ongediertebestrijding De Bilt</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-de-ronde-venen">Ongediertebestrijding De Ronde Venen</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-eemnes">Ongediertebestrijding Eemnes</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-houten">Ongediertebestrijding Houten</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-ijsselstein">Ongediertebestrijding IJsselstein</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-leusden">Ongediertebestrijding Leusden</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-houten">Ongediertebestrijding Houten</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-nieuwegein">Ongediertebestrijding Nieuwegein</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-rhenen">Ongediertebestrijding Rhenen</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-soest">Ongediertebestrijding Soest</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-stichtse-vecht">Ongediertebestrijding Stichtse Vecht</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-utrecht">Ongediertebestrijding Utrecht</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-utrechtse-heuvelrug">Ongediertebestrijding Utrechtse Heuvelrug</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-veenendaal">Ongediertebestrijding Veenendaal</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-woerden">Ongediertebestrijding Woerden</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-zeist">Ongediertebestrijding Zeist</a>
+            </li>
+          </ul>
+        </content>
+      </page>
+      <page id="zaanstreek-waterland">
+        <content>
+          <h1>Meldpunt Ongedierte Zaanstreek-Waterland</h1>
+          <p>
+            Meldpunt Ongedierte Zaanstreek-Waterland coördineert alle meldingen rondom ongedierte en
+            plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze
+            leefbaarheid en gezondheid. Toename of afname van ongewenste diersoorten in huis, in
+            een gebouw of in een buurt, kunnen op deze manier in kaart worden gebracht en indien
+            noodzakelijk worden gecommuniceerd met de betrokken partijen.
+          </p>
+
+          <h2>Ongediertebestrijding</h2>
+          <p>
+            Voor incidentele bestrijding van ongedierte bij u thuis, in de instelling of in het bedrijf kunt u
+            terecht bij onderstaande servicepunten :
+          </p>
+          <ul>
+            <li>
+              <a href="ongediertebestrijding-beemster">Ongediertebestrijding Beemster</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-edam-volendam">Ongediertebestrijding Edam-Volendam</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-landsmeer">Ongediertebestrijding Landsmeer</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-oostzaan">Ongediertebestrijding Oostzaan</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-purmerend">Ongediertebestrijding Purmerend</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-waterland">Ongediertebestrijding Waterland</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-wormerland">Ongediertebestrijding Wormerland</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-zaanstad">Ongediertebestrijding Zaanstad</a>
+            </li>
+            <li>
+              <a href="ongediertebestrijding-zeevang">Ongediertebestrijding Zeevang</a>
+            </li>           
+          </ul>
+        </content>
+      </page>
+    </pages>
+  </page>
+  
+  
 </pages>

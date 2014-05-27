@@ -52,6 +52,14 @@ namespace Meldpunt.Services
       XmlDocument d = LoadAsXml(html);
       string text = d != null ? d.InnerText : "";
       string title = "";
+      string gemeentenaam = plaatsElement.Attributes["name"].Value;
+      string plaatsnaam = LocationUtils.allPlaces.FirstOrDefault(g => g.XmlSafe().Equals(gemeentenaam));
+      if(!String.IsNullOrWhiteSpace(plaatsnaam))
+        gemeentenaam = plaatsnaam;
+      var gemeente = LocationUtils.placesByMunicipality.FirstOrDefault(m=> m.Key.XmlSafe().Equals(gemeentenaam.XmlSafe()));
+      if(gemeente.Key != null)
+        gemeentenaam = gemeente.Key;
+
       if(plaatsElement.SelectSingleNode("title")!=null)
         title=plaatsElement.SelectSingleNode("title").InnerText;
 
@@ -59,7 +67,7 @@ namespace Meldpunt.Services
 
       return new PlaatsModel
       {
-        Gemeentenaam = plaatsElement.Attributes["name"].Value,
+        Gemeentenaam = gemeentenaam,
         Content = html,
         Text = text,
         MetaDescription = plaatsElement.SelectSingleNode("metadescription").InnerText,

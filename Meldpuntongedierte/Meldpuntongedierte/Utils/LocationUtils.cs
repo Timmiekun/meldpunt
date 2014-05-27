@@ -55,8 +55,9 @@ namespace Meldpunt.Utils
 
     public static bool IsLocation(string query)
     {
-      bool isMunicipality = placesByMunicipality.ContainsKey(query);
-      bool isPlace = placesByMunicipality.Any(m => m.Value.Any(p => p.Equals(query, StringComparison.CurrentCultureIgnoreCase)));
+      query = query.XmlSafe();
+      bool isMunicipality = placesByMunicipality.Any(g=> g.Key.XmlSafe().Equals(query));
+      bool isPlace = placesByMunicipality.Any(m => m.Value.Any(p => p.XmlSafe().Equals(query, StringComparison.CurrentCultureIgnoreCase)));
 
       return isMunicipality || isPlace;
     }

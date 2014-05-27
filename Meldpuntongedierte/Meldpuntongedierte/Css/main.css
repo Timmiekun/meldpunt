@@ -1,46 +1,43 @@
-﻿html
-{
+﻿html {
   height: 100%;
 }
-body
-{
+
+body {
   color: black;
   font-family: Verdana, Tahoma, arial;
   font-size: 80%;
   height: 100%;
 }
-em
-{
+
+em {
   font-style: normal;
   font-weight: bold;
 }
 
-h1
-{
+h1 {
   margin: 10px 0px 20px 0px;
   font-weight: bold;
   font-size: 18px;
+  line-height: 24px;
 }
 
-h2
-{
+h2 {
   margin: 20px 0px 5px 0px;
   font-size: 14px;
 }
-.pdf
-{
+
+.pdf {
   background-image: url(/Images/page_white_acrobat.png);
   padding-left: 20px;
   background-position: left top;
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
 }
-.hidden
-{
+
+.hidden {
   display: none;
 }
 
-.main
-{
+.main {
   background: white;
   width: 900px;
   position: relative;
@@ -55,47 +52,45 @@ h2
 
 
 
-.content, .footer
-{
+.content, .footer {
   background-color: #efefef;
 }
-.searchText
-{
+
+.searchText {
   color: White;
   font-weight: bold;
   font-size: 13px;
   line-height: 22px;
 }
 
-.topBar
-{
+.topBar {
   width: 922px;
-  margin: 0 auto;    
+  margin: 0 auto;
   font-weight: bold;
   z-index: -1;
   border-bottom: 10px solid #efefef;
-  padding-top: 10px;  
+  padding-top: 10px;
 }
-.topBar a
-{
-  color: black;
-  text-decoration: none;
-}
-#tabholder
-{
-  background-color:#83003c;
+
+  .topBar a {
+    color: black;
+    text-decoration: none;
+  }
+
+#tabholder {
+  background-color: #83003c;
   position: relative;
   top: 1px;
   margin-top: 30px;
 }
-#tabs
-{
+
+#tabs {
   margin: 0px auto 0 auto;
   width: 900px;
   overflow: hidden;
 }
-.topBar .tabItem
-{
+
+.topBar .tabItem {
   color: white;
   font-weight: bold;
   text-decoration: none;
@@ -104,121 +99,121 @@ h2
   margin-right: 10px;
   padding: 5px 10px;
 }
-.topBar .tabItem:hover, .topBar .activeTab
-{
-  background-color: #efefef;
-  color: #83003C;
-}
 
-.topBar h2
-{
+  .topBar .tabItem:hover, .topBar .activeTab {
+    background-color: #efefef;
+    color: #83003C;
+  }
+
+.topBar h2 {
   display: block;
   font-size: 13px;
   margin: 0px auto 0px auto;
-  text-align: left;  
+  text-align: left;
   font-family: arial;
   overflow: hidden;
 }
 
-.logo
-{
+.logo {
   display: block;
   float: left;
 }
-.logotext
-{
+
+.logotext {
   margin-top: 35px;
   display: block;
   float: left;
 }
 
-.topBar img
-{
+.topBar img {
   height: 100px;
   position: relative;
 }
-.MOlogo
-{
+
+.MOlogo {
   position: absolute;
   top: -80px;
   right: 0px;
   z-index: 2;
 }
-.content
-{
+
+.content {
   padding: 20px;
   overflow: hidden;
   float: right;
-  margin-bottom: 20px;
-  width: 680px;
-}
-.content p
-{
-  margin: 10px 0px;
-}
-.content a
-{
-  color: #83003c;
+  margin-bottom: 60px;
+  width: 600px;
 }
 
+  .content p {
+    margin: 10px 0px;
+  }
 
-#header
-{
+  .content a {
+    color: #83003c;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+    .content a:hover {
+      text-decoration: underline;
+    }
+
+
+#header {
   position: absolute;
   padding: 10px;
   top: 15px;
   right: 0px;
   padding: 10px;
 }
-#breadcrumbs
-{
+
+#breadcrumbs {
   margin-bottom: 20px;
-  padding-left: 190px;
+  padding-left: 260px;
 }
-#breadcrumbs a
-{
-  color: #83003c;
-}
-.zoekForm input
-{
+
+  #breadcrumbs a {
+    color: #83003c;
+  }
+
+.zoekForm input {
   border: 1px solid #ababab;
 }
-.zoekForm .searchSubmit
-{
+
+.zoekForm .searchSubmit {
   margin-left: 3px;
 }
-.menu
-{
+
+.menu {
   position: relative;
   left: -10px;
   width: 190px;
   padding-top: 20px;
 }
 
-.menu ul li
-{
-  list-style-type: none;
-  padding-left: 15px;
-  background-image: url(/images/arrow-right.png);
-  background-repeat: no-repeat;
-  background-position: 5px 6px;
-}
-.menu li:hover
-{
-  background-color: #efefef;
-}
-.menu > ul > li.selected > a
-{
-  font-weight: bold;
-}
+  .menu ul li {
+    line-height: 22px;
+    list-style-type: none;
+    padding-left: 15px;
+    background-image: url(/images/arrow-right.png);
+    background-repeat: no-repeat;
+    background-position: 5px 9px;
+  }
 
-.subNav
-{
+  .menu li:hover {
+    background-color: #efefef;
+  }
+
+  .menu > ul > li.selected > a {
+    font-weight: bold;
+  }
+
+.subNav {
   margin-left: 10px;
 }
 
-.menu a
-{
+.menu a {
   display: block;
   padding: 3px 0px 3px 2px;
   color: #83003c;
@@ -226,112 +221,148 @@ h2
   font-size: 12px;
 }
 
-.footer
-{
-  padding: 3px 0px;
+.themes {
+  list-style-type: none;
+  width: 240px;
+}
+
+  .themes li {
+    margin: 0 0 10px 0;
+    padding: 10px;
+    background-color: #F1C5CA;
+  }
+
+    .themes li a {
+      text-decoration: none;
+      color: #83003c;
+      font-weight: bold;
+    }
+
+.footer {
+  padding-bottom: 3px 0px;
   font-size: 80%;
   background-color: #83003C;
   color: White;
   clear: both;
-  margin: 10px -10px 0px -10px;
-  text-align: right;
+  margin: 10px -10px 0px -10px;  
 }
-.footer p
-{
-  margin-right: 10px;
-}
-.footer a:hover, .footer a
-{
+
+.footer a:hover, .footer a {
   color: White;
   text-decoration: none;
 }
-ul
-{
+
+ul {
   list-style-type: disc;
   margin: 10px;
 }
-ul li
-{
-  margin-left: 10px;
-  cursor: pointer;
-}
-h3
-{
+
+  ul li {
+    margin-left: 10px;    
+  }
+
+h3 {
   font-weight: normal;
   padding-left: 10px;
   font-weight: bold;
 }
-h3:hover
-{
-  text-decoration: underline;
-}
-.showDescription h3
-{
+
+  h3:hover {
+    text-decoration: underline;
+  }
+
+.showDescription h3 {
   background-color: #83003C;
   color: White;
 }
-.description
-{
+
+.description {
   overflow: hidden;
   padding: 0px 10px;
   border-bottom: 1px solid #EFEFEF;
 }
 
-.searchResults h1
-{
+.searchResults h1 {
   font-size: 14px;
   margin: 0;
 }
 
-.searchResults p
-{
+.searchResults p {
   margin: 0;
 }
 
-.searchResults .url
-{
+.searchResults .url {
   color: #ababab;
 }
 
-.searchResults li
-{
+.searchResults li {
   margin-bottom: 20px;
 }
 
-.searchResults h1 a
-{
+.searchResults h1 a {
   text-decoration: none;
   color: #83003c;
 }
 
-.phone
-{
+.phone {
   font-size: 22px;
   margin: 30px 0px;
-  color: #83003c;  
+  color: #83003c;
 }
 
 .phone,
-.plaatsheader
-{
+.plaatsheader {
   text-align: center;
 }
 
-.phoneNumber
-{
+.phoneNumber {
   position: absolute;
   top: 28px;
   left: 10px;
   color: #83003c;
   font-weight: bold;
-  background-image:url(/Images/call_20px.png);
-  background-repeat:no-repeat;
-  background-position:left center;
-  padding-left: 25px;
+  font-size: 16px;
+  background-image: url(/Images/call_20px.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 27px;
   line-height: 20px;
+  -webkit-font-smoothing: antialiased;
 }
 
 .lastModified {
   font-size: 9px;
-  color:gray;
+  color: gray;
 }
+
+.regiolist li a {
+  color: white;
+  text-decoration: none;      
+}
+
+
+.veiligheidsregios {
+  overflow: hidden;
+  padding: 0px 20px 20px 20px;  
+  clear: both;
+  background-color: #83003C;
+  color: white;
+}
+
+
+  .veiligheidsregios h2 {
+    margin: 15px 0px;
+  }
+
+.regiolist {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 290px;
+  float: left;
+}
+
+.regiolist li {
+  margin: 0;  
+}
+
