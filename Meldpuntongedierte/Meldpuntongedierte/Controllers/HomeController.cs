@@ -22,20 +22,11 @@ namespace Meldpunt.Controllers
 
     public ActionResult Index()
     {
-      PageModel model = pageService.GetPage("home");
-      ViewBag.RegioPages = Split(pageService.GetPage("regios").SubPages);
+      PageModel model = pageService.GetPage("home");      
       return View(model);
     }
 
-    public static List<List<PageModel>> Split(List<PageModel> source)
-    {
-      int numOfItemsPerList =  (int)Math.Ceiling(source.Count() / 3f);
-      return source
-          .Select((x, i) => new { Index = i, Value = x })
-          .GroupBy(x => x.Index / numOfItemsPerList)
-          .Select(x => x.Select(v => v.Value).ToList())
-          .ToList();
-    }
+  
 
     public ActionResult SiteMap()
     {
@@ -56,6 +47,9 @@ namespace Meldpunt.Controllers
       PageModel model = pageService.GetPage(id);
       if (model != null)
       {
+        if (id == "openbare-ruimte")
+          ViewBag.HidePhoneNumber = true;
+
         if (model.SubPages.Any())
         {
           ViewBag.SubNav = model.SubPages;

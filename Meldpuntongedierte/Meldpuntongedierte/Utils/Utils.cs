@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web; 
 using System.Text.RegularExpressions;
+using Meldpunt.Models;
 
 namespace Meldpunt.Utils
 {
@@ -33,6 +34,16 @@ namespace Meldpunt.Utils
         return s.Substring(0, 1).ToUpper() + s.Substring(1);
       else
         return s.ToUpper();
-    }   
+    }
+
+    public static List<List<PageModel>> Split(List<PageModel> source)
+    {
+      int numOfItemsPerList = (int)Math.Ceiling(source.Count() / 3f);
+      return source
+          .Select((x, i) => new { Index = i, Value = x })
+          .GroupBy(x => x.Index / numOfItemsPerList)
+          .Select(x => x.Select(v => v.Value).ToList())
+          .ToList();
+    }
   }
 }

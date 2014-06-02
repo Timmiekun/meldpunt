@@ -2,6 +2,7 @@
 @{
   List<PageModel> pagesForTabs = ViewBag.NavItems as List<PageModel>;
   List<PageModel> breadcrumbs = ViewBag.BreadCrumbs as List<PageModel>;
+  List<List<PageModel>> regioPages = ViewBag.RegioPages as List<List<PageModel>>;
   string logoText = ViewBag.HeaderTitle;
   if (String.IsNullOrEmpty(logoText))
   {
@@ -100,7 +101,18 @@
     @RenderSection("menu",false)    
   
     <div class="footer">
-      @RenderSection("secondary", false)    
+       <div class="veiligheidsregios">
+        <h2>Regionale dienstverlening Meldpunt Ongedierte</h2>
+        @foreach (List<PageModel> list in regioPages)
+        {
+          <ul class="regiolist">
+            @foreach (PageModel p in list)
+            {
+              <li><a href="@p.Url">@p.HeaderTitle.Substring(20)</a></li>
+            }
+          </ul>
+        }
+      </div>    
     </div>
   </div>
  

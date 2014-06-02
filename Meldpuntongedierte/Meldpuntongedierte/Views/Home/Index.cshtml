@@ -5,8 +5,7 @@
   ViewBag.Title = Model.Title;
   ViewBag.Description = Model.FullText.TruncateAtWord(200);
   ViewBag.Url = Model.Url;
-  List<PageModel> subNav = ViewBag.SubNav as List<PageModel>;
-  List<List<PageModel>> regioPages = ViewBag.RegioPages as List<List<PageModel>>;
+  List<PageModel> subNav = ViewBag.SubNav as List<PageModel>;  
 }
 
 
@@ -56,20 +55,4 @@
       </ul>
     </div>
   }
-}
-
-
- @section secondary{    
-      <div class="veiligheidsregios">
-        <h2>Regionale dienstverlening Meldpunt Ongedierte</h2>
-        @foreach (List<PageModel> list in regioPages)
-        {
-          <ul class="regiolist">
-            @foreach (PageModel p in list)
-            {
-              <li><a href="@p.Url">@p.HeaderTitle.Substring(20)</a></li>
-            }
-          </ul>
-        }
-      </div>    
-  }
+} 

@@ -41,6 +41,7 @@ namespace Meldpunt.ActionFilters
 
         viewResult.ViewBag.BreadCrumbs = breadCrumbs;
         viewResult.ViewBag.NavItems = pageService.GetPagesForTabs();
+        viewResult.ViewBag.RegioPages = Meldpunt.Utils.Utils.Split(pageService.GetPage("regios").SubPages);
         
       }
 

@@ -259,6 +259,7 @@ ul {
 
   ul li {
     margin-left: 10px;    
+    line-height: 150%;
   }
 
 h3 {
@@ -305,9 +306,13 @@ h3 {
 }
 
 .phone {
-  font-size: 22px;
-  margin: 30px 0px;
-  color: #83003c;
+font-size: 22px;
+margin: 30px 0px;
+color: #83003c;
+background-image: url(/Images/call_20px.png);
+background-repeat: no-repeat;
+line-height: 24px;
+background-position: 192px 3px;
 }
 
 .phone,
@@ -329,6 +334,8 @@ h3 {
   line-height: 20px;
   -webkit-font-smoothing: antialiased;
 }
+
+
 
 .lastModified {
   font-size: 9px;
