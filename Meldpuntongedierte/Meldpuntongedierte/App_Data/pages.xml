@@ -2411,6 +2411,14 @@
   <page id="volksgezondheid" tab="true">
     <content>
       <h1>Gevaren van stedelijk ongedierte voor de volksgezondheid</h1>
+
+      <p>
+        Ongedierte en volksgezondheid worden vaak in samenhang gebracht omdat sommige soorten ongedierte ziektedragers kunnen zijn waarmee we besmet kunnen worden. Omdat de overheid verantwoordelijk is voor de volksgezondheid zijn inwoners al snel geneigd deze voor de bestrijding van ongedierte verantwoordelijk te houden. Toch kan de overheid niet aansprakelijk gesteld worden voor een individueel probleem rondom ongedierte, tenzij kan worden aangetoond dat de overheid dit veroorzaakt heeft. Een individueel probleem vormt tenslotte geen bedreiging voor de volksgezondheid. Als een ongedierteplaag zich echter dusdanig verspreid dat een hele buurt of wijk of zelfs het hele land geconfronteerd wordt met de risico’s op ziekten die een bepaald diersoort met zich meebrengt, denk aan bijvoorbeeld ratten ( ziekte van Weil ) of teken ( ziekte van Lyme ), pas dan kan worden gezegd dat het een bedreiging vormt voor de volksgezondheid. Wanneer ook de oorzaak niet duidelijk is, rest er alleen nog de overheid die verantwoordelijk kan worden gehouden voor het vinden van een oplossing.
+      </p>
+
+      <p>
+        In 2009 is er een <a href="/Volksgezondheid.pdf" class="pdf" target="_blank">rapport over volksgezondheid</a> verschenen welke meer inzicht geeft in de gevaren van ongedierte in stedelijk gebied.
+      </p>
       <a href="/Volksgezondheid.pdf" class="pdf" target="_blank">Download de pdf</a>
       <div class="hidden">
         <span id="docs-internal-guid-0bed6a6e-46cd-e207-b2a1-1e448b79e733">
@@ -2845,15 +2853,7 @@
       <p>
         De voorschriften van het bouwbesluit hebben betrekking op veiligheid, gezondheid, bruikbaarheid en energiezuinigheid. Op het gebied van ongedierte wordt alleen de bescherming tegen ratten en muizen besproken, maar de technische voorschriften hiervoor bieden geen garantie op de volledige ontoegankelijkheid voor deze diersoorten omdat andere voorschriften ten aanzien van de veiligheid en bruikbaarheid hiervoor een obstakel vormen. De woningwet, de bouwverordening en het bouwbesluit bieden in de meeste gevallen dus te weinig houvast voor de gemiddelde discussie rondom ongedierte. Overlast van ongedierte heeft daarnaast vaak verschillende oorzaken en ook de kosten voor een bestrijding zijn meestal dermate laag dat de noodzaak ontbreekt om van bovenaf richtlijnen te geven die de aanwezigheid van ongedierte in huis volledig uit kunnen sluiten.
       </p>
-      <h2>Volksgezondheid</h2>
-
-      <p>
-        Ongedierte en volksgezondheid worden vaak in samenhang gebracht omdat sommige soorten ongedierte ziektedragers kunnen zijn waarmee we besmet kunnen worden. Omdat de overheid verantwoordelijk is voor de volksgezondheid zijn inwoners al snel geneigd deze voor de bestrijding van ongedierte verantwoordelijk te houden. Toch kan de overheid niet aansprakelijk gesteld worden voor een individueel probleem rondom ongedierte, tenzij kan worden aangetoond dat de overheid dit veroorzaakt heeft. Een individueel probleem vormt tenslotte geen bedreiging voor de volksgezondheid. Als een ongedierteplaag zich echter dusdanig verspreid dat een hele buurt of wijk of zelfs het hele land geconfronteerd wordt met de risico’s op ziekten die een bepaald diersoort met zich meebrengt, denk aan bijvoorbeeld ratten ( ziekte van Weil ) of teken ( ziekte van Lyme ), pas dan kan worden gezegd dat het een bedreiging vormt voor de volksgezondheid. Wanneer ook de oorzaak niet duidelijk is, rest er alleen nog de overheid die verantwoordelijk kan worden gehouden voor het vinden van een oplossing.
-      </p>
-
-      <p>
-        In 2009 is er een <a href="/Volksgezondheid.pdf" class="pdf" target="_blank">rapport over volksgezondheid</a> verschenen welke meer inzicht geeft in de gevaren van ongedierte in stedelijk gebied.
-      </p>
+    
 
       <h2>De Gemeente</h2>
       <p>
@@ -2879,7 +2879,7 @@
       </p>
 
       <p>
-        De verhuurder dient wel bij te dragen aan een oplossing als blijkt dat het ongedierte door andere huurders van de dezelfde verhuurder veroorzaakt wordt of wanneer blijkt dat het om een structureel probleem gaat die niet zomaar voor rekening van de huurder kan komen. Wanneer er bijvoorbeeld een rattenprobleem is vanwege een kapot riool of een probleem met stofluizen door schimmelvorming in een ventilatieschacht, dan kan de verhuurder daarop aangesproken worden. Wel moet eerst gekeken worden wat daadwerkelijk de oorzaak is van de aanwezigheid van ongedierte. een bestrijdingsdeskundige kan dit beoordelen aan de hand van een inspectie.
+        De verhuurder dient wel bij te dragen aan een oplossing als blijkt dat het ongedierte door andere huurders van de dezelfde verhuurder veroorzaakt wordt of wanneer blijkt dat het om een structureel probleem gaat die niet zomaar voor rekening van de huurder kan komen. Wanneer er bijvoorbeeld een rattenprobleem is vanwege een kapot riool of een probleem met stofluizen door schimmelvorming in een ventilatieschacht, dan kan de verhuurder daarop aangesproken worden. Wel moet eerst gekeken worden wat daadwerkelijk de oorzaak is van de aanwezigheid van ongedierte. Een bestrijdingsdeskundige kan dit beoordelen aan de hand van een inspectie.
       </p>
     </content>
   </page>
@@ -2895,7 +2895,7 @@
         Voor het servicepunt bij u in de buurt voert u hierboven in de <b>zoekbalk</b> uw woonplaats in.
       </p>
       <p>
-        Voor algemene voorlichting kunt u het best uw vragen stellen per e-mail naar <em>
+        Voor algemene voorlichting kunt u het beste uw vragen stellen per e-mail naar <em>
           <a href="mailto:info@meldpuntongedierte.nl">info@meldpuntongedierte.nl</a>
         </em>
       </p>
@@ -2922,33 +2922,33 @@
             terecht bij onderstaande servicepunten :
           </p>
           <ul>
-            <li><a href="ongediertebestrijding-beuningen">Ongediertebestrijding Beuningen</a></li>
+            <li><a href="/ongediertebestrijding-beuningen">Ongediertebestrijding Beuningen</a></li>
             <li>
-              <a href="ongediertebestrijding-beuningen">Ongediertebestrijding Buren</a>
+              <a href="/ongediertebestrijding-buren">Ongediertebestrijding Buren</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-culemborg">Ongediertebestrijding Culemborg</a>
+              <a href="/ongediertebestrijding-culemborg">Ongediertebestrijding Culemborg</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-druten">Ongediertebestrijding Druten</a>
+              <a href="/ongediertebestrijding-druten">Ongediertebestrijding Druten</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-geldermalsen">Ongediertebestrijding Geldermalsen</a>
+              <a href="/ongediertebestrijding-geldermalsen">Ongediertebestrijding Geldermalsen</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-neder-Betuwe">Ongediertebestrijding Neder-Betuwe</a>
+              <a href="/ongediertebestrijding-neder-Betuwe">Ongediertebestrijding Neder-Betuwe</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-nijmegen">Ongediertebestrijding Nijmegen</a>
+              <a href="/ongediertebestrijding-nijmegen">Ongediertebestrijding Nijmegen</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-tiel">Ongediertebestrijding Tiel</a>
+              <a href="/ongediertebestrijding-tiel">Ongediertebestrijding Tiel</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-wijchen">Ongediertebestrijding Wijchen</a>
+              <a href="/ongediertebestrijding-wijchen">Ongediertebestrijding Wijchen</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-zaltbommel">Ongediertebestrijding Zaltbommel</a>
+              <a href="/ongediertebestrijding-zaltbommel">Ongediertebestrijding Zaltbommel</a>
             </li>
           </ul>
         </content>
@@ -2971,52 +2971,52 @@
           </p>
           <ul>
             <li>
-              <a href="ongediertebestrijding-alphen-aan-den-rijn">Ongediertebestrijding Alphen aan den Rijn</a>
+              <a href="/ongediertebestrijding-alphen-aan-den-rijn">Ongediertebestrijding Alphen aan den Rijn</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-bodegraven-reeuwijk">Ongediertebestrijding Bodegraven-Reeuwijk</a>
+              <a href="/ongediertebestrijding-bodegraven-reeuwijk">Ongediertebestrijding Bodegraven-Reeuwijk</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-boskoop">Ongediertebestrijding Boskoop</a>
+              <a href="/ongediertebestrijding-boskoop">Ongediertebestrijding Boskoop</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-gouda">Ongediertebestrijding Gouda</a>
+              <a href="/ongediertebestrijding-gouda">Ongediertebestrijding Gouda</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-hillegom">Ongediertebestrijding Hillegom</a>
+              <a href="/ongediertebestrijding-hillegom">Ongediertebestrijding Hillegom</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-kaag-en-braassem">Ongediertebestrijding Kaag en Braassem</a>
+              <a href="/ongediertebestrijding-kaag-en-braassem">Ongediertebestrijding Kaag en Braassem</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-katwijk">Ongediertebestrijding Katwijk</a>
+              <a href="/ongediertebestrijding-katwijk">Ongediertebestrijding Katwijk</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-leiden">Ongediertebestrijding Leiden</a>
+              <a href="/ongediertebestrijding-leiden">Ongediertebestrijding Leiden</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-leiderdorp">Ongediertebestrijding Leiderdorp</a>
+              <a href="/ongediertebestrijding-leiderdorp">Ongediertebestrijding Leiderdorp</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-nieuwkoop">Ongediertebestrijding Nieuwkoop</a>
+              <a href="/ongediertebestrijding-nieuwkoop">Ongediertebestrijding Nieuwkoop</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-noordwijk">Ongediertebestrijding Noordwijk</a>
+              <a href="/ongediertebestrijding-noordwijk">Ongediertebestrijding Noordwijk</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-oegstgeest">Ongediertebestrijding Oegstgeest</a>
+              <a href="/ongediertebestrijding-oegstgeest">Ongediertebestrijding Oegstgeest</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-rijnwoude">Ongediertebestrijding Rijnwoude</a>
+              <a href="/ongediertebestrijding-rijnwoude">Ongediertebestrijding Rijnwoude</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-voorschoten">Ongediertebestrijding Voorschoten</a>
+              <a href="/ongediertebestrijding-voorschoten">Ongediertebestrijding Voorschoten</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-waddinxveen">Ongediertebestrijding Waddinxveen</a>
+              <a href="/ongediertebestrijding-waddinxveen">Ongediertebestrijding Waddinxveen</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-zuidplas">Ongediertebestrijding Zuidplas</a>
+              <a href="/ongediertebestrijding-zuidplas">Ongediertebestrijding Zuidplas</a>
             </li>
           </ul>
         </content>
@@ -3039,31 +3039,31 @@
           </p>
           <ul>
             <li>
-              <a href="ongediertebestrijding-blaricum">Ongediertebestrijding Blaricum</a>
+              <a href="/ongediertebestrijding-blaricum">Ongediertebestrijding Blaricum</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-bussum">Ongediertebestrijding Bussum</a>
+              <a href="/ongediertebestrijding-bussum">Ongediertebestrijding Bussum</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-hilversum">Ongediertebestrijding Hilversum</a>
+              <a href="/ongediertebestrijding-hilversum">Ongediertebestrijding Hilversum</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-huizen">Ongediertebestrijding Huizen</a>
+              <a href="/ongediertebestrijding-huizen">Ongediertebestrijding Huizen</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-muiden">Ongediertebestrijding Muiden</a>
+              <a href="/ongediertebestrijding-muiden">Ongediertebestrijding Muiden</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-naarden">Ongediertebestrijding Naarden</a>
+              <a href="/ongediertebestrijding-naarden">Ongediertebestrijding Naarden</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-laren">Ongediertebestrijding Laren</a>
+              <a href="/ongediertebestrijding-laren">Ongediertebestrijding Laren</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-weesp">Ongediertebestrijding Weesp</a>
+              <a href="/ongediertebestrijding-weesp">Ongediertebestrijding Weesp</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-wijdemeren">Ongediertebestrijding Wijdemeren</a>
+              <a href="/ongediertebestrijding-wijdemeren">Ongediertebestrijding Wijdemeren</a>
             </li>         
           </ul>
         </content>
@@ -3086,34 +3086,34 @@
           </p>
           <ul>
             <li>
-              <a href="ongediertebestrijding-bernheze">Ongediertebestrijding Bernheze</a>
+              <a href="/ongediertebestrijding-bernheze">Ongediertebestrijding Bernheze</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-boxtel">Ongediertebestrijding Boxtel</a>
+              <a href="/ongediertebestrijding-boxtel">Ongediertebestrijding Boxtel</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-cuijk">Ongediertebestrijding Cuijk</a>
+              <a href="/ongediertebestrijding-cuijk">Ongediertebestrijding Cuijk</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-den-bosch">Ongediertebestrijding Den Bosch</a>
+              <a href="/ongediertebestrijding-den-bosch">Ongediertebestrijding Den Bosch</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-heusden">Ongediertebestrijding Heusden</a>
+              <a href="/ongediertebestrijding-heusden">Ongediertebestrijding Heusden</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-landerd">Ongediertebestrijding Landerd</a>
+              <a href="/ongediertebestrijding-landerd">Ongediertebestrijding Landerd</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-oss">Ongediertebestrijding Oss</a>
+              <a href="/ongediertebestrijding-oss">Ongediertebestrijding Oss</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-uden">Ongediertebestrijding Uden</a>
+              <a href="/ongediertebestrijding-uden">Ongediertebestrijding Uden</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-veghel">Ongediertebestrijding Veghel</a>
+              <a href="/ongediertebestrijding-veghel">Ongediertebestrijding Veghel</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-vught">Ongediertebestrijding Vught</a>
+              <a href="/ongediertebestrijding-vught">Ongediertebestrijding Vught</a>
             </li>
           </ul>
         </content>
@@ -3136,31 +3136,31 @@
           </p>
           <ul>
             <li>
-              <a href="ongediertebestrijding-alkmaar">Ongediertebestrijding Alkmaar</a>
+              <a href="/ongediertebestrijding-alkmaar">Ongediertebestrijding Alkmaar</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-bergen">Ongediertebestrijding Bergen</a>
+              <a href="/ongediertebestrijding-bergen-nh">Ongediertebestrijding Bergen</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-castricum">Ongediertebestrijding Castricum</a>
+              <a href="/ongediertebestrijding-castricum">Ongediertebestrijding Castricum</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-heerhugowaard">Ongediertebestrijding Heerhugowaard</a>
+              <a href="/ongediertebestrijding-heerhugowaard">Ongediertebestrijding Heerhugowaard</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-koggenland">Ongediertebestrijding Koggenland</a>
+              <a href="/ongediertebestrijding-koggenland">Ongediertebestrijding Koggenland</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-langedijk">Ongediertebestrijding Langedijk</a>
+              <a href="/ongediertebestrijding-langedijk">Ongediertebestrijding Langedijk</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-medemblik">Ongediertebestrijding Medemblik</a>
+              <a href="/ongediertebestrijding-medemblik">Ongediertebestrijding Medemblik</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-schagen">Ongediertebestrijding Schagen</a>
+              <a href="/ongediertebestrijding-schagen">Ongediertebestrijding Schagen</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-schermer">Ongediertebestrijding Schermer</a>
+              <a href="/ongediertebestrijding-schermer">Ongediertebestrijding Schermer</a>
             </li>           
           </ul>
         </content>
@@ -3183,34 +3183,34 @@
           </p>
           <ul>
             <li>
-              <a href="ongediertebestrijding-albrandswaard">Ongediertebestrijding Albrandswaard</a>
+              <a href="/ongediertebestrijding-albrandswaard">Ongediertebestrijding Albrandswaard</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-barendrecht">Ongediertebestrijding Barendrecht</a>
+              <a href="/ongediertebestrijding-barendrecht">Ongediertebestrijding Barendrecht</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-capelle-aan-den-ijssel">Ongediertebestrijding Capelle aan den IJssel</a>
+              <a href="/ongediertebestrijding-capelle-aan-den-ijssel">Ongediertebestrijding Capelle aan den IJssel</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-krimpen-aan-den-ijssel">Ongediertebestrijding Krimpen aan den IJssel</a>
+              <a href="/ongediertebestrijding-krimpen-aan-den-ijssel">Ongediertebestrijding Krimpen aan den IJssel</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-lansingerland">Ongediertebestrijding Lansingerland</a>
+              <a href="/ongediertebestrijding-lansingerland">Ongediertebestrijding Lansingerland</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-maassluis">Ongediertebestrijding Maassluis</a>
+              <a href="/ongediertebestrijding-maassluis">Ongediertebestrijding Maassluis</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-ridderkerk">Ongediertebestrijding Ridderkerk</a>
+              <a href="/ongediertebestrijding-ridderkerk">Ongediertebestrijding Ridderkerk</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-rotterdam">Ongediertebestrijding Rotterdam</a>
+              <a href="/ongediertebestrijding-rotterdam">Ongediertebestrijding Rotterdam</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-schiedam">Ongediertebestrijding Schiedam</a>
+              <a href="/ongediertebestrijding-schiedam">Ongediertebestrijding Schiedam</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-vlaardingen">Ongediertebestrijding Vlaardingen</a>
+              <a href="/ongediertebestrijding-vlaardingen">Ongediertebestrijding Vlaardingen</a>
             </li>
           </ul>
         </content>
@@ -3233,43 +3233,43 @@
           </p>
           <ul>
             <li>
-              <a href="ongediertebestrijding-asten">Ongediertebestrijding Asten</a>
+              <a href="/ongediertebestrijding-asten">Ongediertebestrijding Asten</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-best">Ongediertebestrijding Best</a>
+              <a href="/ongediertebestrijding-best">Ongediertebestrijding Best</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-deurne">Ongediertebestrijding Deurne</a>
+              <a href="/ongediertebestrijding-deurne">Ongediertebestrijding Deurne</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-eindhoven">Ongediertebestrijding Eindhoven</a>
+              <a href="/ongediertebestrijding-eindhoven">Ongediertebestrijding Eindhoven</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-geldrop-mierlo">Ongediertebestrijding Geldrop-Mierlo</a>
+              <a href="/ongediertebestrijding-geldrop-mierlo">Ongediertebestrijding Geldrop-Mierlo</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-gemert-bakel">Ongediertebestrijding Gemert-Bakel</a>
+              <a href="/ongediertebestrijding-gemert-bakel">Ongediertebestrijding Gemert-Bakel</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-helmond">Ongediertebestrijding Helmond</a>
+              <a href="/ongediertebestrijding-helmond">Ongediertebestrijding Helmond</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-laarbeek">Ongediertebestrijding Laarbeek</a>
+              <a href="/ongediertebestrijding-laarbeek">Ongediertebestrijding Laarbeek</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-oirschot">Ongediertebestrijding Oirschot</a>
+              <a href="/ongediertebestrijding-oirschot">Ongediertebestrijding Oirschot</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-someren">Ongediertebestrijding Someren</a>
+              <a href="/ongediertebestrijding-someren">Ongediertebestrijding Someren</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-valkenswaard">Ongediertebestrijding Valkenswaard</a>
+              <a href="/ongediertebestrijding-valkenswaard">Ongediertebestrijding Valkenswaard</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-veldhoven">Ongediertebestrijding Veldhoven</a>
+              <a href="/ongediertebestrijding-veldhoven">Ongediertebestrijding Veldhoven</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-waalre">Ongediertebestrijding Waalre</a>
+              <a href="/ongediertebestrijding-waalre">Ongediertebestrijding Waalre</a>
             </li>           
           </ul>
         </content>
@@ -3292,25 +3292,25 @@
           </p>
           <ul>
             <li>
-              <a href="ongediertebestrijding-aalsmeer">Ongediertebestrijding Aalsmeer</a>
+              <a href="/ongediertebestrijding-aalsmeer">Ongediertebestrijding Aalsmeer</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-amstelveen">Ongediertebestrijding Amstelveen</a>
+              <a href="/ongediertebestrijding-amstelveen">Ongediertebestrijding Amstelveen</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-amsterdam">Ongediertebestrijding Amsterdam</a>
+              <a href="/ongediertebestrijding-amsterdam">Ongediertebestrijding Amsterdam</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-diemen">Ongediertebestrijding Diemen</a>
+              <a href="/ongediertebestrijding-diemen">Ongediertebestrijding Diemen</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-ouder-amstel">Ongediertebestrijding Ouder-Amstel</a>
+              <a href="/ongediertebestrijding-ouder-amstel">Ongediertebestrijding Ouder-Amstel</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-gemert-bakel">Ongediertebestrijding Gemert-Bakel</a>
+              <a href="/ongediertebestrijding-gemert-bakel">Ongediertebestrijding Gemert-Bakel</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-uithoorn">Ongediertebestrijding Uithoorn</a>
+              <a href="/ongediertebestrijding-uithoorn">Ongediertebestrijding Uithoorn</a>
             </li>           
           </ul>
         </content>
@@ -3333,37 +3333,37 @@
           </p>
           <ul>
             <li>
-              <a href="ongediertebestrijding-alblasserdam">Ongediertebestrijding Alblasserdam</a>
+              <a href="/ongediertebestrijding-alblasserdam">Ongediertebestrijding Alblasserdam</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-binnenmaas">Ongediertebestrijding Binnenmaas</a>
+              <a href="/ongediertebestrijding-binnenmaas">Ongediertebestrijding Binnenmaas</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-dordrecht">Ongediertebestrijding Dordrecht</a>
+              <a href="/ongediertebestrijding-dordrecht">Ongediertebestrijding Dordrecht</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-giessenlanden">Ongediertebestrijding Giessenlanden</a>
+              <a href="/ongediertebestrijding-giessenlanden">Ongediertebestrijding Giessenlanden</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-gorinchem">Ongediertebestrijding Gorinchem</a>
+              <a href="/ongediertebestrijding-gorinchem">Ongediertebestrijding Gorinchem</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-hardinxveld-giessendam">Ongediertebestrijding Hardinxveld-Giessendam</a>
+              <a href="/ongediertebestrijding-hardinxveld-giessendam">Ongediertebestrijding Hardinxveld-Giessendam</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-hendrik-ido-ambacht">Ongediertebestrijding Hendrik-Ido-Ambacht</a>
+              <a href="/ongediertebestrijding-hendrik-ido-ambacht">Ongediertebestrijding Hendrik-Ido-Ambacht</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-papendrecht">Ongediertebestrijding Papendrecht</a>
+              <a href="/ongediertebestrijding-papendrecht">Ongediertebestrijding Papendrecht</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-sliedrecht">Ongediertebestrijding Sliedrecht</a>
+              <a href="/ongediertebestrijding-sliedrecht">Ongediertebestrijding Sliedrecht</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-zederik">Ongediertebestrijding Zederik</a>
+              <a href="/ongediertebestrijding-zederik">Ongediertebestrijding Zederik</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-zwijndrecht">Ongediertebestrijding Zwijndrecht</a>
+              <a href="/ongediertebestrijding-zwijndrecht">Ongediertebestrijding Zwijndrecht</a>
             </li>
           </ul>
         </content>
@@ -3386,50 +3386,103 @@
           </p>
           <ul>
             <li>
-              <a href="ongediertebestrijding-bergen-op-zoom">Ongediertebestrijding Bergen op Zoom</a>
+              <a href="/ongediertebestrijding-bergen-op-zoom">Ongediertebestrijding Bergen op Zoom</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-breda">Ongediertebestrijding Breda</a>
+              <a href="/ongediertebestrijding-breda">Ongediertebestrijding Breda</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-etten-leur">Ongediertebestrijding Etten-Leur</a>
+              <a href="/ongediertebestrijding-etten-leur">Ongediertebestrijding Etten-Leur</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-dongen">Ongediertebestrijding Dongen</a>
+              <a href="/ongediertebestrijding-dongen">Ongediertebestrijding Dongen</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-drimmelen">Ongediertebestrijding Drimmelen</a>
+              <a href="/ongediertebestrijding-drimmelen">Ongediertebestrijding Drimmelen</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-gilze-rijen">Ongediertebestrijding Gilze-Rijen</a>
+              <a href="/ongediertebestrijding-gilze-en-rijen">Ongediertebestrijding Gilze-Rijen</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-goirle">Ongediertebestrijding Goirle</a>
+              <a href="/ongediertebestrijding-goirle">Ongediertebestrijding Goirle</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-oisterwijk">Ongediertebestrijding Oisterwijk</a>
+              <a href="/ongediertebestrijding-oisterwijk">Ongediertebestrijding Oisterwijk</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-oosterhout">Ongediertebestrijding Oosterhout</a>
+              <a href="/ongediertebestrijding-oosterhout">Ongediertebestrijding Oosterhout</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-roosendaal">Ongediertebestrijding Roosendaal</a>
+              <a href="/ongediertebestrijding-roosendaal">Ongediertebestrijding Roosendaal</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-steenbergen">Ongediertebestrijding Steenbergen</a>
+              <a href="/ongediertebestrijding-steenbergen">Ongediertebestrijding Steenbergen</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-tilburg">Ongediertebestrijding Tilburg</a>
+              <a href="/ongediertebestrijding-tilburg">Ongediertebestrijding Tilburg</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-waalwijk">Ongediertebestrijding Waalwijk</a>
+              <a href="/ongediertebestrijding-waalwijk">Ongediertebestrijding Waalwijk</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-werkendam">Ongediertebestrijding Werkendam</a>
+              <a href="/ongediertebestrijding-werkendam">Ongediertebestrijding Werkendam</a>
             </li>
           </ul>
         </content>
-      </page>      
+      </page>
+      <page id="noord-en-oost-Gelderland">
+        <content>
+          <h1>Meldpunt Ongedierte Noord- en Oost Gelderland</h1>
+          <p>
+            Meldpunt Ongedierte Midden- en West-Brabant coördineert alle meldingen rondom ongedierte en
+            plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze
+            leefbaarheid en gezondheid. Toename of afname van ongewenste diersoorten in huis, in
+            een gebouw of in een buurt, kunnen op deze manier in kaart worden gebracht en indien
+            noodzakelijk worden gecommuniceerd met de betrokken partijen.
+          </p>
+
+          <h2>Ongediertebestrijding</h2>
+          <p>
+            Voor incidentele bestrijding van ongedierte bij u thuis, in de instelling of in het bedrijf kunt u
+            terecht bij onderstaande servicepunten :
+          </p>
+          <ul>
+            <li>
+              <a href="/ongediertebestrijding-apeldoorn">Ongediertebestrijding Apeldoorn</a>
+            </li>
+            <li>
+              <a href="/ongediertebestrijding-epe">Ongediertebestrijding Epe</a>
+            </li>
+            <li>
+              <a href="/ongediertebestrijding-ermelo">Ongediertebestrijding Ermelo</a>
+            </li>
+            <li>
+              <a href="/ongediertebestrijding-harderwijk">Ongediertebestrijding Harderwijk</a>
+            </li>
+            <li>
+              <a href="/ongediertebestrijding-hattem">Ongediertebestrijding Hattem</a>
+            </li>
+            <li>
+              <a href="/ongediertebestrijding-heerde">Ongediertebestrijding Heerde</a>
+            </li>
+            <li>
+              <a href="/ongediertebestrijding-nunspeet">Ongediertebestrijding Nunspeet</a>
+            </li>
+            <li>
+              <a href="/ongediertebestrijding-oldebroek">Ongediertebestrijding Oldebroek</a>
+            </li>
+            <li>
+              <a href="/ongediertebestrijding-putten">Ongediertebestrijding Putten</a>
+            </li>
+            <li>
+              <a href="/ongediertebestrijding-voorst">Ongediertebestrijding Voorst</a>
+            </li>
+            <li>
+              <a href="/ongediertebestrijding-zutphen">Ongediertebestrijding Zutphen</a>
+            </li>          
+          </ul>
+        </content>
+      </page>
       <page id="haaglanden">
         <content>
           <h1>Meldpunt Ongedierte Haaglanden</h1>
@@ -3448,28 +3501,28 @@
           </p>
           <ul>
             <li>
-              <a href="ongediertebestrijding-delft">Ongediertebestrijding Delft</a>
+              <a href="/ongediertebestrijding-delft">Ongediertebestrijding Delft</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-den-haag">Ongediertebestrijding Den Haag</a>
+              <a href="/ongediertebestrijding-den-haag">Ongediertebestrijding Den Haag</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-leidschendam-voorburg">Ongediertebestrijding Leidschendam-Voorburg</a>
+              <a href="/ongediertebestrijding-leidschendam-voorburg">Ongediertebestrijding Leidschendam-Voorburg</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-midden-delfland">Ongediertebestrijding Midden-Delfland</a>
+              <a href="/ongediertebestrijding-midden-delfland">Ongediertebestrijding Midden-Delfland</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-pijnacker-nootdorp">Ongediertebestrijding Pijnacker-Nootdorp</a>
+              <a href="/ongediertebestrijding-pijnacker-nootdorp">Ongediertebestrijding Pijnacker-Nootdorp</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-rijswijk">Ongediertebestrijding Rijswijk</a>
+              <a href="/ongediertebestrijding-rijswijk">Ongediertebestrijding Rijswijk</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-westland">Ongediertebestrijding Westland</a>
+              <a href="/ongediertebestrijding-westland">Ongediertebestrijding Westland</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-zoetermeer">Ongediertebestrijding Zoetermeer</a>
+              <a href="/ongediertebestrijding-zoetermeer">Ongediertebestrijding Zoetermeer</a>
             </li>
           </ul>
         </content>
@@ -3492,23 +3545,23 @@
           </p>
           <ul>
             <li>
-              <a href="ongediertebestrijding-almere">Ongediertebestrijding Almere</a>
+              <a href="/ongediertebestrijding-almere">Ongediertebestrijding Almere</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-dronten">Ongediertebestrijding Dronten</a>
+              <a href="/ongediertebestrijding-dronten">Ongediertebestrijding Dronten</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-lelystad">Ongediertebestrijding Lelystad</a>
+              <a href="/ongediertebestrijding-lelystad">Ongediertebestrijding Lelystad</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-zeewolde">Ongediertebestrijding Zeewolde</a>
+              <a href="/ongediertebestrijding-zeewolde">Ongediertebestrijding Zeewolde</a>
             </li>          
           </ul>
         </content>
       </page>
       <page id="gelderland-midden">
         <content>
-          <h1>Meldpunt Gelderland Midden</h1>
+          <h1>Meldpunt Ongedierte Gelderland Midden</h1>
           <p>
             Meldpunt Ongedierte Gelderland Midden coördineert alle meldingen rondom ongedierte en
             plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze
@@ -3524,31 +3577,31 @@
           </p>
           <ul>
             <li>
-              <a href="ongediertebestrijding-arnhem">Ongediertebestrijding Arnhem</a>
+              <a href="/ongediertebestrijding-arnhem">Ongediertebestrijding Arnhem</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-barneveld">Ongediertebestrijding Barneveld</a>
+              <a href="/ongediertebestrijding-barneveld">Ongediertebestrijding Barneveld</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-ede">Ongediertebestrijding Ede</a>
+              <a href="/ongediertebestrijding-ede">Ongediertebestrijding Ede</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-nijkerk">Ongediertebestrijding Nijkerk</a>
+              <a href="/ongediertebestrijding-nijkerk">Ongediertebestrijding Nijkerk</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-overbetuwe">Ongediertebestrijding Overbetuwe</a>
+              <a href="/ongediertebestrijding-overbetuwe">Ongediertebestrijding Overbetuwe</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-renkum">Ongediertebestrijding Renkum</a>
+              <a href="/ongediertebestrijding-renkum">Ongediertebestrijding Renkum</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-rheden">Ongediertebestrijding Rheden</a>
+              <a href="/ongediertebestrijding-rheden">Ongediertebestrijding Rheden</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-wageningen">Ongediertebestrijding Wageningen</a>
+              <a href="/ongediertebestrijding-wageningen">Ongediertebestrijding Wageningen</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-zevenaar">Ongediertebestrijding Zevenaar</a>
+              <a href="/ongediertebestrijding-zevenaar">Ongediertebestrijding Zevenaar</a>
             </li>           
           </ul>
         </content>
@@ -3571,25 +3624,25 @@
           </p>
           <ul>
             <li>
-              <a href="ongediertebestrijding-haarlem">Ongediertebestrijding Haarlem</a>
+              <a href="/ongediertebestrijding-haarlem">Ongediertebestrijding Haarlem</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-haarlemmermeer">Ongediertebestrijding Haarlemmermeer</a>
+              <a href="/ongediertebestrijding-haarlemmermeer">Ongediertebestrijding Haarlemmermeer</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-heemskerk">Ongediertebestrijding Heemskerk</a>
+              <a href="/ongediertebestrijding-heemskerk">Ongediertebestrijding Heemskerk</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-heemstede">Ongediertebestrijding Heemstede</a>
+              <a href="/ongediertebestrijding-heemstede">Ongediertebestrijding Heemstede</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-hoofddorp">Ongediertebestrijding Hoofddorp</a>
+              <a href="/ongediertebestrijding-hoofddorp">Ongediertebestrijding Hoofddorp</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-velsen">Ongediertebestrijding Velsen</a>
+              <a href="/ongediertebestrijding-velsen">Ongediertebestrijding Velsen</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-uitgeest">Ongediertebestrijding Uitgeest</a>
+              <a href="/ongediertebestrijding-uitgeest">Ongediertebestrijding Uitgeest</a>
             </li>
           
           </ul>
@@ -3613,61 +3666,61 @@
           </p>
           <ul>
             <li>
-              <a href="ongediertebestrijding-amersfoort">Ongediertebestrijding Amersfoort</a>
+              <a href="/ongediertebestrijding-amersfoort">Ongediertebestrijding Amersfoort</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-baarn">Ongediertebestrijding Baarn</a>
+              <a href="/ongediertebestrijding-baarn">Ongediertebestrijding Baarn</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-bunnik">Ongediertebestrijding Bunnik</a>
+              <a href="/ongediertebestrijding-bunnik">Ongediertebestrijding Bunnik</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-de-Bilt">Ongediertebestrijding De Bilt</a>
+              <a href="/ongediertebestrijding-de-Bilt">Ongediertebestrijding De Bilt</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-de-ronde-venen">Ongediertebestrijding De Ronde Venen</a>
+              <a href="/ongediertebestrijding-de-ronde-venen">Ongediertebestrijding De Ronde Venen</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-eemnes">Ongediertebestrijding Eemnes</a>
+              <a href="/ongediertebestrijding-eemnes">Ongediertebestrijding Eemnes</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-houten">Ongediertebestrijding Houten</a>
+              <a href="/ongediertebestrijding-houten">Ongediertebestrijding Houten</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-ijsselstein">Ongediertebestrijding IJsselstein</a>
+              <a href="/ongediertebestrijding-ijsselstein">Ongediertebestrijding IJsselstein</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-leusden">Ongediertebestrijding Leusden</a>
+              <a href="/ongediertebestrijding-leusden">Ongediertebestrijding Leusden</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-houten">Ongediertebestrijding Houten</a>
+              <a href="/ongediertebestrijding-houten">Ongediertebestrijding Houten</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-nieuwegein">Ongediertebestrijding Nieuwegein</a>
+              <a href="/ongediertebestrijding-nieuwegein">Ongediertebestrijding Nieuwegein</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-rhenen">Ongediertebestrijding Rhenen</a>
+              <a href="/ongediertebestrijding-rhenen">Ongediertebestrijding Rhenen</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-soest">Ongediertebestrijding Soest</a>
+              <a href="/ongediertebestrijding-soest">Ongediertebestrijding Soest</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-stichtse-vecht">Ongediertebestrijding Stichtse Vecht</a>
+              <a href="/ongediertebestrijding-stichtse-vecht">Ongediertebestrijding Stichtse Vecht</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-utrecht">Ongediertebestrijding Utrecht</a>
+              <a href="/ongediertebestrijding-utrecht">Ongediertebestrijding Utrecht</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-utrechtse-heuvelrug">Ongediertebestrijding Utrechtse Heuvelrug</a>
+              <a href="/ongediertebestrijding-utrechtse-heuvelrug">Ongediertebestrijding Utrechtse Heuvelrug</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-veenendaal">Ongediertebestrijding Veenendaal</a>
+              <a href="/ongediertebestrijding-veenendaal">Ongediertebestrijding Veenendaal</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-woerden">Ongediertebestrijding Woerden</a>
+              <a href="/ongediertebestrijding-woerden">Ongediertebestrijding Woerden</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-zeist">Ongediertebestrijding Zeist</a>
+              <a href="/ongediertebestrijding-zeist">Ongediertebestrijding Zeist</a>
             </li>
           </ul>
         </content>
@@ -3690,31 +3743,31 @@
           </p>
           <ul>
             <li>
-              <a href="ongediertebestrijding-beemster">Ongediertebestrijding Beemster</a>
+              <a href="/ongediertebestrijding-beemster">Ongediertebestrijding Beemster</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-edam-volendam">Ongediertebestrijding Edam-Volendam</a>
+              <a href="/ongediertebestrijding-edam-volendam">Ongediertebestrijding Edam-Volendam</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-landsmeer">Ongediertebestrijding Landsmeer</a>
+              <a href="/ongediertebestrijding-landsmeer">Ongediertebestrijding Landsmeer</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-oostzaan">Ongediertebestrijding Oostzaan</a>
+              <a href="/ongediertebestrijding-oostzaan">Ongediertebestrijding Oostzaan</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-purmerend">Ongediertebestrijding Purmerend</a>
+              <a href="/ongediertebestrijding-purmerend">Ongediertebestrijding Purmerend</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-waterland">Ongediertebestrijding Waterland</a>
+              <a href="/ongediertebestrijding-waterland">Ongediertebestrijding Waterland</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-wormerland">Ongediertebestrijding Wormerland</a>
+              <a href="/ongediertebestrijding-wormerland">Ongediertebestrijding Wormerland</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-zaanstad">Ongediertebestrijding Zaanstad</a>
+              <a href="/ongediertebestrijding-zaanstad">Ongediertebestrijding Zaanstad</a>
             </li>
             <li>
-              <a href="ongediertebestrijding-zeevang">Ongediertebestrijding Zeevang</a>
+              <a href="/ongediertebestrijding-zeevang">Ongediertebestrijding Zeevang</a>
             </li>           
           </ul>
         </content>
