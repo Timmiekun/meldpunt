@@ -85,6 +85,12 @@ namespace Meldpunt
       );
 
       routes.MapRoute(
+        "EditPage", // Route name
+        "admin/editpage/{id}", // URL with parameters
+        new { controller = "Admin", action = "EditPage", id = UrlParameter.Optional } // Parameter defaults
+     );
+
+      routes.MapRoute(
          "Admin", // Route name
          "admin/{action}", // URL with parameters
          new { controller = "Admin", action = "Index", id = UrlParameter.Optional } // Parameter defaults
@@ -142,9 +148,9 @@ namespace Meldpunt
 
     protected void Application_Error(Object sender, System.EventArgs e)
     {
-#if debug
-                      throw Server.GetLastError();
-#else
+
+     // throw Server.GetLastError();
+
       var exception = Server.GetLastError();
       var httpException = exception as HttpException;
 
@@ -172,7 +178,6 @@ namespace Meldpunt
         IController errorsController = new ErrorController();
         var rc = new RequestContext(new HttpContextWrapper(Context), routeData);
         errorsController.Execute(rc);
-#endif
       }
     }
   }

@@ -62,11 +62,24 @@ namespace Meldpunt.Controllers
     [HttpPost, ValidateInput(false)]
     public ActionResult EditPlaats(PlaatsModel p)
     { 
-
       plaatsService.UpdateOrInsert(p);
 
       return Redirect("/admin/editplaats/" + p.Gemeentenaam.XmlSafe());
     }
 
+    [HttpGet]
+    public ActionResult EditPage(string id)
+    {
+      PageModel page = pageService.GetPage(id);
+      ViewBag.Locations = LocationUtils.placesByMunicipality.OrderBy(m => m.Key);
+      return View(page);
+    }
+
+    [HttpPost, ValidateInput(false)]
+    public ActionResult EditPage(PageModel page)
+    {
+      pageService.SavePage(page);
+      return Redirect("/admin/editpage/" + page.Id);
+    }
   }
 }

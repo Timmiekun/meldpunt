@@ -21,5 +21,11 @@ namespace Meldpunt.Models
     public bool HasSublingMenu { get; set; }
     public string ParentId { get; set; }    
     public List<PageModel> SubPages { get; set; }    
+
+    //admin
+    public bool Published { get; set; }
+    public bool InTabMenu { get; set; }
+    public string MetaDescription { get; set; }
+
   }
 }

@@ -50,13 +50,46 @@ namespace Meldpunt.Services
       return XmlToModel(page);
     }
 
-    public PageModel SavePage(FormCollection form)
+    public void SavePage(PageModel p)
     {
-      PageModel page = this.GetPage(form["pageId"]);
-      XmlNode pageNode = pagesDoc.SelectSingleNode("//page[@id='" + page.Id + "']");
-      pageNode.SelectSingleNode("content").InnerXml = form["content"];
+      XmlElement page = (XmlElement)pagesDoc.SelectSingleNode("//page[@id='" + p.Id + "']");
+
+      string html = String.Format("<![CDATA[{0}]]>", p.Content);
+
+      if (p != null)
+      {
+        page.SetAttribute("published", p.Published ? "true" : "false");
+        page.SelectSingleNode("content").InnerXml = html;
+        
+        if (page.SelectSingleNode("metadescription") == null)
+          page.AppendChild(pagesDoc.CreateElement("metadescription"));
+        
+        page.SelectSingleNode("metadescription").InnerText = p.MetaDescription;
+        if (page.SelectSingleNode("title") == null)
+          page.AppendChild(pagesDoc.CreateElement("title"));
+        
+        page.SelectSingleNode("title").InnerText = p.Title;
+      }
+      else
+      {
+        page = pagesDoc.CreateElement("plaats");        
+        XmlElement content = pagesDoc.CreateElement("content");
+        XmlElement metaDescription = pagesDoc.CreateElement("metadescription");
+        XmlElement title = pagesDoc.CreateElement("title");
+        content.InnerXml = html;
+        metaDescription.InnerText = p.MetaDescription;
+        title.InnerText = p.Title;
+        page.AppendChild(content);
+        page.AppendChild(metaDescription);
+        page.AppendChild(title);
+        pagesDoc.DocumentElement.AppendChild(page);
+      }
+
+      page.SetAttribute("tab", p.InTabMenu ? "true" : "false");
+      page.SetAttribute("published", p.Published ? "true" : "false");
+      page.SetAttribute("lastmodified", DateTime.Now.ToString("dd-MM-yyyy hh:mm"));
+
       pagesDoc.Save(pageFile);
-      return page;
     }
 
     public List<PageModel> SearchPages(string query)
@@ -106,16 +139,26 @@ namespace Meldpunt.Services
       if (page.SelectSingleNode("content/h1") != null)
         headertitle = page.SelectSingleNode("content/h1").InnerText;
 
+      string metadescription = null;
+      if (page.SelectSingleNode("metadescription") != null)
+        metadescription = page.SelectSingleNode("metadescription").InnerText;
+
+      string html = page.SelectSingleNode("content") != null ? page.SelectSingleNode("content").InnerXml : "";
+      if(html.StartsWith("<![CDATA["))
+        html = html.Trim().Substring(9, html.Length - 12);
+
       PageModel p = new PageModel()
       {
         Id = id,
-        Content = page.SelectSingleNode("content") != null ? page.SelectSingleNode("content").InnerXml : "",
+        Content = html,
         SubPages = subpages,
         Url = url.UrlEncode(),
         ParentId = parentId,
         HasSublingMenu = page.Attributes["haschildmenu"] != null && page.Attributes["haschildmenu"].Value == "true",
         FullText = text,
-        HeaderTitle = headertitle
+        HeaderTitle = headertitle,
+        InTabMenu = page.Attributes["tab"] != null && page.Attributes["tab"].Value == "true",
+        MetaDescription = metadescription
       };
 
       return p;

@@ -3,7 +3,7 @@
 @model List<PageModel>
 @{
   ViewBag.Title = "Admin";
-  var locations = ViewBag.Locations;
+  var locations = ViewBag.Locations;  
   Layout = "~/Views/Shared/_Admin.cshtml";
 }
 
@@ -21,6 +21,17 @@
 
 @section menu{
  <div class="menu">
+   <h2>Pages</h2>
+   <ul>
+     @foreach(PageModel p in Model){
+       <li>
+         <a href="/admin/editpage/@p.Id">@p.Title</a>
+       </li>
+     }
+    </ul>
+ </div>
+
+  <div class="menu">
   <h2>Gemeenten</h2>
   <ul>
     @foreach(var kv in locations){
