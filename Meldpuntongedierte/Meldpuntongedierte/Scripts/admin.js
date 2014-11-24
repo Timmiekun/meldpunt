@@ -1,10 +1,6 @@
 $(function () {
-  //$(".subNav").hide();
-
-  //$(".menu a").click(function (evt) {
-  //  evt.preventDefault();
-  //  var $el = $(this);
-  //  console.log($el.text());
-  //  $el.parent().find(".subNav").first().slideToggle(80);
-  //})
+	$(".js-delete-page").submit(function() {
+		if (!confirm("pagina verwijderen?"))
+			return false;
+	});
 })

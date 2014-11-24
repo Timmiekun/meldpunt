@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Globalization;
-using System.Web.Mvc;
-using System.Web.Security;
+﻿using System.Collections.Generic;
 using System.Web;
 
 namespace Meldpunt.Models
@@ -12,7 +7,9 @@ namespace Meldpunt.Models
   {
     private string host = "http://" + HttpContext.Current.Request.Url.Host + "/";
 
-    public string Title { get { return Utils.Utils.Capitalize(Id.Replace("-", " ").Trim());} }
+    public string Title { 
+		get { return Utils.Utils.Capitalize(Id.Replace("-", " ").Trim());}
+    }
     public string HeaderTitle { get; set; }
     public string Id { get; set; }
     public string Content { get; set; }

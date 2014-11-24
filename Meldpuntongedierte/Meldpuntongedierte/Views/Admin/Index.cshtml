@@ -21,14 +21,16 @@
 
 @section menu{
  <div class="menu">
-   <h2>Pages</h2>
+   <h2>Pagina's</h2>
    <ul>
      @foreach(PageModel p in Model){
        <li>
          <a href="/admin/editpage/@p.Id">@p.Title</a>
        </li>
      }
-    </ul>
+   </ul>
+	 
+	<a href="/admin/newpage" class="js-new-page">Nieuwe pagina</a>
  </div>
 
   <div class="menu">
@@ -42,5 +44,4 @@
     }
   </ul>
 </div>
-
 }
