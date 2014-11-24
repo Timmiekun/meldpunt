@@ -7,6 +7,8 @@
 	Layout = "~/Views/Shared/_Admin.cshtml";
 }
 
+<a href="/admin/newpage?parentid=@Model.Id" class="js-new-page btn btn-default">Nieuwe pagina</a>
+
 <h1>@Model.HeaderTitle</h1>
 
 <a class="viewPage" href="@Model.Url" target="_blank">Pagina bekijken</a>
@@ -45,15 +47,15 @@
 		</textarea>
 	</div>
 	<input type="hidden" name="Id" value="@Model.Id" />
-	<input type="submit" value="opslaan" />
+	<input type="submit" value="opslaan" class="pull-left btn btn-info" />
 </form>
 
 <form action="/admin/deletepage" class="js-delete-page">
 	<input type="hidden" name="Id" value="@Model.Id" />
-	<input type="submit" value="pagina verwijderen" />
+	<input type="submit" value="pagina verwijderen" class="pull-right btn btn-danger" />
 </form>
 
-<a href="/admin/newpage?parentid=@Model.Id" class="js-new-page">Nieuwe pagina</a>
+
 
 @section menu{
 	<div class="menu">
