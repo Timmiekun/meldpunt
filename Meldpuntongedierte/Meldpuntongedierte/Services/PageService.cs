@@ -66,9 +66,9 @@ namespace Meldpunt.Services
 			if (page.SelectSingleNode("title") == null)
 				page.AppendChild(pagesDoc.CreateElement("title"));
 
-			page.SelectSingleNode("title").InnerText = p.Title;
+			page.SelectSingleNode("title").InnerText = p.EditableTitle;
 
-			page.SetAttribute("id", p.Title.XmlSafe());
+			page.SetAttribute("id", p.EditableTitle.XmlSafe());
 			page.SetAttribute("tab", p.InTabMenu ? "true" : "false");
 			page.SetAttribute("published", p.Published ? "true" : "false");
 			page.SetAttribute("lastmodified", DateTime.Now.ToString("dd-MM-yyyy hh:mm"));

@@ -25,7 +25,7 @@ namespace Meldpunt.Controllers
 		public ActionResult Logoff()
 		{
 			Session.Clear();
-			return RedirectToAction("Index");
+			return Redirect("/");
 		}
 
 		[HttpPost]
