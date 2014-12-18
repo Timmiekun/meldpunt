@@ -12,11 +12,7 @@ namespace Meldpunt.ActionFilters
 {
   public class GlobalFilterAttribute : ActionFilterAttribute
   {
-    private PageService pageService;
-    public GlobalFilterAttribute()
-    {
-      pageService = new PageService();      
-    }
+   
 
     public override void OnActionExecuting(ActionExecutingContext filterContext)
     {
@@ -25,6 +21,7 @@ namespace Meldpunt.ActionFilters
 
     public override void OnActionExecuted(ActionExecutedContext filterContext)
     {
+      PageService pageService = new PageService(); 
       var viewResult = filterContext.Result as ViewResult;
 
       if (viewResult != null)
