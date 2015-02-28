@@ -43,65 +43,68 @@
 </head>
 <body>
 
-   <div class="topBar">
+  <div class="topBar">
+    <img src="/Images/rat.jpg" class="ratImage"/>
     <h2>
-    <a class="logo" href="/"><img src="/Images/Logo definitief voor website.png" alt="Meldpunt Ongedierte logo" /></a>
-    <a class="logotext" href="/">@logoText</a></h2>    
-    <div id="tabholder">      
+      <a class="logo" href="/"><img src="/Images/Logo definitief voor website.png" alt="Meldpunt Ongedierte logo" /></a>
+      <a class="logotext" href="/">@logoText</a>
+    </h2>
+
+    <div id="tabholder">
       <div id="tabs">
         @foreach (PageModel tabItem in pagesForTabs)
+        {
+          string className = "tabItem";
+          if (Request.Url.AbsolutePath.Contains(tabItem.Id) || tabItem.Id == "home" && Request.Url.AbsolutePath == "/")
           {
-            string className = "tabItem";
-            if (Request.Url.AbsolutePath.Contains(tabItem.Id) || tabItem.Id == "home" && Request.Url.AbsolutePath == "/")
-            {
-              className += " activeTab";
-            }
-          <a class="@className" href="@tabItem.Url">@tabItem.Title</a>
+            className += " activeTab";
           }
+          <a class="@className" href="@tabItem.Url">@tabItem.Title</a>
+        }
       </div>
     </div>
   </div>
 
 
   <div id="main" class="main">
-      <div id="breadcrumbs">
-        <a href="/">Home</a>
-        @if (breadcrumbs.Count > 0)
-        {          
+    <div id="breadcrumbs">
+      <a href="/">Home</a>
+      @if (breadcrumbs.Count > 0)
+      {
         <span> ></span>
-        }
-        @for (int i = 0; i < breadcrumbs.Count; i++ )
+      }
+      @for (int i = 0; i < breadcrumbs.Count; i++)
+      {
+        <a href="@breadcrumbs[i].Url">@breadcrumbs[i].Title</a>
+        if (i < breadcrumbs.Count - 1)
         {
-          <a href="@breadcrumbs[i].Url">@breadcrumbs[i].Title</a>
-          if (i < breadcrumbs.Count - 1)
-          {
-            <span> > </span>
-          }
+          <span> > </span>
         }
-      </div>
-    
-    <div id="header">      
+      }
+    </div>
+
+    <div id="header">
       <form method="get" autocomplete="off" action="/zoek" class="zoekForm">
-      <input id="zoek" placeholder=" b.v. Amsterdam" type="text" name="q" onkeyup="suggest.getSuggests(event,this);"><input
-        type="submit" value="zoek" class="searchSubmit"></form>
+        <input id="zoek" placeholder=" b.v. Amsterdam" type="text" name="q" onkeyup="suggest.getSuggests(event,this);"><input type="submit" value="zoek" class="searchSubmit">
+      </form>
       <div id="suggests"
-        class="suggest-hidden">
+           class="suggest-hidden">
       </div>
     </div>
-    
+
     <div class="content">
       @RenderBody()
     </div>
-    
+
     @if (ViewBag.HidePhoneNumber == null)
     {
-    <p class="phoneNumber">0900-2556677</p>
+      <p class="phoneNumber">0900-2556677</p>
     }
 
-    @RenderSection("menu",false)    
-  
+    @RenderSection("menu", false)
+
     <div class="footer">
-       <div class="veiligheidsregios">
+      <div class="veiligheidsregios">
         <h2>Regionale dienstverlening Meldpunt Ongedierte</h2>
         @foreach (List<PageModel> list in regioPages)
         {
@@ -112,10 +115,10 @@
             }
           </ul>
         }
-      </div>    
+      </div>
     </div>
   </div>
- 
+
 
   <script type="text/javascript">
     var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
@@ -128,4 +131,5 @@
     } catch (err) { }
   </script>
 </body>
+
 </html>

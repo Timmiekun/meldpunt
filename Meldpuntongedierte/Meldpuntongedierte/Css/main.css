@@ -77,6 +77,18 @@ h2 {
     text-decoration: none;
   }
 
+  .topBar .ratImage {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+    float: right;
+    position: relative;
+    top: 20px;
+  }
+
 #tabholder {
   background-color: #83003c;
   position: relative;
@@ -244,13 +256,13 @@ h2 {
   background-color: #83003C;
   color: White;
   clear: both;
-  margin: 10px -10px 0px -10px;  
+  margin: 10px -10px 0px -10px;
 }
 
-.footer a:hover, .footer a {
-  color: White;
-  text-decoration: none;
-}
+  .footer a:hover, .footer a {
+    color: White;
+    text-decoration: none;
+  }
 
 ul {
   list-style-type: disc;
@@ -258,7 +270,7 @@ ul {
 }
 
   ul li {
-    margin-left: 10px;    
+    margin-left: 10px;
     line-height: 150%;
   }
 
@@ -306,13 +318,13 @@ h3 {
 }
 
 .phone {
-font-size: 22px;
-margin: 30px 0px;
-color: #83003c;
-background-image: url(/Images/call_20px.png);
-background-repeat: no-repeat;
-line-height: 24px;
-background-position: 192px 3px;
+  font-size: 22px;
+  margin: 30px 0px;
+  color: #83003c;
+  background-image: url(/Images/call_20px.png);
+  background-repeat: no-repeat;
+  line-height: 24px;
+  background-position: 192px 3px;
 }
 
 .phone,
@@ -344,13 +356,13 @@ background-position: 192px 3px;
 
 .regiolist li a {
   color: white;
-  text-decoration: none;      
+  text-decoration: none;
 }
 
 
 .veiligheidsregios {
   overflow: hidden;
-  padding: 0px 20px 20px 20px;  
+  padding: 0px 20px 20px 20px;
   clear: both;
   background-color: #83003C;
   color: white;
@@ -369,7 +381,6 @@ background-position: 192px 3px;
   float: left;
 }
 
-.regiolist li {
-  margin: 0;  
-}
-
+  .regiolist li {
+    margin: 0;
+  }
