@@ -198,6 +198,7 @@ h2 {
 }
 
 .menu {
+  float:left;
   position: relative;
   left: -10px;
   width: 190px;
@@ -383,4 +384,60 @@ h3 {
 
   .regiolist li {
     margin: 0;
+  }
+
+  
+  @media only screen and (max-width:768px){
+	#tabs a {
+		font-size:16px !important;
+		clear:both;
+	}
+	.menu {
+	   float:none;  
+	   padding-top: 0px;
+	   width:auto;
+	   margin-bottom:10px;
+	}
+	.menu a {
+	  font-size:18px;
+	  border-bottom:1px solid purple;
+	}
+	.content{
+	  float:none;  
+	}
+	#breadcrumbs {
+	  display:none;
+	}
+	#tabholder {
+	  padding:5px;
+	}
+	.tabItem {
+	   display:block;
+	   width:90%;
+	}
+	#header { 
+	   display:none;
+	}
+	.topBar {
+		width:342px;
+	}
+	.main {
+		width:320px;
+	}
+	#tabs {
+		width:320px;
+	} 
+	ul {
+	  margin:auto;
+	}
+	.content {
+	  width:auto;
+	}
+	.regiolist li a {
+		font-size:16px;
+		margin-bottom:5px;
+	}
+	.phone {
+		background-image:none;
+	}
   }
