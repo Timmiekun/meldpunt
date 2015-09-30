@@ -147,6 +147,7 @@
     <Content Include="Images\Logo.png" />
     <Content Include="Images\page_white_acrobat.png" />
     <Content Include="Images\page_word.png" />
+    <Content Include="Images\rat.jpg" />
     <Content Include="Images\shadow_bottom.png" />
     <Content Include="Images\Wasp.JPG" />
     <Content Include="robots.txt" />
