@@ -51,7 +51,7 @@ namespace Meldpunt.Services
       html = html.Trim().Substring(9, html.Length - 12);
       XmlDocument d = LoadAsXml(html);
       string text = d != null ? d.InnerText : "";
-      string title = "";
+      
       string gemeentenaam = plaatsElement.Attributes["name"].Value;
       string plaatsnaam = LocationUtils.allPlaces.FirstOrDefault(g => g.XmlSafe().Equals(gemeentenaam));
       if(!String.IsNullOrWhiteSpace(plaatsnaam))
@@ -60,6 +60,7 @@ namespace Meldpunt.Services
       if(gemeente.Key != null)
         gemeentenaam = gemeente.Key;
 
+      string title = "";
       if(plaatsElement.SelectSingleNode("title")!=null)
         title=plaatsElement.SelectSingleNode("title").InnerText;
 
@@ -112,33 +113,6 @@ namespace Meldpunt.Services
       plaats.SetAttribute("lastmodified", DateTime.Now.ToString("dd-MM-yyyy hh:mm"));
 
       plaatsenDoc.Save(plaatsFile);
-    }
-
-    private bool IsValidXML(string value)
-    {
-      try
-      {
-        // Check we actually have a value
-        if (string.IsNullOrEmpty(value) == false)
-        {
-          // Try to load the value into a document
-          XmlDocument xmlDoc = new XmlDocument();
-
-          xmlDoc.LoadXml(value);
-
-          // If we managed with no exception then this is valid XML!
-          return true;
-        }
-        else
-        {
-          // A blank value is not valid xml
-          return false;
-        }
-      }
-      catch (System.Xml.XmlException)
-      {
-        return false;
-      }
     }
 
     private XmlDocument LoadAsXml(string s)
