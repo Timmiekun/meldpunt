@@ -12,7 +12,7 @@
 
 <!DOCTYPE html>
 <html>
-<head>  
+<head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>@ViewBag.Title</title>
   <meta http-equiv="Content-Type" lang="nl" content="text/html; charset=utf-8">
@@ -20,13 +20,16 @@
   <meta name="keywords" lang="nl" content="meldpunt ongedierte, wespen, houtworm, muizen, ratten, vlooien, papiervisjes, wespen bestrijding, wespen overlast, wespennest, wespenest, plaag, wespenplaag, vlooienplaag. ">
   <meta name="verify-v1" lang="nl" content="8aAymk/nYCxbP0Y9bqA+9BQWFV1ubxWH6L4ZCHAcoYA=">
   <meta name="robots" content="index,follow">
+  <meta name="viewport" content="width=360">
+
   <link type="text/css" rel="stylesheet" href="/css/reset.css">
   <link type="text/css" rel="stylesheet" href="/css/main.css">
   <link type="text/css" rel="stylesheet" href="/css/suggest.css">
+
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-  <script type="text/javascript" src="/Scripts/meldpunt.js">;</script>
-  <script type="text/javascript" src="/Scripts/suggest.js">;</script>
-  <script type="text/javascript" src="/Scripts/xmlhttp.js">;</script>
+  <script type="text/javascript" src="/Scripts/meldpunt.js">    ;</script>
+  <script type="text/javascript" src="/Scripts/suggest.js">    ;</script>
+  <script type="text/javascript" src="/Scripts/xmlhttp.js">    ;</script>
   <script type="text/javascript">
 
     var _gaq = _gaq || [];
@@ -38,13 +41,13 @@
       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
-		 
+
   </script>
 </head>
 <body>
 
   <div class="topBar">
-    <img src="/Images/rat.jpg" class="ratImage"/>
+    <img src="/Images/rat.jpg" class="ratImage" />
     <h2>
       <a class="logo" href="/"><img src="/Images/Logo definitief voor website.png" alt="Meldpunt Ongedierte logo" /></a>
       <a class="logotext" href="/">@logoText</a>
@@ -92,6 +95,8 @@
       </div>
     </div>
 
+    @RenderSection("menu", false)
+
     <div class="content">
       @RenderBody()
     </div>
@@ -100,8 +105,6 @@
     {
       <p class="phoneNumber">0900-2556677</p>
     }
-
-    @RenderSection("menu", false)
 
     <div class="footer">
       <div class="veiligheidsregios">
@@ -119,6 +122,19 @@
     </div>
   </div>
 
+  <script type="text/javascript">
+    var el = '<div class="goto-menu-mobile" onclick="document.getElementById(\'tabs\').scrollIntoView()">menu</div>';
+    document.body.innerHTML += el;
+
+    document.body.onload = function () {
+      var width = window.innerWidth
+        || document.documentElement.clientWidth
+        || document.body.clientWidth;
+      if (width <= 768) {
+        window.setTimeout(function () { document.getElementsByClassName('content')[0].scrollIntoView() }, 500);
+      }
+    }
+  </script>
 
   <script type="text/javascript">
     var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
