@@ -64,7 +64,7 @@ namespace Meldpunt.Controllers
       }
 
       // gemeente page?
-      string prefix = "ongediertebestrijding-";      
+      string prefix = "ongediertebestrijding-";
       
       // begint de pagina niet met de prefix en is het een plaats? Dan redirecten naar de juiste url met prefix.
       if (!id.StartsWith(prefix) && LocationUtils.IsLocation(id)) {

@@ -9,13 +9,6 @@ namespace Meldpunt.ActionFilters
 {
   public class GlobalFilterAttribute : ActionFilterAttribute
   {
-   
-
-    public override void OnActionExecuting(ActionExecutingContext filterContext)
-    {
-      base.OnActionExecuting(filterContext);
-    }
-
     public override void OnActionExecuted(ActionExecutedContext filterContext)
     {
       PageService pageService = new PageService(); 
