@@ -1,19 +1,22 @@
 ﻿@using Meldpunt.Models;
 @using Meldpunt.Utils;
-@{ 
+@{
   Layout = "";
 
   var pages = ViewBag.Pages as List<PageModel>;
-  var locations = ViewBag.Locations as IEnumerable<PlaatsModel>;
-  
-  }
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
-  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" 
-  xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  var locations = ViewBag.Locations as Dictionary<string, HashSet<string>>;
+
+  string[] wespenGemeentes = { "enschede", "nijmegen", "groningen", "rotterdam", "breda" };
+
+}
+<?xml version="1.0" encoding="UTF-8" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+
   @foreach (var page in pages)
   {
-    <url> 
+    <url>
       <loc>http://meldpuntongedierte.nl@(page.Url)</loc>
       <changefreq>monthly</changefreq>
     </url>
@@ -21,10 +24,17 @@
 
   @foreach (var location in locations)
   {
-    
-     <url> 
-      <loc>http://meldpuntongedierte.nl/ongediertebestrijding-@location.Gemeentenaam.XmlSafe()</loc> 
+    <url>
+      <loc>http://meldpuntongedierte.nl/ongediertebestrijding-@location.Key.XmlSafe()</loc>
       <changefreq>monthly</changefreq>
     </url>
+
+    if (wespenGemeentes.Contains(location.Key.ToLower()))
+    {
+      <url>
+        <loc>http://meldpuntongedierte.nl/ongediertebestrijding-@location.Key.XmlSafe()/wespennest</loc>
+        <changefreq>monthly</changefreq>
+      </url>
+    }
   }
 </urlset>

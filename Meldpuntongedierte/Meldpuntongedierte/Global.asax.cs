@@ -109,6 +109,12 @@ namespace Meldpunt
       );
 
       routes.MapRoute(
+        "GetPageWespennest", // Route name
+        "{id}/wespennest", // URL with parameters
+        new { controller = "Home", action = "GetPageWespennest", id = UrlParameter.Optional } // Parameter defaults
+     );
+
+      routes.MapRoute(
         "SubPage", // Route name
         "{a}/{id}", // URL with parameters
         new { controller = "Home", action = "GetPage", id = UrlParameter.Optional } // Parameter defaults
@@ -148,9 +154,6 @@ namespace Meldpunt
 
     protected void Application_Error(Object sender, System.EventArgs e)
     {
-
-     // throw Server.GetLastError();
-
       var exception = Server.GetLastError();
       var httpException = exception as HttpException;
 

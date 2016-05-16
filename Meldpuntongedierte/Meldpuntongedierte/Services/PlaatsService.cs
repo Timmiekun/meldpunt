@@ -29,7 +29,7 @@ namespace Meldpunt.Services
         Plaatsen.Add(plaats.InnerText);
     }
 
-    public IEnumerable<PlaatsModel> GetAllPlaatModels()
+    public IEnumerable<PlaatsModel> GetAllPlaatsModels()
     {
       XmlNodeList plaatsElements = plaatsenDoc.SelectNodes("//plaats[@published='true']");
       foreach (var plaats in plaatsElements)

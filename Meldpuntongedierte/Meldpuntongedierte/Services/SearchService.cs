@@ -53,7 +53,7 @@ namespace Meldpunt.Services
         w.AddDocument(doc);
       }
 
-      foreach (PlaatsModel plaats in plaatsService.GetAllPlaatModels())
+      foreach (PlaatsModel plaats in plaatsService.GetAllPlaatsModels())
       {
         Document doc = new Document();
         doc.Add(new Field("title", plaats.Gemeentenaam, Field.Store.YES, Field.Index.ANALYZED));

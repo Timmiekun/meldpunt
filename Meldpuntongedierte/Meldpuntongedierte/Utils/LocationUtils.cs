@@ -19,7 +19,7 @@ namespace Meldpunt.Utils
 
     static LocationUtils()
     {
-      String file = HttpContext.Current.Server.MapPath("~/App_Data/2012_Woonplaatsen_in_Nederland.csv");
+      String file = HttpContext.Current.Server.MapPath("~/App_Data/Woonplaatsen_in_Nede_160516123828.csv");
 
       // load places by municipality
       placesByMunicipality = new Dictionary<string, HashSet<string>>();
@@ -35,8 +35,14 @@ namespace Meldpunt.Utils
         while (!String.IsNullOrWhiteSpace((line = tr.ReadLine())))
         {
           string[] values = line.Split(';');
+
+          if (values.Length <= 1)
+          {
+            continue;
+          }
+
           string plaats = values[0].Trim('"');
-          string gemeente = values[3].Trim('"');
+          string gemeente = values[1].Trim('"');
           allPlaces.Add(plaats);
 
           if (!placesByMunicipality.ContainsKey(gemeente))

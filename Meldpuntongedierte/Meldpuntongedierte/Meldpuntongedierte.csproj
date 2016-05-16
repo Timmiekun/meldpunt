@@ -190,6 +190,7 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Shared\subPagesPartial.cshtml" />
     <Content Include="Views\Shared\_Admin.cshtml" />
+    <Content Include="App_Data\Woonplaatsen_in_Nede_160516123828.csv" />
     <None Include="Properties\PublishProfiles\local.pubxml" />
     <None Include="Properties\PublishProfiles\meldpuntongedierte - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\meldpuntongedierte - Web Deploy.pubxml" />
@@ -208,6 +209,7 @@
     <Content Include="Views\Home\SiteMap.cshtml" />
     <Content Include="Views\Admin\adminNav.cshtml" />
     <Content Include="Views\Admin\EditPage.cshtml" />
+    <Content Include="Views\Home\PlaatsWespennest.cshtml" />
     <None Include="Volksgezondheid.pdf" />
     <None Include="Web.azure.config">
       <DependentUpon>Web.config</DependentUpon>
