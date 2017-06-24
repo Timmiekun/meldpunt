@@ -25,6 +25,7 @@
   <link type="text/css" rel="stylesheet" href="/css/reset.css">
   <link type="text/css" rel="stylesheet" href="/css/main.css">
   <link type="text/css" rel="stylesheet" href="/css/suggest.css">
+  <link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Catamaran:400,700,900" rel="stylesheet">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
   <script type="text/javascript" src="/Scripts/meldpunt.js">    ;</script>
@@ -48,6 +49,11 @@
 
   <div class="topBar">
     <img src="/Images/rat.jpg" class="ratImage" />
+
+        @if (ViewBag.HidePhoneNumber == null)
+        {
+          <p class="phoneNumber">0900-2556677</p>
+        }
     <h2>
       <a class="logo" href="/"><img src="/Images/Logo definitief voor website.png" alt="Meldpunt Ongedierte logo" /></a>
       <a class="logotext" href="/">@logoText</a>
@@ -70,41 +76,39 @@
 
 
   <div id="main" class="main">
-    <div id="breadcrumbs">
-      <a href="/">Home</a>
-      @if (breadcrumbs.Count > 0)
-      {
-        <span> ></span>
-      }
-      @for (int i = 0; i < breadcrumbs.Count; i++)
-      {
-        <a href="@breadcrumbs[i].Url">@breadcrumbs[i].Title</a>
-        if (i < breadcrumbs.Count - 1)
-        {
-          <span> > </span>
-        }
-      }
-    </div>
 
     <div id="header">
-      <form method="get" autocomplete="off" action="/zoek" class="zoekForm">
-        <input id="zoek" placeholder=" b.v. Amsterdam" type="text" name="q" onkeyup="suggest.getSuggests(event,this);"><input type="submit" value="zoek" class="searchSubmit">
-      </form>
-      <div id="suggests"
-           class="suggest-hidden">
+      <div class="breadcrumbs">
+        <a href="/">Home</a>
+        @if (breadcrumbs.Count > 0)
+        {
+          <span> ></span>
+        }
+        @for (int i = 0; i < breadcrumbs.Count; i++)
+        {
+          <a href="@breadcrumbs[i].Url">@breadcrumbs[i].Title</a>
+          if (i < breadcrumbs.Count - 1)
+          {
+            <span> > </span>
+          }
+        }
+      </div>
+      <div class="zoekform-element">
+        <form method="get" autocomplete="off" action="/zoek" class="zoekForm">
+          <input id="zoek" placeholder="Zoek op gemeente of stad..." type="text" name="q" onkeyup="suggest.getSuggests(event,this);"><input type="submit" value="zoek" class="searchSubmit">
+        </form>
+        <div id="suggests"
+             class="suggest-hidden">
+        </div>
       </div>
     </div>
 
-    @RenderSection("menu", false)
-
-    <div class="content">
-      @RenderBody()
+    <div class="content-and-sidebar">
+      <div class="content">
+        @RenderBody()
+      </div>
+      @RenderSection("menu", false)
     </div>
-
-    @if (ViewBag.HidePhoneNumber == null)
-    {
-      <p class="phoneNumber">0900-2556677</p>
-    }
 
     <div class="footer">
       <div class="veiligheidsregios">
