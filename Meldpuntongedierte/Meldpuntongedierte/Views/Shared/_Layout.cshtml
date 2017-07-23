@@ -20,7 +20,7 @@
   <meta name="keywords" lang="nl" content="meldpunt ongedierte, wespen, houtworm, muizen, ratten, vlooien, papiervisjes, wespen bestrijding, wespen overlast, wespennest, wespenest, plaag, wespenplaag, vlooienplaag. ">
   <meta name="verify-v1" lang="nl" content="8aAymk/nYCxbP0Y9bqA+9BQWFV1ubxWH6L4ZCHAcoYA=">
   <meta name="robots" content="index,follow">
-  <meta name="viewport" content="width=360">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
   <link type="text/css" rel="stylesheet" href="/css/reset.css">
   <link type="text/css" rel="stylesheet" href="/css/main.css">
@@ -48,17 +48,18 @@
 <body>
 
   <div class="topBar">
-    <img src="/Images/rat.jpg" class="ratImage" />
-
+    <div class="heading">
+      <div class="woordmerk">
+        <h2><a class="logotext" href="/">@logoText</a></h2>
+      </div>
+      <div class="phoneButton">
         @if (ViewBag.HidePhoneNumber == null)
         {
-          <p class="phoneNumber">0900-2556677</p>
+          <a href="tel:0900-2556677" class="phoneNumber">0900-2556677</a>
         }
-    <h2>
-      <a class="logo" href="/"><img src="/Images/Logo definitief voor website.png" alt="Meldpunt Ongedierte logo" /></a>
-      <a class="logotext" href="/">@logoText</a>
-    </h2>
-
+      </div>
+      <img src="/Images/wasp.png" class="headerImage">
+    </div>
     <div id="tabholder">
       <div id="tabs">
         @foreach (PageModel tabItem in pagesForTabs)
@@ -82,20 +83,21 @@
         <a href="/">Home</a>
         @if (breadcrumbs.Count > 0)
         {
-          <span> ></span>
+          <span> /</span>
         }
         @for (int i = 0; i < breadcrumbs.Count; i++)
         {
           <a href="@breadcrumbs[i].Url">@breadcrumbs[i].Title</a>
           if (i < breadcrumbs.Count - 1)
           {
-            <span> > </span>
+            <span> / </span>
           }
         }
       </div>
       <div class="zoekform-element">
         <form method="get" autocomplete="off" action="/zoek" class="zoekForm">
-          <input id="zoek" placeholder="Zoek op gemeente of stad..." type="text" name="q" onkeyup="suggest.getSuggests(event,this);"><input type="submit" value="zoek" class="searchSubmit">
+          <input id="zoek" placeholder="Zoek op uw plaatsnaam..." type="text" name="q" onkeyup="suggest.getSuggests(event,this);"><input
+            type="submit" class="searchSubmit" value="  "></form>
         </form>
         <div id="suggests"
              class="suggest-hidden">
@@ -111,8 +113,13 @@
     </div>
 
     <div class="footer">
+      <h2 class="footer-woordmerk">Meldpunt Ongedierte</h2>
       <div class="veiligheidsregios">
-        <h2>Regionale dienstverlening Meldpunt Ongedierte</h2>
+        <div>
+          <h3>Regionale dienstverlening Meldpunt Ongedierte</h3>
+          <p>Bel <a href="tel:0900-2556677">0900-2556677</a></p>
+          <p><a href="mailto:info@meldpuntongedierte.nl">info@meldpuntongedierte.nl</a></p>
+        </div>
         @foreach (List<PageModel> list in regioPages)
         {
           <ul class="regiolist">

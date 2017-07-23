@@ -2578,8 +2578,8 @@
     <title>Contact</title>
   </page>
   <page id="regios" published="false" tab="false" lastmodified="10-10-2015 09:09">
-    <content><![CDATA[<h1 style="text-align: center;">Regionale dienstverlening</h1>
-<h1 style="text-align: center;">Meldpunt Ongedierte</h1>
+    <content><![CDATA[<h1>Regionale dienstverlening</h1>
+<h1>Meldpunt Ongedierte</h1>
 <h2>&nbsp;</h2>
 <h2>Wat te doen bij overlast van ongedierte?</h2>
 <p>Als u contact zoekt in verband met overlast van ongedierte, dan klikt u hiernaast op de regio waar u woonachtend of gevestigd bent.</p>
@@ -2590,7 +2590,7 @@
     <pages>
       <page id="gelderland-zuid">
         <content>
-          <h1>Meldpunt Ongedierte Gelderland Zuid</h1>
+          <h1><span class="pre-header">Meldpunt Ongedierte</span> Gelderland Zuid</h1>
           <p>
             Meldpunt Ongedierte Gelderland Zuid coördineert alle meldingen rondom ongedierte en
             plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze
@@ -2639,7 +2639,7 @@
       </page>
       <page id="hollands-midden">
         <content>
-          <h1>Meldpunt Ongedierte Hollands Midden</h1>
+          <h1><span class="pre-header">Meldpunt Ongedierte</span> Hollands Midden</h1>
           <p>
             Meldpunt Ongedierte Hollands Midden coördineert alle meldingen rondom ongedierte en
             plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze
@@ -2706,7 +2706,7 @@
       </page>
       <page id="gooi-en-vechtstreek">
         <content>
-          <h1>Meldpunt Ongedierte Gooi en Vechtstreek</h1>
+          <h1><span class="pre-header">Meldpunt Ongedierte</span> Gooi en Vechtstreek</h1>
           <p>
             Meldpunt Ongedierte Gooi en Vechtstreek coördineert alle meldingen rondom ongedierte en
             plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze
@@ -2752,7 +2752,7 @@
       </page>
       <page id="brabant-noord">
         <content>
-          <h1>Meldpunt Ongedierte Brabant-Noord</h1>
+          <h1><span class="pre-header">Meldpunt Ongedierte</span> Brabant-Noord</h1>
           <p>
             Meldpunt Ongedierte Gooi en Vechtstreek coördineert alle meldingen rondom ongedierte en
             plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze
@@ -2801,7 +2801,7 @@
       </page>
       <page id="noord-holland-noord">
         <content>
-          <h1>Meldpunt Ongedierte Noord-Holland Noord</h1>
+          <h1><span class="pre-header">Meldpunt Ongedierte</span> Noord-Holland Noord</h1>
           <p>
             Meldpunt Ongedierte Noord-Holland Noord coördineert alle meldingen rondom ongedierte en
             plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze
@@ -2847,7 +2847,7 @@
       </page>
       <page id="rotterdam-rijnmond">
         <content>
-          <h1>Meldpunt Ongedierte Rotterdam-Rijnmond</h1>
+          <h1><span class="pre-header">Meldpunt Ongedierte</span> Rotterdam-Rijnmond</h1>
           <p>
             Meldpunt Ongedierte Rotterdam-Rijnmond coördineert alle meldingen rondom ongedierte en
             plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze
@@ -2896,7 +2896,7 @@
       </page>
       <page id="brabant-zuidoost">
         <content>
-          <h1>Meldpunt Ongedierte Brabant Zuidoost</h1>
+          <h1><span class="pre-header">Meldpunt Ongedierte</span> Brabant Zuidoost</h1>
           <p>
             Meldpunt Ongedierte Brabant Zuidoost coördineert alle meldingen rondom ongedierte en
             plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze
@@ -2954,7 +2954,7 @@
       </page>
       <page id="amsterdam-amstelland">
         <content>
-          <h1>Meldpunt Ongedierte Amsterdam-Amstelland</h1>
+          <h1><span class="pre-header">Meldpunt Ongedierte</span> Amsterdam-Amstelland</h1>
           <p>
             Meldpunt Ongedierte Amsterdam-Amstelland coördineert alle meldingen rondom ongedierte en
             plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze
@@ -2994,7 +2994,7 @@
       </page>
       <page id="zuid-holland-zuid">
         <content>
-          <h1>Meldpunt Ongedierte Zuid-Holland Zuid</h1>
+          <h1><span class="pre-header">Meldpunt Ongedierte</span> Zuid-Holland Zuid</h1>
           <p>
             Meldpunt Ongedierte Zuid-Holland Zuid coördineert alle meldingen rondom ongedierte en
             plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze
@@ -3046,7 +3046,7 @@
       </page>
       <page id="midden-en-west-brabant">
         <content>
-          <h1>Meldpunt Ongedierte Midden- en West-Brabant</h1>
+          <h1><span class="pre-header">Meldpunt Ongedierte</span> Midden- en West-Brabant</h1>
           <p>
             Meldpunt Ongedierte Midden- en West-Brabant coördineert alle meldingen rondom ongedierte en
             plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze
@@ -3107,7 +3107,7 @@
       </page>
       <page id="noord-en-oost-gelderland">
         <content>
-          <h1>Meldpunt Ongedierte Noord- en Oost Gelderland</h1>
+          <h1><span class="pre-header">Meldpunt Ongedierte</span> Noord- en Oost Gelderland</h1>
           <p>
             Meldpunt Ongedierte Midden- en West-Brabant coördineert alle meldingen rondom ongedierte en
             plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze
@@ -3159,7 +3159,7 @@
       </page>
       <page id="haaglanden">
         <content>
-          <h1>Meldpunt Ongedierte Haaglanden</h1>
+          <h1><span class="pre-header">Meldpunt Ongedierte</span> Haaglanden</h1>
           <p>
             Meldpunt Ongedierte Haaglanden coördineert alle meldingen rondom ongedierte en
             plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze
@@ -3202,7 +3202,7 @@
       </page>
       <page id="flevoland">
         <content>
-          <h1>Meldpunt Ongedierte Flevoland</h1>
+          <h1><span class="pre-header">Meldpunt Ongedierte</span> Flevoland</h1>
           <p>
             Meldpunt Ongedierte Flevoland coördineert alle meldingen rondom ongedierte en
             plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze
@@ -3233,7 +3233,7 @@
       </page>
       <page id="gelderland-midden">
         <content>
-          <h1>Meldpunt Ongedierte Gelderland Midden</h1>
+          <h1><span class="pre-header">Meldpunt Ongedierte</span> Gelderland Midden</h1>
           <p>
             Meldpunt Ongedierte Gelderland Midden coördineert alle meldingen rondom ongedierte en
             plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze
@@ -3279,7 +3279,7 @@
       </page>
       <page id="kennemerland">
         <content>
-          <h1>Meldpunt Ongedierte Kennemerland</h1>
+          <h1><span class="pre-header">Meldpunt Ongedierte</span> Kennemerland</h1>
           <p>
             Meldpunt Ongedierte Kennemerland coördineert alle meldingen rondom ongedierte en
             plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze
@@ -3319,7 +3319,7 @@
       </page>
       <page id="utrecht">
         <content>
-          <h1>Meldpunt Ongedierte Utrecht</h1>
+          <h1><span class="pre-header">Meldpunt Ongedierte</span> Utrecht</h1>
           <p>
             Meldpunt Ongedierte Utrecht coördineert alle meldingen rondom ongedierte en
             plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze
@@ -3395,7 +3395,7 @@
       </page>
       <page id="zaanstreek-waterland">
         <content>
-          <h1>Meldpunt Ongedierte Zaanstreek-Waterland</h1>
+          <h1><span class="pre-header">Meldpunt Ongedierte</span> Zaanstreek-Waterland</h1>
           <p>
             Meldpunt Ongedierte Zaanstreek-Waterland coördineert alle meldingen rondom ongedierte en
             plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze
