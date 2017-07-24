@@ -64,6 +64,10 @@ namespace Meldpunt.Services
       if(plaatsElement.SelectSingleNode("title")!=null)
         title=plaatsElement.SelectSingleNode("title").InnerText;
 
+      string phone = "";
+      if (plaatsElement.SelectSingleNode("phone") != null)
+        phone = plaatsElement.SelectSingleNode("phone").InnerText;
+
       DateTime lastModified = DateTime.ParseExact(plaatsElement.Attributes["lastmodified"].Value, "dd-MM-yyyy HH:mm", CultureInfo.InvariantCulture);
 
       return new PlaatsModel
@@ -74,7 +78,8 @@ namespace Meldpunt.Services
         MetaDescription = plaatsElement.SelectSingleNode("metadescription").InnerText,
         LastModified = lastModified,
         Published = plaatsElement.Attributes["published"].Value == "true",
-        Title = title
+        Title = title,
+        PhoneNumber = phone
       };
     }
 
