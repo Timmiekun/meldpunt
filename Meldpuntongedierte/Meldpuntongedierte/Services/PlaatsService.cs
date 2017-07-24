@@ -92,6 +92,10 @@ namespace Meldpunt.Services
         if (plaats.SelectSingleNode("title") == null)
           plaats.AppendChild(plaatsenDoc.CreateElement("title"));
         plaats.SelectSingleNode("title").InnerText = p.Title;
+
+        if (plaats.SelectSingleNode("phone") == null)
+          plaats.AppendChild(plaatsenDoc.CreateElement("phone"));
+        plaats.SelectSingleNode("phone").InnerText = p.PhoneNumber;
       }
       else
       {
@@ -100,12 +104,15 @@ namespace Meldpunt.Services
         XmlElement content = plaatsenDoc.CreateElement("content");
         XmlElement metaDescription = plaatsenDoc.CreateElement("metadescription");
         XmlElement title = plaatsenDoc.CreateElement("title");
+        XmlElement phone = plaatsenDoc.CreateElement("phone");
         content.InnerXml = html;
         metaDescription.InnerText = p.MetaDescription;
         title.InnerText = p.Title;
+        phone.InnerText = p.PhoneNumber;
         plaats.AppendChild(content);
         plaats.AppendChild(metaDescription);
         plaats.AppendChild(title);
+        plaats.AppendChild(phone);
         plaatsenDoc.DocumentElement.AppendChild(plaats);
       }
 
