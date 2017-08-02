@@ -39,6 +39,9 @@
 
 @if (!String.IsNullOrWhiteSpace(Model.Content) && Model.Published)
 {
+  <h1 class="plaatsheader"><span class="pre-header">Meldpunt Ongediertebestrijding</span> @Model.Gemeentenaam</h1>
+  <div class="phone"><a href="tel:@Model.PhoneNumber">@Model.PhoneNumber</a></div>
+
   @Html.Raw(Model.Content)
 }
 else

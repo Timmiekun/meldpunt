@@ -64,6 +64,10 @@ namespace Meldpunt.Services
       if(plaatsElement.SelectSingleNode("title")!=null)
         title=plaatsElement.SelectSingleNode("title").InnerText;
 
+      string phone = "";
+      if (plaatsElement.SelectSingleNode("phone") != null)
+        phone = plaatsElement.SelectSingleNode("phone").InnerText;
+
       DateTime lastModified = DateTime.ParseExact(plaatsElement.Attributes["lastmodified"].Value, "dd-MM-yyyy HH:mm", CultureInfo.InvariantCulture);
 
       return new PlaatsModel
@@ -74,7 +78,8 @@ namespace Meldpunt.Services
         MetaDescription = plaatsElement.SelectSingleNode("metadescription").InnerText,
         LastModified = lastModified,
         Published = plaatsElement.Attributes["published"].Value == "true",
-        Title = title
+        Title = title,
+        PhoneNumber = phone
       };
     }
 
@@ -92,6 +97,10 @@ namespace Meldpunt.Services
         if (plaats.SelectSingleNode("title") == null)
           plaats.AppendChild(plaatsenDoc.CreateElement("title"));
         plaats.SelectSingleNode("title").InnerText = p.Title;
+
+        if (plaats.SelectSingleNode("phone") == null)
+          plaats.AppendChild(plaatsenDoc.CreateElement("phone"));
+        plaats.SelectSingleNode("phone").InnerText = p.PhoneNumber;
       }
       else
       {
@@ -100,12 +109,15 @@ namespace Meldpunt.Services
         XmlElement content = plaatsenDoc.CreateElement("content");
         XmlElement metaDescription = plaatsenDoc.CreateElement("metadescription");
         XmlElement title = plaatsenDoc.CreateElement("title");
+        XmlElement phone = plaatsenDoc.CreateElement("phone");
         content.InnerXml = html;
         metaDescription.InnerText = p.MetaDescription;
         title.InnerText = p.Title;
+        phone.InnerText = p.PhoneNumber;
         plaats.AppendChild(content);
         plaats.AppendChild(metaDescription);
         plaats.AppendChild(title);
+        plaats.AppendChild(phone);
         plaatsenDoc.DocumentElement.AppendChild(plaats);
       }
 

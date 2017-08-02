@@ -136,7 +136,11 @@
     <Content Include="Images\call_20px.png" />
     <Content Include="Images\call_35px.png" />
     <Content Include="Images\call_50px.png" />
+    <Content Include="Images\chevron.svg" />
+    <Content Include="Images\icon-phone.svg" />
+    <Content Include="Images\icon-search.svg" />
     <Content Include="Images\kakkerlak.jpg" />
+    <Content Include="Images\kakkerlak.png" />
     <Content Include="Images\Logo definitief voor website.png" />
     <Content Include="Images\Logo definitief voor website2.png" />
     <Content Include="Images\logo MO.JPG" />
@@ -146,11 +150,15 @@
     <Content Include="Images\Logo-text-2.png" />
     <Content Include="Images\Logo-text.png" />
     <Content Include="Images\Logo.png" />
+    <Content Include="Images\meldpunt-beeldmerk.svg" />
+    <Content Include="Images\meldpunt-logo.svg" />
     <Content Include="Images\page_white_acrobat.png" />
     <Content Include="Images\page_word.png" />
     <Content Include="Images\rat.jpg" />
+    <Content Include="Images\rat.png" />
     <Content Include="Images\shadow_bottom.png" />
     <Content Include="Images\Wasp.JPG" />
+    <Content Include="Images\wasp.png" />
     <Content Include="robots.txt" />
     <Content Include="Scripts\admin.js" />
     <Content Include="Scripts\suggest.js" />
