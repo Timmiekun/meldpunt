@@ -211,7 +211,6 @@ h2 {
   border-radius: 6px 0 0 6px;
   padding: 5px;
   width: 250px;
-  font-family:
 }
 
 .zoekForm input::placeholder{
@@ -419,32 +418,36 @@ h2 {
   }
 
 
-  @media only screen and (max-width:768px){
-  .goto-menu-mobile {
-           position:fixed;
-           top:0px;
-           width: 100vw;
-           text-decoration: none;
-           text-transform: uppercase;
-           background-color: #f2f2f2;
-           padding:10px;
-           cursor:pointer;
-           display:initial;
-           text-align: center;
-           box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
+@media only screen and (max-width:768px){
+.goto-menu-mobile {
+         position:fixed;
+         top:0px;
+         width: 100vw;
+         text-decoration: none;
+         text-transform: uppercase;
+         background-color: #f2f2f2;
+         padding:10px;
+         cursor:pointer;
+         display:initial;
+         text-align: center;
+         font-weight: bold;
+         z-index: 5;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
 	.menu {
     width: 100%;
     margin: 30px 0px 10px 0px;
 	}
   .topBar{
     background: none;
+    margin: 0px;
+    padding: 0px;
   }
+
+
+
 	#breadcrumbs {
 	  display:none;
-	}
-	#tabholder {
-	  padding:5px;
 	}
 
   ul{
@@ -470,6 +473,11 @@ h2 {
 		background-image:none;
     padding: 10px;
 	}
+
+  .phoneButton{
+    margin: 20px 0;
+  }
+
   .veiligheidsregios{
     flex-direction: column;
   }
@@ -488,7 +496,7 @@ h2 {
     justify-content: center;
   }
   h1{
-    font-size: 30px;
+    font-size: 24px;
   }
   .topBar{
     margin-top: 30px;
@@ -498,14 +506,42 @@ h2 {
     margin: 0px;
     padding: 10px;
   }
-  .topBar #tabs{
-    padding-top:40px;
-  }
   .woordmerk{
-    margin-bottom: 30px;
+    margin: 10px;
     text-align: center;
   }
   .content{
-    padding-top:30px;
+    padding-top: 10px;
   }
+  .zoekForm input {
+    width: 200px;
   }
+  #tabs{
+    position: fixed;
+    background-color: #f2f2f2;
+    transform: translateY(-450px);
+    z-index: 2;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    padding-top: 20px;
+  }
+
+  .showMe{
+    transform: translateY(-175px) !important;
+  }
+
+  .topBar .tabItem {
+    background-color: #f2f2f2;
+    text-decoration: none;
+    display: block;
+    float: left;
+    margin-top: 30px;
+    margin-right: 0px;
+    padding: 10px;
+    border-radius: 0px;
+  }
+
+    .topBar .tabItem:hover, .topBar .activeTab {
+      background-color: #479355;
+      color: white;
+    }
+}

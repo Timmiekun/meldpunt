@@ -134,17 +134,19 @@
   </div>
 
   <script type="text/javascript">
-    var el = '<div class="goto-menu-mobile" onclick="document.getElementById(\'tabs\').scrollIntoView()">menu</div>';
+
+    var el = '<div class="goto-menu-mobile">menu</div>';
     document.body.innerHTML += el;
 
     document.body.onload = function () {
       var width = window.innerWidth
         || document.documentElement.clientWidth
         || document.body.clientWidth;
-      if (width <= 768) {
-        window.setTimeout(function () { document.getElementsByClassName('content')[0].scrollIntoView() }, 500);
-      }
+      // if (width <= 768) {
+      //   window.setTimeout(function () { document.getElementsByClassName('content')[0].scrollIntoView() }, 500);
+      // }
     }
+
   </script>
 
   <script type="text/javascript">
