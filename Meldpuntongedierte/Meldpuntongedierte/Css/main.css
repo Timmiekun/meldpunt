@@ -5,6 +5,7 @@
 body, input {
   color: #85003c;
   font-family: 'Catamaran', sans-serif;
+  overflow-x: hidden;
 }
 
 em {
