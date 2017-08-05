@@ -1,0 +1,47 @@
+﻿@using Meldpunt.Models;
+@using Meldpunt.Utils;
+@model List<PageModel>
+@{
+  ViewBag.Title = "Admin";
+  var locations = ViewBag.Locations;  
+  Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<p>Hallo :)</p>
+
+<p>In deze omgeving kan je de pagina's voor plaatsen verrijken. 
+  Links staat de lijst met gemeentes. Onder de gemeentenaam staat ook de plaatsnaam. Dat is handig met zoeken. 
+  </p>
+
+<p>Om tekst toe te voegen selecteer je simpelweg de gemeente waar je tekst wil toevoegen en kan je in het 
+  "content" veld tekst toevoegen. Dit zal dan onder de kop "nieuws" verschijnen op de desbetreffende pagina.
+</p>
+
+<p>Vergeet niet "gepubliceerd" aan te vinken om je aanpassingen daadwerkelijk te tonen!</p>
+
+@section menu{
+ <div class="menu">
+   <h2>Pagina's</h2>
+   <ul>
+     @foreach(PageModel p in Model){
+       <li>
+         <a href="/admin/editpage/@p.Id">@p.Title</a>
+       </li>
+     }
+   </ul>
+	 
+	<a href="/admin/newpage" class="js-new-page">Nieuwe pagina</a>
+ </div>
+
+  <div class="menu">
+  <h2>Gemeenten</h2>
+  <ul>
+    @foreach(var kv in locations){
+      string url = ((string)kv.Key).XmlSafe();
+       <li>
+        <a href="/admin/editplaats/@url">@kv.Key</a>  
+       </li>
+    }
+  </ul>
+</div>
+}

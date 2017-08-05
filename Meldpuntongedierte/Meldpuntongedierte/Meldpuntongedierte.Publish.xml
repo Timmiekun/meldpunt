@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="G:\sites\meldpunt-mvc\meldpunt\deploy" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="Images/shadow_bottom.png" publishTime="12/10/2012 14:54:21" />
+    <file relUrl="Images/arrow-right.png" publishTime="11/10/2013 23:21:15" />
+    <file relUrl="Images/Wasp.JPG" publishTime="12/10/2012 14:54:20" />
+    <file relUrl="Images/call_20px.png" publishTime="11/26/2013 20:19:08" />
+    <file relUrl="Images/Logo.png" publishTime="06/23/2012 15:30:31" />
+    <file relUrl="Css/suggest.css" publishTime="11/11/2013 10:14:15" />
+    <file relUrl="bin/EntityFramework.xml" publishTime="06/13/2012 17:59:43" />
+    <file relUrl="Views/_ViewStart.cshtml" publishTime="06/13/2012 17:59:40" />
+    <file relUrl="Scripts/modernizr-1.7.js" publishTime="06/13/2012 17:59:43" />
+    <file relUrl="App_Data/plaatsen.xml" publishTime="11/18/2013 16:50:38" />
+    <file relUrl="Images/24-11.png" publishTime="11/26/2013 19:53:01" />
+    <file relUrl="bin/System.Web.Mvc.xml" publishTime="02/09/2011 10:26:24" />
+    <file relUrl="Images/logo ultimo.gif" publishTime="11/05/2013 19:42:46" />
+    <file relUrl="bin/System.Web.WebPages.Razor.dll" publishTime="01/05/2011 14:45:38" />
+    <file relUrl="Views/Error/Http404.cshtml" publishTime="11/10/2013 21:07:24" />
+    <file relUrl="bin/Meldpuntongedierte.dll" publishTime="12/07/2013 18:48:54" />
+    <file relUrl="bin/System.Web.Helpers.dll" publishTime="01/05/2011 14:45:38" />
+    <file relUrl="bin/Lucene.Net.dll" publishTime="11/23/2013 08:31:15" />
+    <file relUrl="Views/Shared/_LogOnPartial.cshtml" publishTime="06/13/2012 17:59:40" />
+    <file relUrl="Global.asax" publishTime="09/22/2013 20:47:27" />
+    <file relUrl="bin/System.Web.Razor.dll" publishTime="01/05/2011 14:45:38" />
+    <file relUrl="bin/System.Web.Mvc.dll" publishTime="01/05/2011 16:42:16" />
+    <file relUrl="Views/Shared/_Layout.cshtml" publishTime="11/26/2013 20:42:50" />
+    <file relUrl="bin/System.Web.WebPages.Deployment.xml" publishTime="12/20/2010 09:52:36" />
+    <file relUrl="Scripts/suggest.js" publishTime="12/06/2013 19:22:42" />
+    <file relUrl="Scripts/xmlhttp.js" publishTime="12/10/2012 14:54:21" />
+    <file relUrl="bin/System.Web.WebPages.dll" publishTime="01/05/2011 14:45:38" />
+    <file relUrl="packages.config" publishTime="06/13/2012 17:59:43" />
+    <file relUrl="bin/System.Web.Routing.dll" publishTime="03/18/2010 18:31:26" />
+    <file relUrl="bin/System.Web.WebPages.Razor.xml" publishTime="12/20/2010 09:52:36" />
+    <file relUrl="Css/main.css" publishTime="11/26/2013 20:52:30" />
+    <file relUrl="bin/System.Web.Razor.xml" publishTime="12/20/2010 09:52:36" />
+    <file relUrl="bin/System.Web.WebPages.xml" publishTime="12/19/2010 22:59:38" />
+    <file relUrl="Views/Plaats/Nietgevonden.cshtml" publishTime="11/11/2013 10:16:38" />
+    <file relUrl="App_Data/pages.xml" publishTime="11/26/2013 20:05:49" />
+    <file relUrl="bin/Microsoft.Web.Infrastructure.xml" publishTime="12/20/2010 09:52:36" />
+    <file relUrl="Images/page_white_acrobat.png" publishTime="11/23/2013 15:59:46" />
+    <file relUrl="Images/kakkerlak.jpg" publishTime="12/10/2012 14:54:21" />
+    <file relUrl="Images/call_50px.png" publishTime="11/26/2013 20:35:32" />
+    <file relUrl="Web.config" publishTime="11/26/2013 20:20:29" />
+    <file relUrl="Views/Error/General.cshtml" publishTime="11/10/2013 20:41:10" />
+    <file relUrl="App_Data/2012_Woonplaatsen_in_Nederland.csv" publishTime="12/06/2013 19:38:06" />
+    <file relUrl="Images/call_35px.png" publishTime="11/26/2013 20:37:39" />
+    <file relUrl="Views/Search/Index.cshtml" publishTime="11/23/2013 12:54:59" />
+    <file relUrl="Views/Home/Index.cshtml" publishTime="11/26/2013 19:43:18" />
+    <file relUrl="bin/System.Web.Helpers.xml" publishTime="12/19/2010 22:59:38" />
+    <file relUrl="App_Data/gemeenten.xml" publishTime="06/23/2012 16:31:59" />
+    <file relUrl="bin/System.Web.WebPages.Deployment.dll" publishTime="01/05/2011 14:45:38" />
+    <file relUrl="Images/Logo-text.png" publishTime="06/23/2012 17:04:04" />
+    <file relUrl="bin/Microsoft.Web.Infrastructure.dll" publishTime="01/05/2011 14:45:38" />
+    <file relUrl="Images/logo MO.JPG" publishTime="12/10/2012 14:54:21" />
+    <file relUrl="Images/logo-small.png" publishTime="11/26/2013 20:45:28" />
+    <file relUrl="Scripts/meldpunt.js" publishTime="09/17/2013 19:25:27" />
+    <file relUrl="Views/Plaats/Plaats.cshtml" publishTime="11/25/2013 06:51:10" />
+    <file relUrl="bin/EntityFramework.dll" publishTime="06/13/2012 17:59:43" />
+    <file relUrl="bin/Meldpuntongedierte.pdb" publishTime="12/07/2013 18:48:54" />
+    <file relUrl="Images/Logo-text-2.png" publishTime="06/23/2012 17:36:01" />
+    <file relUrl="Css/reset.css" publishTime="12/10/2012 14:54:20" />
+    <file relUrl="500.html" publishTime="11/10/2013 21:12:29" />
+    <file relUrl="Views/Home/Plaats.cshtml" publishTime="12/05/2013 23:34:18" />
+    <file relUrl="Views/Web.config" publishTime="06/13/2012 17:59:40" />
+    <file relUrl="Images/page_word.png" publishTime="11/23/2013 15:59:46" />
+    <file relUrl="Images/logo-medium.png" publishTime="11/26/2013 20:56:03" />
+  </publishProfile>
+</publishData>
