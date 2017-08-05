@@ -4,7 +4,7 @@
   ViewBag.Title = Model.Title + " - Meldpunt Ongedierte";
   ViewBag.Description = Model.MetaDescription;
   ViewBag.Url = Model.Url;
-  List<PageModel> subNav = ViewBag.SubNav as List<PageModel>;  
+  List<PageModel> subNav = ViewBag.SubNav as List<PageModel>;
 }
 
 
@@ -12,8 +12,9 @@
 
 @section menu{
   @if (subNav != null && subNav.Any())
-  {    
+  {
     <div class="menu">
+      <h2>Bekijk ook</h2>
       <ul>
         @foreach (PageModel item in subNav)
         {
@@ -23,7 +24,7 @@
           {
             selected = "selected";
           }
-          
+
           <li class="@selected">
             <a href="@item.Url">@item.Title</a>
             @if (item.Id == Model.Id && item.SubPages.Any())
@@ -38,12 +39,13 @@
           </li>
         }
       </ul>
-    </div>   
+    </div>
   }
   else
   {
     <div class="menu">
-      <ul>        
+      <h2>Bekijk ook</h2>
+      <ul>
         <li><a href="/plaagdierengids/muizen/muizen-in-huis">Muizen in huis</a></li>
         <li><a href="/plaagdierengids/ratten/rattenbestrijding">Rattenbestrijding</a></li>
         <li><a href="/insectengids/mieren/mierenplaag-in-huis">Mieren in huis</a></li>
@@ -53,8 +55,8 @@
         <li><a href="/wettelijke-kaders-en-verantwoordelijkheden">Wettelijke kaders en verantwoordelijkheden</a></li>
         <li><a href="/openbare-ruimte">Openbare ruimte</a></li>
         <li><a href="/veel-gestelde-vragen">Veel gestelde vragen</a></li>
-        
+
       </ul>
     </div>
   }
-} 
+}

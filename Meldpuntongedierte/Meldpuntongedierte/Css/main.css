@@ -1,12 +1,11 @@
-﻿html {
+﻿html{
   height: 100%;
 }
 
-body {
-  color: black;
-  font-family: Verdana, Tahoma, arial;
-  font-size: 80%;
-  height: 100%;
+body, input {
+  color: #85003c;
+  font-family: 'Catamaran', sans-serif;
+  overflow-x: hidden;
 }
 
 em {
@@ -14,16 +13,47 @@ em {
   font-weight: bold;
 }
 
+p{
+  line-height: 24px;
+  font-size: 16px;
+}
+
+a:link, a:hover, a:visited, a:active{
+  color: #4481c7;
+  text-decoration: underline;
+}
+
 h1 {
   margin: 10px 0px 20px 0px;
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 24px;
+  font-weight: 900;
+  font-size: 42px;
+  line-height: 42px;
+}
+
+h1 .pre-header{
+  font-weight: 200;
+  display: block;
 }
 
 h2 {
-  margin: 50px 0px 5px 0px;
-  font-size: 14px;
+  margin: 30px 0px 5px 0px;
+  font-weight: 600;
+}
+
+.woordmerk h2{
+  font-size: 30px;
+  font-family: 'Bitter', serif;
+  font-weight: 700;
+  margin: 0px;
+  margin-top: 20px;
+}
+
+.footer .footer-woordmerk{
+  font-size: 30px;
+  line-height: 30px;
+  font-family: 'Bitter', serif;
+  font-weight: 700;
+  margin: 30px 0px;
 }
 
 .goto-menu-mobile {
@@ -41,23 +71,38 @@ h2 {
   display: none;
 }
 
+.heading{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.beeldmerk, .woordmerk, .phonebutton{
+  flex-grow: 1 auto;
+}
+
+.woordmerk, .phonebutton{
+  margin-top: 20px;
+}
+
 .main {
+  display: flex;
+  flex-direction: column;
   background: white;
-  width: 900px;
+  max-width: 1000px;
   position: relative;
   margin: 0px auto 0px auto;
   background-repeat: repeat-y;
   background-position: -1px 0px;
-  padding: 60px 10px 0px 10px;
   line-height: 130%;
-  border-left: 1px solid #ababab;
-  border-right: 1px solid #ababab;
 }
 
-
+.content-and-sidebar{
+  display: flex;
+  flex-direction: row;
+}
 
 .content, .footer {
-  background-color: #efefef;
 }
 
 .searchText {
@@ -68,162 +113,156 @@ h2 {
 }
 
 .topBar {
-  width: 922px;
+  position: relative;
+  max-width: 1000px;
   margin: 0 auto;
-  font-weight: bold;
-  z-index: -1;
-  border-bottom: 10px solid #efefef;
+  font-weight: 300;
+  font-size: 16px;
   padding-top: 10px;
+  background-image: URL("/Images/meldpunt-beeldmerk.svg");
+  background-repeat: no-repeat;
+  background-position: center 0;
+  padding-bottom: 20px;
 }
 
   .topBar a {
-    color: black;
+    color: #85003c;
     text-decoration: none;
   }
 
-  .topBar .ratImage {
-    -moz-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-    filter: FlipH;
-    -ms-filter: "FlipH";
-    float: right;
-    position: relative;
-    top: 20px;
+  .topBar .headerImage {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width: 150px;
   }
 
 #tabholder {
-  background-color: #83003c;
   position: relative;
   top: 1px;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 #tabs {
   margin: 0px auto 0 auto;
-  width: 900px;
+  margin-left: 0px;
+  width: 100%;
   overflow: hidden;
 }
 
 .topBar .tabItem {
-  color: white;
-  font-weight: bold;
   text-decoration: none;
   display: block;
   float: left;
-  margin-right: 10px;
-  padding: 5px 10px;
+  margin-top: 30px;
+  margin-right: 5px;
+  padding: 10px;
+  border-radius: 6px;
 }
 
   .topBar .tabItem:hover, .topBar .activeTab {
-    background-color: #efefef;
-    color: #83003C;
+    background-color: #479355;
+    color: white;
   }
-
-.topBar h2 {
-  display: block;
-  font-size: 13px;
-  margin: 0px auto 0px auto;
-  text-align: left;
-  font-family: arial;
-  overflow: hidden;
-}
-
-.logo {
-  display: block;
-  float: left;
-}
-
-.logotext {
-  margin-top: 35px;
-  display: block;
-  float: left;
-}
-
-.topBar img {
-  height: 100px;
-  position: relative;
-}
-
-.MOlogo {
-  position: absolute;
-  top: -80px;
-  right: 0px;
-  z-index: 2;
-}
 
 .content {
-  padding: 20px;
-  overflow: hidden;
-  float: right;
-  margin-bottom: 60px;
-  width: 600px;
+  padding-top: 40px;
 }
-
-  .content p {
-    margin: 10px 0px;
-  }
-
-  .content a {
-    color: #83003c;
-    font-weight: bold;
-    text-decoration: none;
-  }
-
-    .content a:hover {
-      text-decoration: underline;
-    }
-
 
 #header {
-  position: absolute;
-  padding: 10px;
-  top: 15px;
-  right: 0px;
-  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #f2f2f2;
+  padding: 10px 0;
+  margin-left: calc((100% - 100vw)/2);
+  margin-right: calc((100% - 100vw)/2);
+  padding-left: calc((100vw - 100%)/2);
+  padding-right: calc((100vw - 100%)/2);
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
 }
 
-#breadcrumbs {
-  margin-bottom: 20px;
-  padding-left: 260px;
+.breadcrumbs {
+  color: #957d88;
+  font-size: 15px;
 }
 
-  #breadcrumbs a {
-    color: #83003c;
+  .breadcrumbs a {
+    color: #4481c7;
   }
 
+  .breadcrumbs span{
+    margin: 0 10px 0 10px;
+    color: #ccc;
+  }
+
+.zoekform-element{
+  display: flex;
+  flex-grow: 1;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin: 0px;
+}
+
 .zoekForm input {
-  border: 1px solid #ababab;
+  font-size: 13px;
+  border: 2px solid #e3e3e3;
+  border-radius: 6px 0 0 6px;
+  padding: 5px;
+  width: 250px;
+}
+
+.zoekForm input::placeholder{
+  color: #ccc;
 }
 
 .zoekForm .searchSubmit {
-  margin-left: 3px;
+  background-color: #e3e3e3;
+  border-radius: 0 6px 6px 0;
+  width: 50px;
+  background-image: url("/Images/icon-search.svg");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .menu {
-  float:left;
-  position: relative;
-  left: -10px;
-  width: 190px;
-  padding-top: 20px;
+  margin-top: 50px;
+  margin-left: 30px;
+  min-width: 250px;
+  padding: 20px 0;
+  border-radius: 6px;
+  border: 2px solid #efefef;
+  height: 100%;
+}
+
+.menu h2{
+  margin: 0px;
+  padding: 0 20px;
+}
+
+.menu ul{
+  margin: 10px 0px;
+}
+.menu ul li{
+  margin-left: 0px;
 }
 
   .menu ul li {
-    line-height: 22px;
+    line-height: 32px;
     list-style-type: none;
-    padding-left: 15px;
-    background-image: url(/images/arrow-right.png);
+    background-image: url(/images/chevron.svg);
     background-repeat: no-repeat;
-    background-position: 5px 9px;
+    background-position: 20px 9px;
+    padding: 0 40px;
   }
 
   .menu li:hover {
     background-color: #efefef;
   }
 
-  .menu > ul > li.selected > a {
-    font-weight: bold;
+  .menu > ul > li.selected{
+    background-color: #f2f2f2;
   }
 
 .subNav {
@@ -232,10 +271,10 @@ h2 {
 
 .menu a {
   display: block;
-  padding: 3px 0px 3px 2px;
+  margin: 5px 0px;
   color: #83003c;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .themes {
@@ -256,33 +295,29 @@ h2 {
     }
 
 .footer {
-  padding-bottom: 3px 0px;
-  font-size: 80%;
-  background-color: #83003C;
-  color: White;
-  clear: both;
-  margin: 10px -10px 0px -10px;
+  margin-top: 30px;
+  padding: 20px 20px 50px 20px;
+  background-color: #f2f2f2;
+  margin-left: calc((100% - 100vw)/2);
+  margin-right: calc((100% - 100vw)/2);
+  padding-left: calc((100vw - 100%)/2);
+  padding-right: calc((100vw - 100%)/2);
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
 }
 
-  .footer a:hover, .footer a {
-    color: White;
-    text-decoration: none;
-  }
-
-ul {
-  list-style-type: disc;
-  margin: 10px;
+.veiligheidsregios{
+  display: flex;
 }
 
-  ul li {
-    margin-left: 10px;
-    line-height: 190%;
-  }
+.veiligheidsregios > div, .veiligheidsregios ul{
+  padding-right: 20px;
+  width: 25%;
+}
 
-h3 {
-  font-weight: normal;
-  padding-left: 10px;
-  font-weight: bold;
+.footer h3 {
+  font-style: italic;
+  margin-bottom: 20px;
+  font-weight: 200;
 }
 
   h3:hover {
@@ -324,36 +359,38 @@ h3 {
 
 .phone {
   font-size: 22px;
-  margin: 30px 0px;
-  color: #83003c;
-  background-image: url(/Images/call_20px.png);
+  display: inline-block;
+  background-image: url(/Images/icon-phone.svg);
   background-repeat: no-repeat;
   line-height: 24px;
-  background-position: 192px 3px;
+  background-position: 10px 12px;
+  background-color: #479355;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 900;
+  -webkit-font-smoothing: antialiased;
+  padding: 10px;
+  padding-left: 40px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .content .phone a {
-  font-weight: normal;
-}
-
-.phone,
-.plaatsheader {
-  text-align: center;
+  color: white;
 }
 
 .phoneNumber {
-  position: absolute;
-  top: 28px;
-  left: 10px;
-  color: #83003c;
-  font-weight: bold;
+  background-color: #479355;
+  border-radius: 6px;
   font-size: 16px;
-  background-image: url(/Images/call_20px.png);
+  font-weight: 900;
+  background-image: url(/Images/icon-phone.svg);
   background-repeat: no-repeat;
-  background-position: left center;
-  padding-left: 27px;
+  background-position: left 10px center;
+  padding: 10px 10px 10px 40px;
   line-height: 20px;
+  color: white !important;
   -webkit-font-smoothing: antialiased;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -363,99 +400,150 @@ h3 {
   color: gray;
 }
 
-.regiolist li a {
-  color: white;
-  text-decoration: none;
-}
-
-
-.veiligheidsregios {
-  overflow: hidden;
-  padding: 0px 20px 20px 20px;
-  clear: both;
-  background-color: #83003C;
-  color: white;
-}
-
-
-  .veiligheidsregios h2 {
-    margin: 15px 0px;
-  }
 
 .regiolist {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  width: 290px;
   float: left;
 }
 
   .regiolist li {
-    margin: 0;
+    line-height: 32px;
+    list-style-type: none;
+    background-image: url(/images/chevron.svg);
+    background-repeat: no-repeat;
+    background-position: 0px 9px;
+    padding-left: 20px;
   }
 
-  
-  @media only screen and (max-width:768px){
-	#tabs a {
-		font-size:16px !important;
-		clear:both;
-	}
-  .goto-menu-mobile {
-           position:fixed;
-           right:20px;
-           top:20px;
-           text-decoration:underline;
-           background-color:white;
-           padding:10px;
-           cursor:pointer;
-           display:initial;
-        }
+
+@media only screen and (max-width:768px){
+.goto-menu-mobile {
+         position:fixed;
+         top:0px;
+         width: 100vw;
+         text-decoration: none;
+         text-transform: uppercase;
+         background-color: #f2f2f2;
+         padding:10px;
+         cursor:pointer;
+         display:initial;
+         text-align: center;
+         font-weight: bold;
+         z-index: 5;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+         border:none;
+      }
 	.menu {
-	   float:none;  
-	   padding-top: 0px;
-	   width:auto;
-	   margin-bottom:10px;
+    width: 100%;
+    margin: 30px 0px 10px 0px;
 	}
-	.menu a {
-	  font-size:18px;
-	  border-bottom:1px solid purple;
-	}
-	.content{
-	  float:none;  
-	}
+  .topBar{
+    background: none;
+    margin: 0px;
+    padding: 0px;
+  }
+
+
+
 	#breadcrumbs {
 	  display:none;
 	}
-	#tabholder {
-	  padding:5px;
-	}
-	.tabItem {
-	   display:block;
-	   width:90%;
-	}
-	#header { 
-	   display:none;
-	}
-	.topBar {
-		width:342px;
-	}
-	.main {
-		width:320px;
-	}
-	#tabs {
-		width:320px;
-	} 
-	ul {
-	  margin:auto;
-	}
-	.content {
-	  width:auto;
-	}
-	.regiolist li a {
-		font-size:16px;
-		margin-bottom:5px;
-	}
+
+  ul{
+    display: list-item;
+  }
+
+  .main{
+    padding: 10px 10px 0px 10px;
+    overflow: hidden;
+  }
+  .heading{
+    display:flex;
+    flex-direction: column;
+  }
+  .headerImage{
+    display: none;
+  }
+
+  .content-and-sidebar{
+    flex-direction: column;
+  }
 	.phone {
 		background-image:none;
+    padding: 10px;
 	}
+
+  .phoneButton{
+    margin: 20px 0;
   }
+
+  .veiligheidsregios{
+    flex-direction: column;
+  }
+  .veiligheidsregios > div, .veiligheidsregios ul{
+    padding-right: 0px;
+    width: 100%;
+  }
+  .veiligheidsregios div{
+    margin-bottom: 20px;
+  }
+  .breadcrumbs{
+    display: none;
+  }
+  .zoekform-element{
+    align-items: center;
+    justify-content: center;
+  }
+  h1{
+    font-size: 24px;
+  }
+  .topBar{
+    margin-top: 30px;
+  }
+  .topBar #tabs .tabItem{
+    width: 100%;
+    margin: 0px;
+    padding: 10px;
+  }
+  .woordmerk{
+    margin: 10px;
+    text-align: center;
+  }
+  .content{
+    padding-top: 10px;
+  }
+  .zoekForm input {
+    width: 200px;
+  }
+  #tabs{
+    position: fixed;
+    background-color: #f2f2f2;
+    transform: translateY(-450px);
+    z-index: 2;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    padding-top: 20px;
+    transition:all 0.3s ease;
+  }
+
+  .showMe{
+    transform: translateY(-140px) !important;
+  }
+
+  .topBar .tabItem {
+    background-color: #f2f2f2;
+    text-decoration: none;
+    display: block;
+    float: left;
+    margin-top: 30px;
+    margin-right: 0px;
+    padding: 10px;
+    border-radius: 0px;
+  }
+
+    .topBar .tabItem:hover, .topBar .activeTab {
+      background-color: #479355;
+      color: white;
+    }
+}

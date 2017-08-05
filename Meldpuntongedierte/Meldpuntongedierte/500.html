@@ -26,7 +26,7 @@
       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
-		 
+
   </script>
 </head>
 <body>
@@ -50,7 +50,7 @@
     <div id="header">
       <form method="get" autocomplete="off" action="/zoek" class="zoekForm">
       <input id="zoek" placeholder=" b.v. Amsterdam" type="text" name="q" onkeyup="suggest.getSuggests(event,this);"><input
-        type="submit" value="zoek" class="searchSubmit"></form>
+        type="submit" class="searchSubmit"><img src="/Images/icon-search.svg"></form>
       <div id="suggests" class="suggest-hidden">
       </div>
     </div>

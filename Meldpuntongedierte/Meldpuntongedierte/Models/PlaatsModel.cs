@@ -13,6 +13,7 @@ namespace Meldpunt.Models
     public string Gemeentenaam { get; set; }
     public bool Published { get; set; }
     public String Title { get; set; }
+    public String PhoneNumber { get; set; }
     public String Content { get; set; }
     /// <summary>
     /// Used for search

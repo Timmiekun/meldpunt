@@ -11,31 +11,39 @@
 
 <a class="viewPage" href="/@Model.Gemeentenaam" target="_blank">Pagina bekijken</a>
 
- @if (Model.Plaatsen.Count > 1)
- {
+@if (Model.Plaatsen.Count > 1)
+{
   <p>Onder de gemeente @Model.Gemeentenaam vallen de plaatsen: @String.Join(", ", Model.Plaatsen.Select(p => p.Capitalize()))</p>
- }
+}
 
 
-<form method="post">   
-  <div  class="field">
+<form method="post">
+  <div class="field">
+    Voor het laatst aangepast: <b>@Model.LastModified.ToString("R")</b>
+  </div>
+
+  <div class="field">
     <label for="publish">
-      @Html.CheckBoxFor(p => p.Published)      
+      @Html.CheckBoxFor(p => p.Published)
       gepubliceerd
     </label>
+  </div>
+
+  <div class="field">
+    <label for="MetaDescription">Meta description</label>
+    <textarea id="MetaDescription" style="width:100%;height: 40px;" name="MetaDescription" type="text">@Model.MetaDescription</textarea>
   </div>
   
   <div class="field">
     <label for="MetaDescription">Title</label>
     <input type="text" name="title" style="width:100%" value="@Model.Title" />
   </div>
-  
-  <div class="field">
-    <label for="MetaDescription">Meta description</label>
-    <textarea id="MetaDescription" style="width:100%;height: 40px;" name="MetaDescription" type="text" >@Model.MetaDescription</textarea>
-  </div>
 
-   
+  <div class="field">
+    <label for="MetaDescription">Telefoonnummer</label>
+    <input type="text" name="PhoneNumber" style="width:100%" value="@Model.PhoneNumber" />
+  </div>  
+
 
   <div class="field">
     <label for="content">Content</label>
@@ -48,15 +56,16 @@
 </form>
 
 @section menu{
- <div class="menu">
-  <h2>Gemeenten</h2>
-  <ul>
-    @foreach(var kv in locations){
-      string url = ((string)kv.Key).XmlSafe();
-       <li>
-        <a href="/admin/editplaats/@url">@kv.Key</a>  
-       </li>
-    }
-  </ul>
-</div>
+  <div class="menu">
+    <h2>Gemeenten</h2>
+    <ul>
+      @foreach (var kv in locations)
+      {
+        string url = ((string)kv.Key).XmlSafe();
+        <li>
+          <a href="/admin/editplaats/@url">@kv.Key</a>
+        </li>
+      }
+    </ul>
+  </div>
 }

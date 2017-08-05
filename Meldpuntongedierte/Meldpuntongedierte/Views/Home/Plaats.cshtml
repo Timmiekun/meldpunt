@@ -1,4 +1,4 @@
-﻿@using Meldpunt.Utils
+﻿ @using Meldpunt.Utils
 @model Meldpunt.Models.PlaatsModel
 @{
   // Default values
@@ -7,7 +7,7 @@
   ViewBag.Description = String.Format("Als u inwoner bent van de gemeente {0} kunt u ons bellen voor bijvoorbeeld een muizenbestrijding of een mierenbestrijding aan huis. Een wespennest verwijderen kan pas geschieden nadat wij de wespenbestrijding hebben uitgevoerd.", Model.Gemeentenaam);
 
   string[] wespenGemeentes = {"enschede", "nijmegen", "groningen", "rotterdam", "breda"};
-  
+
   // Curated items
   if (!String.IsNullOrEmpty(Model.Title))
   {
@@ -23,6 +23,7 @@
 
 @section menu{
   <div class="menu">
+    <h2>Bekijk ook</h2>
     <ul>
       <li><a href="/plaagdierengids/muizen/muizen-in-huis">Muizen in huis</a></li>
       <li><a href="/plaagdierengids/ratten/rattenbestrijding">Rattenbestrijding</a></li>
@@ -38,15 +39,18 @@
 
 @if (!String.IsNullOrWhiteSpace(Model.Content) && Model.Published)
 {
+  <h1 class="plaatsheader"><span class="pre-header">Meldpunt Ongediertebestrijding</span> @Model.Gemeentenaam</h1>
+  <div class="phone"><a href="tel:@Model.PhoneNumber">@Model.PhoneNumber</a></div>
+
   @Html.Raw(Model.Content)
 }
 else
 {
-  <h1 class="plaatsheader">Meldpunt Ongediertebestrijding @Model.Gemeentenaam</h1>
+  <h1 class="plaatsheader"><span class="pre-header">Meldpunt Ongediertebestrijding</span> @Model.Gemeentenaam</h1>
   <div class="phone"><a href="tel:+31900-2800200">0900-2800200</a></div>
 
   <hr/>
-  
+
   <h2>Algemene informatie</h2>
   <p>
     Service & Contact : <a href="tel:+31900-2800200">0900-2800200</a> <br/>
@@ -72,31 +76,31 @@ else
     <li><a href="/insectengids/mieren/mierenplaag-in-huis" >Mieren in huis bestrijden</a></li>
     <li><a href="/plaagdierengids/ratten/rattenbestrijding" >Ratten bestrijden</a></li>
   </ul>
-  
+
   <h2>Betreft het een bedrijf of instelling in @Model.Gemeentenaam?</h2>
   <p>Bedrijven en instellingen in @Model.Gemeentenaam worden door ons alleen geholpen bij de bestrijding van knaagdieren en schadelijke insecten welke incidenteel van aard zijn. Voor structurele preventie kan onze bestrijdingsdeskundige u ter plekke adviseren.</p>
-  
+
   <h2>Ongediertebestrijding @Model.Gemeentenaam</h2>
   <p>Voor meer informatie rondom bijvoorbeeld <a href="../../plaagdierengids/muizen/muizenbestrijding">muizenbestrijding</a>, <a href="/insectengids/mieren/mierenbestrijding">mierenbestrijding</a>, of andere <a href="/ongediertebestrijding">ongediertebestrijding</a>&nbsp;in @Model.Gemeentenaam kunt u ook onze uitgebreide <a href="../../plaagdierengids" >plaagdierengids</a> en <a href="../../insectengids" >insectengids</a> raadplegen.</p>
   <p>Veel plaagdieren en insecten kunnen met de juiste kennis goed zelf bestreden worden. Indien u twijfels heeft, laat de bestrijding dan aan ons over. Verkeerde maatregelen kunnen problemen met ongedierte verspreiden of verergeren.</p>
-  
+
   <h2>Muizen bestrijden in huis of binnen een gebouw</h2>
   <p>Muizen zijn altijd op zoek naar een voor hen geschikte leefomgeving. De ideale leefomgeving voor deze dieren is een omgeving waarin ze bescherming en voedsel vinden. Bij problemen rondom muizen gaan onze bestrijdingsmiddelen altijd gepaard met aanvullende maatregelen rondom de hygi&euml;ne en de weerbaarheid van het gebouw. Sommige maatregelen treffen wij, maar voor een succesvol resultaat is uw eigen bijdrage in veel gevallen van groot belang.</p>
   <p><a href="../../plaagdierengids/muizen/muizenbestrijding">Lees verder &gt;</a></p>
-  
+
   <h2>Wespennest verwijderen</h2>
   <p>Wespenkoninginnen kiezen vaak een holle ruimte in een gebouw uit om het nest te bouwen. Veelal gebeurt dit in spouwmuur, dakkapellen, schuurtjes, of in de grond. Voordat een wespennest verwijderd kan worden moeten wij de wespen eerst bestrijden. Een wespennest is echter alleen schadelijk zolang het actief is. Daarom komt het maar een enkele keer voor dat het wespennest na de bestrijding verwijderd wordt.&nbsp;</p>
   <p><a href="/insectengids/wespen/wespennest-verwijderen">Lees verder &gt;</a></p>
-  
+
   <h2>Mieren in huis bestrijden</h2>
   <p>Mieren in huis bestrijden wij met een professioneel middel op basis van gel welke door middel van een doseernaald wordt ingebracht in naden en kieren. Hiermee kunnen mierennesten soms structureel bestreden worden. Mieren in huis kunnen echter veelal op ontoegankelijke plekken zitten. Met name wanneer het probleem jaarlijks terugkeert kan dit het geval zijn.</p>
-  
+
   <p><a href="/insectengids/mieren/mierenplaag-in-huis">Lees verder &gt;</a></p>
-  
+
   <h2>Ratten bestrijden</h2>
   <p>De bestrijding van ratten vergt een strategische aanpak en geduld. Voor incidentele bestrijding plaatsen wij vangmateriaal met professionele lokmiddelen. Voor structurele bestrijding en preventie gebruiken wij een nieuwe techniek.</p>
   <p><a href="/plaagdierengids/ratten/rattenbestrijding">Lees verder &gt;</a></p>
-  
+
   <h2>Overige plaagdieren en insecten welke veel in @Model.Gemeentenaam voorkomen zijn:</h2>
   <ul>
     <li><a href="/insectengids/kakkerlakken/kakkerlakken-bestrijden">Kakkerlakken</a></li>
@@ -105,12 +109,12 @@ else
     <li><a href="/insectengids/parasiterende-insecten/bedwantsen">Bedwantsen</a></li>
     <li><a href="/plaagdierengids/spitsmuizen">Spitsmuizen</a></li>
   </ul>
-  
+
   <h2>Openbare ruimte</h2>
   <p>Voor overlast in of vanuit de openbare ruimte kunt u het beste contact opnemen met de gemeente.</p>
   <p>Ook kunt u een melding bij ons doen via <a href="mailto:info@meldpuntongedierte.nl">info@meldpuntongedierte.nl</a></p>
   <p>Wij registreren deze meldingen in ons datasysteem om toenamen en afnamen van bepaalde diersoorten te kunnen meten. &nbsp;</p>
-  
+
   <h2>Toch een bestrijdingsdeskundige nodig ?</h2>
   <p>Als u toch een bestrijdingsdeskundige wilt spreken, bel dan met :<a href="tel:+31900-2800200">0900-2800200</a></p>
 }
