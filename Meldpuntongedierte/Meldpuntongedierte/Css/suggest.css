@@ -26,3 +26,10 @@
   #suggests a:hover {
     background-color: #efefef;
   }
+@media only screen and (max-width:768px) {
+  #suggests {
+    top: 50px;
+    right: 55px;
+  }
+}
+
