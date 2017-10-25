@@ -1,29 +1,28 @@
-﻿#suggests
-{
+﻿#suggests {
   position: absolute;
-  width: 196px;
-  top: 37px;
-  left: 12px;
+  width: 260px;
+  top: 39px;
+  right: 50px;
   background-color: white;
-  border: 1px solid #ababab;
+  font-size: 13px;
+  border: 2px solid #e3e3e3;
+  border-radius: 0 0px 6px 6px;
+  border-top: 0;
 }
 
-.suggest-hidden
-{
+.suggest-hidden {
   display: none;
 }
 
-#suggests a
-{
+#suggests a {
   text-decoration: none;
-  color: Black;
+  color: #83003c;
   display: block;
-  padding: 0px 2px;
-  line-height: 18px;
-  font-size: 11px;
+  padding: 0px 5px;
+  line-height: 21px;
+  font-size: 13px;
 }
 
-#suggests a:hover
-{
-  background-color: Gray;
-}
+  #suggests a:hover {
+    background-color: #efefef;
+  }
