@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -11,21 +11,21 @@
     <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Meldpuntongedierte</RootNamespace>
+    <RootNamespace>Meldpunt</RootNamespace>
     <AssemblyName>Meldpuntongedierte</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
+    <UseIISExpress>false</UseIISExpress>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>4.0</OldToolsVersion>
-    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
     <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -48,6 +48,9 @@
   <ItemGroup>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net">
+      <HintPath>..\lib\Lucene.Net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -85,56 +88,156 @@
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Abstractions" />
-    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.Routing">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="ActionFilters\MustBeAdminActionFilter.cs" />
+    <Compile Include="ActionFilters\GlobalActionFilter.cs" />
+    <Compile Include="Controllers\ApiController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\SearchResultModel.cs" />
+    <Compile Include="Models\PlaatsModel.cs" />
+    <Compile Include="Models\MailModel.cs" />
+    <Compile Include="Models\PageModel.cs" />
+    <Compile Include="Services\SearchService.cs" />
+    <Compile Include="Services\PlaatsService.cs" />
+    <Compile Include="Services\PageService.cs" />
+    <Compile Include="Utils\LocationUtils.cs" />
+    <Compile Include="Utils\Utils.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\gemeenten.xml" />
-    <Content Include="App_Data\plaatsen.xml" />
+    <Content Include="500.html" />
+    <Content Include="App_Data\pages.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\plaatsen.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Css\admin.css" />
     <Content Include="Css\main.css" />
+    <Content Include="Css\reset.css" />
     <Content Include="Css\suggest.css" />
     <Content Include="Global.asax" />
+    <Content Include="Images\24-11.png" />
+    <Content Include="Images\arrow-right.png" />
+    <Content Include="Images\call_20px.png" />
+    <Content Include="Images\call_35px.png" />
+    <Content Include="Images\call_50px.png" />
+    <Content Include="Images\chevron.svg" />
+    <Content Include="Images\icon-phone.svg" />
+    <Content Include="Images\icon-search.svg" />
+    <Content Include="Images\kakkerlak.jpg" />
+    <Content Include="Images\kakkerlak.png" />
+    <Content Include="Images\Logo definitief voor website.png" />
+    <Content Include="Images\Logo definitief voor website2.png" />
+    <Content Include="Images\logo MO.JPG" />
+    <Content Include="Images\logo ultimo.gif" />
+    <Content Include="Images\logo-medium.png" />
+    <Content Include="Images\logo-small.png" />
+    <Content Include="Images\Logo-text-2.png" />
+    <Content Include="Images\Logo-text.png" />
     <Content Include="Images\Logo.png" />
+    <Content Include="Images\meldpunt-beeldmerk.svg" />
+    <Content Include="Images\meldpunt-logo.svg" />
+    <Content Include="Images\page_white_acrobat.png" />
+    <Content Include="Images\page_word.png" />
+    <Content Include="Images\rat.jpg" />
+    <Content Include="Images\rat.png" />
+    <Content Include="Images\shadow_bottom.png" />
+    <Content Include="Images\Wasp.JPG" />
+    <Content Include="Images\wasp.png" />
+    <Content Include="robots.txt" />
+    <Content Include="Scripts\admin.js" />
+    <Content Include="Scripts\suggest.js" />
+    <Content Include="Scripts\xmlhttp.js" />
     <Content Include="Scripts\meldpunt.js" />
     <Content Include="Scripts\modernizr-1.7.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Account\ChangePassword.cshtml" />
-    <Content Include="Views\Account\ChangePasswordSuccess.cshtml" />
-    <Content Include="Views\Account\LogOn.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_LogOnPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Error\General.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Error\Http404.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Search\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Plaats.cshtml" />
+    <Content Include="App_Data\2012_Woonplaatsen_in_Nederland.csv" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Shared\subPagesPartial.cshtml" />
+    <Content Include="Views\Shared\_Admin.cshtml" />
+    <Content Include="App_Data\Woonplaatsen_in_Nede_160516123828.csv" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\local.pubxml" />
+    <None Include="Properties\PublishProfiles\meldpuntongedierte - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\meldpuntongedierte - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\File.pubxml" />
+    <None Include="Properties\PublishProfiles\meldpuntongedierte.pubxml" />
+    <None Include="Scripts\tinymce\langs\readme.md" />
+    <None Include="Scripts\tinymce\skins\lightgray\fonts\readme.md" />
+    <None Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-small.eot" />
+    <None Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-small.ttf" />
+    <None Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-small.woff" />
+    <None Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.eot" />
+    <None Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.ttf" />
+    <None Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.woff" />
+    <Content Include="Views\Admin\EditPlaats.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Home\SiteMap.cshtml" />
+    <Content Include="Views\Admin\adminNav.cshtml" />
+    <Content Include="Views\Admin\EditPage.cshtml" />
+    <Content Include="Views\Home\PlaatsWespennest.cshtml" />
+    <None Include="Volksgezondheid.pdf" />
+    <None Include="Web.azure.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'azure|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
@@ -159,9 +262,8 @@
           <IISUrl>
           </IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://meldpunt</CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>

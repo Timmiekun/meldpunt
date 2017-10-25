@@ -1,0 +1,26 @@
+﻿@using Meldpunt.Models;
+@model List<SearchResultModel>
+@{
+  ViewBag.Title = "Zoeken - Meldpunt Ongedierte";    
+}
+
+@if (Model.Any())
+{
+<ul class="searchResults">
+@foreach (SearchResultModel result in Model)
+{
+  <li>
+  <article>
+    <h1><a href="@result.Url">@result.Title</a></h1>
+    <p class="url">@result.Url</p>
+    <p>@result.Intro</p>
+    
+  </article>
+  </li>
+}
+</ul>
+}
+else
+{
+  <p>Sorry, geen resultaten gevonden.</p>
+}

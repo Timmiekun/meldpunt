@@ -1,18 +1,36 @@
-﻿<!DOCTYPE html>
+﻿@using Meldpunt.Models;
+@{
+  List<PageModel> pagesForTabs = ViewBag.NavItems as List<PageModel>;
+  List<PageModel> breadcrumbs = ViewBag.BreadCrumbs as List<PageModel>;
+  List<List<PageModel>> regioPages = ViewBag.RegioPages as List<List<PageModel>>;
+  string logoText = ViewBag.HeaderTitle;
+  if (String.IsNullOrEmpty(logoText))
+  {
+    logoText = "Meldpunt Ongedierte";
+  }
+}
+
+<!DOCTYPE html>
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>Meldpunt ongedierte</title>
+  <title>@ViewBag.Title</title>
   <meta http-equiv="Content-Type" lang="nl" content="text/html; charset=utf-8">
-  <meta name="description" lang="nl" content="Meldpunt ongedierte 0900-2556677">
+  <meta name="description" lang="nl" content="@ViewBag.Description Meldpunt Ongedierte 0900-2556677">
   <meta name="keywords" lang="nl" content="meldpunt ongedierte, wespen, houtworm, muizen, ratten, vlooien, papiervisjes, wespen bestrijding, wespen overlast, wespennest, wespenest, plaag, wespenplaag, vlooienplaag. ">
-  <meta name="robots" content="index,follow">  
+  <meta name="verify-v1" lang="nl" content="8aAymk/nYCxbP0Y9bqA+9BQWFV1ubxWH6L4ZCHAcoYA=">
+  <meta name="robots" content="index,follow">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <link type="text/css" rel="stylesheet" href="/css/reset.css">
   <link type="text/css" rel="stylesheet" href="/css/main.css">
   <link type="text/css" rel="stylesheet" href="/css/suggest.css">
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
-  <script type="text/javascript" src="/Scripts/modernizr-1.7.js"></script>
-  <script type="text/javascript" src="/Scripts/meldpunt.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Catamaran:400,700,900" rel="stylesheet">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script type="text/javascript" src="/Scripts/meldpunt.js">    ;</script>
+  <script type="text/javascript" src="/Scripts/suggest.js">    ;</script>
+  <script type="text/javascript" src="/Scripts/xmlhttp.js">    ;</script>
   <script type="text/javascript">
 
     var _gaq = _gaq || [];
@@ -24,158 +42,96 @@
       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
-		 
+
   </script>
 </head>
 <body>
-  
-  <header>    
-    <div class="headerContent logoContent">
-      <img src="/images/Logo-text.png" class="MOlogo" alt="Logo Meldpunt Ongedierte" title="Logo Meldpunt Ongedierte" />            
-      <a href="#" class="underTitle">Voorlichting &amp; bestrijding</a>
-      <div class="subtitle">
-      <p class="phonenumberBig"><img src="/Images/phone.png" />0900 - 2556677<span>(15 cpm)</span></p>
-      </div>
-    </div>
-    <div class="headerContent">      
-      <nav>        
-        <form class="searchForm"  action="/zoek" method="post">
-          <label for="search">Bestrijding in uw gemeente?</label>
-          <input id="search" type="text" placeholder="b.v. Urk" /><input type="submit" value="zoek" />
-        </form>
-        <ul id="mainNav">
-          <li><a href="/">Home</a></li>
-          <li>
-            <a href="/bestrijding">Bestrijding</a>
-            <ul class="subnav">
-              <li><a href="#">Mieren</a></li>
-              <li><a href="#">Wespen</a></li>
-              <li><a href="#">MuggenMuggen</a></li>
-              <li><a href="#">Dassen</a></li>
-              <li><a href="#">Smurfs</a></li>
-            </ul>
-          </li>
-          <li><a href="/over-ons">Over ons</a></li>
-          <li><a href="/nieuws">Nieuws</a></li>
-          <li><a href="#">Volksgezondheid</a></li>
-          <li><a href="#">Werkwijze</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
 
-  <div id="main" class="main">
-    <article class="content">
-     @RenderBody()
-    </article>
-    <aside>
-    @*  <ul class="defaultList">
-    <li id="mieren">
-      <h3>
-        Mierenbestrijding</h3>
-      <div class="description">
-        Mieren kunnen bestreden worden met een insecticide d.m.v. lage druktoepassing. De
-        bestrijdingsdeskundige brengt dit middel in de door hem gevonden nestingangen, waardoor
-        de kolonie in haar geheel geïnfecteerd wordt. Indien de openingen niet gevonden
-        kunnen worden, kan er behandeld worden met een lokaasgel. Deze gel wordt uit een
-        kitpatroon gedoseerd. Er zijn geen voorzorgsmaatregelen nodig bij een mierenbestrijding.
+  <div class="topBar">
+    <div class="heading">
+      <div class="woordmerk">
+        <h2><a class="logotext" href="/">@logoText</a></h2>
       </div>
-    </li>
-    <li id="wespen">
-      <h3>
-        Wespenbestrijding</h3>
-      <div class="description">
-        Wespen kunnen bestreden worden met een insecticide d.m.v. lage druktoepassing. De
-        bestrijdingsdeskundige brengt dit middel in de door hem gevonden nestingang, waardoor
-        de kolonie in haar geheel geïnfecteerd wordt. Er zijn geen voorzorgsmaatregelen
-        nodig bij een wespenbestrijding.
+      <div class="phoneButton">
+        @if (ViewBag.HidePhoneNumber == null)
+        {
+          <a href="tel:0900-2556677" class="phoneNumber">0900-2556677</a>
+        }
       </div>
-    </li>
-    <li id="muizen">
-      <h3>
-        Muizenbestrijding</h3>
-      <div class="description">
-        Muizen kunnen bestreden worden met lokaas welk in uw gemeente geen resistentie kent.
-        De bestrijdingsdeskundige brengt dit middel in de door hem geplaatste doosjes, waardoor
-        de kolonie in haar geheel bestreden wordt. De totale actie kent 3 wekelijkse behandelingen
-        (1x per week). Tijdens de behandelingen worden de lokazen uitgezet en ververst.
-        Er zijn geen voorzorgsmaatregelen nodig bij een muizenbestrijding.
+      <img src="/Images/rat.png" class="headerImage">
+    </div>
+    <div id="tabholder">
+      <div id="tabs">
+        @foreach (PageModel tabItem in pagesForTabs)
+        {
+          string className = "tabItem";
+          if (Request.Url.AbsolutePath.Contains(tabItem.Id) || tabItem.Id == "home" && Request.Url.AbsolutePath == "/")
+          {
+            className += " activeTab";
+          }
+          <a class="@className" href="@tabItem.Url">@tabItem.Title</a>
+        }
       </div>
-    </li>
-    <li id="ratten">
-      <h3>
-        Rattenbestrijding</h3>
-      <div class="description">
-        Ratten kunnen bestreden worden met lokaas welk in uw gemeente geen resistentie kent.
-        De bestrijdingsdeskundige brengt dit middel in de door hem geplaatste voerkisten,
-        waardoor de kolonie in haar geheel bestreden wordt. De totale actie kent 3 wekelijkse
-        behandelingen (1x per week). Tijdens de behandelingen worden de lokazen uitgezet
-        en ververst.
-      </div>
-    </li>
-    <li id="zilvervisjes">
-      <h3>
-        Zilver- en papiervisjesbestrijding</h3>
-      <div class="description">
-        Zilver- en of Papiervisjes kunnen bestreden worden met een insecticide d.m.v. lage
-        druktoepassing. De bestrijdingsdeskundige brengt dit middel in alle naden en kieren.
-        U dient er zelf zorg voor te dragen dat alle kasten leeg geruimd worden, zodat vooral
-        daar in de kieren langs legplanken e.d. een residu van het middel achter kan blijven.
-        Tijdens de actie en twee uren aansluitend kunt u en de huisdieren de woning betreden.
-        Informeer ook eens of de buren er ook last van hebben. Zo ja, dan is het handig
-        dat zij ook meedoen!
-      </div>
-    </li>
-    <li id="kakkerlakken">
-      <h3>
-        Kakkerlakkenbestrijding</h3>
-      <div class="description">
-        Kakkerlakken kunnen bestreden worden met een insecticide d.m.v. een lokaasgel. De
-        bestrijdingsdeskundige brengt dit middel in de door hem gevonden strategische plaatsen,
-        waardoor de kolonie in haar geheel geïnfecteerd wordt. Er zijn geen voorzorgsmaatregelen
-        nodig bij een kakkerlakkenbestrijding.
-      </div>
-    </li>
-    <li id="vogels">
-      <h3>
-        Weren van niet beschermde vogels</h3>
-      <div class="description">
-        Het weren van vogels wordt gedaan door speciale metalen draden te spannen op de
-        dak-, gevel- en/of balconranden. Deze stangdraden worden vastgemonteerd op kunststof
-        voetjes, welke op hun beurt vastgekit of gemonteerd worden. Deze elementen worden
-        onderling verbonden waaraan op het uiteinde een transformater aangesloten wordt.
-        Deze geeft een puls af van zwakstroom, welk vergelijkbaar is met die van schrikdraad.
-        Als voorzorgsmaatregel dienen de te behandelen oppervlakken gereinigd te zijn van
-        vuil.
-      </div>
-    </li>
-    <li id="eikenprocessierups">
-      <h3>
-        Eikenprocessierupsbestrijding</h3>
-      <div class="description">
-        De vlinder heet <b>eikenprocessierupsvlinder</b>. De larve is een bladvretende rups
-        die zoals de naam al zegt vooral op eiken voorkomt. De eitjes van de rups komen
-        uit in het voorjaar, zodra de eerste jonge eikenbladeren tevoorschijn komen. In
-        Nederland ontwikkelt de rups zich af en toe in zulke grote aantallen dat van een
-        plaag gesproken kan worden. De processierups zit vooral aan de zonnige zuidkant
-        van de eikenstammen in eikenlanen. De nesten bestaan uit een dicht spinsel van vervellingshuidjes,
-        met (brand)haren en uitwerpselen. Deze kunnen in aanraking komen met de huid en
-        kunnen over gaan tot heftige allergische reacties. Maak melding van deze constatering
-        waarna het landelijk Meldpunt Ongedierte dit op kan nemen in haar datagegevens en
-        structureel de bestrijding i.s.m. Groenbeheer kan aanpakken.
-      </div>
-    </li>
-  </ul>*@
-    </aside>
+    </div>
   </div>
 
-  <footer>
-    <div class="footerContent">
-      <p class="disclaimer">
-        <a href="/sitemap">sitemap</a>
-      </p>
-     </div>
-  </footer>
+
+  <div id="main" class="main">
+
+    <div id="header">
+      <div class="breadcrumbs">
+        <a href="/">Home</a>
+        @if (breadcrumbs.Count > 0)
+        {
+          <span> /</span>
+        }
+        @for (int i = 0; i < breadcrumbs.Count; i++)
+        {
+          <a href="@breadcrumbs[i].Url">@breadcrumbs[i].Title</a>
+          if (i < breadcrumbs.Count - 1)
+          {
+            <span> / </span>
+          }
+        }
+      </div>
+      <div class="zoekform-element">
+        <form method="get" autocomplete="off" action="/zoek" class="zoekForm">
+          <input id="zoek" placeholder="Zoek op uw plaatsnaam..." type="text" name="q" onkeyup="suggest.getSuggests(event,this);"><input
+            type="submit" class="searchSubmit" value="  "></form>
+        </form>
+        <div id="suggests"
+             class="suggest-hidden">
+        </div>
+      </div>
+    </div>
+
+    <div class="content-and-sidebar">
+      <div class="content">
+        @RenderBody()
+      </div>
+      @RenderSection("menu", false)
+    </div>
+
+    <div class="footer">
+      <h2 class="footer-woordmerk">Meldpunt Ongedierte</h2>
+      <div class="veiligheidsregios">
+        <div>
+          <h3>Regionale dienstverlening Meldpunt Ongedierte</h3>
+          <p>Bel <a href="tel:0900-2556677">0900-2556677</a></p>
+          <p><a href="mailto:info@meldpuntongedierte.nl">info@meldpuntongedierte.nl</a></p>
+        </div>
+        @foreach (List<PageModel> list in regioPages)
+        {
+          <ul class="regiolist">
+            @foreach (PageModel p in list)
+            {
+              <li><a href="@p.Url">@p.HeaderTitle.Substring(20)</a></li>
+            }
+          </ul>
+        }
+      </div>
+    </div>
+  </div>
 
   <script type="text/javascript">
     var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
@@ -188,4 +144,5 @@
     } catch (err) { }
   </script>
 </body>
+
 </html>

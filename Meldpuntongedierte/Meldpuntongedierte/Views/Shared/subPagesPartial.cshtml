@@ -1,0 +1,14 @@
+﻿@model PageModel
+@using Meldpunt.Models;
+<ul class="subNav">
+  @foreach (PageModel subItem in Model.SubPages)
+  {
+    <li>
+      <a href="@subItem.Url">@subItem.Title</a>
+      @if (subItem.SubPages.Any())
+      {
+        Html.RenderPartial("subPagesPartial", subItem);        
+      }
+    </li>
+  }
+</ul>
