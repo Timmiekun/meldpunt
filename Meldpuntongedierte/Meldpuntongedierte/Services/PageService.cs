@@ -61,8 +61,12 @@ namespace Meldpunt.Services
       page.SelectSingleNode("metadescription").InnerText = p.MetaDescription;
       if (page.SelectSingleNode("title") == null)
         page.AppendChild(pagesDoc.CreateElement("title"));
-
       page.SelectSingleNode("title").InnerText = p.EditableTitle;
+
+      if (page.SelectSingleNode("sort") == null)
+        page.AppendChild(pagesDoc.CreateElement("sort"));
+
+      page.SelectSingleNode("sort").InnerText = p.Sort.ToString();
 
       page.SetAttribute("id", p.EditableTitle.XmlSafe());
       page.SetAttribute("tab", p.InTabMenu ? "true" : "false");
@@ -182,6 +186,12 @@ namespace Meldpunt.Services
       if (page.SelectSingleNode("metadescription") != null)
         metadescription = page.SelectSingleNode("metadescription").InnerText;
 
+      int sort = 0;
+      if (page.SelectSingleNode("sort") != null)
+      {
+        Int32.TryParse(page.SelectSingleNode("sort").InnerText, out sort);
+      }
+
       string html = page.SelectSingleNode("content") != null ? page.SelectSingleNode("content").InnerXml : "";
       if (html.StartsWith("<![CDATA["))
         html = html.Trim().Substring(9, html.Length - 12);
@@ -200,7 +210,8 @@ namespace Meldpunt.Services
         HeaderTitle = headertitle,
         InTabMenu = page.Attributes["tab"] != null && page.Attributes["tab"].Value == "true",
         MetaDescription = metadescription,
-        Published = published
+        Published = published,
+        Sort = sort
       };
 
       return p;

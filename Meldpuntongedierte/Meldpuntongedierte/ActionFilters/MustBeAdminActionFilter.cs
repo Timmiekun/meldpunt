@@ -21,8 +21,8 @@ namespace Meldpunt.ActionFilters
 
     public override void OnActionExecuting(ActionExecutingContext filterContext)
     {
-      var session = filterContext.HttpContext.Session;
-      if (session["LoggedIn"] == "loggedIn")
+      var cookie = HttpContext.Current.Request.Cookies["LoggedIn"];
+      if (cookie != null)
         return;
 
       //Redirect him to somewhere.

@@ -22,6 +22,11 @@ namespace Meldpunt.Models
 		public string ParentId { get; set; }
 		public List<PageModel> SubPages { get; set; }
 
+    /// <summary>
+    /// Used to sort Childpages
+    /// </summary>
+    public int Sort { get; set; }
+
 		//admin
 		public bool Published { get; set; }
 		public bool InTabMenu { get; set; }

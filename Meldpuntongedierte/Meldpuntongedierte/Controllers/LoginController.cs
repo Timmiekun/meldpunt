@@ -1,6 +1,8 @@
 ﻿using System.Configuration;
 using System.Web.Mvc;
 using Meldpunt.Services;
+using System.Web;
+using System;
 
 namespace Meldpunt.Controllers
 {
@@ -31,8 +33,12 @@ namespace Meldpunt.Controllers
 		[HttpPost]
 		public ActionResult Login(string username, string password)
 		{
-			if (username == this.username && password == this.password)
-				Session["LoggedIn"] = "loggedIn";
+      if (username == this.username && password == this.password)
+      {
+        HttpCookie myCookie = new HttpCookie("LoggedIn");
+        myCookie.Expires = DateTime.Now.AddDays(1);
+        Response.Cookies.Add(myCookie);
+      }
 			return Redirect("/admin");
 		}
 

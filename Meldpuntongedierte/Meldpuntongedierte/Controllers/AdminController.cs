@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.Routing;
-using System.Web.UI;
 using Meldpunt.Services;
 using Meldpunt.Models;
 using Meldpunt.Utils;
@@ -12,7 +10,7 @@ using Meldpunt.ActionFilters;
 
 namespace Meldpunt.Controllers
 {
-	[MustBeAdmin]
+  [MustBeAdmin]
 	public class AdminController : Controller
 	{
 		private PageService pageService;
