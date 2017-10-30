@@ -46,6 +46,12 @@ namespace Meldpunt.Controllers
       PageModel model = pageService.GetPage(id);
       if (model != null)
       {
+        // correct url?
+        if (Request.Path != model.Url)
+        {
+          return RedirectPermanent(model.Url);
+        }
+
         if (id == "openbare-ruimte")
           ViewBag.HidePhoneNumber = true;
 
