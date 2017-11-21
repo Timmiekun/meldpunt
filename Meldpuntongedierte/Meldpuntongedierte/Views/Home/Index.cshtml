@@ -5,6 +5,7 @@
   ViewBag.Description = Model.MetaDescription;
   ViewBag.Url = Model.Url;
   List<PageModel> subNav = ViewBag.SubNav as List<PageModel>;
+  List<PageModel> homeMenu = ViewBag.HomeMenuItems as List<PageModel>;
 }
 
 
@@ -46,15 +47,10 @@
     <div class="menu">
       <h2>Bekijk ook</h2>
       <ul>
-        <li><a href="/plaagdierengids/muizen/muizen-in-huis">Muizen in huis</a></li>
-        <li><a href="/plaagdierengids/ratten/rattenbestrijding">Rattenbestrijding</a></li>
-        <li><a href="/insectengids/mieren/mierenplaag-in-huis">Mieren in huis</a></li>
-        <li><a href="/insectengids/wespen/wespennest-verwijderen">Wespennest verwijderen</a></li>
-        <li><a href="/stankoverlast">Stankoverlast</a></li>
-        <li><a href="/volksgezondheid">Ongedierte en volksgezondheid</a></li>
-        <li><a href="/wettelijke-kaders-en-verantwoordelijkheden">Wettelijke kaders en verantwoordelijkheden</a></li>
-        <li><a href="/openbare-ruimte">Openbare ruimte</a></li>
-        <li><a href="/veel-gestelde-vragen">Veel gestelde vragen</a></li>
+        @foreach(var page in homeMenu.OrderByDescending(p=> p.Sort))
+        {
+          <li><a href="@page.Url">@page.Title</a></li>
+        }
 
       </ul>
     </div>

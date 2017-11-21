@@ -1,4 +1,5 @@
-﻿ @using Meldpunt.Utils
+﻿@using Meldpunt.Utils;
+@using Meldpunt.Models;
 @model Meldpunt.Models.PlaatsModel
 @{
   // Default values
@@ -6,7 +7,7 @@
   ViewBag.Title = "Ongediertebestrijding " + Model.Gemeentenaam + " - Meldpunt Ongedierte";
   ViewBag.Description = String.Format("Als u inwoner bent van de gemeente {0} kunt u ons bellen voor bijvoorbeeld een muizenbestrijding of een mierenbestrijding aan huis. Een wespennest verwijderen kan pas geschieden nadat wij de wespenbestrijding hebben uitgevoerd.", Model.Gemeentenaam);
 
-  string[] wespenGemeentes = {"enschede", "nijmegen", "groningen", "rotterdam", "breda"};
+  string[] wespenGemeentes = { "enschede", "nijmegen", "groningen", "rotterdam", "breda" };
 
   // Curated items
   if (!String.IsNullOrEmpty(Model.Title))
@@ -19,19 +20,19 @@
     ViewBag.Description = Model.MetaDescription;
   }
   ViewBag.Url = Model.Gemeentenaam;
+
+
+  List<PageModel> homeMenu = ViewBag.HomeMenuItems as List<PageModel>;
 }
 
 @section menu{
   <div class="menu">
     <h2>Bekijk ook</h2>
     <ul>
-      <li><a href="/plaagdierengids/muizen/muizen-in-huis">Muizen in huis</a></li>
-      <li><a href="/plaagdierengids/ratten/rattenbestrijding">Rattenbestrijding</a></li>
-      <li><a href="/insectengids/mieren/mierenplaag-in-huis">Mieren in huis</a></li>
-      <li><a href="/insectengids/wespen/wespennest-verwijderen">Wespennest verwijderen</a></li>
-      <li><a href="/stankoverlast">Stankoverlast</a></li>
-      <li><a href="/volksgezondheid">Ongedierte en volksgezondheid</a></li>
-      <li><a href="/wettelijke-kaders-en-verantwoordelijkheden">Wettelijke kaders en verantwoordelijkheden</a></li>
+      @foreach (var page in homeMenu.OrderByDescending(p => p.Sort))
+      {
+        <li><a href="@page.Url">@page.Title</a></li>
+      }
     </ul>
   </div>
 }
@@ -49,11 +50,11 @@ else
   <h1 class="plaatsheader"><span class="pre-header">Meldpunt Ongediertebestrijding</span> @Model.Gemeentenaam</h1>
   <div class="phone"><a href="tel:+31900-2800200">0900-2800200</a></div>
 
-  <hr/>
+  <hr />
 
   <h2>Algemene informatie</h2>
   <p>
-    Service & Contact : <a href="tel:+31900-2800200">0900-2800200</a> <br/>
+    Service & Contact : <a href="tel:+31900-2800200">0900-2800200</a> <br />
     Email : <a href="mailto:info@meldpuntongedierte.nl">info@meldpuntongedierte.nl</a>
   </p>
 
@@ -71,17 +72,17 @@ else
 
   <h2>Voor bestrijding van andere veel voorkomende soorten ongedierte:</h2>
   <ul>
-    <li><a href="/plaagdierengids/muizen/muizen-in-huis" >Muizen in huis bestrijden</a></li>
-    <li><a href="/insectengids/wespen/wespennest-verwijderen" >Wespennest verwijderen</a></li>
-    <li><a href="/insectengids/mieren/mierenplaag-in-huis" >Mieren in huis bestrijden</a></li>
-    <li><a href="/plaagdierengids/ratten/rattenbestrijding" >Ratten bestrijden</a></li>
+    <li><a href="/plaagdierengids/muizen/muizen-in-huis">Muizen in huis bestrijden</a></li>
+    <li><a href="/insectengids/wespen/wespennest-verwijderen">Wespennest verwijderen</a></li>
+    <li><a href="/insectengids/mieren/mierenplaag-in-huis">Mieren in huis bestrijden</a></li>
+    <li><a href="/plaagdierengids/ratten/rattenbestrijding">Ratten bestrijden</a></li>
   </ul>
 
   <h2>Betreft het een bedrijf of instelling in @Model.Gemeentenaam?</h2>
   <p>Bedrijven en instellingen in @Model.Gemeentenaam worden door ons alleen geholpen bij de bestrijding van knaagdieren en schadelijke insecten welke incidenteel van aard zijn. Voor structurele preventie kan onze bestrijdingsdeskundige u ter plekke adviseren.</p>
 
   <h2>Ongediertebestrijding @Model.Gemeentenaam</h2>
-  <p>Voor meer informatie rondom bijvoorbeeld <a href="../../plaagdierengids/muizen/muizenbestrijding">muizenbestrijding</a>, <a href="/insectengids/mieren/mierenbestrijding">mierenbestrijding</a>, of andere <a href="/ongediertebestrijding">ongediertebestrijding</a>&nbsp;in @Model.Gemeentenaam kunt u ook onze uitgebreide <a href="../../plaagdierengids" >plaagdierengids</a> en <a href="../../insectengids" >insectengids</a> raadplegen.</p>
+  <p>Voor meer informatie rondom bijvoorbeeld <a href="../../plaagdierengids/muizen/muizenbestrijding">muizenbestrijding</a>, <a href="/insectengids/mieren/mierenbestrijding">mierenbestrijding</a>, of andere <a href="/ongediertebestrijding">ongediertebestrijding</a>&nbsp;in @Model.Gemeentenaam kunt u ook onze uitgebreide <a href="../../plaagdierengids">plaagdierengids</a> en <a href="../../insectengids">insectengids</a> raadplegen.</p>
   <p>Veel plaagdieren en insecten kunnen met de juiste kennis goed zelf bestreden worden. Indien u twijfels heeft, laat de bestrijding dan aan ons over. Verkeerde maatregelen kunnen problemen met ongedierte verspreiden of verergeren.</p>
 
   <h2>Muizen bestrijden in huis of binnen een gebouw</h2>
@@ -105,7 +106,7 @@ else
   <ul>
     <li><a href="/insectengids/kakkerlakken/kakkerlakken-bestrijden">Kakkerlakken</a></li>
     <li><a href="/insectengids/zilvervisjes-en-papiervisjes">Zilvervisjes</a></li>
-    <li><a href="/insectengids/parasiterende-insecten/vlooien" >Vlooien</a></li>
+    <li><a href="/insectengids/parasiterende-insecten/vlooien">Vlooien</a></li>
     <li><a href="/insectengids/parasiterende-insecten/bedwantsen">Bedwantsen</a></li>
     <li><a href="/plaagdierengids/spitsmuizen">Spitsmuizen</a></li>
   </ul>

@@ -30,7 +30,8 @@ namespace Meldpunt.Models
 		//admin
 		public bool Published { get; set; }
 		public bool InTabMenu { get; set; }
-		public string MetaDescription { get; set; }
+    public bool InHomeMenu { get; set; }
+    public string MetaDescription { get; set; }
 
 	}
 }

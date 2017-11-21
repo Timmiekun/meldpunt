@@ -125,7 +125,7 @@
           <ul class="regiolist">
             @foreach (PageModel p in list)
             {
-              <li><a href="@p.Url">@p.HeaderTitle.Substring(20)</a></li>
+              <li><a href="@p.Url">@p.Title</a></li>
             }
           </ul>
         }

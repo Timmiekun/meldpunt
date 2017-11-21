@@ -33,7 +33,13 @@ namespace Meldpunt.Services
 
     public List<PageModel> GetPagesForTabs()
     {
-      XmlNodeList pages = pagesDoc.DocumentElement.SelectNodes("page[@tab='true']");
+      XmlNodeList pages = pagesDoc.DocumentElement.SelectNodes("//page[@tab='true']");
+      return XmlToModel(pages);
+    }
+
+    public List<PageModel> GetPagesForHomeMenu()
+    {
+      XmlNodeList pages = pagesDoc.DocumentElement.SelectNodes("//page[@inhome='true']");
       return XmlToModel(pages);
     }
 
@@ -70,6 +76,7 @@ namespace Meldpunt.Services
 
       page.SetAttribute("id", p.EditableTitle.XmlSafe());
       page.SetAttribute("tab", p.InTabMenu ? "true" : "false");
+      page.SetAttribute("inhome", p.InHomeMenu ? "true" : "false");
       page.SetAttribute("published", p.Published ? "true" : "false");
       page.SetAttribute("lastmodified", DateTime.Now.ToString("dd-MM-yyyy hh:mm"));
 
@@ -209,6 +216,7 @@ namespace Meldpunt.Services
         FullText = text,
         HeaderTitle = headertitle,
         InTabMenu = page.Attributes["tab"] != null && page.Attributes["tab"].Value == "true",
+        InHomeMenu = page.Attributes["inhome"] != null && page.Attributes["inhome"].Value == "true",
         MetaDescription = metadescription,
         Published = published,
         Sort = sort

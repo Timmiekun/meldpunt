@@ -29,7 +29,8 @@ namespace Meldpunt.ActionFilters
         viewResult.ViewBag.BreadCrumbs = breadCrumbs;
         viewResult.ViewBag.NavItems = pageService.GetPagesForTabs();
         viewResult.ViewBag.RegioPages = Meldpunt.Utils.Utils.Split(pageService.GetPage("regios").SubPages);
-        
+        viewResult.ViewBag.HomeMenuItems = new PageService().GetPagesForHomeMenu();
+
       }
 
       base.OnActionExecuted(filterContext);

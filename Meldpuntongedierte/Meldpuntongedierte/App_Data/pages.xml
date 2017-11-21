@@ -156,7 +156,7 @@
             <title>Kakkerlakkenplaag in huis</title>
             <sort>0</sort>
           </page>
-          <page id="kakkerlakkenbestrijding" lastmodified="21-11-2017 11:57" published="false" tab="false">
+          <page id="kakkerlakkenbestrijding" lastmodified="21-11-2017 08:28" published="false" tab="false" inhome="true">
             <content><![CDATA[<h1>Kakkerlakken bestrijden</h1>
 <p>&nbsp;</p>
 <p>Kakkerlakken bestrijden zonder professionele middelen is haast onmogelijk. Verder op deze pagina gaan wij hier verder op in.</p>
@@ -195,7 +195,7 @@
             <metadescription>
             </metadescription>
             <title>Kakkerlakkenbestrijding</title>
-            <sort>0</sort>
+            <sort>1</sort>
           </page>
         </pages>
         <sort>0</sort>
@@ -344,7 +344,7 @@
             <metadescription>Mieren in huis kunnen al snel uitgroeien tot een plaag. Mieren bestrijden wij daarom met een professionele mierengel welke in naden, kieren en nestingangen wordt aangebracht met een doseernaald. Een mierenplaag in huis is meestal niet iets van één jaar tijd. </metadescription>
             <title>Mierenplaag in huis</title>
           </page>
-          <page id="mierenbestrijding" published="false" tab="false" lastmodified="20-02-2017 09:53">
+          <page id="mierenbestrijding" published="false" tab="false" lastmodified="21-11-2017 08:27" inhome="true">
             <content><![CDATA[<h1>Mieren bestrijden</h1>
 <p>Soms is het noodzakelijk om mieren te laten bestrijden met professionele middelen.</p>
 <p>Onze bestrijdingsdeskundige kan u hierbij helpen.</p>
@@ -377,10 +377,11 @@
 <h2>Veiligheid en regelgeving</h2>
 <p>Onze bestrijdingswerkzaamheden worden geheel volgens de veiligheidsnormen van de Nederlandse wetgeving uitgevoerd. Dit betekent dat wij enkel en alleen gediplomeerde bestrijdingstechnici naar u toe sturen en dat hun kennis met behulp van opleidingen continu voldoet aan nieuwe wetgeving en richtlijnen. Ook de middelen die wij toepassen voldoen aan de wetgeving en veiligheidseisen. De moderne bestrijdingsmiddelen kunnen en worden ook met de aanwezigheid van kinderen en huisdieren op geheel veilige wijze toegepast. Meer informatie hierover kan ten alle tijden opgevraagd worden bij het Meldpunt Ongedierte.</p>
 <h2>Meer informatie over mieren in huis</h2>
-<p>Meer informatie over de oorzaak en gevolgen die mieren in huis teweeg kunnen brengen leest u&nbsp;<span style="text-decoration: underline;"><a href="../../insectengids/mieren/mierenplaag-in-huis" target="_blank">hier</a></span></p>
+<p>Meer informatie over de oorzaak en gevolgen die mieren in huis teweeg kunnen brengen leest u&nbsp;<span style="text-decoration: underline;"><a href="/insectengids/mieren/mierenplaag-in-huis" target="_blank">hier</a></span></p>
 <p>&nbsp;</p>]]></content>
             <metadescription>Mieren bestrijden lijkt soms een gevecht tegen de bierkaai. Wanneer de huis- tuin- en keukenmiddelen niet meer werken kunt het beste contact met ons opnemen via ons servicenummer. </metadescription>
             <title>Mierenbestrijding</title>
+            <sort>0</sort>
           </page>
           <page id="vliegende-mieren-in-huis" published="false" tab="false" lastmodified="24-04-2016 01:30">
             <content><![CDATA[<h1>Vliegende mieren in huis</h1>
@@ -513,10 +514,10 @@
             <metadescription>Een wespennest in de schuur kan een groot risico vormen doordat we ons er niet altijd bewust van zijn dat het er zit. Tuinmateriaal of tuinmeubilair ligt vaak ergens weggestopt waartussen een wespennest lang ongestoord verder kan groeien. </metadescription>
             <title>Wespennest in de schuur</title>
           </page>
-          <page id="wespenbestrijding" published="false" tab="false" lastmodified="22-06-2017 11:58">
+          <page id="wespenbestrijding" published="false" tab="false" lastmodified="21-11-2017 08:28" inhome="true">
             <content><![CDATA[<h1>Wespenbestrijding</h1>
 <p>Zodra duidelijk is dat zich een wespennest in huis, in de tuin of in een gebouw bevindt, dan is bestrijding in bijna alle gevallen wenselijk of zelfs noodzakelijk. Wespen kunnen namelijk behoorlijk wat schade aanrichten.</p>
-<p>Vooral een <span style="text-decoration: underline;"><a href="../../insectengids/wespen/wespennest-in-spouwmuur" target="_blank">wespennest in de spouwmuur</a></span>&nbsp;of een&nbsp;<span style="text-decoration: underline;"><a href="../../insectengids/wespen/wespennest-in-de-grond" target="_blank">wespennest in de grond</a></span>&nbsp;kunnen behoorlijk risicovol zijn.</p>
+<p>Vooral een <span style="text-decoration: underline;"><a href="/insectengids/wespen/wespennest-in-spouwmuur" target="_blank">wespennest in de spouwmuur</a></span>&nbsp;of een&nbsp;<span style="text-decoration: underline;"><a href="/insectengids/wespen/wespennest-in-de-grond" target="_blank">wespennest in de grond</a></span>&nbsp;kunnen behoorlijk risicovol zijn.</p>
 <p>Verder kunnen ze een gevaar vormen omdat ze het nest te allen tijde zullen verdedigen. Ook al hebben wij geen kwade bedoelingen, de wespen kunnen dit wel als zodanig inschatten waardoor ze hun angel zullen gebruiken zodra wij het nest naderen of trillingen veroorzaken.</p>
 <h2>Afspraak maken</h2>
 <p>Service &amp; Contact<strong> : 0900-2556677</strong></p>
@@ -538,6 +539,7 @@
 <p>&nbsp;</p>]]></content>
             <metadescription>een wespenbestrijding is bijna altijd noodzakelijk zodra het wespennest zich in huis of in een gebouw bevindt. Bel ons op voor het maken van een afspraak.</metadescription>
             <title>Wespenbestrijding</title>
+            <sort>2</sort>
           </page>
           <page id="wespennest-verwijderen" published="false" tab="false" lastmodified="22-06-2017 11:38">
             <content><![CDATA[<h1>Wespennest verwijderen</h1>
@@ -1346,7 +1348,7 @@
         <metadescription>Bruine Ratten laten zich niet snel zien. Toch komt het vaak voor dat mensen geconfronteerd worden met activiteit van ratten in de tuin. Soms laten ze zich alleen even zien en vertrekken dan direct weer, maar het komt ook voor dat ze zich veelvuldig ophouden op één plek.</metadescription>
         <title>Ratten</title>
         <pages>
-          <page id="rattenbestrijding" lastmodified="19-11-2017 11:09" published="false" tab="false">
+          <page id="rattenbestrijding" lastmodified="21-11-2017 08:19" published="false" tab="false" inhome="true">
             <content><![CDATA[<h1>Rattenbestrijding</h1>
 <p>&nbsp;</p>
 <p>Deze pagina geeft informatie over onze aanpak van rattenoverlast voor particulieren.</p>
@@ -1976,7 +1978,7 @@
             </pages>
             <sort>3</sort>
           </page>
-          <page id="muizenbestrijding" lastmodified="21-11-2017 11:09" published="false" tab="false">
+          <page id="muizenbestrijding" lastmodified="21-11-2017 08:19" published="false" tab="false" inhome="true">
             <content><![CDATA[<h1>Muizen bestrijden</h1>
 <p>&nbsp;</p>
 <p>Deze pagina geeft informatie over de bestrijding van muizen voor particulieren.</p>
@@ -2275,7 +2277,7 @@
             <metadescription>Muizenoverlast in huis is een bekend probleem in Nederland. Bij een toenemende muizenpopulatie vergroten de muizen hun territorium en beperken ze zich niet altijd tot één verblijf. Zodoende kunnen meerdere buren overlast gaan ondervinden van de muizen. De oplossing zal dan gezamenlijk tot stand moeten komen.</metadescription>
             <title>Muizenoverlast</title>
             <pages>
-              <page id="muizen-in-huis" lastmodified="11-11-2017 09:24" published="false" tab="false">
+              <page id="muizen-in-huis" lastmodified="21-11-2017 08:18" published="false" tab="false" inhome="false">
                 <content><![CDATA[<h1>Muizen in huis</h1>
 <h2>Signaleert u muizen in huis?</h2>
 <p>&nbsp;</p>
@@ -2981,13 +2983,13 @@
     <metadescription>Stank in huis is regelmatig toe te wijden aan muizen of ratten in huis. De stankoverlast kan omschreven worden als een penetrante geur die met name in combinatie met warmte sterk op kan spelen. Ook spitsmuizen zijn een welbekend probleem door de stank die ze kunnen veroorzaken.</metadescription>
     <title>Stankoverlast</title>
   </page>
-  <page id="volksgezondheid" tab="flase" published="false" lastmodified="25-11-2015 10:44">
+  <page id="volksgezondheid" tab="false" published="false" lastmodified="21-11-2017 08:31" inhome="true">
     <content><![CDATA[<h1 style="text-align: left;">Ongedierte en volksgezondheid</h1>
-<p>Ongedierte en volksgezondheid worden vaak in samenhang gebracht omdat sommige soorten ongedierte ziektedragers kunnen zijn waarmee we besmet kunnen worden. Omdat de overheid verantwoordelijk is voor de volksgezondheid, kunnen inwoners altijd met hun vragen en zorgen inzake de aanwezigheid van ongedierte bij hen terecht. Echter, de overheid kan in de meeste gevallen niet aansprakelijk gesteld worden voor een<img style="float: left;" src="../../afbeeldingen/volksgezondheid.jpg" alt="" width="282" height="94" />&nbsp;individueel probleem rondom ongedierte, tenzij kan worden aangetoond dat de overheid dit veroorzaakt heeft.&nbsp;Een individueel probleem vormt tenslotte geen bedreiging voor de volksgezondheid.</p>
+<p>Ongedierte en volksgezondheid worden vaak in samenhang gebracht omdat sommige soorten ongedierte ziektedragers kunnen zijn waarmee we besmet kunnen worden. Omdat de overheid verantwoordelijk is voor de volksgezondheid, kunnen inwoners altijd met hun vragen en zorgen inzake de aanwezigheid van ongedierte bij hen terecht. Echter, de overheid kan in de meeste gevallen niet aansprakelijk gesteld worden voor een<img style="float: left;" src="/afbeeldingen/volksgezondheid.jpg" alt="" width="282" height="94" />&nbsp;individueel probleem rondom ongedierte, tenzij kan worden aangetoond dat de overheid dit veroorzaakt heeft.&nbsp;Een individueel probleem vormt tenslotte geen bedreiging voor de volksgezondheid.</p>
 <p>Als een ongedierteplaag zich echter dusdanig verspreid dat een hele buurt, wijk of zelfs het hele land geconfronteerd wordt met de risico&rsquo;s op ziekten die een bepaald diersoort met zich meebrengt, denk aan bijvoorbeeld ratten ( ziekte van Weil ) of teken ( ziekte van Lyme ), pas dan kan worden gezegd dat het een bedreiging vormt voor de volksgezondheid. Wanneer ook de oorzaak niet duidelijk is, rest er alleen nog de overheid die verantwoordelijk kan worden gehouden voor het vinden van een oplossing.</p>
 <p>Omdat de aanwezigheid van ongedierte en plaagdieren door de toenemende bevolking wel degelijk een steeds serieuzere rol speelt binnen onze samenleving en Europa steeds meer gezamenlijk optreedt, is er in 2009 een uitgebreid rapport van de World Health Organisation&nbsp;verschenen welke meer inzicht geeft in de gevaren van ongedierte in stedelijk gebied.&nbsp;</p>
-<p><a href="../../volksgezondheid.pdf" target="_blank">Lees hier</a>&nbsp;de samenvatting van het WHO rapport.</p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<img src="../../afbeeldingen/who%20rapport.png" alt="" width="76" height="63" />&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;</p>
+<p><a href="/volksgezondheid.pdf" target="_blank">Lees hier</a>&nbsp;de samenvatting van het WHO rapport.</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<img src="/afbeeldingen/who%20rapport.png" alt="" width="76" height="63" />&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;</p>
 <div class="hidden">
 <p dir="ltr" style="line-height: 1.15; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 21px; font-family: Arial; vertical-align: baseline; white-space: pre-wrap;">Gevaren van stedelijk ongedierte voor de volksgezondheid</span></p>
 <p dir="ltr" style="line-height: 1.15; margin-top: 0pt; margin-bottom: 0pt;">&nbsp;</p>
@@ -3098,18 +3100,19 @@
 </div>]]></content>
     <metadescription>Ongedierte en volksgezondheid worden vaak in samenhang gebracht omdat sommige soorten ongedierte ziektedragers kunnen zijn waarmee we besmet kunnen worden. Muizen in huis en ratten vormen het grootste risico. Lees hier meer over ongedierte en de risico's die dit met zich mee brengt.</metadescription>
     <title>Volksgezondheid</title>
+    <sort>0</sort>
   </page>
-  <page id="wettelijke-kaders-en-verantwoordelijkheden" published="false" tab="false" lastmodified="19-05-2017 10:08">
+  <page id="wettelijke-kaders-en-verantwoordelijkheden" published="false" tab="false" lastmodified="21-11-2017 08:31" inhome="true">
     <content><![CDATA[<h1>Verantwoordelijkheden rondom ongedierte</h1>
 <h2>Ongedierte in huis</h2>
 <p>Wie is er verantwoordelijk voor overlast van ongedierte in en om het huis?</p>
 <p>Deze vraag is vrij eenvoudig te beantwoorden wanneer u zelf de aanwezigheid ervan veroorzaakt heeft. Als u bijvoorbeeld uw afval niet goed afsluit of u besteedt geen aandacht aan bouwtechnische preventie, dan kunt u in principe de schuld niet bij een ander leggen.</p>
-<p>Met name&nbsp;<span style="text-decoration: underline;"><a href="../../plaagdierengids/muizen/muizen-in-huis" target="_blank">muizen in huis</a></span>&nbsp;en <span style="text-decoration: underline;"><a href="../../plaagdierengids/ratten/ratten-in-de-tuin" target="_blank">ratten in de tuin</a></span>&nbsp;roepen veel vragen op betreffende dit onderwerp.</p>
+<p>Met name&nbsp;<span style="text-decoration: underline;"><a href="/plaagdierengids/muizen/muizen-in-huis" target="_blank">muizen in huis</a></span>&nbsp;en <span style="text-decoration: underline;"><a href="/plaagdierengids/ratten/ratten-in-de-tuin" target="_blank">ratten in de tuin</a></span>&nbsp;roepen veel vragen op betreffende dit onderwerp.</p>
 <h2>Bekende voorbeelden</h2>
 <p>De verantwoordelijkheid rondom ongedierte in huis wordt al moeilijker te bepalen wanneer bijvoorbeeld uw buurman dagelijks brood naar buiten gooit en u ondervindt vervolgens de overlast die het veroorzaakt omdat uw huis nu eenmaal betere schuilplekken biedt en beter toegankelijk is voor het ongedierte wat op het voedsel van de buren af komt.</p>
 <p>Nog moeilijker wordt het te bepalen wanneer er honderd meter verderop gebouwd wordt. Grote muizenpopulaties zijn hierdoor genoodzaakt een nieuwe leefomgeving te vinden. Ze vinden onderdak in diverse huizen en verplaatsen zich door de muren en het dakbeschot op zoek naar voedsel wat op verschillende plekken voorhanden is. Soms zijn gebouwen met dergelijke problemen ook nog eens een mix van huur- en koopwoningen.&nbsp;</p>
 <h2>Ongediertebestrijding</h2>
-<p>Het inschakelen van de <span style="text-decoration: underline;"><a href="../../ongediertebestrijding" target="_blank">ongediertebestrijding</a></span>&nbsp;is in veel gevallen noodzakelijk.</p>
+<p>Het inschakelen van de <span style="text-decoration: underline;"><a href="/ongediertebestrijding" target="_blank">ongediertebestrijding</a></span>&nbsp;is in veel gevallen noodzakelijk.</p>
 <p>Maar wie is er verantwoordelijk voor de kosten die dit met zich meebrengt? Wie moet bijdragen aan een oplossing? En wat als deze weigert hieraan bij te dragen? Deze vragen zijn niet altijd eenvoudig te beantwoorden.</p>
 <p>Ondanks het feit dat verantwoordelijkheden rondom ongedierte in de wet niet volledig afgebakend kunnen worden, hebben we toch de belangrijkste informatie die ondersteuning kan geven op het beantwoorden van deze vragen hieronder voor u uiteengezet.</p>
 <h2>Woningwet en Bouwverordening</h2>
@@ -3117,26 +3120,27 @@
 <p>De voorschriften van het bouwbesluit hebben betrekking op veiligheid, gezondheid, bruikbaarheid en energiezuinigheid. Op het gebied van ongedierte wordt alleen de bescherming tegen ratten en muizen besproken, maar de technische voorschriften hiervoor bieden geen garantie op de volledige ontoegankelijkheid voor deze diersoorten omdat andere voorschriften ten aanzien van de veiligheid en bruikbaarheid hiervoor een obstakel vormen. De woningwet, de bouwverordening en het bouwbesluit bieden in de meeste gevallen dus te weinig houvast voor de gemiddelde discussie rondom ongedierte. Overlast van ongedierte heeft daarnaast vaak verschillende oorzaken en ook de kosten voor een bestrijding zijn meestal dermate laag dat de noodzaak ontbreekt om van bovenaf richtlijnen te geven die de aanwezigheid van ongedierte in huis volledig uit kunnen sluiten.</p>
 <h2>Volksgezondheid</h2>
 <p>Ongedierte en volksgezondheid worden vaak in samenhang gebracht omdat sommige soorten ongedierte ziektedragers kunnen zijn waarmee we besmet kunnen worden. Omdat de overheid verantwoordelijk is voor de volksgezondheid zijn inwoners al snel geneigd deze voor de bestrijding van ongedierte verantwoordelijk te houden. Toch kan de overheid niet aansprakelijk gesteld worden voor een individueel probleem rondom ongedierte, tenzij kan worden aangetoond dat de overheid dit veroorzaakt heeft. Een individueel probleem vormt ook meestal niet direct een bedreiging voor de volksgezondheid. Als een ongedierteplaag zich echter dusdanig verspreid dat een hele buurt of wijk of zelfs het hele land geconfronteerd wordt met de risico&rsquo;s op ziekten die een bepaald diersoort met zich meebrengt, denk aan bijvoorbeeld ratten (ziekte van Weil) of teken (ziekte van Lyme), pas dan kan worden gezegd dat het een bedreiging vormt voor de volksgezondheid. Wanneer ook de oorzaak niet duidelijk is, rest er alleen nog de overheid die verantwoordelijk kan worden gehouden voor het vinden van een oplossing.</p>
-<p>In 2009 is er een <a class="pdf" href="../../Volksgezondheid.pdf" target="_blank">rapport over volksgezondheid</a> verschenen welke meer inzicht geeft in de gevaren van ongedierte in stedelijk gebied.</p>
+<p>In 2009 is er een <a class="pdf" href="/Volksgezondheid.pdf" target="_blank">rapport over volksgezondheid</a> verschenen welke meer inzicht geeft in de gevaren van ongedierte in stedelijk gebied.</p>
 <h2>De Gemeente</h2>
 <p>Ondanks het feit dat de overheid meestal niet aangesproken kan worden op problemen rondom ongedierte, zijn er nog steeds gemeenten die wel degelijk aktie ondernemen wanneer er meldingen binnenkomen van individuele of kleinschalige aard die de eigen woning of enkele woningen betreft. Dit mag echter gezien worden als een service die de gemeente beschikbaar heeft, geen verantwoordelijkheid. Daarom worden door de gemeenten in deze gevallen bijna altijd kosten in rekening gebracht.</p>
 <h2>Ratten</h2>
-<p>De benadering van <span style="text-decoration: underline;"><a href="../../plaagdierengids/ratten" target="_blank">Bruine Ratten</a></span>&nbsp;vormen bij sommige gemeenten een uitzondering. Ook hierbij behouden zij het recht u door te verwijzen naar een particulier bedrijf voor de bestrijding zodra het uw eigen terrein betreft. Echter, omdat bruine ratten bekend staan als mogelijke dragers van de &lsquo;Ziekte van Weil&rsquo; en ze de reputatie hebben schade toe te kunnen brengen aan de volksgezondheid - denk aan de pestepidemie van vroeger- , ziet de gemeente het soms ook als het om privaat terrein gaat als zijn taak om de risico&rsquo;s die bruine ratten met zich meebrengen actief beheersbaar te houden. Strikt genomen zijn zij alleen verantwoordelijk voor de openbare ruimte, maar soms wordt overlast door ratten op privaat terrein dus ook door hen aangepakt. Toch mag de gemeente van u als inwoner verwachten dat u er op uw eigen terrein alles aan doet om een verergering van een eventueel rattenprobleem te voorkomen. Wanneer u een dusdanige leefomgeving beschikbaar stelt voor ratten waardoor ze zich ongestoord voort kunnen planten, kan de gemeente hier niet zomaar op aangesproken worden. De gemeente kan u zelfs middels een aanschrijven verplichten om zelf maatregelen te treffen. Voorafgaand hieraan wordt meestal een schriftelijk oordeel door een deskundige opgevraagd. Zo kan bijvoorbeeld Meldpunt Ongedierte in opdracht van de gemeente inspecteren, onderzoeken, rapporteren en schriftelijke conclusies vaststellen inzake de omvang van het probleem, de mogelijke oorzaken, de gevolgen en de risico&rsquo;s die dit met zich meebrengt.</p>
+<p>De benadering van <span style="text-decoration: underline;"><a href="/plaagdierengids/ratten" target="_blank">Bruine Ratten</a></span>&nbsp;vormen bij sommige gemeenten een uitzondering. Ook hierbij behouden zij het recht u door te verwijzen naar een particulier bedrijf voor de bestrijding zodra het uw eigen terrein betreft. Echter, omdat bruine ratten bekend staan als mogelijke dragers van de &lsquo;Ziekte van Weil&rsquo; en ze de reputatie hebben schade toe te kunnen brengen aan de volksgezondheid - denk aan de pestepidemie van vroeger- , ziet de gemeente het soms ook als het om privaat terrein gaat als zijn taak om de risico&rsquo;s die bruine ratten met zich meebrengen actief beheersbaar te houden. Strikt genomen zijn zij alleen verantwoordelijk voor de openbare ruimte, maar soms wordt overlast door ratten op privaat terrein dus ook door hen aangepakt. Toch mag de gemeente van u als inwoner verwachten dat u er op uw eigen terrein alles aan doet om een verergering van een eventueel rattenprobleem te voorkomen. Wanneer u een dusdanige leefomgeving beschikbaar stelt voor ratten waardoor ze zich ongestoord voort kunnen planten, kan de gemeente hier niet zomaar op aangesproken worden. De gemeente kan u zelfs middels een aanschrijven verplichten om zelf maatregelen te treffen. Voorafgaand hieraan wordt meestal een schriftelijk oordeel door een deskundige opgevraagd. Zo kan bijvoorbeeld Meldpunt Ongedierte in opdracht van de gemeente inspecteren, onderzoeken, rapporteren en schriftelijke conclusies vaststellen inzake de omvang van het probleem, de mogelijke oorzaken, de gevolgen en de risico&rsquo;s die dit met zich meebrengt.</p>
 <h2>Huurder en Verhuurder</h2>
 <p>Regelmatig ontvangen wij meldingen over geschillen tussen huurder en verhuurder door overlast van ongedierte. Ook hiervoor geldt dat de verantwoordelijkheden gezien de complexe problematiek wettelijk niet afgebakend kunnen worden.</p>
 <p>Huurders en verhuurders tekenen een contract. Hierin staat in de meeste gevallen ook een paragraaf over ongedierte welke is afgeleid van het servicekostenbeleid van de huurcommissie. Het bestrijden en/of voorkomen van ongedierte valt onder de kleine herstellingen die voor rekening zijn van de huurder, tenzij anders staat omschreven in het contract.</p>
 <p>Het meeste ongedierte kan door onze bestrijdingsdeskundige met een enkele ingreep opgelost worden waardoor de kosten dermate beperkt blijven dat de verhuurder hier niet direct bij betrokken hoeft te worden. Een dergelijke bestrijding van ongedierte wordt dan immers gezien als een 'klein herstel'. &nbsp;</p>
-<p>Daarnaast komt de plicht die de verhuurder heeft om een gebrek aan huurgenot te herstellen te vervallen wanneer de omstandigheid toe te rekenen is aan de huurder zelf. Bij ongedierte zoals bijvoorbeeld <span style="text-decoration: underline;"><a href="../../plaagdierengids/muizen/muizen-in-huis" target="_blank">muizen in huis</a></span>&nbsp;, <span style="text-decoration: underline;"><a href="../../insectengids/parasiterende-insecten/vlooien" target="_blank">vlooien</a></span>&nbsp;, <span style="text-decoration: underline;"><a href="../../insectengids/kakkerlakken" target="_blank">kakkerlakken</a></span>&nbsp;of <span style="text-decoration: underline;"><a href="../../insectengids/mieren/mieren-in-huis" target="_blank">mieren in huis</a></span>&nbsp;ligt de oorzaak veelal bij onvoldoende oplettendheid of onvoldoende hygi&euml;nische maatregelen, ook al is het gebouw of de woning toegankelijk voor het ongedierte.</p>
+<p>Daarnaast komt de plicht die de verhuurder heeft om een gebrek aan huurgenot te herstellen te vervallen wanneer de omstandigheid toe te rekenen is aan de huurder zelf. Bij ongedierte zoals bijvoorbeeld <span style="text-decoration: underline;"><a href="/plaagdierengids/muizen/muizen-in-huis" target="_blank">muizen in huis</a></span>&nbsp;, <span style="text-decoration: underline;"><a href="/insectengids/parasiterende-insecten/vlooien" target="_blank">vlooien</a></span>&nbsp;, <span style="text-decoration: underline;"><a href="/insectengids/kakkerlakken" target="_blank">kakkerlakken</a></span>&nbsp;of <span style="text-decoration: underline;"><a href="/insectengids/mieren/mieren-in-huis" target="_blank">mieren in huis</a></span>&nbsp;ligt de oorzaak veelal bij onvoldoende oplettendheid of onvoldoende hygi&euml;nische maatregelen, ook al is het gebouw of de woning toegankelijk voor het ongedierte.</p>
 <p>We hebben net gezien dat de woningwet, de bouwverordening en het bouwbesluit geen voldoende bouwtechnische verplichtingen kunnen leggen op het realiseren van een geheel ontoegankelijke woon- of bedrijfsruimte voor ongedierte. Ook de bedreiging van de volksgezondheid kan niet als excuus gebruikt worden gezien de relatief kleine omvang van het probleem. De overheid kan dus ook niet aansprakelijk gesteld worden. De kosten zullen dus bijna altijd in rekening worden gebracht bij de huurder zelf.</p>
 <h2>Uitzonderingen</h2>
 <p>De verhuurder dient wel medewerking te bieden als aangetoond kan worden dat het ongedierte door andere huurders van de dezelfde verhuurder veroorzaakt wordt of wanneer blijkt dat het om een structureel probleem gaat die niet zomaar voor rekening van de huurder kan komen. Wanneer er bijvoorbeeld een rattenprobleem is vanwege een kapot riool of een probleem met bijvoorbeeld stofluizen door schimmelvorming in een ventilatieschacht, dan kan de verhuurder daarop aangesproken worden.</p>
 <h2>Overlast van muizen door de buren</h2>
-<p>Regelmatig worden wij betrokken bij een burenconflict welke gerelateerd is aan overlast van muizen of ratten. Verschillende soorten ongedierte kunnen zich makkelijk verspreiden tussen geschakelde woningen, maar muizen zorgen overduidelijk voor de meeste ergernis rondom deze problematiek. Zodanig dat wij hiervoor een aparte <span style="text-decoration: underline;"><a href="../../plaagdierengids/muizen/muizen-en-buren" target="_blank">pagina</a></span>&nbsp;hebben geschreven met informatie over hoe hiermee het beste omgegaan kan worden.&nbsp;</p>
+<p>Regelmatig worden wij betrokken bij een burenconflict welke gerelateerd is aan overlast van muizen of ratten. Verschillende soorten ongedierte kunnen zich makkelijk verspreiden tussen geschakelde woningen, maar muizen zorgen overduidelijk voor de meeste ergernis rondom deze problematiek. Zodanig dat wij hiervoor een aparte <span style="text-decoration: underline;"><a href="/plaagdierengids/muizen/muizen-en-buren" target="_blank">pagina</a></span>&nbsp;hebben geschreven met informatie over hoe hiermee het beste omgegaan kan worden.&nbsp;</p>
 <h2>Muizen bestrijden</h2>
 <p>Muizen staan met stip op &eacute;&eacute;n als het gaat om overlast en discussies die hieruit ontstaan. En ook al lijkt de oorzaak verder weg te liggen; De preventie, wering en bestrijding van muizen begint altijd bij u zelf.</p>
-<p>Meer informatie hierover treft u aan in onze rubriek over <span style="text-decoration: underline;"><a href="../../plaagdierengids/muizen/muizenbestrijding" target="_blank">muizen bestrijden</a></span>&nbsp;</p>]]></content>
+<p>Meer informatie hierover treft u aan in onze rubriek over <span style="text-decoration: underline;"><a href="/plaagdierengids/muizen/muizenbestrijding" target="_blank">muizen bestrijden</a></span>&nbsp;</p>]]></content>
     <metadescription>Ongedierte in huis zoals muizen, ratten of kakkerlakken brengen veel discussie teweeg. Wie betaalt de ongediertebestrijding en wie is verantwoordelijk? Hier vindt u meer informatie over de wettelijke kaders en verantwoordelijkheden.   </metadescription>
     <title>Wettelijke kaders en verantwoordelijkheden</title>
+    <sort>0</sort>
   </page>
   <page id="ongedierte-in-huis" lastmodified="15-05-2016 10:48" published="false" tab="true">
     <content><![CDATA[<h1>Ongedierte in huis</h1>

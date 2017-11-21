@@ -36,6 +36,13 @@
   </div>
 
   <div class="field">
+    <label for="publish">
+      @Html.CheckBoxFor(p => p.InHomeMenu)
+      tonen in hoofd menu
+    </label>
+  </div>
+
+  <div class="field">
     <label for="MetaDescription">Titel</label>
     <input type="text" name="EditableTitle" style="width:100%" value="@Model.Title" />
   </div>
