@@ -96,8 +96,9 @@
       </div>
       <div class="zoekform-element">
         <form method="get" autocomplete="off" action="/zoek" class="zoekForm">
-          <input id="zoek" placeholder="Zoek op uw plaatsnaam..." type="text" name="q" onkeyup="suggest.getSuggests(event,this);"><input
-            type="submit" class="searchSubmit" value="  "></form>
+          <input id="zoek" placeholder="@ViewBag.SearchPlaceholder" type="text" name="q" onkeyup="suggest.getSuggests(event,this);"><input
+            type="submit" class="searchSubmit" value="">
+        </form>
         </form>
         <div id="suggests"
              class="suggest-hidden">

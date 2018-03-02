@@ -3,35 +3,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>@ViewBag.Title - Meldpunt Ongedierte</title>
-	<meta http-equiv="Content-Type" lang="nl" content="text/html; charset=utf-8">
-	<meta name="description" lang="nl" content="@ViewBag.Description Meldpunt Ongedierte 0900-2556677">
-	<meta name="keywords" lang="nl" content="meldpunt ongedierte, wespen, houtworm, muizen, ratten, vlooien, papiervisjes, wespen bestrijding, wespen overlast, wespennest, wespenest, plaag, wespenplaag, vlooienplaag. ">
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-	<link type="text/css" rel="stylesheet" href="/css/reset.css">
-	<link type="text/css" rel="stylesheet" href="/css/admin.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>@ViewBag.Title - Meldpunt Ongedierte</title>
+  <meta http-equiv="Content-Type" lang="nl" content="text/html; charset=utf-8">
+  <meta name="description" lang="nl" content="@ViewBag.Description Meldpunt Ongedierte 0900-2556677">
+  <meta name="keywords" lang="nl" content="meldpunt ongedierte, wespen, houtworm, muizen, ratten, vlooien, papiervisjes, wespen bestrijding, wespen overlast, wespennest, wespenest, plaag, wespenplaag, vlooienplaag. ">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link type="text/css" rel="stylesheet" href="/css/reset.css">
+  <link type="text/css" rel="stylesheet" href="/css/admin.css">
 
 
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
-	<script type="text/javascript" src="/Scripts/admin.js"></script>
-	<script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
-	<script type="text/javascript">
-		tinymce.init({
+  <script type="text/javascript" src="/Scripts/admin.js"></script>
+  @*<script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>*@
+  <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+  <script type="text/javascript">
+    tinymce.init({
       selector: ".richtext",
       relative_urls: false,
       remove_script_host: true,
       height: 400,
-			plugins: [
-				"advlist autolink lists link image charmap print preview anchor",
-				"searchreplace visualblocks code fullscreen",
-				"insertdatetime media table contextmenu paste"
-			],
-			toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
-		});
-	</script>
+      image_class_list: [
+        { title: 'none', value: '' },
+        { title: 'left', value: 'left' },
+        { title: 'right', value: 'right' }
+      ],
+
+      plugins: [
+        "advlist autolink lists link image charmap print preview anchor",
+        "searchreplace visualblocks code fullscreen",
+        "insertdatetime media table contextmenu paste"
+      ],
+      toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+    });
+  </script>
 </head>
 <body>
 

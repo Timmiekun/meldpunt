@@ -6,6 +6,7 @@
   ViewBag.Url = Model.Url;
   List<PageModel> subNav = ViewBag.SubNav as List<PageModel>;
   List<PageModel> homeMenu = ViewBag.HomeMenuItems as List<PageModel>;
+  ViewBag.SearchPlaceholder = "Zoek op plaatsnaam..";
 }
 
 
@@ -17,7 +18,7 @@
     <div class="menu">
       <h2>Bekijk ook</h2>
       <ul>
-        @foreach (PageModel item in subNav.OrderByDescending(p=> p.Sort))
+        @foreach (PageModel item in subNav.OrderByDescending(p => p.Sort))
         {
 
           string selected = "";
@@ -31,7 +32,7 @@
             @if (item.Id == Model.Id && item.SubPages.Any())
             {
               <ul class="subNav">
-                @foreach (PageModel subItem in item.SubPages.OrderByDescending(p=> p.Sort))
+                @foreach (PageModel subItem in item.SubPages.OrderByDescending(p => p.Sort))
                 {
                   <li><a href="@subItem.Url">@subItem.Title</a></li>
                 }
@@ -47,7 +48,7 @@
     <div class="menu">
       <h2>Bekijk ook</h2>
       <ul>
-        @foreach(var page in homeMenu.OrderByDescending(p=> p.Sort))
+        @foreach (var page in homeMenu.OrderByDescending(p => p.Sort))
         {
           <li><a href="@page.Url">@page.Title</a></li>
         }

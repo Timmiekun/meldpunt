@@ -1,4 +1,4 @@
-﻿html{
+﻿html {
   height: 100%;
 }
 
@@ -13,12 +13,12 @@ em {
   font-weight: bold;
 }
 
-p{
+p {
   line-height: 24px;
   font-size: 16px;
 }
 
-a:link, a:hover, a:visited, a:active{
+a:link, a:hover, a:visited, a:active {
   color: #4481c7;
   text-decoration: underline;
 }
@@ -30,17 +30,17 @@ h1 {
   line-height: 42px;
 }
 
-h1 .pre-header{
-  font-weight: 200;
-  display: block;
-}
+  h1 .pre-header {
+    font-weight: 200;
+    display: block;
+  }
 
 h2 {
   margin: 30px 0px 5px 0px;
   font-weight: 600;
 }
 
-.woordmerk h2{
+.woordmerk h2 {
   font-size: 30px;
   font-family: 'Bitter', serif;
   font-weight: 700;
@@ -48,7 +48,7 @@ h2 {
   margin-top: 20px;
 }
 
-.footer .footer-woordmerk{
+.footer .footer-woordmerk {
   font-size: 30px;
   line-height: 30px;
   font-family: 'Bitter', serif;
@@ -57,7 +57,7 @@ h2 {
 }
 
 .goto-menu-mobile {
-  display:none;
+  display: none;
 }
 
 .pdf {
@@ -71,17 +71,17 @@ h2 {
   display: none;
 }
 
-.heading{
+.heading {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.beeldmerk, .woordmerk, .phonebutton{
+.beeldmerk, .woordmerk, .phonebutton {
   flex-grow: 1 auto;
 }
 
-.woordmerk, .phonebutton{
+.woordmerk, .phonebutton {
   margin-top: 20px;
 }
 
@@ -97,13 +97,11 @@ h2 {
   line-height: 130%;
 }
 
-.content-and-sidebar{
+.content-and-sidebar {
   display: flex;
   flex-direction: row;
 }
 
-.content, .footer {
-}
 
 .searchText {
   color: White;
@@ -169,6 +167,16 @@ h2 {
   padding-top: 40px;
 }
 
+  .content img.left {
+    margin-right: 15px;
+    float: right;
+  }
+
+  .content img.right {
+    margin-left: 15px;
+    float:right;
+  }
+
 #header {
   display: flex;
   justify-content: center;
@@ -192,12 +200,12 @@ h2 {
     color: #4481c7;
   }
 
-  .breadcrumbs span{
+  .breadcrumbs span {
     margin: 0 10px 0 10px;
     color: #ccc;
   }
 
-.zoekform-element{
+.zoekform-element {
   display: flex;
   flex-grow: 1;
   align-items: flex-end;
@@ -213,9 +221,9 @@ h2 {
   width: 250px;
 }
 
-.zoekForm input::placeholder{
-  color: #ccc;
-}
+  .zoekForm input::placeholder {
+    color: #ccc;
+  }
 
 .zoekForm .searchSubmit {
   background-color: #e3e3e3;
@@ -236,32 +244,33 @@ h2 {
   height: 100%;
 }
 
-.menu h2{
-  margin: 0px;
-  padding: 0 20px;
-}
-
-.menu ul{
-  margin: 10px 0px;
-}
-.menu ul li{
-  margin-left: 0px;
-}
-
-  .menu ul li {
-    line-height: 32px;
-    list-style-type: none;
-    background-image: url(/images/chevron.svg);
-    background-repeat: no-repeat;
-    background-position: 20px 9px;
-    padding: 0 40px;
+  .menu h2 {
+    margin: 0px;
+    padding: 0 20px;
   }
+
+  .menu ul {
+    margin: 10px 0px;
+  }
+
+    .menu ul li {
+      margin-left: 0px;
+    }
+
+    .menu ul li {
+      line-height: 32px;
+      list-style-type: none;
+      background-image: url(/images/chevron.svg);
+      background-repeat: no-repeat;
+      background-position: 20px 9px;
+      padding: 0 40px;
+    }
 
   .menu li:hover {
     background-color: #efefef;
   }
 
-  .menu > ul > li.selected{
+  .menu > ul > li.selected {
     background-color: #f2f2f2;
   }
 
@@ -305,14 +314,14 @@ h2 {
   box-shadow: 0 0 20px rgba(0,0,0,0.2);
 }
 
-.veiligheidsregios{
+.veiligheidsregios {
   display: flex;
 }
 
-.veiligheidsregios > div, .veiligheidsregios ul{
-  padding-right: 20px;
-  width: 25%;
-}
+  .veiligheidsregios > div, .veiligheidsregios ul {
+    padding-right: 20px;
+    width: 25%;
+  }
 
 .footer h3 {
   font-style: italic;
@@ -320,9 +329,9 @@ h2 {
   font-weight: 200;
 }
 
-  h3:hover {
-    text-decoration: underline;
-  }
+h3:hover {
+  text-decoration: underline;
+}
 
 .showDescription h3 {
   background-color: #83003C;
@@ -418,28 +427,30 @@ h2 {
   }
 
 
-@media only screen and (max-width:768px){
-.goto-menu-mobile {
-         position:fixed;
-         top:0px;
-         width: 100vw;
-         text-decoration: none;
-         text-transform: uppercase;
-         background-color: #f2f2f2;
-         padding:10px;
-         cursor:pointer;
-         display:initial;
-         text-align: center;
-         font-weight: bold;
-         z-index: 5;
-         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-         border:none;
-      }
-	.menu {
+@media only screen and (max-width:768px) {
+  .goto-menu-mobile {
+    position: fixed;
+    top: 0px;
+    width: 100vw;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: #f2f2f2;
+    padding: 10px;
+    cursor: pointer;
+    display: initial;
+    text-align: center;
+    font-weight: bold;
+    z-index: 5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border: none;
+  }
+
+  .menu {
     width: 100%;
     margin: 30px 0px 10px 0px;
-	}
-  .topBar{
+  }
+
+  .topBar {
     background: none;
     margin: 0px;
     padding: 0px;
@@ -447,87 +458,101 @@ h2 {
 
 
 
-	#breadcrumbs {
-	  display:none;
-	}
+  #breadcrumbs {
+    display: none;
+  }
 
-  ul{
+  ul {
     display: list-item;
   }
 
-  .main{
+  .main {
     padding: 10px 10px 0px 10px;
     overflow: hidden;
   }
-  .heading{
-    display:flex;
+
+  .heading {
+    display: flex;
     flex-direction: column;
   }
-  .headerImage{
+
+  .headerImage {
     display: none;
   }
 
-  .content-and-sidebar{
+  .content-and-sidebar {
     flex-direction: column;
   }
-	.phone {
-		background-image:none;
-    padding: 10px;
-	}
 
-  .phoneButton{
+  .phone {
+    background-image: none;
+    padding: 10px;
+  }
+
+  .phoneButton {
     margin: 20px 0;
   }
 
-  .veiligheidsregios{
+  .veiligheidsregios {
     flex-direction: column;
   }
-  .veiligheidsregios > div, .veiligheidsregios ul{
-    padding-right: 0px;
-    width: 100%;
-  }
-  .veiligheidsregios div{
-    margin-bottom: 20px;
-  }
-  .breadcrumbs{
+
+    .veiligheidsregios > div, .veiligheidsregios ul {
+      padding-right: 0px;
+      width: 100%;
+    }
+
+    .veiligheidsregios div {
+      margin-bottom: 20px;
+    }
+
+  .breadcrumbs {
     display: none;
   }
-  .zoekform-element{
+
+  .zoekform-element {
     align-items: center;
     justify-content: center;
   }
-  h1{
+
+  h1 {
     font-size: 24px;
   }
-  .topBar{
+
+  .topBar {
     margin-top: 30px;
   }
-  .topBar #tabs .tabItem{
-    width: 100%;
-    margin: 0px;
-    padding: 10px;
-  }
-  .woordmerk{
+
+    .topBar #tabs .tabItem {
+      width: 100%;
+      margin: 0px;
+      padding: 10px;
+    }
+
+  .woordmerk {
     margin: 10px;
     text-align: center;
   }
-  .content{
+
+  .content {
     padding-top: 10px;
   }
+
   .zoekForm input {
     width: 200px;
   }
-  #tabs{
+
+  #tabs {
     position: fixed;
     background-color: #f2f2f2;
     transform: translateY(-450px);
     z-index: 2;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     padding-top: 20px;
-    transition:all 0.3s ease;
+    transition: all 0.3s ease;
   }
 
-  .showMe{
+  .showMe {
     transform: translateY(-140px) !important;
   }
 
