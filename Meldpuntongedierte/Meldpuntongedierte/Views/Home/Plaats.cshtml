@@ -42,7 +42,9 @@
 @if (!String.IsNullOrWhiteSpace(Model.Content) && Model.Published)
 {
   <h1 class="plaatsheader"><span class="pre-header">Meldpunt Ongediertebestrijding</span> @Model.Gemeentenaam</h1>
-  <div class="phone"><a href="tel:@Model.PhoneNumber">@Model.PhoneNumber</a></div>
+  <div class="phone-button phone-icon"><a href="tel:@Model.PhoneNumber">@Model.PhoneNumber</a></div>
+
+  <a class="phone-button whatsapp-icon" href="https://api.whatsapp.com/send?phone=+31622883048&text=">Contact via whatsapp</a>
 
   @Html.Raw(Model.Content)
 }

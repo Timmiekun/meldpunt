@@ -23,7 +23,7 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
   <link type="text/css" rel="stylesheet" href="/css/reset.css">
-  <link type="text/css" rel="stylesheet" href="/css/main.css">
+  <link type="text/css" rel="stylesheet" href="/css/main.css?v=2">
   <link type="text/css" rel="stylesheet" href="/css/suggest.css">
   <link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Catamaran:400,700,900" rel="stylesheet">
 
@@ -96,13 +96,8 @@
       </div>
       <div class="zoekform-element">
         <form method="get" autocomplete="off" action="/zoek" class="zoekForm">
-          <input id="zoek" placeholder="@ViewBag.SearchPlaceholder" type="text" name="q" onkeyup="suggest.getSuggests(event,this);"><input
-            type="submit" class="searchSubmit" value="">
-        </form>
-        </form>
-        <div id="suggests"
-             class="suggest-hidden">
-        </div>
+          <input id="zoek" placeholder="@ViewBag.SearchPlaceholder" type="text" name="q" onkeyup="suggest.getSuggests(event,this);" /><input type="submit" class="searchSubmit" value="  " /></form>
+          <div id="suggests"class="suggest-hidden"></div>
       </div>
     </div>
 

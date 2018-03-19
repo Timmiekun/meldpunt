@@ -366,10 +366,9 @@ h3:hover {
   color: #83003c;
 }
 
-.phone {
+.phone-button {
   font-size: 22px;
   display: inline-block;
-  background-image: url(/Images/icon-phone.svg);
   background-repeat: no-repeat;
   line-height: 24px;
   background-position: 10px 12px;
@@ -383,7 +382,20 @@ h3:hover {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.content .phone a {
+.whatsapp-icon {
+  background-image: url(/Images/whatsapp.png);
+  background-size: 25px;
+  background-position: 8px center;
+}
+
+.phone-icon {
+  background-image: url(/Images/icon-phone.svg);
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.content a.phone-button,
+.content .phone-button a {
   color: white;
 }
 
