@@ -492,8 +492,8 @@ h3:hover {
     flex-direction: column;
   }
 
-  .headerImage {
-    display: none;
+  .topBar .headerImage {
+    position: relative;
   }
 
   .content-and-sidebar {
@@ -506,7 +506,7 @@ h3:hover {
   }
 
   .phoneButton {
-    margin: 20px 0;
+    display: none;
   }
 
   .veiligheidsregios {
@@ -537,18 +537,14 @@ h3:hover {
     font-size: 24px;
   }
 
-  .topBar {
-    margin-top: 30px;
+  .topBar #tabs .tabItem {
+    width: 100%;
+    margin: 0px;
+    padding: 10px;
   }
 
-    .topBar #tabs .tabItem {
-      width: 100%;
-      margin: 0px;
-      padding: 10px;
-    }
-
   .woordmerk {
-    margin: 10px;
+    margin: 30px 10px 10px 10px;
     text-align: center;
   }
 
@@ -563,15 +559,15 @@ h3:hover {
   #tabs {
     position: fixed;
     background-color: #f2f2f2;
-    transform: translateY(-450px);
+    transform: translate3d(0,-110%,0);
     z-index: 2;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    padding-top: 20px;
+    top: 35px;
     transition: all 0.3s ease;
   }
 
   .showMe {
-    transform: translateY(-140px) !important;
+    transform: translate3d(0,0,0) !important;
   }
 
   .topBar .tabItem {
