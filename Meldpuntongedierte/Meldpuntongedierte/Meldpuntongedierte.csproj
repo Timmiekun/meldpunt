@@ -133,6 +133,11 @@
     <Content Include="Css\suggest.css" />
     <Content Include="Global.asax" />
     <Content Include="Images\24-11.png" />
+    <Content Include="Images\aankleuren\Mieren.jpg" />
+    <Content Include="Images\aankleuren\Muizen.jpg" />
+    <Content Include="Images\aankleuren\Overige.jpg" />
+    <Content Include="Images\aankleuren\Ratten.jpg" />
+    <Content Include="Images\aankleuren\Wespen.jpg" />
     <Content Include="Images\arrow-right.png" />
     <Content Include="Images\call_20px.png" />
     <Content Include="Images\call_35px.png" />

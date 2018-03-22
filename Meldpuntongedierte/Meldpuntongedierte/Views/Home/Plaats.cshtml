@@ -43,8 +43,50 @@
 {
   <h1 class="plaatsheader"><span class="pre-header">Meldpunt Ongediertebestrijding</span> @Model.Gemeentenaam</h1>
   <div class="phone-button phone-icon"><a href="tel:@Model.PhoneNumber">@Model.PhoneNumber</a></div>
-
   <a class="phone-button whatsapp-icon" href="https://api.whatsapp.com/send?phone=+31622883048&text=">Contact via whatsapp</a>
+
+  <div class="aankleuren">
+    <div class="folder-image">
+      <a href="/plaagdierengids/muizen">
+        <figure title="muizen" style="background-image:url(/Images/aankleuren/Muizen.jpg)">
+          <img alt="muizen bestrijden" src="/Images/aankleuren/Muizen.jpg" />
+          <figcaption>Muizen</figcaption>
+        </figure>
+      </a>
+    </div>
+    <div class="folder-image">
+      <a href="/plaagdierengids/ratten ">
+        <figure title="ratten" style="background-image:url(/Images/aankleuren/Ratten.jpg)">
+          <img alt="ratten bestrijden" src="/Images/aankleuren/Ratten.jpg" />
+          <figcaption>Ratten</figcaption>
+        </figure>
+      </a>
+    </div>
+    <div class="folder-image">
+      <a href="/insectengids/wespen">
+        <figure title="wespen" style="background-image:url(/Images/aankleuren/Wespen.jpg)">
+          <img alt="wespen bestrijden" src="/Images/aankleuren/Wespen.jpg" />
+          <figcaption>Wespen</figcaption>
+        </figure>
+      </a>
+    </div>
+    <div class="folder-image">
+      <a href="/insectengids/mieren">
+        <figure title="mieren" style="background-image:url(/Images/aankleuren/Mieren.jpg)">
+          <img alt="mieren bestrijden" src="/Images/aankleuren/Mieren.jpg" />
+          <figcaption>Mieren</figcaption>
+        </figure>
+      </a>
+    </div>
+    <div class="folder-image">
+      <a href="/insectengids">
+        <figure title="insectengids" style="background-image:url(/Images/aankleuren/Overige.jpg)">
+          <img alt="insecten bestrijden" src="/Images/aankleuren/Overige.jpg" />
+          <figcaption>Overige</figcaption>
+        </figure>
+      </a>
+    </div>
+  </div>
 
   @Html.Raw(Model.Content)
 }

@@ -23,7 +23,7 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
   <link type="text/css" rel="stylesheet" href="/css/reset.css">
-  <link type="text/css" rel="stylesheet" href="/css/main.css?v=2">
+  <link type="text/css" rel="stylesheet" href="/css/main.css?v=4">
   <link type="text/css" rel="stylesheet" href="/css/suggest.css">
   <link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Catamaran:400,700,900" rel="stylesheet">
 
@@ -62,7 +62,7 @@
     </div>
     <div id="tabholder">
       <div id="tabs">
-        @foreach (PageModel tabItem in pagesForTabs)
+        @foreach (PageModel tabItem in pagesForTabs.OrderByDescending(t=> t.Sort))
         {
           string className = "tabItem";
           if (Request.Url.AbsolutePath.Contains(tabItem.Id) || tabItem.Id == "home" && Request.Url.AbsolutePath == "/")
