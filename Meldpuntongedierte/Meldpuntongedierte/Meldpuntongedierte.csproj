@@ -227,6 +227,7 @@
     <Content Include="Views\Admin\adminNav.cshtml" />
     <Content Include="Views\Admin\EditPage.cshtml" />
     <Content Include="Views\Home\PlaatsWespennest.cshtml" />
+    <Content Include="Views\Home\Disqus.cshtml" />
     <None Include="Volksgezondheid.pdf" />
     <None Include="Web.azure.config">
       <DependentUpon>Web.config</DependentUpon>

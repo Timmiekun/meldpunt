@@ -156,6 +156,7 @@ namespace Meldpunt
     {
       var exception = Server.GetLastError();
       var httpException = exception as HttpException;
+      throw httpException;
 
       var routeData = new RouteData();
       routeData.Values["controller"] = "Error";

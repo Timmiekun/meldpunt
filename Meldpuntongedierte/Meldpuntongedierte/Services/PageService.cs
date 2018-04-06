@@ -219,7 +219,8 @@ namespace Meldpunt.Services
         InHomeMenu = page.Attributes["inhome"] != null && page.Attributes["inhome"].Value == "true",
         MetaDescription = metadescription,
         Published = published,
-        Sort = sort
+        Sort = sort,
+        EditableTitle = page.SelectSingleNode("title")?.InnerText
       };
 
       return p;
