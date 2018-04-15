@@ -131,6 +131,7 @@
     <Content Include="Css\main.css" />
     <Content Include="Css\reset.css" />
     <Content Include="Css\suggest.css" />
+    <Content Include="favicon.png" />
     <Content Include="Global.asax" />
     <Content Include="Images\24-11.png" />
     <Content Include="Images\aankleuren\Mieren.jpg" />

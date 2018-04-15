@@ -43,7 +43,8 @@
 {
   <h1 class="plaatsheader"><span class="pre-header">Meldpunt Ongediertebestrijding</span> @Model.Gemeentenaam</h1>
   <div class="phone-button phone-icon"><a href="tel:@Model.PhoneNumber">@Model.PhoneNumber</a></div>
-  <a class="phone-button whatsapp-icon" href="https://api.whatsapp.com/send?phone=+31611690664&text=">Contact via whatsapp</a>
+  @*<div class="phone-button"><a href="#">Doe alleen een melding</a></div>*@
+  @*<a class="phone-button whatsapp-icon" href="https://api.whatsapp.com/send?phone=+31611690664&text=">Contact via whatsapp</a>*@
 
   <div class="aankleuren">
     <div class="folder-image">
@@ -88,8 +89,10 @@
     </div>
   </div>
 
-  @Html.Raw(Model.Content)
-  @Html.Partial("Disqus")
+  <div class="created-content">
+    @Html.Raw(Model.Content)
+  </div>
+
 }
 else
 {
