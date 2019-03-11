@@ -205,6 +205,18 @@ namespace Meldpunt.Services
 
       bool published = page.Attributes != null && page.Attributes["published"] != null && page.Attributes["published"].Value == "true";
 
+      string lastModifiedString = page.Attributes["lastmodified"]?.Value;
+      DateTimeOffset? lastModified = null;
+      if (!string.IsNullOrWhiteSpace(lastModifiedString))
+      {
+        DateTimeOffset lastModifiedParsed;
+        if(DateTimeOffset.TryParse(lastModifiedString, out lastModifiedParsed))
+        {
+          lastModified = lastModifiedParsed;
+        }
+      }
+      
+
       PageModel p = new PageModel()
       {
         Id = id,
@@ -220,7 +232,8 @@ namespace Meldpunt.Services
         MetaDescription = metadescription,
         Published = published,
         Sort = sort,
-        EditableTitle = page.SelectSingleNode("title")?.InnerText
+        EditableTitle = page.SelectSingleNode("title")?.InnerText,
+        LastModified = lastModified
       };
 
       return p;

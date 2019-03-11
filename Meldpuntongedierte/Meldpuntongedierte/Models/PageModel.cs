@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Web;
 
 namespace Meldpunt.Models
@@ -29,6 +30,7 @@ namespace Meldpunt.Models
     public bool HasSublingMenu { get; set; }
     public string ParentId { get; set; }
     public List<PageModel> SubPages { get; set; }
+    public DateTimeOffset? LastModified { get; set; }
 
     /// <summary>
     /// Used to sort Childpages
