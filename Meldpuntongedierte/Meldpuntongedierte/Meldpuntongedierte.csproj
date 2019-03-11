@@ -129,6 +129,7 @@
     </Content>
     <Content Include="Css\admin.css" />
     <Content Include="Css\main.css" />
+    <Content Include="Css\mobile.css" />
     <Content Include="Css\reset.css" />
     <Content Include="Css\suggest.css" />
     <Content Include="favicon.png" />

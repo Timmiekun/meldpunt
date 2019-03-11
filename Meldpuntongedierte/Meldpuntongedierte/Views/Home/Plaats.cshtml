@@ -27,15 +27,17 @@
 }
 
 @section menu{
-  <div class="menu">
-    <h2>Bekijk ook</h2>
-    <ul>
-      @foreach (var page in homeMenu.OrderByDescending(p => p.Sort))
-      {
-        <li><a href="@page.Url">@page.Title</a></li>
-      }
-    </ul>
-  </div>
+<div class="menu">
+  <h2>Bekijk ook</h2>
+  <ul
+    <li class="showOnMobile"><a href="/">Home</a></li>
+    @foreach (var page in homeMenu.OrderByDescending(p => p.Sort))
+    {
+      <li><a href="@page.Url">@page.Title</a></li>
+    }
+  </ul>
+  <button class="goto-menu-mobile">menu</button>
+</div>
 }
 
 

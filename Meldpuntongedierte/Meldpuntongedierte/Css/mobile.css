@@ -1,0 +1,223 @@
+﻿.menu ul li.showOnMobile {
+  display: none;
+}
+
+@media only screen and (max-width:768px) {
+  .menu ul li.showOnMobile {
+    display: block;
+  }
+
+  .goto-menu-mobile {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: #efefef;
+    padding: 10px;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    z-index: 5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border: none;
+    transform: translate3d(0,0,0);
+    transition: all 0.4s cubic-bezier(0.39, 0.58, 0.57, 1);
+    user-select: none;
+  }
+
+    .goto-menu-mobile.hidden {
+      transform: translate3d(0,-100%,0);
+    }
+
+  .showMe .goto-menu-mobile {
+    box-shadow: none;
+  }
+
+  .menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding-top: 40px;
+    border: none;
+    background-color: #efefef;
+    transform: translate3d(0,-100%,0);
+    transition: all 0.2s cubic-bezier(0.39, 0.58, 0.57, 1);
+  }
+
+  .showMe .menu {
+    transform: translate3d(0,0,0);
+  }
+
+  .menu h2 {
+    display: none;
+  }
+
+  .showMe {
+    overflow: hidden;
+  }
+
+    .showMe #intercom-container {
+      display: none;
+    }
+
+  .topBar {
+    background: none;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  #breadcrumbs {
+    display: none;
+  }
+
+  ul {
+    display: list-item;
+  }
+
+  .main {
+    padding: 10px 10px 0px 10px;
+    overflow: hidden;
+  }
+
+  .heading {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .topBar .headerImage {
+    position: relative;
+  }
+
+  .content-and-sidebar {
+    flex-direction: column;
+  }
+
+  .phone {
+    background-image: none;
+    padding: 10px;
+  }
+
+  .phoneButton {
+    display: none;
+  }
+
+  .veiligheidsregios {
+    flex-direction: column;
+  }
+
+    .veiligheidsregios > div, .veiligheidsregios ul {
+      padding-right: 0px;
+      width: 100%;
+    }
+
+    .veiligheidsregios div {
+      margin-bottom: 20px;
+    }
+
+
+
+  .breadcrumbs {
+    display: none;
+  }
+
+  .zoekform-element {
+    align-items: center;
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .topBar #tabs .tabItem {
+    width: 100%;
+    margin: 0px;
+    padding: 10px;
+  }
+
+  .woordmerk {
+    margin: 30px 10px 10px 10px;
+    text-align: center;
+  }
+
+  .content {
+    padding-top: 10px;
+  }
+
+  .zoekForm input {
+    width: 200px;
+  }
+
+  #tabs {
+    display: none;
+  }
+}
+
+
+.hamburger {
+  display: inline-block;
+  position: relative;
+  margin-right: 6px;
+  width: 15px;
+  height: 12px;
+  vertical-align: 0px;
+}
+
+  .hamburger .bun,
+  .hamburger .burger,
+  .hamburger .toppings {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0;
+    border-bottom: 2px solid;
+    transition: all 0.3s ease;
+  }
+
+  .hamburger .toppings {
+    top: 0;
+  }
+
+  .hamburger .burger {
+    top: 50%;
+    margin-top: -1px;
+  }
+
+  .hamburger .bun {
+    top: 100%;
+    margin-top: -2px;
+  }
+
+.showMe .hamburger {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+  .showMe .hamburger .toppings,
+  .showMe .hamburger .bun {
+    top: 50%;
+    margin-top: -1px;
+  }
+
+  .showMe .hamburger .toppings {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  .showMe .hamburger .burger {
+    left: 50%;
+    width: 0;
+  }
+
+  .showMe .hamburger .bun {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
