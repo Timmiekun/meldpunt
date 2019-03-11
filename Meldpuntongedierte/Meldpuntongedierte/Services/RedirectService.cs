@@ -24,6 +24,15 @@ namespace Meldpunt.Services
       return XmlToModel(redirects);
     }
 
+    public RedirectModel FindByFrom(string from)
+    {
+      XmlElement redirect = (XmlElement)redirectsDoc.SelectSingleNode("//redirect[from='" + from + "']");
+      if (redirect == null)
+        return null;
+
+      return XmlToModel(redirect);
+    }
+
     public RedirectModel SaveRedirect(RedirectModel p)
     {
       XmlElement redirect = (XmlElement)redirectsDoc.SelectSingleNode("//redirect[@id='" + p.Id.ToString() + "']");

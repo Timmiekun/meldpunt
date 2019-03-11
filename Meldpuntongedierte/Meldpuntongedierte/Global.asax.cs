@@ -145,7 +145,7 @@ namespace Meldpunt
       AreaRegistration.RegisterAllAreas();
 
       GlobalFilters.Filters.Add(new GlobalFilterAttribute());
-      // GlobalFilters.Filters.Add(new MustBeAdminAttribute());
+      GlobalFilters.Filters.Add(new RedirectFilterAttribute());
 
       RegisterGlobalFilters(GlobalFilters.Filters);
 
