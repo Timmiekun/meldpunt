@@ -1,34 +1,47 @@
 ﻿@using Meldpunt.Models;
 @using Meldpunt.Utils;
 @model List<PageModel>
-  @{
-    ViewBag.Title = "Admin";
-    var locations = ViewBag.Locations;
-    Layout = "~/Views/Shared/_Admin.cshtml";
-  }
-  <h1>Beheer pagina's</h1>
+@{
+  /**/
 
-  <div class="list-item list-item-header">
-    <div class="title">Titel</div>
-    <div class="url">Url</div>
+  ViewBag.Title = "Admin";
+  var locations = ViewBag.Locations;
+  Layout = "~/Views/Shared/_Admin.cshtml";
+}
+<h1>Beheer pagina's</h1>
+
+<div class="list-item list-item-header">
+  <div class="title">Titel</div>
+  <div class="url">Url</div>
+</div>
+
+@foreach (PageModel p in Model)
+{
+  @pageItem(p);
+}
+
+<a href="/admin/newpage" class="btn btn-info new-button js-new-page">Nieuwe pagina</a>
+
+@section menu{
+  <div class="menu">
+    <ul>
+      <li><a href="/admin/pages">Pagina's</a></li>
+      <li><a href="/admin/places">Plaatsen</a></li>
+      <li><a href="/admin/redirects">Redirects</a></li>
+    </ul>
   </div>
+}
 
-  @foreach (PageModel p in Model)
+@helper pageItem(PageModel page)
+{
+  <div class="list-item">
+    <div class="title"><a class="link-to-edit" href="/admin/editpage/@page.Id">@page.Title</a></div>
+    <div class="url">@page.Url</div>
+  </div>
+  foreach (PageModel subpage in page.SubPages)
   {
-    <div class="list-item">
-      <div class="title"><a href="/admin/editpage/@p.Id">@p.Title</a></div>
-      <div class="url">@p.Url</div>
-    </div>
+  <div class="subpages">
+    @pageItem(subpage)
+  </div>
   }
-
-  <a href="/admin/newpage" class="btn btn-info new-button js-new-page">Nieuwe pagina</a>
-
-  @section menu{
-    <div class="menu">
-      <ul>
-        <li><a href="/admin/pages">Pagina's</a></li>
-        <li><a href="/admin/places">Plaatsen</a></li>
-        <li><a href="/admin/redirects">Redirects</a></li>
-      </ul>
-    </div>
-  }
+}

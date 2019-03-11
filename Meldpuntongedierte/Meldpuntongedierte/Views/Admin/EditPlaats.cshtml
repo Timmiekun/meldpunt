@@ -54,13 +54,14 @@
     </div>
 
     <input type="hidden" name="Gemeentenaam" value="@Model.Gemeentenaam" />
-    <input type="submit" value="opslaan" />
+    <input type="submit" class="btn btn-info" value="opslaan" />
   </form>
 
 @section menu{
   <div class="menu">
-    <h2>Gemeenten</h2>
+    
     <ul>
+      <li>Gemeenten</li>
       @foreach (var kv in locations)
       {
         string url = ((string)kv.Key).XmlSafe();

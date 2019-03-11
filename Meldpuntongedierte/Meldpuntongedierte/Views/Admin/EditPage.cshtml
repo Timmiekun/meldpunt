@@ -15,32 +15,36 @@
 
 <form method="post">
 
-  <div class="field">
-    <label for="publish">
-      @Html.CheckBoxFor(p => p.Published)
-      gepubliceerd
-    </label>
-  </div>
+  <div class="checkboxes">
 
-  <div class="field">
-    <label for="Sort">
-      <input type="number" name="Sort" class="form-control" style="width:50px" value="@Model.Sort" />
-      sorteer nummer
-    </label>
-  </div>
+    <div class="field">
+      <label for="publish">
+        @Html.CheckBoxFor(p => p.Published)
+        gepubliceerd
+      </label>
+    </div>
 
-  <div class="field">
-    <label for="publish">
-      @Html.CheckBoxFor(p => p.InTabMenu)
-      tonen in top menu
-    </label>
-  </div>
+    <div class="field">
+      <label for="publish">
+        @Html.CheckBoxFor(p => p.InTabMenu)
+        tonen in top menu
+      </label>
+    </div>
 
-  <div class="field">
-    <label for="publish">
-      @Html.CheckBoxFor(p => p.InHomeMenu)
-      tonen in hoofd menu
-    </label>
+    <div class="field">
+      <label for="publish">
+        @Html.CheckBoxFor(p => p.InHomeMenu)
+        tonen in hoofd menu
+      </label>
+    </div>
+
+    <div class="field">
+      <label for="Sort">
+        <input type="number" name="Sort" style="width:50px" value="@Model.Sort" />
+        sorteer nummer
+      </label>
+    </div>
+
   </div>
 
   <div class="field">
@@ -82,35 +86,26 @@
 
 @section menu{
   <div class="menu">
-    <h2>Pagina's</h2>
     <ul>
+      <li><a href="/admin/pages">Pagina's</a></li>
       @if (!String.IsNullOrWhiteSpace(Model.ParentId))
       {
-        <li><b><a href="/admin/editpage/@Model.ParentId">@Model.ParentId.Capitalize()</a></b></li>
+        <li><a href="/admin/editpage/@Model.ParentId">@Model.ParentId.Capitalize()</a></li>
       }
-      else
-      {
-        <li><b><a href="/admin">Home</a></b></li>
-      }
-      @foreach (PageModel p in Model.SubPages)
-      {
-        <li class="subpages">
-          <a href="/admin/editpage/@p.Id">@p.Title</a>
-        </li>
-      }
-    </ul>
-  </div>
+      <li class="subpages">
+        <b>@Model.Title</b>
+        <ul>
+          @foreach (PageModel p in Model.SubPages)
+          {
+            <li class="subpages">
+              <a href="/admin/editpage/@p.Id">@p.Title</a>
+            </li>
+          }
+        </ul>
+      </li>
 
-  <div class="menu">
-    <h2>Gemeenten</h2>
-    <ul>
-      @foreach (var kv in locations)
-      {
-        string url = ((string)kv.Key).XmlSafe();
-        <li>
-          <a href="/admin/editplaats/@url">@kv.Key</a>
-        </li>
-      }
+      <li><a href="/admin/places">Plaatsen</a></li>
+      <li><a href="/admin/redirects">Redirects</a></li>
     </ul>
   </div>
 }

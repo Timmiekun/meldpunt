@@ -93,10 +93,7 @@ h2 {
 
   .menu ul li {
     list-style-type: none;
-    padding-left: 15px;
-    background-image: url(/images/arrow-right.png);
-    background-repeat: no-repeat;
-    background-position: 5px 6px;
+    padding-left: 5px;
   }
 
 .subpages {
@@ -228,11 +225,16 @@ h3 {
     font-weight: bold;
   }
 
-
-
+.checkboxes{
+  overflow:hidden;
+}
+.checkboxes .field {
+  float: left;
+  margin-right: 20px;
+}
 /* List pages */
 .list-item {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #efefef;
   padding: 10px;
   clear: both;
   overflow: hidden;
@@ -242,7 +244,7 @@ h3 {
   font-weight: bold;
 }
 
-.list-item a {
+.list-item .link-to-edit {
   color: #83003c;
 }
 
@@ -258,21 +260,25 @@ h3 {
 }
 
 .list-item .url {
-  width: 30%;
+  width: 40%;
 }
 
 .list-item .from {
-  width: 40%;
+  width: 35%;
   padding-right: 20px;
 }
 
 .list-item .to {
-  width: 40%;
+  width: 35%;
   padding-right: 20px;
 }
 
 .list-item .action{
-  width:5%;
+  width:25%;
+}
+
+.subpages{
+  border-left: 5px solid #efefef;
 }
 
 .new-button {
