@@ -54,14 +54,15 @@ namespace Meldpunt.Controllers
     [HttpPost]
     public ActionResult Redirects(RedirectModel redirect)
     {
-      if (String.IsNullOrWhiteSpace(redirect.To))
-        ModelState.AddModelError("redirect.To", "Veld mag niet leeg zijn");
-
-      else if (!redirect.To.StartsWith("/"))
-        ModelState.AddModelError("redirect.To", "Veld moet met '/' beginnen");
-
       if (!ModelState.IsValid)
         return View(redirectsService.GetAllRedirects());
+
+      var existingRedirect = redirectsService.FindByFrom(redirect.From);
+      if(existingRedirect != null && existingRedirect.Id != redirect.Id)
+      {
+        ModelState.AddModelError("alreadyExists", "Er bestaat al een redirect van deze url");
+        return View(redirectsService.GetAllRedirects());
+      }
 
       redirectsService.SaveRedirect(redirect);
       return View(redirectsService.GetAllRedirects());

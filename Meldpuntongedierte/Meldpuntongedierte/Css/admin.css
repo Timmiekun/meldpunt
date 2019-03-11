@@ -278,3 +278,7 @@ h3 {
 .new-button {
   margin-top: 20px;
 }
+
+.alert-warning ul{
+  margin-bottom: 0;
+}
