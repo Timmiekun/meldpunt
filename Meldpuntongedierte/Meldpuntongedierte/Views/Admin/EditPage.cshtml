@@ -7,13 +7,14 @@
   Layout = "~/Views/Shared/_Admin.cshtml";
 }
 
-<a href="/admin/newpage?parentid=@Model.Id" class="js-new-page btn btn-default">Nieuwe pagina</a>
+<a href="/admin/newpage?parentid=@Model.Id" class="js-new-page btn btn-info">Nieuwe pagina</a>
 
-<h1>@Model.HeaderTitle</h1>
+<h1>@Model.Title</h1>
 
-<a class="viewPage" href="@Model.Url" target="_blank">Pagina bekijken</a>
+<a class="viewPage btn btn-info" href="@Model.Url" target="_blank">Pagina bekijken</a>
 
 <form method="post">
+
   <div class="field">
     <label for="publish">
       @Html.CheckBoxFor(p => p.Published)
@@ -22,8 +23,8 @@
   </div>
 
   <div class="field">
-    <label for="Sort">      
-      <input type="number" name="Sort" style="width:50px" value="@Model.Sort" />
+    <label for="Sort">
+      <input type="number" name="Sort" class="form-control" style="width:50px" value="@Model.Sort" />
       sorteer nummer
     </label>
   </div>
@@ -44,12 +45,12 @@
 
   <div class="field">
     <label for="MetaDescription">Titel</label>
-    <input type="text" name="EditableTitle" style="width:100%" value="@Model.Title" />
+    <input type="text" name="EditableTitle" class="form-control" value="@Model.Title" />
   </div>
 
   <div class="field">
     <label for="MetaDescription">Meta description</label>
-    <textarea id="MetaDescription" style="width:100%;height: 40px;" name="MetaDescription" type="text">@Model.MetaDescription</textarea>
+    <textarea id="MetaDescription" class="form-control" name="MetaDescription" type="text">@Model.MetaDescription</textarea>
   </div>
 
 
@@ -60,13 +61,21 @@
 			@Model.Content
 		</textarea>
   </div>
+
+  @if (Model.LastModified.HasValue)
+  {
+    <div class="field">
+      Voor het laatst aangepast: <b>@Model.LastModified.Value.ToString("R")</b>
+    </div>
+  }
+
   <input type="hidden" name="Id" value="@Model.Id" />
-  <input type="submit" value="opslaan" class="pull-left btn btn-info" />
+  <input type="submit" value="opslaan" class="float-left btn btn-info" />
 </form>
 
 <form action="/admin/deletepage" class="js-delete-page">
   <input type="hidden" name="Id" value="@Model.Id" />
-  <input type="submit" value="pagina verwijderen" class="pull-right btn btn-danger" />
+  <input type="submit" value="pagina verwijderen" class="float-right btn btn-danger" />
 </form>
 
 
@@ -75,7 +84,6 @@
   <div class="menu">
     <h2>Pagina's</h2>
     <ul>
-
       @if (!String.IsNullOrWhiteSpace(Model.ParentId))
       {
         <li><b><a href="/admin/editpage/@Model.ParentId">@Model.ParentId.Capitalize()</a></b></li>
@@ -86,7 +94,7 @@
       }
       @foreach (PageModel p in Model.SubPages)
       {
-        <li>
+        <li class="subpages">
           <a href="/admin/editpage/@p.Id">@p.Title</a>
         </li>
       }

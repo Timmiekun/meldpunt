@@ -6,9 +6,22 @@
     var locations = ViewBag.Locations;
     Layout = "~/Views/Shared/_Admin.cshtml";
   }
+  <h1>Beheer pagina's</h1>
 
-  <h1>Zoek pagina of plaats</h1>
-  <input type="text" class="form-control" placeholder="b.v. Wespen of Amsterdam" />
+  <div class="list-item list-item-header">
+    <div class="title">Titel</div>
+    <div class="url">Url</div>
+  </div>
+
+  @foreach (PageModel p in Model)
+  {
+    <div class="list-item">
+      <div class="title"><a href="/admin/editpage/@p.Id">@p.Title</a></div>
+      <div class="url">@p.Url</div>
+    </div>
+  }
+
+  <a href="/admin/newpage" class="btn btn-info new-button js-new-page">Nieuwe pagina</a>
 
   @section menu{
     <div class="menu">

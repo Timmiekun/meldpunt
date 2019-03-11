@@ -7,8 +7,22 @@
     Layout = "~/Views/Shared/_Admin.cshtml";
   }
 
-  <h1>Zoek pagina of plaats</h1>
-  <input type="text" class="form-control" placeholder="b.v. Wespen of Amsterdam" />
+  <h1>Beheer plaatsen</h1>
+
+  <div class="list-item list-item-header">
+    <div class="title">Titel</div>
+    <div class="url">Url</div>
+  </div>
+
+  @foreach (var kv in locations)
+  {
+    string url = ((string)kv.Key).XmlSafe();
+    <div class="list-item">
+      <div class="title"><a href="/admin/editplaats/@url">@kv.Key</a></div>
+      <div class="url">@url</div>
+    </div>
+  }
+
 
   @section menu{
     <div class="menu">

@@ -9,7 +9,7 @@
 
 <h1>Gemeente @Model.Gemeentenaam</h1>
 
-<a class="viewPage" href="/@Model.Gemeentenaam" target="_blank">Pagina bekijken</a>
+<a class="viewPage btn btn-info" href="/@Model.Gemeentenaam" target="_blank">Pagina bekijken</a>
 
 @if (Model.Plaatsen.Count > 1)
 {
@@ -17,43 +17,45 @@
 }
 
 
-<form method="post">
-  <div class="field">
-    Voor het laatst aangepast: <b>@Model.LastModified.ToString("R")</b>
-  </div>
+  <form method="post">
 
-  <div class="field">
-    <label for="publish">
-      @Html.CheckBoxFor(p => p.Published)
-      gepubliceerd
-    </label>
-  </div>
+    <div class="field">
+      <label for="publish">
+        @Html.CheckBoxFor(p => p.Published)
+        gepubliceerd
+      </label>
+    </div>
 
-  <div class="field">
-    <label for="MetaDescription">Meta description</label>
-    <textarea id="MetaDescription" style="width:100%;height: 40px;" name="MetaDescription" type="text">@Model.MetaDescription</textarea>
-  </div>
-  
-  <div class="field">
-    <label for="MetaDescription">Title</label>
-    <input type="text" name="title" style="width:100%" value="@Model.Title" />
-  </div>
+    <div class="field">
+      <label for="MetaDescription">Meta description</label>
+      <textarea id="MetaDescription" class="form-control" name="MetaDescription" type="text">@Model.MetaDescription</textarea>
+    </div>
 
-  <div class="field">
-    <label for="MetaDescription">Telefoonnummer</label>
-    <input type="text" name="PhoneNumber" style="width:100%" value="@Model.PhoneNumber" />
-  </div>  
+    <div class="field">
+      <label for="MetaDescription">Title</label>
+      <input type="text" name="title" class="form-control" value="@Model.Title" />
+    </div>
+
+    <div class="field">
+      <label for="MetaDescription">Telefoonnummer</label>
+      <input type="text" name="PhoneNumber" class="form-control" value="@Model.PhoneNumber" />
+    </div>
 
 
-  <div class="field">
-    <label for="content">Content</label>
-    <textarea id="content" name="content" class="richtext">
+    <div class="field">
+      <label for="content">Content</label>
+      <textarea id="content" name="content" class="richtext">
       @Model.Content
     </textarea>
-  </div>
-  <input type="hidden" name="Gemeentenaam" value="@Model.Gemeentenaam" />
-  <input type="submit" value="opslaan" />
-</form>
+    </div>
+
+    <div class="field">
+      Voor het laatst aangepast: <b>@Model.LastModified.ToString("R")</b>
+    </div>
+
+    <input type="hidden" name="Gemeentenaam" value="@Model.Gemeentenaam" />
+    <input type="submit" value="opslaan" />
+  </form>
 
 @section menu{
   <div class="menu">

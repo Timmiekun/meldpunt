@@ -1,11 +1,14 @@
-﻿html {
+﻿html, body {
+  box-sizing: border-box;
+}
+
+html {
   height: 100%;
 }
 
 body {
   color: black;
-  font-family: Verdana, Tahoma, arial;
-  font-size: 80%;
+  font-family: 'Catamaran', sans-serif;
   height: 100%;
 }
 
@@ -16,8 +19,8 @@ em {
 
 h1 {
   margin: 10px 0px 20px 0px;
+  font-size: 200%;
   font-weight: bold;
-  font-size: 18px;
 }
 
 h2 {
@@ -41,7 +44,7 @@ h2 {
   line-height: 130%;
 }
 
-.content, .footer {
+.footer {
   background-color: #efefef;
 }
 
@@ -55,34 +58,37 @@ h2 {
   padding-top: 10px;
 }
 
-  .topBar h2 {
+  .topBar h2 a {
+    display: block;
     color: White;
     padding: 30px 0px;
+    font-size: 250%;
+    font-weight: bold;
+    font-family: 'Catamaran', sans-serif;
   }
+
+    .topBar h2 a:hover {
+      text-decoration: none;
+    }
 
 .content {
   padding: 20px;
   overflow: hidden;
+  border-left: 2px solid #efefef;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
   .content p {
     margin: 10px 0px;
   }
 
-  .content a {
-    color: #83003c;
-  }
-
 .menu {
   position: relative;
   width: 250px;
   padding-top: 20px;
-  border-right: 10px solid #efefef;
   float: left;
-  max-height: 800px;
-  overflow-y: scroll;
-  clear:both;
+  clear: both;
 }
 
   .menu ul li {
@@ -93,9 +99,13 @@ h2 {
     background-position: 5px 6px;
   }
 
-  .menu > ul > li.selected > a {
-    font-weight: bold;
-  }
+.subpages {
+  margin-left: 10px;
+}
+
+.menu > ul > li.selected > a {
+  font-weight: bold;
+}
 
 .subNav {
   margin-left: 10px;
@@ -106,7 +116,6 @@ h2 {
   padding: 3px 0px 3px 2px;
   color: #83003c;
   text-decoration: none;
-  font-size: 12px;
 }
 
 .viewPage {
@@ -218,3 +227,50 @@ h3 {
   .field label {
     font-weight: bold;
   }
+
+
+
+/* List pages */
+.list-item {
+  border-bottom: 1px solid black;
+  padding: 10px;
+  clear: both;
+  overflow: hidden;
+}
+
+.list-item-header {
+  font-weight: bold;
+}
+
+.list-item a {
+  color: #83003c;
+}
+
+.list-item > div {
+  float: left;
+}
+
+.list-item .title {
+  width: 30%;
+}
+
+.list-item .url {
+  width: 30%;
+}
+
+.list-item .from {
+  width: 40%;
+  padding-right: 20px;
+}
+
+.list-item .to {
+  width: 40%;
+}
+
+.list-item .action{
+  width:5%;
+}
+
+.new-button {
+  margin-top: 20px;
+}
