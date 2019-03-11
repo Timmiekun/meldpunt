@@ -54,6 +54,15 @@ namespace Meldpunt.Controllers
     [HttpPost]
     public ActionResult Redirects(RedirectModel redirect)
     {
+      if (String.IsNullOrWhiteSpace(redirect.To))
+        ModelState.AddModelError("redirect.To", "Veld mag niet leeg zijn");
+
+      else if (!redirect.To.StartsWith("/"))
+        ModelState.AddModelError("redirect.To", "Veld moet met '/' beginnen");
+
+      if (!ModelState.IsValid)
+        return View(redirectsService.GetAllRedirects());
+
       redirectsService.SaveRedirect(redirect);
       return View(redirectsService.GetAllRedirects());
     }

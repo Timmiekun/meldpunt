@@ -7,6 +7,9 @@
     Layout = "~/Views/Shared/_Admin.cshtml";
   }
   <h1>Beheer redirects</h1>
+  <div class="alert alert-warning">
+    @Html.ValidationMessage("redirect.To")
+  </div>
 
   <div class="list-item list-item-header">
     <div class="from">Van</div>
@@ -17,6 +20,7 @@
   @foreach (RedirectModel r in Model)
   {
     <div class="list-item">
+      @Html.ValidationMessage("redirect.To")
       <form method="post">
         <div class="from"><input type="text" name="from" class="form-control" value="@r.From" /></div>
         <div class="to"><input type="text" name="to" class="form-control" value="@r.To" /></div>

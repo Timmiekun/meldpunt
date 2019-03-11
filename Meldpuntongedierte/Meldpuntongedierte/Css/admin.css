@@ -249,6 +249,9 @@ h3 {
 .list-item > div {
   float: left;
 }
+.list-item > form > div {
+  float: left;
+}
 
 .list-item .title {
   width: 30%;
@@ -265,6 +268,7 @@ h3 {
 
 .list-item .to {
   width: 40%;
+  padding-right: 20px;
 }
 
 .list-item .action{
