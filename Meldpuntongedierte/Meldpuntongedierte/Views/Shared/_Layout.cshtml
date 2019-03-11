@@ -3,6 +3,7 @@
   List<PageModel> pagesForTabs = ViewBag.NavItems as List<PageModel>;
   List<PageModel> breadcrumbs = ViewBag.BreadCrumbs as List<PageModel>;
   List<List<PageModel>> regioPages = ViewBag.RegioPages as List<List<PageModel>>;
+  string appVersion = ViewBag.AppVersion;
   string logoText = ViewBag.HeaderTitle;
   if (String.IsNullOrEmpty(logoText))
   {
@@ -23,16 +24,16 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <link rel="icon" type="image/png" href="/favicon.png" />
 
-  <link type="text/css" rel="stylesheet" href="/css/reset.css?v=1">
-  <link type="text/css" rel="stylesheet" href="/css/main.css?v=8">
-  <link type="text/css" rel="stylesheet" href="/css/mobile.css?v=2">
-  <link type="text/css" rel="stylesheet" href="/css/suggest.css?v=2">
+  <link type="text/css" rel="stylesheet" href="/css/reset.css?v=@appVersion">
+  <link type="text/css" rel="stylesheet" href="/css/main.css?v=@appVersion">
+  <link type="text/css" rel="stylesheet" href="/css/mobile.css?v=@appVersion">
+  <link type="text/css" rel="stylesheet" href="/css/suggest.css?v=@appVersion">
   <link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Catamaran:400,700,900" rel="stylesheet">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-  <script type="text/javascript" src="/Scripts/meldpunt.js?v=1">  ;</script>
-  <script type="text/javascript" src="/Scripts/suggest.js?v=1">  ;</script>
-  <script type="text/javascript" src="/Scripts/xmlhttp.js?v=1">  ;</script>
+  <script type="text/javascript" src="/Scripts/meldpunt.js?v=@appVersion">;</script>
+  <script type="text/javascript" src="/Scripts/suggest.js?v=@appVersion">;</script>
+  <script type="text/javascript" src="/Scripts/xmlhttp.js?v=@appVersion">;</script>
   <script type="text/javascript">
 
     var _gaq = _gaq || [];

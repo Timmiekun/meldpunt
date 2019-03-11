@@ -4,6 +4,7 @@ using System.Web.Mvc;
 using Meldpunt.Services;
 using Meldpunt.Models;
 using Meldpunt.Utils;
+using System.Configuration;
 
 namespace Meldpunt.ActionFilters
 {
@@ -26,6 +27,7 @@ namespace Meldpunt.ActionFilters
               breadCrumbs.Add(p);
           }
 
+        viewResult.ViewBag.AppVersion = ConfigurationManager.AppSettings["appversion"];
         viewResult.ViewBag.BreadCrumbs = breadCrumbs;
         viewResult.ViewBag.NavItems = pageService.GetPagesForTabs();
         viewResult.ViewBag.RegioPages = Meldpunt.Utils.Utils.Split(pageService.GetPage("regios").SubPages);
