@@ -68,6 +68,12 @@ namespace Meldpunt.Controllers
       return View(redirectsService.GetAllRedirects());
     }
 
+    public ActionResult RemoveRedirect(string id)
+    {
+      redirectsService.deleteRedirect(id);
+      return RedirectToAction("Redirects");
+    }
+
     [HttpGet]
 		public ActionResult EditPlaats(String plaats)
 		{

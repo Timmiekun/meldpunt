@@ -11,9 +11,7 @@ $(function () {
     console.log(this, id);
     if (confirm('Verwijderen? Zeker weten?'))
       window.location = "/admin/removeRedirect?id=" + id;
-    else
-      alert('nou goed dan');
-
+  
     return false;
   });
 });
