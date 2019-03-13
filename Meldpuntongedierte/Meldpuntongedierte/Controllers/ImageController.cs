@@ -18,24 +18,24 @@ namespace Meldpunt.Controllers
       imageService = new ImageService();
     }
 
-    public ActionResult GetImage(string name, int width = 0, int height = 0, int fitmode = 0)
+    public ActionResult GetImage(ImageRequestModel image)
     {
       Response.Cache.SetCacheability(HttpCacheability.Public);
       Response.Cache.SetMaxAge(TimeSpan.FromDays(365));
 
-      string cachedFile = imageService.BuildResizedFilenameFromParams(name, width, height, (FitMode)fitmode);
+      string cachedFile = imageService.BuildResizedFilenameFromParams(image.Name, image.Width ?? 0, image.Height ?? 0, (FitMode)image.mode);
       FileInfo cachedFileInfo = imageService.GetCachedFileInfo(cachedFile);
       if(!cachedFileInfo.Exists)
       {
-        byte[] bytes = imageService.GetImageBytes(name);       
-        bytes = ResizeImage(bytes, width, height, (FitMode)fitmode).ToArray();
+        byte[] bytes = imageService.GetImageBytes(image.Name);       
+        bytes = ResizeImage(bytes, (FitMode)image.mode, image.Width, image.Height).ToArray();
         System.IO.File.WriteAllBytes(cachedFileInfo.FullName,bytes);
       }
 
       return new FileContentResult(System.IO.File.ReadAllBytes(cachedFileInfo.FullName), "image/jpeg");
     }
 
-    public MemoryStream ResizeImage(byte[] downloaded, int width, int height, FitMode mode)
+    public MemoryStream ResizeImage(byte[] downloaded, FitMode mode, int? width, int? height)
     {
       var inputStream = new MemoryStream(downloaded);
       var memoryStream = new MemoryStream();

@@ -11,8 +11,8 @@
 <h1>Beheer pagina's</h1>
 
 <div class="list-item list-item-header">
-  <div class="title">Titel</div>
-  <div class="url">Url</div>
+  <div class="title">Naam</div>
+  <div class="url">Afbeelding</div>
 </div>
 
 @foreach (ImageModel p in Model.OrderByDescending(i=> i.Name))
@@ -24,6 +24,6 @@
 {
   <div class="list-item">
     <div class="title">@image.Name</div>
-    <div class="url"><img src="/getimage?name=@image.Name" /></div>
+    <div class="url"><img src="/getimage?name=@image.Name&width=200&height=200" /></div>
   </div> 
 }
