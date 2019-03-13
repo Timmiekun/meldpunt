@@ -16,12 +16,14 @@ namespace Meldpunt.Controllers
 		private PageService pageService;
 		private PlaatsService plaatsService;
     private RedirectService redirectsService;
+    private ImageService imageService;
 
     public AdminController()
 		{
 			pageService = new PageService();
 			plaatsService = new PlaatsService();
       redirectsService = new RedirectService();
+      imageService = new ImageService();
     }
 
 		public ActionResult Index()
@@ -33,7 +35,7 @@ namespace Meldpunt.Controllers
 
     public ActionResult Images()
     {
-      return View(redirectsService.GetAllRedirects());
+      return View(imageService.GetAllImages());
     }
 
     #region redirects

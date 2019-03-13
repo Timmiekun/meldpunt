@@ -23,9 +23,7 @@ namespace Meldpunt.Controllers
     {
       PageModel model = pageService.GetPage("home");      
       return View(model);
-    }
-
-  
+    }  
 
     public ActionResult SiteMap()
     {

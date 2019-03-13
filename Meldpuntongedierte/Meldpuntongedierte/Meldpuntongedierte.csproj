@@ -56,6 +56,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="ImageResizer, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ImageResizer.4.2.5\lib\net45\ImageResizer.dll</HintPath>
+    </Reference>
     <Reference Include="Lucene.Net">
       <HintPath>..\lib\Lucene.Net.dll</HintPath>
     </Reference>
@@ -105,6 +108,7 @@
     <Compile Include="ActionFilters\RedirectActionFilter.cs" />
     <Compile Include="ActionFilters\MustBeAdminActionFilter.cs" />
     <Compile Include="ActionFilters\GlobalActionFilter.cs" />
+    <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\ApiController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -114,11 +118,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ImageRequestModel.cs" />
+    <Compile Include="Models\ImageModel.cs" />
     <Compile Include="Models\RedirectModel.cs" />
     <Compile Include="Models\SearchResultModel.cs" />
     <Compile Include="Models\PlaatsModel.cs" />
     <Compile Include="Models\MailModel.cs" />
     <Compile Include="Models\PageModel.cs" />
+    <Compile Include="Services\ImagesService.cs" />
     <Compile Include="Services\RedirectService.cs" />
     <Compile Include="Services\SearchService.cs" />
     <Compile Include="Services\PlaatsService.cs" />

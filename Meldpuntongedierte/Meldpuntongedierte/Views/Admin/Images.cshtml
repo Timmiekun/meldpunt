@@ -1,6 +1,6 @@
 ﻿@using Meldpunt.Models;
 @using Meldpunt.Utils;
-@model List<PageModel>
+@model IEnumerable<ImageModel>
 @{
   /**/
 
@@ -15,33 +15,17 @@
   <div class="url">Url</div>
 </div>
 
-@foreach (PageModel p in Model)
+@foreach (ImageModel p in Model.OrderByDescending(i=> i.Name))
 {
   @pageItem(p);
 }
 
 <a href="/admin/newpage" class="btn btn-info new-button js-new-page">Nieuwe pagina</a>
 
-@section menu{
-  <div class="menu">
-    <ul>
-      <li><a href="/admin/pages">Pagina's</a></li>
-      <li><a href="/admin/places">Plaatsen</a></li>
-      <li><a href="/admin/redirects">Redirects</a></li>
-    </ul>
-  </div>
-}
-
-@helper pageItem(PageModel page)
+@helper pageItem(ImageModel image)
 {
   <div class="list-item">
-    <div class="title"><a class="link-to-edit" href="/admin/editpage/@page.Id">@page.Title</a></div>
-    <div class="url">@page.Url</div>
-  </div>
-  foreach (PageModel subpage in page.SubPages)
-  {
-  <div class="subpages">
-    @pageItem(subpage)
-  </div>
-  }
+    <div class="title">@image.Name</div>
+    <div class="url"><img src="/getimage?name=@image.Name" /></div>
+  </div> 
 }

@@ -1,21 +1,11 @@
 ﻿@using Meldpunt.Models;
 @using Meldpunt.Utils;
 @model List<PageModel>
-  @{
-    ViewBag.Title = "Admin";
-    var locations = ViewBag.Locations;
-    Layout = "~/Views/Shared/_Admin.cshtml";
-  }
+@{
+  ViewBag.Title = "Admin";
+  var locations = ViewBag.Locations;
+  Layout = "~/Views/Shared/_Admin.cshtml";
+}
 
-  <h1>Zoek pagina of plaats</h1>
-  <input type="text" class="form-control" placeholder="b.v. Wespen of Amsterdam" />
-
-  @section menu{
-    <div class="menu">
-      <ul>
-        <li><a href="/admin/pages">Pagina's</a></li>
-        <li><a href="/admin/places">Plaatsen</a></li>
-        <li><a href="/admin/redirects">Redirects</a></li>
-      </ul>
-    </div>
-  }
+<h1>Zoek pagina of plaats</h1>
+<input type="text" class="form-control" placeholder="b.v. Wespen of Amsterdam" />

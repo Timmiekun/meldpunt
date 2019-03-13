@@ -37,6 +37,12 @@ namespace Meldpunt
       );
 
       routes.MapRoute(
+        "Image", // Route name
+        "GetImage", // URL with parameters
+        new { controller = "Image", action = "GetImage" } // Parameter defaults
+     );
+
+      routes.MapRoute(
          "Index", // Route name
          "index", // URL with parameters
          new { controller = "Search", action = "Index" } // Parameter defaults
