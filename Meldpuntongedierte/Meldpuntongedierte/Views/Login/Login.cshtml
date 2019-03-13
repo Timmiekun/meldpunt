@@ -17,26 +17,29 @@
   {
     <div class="menu">      
       <ul>        
-        @foreach(PageModel item in subNav){
-          
+        @foreach (PageModel item in subNav)
+        {
+
           string selected = "";
-          if (item.Id == Model.Id) {
+          if (item.Id == Model.Id)
+          {
             selected = "selected";
           }
-          
+
           <li class="@selected">            
             <a href="@item.Url">@item.Title</a>
             @if (item.Id == Model.Id && item.SubPages.Any())
             {
               <ul class="subNav">
                 @foreach (PageModel subItem in item.SubPages)
-                 {
+                {
                    <li><a href="@subItem.Url">@subItem.Title</a></li>
-                 }
+                }
                </ul>
             }
           </li>
         }
     </ul>
-  </div>   
+  </div>
+  }
 }
