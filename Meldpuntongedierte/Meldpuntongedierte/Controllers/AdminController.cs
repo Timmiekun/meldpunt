@@ -31,20 +31,12 @@ namespace Meldpunt.Controllers
 			return View(allPages);
 		}
 
-    public ActionResult Pages()
+    public ActionResult Images()
     {
-      List<PageModel> allPages = pageService.GetAllPagesTree();
-      ViewBag.Locations = LocationUtils.placesByMunicipality.OrderBy(m => m.Key);
-      return View(allPages);
+      return View(redirectsService.GetAllRedirects());
     }
 
-    public ActionResult Places()
-    {
-      List<PageModel> allPages = pageService.GetAllPagesTree();
-      ViewBag.Locations = LocationUtils.placesByMunicipality.OrderBy(m => m.Key);
-      return View(allPages);
-    }
-
+    #region redirects
     public ActionResult Redirects()
     {
       
@@ -68,10 +60,25 @@ namespace Meldpunt.Controllers
       return View(redirectsService.GetAllRedirects());
     }
 
+    public ActionResult NewRedirect(string parentId)
+    {
+      var newPage = redirectsService.newRedirect();
+      return RedirectToAction("Redirects");
+    }
+
     public ActionResult RemoveRedirect(string id)
     {
       redirectsService.deleteRedirect(id);
       return RedirectToAction("Redirects");
+    }
+    #endregion
+
+    #region places
+    public ActionResult Places()
+    {
+      List<PageModel> allPages = pageService.GetAllPagesTree();
+      ViewBag.Locations = LocationUtils.placesByMunicipality.OrderBy(m => m.Key);
+      return View(allPages);
     }
 
     [HttpGet]
@@ -111,8 +118,16 @@ namespace Meldpunt.Controllers
 
 			return Redirect("/admin/editplaats/" + p.Gemeentenaam.XmlSafe());
 		}
+    #endregion
 
-		[HttpGet]
+    #region pages
+    public ActionResult Pages()
+    {
+      List<PageModel> allPages = pageService.GetAllPagesTree();
+      ViewBag.Locations = LocationUtils.placesByMunicipality.OrderBy(m => m.Key);
+      return View(allPages);
+    }
+    [HttpGet]
 		public ActionResult EditPage(string id)
 		{
 			PageModel page = pageService.GetPage(id);
@@ -141,11 +156,8 @@ namespace Meldpunt.Controllers
 			var newPage = pageService.newPage(parentId);
 			return RedirectToAction("editpage", new {id = newPage.Id});
 		}
+    #endregion
 
-    public ActionResult NewRedirect(string parentId)
-    {
-      var newPage = redirectsService.newRedirect();
-      return RedirectToAction("Redirects");
-    }
+  
   }
 }
