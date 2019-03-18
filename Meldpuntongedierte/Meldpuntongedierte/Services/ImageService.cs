@@ -11,7 +11,7 @@ namespace Meldpunt.Services
   public class ImageService
   {
     string imagesDir = HttpContext.Current.Server.MapPath("~/afbeeldingen");
-    string cacheDir = HttpContext.Current.Server.MapPath("~/afbeeldingen/cache");
+    string cacheDir = HttpContext.Current.Server.MapPath("~/imagecache");
     DirectoryInfo imageFolder;
     DirectoryInfo cacheFolder;
 
@@ -36,7 +36,7 @@ namespace Meldpunt.Services
     {
       var fileInfo = imageFolder.GetFiles(fileName).FirstOrDefault();
       if (!fileInfo.Exists)
-        throw new FileNotFoundException(fileName);     
+        throw new FileNotFoundException(fileName);
 
       return File.ReadAllBytes(fileInfo.FullName);
 
@@ -52,6 +52,16 @@ namespace Meldpunt.Services
       source = source.Split('\\').Last();
       return string.Format(CultureInfo.InvariantCulture,
         "{0}_{1}-{2}-{3}", height, width, mode, source.Replace("/", string.Empty));
+    }
+
+    public void saveImage(HttpPostedFileBase file)
+    {
+      // get filename without path
+      var fileName = Path.GetFileName(file.FileName);
+
+      // store the file
+      var path = Path.Combine(imageFolder.FullName, fileName);
+      file.SaveAs(path);
     }
   }
 }

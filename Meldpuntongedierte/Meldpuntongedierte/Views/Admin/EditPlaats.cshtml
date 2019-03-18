@@ -56,19 +56,3 @@
     <input type="hidden" name="Gemeentenaam" value="@Model.Gemeentenaam" />
     <input type="submit" class="btn btn-info" value="opslaan" />
   </form>
-
-@section menu{
-  <div class="menu">
-    
-    <ul>
-      <li>Gemeenten</li>
-      @foreach (var kv in locations)
-      {
-        string url = ((string)kv.Key).XmlSafe();
-        <li>
-          <a href="/admin/editplaats/@url">@kv.Key</a>
-        </li>
-      }
-    </ul>
-  </div>
-}

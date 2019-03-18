@@ -47,19 +47,25 @@
 <body>
 
   <div class="topBar">
-    <h2><a href="/admin">Beheer Meldpunt Ongedierte</a></h2>
-    <div id="tabholder"></div>
+    <a href="/admin">Beheer Meldpunt Ongedierte</a>
   </div>
 
   <div id="main" class="main">
-    <div class="menu">
-      <ul>
-        <li><a href="/admin/pages">Pagina's</a></li>
-        <li><a href="/admin/places">Plaatsen</a></li>
-        <li><a href="/admin/redirects">Redirects</a></li>
-        <li><a href="/admin/images">Afbeeldingen</a></li>
-      </ul>
-    </div>
+    @if (IsSectionDefined("menu"))
+    {
+      @RenderSection("menu")
+    }
+    else
+    {
+      <div class="menu">
+        <ul>
+          <li><a href="/admin/pages">Pagina's</a></li>
+          <li><a href="/admin/places">Plaatsen</a></li>
+          <li><a href="/admin/redirects">Redirects</a></li>
+          <li><a href="/admin/images">Afbeeldingen</a></li>
+        </ul>
+      </div>
+    }
     <div class="content">
       @RenderBody()
     </div>
