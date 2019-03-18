@@ -29,7 +29,7 @@
   <div class="url">Afbeelding</div>
 </div>
 
-@foreach (ImageModel p in Model.OrderByDescending(i=> i.Name))
+@foreach (ImageModel p in Model.OrderBy(i=> i.Name))
 {
   @pageItem(p);
 }

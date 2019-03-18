@@ -12,6 +12,7 @@ using System.IO;
 namespace Meldpunt.Controllers
 {
   [MustBeAdmin]
+  [RoutePrefix("admin")]
 	public class AdminController : Controller
 	{
 		private PageService pageService;
@@ -27,32 +28,17 @@ namespace Meldpunt.Controllers
       imageService = new ImageService();
     }
 
-		public ActionResult Index()
+    [Route]
+    public ActionResult Index()
 		{
 			List<PageModel> allPages = pageService.GetAllPagesTree();
 			ViewBag.Locations = LocationUtils.placesByMunicipality.OrderBy(m => m.Key);
 			return View(allPages);
 		}
 
-    public ActionResult Images()
-    {
-      return View(imageService.GetAllImages());
-    }
-
-    // This action handles the form POST and the upload
-    [HttpPost]
-    public ActionResult Images(HttpPostedFileBase file)
-    {
-      // Verify that the user selected a file
-      if (file != null && file.ContentLength > 0)
-      {
-        imageService.saveImage(file);
-      }
-     
-      return View(imageService.GetAllImages());
-    }
 
     #region redirects
+    [Route("Redirects")]
     public ActionResult Redirects()
     {
       
@@ -60,6 +46,7 @@ namespace Meldpunt.Controllers
     }
 
     [HttpPost]
+    [Route("Redirects")]
     public ActionResult Redirects(RedirectModel redirect)
     {
       if (!ModelState.IsValid)
@@ -76,12 +63,14 @@ namespace Meldpunt.Controllers
       return View(redirectsService.GetAllRedirects());
     }
 
+    [Route("NewRedirect")]
     public ActionResult NewRedirect(string parentId)
     {
       var newPage = redirectsService.newRedirect();
       return RedirectToAction("Redirects");
     }
 
+    [Route("RemoveRedirect")]
     public ActionResult RemoveRedirect(string id)
     {
       redirectsService.deleteRedirect(id);
@@ -90,6 +79,7 @@ namespace Meldpunt.Controllers
     #endregion
 
     #region places
+    [Route("Places")]
     public ActionResult Places()
     {
       List<PageModel> allPages = pageService.GetAllPagesTree();
@@ -98,7 +88,8 @@ namespace Meldpunt.Controllers
     }
 
     [HttpGet]
-		public ActionResult EditPlaats(String plaats)
+    [Route("EditPlaats/{plaats}")]
+    public ActionResult EditPlaats(String plaats)
 		{
 			// gemeente page?
 			var gemeente = LocationUtils.placesByMunicipality.Where(m => m.Key.XmlSafe().Equals(plaats.XmlSafe()));
@@ -127,7 +118,8 @@ namespace Meldpunt.Controllers
 
 		}
 
-		[HttpPost, ValidateInput(false)]
+    [Route("EditPlaats/{plaats}")]
+    [HttpPost, ValidateInput(false)]
 		public ActionResult EditPlaats(PlaatsModel p)
 		{
 			plaatsService.UpdateOrInsert(p);
@@ -137,12 +129,15 @@ namespace Meldpunt.Controllers
     #endregion
 
     #region pages
+    [Route("Pages")]
     public ActionResult Pages()
     {
       List<PageModel> allPages = pageService.GetAllPagesTree();
       ViewBag.Locations = LocationUtils.placesByMunicipality.OrderBy(m => m.Key);
       return View(allPages);
     }
+
+    [Route("EditPage/{id}")]
     [HttpGet]
 		public ActionResult EditPage(string id)
 		{
@@ -151,14 +146,16 @@ namespace Meldpunt.Controllers
 			return View(page);
 		}
 
-		[HttpPost, ValidateInput(false)]
+    [Route("EditPage/{id}")]
+    [HttpPost, ValidateInput(false)]
 		public ActionResult EditPage(PageModel page)
 		{
 			var savedPage = pageService.SavePage(page);
 			return Redirect("/admin/editpage/" + savedPage.Id);
 		}
 
-		public ActionResult DeletePage(string id)
+    [Route("DeletePage")]
+    public ActionResult DeletePage(string id)
 		{
 			var page = pageService.GetPage(id);
 			pageService.deletePage(id);
@@ -167,7 +164,8 @@ namespace Meldpunt.Controllers
 			return Redirect("/admin/editpage/" + page.ParentId);
 		}
 
-		public ActionResult NewPage(string parentId)
+    [Route("NewPage")]
+    public ActionResult NewPage(string parentId)
 		{
 			var newPage = pageService.newPage(parentId);
 			return RedirectToAction("editpage", new {id = newPage.Id});

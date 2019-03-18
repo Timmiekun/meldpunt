@@ -108,6 +108,7 @@
     <Compile Include="ActionFilters\RedirectActionFilter.cs" />
     <Compile Include="ActionFilters\MustBeAdminActionFilter.cs" />
     <Compile Include="ActionFilters\GlobalActionFilter.cs" />
+    <Compile Include="Controllers\ImagesController.cs" />
     <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\ApiController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
