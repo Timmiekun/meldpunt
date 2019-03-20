@@ -119,8 +119,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\ImageModelsController.cs" />
     <Compile Include="Models\ImageRequestModel.cs" />
     <Compile Include="Models\ImageModel.cs" />
+    <Compile Include="Models\MeldpuntContext.cs" />
     <Compile Include="Models\RedirectModel.cs" />
     <Compile Include="Models\SearchResultModel.cs" />
     <Compile Include="Models\PlaatsModel.cs" />
@@ -188,6 +190,14 @@
     <Content Include="Images\whatsapp.png" />
     <Content Include="robots.txt" />
     <Content Include="Scripts\admin.js" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\suggest.js" />
     <Content Include="Scripts\xmlhttp.js" />
     <Content Include="Scripts\meldpunt.js" />
@@ -233,6 +243,7 @@
     <None Include="Properties\PublishProfiles\meldpuntongedierte - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\File.pubxml" />
     <None Include="Properties\PublishProfiles\meldpuntongedierte.pubxml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Scripts\tinymce\langs\readme.md" />
     <None Include="Scripts\tinymce\skins\lightgray\fonts\readme.md" />
     <None Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-small.eot" />
@@ -252,6 +263,11 @@
     <Content Include="Views\Admin\Places.cshtml" />
     <Content Include="Views\Admin\Redirects.cshtml" />
     <Content Include="Views\Admin\Images.cshtml" />
+    <Content Include="Views\ImageModels\Create.cshtml" />
+    <Content Include="Views\ImageModels\Delete.cshtml" />
+    <Content Include="Views\ImageModels\Details.cshtml" />
+    <Content Include="Views\ImageModels\Edit.cshtml" />
+    <Content Include="Views\ImageModels\Index.cshtml" />
     <None Include="Volksgezondheid.pdf" />
     <None Include="Web.azure.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -35,5 +35,11 @@ namespace Meldpunt.Controllers
 
       return RedirectToAction("Images");
     }
+
+    [Route("editImage")]
+    public ActionResult editImage(string image)
+    {
+      return View("~/Views/Admin/EditImage.cshtml", image);
+    }
   }
 }
