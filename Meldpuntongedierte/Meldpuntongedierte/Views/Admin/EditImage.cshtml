@@ -1,0 +1,24 @@
+﻿@using Meldpunt.Models;
+@using Meldpunt.Utils;
+@model ImageModel
+@{
+  ViewBag.Title = "Admin";
+  var locations = ViewBag.Locations;
+  Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+
+<h1>@Model.Name</h1>
+
+
+
+@section menu{
+  <div class="menu">
+    <ul>
+      <li><a href="/admin/pages">Pagina's</a></li>
+      <li><a href="/admin/places">Plaatsen</a></li>
+      <li><a href="/admin/redirects">Redirects</a></li>
+      <li><a href="/admin/images">Afbeeldingen</a></li>
+    </ul>
+  </div>
+}

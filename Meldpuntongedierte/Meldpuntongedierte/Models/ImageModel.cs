@@ -11,5 +11,8 @@ namespace Meldpunt.Models
 
     [Required]
     public string Name { get; set; }
+
+
+    public string Url { get; set; }
   }
 }

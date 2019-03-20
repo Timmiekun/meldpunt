@@ -1,0 +1,27 @@
+﻿.list-item .name {
+  width: 30%;
+}
+
+.list-item .url {
+  width: 45%;
+}
+
+
+.list-item .image {
+  width: 20%;
+}
+
+.imagePreview{
+  margin-top: 10px;
+  width: 100px;
+}
+
+  .imagePreview:focus{
+    width:auto;
+  }
+
+
+  .imageUploadForm {
+    float: right;
+    margin-left: 10px;
+  }

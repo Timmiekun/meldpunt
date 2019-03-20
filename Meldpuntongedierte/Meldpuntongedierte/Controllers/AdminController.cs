@@ -36,6 +36,13 @@ namespace Meldpunt.Controllers
 			return View(allPages);
 		}
 
+    [Route("updateimages")]
+    public ActionResult UpdateImages()
+    {
+      pageService.updateImages();
+      return new EmptyResult();
+    }
+
 
     #region redirects
     [Route("Redirects")]
