@@ -8,6 +8,7 @@ using Meldpunt.Utils;
 
 namespace Meldpunt.Controllers
 {
+ 
   public class HomeController : Controller
   {
     private PageService pageService;
@@ -19,6 +20,7 @@ namespace Meldpunt.Controllers
       plaatsService = new PlaatsService();
     }
 
+    [OutputCache(Duration = 10, VaryByParam = "none")]
     public ActionResult Index()
     {
       PageModel model = pageService.GetPage("home");      
@@ -34,6 +36,7 @@ namespace Meldpunt.Controllers
       return View();
     }
 
+    [OutputCache(Duration = 100, VaryByParam = "none")]
     public ActionResult GetPage(string id)
     {
       id = id.XmlSafe();
