@@ -54,6 +54,15 @@ namespace Meldpunt.Services
         "{0}_{1}-{2}-{3}", height, width, mode, source.Replace("/", string.Empty));
     }
 
+    public void DeleteImage(string fileName)
+    {
+      FileInfo file = new FileInfo(Path.Combine(imageFolder.FullName, fileName));
+      if(!file.Exists)
+        throw new HttpException(404, "file not found: " + fileName);
+
+      file.Delete();
+    }
+
     public void saveImage(HttpPostedFileBase file)
     {
       // get filename without path

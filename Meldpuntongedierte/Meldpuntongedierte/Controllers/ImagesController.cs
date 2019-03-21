@@ -37,9 +37,16 @@ namespace Meldpunt.Controllers
     }
 
     [Route("editImage")]
-    public ActionResult editImage(string image)
+    public ActionResult EditImage(string image)
     {
       return View("~/Views/Admin/EditImage.cshtml", image);
+    }
+
+    [Route("DeleteImage")]
+    public ActionResult DeleteImage(string filename)
+    {
+      imageService.DeleteImage(filename);
+      return RedirectToAction("Images");
     }
   }
 }

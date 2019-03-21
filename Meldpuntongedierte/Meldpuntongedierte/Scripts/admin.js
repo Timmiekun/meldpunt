@@ -4,14 +4,13 @@ $(function () {
       return false;
   });
 
-
-  $("[data-action-remove-redirect]").on('click', function (evt) {
+  $("[data-action-confirm]").on('click', function (evt) {
     evt.preventDefault();
-    let id = this.dataset.redirect;
-    console.log(this, id);
+    let target = this.href;
+
     if (confirm('Verwijderen? Zeker weten?'))
-      window.location = "/admin/removeRedirect?id=" + id;
-  
+      window.location = target;
+
     return false;
   });
 

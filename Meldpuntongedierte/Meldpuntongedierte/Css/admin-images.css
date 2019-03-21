@@ -1,17 +1,21 @@
 ﻿.list-item .name {
-  width: 30%;
+  width: 33%;
 }
 
 .list-item .url {
-  width: 45%;
+  width: 40%;
 }
 
 
 .list-item .image {
-  width: 20%;
+  width: 15%;
 }
 
-.imagePreview{
+.list-item .actions{
+  width:10%;
+}
+
+.imagePreview {
   margin-top: 10px;
   width: 100px;
 }

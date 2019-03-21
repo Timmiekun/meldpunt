@@ -31,7 +31,7 @@
       <div class="action">
         <input type="hidden" name="id" value="@r.Id" />
         <input type="submit" class="btn btn-info" value="opslaan" />
-        <button class="btn btn-danger" data-action-remove-redirect data-redirect="@r.Id">Verwijderen</button>
+        <a class="btn btn-danger" data-action-confirm href="/admin/removeRedirect?id=@r.Id">Verwijderen</a>
       </div>
     </form>
   </div>

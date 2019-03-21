@@ -60,6 +60,7 @@
   <div class="name">Naam</div>
   <div class="url">Url</div>
   <div class="image">Voorbeeld</div>
+  <div class="actions"></div>
 </div>
 
 @foreach (ImageModel p in Model.OrderBy(i => i.Name))
@@ -73,5 +74,6 @@
     <div class="name">@image.Name</div>
     <div class="url"><a target="_blank" href="/image?name=@image.Name">/image?name=@image.Name</a></div>
     <div class="image"><a href="/image?name=@image.Name&width=80&height=45"><img src="/image?name=@image.Name&width=80&height=45" /></a></div>
+    <div class="actions"><a class="btn btn-danger" data-action-confirm href="/admin/deleteImage?filename=@image.Name">Verwijderen</a></div>
   </div>
 }
