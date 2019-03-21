@@ -3,6 +3,16 @@
   ViewBag.Url = "/404";
 }
 
-<h2>404!</h2>  
-<p>Sorry, de pagina die je probeert te bereiken bestaat helaas niet.</p>  
-  
+<h2>404!</h2>
+<br />
+<br />
+<p>Sorry, de pagina die je probeert te bereiken bestaat helaas niet.</p>
+
+@if (!String.IsNullOrWhiteSpace(ViewBag.Error))
+{
+  <br />
+  <br />
+  <p>Dit is er aan de hand volgens de <a href="https://nl.wikipedia.org/wiki/Server">server</a>:</p>
+  <b>@ViewBag.Error</b>
+}
+

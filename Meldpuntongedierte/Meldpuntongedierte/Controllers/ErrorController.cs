@@ -17,12 +17,24 @@ namespace Meldpunt.Controllers
     public ActionResult General(Exception exception)
     {
       Response.StatusCode = 500;
+      if (HttpContext.AllErrors.Any())
+      {
+        var error = HttpContext.AllErrors[0];
+        ViewBag.Error = error.Message;
+      }
       return View();
     }
 
     public ActionResult Http404()
     {
       Response.StatusCode = 404;
+
+      if (HttpContext.AllErrors.Any())
+      {
+        var error = HttpContext.AllErrors[0];
+        ViewBag.Error = error.Message;
+      }
+
       return View();
     }
 

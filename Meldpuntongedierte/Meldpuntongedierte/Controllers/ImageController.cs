@@ -27,6 +27,7 @@ namespace Meldpunt.Controllers
 
       string cachedFile = imageService.BuildResizedFilenameFromParams(image.Name, image.Width ?? 0, image.Height ?? 0, image.mode);
       FileInfo cachedFileInfo = imageService.GetCachedFileInfo(cachedFile);
+      
       if(!cachedFileInfo.Exists)
       {
         byte[] bytes = imageService.GetImageBytes(image.Name);       

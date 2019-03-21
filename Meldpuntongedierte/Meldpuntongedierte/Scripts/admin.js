@@ -15,7 +15,7 @@ $(function () {
     return false;
   });
 
-  $("#uploadImage").change(function () {
+  $("#file").change(function () {
     readURL(this);
   });
 

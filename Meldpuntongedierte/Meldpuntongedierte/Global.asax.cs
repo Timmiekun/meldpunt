@@ -162,8 +162,10 @@ namespace Meldpunt
     protected void Application_Error(Object sender, System.EventArgs e)
     {
       var exception = Server.GetLastError();
+      if (!(exception is HttpException))
+        throw exception;
+
       var httpException = exception as HttpException;
-      throw httpException;
 
       var routeData = new RouteData();
       routeData.Values["controller"] = "Error";
@@ -183,6 +185,9 @@ namespace Meldpunt
             break;
           case 404:
             routeData.Values["action"] = "Http404";
+            break;
+          default:
+            routeData.Values["action"] = "General";
             break;
         }
 

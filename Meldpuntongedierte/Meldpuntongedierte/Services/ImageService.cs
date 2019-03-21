@@ -34,9 +34,9 @@ namespace Meldpunt.Services
 
     public byte[] GetImageBytes(string fileName)
     {
-      var fileInfo = imageFolder.GetFiles(fileName).FirstOrDefault();
+      var fileInfo = new FileInfo(Path.Combine(imageFolder.FullName, fileName));
       if (!fileInfo.Exists)
-        throw new FileNotFoundException(fileName);
+        throw new HttpException(404, "file not found: " + fileName);
 
       return File.ReadAllBytes(fileInfo.FullName);
 
