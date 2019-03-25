@@ -159,7 +159,7 @@ namespace Meldpunt.Controllers
 		public ActionResult EditPage(PageModel page)
 		{
 			var savedPage = pageService.SavePage(page);
-      Response.RemoveOutputCacheItem(page.Url);
+      Response.RemoveOutputCacheItem(savedPage.Url);
       return Redirect("/admin/editpage/" + savedPage.Id);
 		}
 

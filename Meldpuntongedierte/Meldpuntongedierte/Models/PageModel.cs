@@ -26,6 +26,8 @@ namespace Meldpunt.Models
     public string Id { get; set; }
     public string Content { get; set; }
     public string Url { get; set; }
+    public string UrlPart { get; set; }
+    public string ParentPath { get; set; }
     public string FullText { get; set; }
     public bool HasSublingMenu { get; set; }
     public string ParentId { get; set; }

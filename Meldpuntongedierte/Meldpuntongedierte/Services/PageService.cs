@@ -109,20 +109,12 @@ namespace Meldpunt.Services
       page.SetAttribute("published", p.Published ? "true" : "false");
       page.SelectSingleNode("content").InnerXml = html;
 
-      if (page.SelectSingleNode("metadescription") == null)
-        page.AppendChild(pagesDoc.CreateElement("metadescription"));
-
-      page.SelectSingleNode("metadescription").InnerText = p.MetaDescription;
-      if (page.SelectSingleNode("title") == null)
-        page.AppendChild(pagesDoc.CreateElement("title"));
-      page.SelectSingleNode("title").InnerText = p.EditableTitle;
-
-      if (page.SelectSingleNode("sort") == null)
-        page.AppendChild(pagesDoc.CreateElement("sort"));
-
-      page.SelectSingleNode("sort").InnerText = p.Sort.ToString();
-
-      page.SetAttribute("id", p.EditableTitle.XmlSafe());
+      createOrUpdateElement(page, "metadescription", p.MetaDescription);
+      createOrUpdateElement(page, "title", p.EditableTitle);
+      createOrUpdateElement(page, "sort", p.Sort.ToString());
+      createOrUpdateElement(page, "urlPart", p.UrlPart);
+      
+      page.SetAttribute("id", p.UrlPart?.XmlSafe() ?? p.EditableTitle.XmlSafe());
       page.SetAttribute("tab", p.InTabMenu ? "true" : "false");
       page.SetAttribute("inhome", p.InHomeMenu ? "true" : "false");
       page.SetAttribute("published", p.Published ? "true" : "false");
@@ -131,6 +123,14 @@ namespace Meldpunt.Services
       pagesDoc.Save(pageFile);
 
       return XmlToModel(page);
+    }
+
+    private void createOrUpdateElement(XmlElement page, string nodeName, string value)
+    {
+      if (page.SelectSingleNode(nodeName) == null)
+        page.AppendChild(pagesDoc.CreateElement(nodeName));
+
+      page.SelectSingleNode(nodeName).InnerText = value;
     }
 
     public List<PageModel> SearchPages(string query)
@@ -147,8 +147,6 @@ namespace Meldpunt.Services
         pageModels.Add(XmlToModel(n, deep));
       return pageModels;
     }
-
-
 
     public PageModel newPage(string parentId)
     {
@@ -241,6 +239,10 @@ namespace Meldpunt.Services
       if (page.SelectSingleNode("metadescription") != null)
         metadescription = page.SelectSingleNode("metadescription").InnerText;
 
+      string urlPart = null;
+      if (page.SelectSingleNode("urlPart") != null)
+        urlPart = page.SelectSingleNode("urlPart").InnerText;
+
       int sort = 0;
       if (page.SelectSingleNode("sort") != null)
       {
@@ -271,6 +273,8 @@ namespace Meldpunt.Services
         Content = html,
         SubPages = subpages,
         Url = url.UrlEncode(),
+        UrlPart = urlPart?.UrlEncode(),
+        ParentPath = url.Substring(0, url.LastIndexOf('/') + 1),
         ParentId = parentId,
         HasSublingMenu = page.Attributes["haschildmenu"] != null && page.Attributes["haschildmenu"].Value == "true",
         FullText = text,
