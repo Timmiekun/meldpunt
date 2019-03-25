@@ -31,6 +31,8 @@ namespace Meldpunt.Services
       XmlNodeList pages = pagesDoc.DocumentElement.SelectNodes("//page");
       foreach (XmlNode page in pages)
       {
+        if (String.IsNullOrWhiteSpace(page.SelectSingleNode("content").InnerXml))
+          continue;
         string htmlstring = page.SelectSingleNode("content").InnerXml.Substring(9);
         htmlstring = htmlstring.Substring(0, htmlstring.Length - 3);
         htmlstring = "<html><body>" + htmlstring + "</body></html>";
