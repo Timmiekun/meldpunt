@@ -130,8 +130,9 @@ namespace Meldpunt.Controllers
 		public ActionResult EditPlaats(PlaatsModel p)
 		{
 			plaatsService.UpdateOrInsert(p);
+      Response.RemoveOutputCacheItem("/ongediertebestrijding-" + p.Gemeentenaam.XmlSafe());
 
-			return Redirect("/admin/editplaats/" + p.Gemeentenaam.XmlSafe());
+      return Redirect("/admin/editplaats/" + p.Gemeentenaam.XmlSafe());
 		}
     #endregion
 
@@ -158,7 +159,8 @@ namespace Meldpunt.Controllers
 		public ActionResult EditPage(PageModel page)
 		{
 			var savedPage = pageService.SavePage(page);
-			return Redirect("/admin/editpage/" + savedPage.Id);
+      Response.RemoveOutputCacheItem(page.Url);
+      return Redirect("/admin/editpage/" + savedPage.Id);
 		}
 
     [Route("DeletePage")]

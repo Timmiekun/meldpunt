@@ -7,8 +7,6 @@
   ViewBag.Title = "Ongediertebestrijding " + Model.Gemeentenaam + " - Meldpunt Ongedierte";
   ViewBag.Description = String.Format("Als u inwoner bent van de gemeente {0} kunt u ons bellen voor bijvoorbeeld een muizenbestrijding of een mierenbestrijding aan huis. Een wespennest verwijderen kan pas geschieden nadat wij de wespenbestrijding hebben uitgevoerd.", Model.Gemeentenaam);
 
-  string[] wespenGemeentes = { "enschede", "nijmegen", "groningen", "rotterdam", "breda" };
-
   // Curated items
   if (!String.IsNullOrEmpty(Model.Title))
   {
@@ -108,18 +106,9 @@ else
     Email : <a href="mailto:info@meldpuntongedierte.nl">info@meldpuntongedierte.nl</a>
   </p>
 
-
-  if (wespenGemeentes.Contains(Model.Gemeentenaam.ToLower()))
-  {
-    <h2>Wespennest verwijderen</h2>
-    <p>In verband met de zomerperiode kunnen inwoners weer bij ons terecht voor de <a href="@Request.Url.AbsolutePath/wespennest">bestrijding van wespennesten</a></p>
-  }
-  else
-  {
-    <h2>Signaleert u <span>ratten</span> in de openbare ruimte?</h2>
-    <p>Indien u ratten constateert in de openbare ruimte, klik dan <a href="/plaagdierengids/ratten/ratten-openbare-ruimte">hier</a></p>
-  }
-
+  <h2>Signaleert u <span>ratten</span> in de openbare ruimte?</h2>
+  <p>Indien u ratten constateert in de openbare ruimte, klik dan <a href="/plaagdierengids/ratten/ratten-openbare-ruimte">hier</a></p>
+ 
   <h2>Voor bestrijding van andere veel voorkomende soorten ongedierte:</h2>
   <ul>
     <li><a href="/plaagdierengids/muizen/muizen-in-huis">Muizen in huis bestrijden</a></li>

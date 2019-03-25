@@ -6,8 +6,6 @@
   var pages = ViewBag.Pages as List<PageModel>;
   var locations = ViewBag.Locations as Dictionary<string, HashSet<string>>;
 
-  string[] wespenGemeentes = { "enschede", "nijmegen", "groningen", "rotterdam", "breda" };
-
 }<?xml version="1.0" encoding="UTF-8" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
@@ -31,13 +29,5 @@
       <loc>http://meldpuntongedierte.nl/ongediertebestrijding-@location.Key.XmlSafe()</loc>
       <changefreq>monthly</changefreq>
     </url>
-
-    if (wespenGemeentes.Contains(location.Key.ToLower()))
-    {
-      <url>
-        <loc>http://meldpuntongedierte.nl/ongediertebestrijding-@location.Key.XmlSafe()/wespennest</loc>
-        <changefreq>monthly</changefreq>
-      </url>
-    }
   }
 </urlset>

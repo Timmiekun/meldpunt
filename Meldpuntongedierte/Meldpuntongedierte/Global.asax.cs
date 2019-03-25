@@ -112,13 +112,7 @@ namespace Meldpunt
          "{id}", // URL with parameters
          new { controller = "Home", action = "GetPage", id = UrlParameter.Optional } // Parameter defaults
       );
-
-      routes.MapRoute(
-        "GetPageWespennest", // Route name
-        "{id}/wespennest", // URL with parameters
-        new { controller = "Home", action = "GetPageWespennest", id = UrlParameter.Optional } // Parameter defaults
-     );
-
+      
       routes.MapRoute(
         "SubPage", // Route name
         "{a}/{id}", // URL with parameters

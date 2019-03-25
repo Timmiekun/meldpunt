@@ -107,32 +107,5 @@ namespace Meldpunt.Controllers
 
       throw new HttpException(404, "page not found");
     }
-
-    public ActionResult GetPageWespennest(string id)
-    {
-      id = id.XmlSafe();
-      // gemeente page?
-      string prefix = "ongediertebestrijding-";
-
-      // beginnen we wel met de prefix? Dan de prefix eraf halen om de plaatsnaam te vinden.
-      if (id.StartsWith(prefix))
-        id = id.Substring(prefix.Length);
-
-      var gemeente = LocationUtils.placesByMunicipality.Where(m => m.Key.XmlSafe().Equals(id, StringComparison.CurrentCultureIgnoreCase));
-      if (gemeente.Any())
-      {
-        PlaatsModel plaatsModel = plaatsService.GetPlaats(id);
-        if (plaatsModel == null)
-        {
-          plaatsModel = new PlaatsModel { Gemeentenaam = gemeente.First().Key.Capitalize() };
-        }
-        plaatsModel.Plaatsen = gemeente.First().Value.ToList();
-        ViewBag.Locations = LocationUtils.placesByMunicipality.OrderBy(m => m.Key);
-        ViewBag.HidePhoneNumber = true;
-        return View("PlaatsWespennest", plaatsModel);
-      }
-      
-      throw new HttpException(404, "page not found");
-    }
   }
 }
