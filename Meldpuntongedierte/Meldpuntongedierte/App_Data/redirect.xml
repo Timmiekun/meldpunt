@@ -1,7 +1,87 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <redirects>
+  <redirect id="41156553-e2b6-4315-ba03-5330f2a084c0" created="11-03-2019 13:18" lastmodified="11-03-2019 11:41">
+    <from>/insectengids1/wespen/wespenbestrijding</from>
+    <to>/wespenbestrijding</to>
+  </redirect>
   <redirect id="aba7b656-eed6-4bbf-9e86-c6268d074f5c" lastmodified="11-03-2019 02:54" created="11-03-2019 02:54">
-    <from>/iets</from>
-    <to>/amsterdam</to>
+    <from>/blabla</from>
+    <to>/insectengids/wespen/wespenbestrijding</to>
+  </redirect>
+  <redirect id="bf8ee76b-82ff-487e-84ed-42f1ca54bdda" lastmodified="11-03-2019 04:58" created="11-03-2019 04:58">
+    <from>/iniets</from>
+    <to>/naar</to>
+  </redirect>
+  <redirect id="cfb5440f-76f2-4385-804c-de39687f5b60" lastmodified="14-03-2019 10:46" created="14-03-2019 10:46">
+    <from>/insectengids/wespen/wespenbestrijding/rondhangende-wespen</from>
+    <to>/insectengids/wespen/wespenbestrijding/is-het-wel-een-wespennest?</to>
+  </redirect>
+  <redirect id="5b7857de-9b10-4016-add8-fa9daff1276c" lastmodified="17-03-2019 09:45" created="17-03-2019 09:45">
+    <from>/insectengids/mieren/levenswijze-van-mieren</from>
+    <to>/insectengids/mieren/hoe-leven-mieren?</to>
+  </redirect>
+  <redirect id="bf92a58a-0c09-4219-8295-b78aaa85d8ca" lastmodified="17-03-2019 10:07" created="17-03-2019 10:07">
+    <from>/insectengids/mieren/mierenplaag-in-huis</from>
+    <to>/insectengids/mieren/mieren-bestrijden-in-huis</to>
+  </redirect>
+  <redirect id="704fbcee-2823-4308-8677-21c27ab3a0c5" lastmodified="20-03-2019 09:00" created="20-03-2019 09:00">
+    <from>/insectengids/kakkerlakken</from>
+    <to>/kakkerlakken</to>
+  </redirect>
+  <redirect id="f986ca38-4ff5-491f-90c9-b7690a0454b7" lastmodified="20-03-2019 09:51" created="20-03-2019 09:51">
+    <from>/insectengids/kakkerlakken/levenswijze-kakkerlakken</from>
+    <to>/kakkerlakken/levenswijze-van-kakkerlakken</to>
+  </redirect>
+  <redirect id="333a7dec-1387-45d9-bfa8-53e6c1f78524" lastmodified="20-03-2019 09:53" created="20-03-2019 09:53">
+    <from>/insectengids/kakkerlakken/kakkerlakken-herkennen</from>
+    <to>/kakkerlakken/kakkerlakken-herkennen</to>
+  </redirect>
+  <redirect id="a2ddb887-523b-4583-a915-6fc7e4448e5f" lastmodified="20-03-2019 09:55" created="20-03-2019 09:55">
+    <from>/insectengids/kakkerlakken/kakkerlakkenplaag-in-huis</from>
+    <to>/kakkerlakken/kakkerlakkenplaag-in-huis</to>
+  </redirect>
+  <redirect id="d7419872-016d-42ce-b440-6f35f035a8c4" lastmodified="20-03-2019 09:56" created="20-03-2019 09:56">
+    <from>/insectengids/kakkerlakken/kakkerlakkenbestrijding</from>
+    <to>/kakkerlakken/kakkerlakkenbestrijding</to>
+  </redirect>
+  <redirect id="bfdaacdf-37ae-4c2b-a2be-1459c1d3e0f1" lastmodified="23-03-2019 11:19" created="23-03-2019 11:19">
+    <from>/insectengids/mieren</from>
+    <to>/mieren</to>
+  </redirect>
+  <redirect id="69325051-7907-4471-aa1a-1936086cee27" lastmodified="23-03-2019 11:20" created="23-03-2019 11:20">
+    <from>/insectengids/mieren/mierenbestrijding</from>
+    <to>/mieren/mierenbestrijding</to>
+  </redirect>
+  <redirect id="8134489a-63c1-42b5-b8af-e7dcd710f833" lastmodified="23-03-2019 11:22" created="23-03-2019 11:22">
+    <from>/insectengids/mieren/hoe-leven-mieren</from>
+    <to>/mieren/hoe-leven-mieren</to>
+  </redirect>
+  <redirect id="85367db8-44c0-4785-b364-b13122a76f05" lastmodified="23-03-2019 11:22" created="23-03-2019 11:22">
+    <from>/insectengids/mieren/soorten-mieren</from>
+    <to>/mieren/soorten-mieren</to>
+  </redirect>
+  <redirect id="824a628e-2fc0-43db-8da6-f8ef4a8e6bf5" lastmodified="23-03-2019 11:23" created="23-03-2019 11:23">
+    <from>/insectengids/mieren/mieren-bestrijden-in-huis</from>
+    <to>/mieren/mieren-bestrijden-in-huis</to>
+  </redirect>
+  <redirect id="7b6f71ce-fda2-4d16-8649-8df1d6b26a0d" lastmodified="23-03-2019 11:24" created="23-03-2019 11:24">
+    <from>/insectengids/mieren/vliegende-mieren-in-huis</from>
+    <to>/mieren/vliegende-mieren-in-huis</to>
+  </redirect>
+  <redirect id="6bb4bb1c-9345-4396-a61f-bc0b728ca7f8" lastmodified="24-03-2019 04:12" created="24-03-2019 04:12">
+    <from>/plaagdierengids/muizen/muizenoverlast/muizenplaag</from>
+    <to>/plaagdierengids/muizen/muizenoverlast/hoe-voorkomt-u-een-muizenplaag?</to>
+  </redirect>
+  <redirect id="04cf7655-6e64-49cc-914c-acaf035f3f3a" lastmodified="24-03-2019 04:13" created="24-03-2019 04:13">
+    <from>/plaagdierengids/muizen/muizenoverlast/muizen-in-bedrijf</from>
+    <to>/plaagdierengids/muizen/muizenoverlast/muizen-in-uw-bedrijf</to>
+  </redirect>
+  <redirect id="bada5b4b-cf48-45e4-b812-cbe09849260a" lastmodified="24-03-2019 04:20" created="24-03-2019 04:20">
+    <from>/plaagdierengids/muizen/muizenbestrijding/muizen-bestrijden-in-huis</from>
+    <to>/muizen/muizenbestrijding/muizen-bestrijden-in-en-om-het-huis</to>
+  </redirect>
+  <redirect id="a3ad155c-1b13-4812-bc15-a2d337f93ff1" lastmodified="24-03-2019 04:24" created="24-03-2019 04:24">
+    <from>/plaagdierengids/muizen/muizenbestrijding/zelf-muizen-bestrijden</from>
+    <to>/muizen/muizenbestrijding/muizen-bestrijden-in-en-om-het-huis/hoe-kunt-u-muizen-zelf-bestrijden</to>
   </redirect>
 </redirects>
