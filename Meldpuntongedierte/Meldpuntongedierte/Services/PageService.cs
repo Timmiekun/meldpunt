@@ -67,9 +67,19 @@ namespace Meldpunt.Services
 
         string newHtml = doc.DocumentNode.SelectSingleNode("//body").InnerHtml;
         page.SelectSingleNode("content").InnerXml = String.Format("<![CDATA[{0}]]>", newHtml);
-        
+
       }
 
+      pagesDoc.Save(pageFile);
+    }
+
+    internal void AddGuids()
+    {
+      XmlNodeList pages = pagesDoc.DocumentElement.SelectNodes("//page");
+      foreach (XmlElement page in pages)
+      {
+        page.SetAttribute("guid", Guid.NewGuid().ToString());
+      }
       pagesDoc.Save(pageFile);
     }
 
@@ -91,6 +101,15 @@ namespace Meldpunt.Services
       return XmlToModel(pages);
     }
 
+    public PageModel GetPageByGuid(string guid)
+    {
+      XmlNode page = pagesDoc.DocumentElement.SelectSingleNode("//page[@guid='" + guid + "']");
+      if (page == null)
+        return null;
+
+      return XmlToModel(page);
+    }
+
     public PageModel GetPage(string pageId)
     {
       XmlNode page = pagesDoc.DocumentElement.SelectSingleNode("//page[@id='" + pageId + "']");
@@ -102,7 +121,7 @@ namespace Meldpunt.Services
 
     public PageModel SavePage(PageModel p)
     {
-      XmlElement page = (XmlElement)pagesDoc.SelectSingleNode("//page[@id='" + p.Id + "']");
+      XmlElement page = (XmlElement)pagesDoc.SelectSingleNode("//page[@guid='" + p.Guid + "']");
 
       string html = String.Format("<![CDATA[{0}]]>", p.Content);
 
@@ -113,7 +132,7 @@ namespace Meldpunt.Services
       createOrUpdateElement(page, "title", p.EditableTitle);
       createOrUpdateElement(page, "sort", p.Sort.ToString());
       createOrUpdateElement(page, "urlPart", p.UrlPart);
-      
+
       page.SetAttribute("id", p.UrlPart?.XmlSafe() ?? p.EditableTitle.XmlSafe());
       page.SetAttribute("tab", p.InTabMenu ? "true" : "false");
       page.SetAttribute("inhome", p.InHomeMenu ? "true" : "false");
@@ -169,6 +188,7 @@ namespace Meldpunt.Services
     private XmlElement CreateNewPage(XmlElement parent, string id)
     {
       var page = pagesDoc.CreateElement("page");
+      page.SetAttribute("guid", Guid.NewGuid().ToString());
       XmlElement content = pagesDoc.CreateElement("content");
       XmlElement metaDescription = pagesDoc.CreateElement("metadescription");
       XmlElement title = pagesDoc.CreateElement("title");
@@ -270,6 +290,7 @@ namespace Meldpunt.Services
       PageModel p = new PageModel()
       {
         Id = id,
+        Guid = Guid.Parse(page.Attributes["guid"].Value),
         Content = html,
         SubPages = subpages,
         Url = url.UrlEncode(),

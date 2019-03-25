@@ -5,6 +5,7 @@ using System.Web.Mvc;
 using Meldpunt.Services;
 using Meldpunt.Models;
 using Meldpunt.Utils;
+using System.Web.Routing;
 
 namespace Meldpunt.Controllers
 {
@@ -37,14 +38,10 @@ namespace Meldpunt.Controllers
     }
 
     [OutputCache(Duration = 100, VaryByParam = "none")]
-    public ActionResult GetPage(string id)
+    public ActionResult GetPage()
     {
-      id = id.XmlSafe();
-      if (id == "home")
-        return Redirect("/");
-
       // content page?
-      PageModel model = pageService.GetPage(id);
+      PageModel model = pageService.GetPageByGuid(RouteData.Values["guid"].ToString());
       if (model != null)
       {
         // correct url?
@@ -53,7 +50,7 @@ namespace Meldpunt.Controllers
           return RedirectPermanent(model.Url);
         }
 
-        if (id == "openbare-ruimte")
+        if (model.Id == "openbare-ruimte")
           ViewBag.HidePhoneNumber = true;
 
         if (model.SubPages.Any())
@@ -68,19 +65,13 @@ namespace Meldpunt.Controllers
 
         return View("index", model);
       }
+    
+      throw new HttpException(404, "page not found");
+    }
 
-      // gemeente page?
-      string prefix = "ongediertebestrijding-";
-      
-      // begint de pagina niet met de prefix en is het een plaats? Dan redirecten naar de juiste url met prefix.
-      if (!id.StartsWith(prefix) && LocationUtils.IsLocation(id)) {
-          return RedirectPermanent(prefix + id);
-      }
-
-      // beginnen we wel met de prefix? Dan de prefix eraf halen om de plaatsnaam te vinden.
-      if (id.StartsWith(prefix))
-        id = id.Substring(prefix.Length);
-
+    public ActionResult GetPlace()
+    {
+      var id = RouteData.Values["gemeente"].ToString();
       var gemeente = LocationUtils.placesByMunicipality.Where(m => m.Key.XmlSafe().Equals(id, StringComparison.CurrentCultureIgnoreCase));
       if (gemeente.Any())
       {
@@ -97,7 +88,7 @@ namespace Meldpunt.Controllers
 
       // plaats to redirect?
       var gemeentes = LocationUtils.placesByMunicipality.Where(m => m.Value.Any(p => p.XmlSafe().Equals(id, StringComparison.CurrentCultureIgnoreCase)));
-      
+
 
       if (gemeentes.Any())
       {

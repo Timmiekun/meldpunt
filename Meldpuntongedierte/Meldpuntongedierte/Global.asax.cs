@@ -1,5 +1,7 @@
 ﻿using Meldpunt.ActionFilters;
 using Meldpunt.Controllers;
+using Meldpunt.Services;
+using Meldpunt.Utils;
 using System;
 using System.Web;
 using System.Web.Mvc;
@@ -21,13 +23,32 @@ namespace Meldpunt
     {
       routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-      routes.MapMvcAttributeRoutes();
+     
 
-      routes.MapRoute(
-        "Http404", // Route name
-        "Error/404", // URL with parameters
-        new { controller = "Error", action = "http404" } // Parameter defaults
-      );
+      routes.MapMvcAttributeRoutes(); 
+
+      PageService pageService = new PageService();
+      foreach (var page in pageService.GetAllPages())
+      {
+          routes.MapRoute(
+            page.Guid.ToString(), // Route name
+            page.Url.TrimStart('/'), // URL with parameters
+            new { controller = "Home", action = "GetPage", guid = page.Guid } // Parameter defaults
+        );
+      }
+
+      foreach(var municipality in LocationUtils.placesByMunicipality)
+      {
+        foreach(var plaats in municipality.Value) { 
+          routes.MapRoute(
+              plaats + "-" + municipality.Key.XmlSafe(), // Route name
+              "ongediertebestrijding-" + municipality.Key.XmlSafe(), // URL with parameters
+              new { controller = "Home", action = "GetPlace", gemeente = municipality.Key.XmlSafe() } // Parameter defaults
+          );
+        }
+      }
+
+     
 
       routes.MapRoute(
         "Homepage", // Route name
@@ -42,22 +63,16 @@ namespace Meldpunt
      );
 
       routes.MapRoute(
-         "Index", // Route name
+         "Search", // Route name
          "index", // URL with parameters
          new { controller = "Search", action = "Index" } // Parameter defaults
       );
 
       routes.MapRoute(
-          "Search", // Route name
+          "SearchPages", // Route name
           "zoek", // URL with parameters
           new { controller = "Search", action = "SearchPages" } // Parameter defaults
        );
-
-      routes.MapRoute(
-        "SearchPages", // Route name
-        "zoeken", // URL with parameters
-        new { controller = "Search", action = "SearchPages" } // Parameter defaults
-     );
 
       routes.MapRoute(
         "Login", // Route name
@@ -78,12 +93,6 @@ namespace Meldpunt
       );
 
       routes.MapRoute(
-       "Plaats", // Route name
-       "in/{plaats}", // URL with parameters
-         new { controller = "Plaats", action = "Plaats", id = UrlParameter.Optional } // Parameter defaults
-      );
-
-      routes.MapRoute(
          "EditPlaats", // Route name
          "admin/editplaats/{plaats}", // URL with parameters
          new { controller = "Admin", action = "EditPlaats", id = UrlParameter.Optional } // Parameter defaults
@@ -94,12 +103,6 @@ namespace Meldpunt
         "admin/editpage/{id}", // URL with parameters
         new { controller = "Admin", action = "EditPage", id = UrlParameter.Optional } // Parameter defaults
      );
-    
-      //routes.MapRoute(
-      //   "Admin", // Route name
-      //   "admin/{action}", // URL with parameters
-      //   new { controller = "Admin", action = "Index", id = UrlParameter.Optional } // Parameter defaults
-      //);
 
       routes.MapRoute(
         "SiteMap", // Route name
@@ -108,36 +111,16 @@ namespace Meldpunt
       );
 
       routes.MapRoute(
-         "Page", // Route name
-         "{id}", // URL with parameters
-         new { controller = "Home", action = "GetPage", id = UrlParameter.Optional } // Parameter defaults
-      );
-      
-      routes.MapRoute(
-        "SubPage", // Route name
-        "{a}/{id}", // URL with parameters
-        new { controller = "Home", action = "GetPage", id = UrlParameter.Optional } // Parameter defaults
-     );
-
-      routes.MapRoute(
-       "SubSubPage", // Route name
-       "{a}/{b}/{id}", // URL with parameters
-       new { controller = "Home", action = "GetPage", id = UrlParameter.Optional } // Parameter defaults
-     );
-
-      routes.MapRoute(
-        "SubSubSubPage", // Route name
-        "{a}/{b}/{c}/{id}", // URL with parameters
-        new { controller = "Home", action = "GetPage", id = UrlParameter.Optional } // Parameter defaults
-     );
-
-      routes.MapRoute(
           "Default", // Route name
           "{controller}/{action}/{id}", // URL with parameters
           new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
       );
 
-      
+      routes.MapRoute(
+      "Error",
+      "{*url}",
+      new { controller = "Error", action = "http404" }
+    );
 
     }
 

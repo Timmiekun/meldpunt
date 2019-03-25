@@ -7,11 +7,12 @@
   Layout = "~/Views/Shared/_Admin.cshtml";
 }
 
-<a href="/admin/newpage?parentid=@Model.Id" class="js-new-page btn btn-info">Nieuwe pagina</a>
+<div class="toolbar">
+  <button onclick="$('#opslaan').click()" class="btn btn-info">Opslaan</button>
+  <a class="btn btn-info" href="@Model.Url" target="_blank">Pagina bekijken</a>
+</div>
 
 <h1>@Model.Title</h1>
-
-<a class="viewPage btn btn-info" href="@Model.Url" target="_blank">Pagina bekijken</a>
 
 <form method="post">
 
@@ -40,12 +41,20 @@
 
     <div class="field">
       <label for="Sort">
-        <input type="number" name="Sort" style="width:50px" value="@Model.Sort" />
+        <input type="number" name="Sort" class="sort" value="@Model.Sort" />
         sorteer nummer
       </label>
     </div>
 
   </div>
+
+
+  @if (Model.LastModified.HasValue)
+  {
+    <div class="field">
+      Voor het laatst aangepast: <b>@Model.LastModified.Value.ToString("R")</b>
+    </div>
+  }
 
   <div class="field">
     <label for="MetaDescription">Meta Titel</label>
@@ -67,28 +76,29 @@
     </div>
   </div>
 
-    <div class="field">
-      <label for="content">Content</label>
-      <textarea id="content" name="content" class="richtext">
+  <div class="field">
+    <label for="content">Content</label>
+    <textarea id="content" name="content" class="richtext">
 			@Model.Content
 		</textarea>
-    </div>
+  </div>
 
-    @if (Model.LastModified.HasValue)
-    {
-      <div class="field">
-        Voor het laatst aangepast: <b>@Model.LastModified.Value.ToString("R")</b>
-      </div>
-    }
-
-    <input type="hidden" name="Id" value="@Model.Id" />
-    <input type="submit" value="opslaan" class="float-left btn btn-info" />
-</form>
-
-<form action="/admin/deletepage" class="js-delete-page">
   <input type="hidden" name="Id" value="@Model.Id" />
-  <input type="submit" value="pagina verwijderen" class="float-right btn btn-danger" />
+  <input type="hidden" name="Guid" value="@Model.Guid" />
+
+  <div class="toolbar">
+    <a href="/admin/newpage?parentid=@Model.Id" class="js-new-page btn btn-info">Nieuwe pagina</a>
+    <input type="submit" id="opslaan" value="opslaan" class="btn btn-info" />
+    <a class="btn btn-info" href="@Model.Url" target="_blank">Pagina bekijken</a>
+    <form action="/admin/deletepage" class="js-delete-page deleteform">
+      <input type="hidden" name="Id" value="@Model.Id" />
+      <input type="submit" value="pagina verwijderen" class="btn btn-danger" />
+    </form>
+  </div>
 </form>
+
+
+
 
 
 
@@ -106,7 +116,7 @@
           @foreach (PageModel p in Model.SubPages)
           {
             <li class="subpages">
-              <a href="/admin/editpage/@p.Id">@p.Title</a>
+              <a href="/admin/editpage/@p.Guid">@p.Title</a>
             </li>
           }
         </ul>

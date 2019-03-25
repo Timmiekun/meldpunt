@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <pages>
-  <page id="home" tab="true" published="false" lastmodified="20-03-2019 06:27" inhome="false">
+  <page id="home" tab="true" published="false" lastmodified="20-03-2019 06:27" inhome="false" guid="0bb89075-b8dc-4745-8a81-31486884c42b">
     <content><![CDATA[<h1 style="text-align: left;">Naar een schone leefomgeving</h1>
 <h2><img class="right" style="float: right;" title="Beheersing en Bestrijding Meldpunt Ongedierte" src="/image?name=home/muis naar een schone leefomgeving.jpg&width=159&height=114" alt="Beheersing en Bestrijding Meldpunt Ongedierte">Plaagdierpreventie &amp; Bestrijding</h2>
 <p>Wij bieden hulp aan gemeenten, inwoners, bedrijven en instellingen bij&nbsp;de preventie en bestrijding van plaagdieren en insecten. In huis, buitenshuis en op de werkplek.</p>
@@ -40,7 +40,7 @@
     </pages>
     <sort>10</sort>
   </page>
-  <page id="insectengids" tab="false" published="false" lastmodified="25-03-2019 10:53" inhome="false">
+  <page id="insectengids" tab="false" published="false" lastmodified="25-03-2019 12:15" inhome="false" guid="81ce92a3-34d0-49dc-aad7-5717ff5f6538">
     <content><![CDATA[<h1>Insectengids</h1>
 <p><img class="right" style="float: right;" title="insectengids beestjes in huis" src="/image?name=promotie/insectengids.jpg&amp;width=217&amp;height=131" alt="insectengids beestjes in huis" />Om u zoveel mogelijk van dienst te kunnen zijn hebben wij de meest voorkomende insecten in huis en binnen gebouwen voor u uiteengezet. Hiernaast (op de smartphone onderaan) kunt u klikken op de voor u relevante diersoort.</p>
 <p>&nbsp;</p>
@@ -62,7 +62,7 @@
 <h2>Komt u er toch niet uit?</h2>
 <p>Ga naar de zoekbalk bovenin en voer de naam van uw gemeente in voor het juiste servicenummer van de afdeling ongediertebestrijding bij u in de buurt.</p>]]></content>
     <pages>
-      <page id="wespen" published="false" tab="true" lastmodified="20-03-2019 06:31" inhome="false">
+      <page id="wespen" published="false" tab="true" lastmodified="20-03-2019 06:31" inhome="false" guid="34e97041-7a32-4e55-ac01-4b9fc523c7f5">
         <content><![CDATA[<h1><img class="right" style="float: right;" title="Wesp" src="/image?name=wespen/duitse wesp.jpg&width=175&height=145" alt="Wespen">Wespen</h1>
 <p>Als u te maken heeft met een&nbsp;<a title="wespennest" href="/insectengids/wespen/wespennest" target="_blank" rel="noopener">wespennest</a> in de buurt of zelfs in huis, dan is het belangrijk om dit zo snel mogelijk te laten bestrijden of te verwijderen. Hoe langer u wacht, hoe groter de risico's worden op gevaarlijke situaties.</p>
 <p>&nbsp;</p>
@@ -92,7 +92,7 @@
 <p>&nbsp;</p>
 <p>De soorten die voornamelijk in gebouwen en huizen gevonden worden zijn de Gewone wesp en de Duitse wesp. De levenswijze van deze twee soorten verschillen niet veel van elkaar.</p>]]></content>
         <pages>
-          <page id="wespennest-in-huis" published="false" tab="false" lastmodified="14-03-2019 08:48" inhome="false">
+          <page id="wespennest-in-huis" published="false" tab="false" lastmodified="14-03-2019 08:48" inhome="false" guid="99896112-545a-4a5f-8a0b-c0490c048ac1">
             <content><![CDATA[<h1>Wespennest in huis</h1>
 <p><img class="right" style="float: right;" title="wespennest in huis" src="/image?name=wespen/wespennest in huis/wespennest in huis.jpg&width=195&height=130" alt="wespennest in huis">Een wespennest in huis kan veel overlast geven. Tijdens de zomer kan het nest explosief groeien.</p>
 <p>&nbsp;</p>
@@ -124,7 +124,7 @@
             <title>Wespennest in huis</title>
             <sort>7</sort>
           </page>
-          <page id="wespen-in-huis" published="false" tab="false" lastmodified="09-08-2018 12:34" inhome="false">
+          <page id="wespen-in-huis" published="false" tab="false" lastmodified="09-08-2018 12:34" inhome="false" guid="f4a74b4b-54e8-4fcf-a61b-fc670eff543e">
             <content><![CDATA[<h1>Wespen in huis</h1>
 <p>Wanneer men veel wespen in huis aantreft is dit vrijwel altijd het gevolg van een wespennest dat zich ergens in de constructie van het huis bevindt.</p>
 <p>&nbsp;</p>
@@ -173,7 +173,7 @@
             <title>Wespen in huis</title>
             <sort>2</sort>
           </page>
-          <page id="wespennest-in-de-schuur" published="false" tab="false" lastmodified="25-03-2018 03:18" inhome="false">
+          <page id="wespennest-in-de-schuur" published="false" tab="false" lastmodified="25-03-2018 03:18" inhome="false" guid="198e9171-7e53-42c6-a551-a87736463de5">
             <content><![CDATA[<h1>Wespennest in de schuur</h1>
 <p>Een wespennest in de schuur kan een groot risico vormen doordat we ons er niet altijd bewust van zijn dat het er zit. Tuinmateriaal of tuinmeubilair ligt vaak ergens weggestopt op een plek waar een wespennest lang ongestoord verder kan groeien. Wanneer later het betreffende materiaal weggetrokken wordt waardoor het nest ernstig verstoord of zelfs in stukken getrokken wordt, dan zijn de gevolgen niet te overzien.</p>
 <h2>Wespennest verwijderen uit de schuur</h2>
@@ -188,7 +188,7 @@
             <title>Wespennest in de schuur</title>
             <sort>4</sort>
           </page>
-          <page id="wespenbestrijding" published="false" tab="false" lastmodified="12-03-2019 09:04" inhome="true">
+          <page id="wespenbestrijding" published="false" tab="false" lastmodified="12-03-2019 09:04" inhome="true" guid="a717be0c-ed72-460c-8372-06b7904b07a1">
             <content><![CDATA[<h1>Wespenbestrijding</h1>
 <p><img class="right" style="float: right;" title="Wespenbestrijding" src="/image?name=wespen/wespenbestrijding/wespenbestrijding dakpannen.jpg&width=140&height=186" alt="wespenbestrijding">Zodra u een wespennest in huis of in de tuin signaleert, dan kunt u ons bellen voor het maken van een afspraak. Dan komen wij het wespennest bestrijden.</p>
 <h2><img class="left" style="float: left;" title="afspraak maken" src="/image?name=wespen/wespennest verwijderen/klantenservice bellen.jpg&width=93&height=93" alt="afspraak maken"></h2>
@@ -249,7 +249,7 @@
             <title>Wespenbestrijding</title>
             <sort>10</sort>
             <pages>
-              <page id="bereikbaarheid" lastmodified="12-03-2019 07:58" published="false" tab="false" inhome="false">
+              <page id="bereikbaarheid" lastmodified="12-03-2019 07:58" published="false" tab="false" inhome="false" guid="470fedf9-867c-4b61-afcd-27f009674fa6">
                 <content><![CDATA[<h1>Bereikbaarheid</h1>
 <h2><img class="right" style="float: right;" title="Is het bereikbaar?" src="/image?name=wespen/wespennest verwijderen/bestrijding noodzakelijk.jpg&width=184&height=127" alt="bereikbaar"></h2>
 <p>Onze uitvoerders hebben geavanceerd materiaal waarmee zij op 6 tot 8 meter hoogte een bestrijding uit kunnen voeren. Het komt echter een enkele keer voor dat de bestrijding toch niet uitgevoerd kan worden. Meestal heeft dat dan te maken met de dakrand die op de 2e bouwlaag leunt.</p>
@@ -293,7 +293,7 @@
                 <title>Bereikbaarheid</title>
                 <sort>0</sort>
               </page>
-              <page id="uitvliegopening-afgedicht" lastmodified="14-03-2019 10:33" published="false" tab="false" inhome="false">
+              <page id="uitvliegopening-afgedicht" lastmodified="14-03-2019 10:33" published="false" tab="false" inhome="false" guid="44cb8c53-6f6f-4b25-b4b8-dab381052ab0">
                 <content><![CDATA[<h1>Wespen opsluiten. Kan dat?</h1>
 <p>Het lijkt een logische gedachtengang om de in- en uitvliegopening naar het wespennest af te dichten in de hoop dat de wespen stikken of verhongeren. Maar pas op!</p>
 <h2>Wespen kunnen goed knagen</h2>
@@ -316,7 +316,7 @@
                 <title>Uitvliegopening afgedicht</title>
                 <sort>0</sort>
               </page>
-              <page id="is-het-wel-een-wespennest" lastmodified="19-03-2019 02:16" published="false" tab="false" inhome="false">
+              <page id="is-het-wel-een-wespennest" lastmodified="19-03-2019 02:16" published="false" tab="false" inhome="false" guid="551ced28-f6f6-4b3c-863e-383160eaa75e">
                 <content><![CDATA[<h1>Is het wel een wespennest?</h1>
 <p>Onze wespenverdelgers komen soms op een adres waar blijkt dat er geen wespennest aanwezig is. Er zijn weliswaar veel wespen die rondhangen om een bepaalde plek, maar deze wespen zijn dan niet voldoende doelgericht bezig om tot de conclusie te komen dat er een wespennest zit. Gif spuiten is dan ongeoorloofd. Wij moeten dan desondanks toch voorrijkosten in rekening brengen ( &euro;55,- )</p>
 <h2>Wat is meestal de oorzaak?</h2>
@@ -338,7 +338,7 @@
               </page>
             </pages>
           </page>
-          <page id="wespennest-verwijderen" published="false" tab="false" lastmodified="19-03-2019 05:37" inhome="false">
+          <page id="wespennest-verwijderen" published="false" tab="false" lastmodified="19-03-2019 05:37" inhome="false" guid="d4d82b01-b6c8-49ad-8d33-def312919753">
             <content><![CDATA[<h1>Wespennest verwijderen</h1>
 <p><img class="right" style="float: right;" title="Wespennest Verwijderen" src="/image?name=wespen/wespennest verwijderen/wespennest verwijderen.jpg&width=200&height=133" alt="Wespennest Verwijderen">Tussen maart en juni worden veel vliegende insecten wakker. Er wordt ook weer geklust in de tuin en aan huis. Opeens kan er dan een wespennest tevoorschijn komen.</p>
 <p>&nbsp;</p>
@@ -460,7 +460,7 @@
             <title>Wespennest verwijderen</title>
             <sort>9</sort>
           </page>
-          <page id="wespennest-in-spouwmuur" lastmodified="23-03-2019 09:30" published="false" tab="false" inhome="false">
+          <page id="wespennest-in-spouwmuur" lastmodified="23-03-2019 09:30" published="false" tab="false" inhome="false" guid="465f798e-dbea-4362-8cb3-760f44a98962">
             <content><![CDATA[<h1>Wespennest in spouwmuur</h1>
 <p>Een wespennest in de spouwmuur kan vervelende gevolgen hebben. Isolatiemateriaal wordt door de wespen verwijderd om ruimte te cre&euml;ren voor het groeiende wespennest. Ze maken vooral gebruik van de ventilatie openingen.</p>
 <p>&nbsp;</p>
@@ -491,7 +491,7 @@
             <title>Wespennest in spouwmuur</title>
             <sort>6</sort>
           </page>
-          <page id="wespennest-in-de-grond" lastmodified="07-04-2018 02:31" published="false" tab="false" inhome="false">
+          <page id="wespennest-in-de-grond" lastmodified="07-04-2018 02:31" published="false" tab="false" inhome="false" guid="8a8db3c7-4224-4846-85a2-a325591fd103">
             <content><![CDATA[<h1>Wespennest in de grond</h1>
 <p>Een wespennest in de grond&nbsp;komt regelmatig voor in bijvoorbeeld onze tuin. Dit kan gevaarlijke situaties teweeg brengen. Een Wespennest in de grond is zeer risicovol omdat wij ons er vaak niet van bewust zijn dat het er zit. Zodra wij de tuin omwoelen kan het wespennest ernstig verstoord worden met alle gevolgen van dien.</p>
 <h2>Afspraak maken voor bestrijding :</h2>
@@ -511,7 +511,7 @@
             <title>Wespennest in de grond</title>
             <sort>3</sort>
           </page>
-          <page id="wespenoverlast" lastmodified="12-03-2019 09:22" published="false" tab="false" inhome="false">
+          <page id="wespenoverlast" lastmodified="12-03-2019 09:22" published="false" tab="false" inhome="false" guid="21fc4d87-266e-4909-98df-6ea8532e2103">
             <content><![CDATA[<h1><img class="right" style="float: right;" title="wespenoverlast" src="/image?name=wespen/wespenoverlast/wespenoverlast.jpg&width=130&height=130" alt="wespenoverlast">Wespenoverlast&nbsp;</h1>
 <p>Wespenoverlast op het terras, op de camping, aan het zwembad of in het pretpark kennen wij allemaal. Het brengt veel irritatie, angst en ongenoegen met zich mee. Als duidelijk is waar de wespen vandaan komen, dan kunnen wij het&nbsp;<a title="wespennest bestrijden" href="/insectengids/wespen/wespenbestrijding" target="_blank" rel="noopener">wespennest bestrijden</a></p>
 <h2><img class="left" style="float: left;" title="vangkorf met wespenvloeistof" src="/image?name=wespen/wespenoverlast/vangkorven.jpg&width=147&height=119" alt="vangkorven wespenvloeistof">Vangkorven</h2>
@@ -567,7 +567,7 @@
             <title>Wespenoverlast</title>
             <sort>8</sort>
           </page>
-          <page id="wespennest" lastmodified="23-03-2019 09:30" published="false" tab="false" inhome="false">
+          <page id="wespennest" lastmodified="23-03-2019 09:30" published="false" tab="false" inhome="false" guid="0bea710c-5dac-4c9f-9f94-04a488d06474">
             <content><![CDATA[<h1>Wespennest</h1>
 <h2>Nieuwe bewoners</h2>
 <p><img class="right" style="float: right;" title="wespennest" src="/image?name=wespen/wespennest/wespennest.jpg&width=173&height=138" alt="wespennest">Een wespennest kan men aantreffen op diverse plekken. Meestal zit het ergens in de tuin zelfs <a title="wespennest in huis" href="/insectengids/wespen/wespennest-in-huis" target="_blank" rel="noopener">in huis</a>.</p>
@@ -641,7 +641,7 @@
         <title>Wespen</title>
         <sort>6</sort>
       </page>
-      <page id="bijen-hommels" published="false" tab="false" inhome="false" lastmodified="14-03-2019 12:26">
+      <page id="bijen-hommels" published="false" tab="false" inhome="false" lastmodified="14-03-2019 12:26" guid="01b8bb81-4caf-4803-842a-dd938657ee10">
         <content><![CDATA[<h1>Bijen en Hommels</h1>
 <p>In het voorjaar begint het weer te zoemen. Vooral Bijen en Hommels laten zich weer graag zien. Een fantastisch en zeer belangrijk verschijnsel in onze natuur.</p>
 <p>&nbsp;</p>
@@ -699,7 +699,7 @@
         <title>Bijen &amp; Hommels</title>
         <sort>0</sort>
       </page>
-      <page id="zilvervisjes-en-papiervisjes" haschildmenu="true" published="false" tab="false" lastmodified="03-03-2018 01:10" inhome="false">
+      <page id="zilvervisjes-en-papiervisjes" haschildmenu="true" published="false" tab="false" lastmodified="03-03-2018 01:10" inhome="false" guid="e843c526-fd7e-4a6a-bd12-86eae8019ea3">
         <content><![CDATA[<h1>Zilvervisjes en Papiervisjes</h1>
 <h2>Wat zijn het nu eigenlijk?</h2>
 <p>Zilvervliesjes, ovenvisjes, papierbeestjes, zilvervliesbeestjes en zilverbeestjes. Zomaar een paar termen die regelmatig de revue passeren. Zelfs binnen de wetenschap is er lange tijd misverstand geweest over de naamgeving van bepaalde soorten. Inmiddels staan de twee soorten die bij ons in huis voorkomen bekend als het zilvervisje en het papiervisje. <img style="float: left;" src="/image?name=zilvervisje.gif&width=127&height=77" alt=""><br>Ondanks het feit dat ze erg op elkaar lijken zijn er toch enkele verschillen. De schubben waar het lichaam mee bedekt wordt zijn bij het zilvervisje meer egaal zilverachtig gekleurd dan bij het papiervisje en ze zijn ook wat kleiner, zo&rsquo;n 7 tot 12 mm. Ook is er een klein verschil in de leefwijze. Zilvervisjes hebben een hogere luchtvochtigheid nodig om te kunnen overleven.</p>
@@ -719,7 +719,7 @@
         </metadescription>
         <title>Zilvervisjes en papiervisjes</title>
         <pages>
-          <page id="zilvervisjes-bestrijden" lastmodified="08-11-2016 08:53" published="false" tab="false">
+          <page id="zilvervisjes-bestrijden" lastmodified="08-11-2016 08:53" published="false" tab="false" guid="539f5cbc-4e33-48ad-b929-3f54ef40f2ad">
             <content><![CDATA[<h1>Bestrijding Zilvervisjes en Papiervisjes</h1>
 <h2>Voorbereiding</h2>
 <p>Men dient voordat wij langskomen het hele huis op orde te brengen, stofzuigen en met name zolders/vlieringen en opslag achter knieschotten leeg te maken. Speelgoed etc. goed opbergen en ook overige spullen liefst in het midden van de kamer opstapelen waar het niet in de weg staat. <img style="float: left;" src="/image?name=ngen/voorbereiding-papiervisjes.jpg&width=130&height=73" alt="">Kledingkasten uitruimen en de kleding in grote afsluitbare zakken stoppen. Wij behandelen namelijk alle naden en kieren in huis, ook van de kasten. Men doet er eveneens verstandig aan boeken, dozen en bestekladen etc. goed te inspecteren op de aanwezigheid van zilver- of papiervisjes. Deze kunnen namelijk niet behandeld worden.</p>
@@ -733,17 +733,11 @@
         </pages>
         <sort>0</sort>
       </page>
-      <page id="vliegen" haschildmenu="true">
-        <content>
-          <h1>Vliegen</h1>
-          <p>
-            De vliegen die bij ons overlast veroorzaken kunnen worden verdeeld in twee groepen.
-            <br /> Wanneer wij te maken hebben met vleesvliegen, kamervliegen, fruitvliegen of latrinevliegen, dan bevindt zich ergens in de buurt een voedselbron of broedplaats. Daarnaast hebben wij zo nu en dan te maken met klustervliegen of grasvliegen welke met name in het najaar in grote getallen onze gebouwen proberen binnen te dringen in hun zoektocht naar een geschikte plek om te overwinteren.
-            <br /> Hiernaast vindt u per vliegensoort meer informatie over de leefwijze en de manier waarop het vliegenprobleem aangepakt kan worden.
-          </p>
-        </content>
+      <page id="vliegen" haschildmenu="true" published="false" tab="false" inhome="false" lastmodified="25-03-2019 12:19" guid="f7fac43b-a93d-48bb-9b3c-fcc4bb97a8b2">
+        <content><![CDATA[<h1>Vliegen</h1>
+<p>De vliegen die bij ons overlast veroorzaken kunnen worden verdeeld in twee groepen. <br />Wanneer wij te maken hebben met vleesvliegen, kamervliegen, fruitvliegen of latrinevliegen, dan bevindt zich ergens in de buurt een voedselbron of broedplaats. Daarnaast hebben wij zo nu en dan te maken met klustervliegen of grasvliegen welke met name in het najaar in grote getallen onze gebouwen proberen binnen te dringen in hun zoektocht naar een geschikte plek om te overwinteren. <br />Hiernaast vindt u per vliegensoort meer informatie over de leefwijze en de manier waarop het vliegenprobleem aangepakt kan worden.</p>]]></content>
         <pages>
-          <page id="fruitvlieg" published="false" tab="false" inhome="false" lastmodified="24-03-2019 03:24">
+          <page id="fruitvlieg" published="false" tab="false" inhome="false" lastmodified="24-03-2019 03:24" guid="34e2a66f-1f02-41ef-aec0-d5d5be8f4a87">
             <content><![CDATA[<h1>Fruitvlieg ( Drosophila Melanogaster )</h1>
 <p>Als men een stukje banaan of een schijfje tomaat op de keukentafel laat liggen, komen hier vaak snel enkele kleine goudbruine vliegjes op af, die op een zeer rustige manier rondvliegen. In huishoudingen komen ze ook vaak op flessen met restjes melk , bier, frisdrank of wijn af en zelfs op ketchup, jam of azijn. Fruitvliegjes leggen hun eitjes direct in deze stoffen. Soms dezelfde dag nog komen de maden al uit en boren zich direct in het voedsel. Na vier tot vijf dagen zijn ze volwassen en verpoppen ze zich. De vliegjes die uit deze poppen komen kunnen binnen 24 uur alweer nieuwe eitjes leggen. Onder gunstige omstandigheden volgen de generaties zich binnen 10 dagen op. Mede hierdoor zijn ze ook bijzonder geschikt als proefdieren. Ze hebben het zelfs mogelijk gemaakt dat er in de biologie, en speciaal op het gebied van de erfelijkheidsleer, zeer fundamentele ontdekkingen zijn gedaan. <br />In het dagelijks leven kunnen wij ons hoogstens wat ergeren aan deze vliegjes, maar in fabrieken waar produkten als jam, vruchten of groenten worden gemaakt kunnen ze voor behoorlijke economische schade zorgen. Als voorzorgsmaatregel dient men alle produkten die de vliegen aantrekken dusdanig te bewaren, dat ze niet de kans krijgen er hun eitjes in te leggen.</p>
 <h2>Hoe kom ik van het probleem af?</h2>
@@ -754,7 +748,7 @@
             <title>Fruitvlieg</title>
             <sort>0</sort>
           </page>
-          <page id="grasvlieg" published="false" tab="false" lastmodified="24-03-2019 03:38" inhome="false">
+          <page id="grasvlieg" published="false" tab="false" lastmodified="24-03-2019 03:38" inhome="false" guid="636fa4be-3774-4609-aed3-1484da01e1a0">
             <content><![CDATA[<h1>Grasvlieg</h1>
 <p>Grasvliegen lijken op het eerste oog sterk op fruitvliegen. Echter, wanneer je ze beter bekijkt zie je dat ze een nogal gelige kleur hebben. Ze zijn ook niet op zoek naar etenswaren. Grasvliegen gaan in het najaar op zoek naar een plek om te overwinteren. Vaak gebeurt dit op de bovenste etages van hoge gebouwen. Door de enorme aantallen kan dit voor veel overlast zorgen op balkons en terrassen van kantoor- en flatgebouwen.</p>
 <p>Net zo snel als dat de vliegjes tevoorschijn komen kunnen ze ook plotseling weer verdwenen zijn. Soms kan het echter meerdere weken of zelfs maanden duren voor je ze niet meer ziet.</p>
@@ -765,7 +759,7 @@
             <title>Grasvlieg</title>
             <sort>0</sort>
           </page>
-          <page id="kamervlieg" published="false" tab="false" inhome="false" lastmodified="24-03-2019 03:52">
+          <page id="kamervlieg" published="false" tab="false" inhome="false" lastmodified="24-03-2019 03:52" guid="76be3fd3-7381-4807-aeaf-99d3cd1a98f0">
             <content><![CDATA[<h1>Kamervlieg ( Musca domestica L. )</h1>
 <p>Verreweg de meest algemene vlieg binnenshuis is de kamervlieg, die in alle kamers kan worden aangetroffen, maar het meest in de buurt van etenswaren. Veel duidt erop dat de kamervlieg zich in Afrika heeft ontwikkeld, maar inmiddels heeft hij de mens over de gehele wereld gevolgd. In Noord-Europa hebben de kamervliegen pas vaste voet kunnen krijgen toen er huisdieren werden gehouden, die &rsquo;s winters werden opgestald. Dit gebeurde niet voor het begin van de ijzertijd. De larven van de kamervlieg ontwikkelen zich in mest, maar ook in keukenafval en dergelijke. Een wijfjesvlieg kan een paar honderd eitjes leggen onder gunstige omstandigheden, d.w.z ongeveer bij een temperatuur van 30 graden. Voor de gehele ontwikkeling van ei tot volwassen vlieg is slechts zeven dagen nodig. Kamervliegen zoeken graag uitwerpselen, aas en allerlei afval op en kunnen als gevolg hiervan dragers van bacterieen en virussen zijn. Als mogelijke overbrengers van ziekten zijn ze dus vanuit hygienisch oogpunt gezien ongewenst, maar aan de andere kant is er in normale omstandigheden geen enkele reden tot paniek als er eens een paar kamervliegen rond je maaltijd dwarrelen. Onder andere omstandigheden kunnen ze echter bijzonder hinderlijk worden. Zwermen vliegen rond mensen, dieren en etenswaren irriteren de meeste mensen en geven ze een onbehaaglijk gevoel. Soms kan men op kamervliegen verschillende soorten ongedierte aantreffen die zich aan het lichaam of aan de poten hebben vastgehecht. Hierbij zijn bijvoorbeeld verschillende mijtensoorten die zich op deze manier door de mobiele vliegen van de ene naar de andere plaats laten vervoeren. In alle gevallen gaat het om soorten die in of bij de mesthoop hebben geleefd waar de vliegen zijn uitgekomen en ze verlaten de plek pas als ze op een andere plek komen waar ze zich thuis voelen.</p>
 <h2>Hoe kom ik van het probleem af?</h2>
@@ -778,7 +772,7 @@
             <title>Kamervlieg</title>
             <sort>0</sort>
           </page>
-          <page id="klustervlieg" published="false" tab="false" lastmodified="24-03-2019 03:55" inhome="false">
+          <page id="klustervlieg" published="false" tab="false" lastmodified="24-03-2019 03:55" inhome="false" guid="6dd759ce-8fbd-475f-b00e-ec6694de6131">
             <content><![CDATA[<h1>Klustervlieg ( Pollenia rudis F. )</h1>
 <p>In vele huizen en gebouwen verschijnen in de loop van de winter regelmatig grote groepen vliegen die veel op kamervliegen lijken. Toch hebben ze een geheel andere levenswijze. Op bepaalde plaatsen kunnen ze zelfs een plaag worden. Er zijn er soms duizenden die half versuft rond de lamp zoemen, in de koffiekopjes vallen, etc. Het betreft hier Klustervliegen. <br />Ze zijn te herkennen aan de massa kleine gouden haartjes op het voorste deel van hun lichaam. Zoals gezegd is hun levenswijze geheel verschillend dan dat van de kamer, of vleesvlieg. Ze komen niet op etenswaren af en leggen hun eitjes veelal in de grond. De uitgekomen larven boren zich in regenwormen naar binnen, waarin ze als parasieten leven. In de zomer ziet men deze vliegen niet in huis omdat ze dan buitenshuis leven op zoek naar bloemen voor de nectar. In het najaar echter zoeken ze een plek om te overwinteren en vaak kan men zien dat ze zich dan in massa&rsquo;s op door de zon beschenen muren verzamelen. Daarna proberen ze naar binnen te komen waar ze op geschikte plekjes in groepen opeengehoopt kunnen rusten. Dit gebeurt vaak op zolders in holle ruimtes. Ze hebben de neiging om ieder jaar weer hetzelfde huis op te zoeken. Ook hooggelegen gebouwen worden vaak uitgekozen. <br />Zolang het plekje dat ze hebben uitgekozen de gehele winter koel blijft, blijven ze tot het voorjaar onbeweeglijk zitten. In het voorjaar worden ze door de warmte gewekt en zoeken ze het licht weer op. Wordt de kamer echter in de loop van de winter verwarmd, dan worden ze weer actief en beginnen weer rond te kruipen. Zoiets kan bijvoorbeeld gebeuren als men een wintervakantie ergens anders verblijft.</p>
 <h2>Hoe kom ik van het probleem af?</h2>
@@ -790,7 +784,7 @@
             <title>Klustervlieg</title>
             <sort>0</sort>
           </page>
-          <page id="latrinevlieg">
+          <page id="latrinevlieg" guid="a2f32e7c-6f0a-4bd6-8e2d-aabe68fb162c">
             <content>
               <h1>Latrinevlieg ( Leptocera spp )</h1>
               <p>
@@ -803,7 +797,7 @@
               </p>
             </content>
           </page>
-          <page id="vleesvlieg">
+          <page id="vleesvlieg" guid="8c98c617-4d6c-4c0f-b272-a3366e70acff">
             <content>
               <h1>
                 Grauwe vleesvlieg
@@ -822,8 +816,13 @@
             </content>
           </page>
         </pages>
+        <metadescription>
+        </metadescription>
+        <title>Vliegen vlogen vlagen vloegen</title>
+        <sort>0</sort>
+        <urlPart>vliegen</urlPart>
       </page>
-      <page id="parasiterende-insecten" haschildmenu="true">
+      <page id="parasiterende-insecten" haschildmenu="true" guid="3d70cb1d-ab46-44e1-8dcc-b35fc3af8570">
         <content>
           <h1>Parasiterende insecten</h1>
           <p>
@@ -837,7 +836,7 @@
           </p>
         </content>
         <pages>
-          <page id="bedwantsen" published="false" tab="false" lastmodified="26-03-2018 07:59" inhome="false">
+          <page id="bedwantsen" published="false" tab="false" lastmodified="26-03-2018 07:59" inhome="false" guid="967302b4-ea17-4947-944b-6261109c3e65">
             <content><![CDATA[<h1>Bedwantsen</h1>
 <p>In tegenstelling tot de meeste andere soorten wantsen zijn bedwantsen (ook wel wandluizen genoemd) vleugelloos. Indien ze zich niet zojuist met bloed hebben volgezogen, is het lichaam papierdun en roodbruin gekleurd.&nbsp;</p>
 <h2>Geschiedenis</h2>
@@ -868,7 +867,7 @@
             <title>Bedwantsen</title>
             <sort>0</sort>
           </page>
-          <page id="luizen" haschildmenu="true">
+          <page id="luizen" haschildmenu="true" guid="dee4e7ff-39eb-47a3-82b3-593666df2622">
             <content>
               <h1>Luizen</h1>
               <p>
@@ -878,7 +877,7 @@
               <p>3 soorten luizen hebben zich aan de mens aangepast : Kleerluizen, hoofdluizen en schaamluizen.</p>
             </content>
             <pages>
-              <page id="kleerluis">
+              <page id="kleerluis" guid="61499dcc-f43a-4c17-b60e-38c6128b2955">
                 <content>
                   <h1>Kleerluis ( Pediculus humanis corporis Deg. )</h1>
                   <p>Kleerluizen worden uitsluitend op het lichaam en in kleren aangetroffen. Hun eitjes leggen ze in zomen en dergelijke beschutte plekjes. Ze zijn wat meer gehard dan hoofdluizen en kunnen bij 23 graden meer dan 4 dagen zonder bloed in leven blijven. De beste levensvoorwaarden voor kleerluizen vindt men binnen groepen mensen die gedwongen worden onder primitieve omstandigheden dicht opeen te leven. Ze kunnen zich niet handhaven bij mensen die een redelijke hygiene nastreven en hun kleren verwisselen en wassen. Kleerluizen kunnen gevaarlijke ziekten zoals vlektyphus overbrengen, wat bij catastrofale toestanden zeer gevaarlijke consequenties kan hebben. Anne Frank is een bekend voorbeeld waarbij dit waarschijnlijk de doodsoorzaak geweest is in het concentratiekamp waar ze haar laatste dagen verbleef. In vredestijd is voor de Nederlandse bevolking, omdat deze ziekte hier niet voorkomt, alleen het onbehagen en de jeuk die met luizenbeten gepaard gaan van betekenis.</p>
@@ -886,7 +885,7 @@
                   <p>Kleerluis is te bestrijden door kleding te wassen bij een temperatuur van 60 graden of hoger. Kleding kan ook gestoomd of verhit worden in lucht van minimaal 70 graden. Daarnaast is een dagelijkse verschoning van kleding en beddengoed belangrijk alsook een goede hygiene en verzorging van het lichaam.</p>
                 </content>
               </page>
-              <page id="hoofdluis">
+              <page id="hoofdluis" guid="aae2dcf0-0920-453e-ba00-92cd2a4fb891">
                 <content>
                   <h1>Hoofdluis ( Pediculus humanis capitis Deg. )</h1>
                   <p>Vlakbij de hoofdhuid kitten de hoofdluizen hun eitjes vast aan de hoofdharen. De eitjes zijn verbijsterend taai en zitten zo vast dat ze alleen met veel moeite verwijderd kunnen worden met behulp van een dichte luizenkam. Als men voor de eerste keer besmet wordt is het niet mogelijk ze door herhaald wassen van het haar weer uit te roeien. De lege eischalen blijven zitten en groeien met de haren mee omhoog. Met een loep zijn ze van de nog niet uitgekomen eitjes te onderscheiden doordat ze doorzichtiger zijn en het topje ontbreekt. Zoals gezegd moeten luizen enkele malen per dag bloed zuigen en een hoofdluis kan bij normale kamertemperatuur, als hij zich niet op een mens bevindt, nauwelijks twee dagen in leven blijven. Hoofdluizen brengen geen besmettelijke ziekten over.</p>
@@ -894,7 +893,7 @@
                   <p>Hoofdluizen zijn te bestrijden door de haren te behandelen met speciale middelen die bij apotheken verkrijgbaar zijn. Omdat deze middelen de eitjes normaliter niet doden, moet deze behandeling enkele keren met drie tot vier dagen tussentijd worden herhaald.</p>
                 </content>
               </page>
-              <page id="schaamluis">
+              <page id="schaamluis" guid="81526e49-7de3-4b6f-887e-f259ac8ce6f5">
                 <content>
                   <h1>Schaamluis ( Phthiris pubis L. )</h1>
                   <p>
@@ -906,9 +905,16 @@
                   <p>Ook hiervoor kunt u bij de apotheek terecht voor de juiste middelen. Ook is het verstandig een arts of gezondheidsdienst te raadplegen.</p>
                 </content>
               </page>
+              <page id="wespen" lastmodified="25-03-2019 01:12" published="false" tab="false" inhome="false" guid="4d3cfb9a-8e2b-4551-bbd9-35691e43f0c8">
+                <content><![CDATA[<p>Test</p>]]></content>
+                <metadescription>Wespen en luizen</metadescription>
+                <title>wespen en luizen</title>
+                <sort>0</sort>
+                <urlPart>wespen</urlPart>
+              </page>
             </pages>
           </page>
-          <page id="mijten" haschildmenu="true">
+          <page id="mijten" haschildmenu="true" guid="1f709a99-99bd-41ce-868d-6c890be511fb">
             <content>
               <h1>Mijten</h1>
               <p>
@@ -917,7 +923,7 @@
               </p>
             </content>
             <pages>
-              <page id="huisstofmijt" haschildmenu="true">
+              <page id="huisstofmijt" haschildmenu="true" guid="6f200a9c-30ad-42aa-a67e-c42024d6c812">
                 <content>
                   <h2>Huisstofmijt ( Dermatophagoides pteronyssinus Trouessart )</h2>
                   <p>Op zichzelf zijn huisstofmijten volkomen onschuldig omdat ze van de huidschilfertjes leven die voortdurend van ons af vallen. Omdat deze mijten behoefte hebben aan een tamelijk hoge luchtvochtigheid en temperatuur leven zij bij voorkeur in bedden. Merkwaardig genoeg heeft men de aanwezigheid van deze mijten helemaal nog niet zo lang geleden ontdekt. Deze ontdekking werd in verband met een onderzoek naar de oorzaken van astma gedaan. Men wist reeds lang dat bepaalde patiënten hevig op huisstof reageerden zonder dat het duidelijk was welk bestanddeel van dit stof de aanvallen veroorzaakte. Men heeft nu kunnen aantonen dat huisstofmijten en een paar nauw verwante mijtengeslachten overal voorkomen waar mensen leven. Stof met huisstofmijten bleek een zeer sterke uitwerking op overgevoelige patiënten te hebben. Niet alleen de mijten zelf, maar ook de door hen afgestoten huidjes en hun uitwerpselen veroorzaken de symptomen. Omdat deze bij het opmaken van de bedden en bij het vegen gemakkelijk in de lucht worden opgewerveld, worden ze zeer gemakkelijk ingeademd. Afgezien van bepaalde spuitmiddelen is bewezen dat vaak en grondig stofzuigen van matrassen de beste manier is om huisstofmijten kwijt te raken. Overigens zijn ze voor verreweg de meeste mensen volkomen onschadelijk.</p>
@@ -927,7 +933,7 @@
                   <p>Ook kan men een schoonmaakmiddel met benzylbenzonaat als acaride toepassen. Ook dit is verkrijgbaar bij de apotheek. Let wel op dat u of anderen in de betreffende ruimten niet overgevoelig zijn voor deze chemicalieen.</p>
                 </content>
               </page>
-              <page id="schurftmijt" haschildmenu="true">
+              <page id="schurftmijt" haschildmenu="true" guid="77dcc251-ebc2-4f22-90ab-e22b4ba1fca7">
                 <content>
                   <h2>Schurftmijt ( Sarcoptes scabiei )</h2>
                   <p>Schurftmijten leven in de huid zelf. Ze graven als mollen gangen in de hoornlaag van de opperhuid. De kleine mijten die nauwelijks 0,3 mm zijn, worden zelf zelden opgemerkt. De roodkleuring en eczeemachtige veranderingen, die deze graverijen veroorzaken, wekken achterdocht. De eitjes worden in de gangen gelegd en de ontwikkeling tot volwassen mijt duurt twee weken. De besmetting vindt meestal door overdracht van drachtige wijfjes bij direct contact tussen mensen plaats. De huidaandoening die veroorzaakt wordt door deze mijten wordt schurft genoemd. Omdat de overdracht vaak door seksueel contact plaatsvindt wordt het ook als een seksueel overdraagbare aandoening gezien. Daarnaast kunnen ook kleding en beddengoed de besmetting overdragen. De allergische reactie die ontstaat uit zich vaak in rode bultjes die met name ’s nachts voor hevige jeuk kunnen zorgen.</p>
@@ -935,7 +941,7 @@
                   <p>Er zijn diverse producten die het probleem kunnen verhelpen. Raadpleeg hiervoor uw huisarts</p>
                 </content>
               </page>
-              <page id="vogelmijt" haschildmenu="true">
+              <page id="vogelmijt" haschildmenu="true" guid="04a1dd97-055e-4a42-be8a-a019019c6ecb">
                 <content>
                   <h2>Vogelmijt ( Dermanyssus gallinae Deg. )</h2>
                   <p>Als vogelmijten zich vol hebben gezogen met bloed, zijn ze mooi rood gekleurd. Nadat het bloed is verteerd worden ze wat kleiner en krijgen ze een zwarte grijzige kleur. Als ze lange tijd hebben gevast worden ze bijna wit. Vogelmijten leven meestal in kippen – en duivenhokken waar ze overdag in spleetjes en kieren zitten weggekropen. ’s Nachts komen ze tevoorschijn om bloed te zuigen. In de schuilplaatsen worden door de wijfjes tot 10 eitjes per keer afgezet. Ze kunnen dat verschillende malen achtereen doen, maar dan moeten ze tussen elk legsel bloed kunnen zuigen. In de zomer is voor de ontwikkeling van ei tot volwassen mijt 8-10 dagen nodig. Volwassen mijten kunnen overigens vier tot vijf maanden zonder bloed in leven blijven. Als men binnenshuis vogelmijten aantreft zijn die altijd van vogels afkomstig. Meestal blijkt zich dan een vogelnest in huis te bevinden. Zolang dit nest bewoond is merkt men meestal weinig van de aanwezigheid omdat hun belangstelling naar de vogels uitgaat. Echter, wanneer de jonge vogels zijn uitgevlogen, beginnen de hongerige mijten weg te trekken en kunnen ze het huis binnendringen. De beet kan jeuk veroorzaken en omdat ze vaak in grote aantallen optreden kunnen ze erg vervelend worden.</p>
@@ -949,7 +955,7 @@
               </page>
             </pages>
           </page>
-          <page id="muggen" haschildmenu="true">
+          <page id="muggen" haschildmenu="true" guid="ab71b4bb-838b-426c-b642-0b1ace30108b">
             <content>
               <h1>Gewone Steekmug ( Culex pipiens L. )</h1>
               <p>
@@ -963,7 +969,7 @@
               <p>Wanneer de muggen van buiten komen is de enige oplossing ervoor zorgen dat ze middels horren niet naar binnen kunnen. Het kan ook zijn dat ze vanuit de kruipruimte komen omdat er langdurig stilstaand water ligt. Als de oorzaak van het langdurig stilstaande water niet opgelost kan worden, kan men ook een laagje paraffine aanbrengen op de waterlaag zodat er geen zuurstof voorhanden is voor de muggenlarven.</p>
             </content>
           </page>
-          <page id="teken" haschildmenu="true">
+          <page id="teken" haschildmenu="true" guid="13b6499c-0497-4182-8cd0-0872ceb0981e">
             <content>
               <h1>Gewone Teek ( Ixodes ricinus L. )</h1>
               <p>
@@ -983,7 +989,7 @@
               <p>Een teek op ons lichaam moet verwijderd worden met behulp van een speciale tekentang. Daarna moet de huid ter plaatse gedesinfecteerd worden. Voor de behandeling van het huisdier moet een dierenarts geraadpleegd worden.</p>
             </content>
           </page>
-          <page id="vlooien" haschildmenu="true" published="false" tab="false" lastmodified="07-03-2019 04:31" inhome="false">
+          <page id="vlooien" haschildmenu="true" published="false" tab="false" lastmodified="07-03-2019 04:31" inhome="false" guid="0f3b6a4b-5e3c-4be2-ab32-9b902ee36602">
             <content><![CDATA[<h1>Vlooien in huis</h1>
 <div>Vlooien in huis kunnen zeer veel overlast veroorzaken. Ment dient daarom ook adequate maatregelen te treffen. Sommige maatregelen kunt u zelf treffen, maar soms is een professionele bestrijding noodzakelijk om het probleem snel en effectief te kunnen verhelpen.&nbsp;</div>
 <h2>Direct een bestrijding aan huis?</h2>
@@ -1018,7 +1024,7 @@
           </page>
         </pages>
       </page>
-      <page id="kevers" haschildmenu="true">
+      <page id="kevers" haschildmenu="true" guid="c0ad5784-9aeb-4af4-b015-3b1e0c41788f">
         <content>
           <h1>Kevers</h1>
           <p>
@@ -1026,7 +1032,7 @@
           </p>
         </content>
         <pages>
-          <page id="broodkever">
+          <page id="broodkever" guid="29ed680c-725c-441e-b576-32ab09d1864f">
             <content>
               <h1>Broodkever ( Stegobium paniceum L. )</h1>
               <p>In werkelijkheid is de broodkever een soort boorkever die zich heeft aangepast aan zetmeelhoudend voedsel. De verwantschap is duidelijk wanneer men naar de kleine ronde gaatjes kijkt. Ze lijken sprekend op houtwormengaatjes in hout. Broodkevers zijn tot in de verste uithoeken van de wereld verspreid geraakt. In oude tijden huisden er al broodkevers in de ruimen van zeeschepen en de oude gewoonte om met scheepsbeschuiten op de tafel te kloppen voor men ze opat, diende er alleen toe de broodkevers eruit te schudden. De wijfjes van de broodkevers leggen hun eitjes direct in het voedsel of in spleten in de directe omgeving ervan. Als de kleine larven na verloop van een paar weken uitkomen, zijn ze nauwelijks een halve mm lang, maar buitengewoon aktief. Ze kunnen het een gehele week zonder voedsel uithouden en zijn zeer goed in staat binnen te dringen in verpakkingen die niet absoluut dicht zijn. Zodra ze iets gevonden hebben wat ze aanstaat, knagen ze zich direct naar binnen en eten ze zich onmiddellijk zo vol, dat ze volkomen hulpeloos zouden zijn als ze er per ongeluk buiten terecht zouden komen. De larven hebben een voorkeur voor vaste droge produkten zoals macaroni, hondenkaken, zaden etc. Ze kunnen echter ook in gedroogde groenten, noten en kruiden leven. In Amerika worden ze ‘drugstore beetles’ genoemd omdat ze ook in allerlei drogisterij-artikelen kunnen voorkomen. De volwassen kevers zijn goede vliegers en daar ze naar het licht toe vliegen, kan men ze vaak in gordijnen, ver van de plaats waar ze zich hebben ontwikkeld aantreffen. De ontwikkeling van ei tot volwassen dier kost bij 22 graden ongeveer 2 tot 3 maanden.</p>
@@ -1040,7 +1046,7 @@
               </p>
             </content>
           </page>
-          <page id="getande-graankever">
+          <page id="getande-graankever" guid="72123b00-c9da-40c3-9094-a5cf16f5cdd7">
             <content>
               <h1>Getande Graankever ( Oryzaephilus surinamensis L. )</h1>
               <p>De getande graankever is uit tropische gebieden afkomstig. De naam ‘getande’ duidt erop dat de kever aan beide zijden van het borststuk een paar tanden heeft. Ze kunnen in graanopslagplaatsen en in silo’s leven van graan en allerlei andere soorten voedsel. Ook in huishoudingen kunnen ze zo nu en dan voorkomen. Ze kunnen namelijk in allerhande gedroogde plantaardige produkten leven, meestal in zetmeelhoudende zoals meel, brood en grutterswaren, maar ook in gedroogd fruit en noten. Een getande graankever kan drie jaar oud worden en het wijfje kan gedurende haar leven ca 400 eitjes leggen. Ze hebben een voorkeur voor hoge temperaturen. De ontwikkeling gaat het snelst bij 32 graden. Tussen het leggen van het ei en het uitkomen van het volwassen dier uit de pop verlopen dan 25 dagen. Bij temperaturen onder de 18 graden kunnen ze zich niet voortplanten. De kevers zijn zeer aktief en dringen gemakkelijk allerlei spleten, naden en kieren binnen. Vooral de zojuist uitgekomen larven kunnen zelfs zeer goed gesloten verpakkingen binnendringen.</p>
@@ -1054,7 +1060,7 @@
               </p>
             </content>
           </page>
-          <page id="graanklander">
+          <page id="graanklander" guid="10efaa60-a6d4-47a0-b7c4-0c774f47cfe1">
             <content>
               <h1>Graanklander ( Sitophilus granarius L. )</h1>
               <p>Het meest algemene voorraadinsect in graanopslagplaatsen is de graanklander. Hij kan niet vliegen, maar is een onvermoeibare voetganger. Het leggen van de eitjes kost nogal wat werk. Het wijfje knaagt een klein groefje in een graankorrel, legt hierin een ei en plakt het gaatje weer dicht met een afscheidingsprodukt dat dezelfde kleur heeft als het graan. Op deze wijze kan ze slechts twee of drie eitjes per dag leggen, maar omdat ze betrekkelijk lang leven, worden het er uiteindelijk toch nog een paar honderd. Graanklanders hebben een voorkeur voor tarwe, gerst en mais, maar bij gebrek aan beter leggen ze hun eieren ook in andere zetmeelhoudende waren, zoals hondenbrood en macaroni. De kleine larve die in de korrel uitkomt is niet in het bezit van poten waardoor hij de korrel waarin hij is gelegd ook niet kan verlaten. Tijdens de groei hollen ze de korrel uit. Als ze volwassen zijn is alleen het lege kafje over. In dit omhulsel verpoppen ze zich en een week later verlaat de volgroeide kever de lege graankorrel. Bij 23 graden is voor deze ontwikkeling een maand nodig. Als er graanklanders in een huishouden optreden dan wordt dit meestal veroorzaakt door graanresten of een zak vogelzaad. De kansen voor een massaal optreden in de voorraadkamers is niet groot omdat de levensomstandigheden hier voor graanklanders meestal niet geschikt zijn.</p>
@@ -1068,7 +1074,7 @@
               </p>
             </content>
           </page>
-          <page id="meeltor">
+          <page id="meeltor" guid="ccbf45c1-ea1c-43c7-8873-18459497747b">
             <content>
               <h1>Meeltor ( Tenebrio molitor L. )</h1>
               <p>
@@ -1080,7 +1086,7 @@
                 Omdat zoals gezegd meeltorren binnenshuis bijna altijd afkomstig zijn van vogelnesten, is de kans groot dat zich ergens een oud vogelnest bevindt. Wanneer deze opgespoord is en verwijderd en er daarna goed gereinigd is hoeft er geen bestrijding plaats te vinden. Houdt u wel rekening met de beschermstatus die vele vogelsoorten hebben. Meer informatie hierover vindt u op <a href="http://vogelbescherming.nl" target="_blank">www.vogelbescherming.nl</a></p>
             </content>
           </page>
-          <page id="pelskever">
+          <page id="pelskever" guid="7b91a538-dcfd-4961-9773-734d47f9617e">
             <content>
               <h1>Pelskever ( Attagenus pellio L. )</h1>
               <p>Pelskevers zijn gemakkelijk te herkennen omdat ze op beide dekschilden een wit vlekje hebben. In de zomer vliegen de kevers buiten rond waarbij ze bloemen bezoeken en stuifmeel en nectar eten. Natuurlijk kunnen ze hierbij in een huis verdwaald raken. In veel huizen worden ze wel eens gevonden als toevallige gasten. De eitjes worden gewoonlijk in muizen – of vogelnesten gelegd. De larven die een kenmerkend pluimpje haren op de punt van het achterlijf hebben leven van haren, veren en afval. In huis kunnen kevers hun eitjes in wollen stoffen leggen en overal waar maar voedsel voor de larven te vinden is, bijvoorbeeld tussen naden van vloerplanken en panelen waar zich wollen pluisjes kunnen verzamelen. Ook bont en opgezette dieren kunnen worden beschadigd.</p>
@@ -1096,7 +1102,7 @@
               </p>
             </content>
           </page>
-          <page id="rijstklander">
+          <page id="rijstklander" guid="d6388adc-e82a-424d-97a3-f6b5d39233f7">
             <content>
               <h1>Rijstklander ( Sitophilus oryzae L. )</h1>
               <p>Rijstklanders zijn wat kleiner dan graanklanders en kunnen hiervan worden onderscheiden door de vier roodachtige vlekken op de dekschilden. Hieronder bevinden zich een paar vleugels waarmee ze uitstekend kunnen vliegen. Rijstklanders zijn in tropische en subtropische gebieden berucht als de meest gevreesde voorraadinsecten. Ze worden in ons land vaak ingevoerd en het is heel gewoon dat ze ergens plotseling in een keuken optreden. De broedplaats is in de meeste gevallen een zak rijst. Net zoals de graanklanders leggen ze hun eitjes in kleine groefjes die ze eerst in de korrel hebben uitgeknaagd en de larven leven verscholen in de korrel zelf.</p>
@@ -1112,7 +1118,7 @@
               </p>
             </content>
           </page>
-          <page id="rijstmeelkever">
+          <page id="rijstmeelkever" guid="befad77f-2a37-4be7-9849-57b32aa86873">
             <content>
               <h1>Rijstmeelkever ( Tribolium confusum Jacquelin du Val )</h1>
               <p>Rijstmeelkevers worden voornamelijk in meel – en grutterswaren aangetroffen, maar kunnen verder van zeer gevarieerd voedsel leven zoals bonen, gedroogde vruchten, kruiden en chocolade. Rijstmeelkevers richten voornamelijk schade aan in opslagplaatsen en fabrieken waar zetmeelhoudende produkten worden verwerkt, maar ook in gewone keukens zijn ze niet ongewoon. Aangetast meel krijgt een grijzige kleur en heeft de neiging tot schimmelen. Rijstmeelkevers kunnen zich bijzonder snel voortplanten. Een wijfje kan honderden eitjes leggen en zelfs in zeer goed afgesloten verpakkingen binnendringen. Aan de andere kant hebben ze warmte nodig voor de ontwikkeling. Hun voorkeurstemperatuur is 30 graden. Als de temperatuur beneden de 18 graden komt vindt er geen vermeerdering noch ontwikkeling plaats.</p>
@@ -1128,7 +1134,7 @@
               </p>
             </content>
           </page>
-          <page id="spekkever">
+          <page id="spekkever" guid="3236fa37-8389-4c19-a3c3-7869c48958f6">
             <content>
               <h1>Spekkever ( Dermestes lardarius L. )</h1>
               <p>In vroegere tijden waren de gewone spekkevers in het huishouden zeer gevreesde voorraadinsecten. Ze vraten van de gerookte hammen en worsten die aan de zolders hingen. Tegenwoordig, nu de meeste vleeswaren in de koelkasten worden bewaard of in diepvriezers, spelen ze in de gewone huishouding geen belangrijke rol meer. Toch kunnen ze zich af en toe sterk vermeerderen in gedroogd honden – of kattenvoer. De larven worden ongeveer in een maand volwassen. Daarna verlaten vele datgene waarin ze hebben geleefd om een geschikt plekje te zoeken om te verpoppen. Ze knagen vaak gangen in hout of pleisterwerk, maar ook in allerlei ander materiaal. Indien dit in een pakhuis gebeurt, kunnen ze grote schade aanrichten aan artikelen die anders nooit door insecten worden aangetast. De kevers kunnen uitstekend vliegen. Als ze in huis worden aangetroffen kunnen ze van ver weg gekomen zijn. De broedplaats kan bestaan uit etenswaren, maar omdat de larven ook leven van dierlijk materiaal zoals bont, wol, huiden of opgezette dieren, kan de bron ook vaak hier opgezocht worden. Ook vogelnesten of dode dieren in het dakbeschot kunnen een oorzaak zijn.</p>
@@ -1143,7 +1149,7 @@
               </p>
             </content>
           </page>
-          <page id="tapijtkever">
+          <page id="tapijtkever" guid="b1793bdf-c07f-4bee-8acb-f53c69b3279d">
             <content>
               <h1>Tapijtkever ( Anthrenus verbasci L. )</h1>
               <p>Tapijtkevers lijken op kleine lieveheersbeestjes. Ze zijn echter niet glimmend maar bezitten daarentegen een mooie matte tekening, gevormd door een aantal zwarte en roodgele kleine schubjes waarmee ze zijn bedekt. De larven zijn goudbruin behaard. In Engeland worden ze daarom wolbeertjes genoemd. Op het achterlijf bezitten ze een paar bosjes lange haren in de vorm van een kleine speer die ze overeind zetten als ze zich bedreigd voelen. De volwassen kevers zijn vooral in het voorjaar te vinden. Ze zijn vaak op zoek naar bloemen om nectar en stuifmeel te eten. De eitjes worden in vogelnesten, in nesten van andere dieren en ingedroogd aas gelegd, waar de larven voedsel vinden in de vorm van veren, haren en vleesresten. Het zijn algemeen voorkomende dieren en omdat de volwassen kevers uitstekend kunnen vliegen, zijn ze bijna overal aan te treffen. De larven kunnen over grote afstanden rond kruipen. Indien er in een bepaald huis een flink aantal wordt aangetroffen dan kan de broedplaats bijvoorbeeld zijn : mussennesten onder het dak, wollen lappen, stof op ontoegankelijke plekken of een verzameling dode insecten in bijvoorbeeld een spinnenweb. Hoewel ze dus in hun voedselkeuze zeer veelzijdig zijn, zijn de tapijtkevers als ze textiel aanknagen, juist erg kieskeurig. Ze hebben een voorkeur voor schone zuivere wol, zoals van geweven wollen gordijnen of zachte en dure gebreide artikelen.</p>
@@ -1160,7 +1166,7 @@
           </page>
         </pages>
       </page>
-      <page id="motten" haschildmenu="true">
+      <page id="motten" haschildmenu="true" guid="36c45075-9703-44d6-b1d4-6f27f5d5a43a">
         <content>
           <h1>Motten</h1>
           <p>
@@ -1169,7 +1175,7 @@
           </p>
         </content>
         <pages>
-          <page id="kleermot">
+          <page id="kleermot" guid="2f0b7c3b-0fc4-4c19-92af-9850518d146d">
             <content>
               <h1>Kleermot ( Tineola bisselliella Hummel )</h1>
               <p>
@@ -1187,7 +1193,7 @@
               </p>
             </content>
           </page>
-          <page id="meelmot">
+          <page id="meelmot" guid="0e9c08d7-470d-44ac-a132-10c99ed7f17d">
             <content>
               <h1>Meelmot ( Ephestia kuhniella Zeller )</h1>
               <p>
@@ -1204,7 +1210,7 @@
               </p>
             </content>
           </page>
-          <page id="cacaomot">
+          <page id="cacaomot" guid="0d4bd49f-3e2e-4e60-a480-da3b86000f08">
             <content>
               <h1>Cacaomot ( Ephestia elutella Hubner )</h1>
               <p>
@@ -1224,7 +1230,7 @@
           </page>
         </pages>
       </page>
-      <page id="pissebedden" haschildmenu="true" published="false" tab="false" lastmodified="03-01-2015 09:50">
+      <page id="pissebedden" haschildmenu="true" published="false" tab="false" lastmodified="03-01-2015 09:50" guid="5e59307d-abe7-4dfe-aa0d-ff0913b09ab7">
         <content><![CDATA[<h1>Pissebed ( Oniscoidea )</h1>
 <p>De grijze ovale pissebedden die wel een beetje aan een klein gordeldier doen denken, horen tot de goed bekende dieren. Hierop wijst alleen al het feit dat er zoveel lokale benamingen voor bestaan. De pissebedden zijn de enige van de kreeftachtigen die zich geheel aan het leven op het land hebben aangepast. Andere welbekende kreeftachtigen zijn kreeften, krabben en garnalen. De verwantschap van de pissebedden met de kreeftachtigen blijkt uit het feit dat de wijfjes de eitjes in een speciale broedbuidel aan de buikzijde meedragen en dat ze door kieuwen ademen. Deze bestaan bij hen uit een aanhangsel met een dunne huid aan de poten. De pissebedden moeten zich daarom daar ophouden waar het vochtig is omdat de kieuwen om te kunnen functioneren, met een dun laagje water bedekt moeten zijn. Indien ze in een droge kamer verdwalen, drogen ze eenvoudig in de loop van een paar uur geheel uit. Deze dieren leven vooral van verteerde delen van planten, maar ze kunnen ook aan dode dieren knagen. De pissebedden die men in schuren, liftschachten en in kelders ontmoet horen gewoonlijk tot de gewone pissebed of de kelderpissebed. Als er binnenshuis veel pissebedden leven, is dit een aanwijzing dat het er vochtig is. Soms kunnen ze echter ook in grote aantallen in kamers of kelders verdwalen vanuit een broedplaats in de nabijheid, zoals een hoop oud stro, vergane bladeren, tuinafval of eenvoudigweg onder een bloembak. Af en toe kunnen ze schade aanrichten doordat ze aan vruchten of groenten knagen die op een vochtige plaats buiten of in de kelder liggen.</p>
 <h2>Hoe kom ik van het probleem af?</h2>
@@ -1234,13 +1240,13 @@
         </metadescription>
         <title>Pissebedden</title>
       </page>
-      <page id="houtaantasters" haschildmenu="true" published="false" tab="false" lastmodified="20-11-2015 09:05">
+      <page id="houtaantasters" haschildmenu="true" published="false" tab="false" lastmodified="20-11-2015 09:05" guid="a94c9f73-096b-483f-9d49-82f0e2886017">
         <content><![CDATA[<h1>Houtaantasters</h1>
 <p>Houtaantasters zijn insecten waarvan meestal de larven veel schade kunnen toebrengen aan houtwerk. Omdat ze in grote aantallen zelfs hele houtconstructies kunnen vernielen, kunnen ze de veiligheid in het geding brengen en serieuze financi&euml;le schade veroorzaken.</p>
 <p>Er zijn diverse soorten houtinsecten die in Nederland regelmatig voorkomen. Hiernaast hebben wij de belangrijkste informatie omtrent de leefwijze van deze insecten uiteengezet.</p>
 <p>Voor inspectie en/of bestrijding van houtaantasters kunt u terecht bij &gt;&nbsp;<span style="text-decoration: underline;"><a href="http://www.vanlierop.nl/Houtinsecten-bestrijding" target="_blank">http://www.vanlierop.nl/Houtinsecten-bestrijding</a></span></p>]]></content>
         <pages>
-          <page id="gewone-houtwormkever" published="false" tab="false" lastmodified="03-11-2015 08:46">
+          <page id="gewone-houtwormkever" published="false" tab="false" lastmodified="03-11-2015 08:46" guid="1b6372d6-441e-4e2c-9f83-f82eceb0af49">
             <content><![CDATA[<h1>Gewone Houtwormkever ( Anobium punctatum Deg. )</h1>
 <h2>Leefwijze en ontwikkeling</h2>
 <p>De Gewone Houtworm heeft zijn naam te danken aan de vorm van de larven. Sporen ervan zijn in de meeste oudere huizen wel te vinden. De volwassen kevers zijn in de zomermaanden aktief nadat ze zich uit het aangetaste hout naar buiten hebben geknaagd. Dit is ook het moment dat het boorpoeder uit het hout tevoorschijn komt. De kevers leven slechts enkele weken. Ze kunnen vliegen en worden daarom ook soms voor kleine vliegen aangezien. Direct na het uitvliegen paren ze en beginnen de wijfjes met het leggen van de eitjes. Deze worden nooit zomaar op een plat oppervlak gelegd, maar in spleten op de kopse kant van het hout of vaak ook in oude uitvlieggaatjes. Na drie tot vier dagen komen de eitjes uit en de kleine larven knagen zich direct in het hout naar binnen. Het onverteerbare deel van het hout laten ze in de gangen achter als kleine langwerpige bolletjes uitwerpselen. Al naargelang ze groeien, wordt de doorsnede van de gang groter. De larven verlaten het hout nooit en kunnen daarom ook nooit van het ene meubelstuk in het andere komen. De ontwikkeling duurt twee tot drie of zelfs meerdere jaren. Dit is sterk afhankelijk van de temperatuur en het vochtgehalte van het hout. Ook de soort van het hout speelt een rol. De optimale ontwikkelingstemperatuur is 22-23 graden. Ze kunnen zich echter ook bij lagere temperaturen ontwikkelen en kunnen zich daardoor hier in Nederland ook buitenshuis ontwikkelen.</p>
@@ -1252,7 +1258,7 @@
             </metadescription>
             <title>Gewone houtwormkever</title>
           </page>
-          <page id="heipaalkever" published="false" tab="false" lastmodified="03-11-2015 08:47">
+          <page id="heipaalkever" published="false" tab="false" lastmodified="03-11-2015 08:47" guid="3250bee6-97c7-4a1f-ac64-0889e25b629d">
             <content><![CDATA[<h1>Heipaalkever ( Nacerdes melanura L. )</h1>
 <p>Heipaalkevers lijken erg veel op een boktor, onder meer omdat ze ook zeer lange voelsprieten hebben. Toch horen ze tot een geheel andere groep kevers. Men is van mening dat ze oorspronkelijk uit het gebied rond de Grote Meren in de Verenigde Staten afkomstig zijn en met de scheepvaart over de gehele gematigde zone zijn verspreid. De volwassen kevers zijn in de zomer te vinden. Omdat ze vaak tegelijkertijd midden op de dag in grote getale tevoorschijn komen, trekken ze nogal eens de aandacht. Ze zitten dan plotseling overal op huizen en komen soms ook door de ramen naar binnen. </p>
 <h2>Ontwikkeling</h2>
@@ -1263,7 +1269,7 @@
             </metadescription>
             <title>Heipaalkever</title>
           </page>
-          <page id="huisboktor" published="false" tab="false" lastmodified="03-11-2015 08:43">
+          <page id="huisboktor" published="false" tab="false" lastmodified="03-11-2015 08:43" guid="f22e8efd-54a9-4202-a375-589d3b7a5d5e">
             <content><![CDATA[<h1>Huisboktor ( Hylotrupes bajulus L. )</h1>
 <h2>Ontwikkeling en leefwijze</h2>
 <p>Vanuit een economisch oogpunt gezien is de huisboktor verreweg de belangrijkste van de boktorren die binnenshuis hout kan aantasten. Dit is te danken aan het feit dat de larven zich hebben gespecialiseerd op het leven in oud en volkomen droog naaldhout. De volwassen huisboktor krijgt men slechts zelden te zien. Ze komen op zolders in de warmste periode van de zomer tevoorschijn, paren en leggen hun eitjes. Het wijfje kan wel 400 eitjes leggen die met behulp van een lange buigbare legboor diep in reten en spleten van het hout worden gelegd. Na verloop van een paar weken komen ze uit, waarop de larven zich onmiddellijk in het hout naar binnen werken en er zich jarenlang op los knagen. Hoelang de ontwikkeling van de larven en hoe groot ze zullen worden hangt onder meer af van de hoeveelheid voedsel die het hout bevat en van de temperatuur. De kortste periode hier in Nederland is drie jaar, maar huisboktorlarven kunnen ook tien jaar nodig hebben om volwassen te worden. De larven leven hoofdzakelijk in het spinthout. Ze knagen vaak tot ze dicht onder de oppervlakte zijn gekomen en er slechts een papierdun laagje hout tussen hen en de buitenwereld over is.</p>
@@ -1277,7 +1283,7 @@
             </metadescription>
             <title>Huisboktor</title>
           </page>
-          <page id="spinthoutkever" published="false" tab="false" lastmodified="03-11-2015 08:50">
+          <page id="spinthoutkever" published="false" tab="false" lastmodified="03-11-2015 08:50" guid="179df5f4-6a4a-4d07-9f9d-ce225158a774">
             <content><![CDATA[<h1>Spinthoutkever ( Familie Lyctidae )</h1>
 <h2>Leefwijze</h2>
 <p>Spinthoutkevers zijn tot 5 mm lange, slanke bruine kevers. Ze zijn speciaal aangepast aan loofhoutsoorten met wijde porien, zoals bijvoorbeeld eiken, essen en walnoten, maar ook aan een groot aantal tropische houtsoorten en bamboe. De wijfjes leggen gewoonlijk de eitjes in de porien van het spinthout. De larven leven van de zetmeelhoudende inhoud van de cellen van het spinthout en veranderen daarbij het hout in een poederachtige massa die nog slechts door een dun laagje hout is omhuld. De volwassen larven knagen zich naar buiten tot vlak onder de oppervlakte, waar ze zich in een ovale verpoppingsruimte verpoppen. Zodra ze in volwassen kevers zijn veranderd verlaten ze door de kleine cirkelronde uitvliegopeningen het hout. </p>
@@ -1289,7 +1295,7 @@
             </metadescription>
             <title>Spinthoutkever</title>
           </page>
-          <page id="veranderlijke-boktor">
+          <page id="veranderlijke-boktor" guid="a16ceab9-2bf7-466a-b01e-b88a53df53b9">
             <content>
               <h1>Veranderlijke Boktor ( Phymatodes testaceus )</h1>
               <p>
@@ -1308,10 +1314,11 @@
       </page>
     </pages>
     <metadescription>Om u zoveel mogelijk van dienst te kunnen zijn, hebben wij met deze insectengids de meest voorkomende insecten voor u uiteengezet. Mieren in huis, een wespennest of onherkenbare insecten. Alle informatie treft u hier aan.</metadescription>
-    <title>Insectengids</title>
+    <title>Insectengids titel</title>
     <sort>0</sort>
+    <urlPart>insectengids</urlPart>
   </page>
-  <page id="plaagdierengids" tab="false" published="false" lastmodified="20-03-2019 06:20" inhome="false">
+  <page id="plaagdierengids" tab="false" published="false" lastmodified="20-03-2019 06:20" inhome="false" guid="9e21f25d-2416-4cd4-9344-e0455f82ac47">
     <content><![CDATA[<h1>Plaagdierengids</h1>
 <h2>Plaagdieren &amp; ongedierte<img class="right" style="float: right;" src="/image?name=muis plaagdierengids.jpg&width=176&height=126" alt="muis plaagdierengids"></h2>
 <p>Plaagdieren worden nog weleens bestempeld als ongedierte. Dit is meestal onterecht omdat ook plaagdieren zeer van nut kunnen zijn en bijdragen aan ons ecologisch systeem.</p>
@@ -1340,7 +1347,7 @@
 <p><img class="left" style="float: left;" src="/image?name=steenmarter plaagdierengids.jpg&width=150&height=100" alt="beschermde diersoorten">Er zijn vele (plaag)dieren die terecht beschermd zijn. Deze zijn vastgesteld binnen de Flora- en Faunawet. Wij respecteren deze te allen tijde. Indien problemen zich voordoen met beschermde diersoorten, dan kunnen wij enkel adviseren.</p>
 <p>&nbsp;</p>]]></content>
     <pages>
-      <page id="ratten" haschildmenu="true" published="false" tab="true" lastmodified="20-03-2019 06:31" inhome="false">
+      <page id="ratten" haschildmenu="true" published="false" tab="true" lastmodified="20-03-2019 06:31" inhome="false" guid="9fe02a4b-2489-480e-9a0e-57f84f92959b">
         <content><![CDATA[<h1>Bruine Ratten</h1>
 <p><img class="right" style="float: right;" title="Ratten op zoek naar een nieuwe leefomgeving" src="/image?name=ratten/ratten.jpg&width=204&height=136" alt="ratten in het straatbeeld">De Bruine Rat , De 'Rattus Norvegicus' laat zich overal in Nederland zien. Ze houden zich vooral op in de rioolstelsels, maar kunnen ook boven de grond terecht komen.</p>
 <p>&nbsp;</p>
@@ -1361,7 +1368,7 @@
         <metadescription>Bruine Ratten laten zich niet snel zien. Toch komt het vaak voor dat mensen geconfronteerd worden met activiteit van ratten in de tuin. Soms laten ze zich alleen even zien en vertrekken dan direct weer, maar het komt ook voor dat ze zich veelvuldig ophouden op één plek.</metadescription>
         <title>Ratten</title>
         <pages>
-          <page id="rattenbestrijding" lastmodified="21-02-2019 10:54" published="false" tab="false" inhome="true">
+          <page id="rattenbestrijding" lastmodified="21-02-2019 10:54" published="false" tab="false" inhome="true" guid="6343c7eb-58eb-4b9d-8636-d8982419964d">
             <content><![CDATA[<h1>Rattenbestrijding</h1>
 <p><img class="right" style="float: right;" title="De Bruine Rat" src="/image?name=ratten/rattenbestrijding/rattenbestrijding.jpg&width=188&height=125" alt="rattenbestrijding">De manier waarop wij ratten bestrijden is behoorlijk veranderd de laatste jaren. Rattengif buiten in de tuin, op terreinen en in de open omgeving is aan banden gelegd.&nbsp;</p>
 <h2>Nieuwe werkwijze 2019</h2>
@@ -1429,7 +1436,7 @@
             <metadescription>Ratten bestrijden en vangen wij met een nieuwe techniek. U kunt ons bellen voor een afspraak. Buiten in de tuin, op een bedrijventerrein of in de openbare ruimte werken wij niet meer rattengif. Ratten worden resistent en andere dieren gaan tegelijkertijd wel dood. Het is daarom ook verboden. Onze rattenbestrijding gaat met moderne elektrotechnisch aangestuurde rattenvallen.</metadescription>
             <title>Rattenbestrijding</title>
             <pages>
-              <page id="ratten-vangen" lastmodified="27-09-2018 11:50" published="false" tab="false" inhome="false">
+              <page id="ratten-vangen" lastmodified="27-09-2018 11:50" published="false" tab="false" inhome="false" guid="89152adb-dfb7-46c5-b78f-6d9e5d96ce78">
                 <content><![CDATA[<h1>Ratten vangen</h1>
 <p><img class="right" style="float: right;" title="rat in de tuin" src="/image?name=ratten/rattenbestrijding/zelf bestrijden/rat in de tuin vangen.jpg&width=177&height=118" alt="rat in de tuin">Zelf ratten vangen of bestrijden vergt kennis, aandacht en vooral geschikt en kwalitatief goed materiaal.</p>
 <p>&nbsp;</p>
@@ -1467,7 +1474,7 @@
                 <title>Ratten vangen</title>
                 <sort>1</sort>
               </page>
-              <page id="voor-particulieren" lastmodified="14-10-2018 04:52" published="false" tab="false" inhome="false">
+              <page id="voor-particulieren" lastmodified="14-10-2018 04:52" published="false" tab="false" inhome="false" guid="658addd8-2105-4e0f-8f84-4026833550da">
                 <content><![CDATA[<h1>Afspraak maken</h1>
 <p>Om direct de juiste bestrijdingswijze en de juiste bestrijdingsmiddelen in huis te hebben kunt u het beste een afspraak met ons maken.</p>
 <h2>Service &amp; Contact :&nbsp;<a href="tel:0900-2556677">0900-2556677</a></h2>
@@ -1492,7 +1499,7 @@
                 <title>Voor particulieren</title>
                 <sort>8</sort>
               </page>
-              <page id="ratten-bestrijden-2018" lastmodified="23-04-2018 07:24" published="false" tab="false" inhome="false">
+              <page id="ratten-bestrijden-2018" lastmodified="23-04-2018 07:24" published="false" tab="false" inhome="false" guid="d149007d-f794-4793-a738-ae1aa75d3adc">
                 <content><![CDATA[<h1>Het 'nieuwe bestrijden'</h1>
 <p>De toegenomen inzet van rodenticiden (ratten- en muizengif) heeft onder anderen geleid tot verminderde gevoeligheid voor de toegelaten werkzame stoffen. Er zijn zelfs gevallen bekend van volledige resistentie in sommige delen van Nederland.</p>
 <p>&nbsp;</p>
@@ -1549,7 +1556,7 @@
                 <pages>
                 </pages>
               </page>
-              <page id="voor-de-gemeente" lastmodified="08-04-2018 10:50" published="false" tab="false" inhome="false">
+              <page id="voor-de-gemeente" lastmodified="08-04-2018 10:50" published="false" tab="false" inhome="false" guid="cff69ce5-d1da-4cb7-a90f-5a64cb733d14">
                 <content><![CDATA[<h1>Rattenbestrijding voor de Gemeente</h1>
 <p><img class="right" style="float: right;" title="rat aan het water" src="/image?name=ratten/rattenbestrijding/gemeente/rat in de openbare ruimte.jpg&width=200&height=133" alt="ratten gemeente">Gemeenten worden door inwoners regelmatig aangesproken op rattenoverlast. De overlast kan worden ondervonden in zowel de openbare ruimte als op particulier terrein.&nbsp;</p>
 <h2>Wie is verantwoordelijk?</h2>
@@ -1571,7 +1578,7 @@
                 <title>Voor de gemeente</title>
                 <sort>6</sort>
               </page>
-              <page id="voor-bedrijven" lastmodified="14-10-2018 04:52" published="false" tab="false" inhome="false">
+              <page id="voor-bedrijven" lastmodified="14-10-2018 04:52" published="false" tab="false" inhome="false" guid="666fd15d-a409-4b5b-9e95-d6910cda55b8">
                 <content><![CDATA[<h1>Rattenbestrijding voor bedrijven</h1>
 <p><img class="right" style="float: right;" title="ratten op het terrein" src="/image?name=ratten/rattenbestrijding/voor bedrijven/ratten in bedrijf.jpg&width=200&height=133" alt="rattenbestrijding voor bedrijven">Bedrijven ondervinden regelmatig rattenoverlast. Ratten kunnen binnendringen in magazijnen, loodsen en kantoorruimten. Zonder adequate maatregelen kunnen zelfs hele bedrijventerreinen besmet raken.</p>
 <h2>Service &amp; Contact :&nbsp;<a href="tel:0900-2556677">0900-2556677</a></h2>
@@ -1599,7 +1606,7 @@
                 <title>Voor bedrijven</title>
                 <sort>7</sort>
               </page>
-              <page id="bestrijden-met-rattengif" lastmodified="21-02-2019 11:01" published="false" tab="false" inhome="false">
+              <page id="bestrijden-met-rattengif" lastmodified="21-02-2019 11:01" published="false" tab="false" inhome="false" guid="b4e774f3-3cdc-4488-beb0-3e35738f9e5e">
                 <content><![CDATA[<h1>Bestrijden met rattengif</h1>
 <p><img class="right" style="float: right;" title="rat" src="/image?name=ratten/rattenbestrijding/zelf bestrijden/zelf bestrijden.jpg&width=185&height=123" alt="zelf bestrijden">Ratten bestrijden met gif is voor particulieren <span style="text-decoration: underline;">niet</span> toegestaan. Ook voor professionele bedrijven is het aan banden gelegd. Rattengif wordt door ons alleen nog toegepast wanneer er geen alternatieven zijn en de volksgezondheid in gevaar komt.</p>
 <h1>Toch bestrijden?</h1>
@@ -1643,7 +1650,7 @@
                 <title>Bestrijden met rattengif</title>
                 <sort>2</sort>
               </page>
-              <page id="zelf-ratten-bestrijden" lastmodified="13-11-2018 11:43" published="false" tab="false" inhome="false">
+              <page id="zelf-ratten-bestrijden" lastmodified="13-11-2018 11:43" published="false" tab="false" inhome="false" guid="b62f8363-22e0-466b-b51e-c29208b3f1c7">
                 <content><![CDATA[<h1>Zelf ratten bestrijden</h1>
 <p><img class="right" style="float: right;" title="bestrijdingspakket" src="/image?name=ratten/rattenbestrijding/bestrijdingspakket ratten.jpg&width=231&height=90" alt="zelf ratten bestrijden">Ratten vangen gaat gepaard met een combinatie van de juiste lokmiddelen, behuizingen, vangmechanismen en effectieve aanpassingen binnen de leefomgeving van de rat.</p>
 <h2>Direct bestrijden</h2>
@@ -1656,7 +1663,7 @@
             </pages>
             <sort>10</sort>
           </page>
-          <page id="rattenoverlast" lastmodified="13-04-2018 09:36" published="false" tab="false" inhome="false">
+          <page id="rattenoverlast" lastmodified="13-04-2018 09:36" published="false" tab="false" inhome="false" guid="a523942a-beb9-4cfc-874c-3618d7e37555">
             <content><![CDATA[<h1>Rattenoverlast</h1>
 <p><img class="right" style="float: right;" title="rattenoverlast" src="/image?name=ratten/rattenoverlast/rattenoverlast.jpg&width=178&height=132" alt="rattenoverlast">Rattenoverlast neemt in sommige steden weer toe.&nbsp;Ze kunnen gesignaleerd worden op straat, op bedrijventerreinen, binnenplaatsen of zelfs op schoolpleinen, in de tuin of in huis.</p>
 <h2>Ratten bestrijden</h2>
@@ -1710,7 +1717,7 @@
             <title>Rattenoverlast</title>
             <sort>12</sort>
             <pages>
-              <page id="ratten-in-de-tuin" lastmodified="07-04-2018 09:15" published="false" tab="false" inhome="false">
+              <page id="ratten-in-de-tuin" lastmodified="07-04-2018 09:15" published="false" tab="false" inhome="false" guid="85f6ddfd-a198-4f86-9e1c-d58229d251bc">
                 <content><![CDATA[<h1>Ratten in de tuin</h1>
 <p>Ratten in de tuin kunnen voor veel onrust zorgen. Soms gaat het om een toevallige voorbijganger die zich maar &eacute;&eacute;n keer laat zien, maar helaas komt het regelmatig voor dat de rattenoverlast toeneemt.</p>
 <h2>Tijdig ingrijpen</h2>
@@ -1759,7 +1766,7 @@
                 <title>Ratten in de tuin</title>
                 <sort>5</sort>
               </page>
-              <page id="ratten-in-huis" lastmodified="01-10-2018 05:16" published="false" tab="false" inhome="false">
+              <page id="ratten-in-huis" lastmodified="01-10-2018 05:16" published="false" tab="false" inhome="false" guid="71a18ebb-ee57-4351-bf3a-2d5ad5ad4f63">
                 <content><![CDATA[<h1>Ratten in huis</h1>
 <p>Ratten in huis kunnen met hun ontlasting en speeksel ziektekiemen verspreiden en behoorlijke schade aanrichten met hun knaagtanden. Ratten bestrijden is daarom noodzakelijk. Zodra ratten in huis zitten, dan is wering namelijk al te laat.</p>
 <p>&nbsp;</p>
@@ -1797,7 +1804,7 @@
                 <title>Ratten in huis</title>
                 <sort>6</sort>
               </page>
-              <page id="ratten-op-de-werkplek" lastmodified="23-04-2018 07:26" published="false" tab="false" inhome="false">
+              <page id="ratten-op-de-werkplek" lastmodified="23-04-2018 07:26" published="false" tab="false" inhome="false" guid="429bf495-ec78-4501-95f2-445425fa4c40">
                 <content><![CDATA[<h1>Ratten op de werkplek</h1>
 <p>Zodra ratten op een bedrijventerrein of in een loods gesignaleerd worden dienen er direct adequate maatregelen getroffen te worden. Zonder de juiste maatregelen kan de rattenplaag zich snel uitbreiden.</p>
 <h2>Afspraak maken:</h2>
@@ -1835,7 +1842,7 @@
         </pages>
         <sort>8</sort>
       </page>
-      <page id="duiven">
+      <page id="duiven" guid="afd870c0-dfa6-4102-b28b-269da4b0e64c">
         <content>
           <h1>Huisduif ( Columba livia domestica L. )</h1>
           <p>De duiven die hun nesten op huizen bouwen zijn de verwilderde nakomelingen van de tamme duiven. Net als hun voorvaderen, de Europese Rotsduif, hebben ze een voorkeur voor hoge plekjes. Ze kunnen zich met bijzonder weinig nestmateriaal behelpen. Vaak bestaat een duivennest uit een plakkaat uitwerpselen met wat strootjes, maar ze kunnen soms ook als ze er de kans voor krijgen in de loop der tijden heel wat bijeenslepen. De duiven beginnen al vroeg in het jaar met het leggen van eieren. In een seizoen kunnen ze wel een tiental jongen krijgen. Soms richten ze ernstige schade aan met het bevuilen van gebouwen waarop ze wonen. Hun nesten kunnen soms een broedplaats van ongedierte veroorzaken wat de huizen kan binnendringen en de bewoners overlast kan bezorgen. De voornaamste oorzaak dat men de duiven niet graag welkom heet is echter dat ze als overbrengers van ziekten kunnen fungeren. Men is van mening dat ze aan de verspreiding van een aantal min of meer gevaarlijke ziekten debet zijn. Het aantal gevallen van besmettingen is echter zeer gering.</p>
@@ -1843,7 +1850,7 @@
           <p>Duiven dienen niet bestreden te worden, enkel geweerd. Hiervoor is divers materiaal verkrijgbaar welke geïnstalleerd kan worden op de plek waar ze niet gewenst zijn. Ga hiervoor op zoek naar een daarin gespecialiseerd bedrijf. Wij kunnen u hierbij helaas niet helpen.</p>
         </content>
       </page>
-      <page id="steenmarters" published="false" tab="false" lastmodified="06-11-2015 11:35">
+      <page id="steenmarters" published="false" tab="false" lastmodified="06-11-2015 11:35" guid="75707181-7b56-4917-8062-8c36a83e008b">
         <content><![CDATA[<h1>Steenmarters ( Martes foina erxleben )</h1>
 <p>De steenmarter (Martes foina) is een grote marterachtige die in Europa wijdverspreid is. Hij is familie van de wezels, hermelijn, otter en de das. Net als zijn verwanten is de steenmarter een roofdier, die het liefst solitair leeft. In het verleden ging het in Nederland slecht met de steenmarter, onder anderen door landbouwgif en gerichte bestrijding. Tegenwoordig is de steenmarter weer algemeen aanwezig in het landschap en komt hij steeds vaker in aanraking met de mens. Dit leidt nogal eens tot overlast. De steenmarter is gemakkelijk te verwarren met de zeldzame boommarter</p>
 <h2>Kenmerken</h2>
@@ -1868,7 +1875,7 @@
         </metadescription>
         <title>Steenmarters</title>
       </page>
-      <page id="vleermuizen" published="false" tab="false" lastmodified="23-11-2017 08:14" inhome="false">
+      <page id="vleermuizen" published="false" tab="false" lastmodified="23-11-2017 08:14" inhome="false" guid="71dd31c4-6a7d-4e2b-acab-c6eab37c703c">
         <content><![CDATA[<h1>Vleermuizen</h1>
 <h2>Leefwijze</h2>
 <p>De enige vliegende zoogdieren, de vleermuizen, zijn &rsquo;s nachts aktief, terwijl ze ook gedurende de gehele winter verscholen zitten. Men denkt gewoonlijk dat vleermuizen vooral in holle bomen, grotten en gewelven bivakkeren. Verschillende soorten vleermuizen vestigen zich echter ook graag in gewone rijtjeshuizen, op zolders of achter betimmeringen. Hier te lande komen ruim twintig soorten voor. Hiervan kan men meestal twee soorten aantreffen; De Laatvlieger en de Dwergvleermuis. Er heerst rond hen veel bijgeloof, maar in werkelijkheid zijn het volkomen onschuldige gasten die nergens aan knagen en ook op andere manieren geen schade toebrengen aan huizen of gebouwen. De West-Europese vleermuizen leven van insecten. Deze vangen ze in de lucht door een echopeiling met behulp van geluidsgolven die ze voortdurend uitzenden. <br /> Vleermuizen leven gewoonlijk in kolonies bijeen. Ook op bijvoorbeeld een zolder kunnen er groepen voorkomen. Dit kan vanzelfsprekend met het nodige geritsel en gepiep gepaard gaan. Vooral &rsquo;s avonds voor ze uitvliegen om op jacht te gaan is de kolonie onrustig. De verontreinigingen die ze veroorzaken vallen wel mee. De uitwerpselen lijken op die van muizen en zijn slechts door nader onderzoek hiervan te onderscheiden.</p>
@@ -1912,7 +1919,7 @@
     <title>Plaagdierengids</title>
     <sort>0</sort>
   </page>
-  <page id="ongediertebestrijding" tab="true" published="false" lastmodified="20-03-2019 07:47" inhome="false">
+  <page id="ongediertebestrijding" tab="true" published="false" lastmodified="20-03-2019 07:47" inhome="false" guid="e40aae0f-c0c6-4140-b8e7-8413810c992a">
     <content><![CDATA[<h1>Ongediertebestrijding</h1>
 <p><img class="right" style="float: right;" title="Ratten in de leefomgeving" src="/image?name=ongediertebestrijding/ratten.jpg&width=201&height=134" alt="ongediertebestrijding">Of u nu thuis bent, aan het werk bent, in een zorginstelling zit, of door het park loopt; overal wensen wij een schone en veilige leefomgeving.</p>
 <p>&nbsp;</p>
@@ -1941,7 +1948,7 @@
 </ul>
 <p>&nbsp;</p>]]></content>
     <pages>
-      <page id="inwoners" published="false" tab="false" lastmodified="07-04-2018 03:18" inhome="false">
+      <page id="inwoners" published="false" tab="false" lastmodified="07-04-2018 03:18" inhome="false" guid="0ce02e96-c97d-4844-bc70-f78d9166f539">
         <content><![CDATA[<h1>Ongediertebestrijding voor inwoners</h1>
 <h2>Muizen en Ratten</h2>
 <h2><img class="right" style="float: right;" title="muis in huiskamer" src="/image?name=ongediertebestrijding/muis in huiskamer.jpg&width=168&height=113" alt="ongediertebestrijding voor inwoners"></h2>
@@ -1968,7 +1975,7 @@
         <title>Inwoners</title>
         <sort>0</sort>
       </page>
-      <page id="bedrijf-of-instelling" published="false" tab="false" lastmodified="07-04-2018 03:20" inhome="false">
+      <page id="bedrijf-of-instelling" published="false" tab="false" lastmodified="07-04-2018 03:20" inhome="false" guid="83a42e9a-9677-4945-930d-26af596327b6">
         <content><![CDATA[<h1>Bedrijven en instellingen</h1>
 <p><img class="right" style="float: right;" title="ongediertebestrijding voor bedrijven en instellingen" src="/image?name=ongediertebestrijding/muizen bij bedrijf.jpg&width=171&height=137" alt="ongediertebestrijding voor bedrijven en instellingen">Ongediertebestrijding in bedrijven en instellingen heeft vooral betrekking op&nbsp;<a href="/plaagdierengids/muizen/muizenbestrijding" target="_blank" rel="noopener">muizenbestrijding</a> en&nbsp;<a href="/plaagdierengids/ratten/rattenbestrijding" target="_blank" rel="noopener">rattenbestrijding</a> in bijvoorbeeld een school, op een kantoor, in een kinderdagverblijf, een zorginstelling, een loods of een magazijn.</p>
 <h2><img class="left" style="float: left;" title="afspraak maken" src="/image?name=ongediertebestrijding/afspraak maken.jpg&width=180&height=120" alt="afspraak maken">Afspraak maken</h2>
@@ -2002,7 +2009,7 @@
         <title>Bedrijf of instelling</title>
         <sort>0</sort>
       </page>
-      <page id="woningcorporatie" published="false" tab="false" lastmodified="07-04-2018 03:20" inhome="false">
+      <page id="woningcorporatie" published="false" tab="false" lastmodified="07-04-2018 03:20" inhome="false" guid="cb68fee3-36dd-4c72-afee-fe2c35245ad0">
         <content><![CDATA[<h1>Woningcorporaties</h1>
 <p>Huurders zijn vaak van mening dat de verhuurder verantwoordelijk is voor de ongediertebestrijding. De aanwezigheid van ongedierte wordt door huurders immers vaak toegewezen aan bouwtechnische mankementen.</p>
 <h2>Is dit wel terecht?</h2>
@@ -2027,7 +2034,7 @@
         <title>Woningcorporatie</title>
         <sort>0</sort>
       </page>
-      <page id="vereniging-van-eigenaren" published="false" tab="false" lastmodified="22-03-2018 12:26" inhome="false">
+      <page id="vereniging-van-eigenaren" published="false" tab="false" lastmodified="22-03-2018 12:26" inhome="false" guid="e5bf783e-f2e7-4fc9-83c1-167ed8258774">
         <content><![CDATA[<h1>Vereniging van Eigenaren</h1>
 <p>Wanneer u eigenaar bent van een appartement of woonvoorziening met een VvE en u ondervindt overlast van ongedierte, dan kunnen wij in opdracht van de Vereniging van eigenaren een bestrijding uitvoeren.</p>
 <h2>Zijn de kosten ook voor de VvE?</h2>
@@ -2046,7 +2053,7 @@
         <title>Vereniging van eigenaren</title>
         <sort>0</sort>
       </page>
-      <page id="gemeenten" lastmodified="07-04-2018 03:21" published="false" tab="false" inhome="false">
+      <page id="gemeenten" lastmodified="07-04-2018 03:21" published="false" tab="false" inhome="false" guid="99621275-daf1-4f18-acf0-d17d465af4f4">
         <content><![CDATA[<h1>Gemeenten</h1>
 <p>Meldpunt Ongedierte biedt een ondersteunde rol bij de bestrijding en beheersing van plaagdieren in zowel de openbare ruimte als op privaat terrein. Meldingen kunnen geregistreerd, gerapporteerd en onderzocht worden. Bestrijdingen kunnen in overleg direct uitgevoerd worden.</p>
 <h2>Onderzoek &amp; Bestrijding</h2>
@@ -2085,7 +2092,7 @@
     <title>Ongediertebestrijding</title>
     <sort>9</sort>
   </page>
-  <page id="openbare-ruimte" published="false" tab="false" lastmodified="25-11-2015 10:38">
+  <page id="openbare-ruimte" published="false" tab="false" lastmodified="25-11-2015 10:38" guid="535a4b34-6bb7-4108-9dc4-ba7678f5e834">
     <content><![CDATA[<h1>Openbare Ruimte</h1>
 <p>De meeste diersoorten die wij in onze openbare ruimte aantreffen vormen geen bedreiging voor onze gezondheid. Wij kunnen daarom alleen maar zeer blij zijn met het brede scala aan diersoorten die de buitenwereld met ons deelt. Er zijn echter enkele situaties denkbaar, waarbij een melding hiervan gewenst is. Dit zijn situaties waarbij de risico&rsquo;s voor de volksgezondheid vergroot kunnen worden.</p>
 <h2>Melding maken</h2>
@@ -2101,7 +2108,7 @@
     <metadescription>De meeste diersoorten die wij in onze openbare ruimte aantreffen vormen geen bedreiging voor onze gezondheid. Wij kunnen daarom alleen maar zeer blij zijn met het brede scala aan diersoorten die de buitenwereld met ons deelt. Er zijn echter enkele situaties denkbaar, waarbij een melding hiervan gewenst is. Dit zijn situaties waarbij de risico’s voor de volksgezondheid vergroot kunnen worden.</metadescription>
     <title>Openbare ruimte</title>
   </page>
-  <page id="stankoverlast" published="false" tab="false" lastmodified="23-11-2017 08:12" inhome="false">
+  <page id="stankoverlast" published="false" tab="false" lastmodified="23-11-2017 08:12" inhome="false" guid="660be641-b0f0-47bf-8f99-6eb40fcf430b">
     <content><![CDATA[<h1>Stankoverlast</h1>
 <h2>Ongedierte in huis</h2>
 <p>Er zijn diverse soorten stank van elkaar te onderscheiden die kunnen duiden op de aanwezigheid van ongedierte. Hieronder hebben wij geprobeerd zo goed mogelijk te omschrijven welke soort stank waar vandaan afkomstig zou kunnen zijn.</p>
@@ -2147,7 +2154,7 @@
     <title>Stankoverlast</title>
     <sort>0</sort>
   </page>
-  <page id="volksgezondheid" tab="false" published="false" lastmodified="07-04-2018 03:23" inhome="true">
+  <page id="volksgezondheid" tab="false" published="false" lastmodified="07-04-2018 03:23" inhome="true" guid="a9023994-47e7-4565-a3f2-e9b4de34f753">
     <content><![CDATA[<h1 style="text-align: left;">Ongedierte en volksgezondheid</h1>
 <p>Ongedierte en volksgezondheid worden vaak in samenhang gebracht omdat sommige soorten ongedierte ziektedragers kunnen zijn waarmee we besmet kunnen worden. Omdat de overheid verantwoordelijk is voor de volksgezondheid, kunnen inwoners altijd met hun vragen en zorgen inzake de aanwezigheid van ongedierte bij hen terecht.</p>
 <p>&nbsp;</p>
@@ -2271,7 +2278,7 @@
     <title>Volksgezondheid</title>
     <sort>0</sort>
   </page>
-  <page id="wettelijke-kaders-en-verantwoordelijkheden" published="false" tab="false" lastmodified="12-04-2018 01:30" inhome="true">
+  <page id="wettelijke-kaders-en-verantwoordelijkheden" published="false" tab="false" lastmodified="12-04-2018 01:30" inhome="true" guid="6eeac21d-e092-4410-8b06-eeb6fe8d1c0f">
     <content><![CDATA[<h1>Verantwoordelijkheden rondom ongedierte</h1>
 <h2>Wie is verantwoordelijk?</h2>
 <h2><img class="right" style="float: right;" title="ratten" src="/image?name=verantwoordelijkheden/ratten.jpg&width=200&height=134" alt="verantwoordelijkheid ongedierte ratten en muizen"></h2>
@@ -2372,7 +2379,7 @@
     <title>Wettelijke kaders en verantwoordelijkheden</title>
     <sort>0</sort>
   </page>
-  <page id="ongedierte-in-huis" lastmodified="20-03-2019 06:32" published="false" tab="false" inhome="false">
+  <page id="ongedierte-in-huis" lastmodified="20-03-2019 06:32" published="false" tab="false" inhome="false" guid="ff22e3c9-6420-4fe6-9f5b-5d67f4046e11">
     <content><![CDATA[<h1>Ongedierte in huis</h1>
 <p>Ongedierte in huis komt regelmatig voor in Nederland. Soms is direct duidelijk om wat voor soort diersoort het gaat. Soms moet er een deskundige aan te pas komen.&nbsp;</p>
 <h2>Muizen en ratten herkennen</h2>
@@ -2396,7 +2403,7 @@
     <metadescription>Lees hier meer over de soorten ongedierte in huis welke regelmatig voorkomen. Van muizen, ratten en zilvervisjes tot onbekende beestjes die nader verklaard worden via deze pagina. Lees aandachtig de maatregelen die getroffen kunnen worden.</metadescription>
     <title>Ongedierte in huis</title>
     <pages>
-      <page id="vliegende-insecten" lastmodified="12-12-2015 06:40" published="false" tab="false">
+      <page id="vliegende-insecten" lastmodified="12-12-2015 06:40" published="false" tab="false" guid="f5a5348d-2280-4c2e-bffb-9f783e89cc5d">
         <content><![CDATA[<h1>Vliegende insecten herkennen</h1>
 <h2>Grootte van de vliegende insecten</h2>
 <p>Zijn de insecten kleiner dan 3 mm?</p>
@@ -2411,7 +2418,7 @@
         </metadescription>
         <title>Vliegende insecten</title>
         <pages>
-          <page id="fruitvliegen-en-grasvliegen" lastmodified="13-12-2015 11:52" published="false" tab="false">
+          <page id="fruitvliegen-en-grasvliegen" lastmodified="13-12-2015 11:52" published="false" tab="false" guid="7ad94a2b-bc55-4e3e-a10f-0afbf07c3401">
             <content><![CDATA[<h1>Fruitvliegen of Grasvliegen?</h1>
 <p>Komen de vliegjes in zeer grote getallen voor op het balkon op hooggelegen appartementen? En zijn ze er voornamelijk in het najaar oktober/november?</p>
 <p>Dan zijn het waarschijnlijk&nbsp;<span style="text-decoration: underline;"><a href="../../insectengids/vliegen/grasvlieg" target="_blank">grasvliegen</a></span></p>
@@ -2422,7 +2429,7 @@
             </metadescription>
             <title>Fruitvliegen en grasvliegen</title>
           </page>
-          <page id="latrinevliegen-en-motmuggen" lastmodified="13-12-2015 12:27" published="false" tab="false">
+          <page id="latrinevliegen-en-motmuggen" lastmodified="13-12-2015 12:27" published="false" tab="false" guid="72c6540b-93e8-4cb8-8cd2-fd3e8ca97ccc">
             <content><![CDATA[<h1>Latrinevliegen en motmuggen</h1>
 <p>Vliegjes van 3-5 mm die in huis voorkomen, meestal op de begane grond, dat zijn meestal motmuggen of latrinevliegen, in de volksmond ook wel rioolvliegjes genoemd.</p>
 <p>Ze zijn vooral te herkennen aan de relatief grote 'hartvormige' vliesvleugeltjes ten opzichte van het lichaam. Verder vliegen ze vrij traag.</p>
@@ -2431,7 +2438,7 @@
             </metadescription>
             <title>Latrinevliegen en motmuggen</title>
           </page>
-          <page id="kamervliegen-vleesvliegen-klustervliegen" lastmodified="13-12-2015 12:29" published="false" tab="false">
+          <page id="kamervliegen-vleesvliegen-klustervliegen" lastmodified="13-12-2015 12:29" published="false" tab="false" guid="76e083b7-d41c-4ef7-b838-42fe07b1071e">
             <content><![CDATA[<h1>Kamervliegen, Vleesvliegen en Klustervliegen</h1>
 <p>Ziet u zo nu en dan gewone zwarte vliegen in huis? Laten ze zich niet aanraken? En zijn ze iets groter dan 0,5 cm? Dan zijn het vermoedelijk <strong>kamervliegen</strong>.</p>
 <p>Lees&nbsp;<span style="text-decoration: underline;"><a href="../../insectengids/vliegen/kamervlieg" target="_blank">hier</a></span>&nbsp;meer over kamervliegen</p>
@@ -2449,7 +2456,7 @@
           </page>
         </pages>
       </page>
-      <page id="kruipende-insecten" lastmodified="13-12-2015 08:20" published="false" tab="false">
+      <page id="kruipende-insecten" lastmodified="13-12-2015 08:20" published="false" tab="false" guid="d320fe0a-55d8-449b-913d-02c10f8608a3">
         <content><![CDATA[<h1>Kruipende insecten herkennen</h1>
 <p>Hieronder vindt u eerst het rijtje met kruipende insecten die over het algemeen direct herkend worden. Daarna komen de veelal onherkenbare insecten aan bod die regelmatig in huis aangetroffen worden.</p>
 <h2>De bekende soorten kruipende insecten</h2>
@@ -2471,7 +2478,7 @@
         </metadescription>
         <title>Kruipende insecten</title>
         <pages>
-          <page id="mijten-en-luizen" lastmodified="15-10-2018 03:44" published="false" tab="false" inhome="false">
+          <page id="mijten-en-luizen" lastmodified="15-10-2018 03:44" published="false" tab="false" inhome="false" guid="da488448-0390-4df7-8674-7b2b31e35693">
             <content><![CDATA[<h1>Mijten en Luizen</h1>
 <p>Wanneer de kruipende beestjes moeilijk met het blote oog te zien zijn, dan zijn het meestal mijten of luizen.</p>
 <h2>Vogelmijten</h2>
@@ -2499,7 +2506,7 @@
             <title>Mijten en luizen</title>
             <sort>0</sort>
           </page>
-          <page id="kleine-kevers" lastmodified="11-01-2016 09:33" published="false" tab="false">
+          <page id="kleine-kevers" lastmodified="11-01-2016 09:33" published="false" tab="false" guid="777c6fd0-7612-447e-8cb3-5980430f3dee">
             <content><![CDATA[<h1>Kleine kevers</h1>
 <p>Zijn de kruipende insecten zwart/bruin van kleur, zo groot als een speldenkop ( ongeveer 2 - 3 mm ) en komt u ze in grotere getallen in huis ( met name ) in de keuken tegen? Dan is er een grote kans dat het om voorraadkevertjes gaat.</p>
 <h2>Broodkever</h2>
@@ -2522,7 +2529,7 @@
     </pages>
     <sort>0</sort>
   </page>
-  <page id="contact" tab="true" published="false" lastmodified="23-04-2018 07:27" inhome="false">
+  <page id="contact" tab="true" published="false" lastmodified="23-04-2018 07:27" inhome="false" guid="b15aebdf-175c-435b-9a61-761e15275ecb">
     <content><![CDATA[<h1 style="text-align: left;">Contact</h1>
 <h2 style="text-align: left;" align="center">Algemene informatie</h2>
 <p style="text-align: left;" align="center">Service &amp; Contact :&nbsp;<a href="tel:0900-2556677">0900-2556677</a></p>
@@ -2534,7 +2541,7 @@
     <title>Contact</title>
     <sort>0</sort>
   </page>
-  <page id="regios" published="false" tab="false" lastmodified="10-10-2015 09:09">
+  <page id="regios" published="false" tab="false" lastmodified="10-10-2015 09:09" guid="ac929df5-d2cb-403e-aed0-350698701060">
     <content><![CDATA[<h1 style="text-align: center;">Regionale dienstverlening</h1>
 <h1 style="text-align: center;">Meldpunt Ongedierte</h1>
 <h2>&nbsp;</h2>
@@ -2545,7 +2552,7 @@
 <p><a href="mailto:info@meldpuntongedierte.nl">info@meldpuntongedierte.nl</a></p>
 <p>&nbsp;</p>]]></content>
     <pages>
-      <page id="gelderland-zuid" published="false" tab="false" inhome="false" lastmodified="26-02-2018 08:55">
+      <page id="gelderland-zuid" published="false" tab="false" inhome="false" lastmodified="26-02-2018 08:55" guid="07ece790-747e-42dd-ba44-d7ea79d04a9e">
         <content><![CDATA[<h1>Meldpunt Ongedierte Gelderland Zuid</h1>
 <p>Meldpunt Ongedierte Gelderland Zuid wordt aangestuurd vanuit Arnhem. Onze service wordt verleend aan onderstaande gemeenten. De regio is opgedeeld in twee werkgebieden. Werkgebied I wordt uitgevoerd door onze eigen bestrijdingsdeskundige. Hij verricht inspectie, onderzoek en bestrijding. Hij is iedere werkdag van de week actief met uitzondering van de woensdag. Hij begint op maandag en donderdag in Nijmegen. Werkgebied II besteden wij uit aan onze samenwerkingspartner.</p>
 <h2>Ongediertebestrijding</h2>
@@ -2569,7 +2576,7 @@
         <title>Gelderland zuid</title>
         <sort>0</sort>
       </page>
-      <page id="hollands-midden" published="false" tab="false" inhome="false" lastmodified="20-02-2018 11:21">
+      <page id="hollands-midden" published="false" tab="false" inhome="false" lastmodified="20-02-2018 11:21" guid="1ae1ae57-3d0d-4033-ada5-38b69058cd36">
         <content><![CDATA[<h1>Meldpunt Ongedierte Hollands Midden</h1>
 <p>Hollands Midden is een mix van stedelijk gebied en landbouw en heeft daarom te maken met bijna alle diverse plaagdierproblemen die in Nederland voorkomen. Wij rijden drie dagen per week de zuidelijke route langs Zuidplas, Waddinxveen en Krimpenerwaard. Het Groene Hart en de Bollenstreek vormt samen met de omgeving van Leiden tot de noordelijke route waar wij 4 keer per week onze dienstverlening aanbieden.</p>
 <h2>Ongediertebestrijding</h2>
@@ -2600,7 +2607,7 @@
         <title>Hollands midden</title>
         <sort>0</sort>
       </page>
-      <page id="gooi-en-vechtstreek" published="false" tab="false" inhome="false" lastmodified="16-02-2018 01:28">
+      <page id="gooi-en-vechtstreek" published="false" tab="false" inhome="false" lastmodified="16-02-2018 01:28" guid="e11f8e65-1642-4487-a08a-62909a10e0de">
         <content><![CDATA[<h1>Meldpunt Ongedierte Gooi en Vechtstreek</h1>
 <p>Gooi en Vechtstreek kende voorheen 9 gemeenten, maar is sinds kort teruggebracht naar 7 gemeenten. Bussum, Naarden en Muiden zijn samengevoegd onder de Gemeente Gooise Meren. Voor onze planning heeft dit geen invloed aangezien deze hetzelfde blijft. Onze uitvoerder komt bij alle onderstaande gemeenten langs indien gewenst. In de dalperiode twee keer per week en in de piekperiode vier keer per week.</p>
 <h2>Ongediertebestrijding</h2>
@@ -2618,7 +2625,7 @@
         <title>Gooi en vechtstreek</title>
         <sort>0</sort>
       </page>
-      <page id="brabant-noord" published="false" tab="false" inhome="false" lastmodified="17-02-2018 10:41">
+      <page id="brabant-noord" published="false" tab="false" inhome="false" lastmodified="17-02-2018 10:41" guid="3e9160be-2d8e-4b0f-927d-3c94b770672f">
         <content><![CDATA[<h1>Meldpunt Ongedierte Brabant-Noord</h1>
 <p>In Brabant Noord voeren wij ongediertebestrijding uit op maandag en donderdag. Tijdens de piekperiode zijn wij ook op dinsdag en vrijdag actief. Sinds 1 januari 2017 zijn de drie gemeenten Schijndel, Veghel en Sint-Oedenrode samengevoegd tot Meierijstad. Onze uitvoerder in dienst voert zelf bestrijdingswerkzaamheden uit in Bernheze, Boxtel, Den Bosch, Grave, Heusden, Landerd, Oss,Sint Michielsgestel en Vught. De overige gemeenten in deze veiligheidsregio worden verzorgd door onze partner.</p>
 <h2>Ongediertebestrijding</h2>
@@ -2634,7 +2641,7 @@
         <title>Brabant noord</title>
         <sort>0</sort>
       </page>
-      <page id="noord-holland-noord" published="false" tab="false" inhome="false" lastmodified="11-04-2018 01:46">
+      <page id="noord-holland-noord" published="false" tab="false" inhome="false" lastmodified="11-04-2018 01:46" guid="f4c34091-09e3-4a5a-8194-5b280b09a582">
         <content><![CDATA[<h1>Meldpunt Ongedierte Noord-Holland Noord</h1>
 <p>De regio Noord-Holland-Noord is een gebied wat zich uitstrekt tussen de driehoek Castricum, Enkhuizen en Texel. Met uitzondering van enkele steden zoals Alkmaar en Hoorn heeft deze regio een vrij landelijk karakter waardoor problemen met plaagdieren van een andere orde kunnen zijn dan in de omgeving van de grote steden.</p>
 <h2>Ongediertebestrijding</h2>
@@ -2668,7 +2675,7 @@
         <title>Noord holland noord</title>
         <sort>0</sort>
       </page>
-      <page id="rotterdam-rijnmond" published="false" tab="false" inhome="false" lastmodified="25-02-2018 12:43">
+      <page id="rotterdam-rijnmond" published="false" tab="false" inhome="false" lastmodified="25-02-2018 12:43" guid="f21e0282-9784-4208-bd2d-f5830db5f2a7">
         <content><![CDATA[<h1>Meldpunt Ongedierte Rotterdam-Rijnmond</h1>
 <p>Rotterdam Rijnmond is een regio waar wij veel bezig zijn met rattenbestrijding. Vooral in het havengebied zijn wij meerdere keren per week actief. In Rotterdam zelf voeren wij ook veel muizenbestrijding uit. Het landelijke gebied ten zuiden van Rotterdam wordt meegenomen tijdens de middagroute. Hier zijn wij vooral in het voorjaar en de zomer druk bezig met de bestrijding van wespen en mieren.</p>
 <h2>Ongediertebestrijding</h2>
@@ -2693,7 +2700,7 @@
         <title>Rotterdam rijnmond</title>
         <sort>0</sort>
       </page>
-      <page id="brabant-zuidoost" published="false" tab="false" inhome="false" lastmodified="17-02-2018 11:08">
+      <page id="brabant-zuidoost" published="false" tab="false" inhome="false" lastmodified="17-02-2018 11:08" guid="beb1b5d3-72a5-4316-a55c-a11c2828db35">
         <content><![CDATA[<h1>Meldpunt Ongedierte Brabant Zuidoost</h1>
 <p>De ongediertebestrijding in Brabant Zuidoost wordt door ons geco&ouml;rdineerd en uitgevoerd door een extern gediplomeerd bestrijdingstechnicus. Samen streven wij naar een schone en veilige leefomgeving in de regio. Bij iedere vorm van bestrijding of preventie wordt de nadruk gelegd op voorlichting en aanwijzingen die deze doelstelling optimaal bewerkstelligen.</p>
 <h2>Ongediertebestrijding</h2>
@@ -2711,7 +2718,7 @@
         <title>Brabant zuidoost</title>
         <sort>0</sort>
       </page>
-      <page id="amsterdam-amstelland" published="false" tab="false" inhome="false" lastmodified="16-02-2018 01:46">
+      <page id="amsterdam-amstelland" published="false" tab="false" inhome="false" lastmodified="16-02-2018 01:46" guid="c2e22ab4-d82c-45ed-8ef7-8b37f7f9200a">
         <content><![CDATA[<h1>Meldpunt Ongedierte Amsterdam-Amstelland</h1>
 <p>Amsterdam-Amstelland is een relatief kleine veiligheidsregio qua omvang, maar telt veel inwoners en behoeft daarom ook veel aandacht. Vooral Amsterdam is een gemeente waar veel gebeurt. Vele aaneengeschakelde woningen en diverse infrastructuur met verschillende bouwjaren vergt een strategische aanpak rondom de ongediertebestrijding. Meldpunt Ongedierte helpt u met de preventie en bestrijding van diverse plaagdieren en insecten welke in deze regio voorkomen.</p>
 <h2>Ongediertebestrijding</h2>
@@ -2728,7 +2735,7 @@
         <title>Amsterdam amstelland</title>
         <sort>0</sort>
       </page>
-      <page id="zuid-holland-zuid" published="false" tab="false" inhome="false" lastmodified="25-02-2018 01:11">
+      <page id="zuid-holland-zuid" published="false" tab="false" inhome="false" lastmodified="25-02-2018 01:11" guid="2a3d69d1-0e80-45c8-bc73-04b8f1adb383">
         <content><![CDATA[<h1>Meldpunt Ongedierte Zuid-Holland Zuid</h1>
 <p>Zuid-Holland Zuid is een regio met een mix van stedelijk gebied en landbouw waar wij alle diverse problemen met ongedierte tegenkomen. Omdat de regio ook vrij groot is hebben wij de&nbsp; gemeenten opgedeeld in drie werkgebieden. Afhankelijk van de postcode wordt u in de ochtend al dan niet in de middag geholpen. Er wordt een tijdsafspraak gemaakt binnen een blok van drie uur.</p>
 <h2>Ongediertebestrijding</h2>
@@ -2757,7 +2764,7 @@
         <title>Zuid holland zuid</title>
         <sort>0</sort>
       </page>
-      <page id="midden-en-west-brabant" published="false" tab="false" inhome="false" lastmodified="25-02-2018 01:37">
+      <page id="midden-en-west-brabant" published="false" tab="false" inhome="false" lastmodified="25-02-2018 01:37" guid="81685437-5e4f-4307-84e1-4fc730a2e4d7">
         <content><![CDATA[<h1>Meldpunt Ongedierte Midden- en West-Brabant</h1>
 <p>De regio Midden- en West-Brabant is een grote regio waar bijna alle soorten plaagdieren en insecten die bekend zijn in Nederland voorkomen. Vanwege de omvang van de regio hebben wij de gemeenten opgedeeld in drie werkgebieden. De meeste gemeenten worden drie dagdelen per week bediend. Afhankelijk van het werkgebied wordt u in de ochtend of in de middag geholpen. Hieronder zijn de werkgebieden verder uiteengezet.</p>
 <h2>Ongediertebestrijding</h2>
@@ -2789,7 +2796,7 @@
         <title>Midden en west brabant</title>
         <sort>0</sort>
       </page>
-      <page id="noord-en-oost-gelderland" published="false" tab="false" inhome="false" lastmodified="16-02-2018 01:09">
+      <page id="noord-en-oost-gelderland" published="false" tab="false" inhome="false" lastmodified="16-02-2018 01:09" guid="7d96f9fa-7451-4630-baac-c986bf93d179">
         <content><![CDATA[<h1>Meldpunt Ongedierte Noord- en Oost Gelderland</h1>
 <p>De veiligheidsregio Noord- en Oost Gelderland is onderverdeeld in 22 gemeenten. Onze eigen uitvoerder voert ongediertebestrijding uit in Apeldoorn, Ermelo, Harderwijk, Nunspeet, Voorst en Putten. Voor de overige gemeenten kunt u ons ook bellen, maar worden de daadwerkelijke bezoeken uitgevoerd door een andere partij waarmee wij samenwerken. Zij zijn tevens gediplomeerd en houden zich net als ons strikt aan de wettelijke regelgeving.</p>
 <h2>Ongediertebestrijding</h2>
@@ -2806,7 +2813,7 @@
         <title>Noord en oost gelderland</title>
         <sort>0</sort>
       </page>
-      <page id="haaglanden" published="false" tab="false" inhome="false" lastmodified="09-04-2018 06:20">
+      <page id="haaglanden" published="false" tab="false" inhome="false" lastmodified="09-04-2018 06:20" guid="5beb7849-6698-4ae6-bfe1-e5bc0d6996f2">
         <content><![CDATA[<h1>Meldpunt Ongedierte Haaglanden</h1>
 <p><img class="right" style="float: right;" title="Haaglanden" src="/image?name=steden/veiligheidsregio/haaglanden.png&width=200&height=196" alt="Meldpunt Ongedierte Haaglanden">De regio Haaglanden hoort bij de meest dichtstbevolkte gebieden van Nederland. Den Haag met de randgemeenten Voorburg en Rijswijk zorgen voor veel aanvraag m.b.t. ongediertebestrijding.</p>
 <p>&nbsp;</p>
@@ -2830,7 +2837,7 @@
         <title>Haaglanden</title>
         <sort>0</sort>
       </page>
-      <page id="flevoland" published="false" tab="false" inhome="false" lastmodified="26-02-2018 09:06">
+      <page id="flevoland" published="false" tab="false" inhome="false" lastmodified="26-02-2018 09:06" guid="1ded8cae-f09a-40f3-a051-fba98dc05edc">
         <content><![CDATA[<h1>Meldpunt Ongedierte Flevoland</h1>
 <p>De regio Flevoland is een betrekkelijk kleine regio met veel polderlandschap. Met uitzondering van Almere zijn de meldingen over bijvoorbeeld muizen en ratten relatief beperkt. Wat wij wel veel tegenkomen in deze regio zijn de voorjaars- en de zomerinsecten zoals wespen en mieren. De snelle groei die Almere heeft doorgemaakt heeft voor veel nieuwbouw gezorgd. De moderne constructie van de gebouwen houden de overlast van mieren en wespennesten niet tegen. In het geval van mieren kunnen de problemen zelfs vergeren omdat bestaande mierennesten soms onder nieuwe vloerlagen terecht komen en een uitweg zoeken. Zodoende komen ze regelmatig in huis terecht.</p>
 <h2>Ongediertebestrijding</h2>
@@ -2846,7 +2853,7 @@
         <title>Flevoland</title>
         <sort>0</sort>
       </page>
-      <page id="gelderland-midden" published="false" tab="false" inhome="false" lastmodified="16-02-2018 11:48">
+      <page id="gelderland-midden" published="false" tab="false" inhome="false" lastmodified="16-02-2018 11:48" guid="812974cb-428b-4a91-8b1e-540d98c304f0">
         <content><![CDATA[<h1>Meldpunt Ongedierte Gelderland Midden</h1>
 <p>Onze service in Gelderland Midden omvat de bestrijding en preventie van plaagdieren en insecten. Alle gemeenten binnen deze veiligheidsregio kunnen een beroep doen op onze kennis. Wij verrichten onderzoek, geven advies en voeren bestrijding uit zowel incidenteel als preventief.&nbsp;</p>
 <p>&nbsp;</p>
@@ -2865,7 +2872,7 @@
         <title>Gelderland midden</title>
         <sort>0</sort>
       </page>
-      <page id="kennemerland" published="false" tab="false" inhome="false" lastmodified="26-02-2018 09:18">
+      <page id="kennemerland" published="false" tab="false" inhome="false" lastmodified="26-02-2018 09:18" guid="60bd249d-e7a7-4ea3-a1ce-cba231324f50">
         <content><![CDATA[<h1>Meldpunt Ongedierte Kennemerland</h1>
 <p>De regio Kennemerland strekt zich uit langs de kustlijn tussen Hoofddorp en Uitgeest. Het bestaat voor het grootste gedeelte uit stedelijk gebied waar vooral ratten en muizen problemen kunnen veroorzaken. Vooral in Haarlem en Heemstede voeren wij bestrijding uit van ratten en muizen. Oude geschakelde woningen en appartementen zorgen voor de nodige risico's. Binnen de gemeenten direct langs de kustlijn valt ons op dat er meer wespen- en mierenoverlast ondervonden wordt. Wij bestrijden hier veel op incidentele basis.</p>
 <h2>Ongediertebestrijding</h2>
@@ -2887,7 +2894,7 @@
         <title>Kennemerland</title>
         <sort>0</sort>
       </page>
-      <page id="utrecht" published="false" tab="false" inhome="false" lastmodified="26-02-2018 09:52">
+      <page id="utrecht" published="false" tab="false" inhome="false" lastmodified="26-02-2018 09:52" guid="2c72d276-d7a5-43ae-8ebd-9b544293a2f5">
         <content><![CDATA[<h1>Meldpunt Ongedierte Utrecht</h1>
 <p>Meldpunt Ongedierte Utrecht heeft de gehele regio verdeeld in drie werkgebieden. wij proberen in ieder werkgebied 3 dagdelen per week beschikbaar te zijn voor ongediertebestrijding, zowel bij particulieren thuis als bij bedrijven en instellingen. Wij voeren in deze regio ook structureel onderhoud uit.&nbsp;</p>
 <h2>Ongediertebestrijding</h2>
@@ -2919,7 +2926,7 @@
         <title>Utrecht</title>
         <sort>0</sort>
       </page>
-      <page id="zaanstreek-waterland" published="false" tab="false" inhome="false" lastmodified="16-02-2018 02:09">
+      <page id="zaanstreek-waterland" published="false" tab="false" inhome="false" lastmodified="16-02-2018 02:09" guid="c308813d-18e2-4c3d-b4e2-4396c91b5d9d">
         <content><![CDATA[<h1>Meldpunt Ongedierte Zaanstreek-Waterland</h1>
 <p>Zaanstreek-Waterland telt 8 gemeenten waar wij werkzaam zijn. Wij voeren hier ongediertebestrijding uit en geven advies, aanwijzingen en voorlichting aan instellingen en organisaties zoals woningbouwverenigingen, scholen, zorginstellingen en bedrijven die kwetsbaar zijn voor ongedierte. Wij zijn verschillende dagdelen per week actief binnen deze veiligheidsregio.&nbsp;</p>
 <h2>Ongediertebestrijding</h2>
@@ -2934,7 +2941,7 @@
         <title>Zaanstreek waterland</title>
         <sort>0</sort>
       </page>
-      <page id="groningen" lastmodified="26-02-2018 09:54" published="false" tab="false" inhome="false">
+      <page id="groningen" lastmodified="26-02-2018 09:54" published="false" tab="false" inhome="false" guid="df6acf0f-34cb-48b0-8005-5aefa86ae893">
         <content><![CDATA[<h1>Meldpunt Ongedierte Groningen</h1>
 <p>Meldpunt Ongedierte Groningen co&ouml;rdineert alle meldingen rondom ongedierte en plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze leefbaarheid en gezondheid. Toename of afname van ongewenste diersoorten in huis, in een gebouw of in een buurt, kunnen op deze manier in kaart worden gebracht en indien noodzakelijk worden gecommuniceerd met de betrokken partijen.</p>
 <h2>Ongediertebestrijding</h2>
@@ -2968,7 +2975,7 @@
         <title>Groningen</title>
         <sort>0</sort>
       </page>
-      <page id="friesland" lastmodified="26-02-2018 09:56" published="false" tab="false" inhome="false">
+      <page id="friesland" lastmodified="26-02-2018 09:56" published="false" tab="false" inhome="false" guid="8e3fdd07-da43-4db9-be24-cb495eee1b60">
         <content><![CDATA[<h1>Meldpunt Ongedierte Friesland</h1>
 <p>Meldpunt Ongedierte Friesland co&ouml;rdineert alle meldingen rondom ongedierte en plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze leefbaarheid en gezondheid. Toename of afname van ongewenste diersoorten in huis, in een gebouw of in een buurt, kunnen op deze manier in kaart worden gebracht en indien noodzakelijk worden gecommuniceerd met de betrokken partijen.</p>
 <h2>Ongediertebestrijding</h2>
@@ -2999,7 +3006,7 @@
         <title>Friesland</title>
         <sort>0</sort>
       </page>
-      <page id="drenthe" lastmodified="26-02-2018 09:57" published="false" tab="false" inhome="false">
+      <page id="drenthe" lastmodified="26-02-2018 09:57" published="false" tab="false" inhome="false" guid="9a3aca51-3103-45ea-9e13-6ab8c5063536">
         <content><![CDATA[<h1>Meldpunt Ongedierte Drenthe</h1>
 <p>Meldpunt Ongedierte Drenthe co&ouml;rdineert alle meldingen rondom ongedierte en plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze leefbaarheid en gezondheid. Toename of afname van ongewenste diersoorten in huis, in een gebouw of in een buurt, kunnen op deze manier in kaart worden gebracht en indien noodzakelijk worden gecommuniceerd met de betrokken partijen.</p>
 <h2>Ongediertebestrijding</h2>
@@ -3023,7 +3030,7 @@
         <title>Drenthe</title>
         <sort>0</sort>
       </page>
-      <page id="ijsselland" lastmodified="26-02-2018 09:58" published="false" tab="false" inhome="false">
+      <page id="ijsselland" lastmodified="26-02-2018 09:58" published="false" tab="false" inhome="false" guid="6f982bdc-ed5f-4d75-8bfb-7280a6281a97">
         <content><![CDATA[<h1>Meldpunt Ongedierte IJsselland</h1>
 <p>Meldpunt Ongedierte IJsselland co&ouml;rdineert alle meldingen rondom ongedierte en plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze leefbaarheid en gezondheid. Toename of afname van ongewenste diersoorten in huis, in een gebouw of in een buurt, kunnen op deze manier in kaart worden gebracht en indien noodzakelijk worden gecommuniceerd met de betrokken partijen.</p>
 <h2>Ongediertebestrijding</h2>
@@ -3045,7 +3052,7 @@
         <title>Ijsselland</title>
         <sort>0</sort>
       </page>
-      <page id="twente" lastmodified="26-02-2018 09:59" published="false" tab="false" inhome="false">
+      <page id="twente" lastmodified="26-02-2018 09:59" published="false" tab="false" inhome="false" guid="c4c393a0-4c9b-45f3-b669-0da1dfcb8986">
         <content><![CDATA[<h1>Meldpunt Ongedierte Twente</h1>
 <p>Meldpunt Ongedierte Twente co&ouml;rdineert alle meldingen rondom ongedierte en plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze leefbaarheid en gezondheid. Toename of afname van ongewenste diersoorten in huis, in een gebouw of in een buurt, kunnen op deze manier in kaart worden gebracht en indien noodzakelijk worden gecommuniceerd met de betrokken partijen.</p>
 <h2>Ongediertebestrijding</h2>
@@ -3070,7 +3077,7 @@
         <title>Twente</title>
         <sort>0</sort>
       </page>
-      <page id="limburg-noord" lastmodified="26-02-2018 10:01" published="false" tab="false" inhome="false">
+      <page id="limburg-noord" lastmodified="26-02-2018 10:01" published="false" tab="false" inhome="false" guid="702f1c51-5289-4f86-a748-7983cdf50b6b">
         <content><![CDATA[<h1>Meldpunt Ongedierte Limburg Noord</h1>
 <p>Meldpunt Ongedierte Limburg Noord co&ouml;rdineert alle meldingen rondom ongedierte en plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze leefbaarheid en gezondheid. Toename of afname van ongewenste diersoorten in huis, in een gebouw of in een buurt, kunnen op deze manier in kaart worden gebracht en indien noodzakelijk worden gecommuniceerd met de betrokken partijen.</p>
 <h2>Ongediertebestrijding</h2>
@@ -3096,7 +3103,7 @@
         <title>Limburg noord</title>
         <sort>0</sort>
       </page>
-      <page id="limburg-zuid" lastmodified="26-02-2018 10:03" published="false" tab="false" inhome="false">
+      <page id="limburg-zuid" lastmodified="26-02-2018 10:03" published="false" tab="false" inhome="false" guid="2afa8003-f565-4abe-99ba-7173dec1fa19">
         <content><![CDATA[<h1>Meldpunt Ongedierte Limburg Zuid</h1>
 <p>Meldpunt Ongedierte Limburg Zuid co&ouml;rdineert alle meldingen rondom ongedierte en plaagdieren welke bestreden of geweerd mogen en kunnen worden ten gunste van onze leefbaarheid en gezondheid. Toename of afname van ongewenste diersoorten in huis, in een gebouw of in een buurt, kunnen op deze manier in kaart worden gebracht en indien noodzakelijk worden gecommuniceerd met de betrokken partijen.</p>
 <h2>Ongediertebestrijding</h2>
@@ -3125,7 +3132,7 @@
         <title>Limburg zuid</title>
         <sort>0</sort>
       </page>
-      <page id="zeeland" lastmodified="14-10-2018 10:03" published="false" tab="false" inhome="false">
+      <page id="zeeland" lastmodified="14-10-2018 10:03" published="false" tab="false" inhome="false" guid="2004cff5-d40c-44b1-9700-af5d0a1cdd34">
         <content><![CDATA[<h1>Meldpunt Ongedierte Zeeland</h1>
 <p>Meldpunt Ongedierte Zeeland voert ongediertebestrijding uit zodra er overlast wordt ondervonden door plaagdieren en insecten welke een bedreiging vormen voor de leefomgeving.&nbsp;</p>
 <h2>Ongediertebestrijding</h2>
@@ -3154,7 +3161,7 @@
     </metadescription>
     <title>Regios</title>
   </page>
-  <page id="nieuws" lastmodified="11-03-2019 11:13" published="false" tab="false" inhome="true">
+  <page id="nieuws" lastmodified="11-03-2019 11:13" published="false" tab="false" inhome="true" guid="7d368cff-ba56-4f68-9c47-701c102b6485">
     <content><![CDATA[<p><strong>15/5/2016 &gt; Wespennest blijkt steeds vaker van de Franse Veldwesp</strong></p>
 <p>Onze bestrijdingsdeskundigen treffen steeds vaker wespennesten aan van de Franse Veldwesp. Het verwijderen van een dergelijk wespennest is vrij eenvoudig t.o.v. die van de welbekende Duitse wesp. Nadeel echter is dat de Franse Veldwespen regelmatig verschillende nesten bij elkaar in de buurt bouwen die niet direct opvallen.&nbsp;</p>
 <p><a href="/nieuws/wespennest-blijkt-steeds-vaker-van-de-franse-veldwesp" target="_blank" rel="noopener">Lees verder &gt;</a></p>
@@ -3173,7 +3180,7 @@
     <metadescription>Lees hier het belangrijkste nieuws over de bestrijding en preventie van ongedierte in huis. Nieuwsberichten over nieuwe methoden, regelgeving, toe- en afnamen van verschillende plaagdieren en insecten komen hier aan de orde.</metadescription>
     <title>Nieuws</title>
     <pages>
-      <page id="kamervragen-inzake-rattenoverlast" lastmodified="30-12-2014 05:58" published="false" tab="false">
+      <page id="kamervragen-inzake-rattenoverlast" lastmodified="30-12-2014 05:58" published="false" tab="false" guid="c704464b-a0fa-41e4-9c67-55118e6d1e5e">
         <content><![CDATA[<div><strong>16/12/2014</strong></div>
 <h1><strong>Kamervragen inzake rattenoverlast</strong></h1>
 <h2><strong>Rapport WHO</strong></h2>
@@ -3192,7 +3199,7 @@
         </metadescription>
         <title>Kamervragen inzake rattenoverlast</title>
       </page>
-      <page id="onderzoek-lokmiddel-bedwantsen" lastmodified="02-01-2015 08:23" published="false" tab="false">
+      <page id="onderzoek-lokmiddel-bedwantsen" lastmodified="02-01-2015 08:23" published="false" tab="false" guid="5e4cec2a-520d-4a72-8511-8edf09a6b024">
         <content><![CDATA[<div><strong>21/12/2014</strong></div>
 <h1><strong>Doorbraak onderzoek naar lokmiddel bedwantsen</strong></h1>
 <p>In Canada hebben wetenschappers een belangrijke ontdekking gedaan tijdens hun onderzoek naar betere middelen om bedwantsen aan te trekken en af te vangen. Met deze doorbraak hopen de onderzoekers een effectief en betaalbaar product te kunnen ontwikkelen waarmee bedwantsen met behulp van feromonen gelokt en gevangen kunnen worden. De grootste uitdaging is om een val te ontwikkelen die voor de bedwants aantrekkelijker lijkt dan ons lichaam terwijl we liggen te slapen.</p>
@@ -3215,7 +3222,7 @@
         </metadescription>
         <title>Onderzoek lokmiddel bedwantsen</title>
       </page>
-      <page id="toename-zieke-mensen-door-muizen-en-ratten" lastmodified="11-11-2015 08:25" published="false" tab="false">
+      <page id="toename-zieke-mensen-door-muizen-en-ratten" lastmodified="11-11-2015 08:25" published="false" tab="false" guid="33433443-f2ef-4a78-9e9b-ec8c36de8223">
         <content><![CDATA[<div><strong>08/11/2015</strong></div>
 <h1>Toename zieke mensen door muizen en ratten</h1>
 <p>Volgens het RIVM zijn in 2014 meer mensen ziek geraakt door besmetting met leptospirose en het hantavirus. Deze virussen worden verspreid door wilde knaagdieren als muizen en ratten. Beide ziektes brengen risico's met zich mee als zij niet behandeld worden.</p>
@@ -3237,7 +3244,7 @@
         </metadescription>
         <title>Toename zieke mensen door muizen en ratten</title>
       </page>
-      <page id="wespennest-blijkt-steeds-vaker-van-de-franse-veldwesp" lastmodified="22-08-2016 10:46" published="false" tab="false">
+      <page id="wespennest-blijkt-steeds-vaker-van-de-franse-veldwesp" lastmodified="22-08-2016 10:46" published="false" tab="false" guid="9779ebe2-11b8-4a8e-8988-89d1a65af645">
         <content><![CDATA[<p><strong>15/5/2016</strong></p>
 <h1><strong>Wespennest blijkt steeds vaker van de Franse Veldwesp</strong></h1>
 <div>Onze bestrijdingsdeskundigen treffen steeds vaker wespennesten aan van de Franse Veldwesp. Het verwijderen van een dergelijk wespennest is vrij eenvoudig t.o.v. die van de welbekende Duitse wesp. Nadeel echter is dat de Franse Veldwespen regelmatig verschillende nesten bij elkaar in de buurt bouwen die niet direct opvallen.&nbsp;</div>
@@ -3268,7 +3275,7 @@
     </pages>
     <sort>0</sort>
   </page>
-  <page id="veel-gestelde-vragen" lastmodified="10-08-2017 12:27" published="false" tab="false">
+  <page id="veel-gestelde-vragen" lastmodified="10-08-2017 12:27" published="false" tab="false" guid="d8b289d1-9c02-49a9-8be4-8dadcd60c441">
     <content><![CDATA[<h1>Vraag en antwoord</h1>
 <p>Tijdens het najaar en de winter ontvangen wij de meeste vragen omtrent de aanwezigheid van <span style="text-decoration: underline;"><a href="../../plaagdierengids/muizen/muizen-in-huis" target="_blank">muizen in huis</a></span>&nbsp;of&nbsp;de aanwezigheid van <span style="text-decoration: underline;"><a href="../../plaagdierengids/ratten/ratten-in-de-tuin" target="_blank">ratten in de tuin</a></span>.</p>
 <p>&nbsp;</p>
@@ -3338,7 +3345,7 @@
     <pages>
     </pages>
   </page>
-  <page id="over-ons" lastmodified="20-03-2019 06:35" published="false" tab="true" inhome="false">
+  <page id="over-ons" lastmodified="20-03-2019 06:35" published="false" tab="true" inhome="false" guid="fcd7b4e5-1442-48bb-a297-42c7e41274e2">
     <content><![CDATA[<h1>Wie zijn wij?</h1>
 <h2>Toen er nog geen internet was...</h2>
 <p>In de vorige eeuw, toen er nog geen internet was, stond Meldpunt Ongedierte onder de naam AKB (Algemene Kleine Bestrijdingen) alleen als naam bekend binnen diverse gemeenten. Sinds 1994 was AKB vooral in de Regio Haaglanden, Kennemerland en Hollands-Midden een trouwe hulpverlener voor inwoners en instellingen met plaagdierproblemen. Hierbij moest dan vooral gedacht worden aan het bestrijden van bijvoorbeeld een wespennest, ratten in de tuin of het bestrijden van bijvoorbeeld muizen in huis.</p>
@@ -3366,7 +3373,7 @@
     <title>Over ons</title>
     <sort>0</sort>
   </page>
-  <page id="kakkerlakken" lastmodified="20-03-2019 09:49" published="false" tab="true" inhome="false">
+  <page id="kakkerlakken" lastmodified="20-03-2019 09:49" published="false" tab="true" inhome="false" guid="3cb7aee2-b59d-4bdd-829c-fa42ae36bbdf">
     <content><![CDATA[<h1>Kakkerlakken</h1>
 <h2>Levenswijze</h2>
 <p>De Duitse kakkerlak is een insect in de orde Blattodea. Oorspronkelijk komt deze kakkerlak uit Zuidoost Azi&euml;, maar hij is al lange tijd verspreid in Europa. &nbsp;<a href="/insectengids/kakkerlakken/levenswijze-kakkerlakken">Lees verder</a></p>
@@ -3381,7 +3388,7 @@
     <title>Kakkerlakken</title>
     <sort>4</sort>
     <pages>
-      <page id="levenswijze-van-kakkerlakken" lastmodified="20-03-2019 09:43" published="false" tab="false" inhome="false">
+      <page id="levenswijze-van-kakkerlakken" lastmodified="20-03-2019 09:43" published="false" tab="false" inhome="false" guid="03a490bd-d93a-4587-9e69-91e03899172e">
         <content><![CDATA[<h1>Levenswijze van kakkerlakken</h1>
 <h2>Algemeen</h2>
 <p>De Duitse kakkerlak leeft graag op warme plekken. In huis vinden zij een aangenaam klimaat wat hen beschermd tegen de Nederlandse kou. Binnenshuis leeft deze kakkerlak het liefst op de warmste plekjes, zoals achter de koelkast, fornuis, wasmachine/ droger en andere elektrische apparatuur.</p>
@@ -3404,7 +3411,7 @@
         <title>Levenswijze van Kakkerlakken</title>
         <sort>0</sort>
       </page>
-      <page id="kakkerlakken-herkennen" lastmodified="20-03-2019 09:45" published="false" tab="false" inhome="false">
+      <page id="kakkerlakken-herkennen" lastmodified="20-03-2019 09:45" published="false" tab="false" inhome="false" guid="d54f5076-9ed4-4aa3-8673-4aa0546fc3bb">
         <content><![CDATA[<h1>Kakkerlakken herkennen</h1>
 <h2>Kenmerken</h2>
 <p>De Duitse kakkerlak heeft vleugels maar gebruikt deze zelden. Kakkerlakken bewegen zich voort met hun krachtige poten. Hiermee kunnen de kakkerlakken zeer goed sprinten en zelfs springen.</p>
@@ -3429,7 +3436,7 @@
         <title>Kakkerlakken herkennen</title>
         <sort>0</sort>
       </page>
-      <page id="kakkerlakkenplaag-in-huis" lastmodified="20-03-2019 09:46" published="false" tab="false" inhome="false">
+      <page id="kakkerlakkenplaag-in-huis" lastmodified="20-03-2019 09:46" published="false" tab="false" inhome="false" guid="72a24c2a-fad1-4a27-a18b-168fe429e5d5">
         <content><![CDATA[<h1>Kakkerlakkenplaag</h1>
 <p>Wanneer kakkerlakken in de juiste omstandigheden leven, kunnen ze zich razendsnel doorontwikkelen. De kakkerlakken zijn dan in grote getalen aanwezig en dusdanig wijd verspreid dat men ze in alle levensstadia op vele plekken aan kan treffen.</p>
 <p>&nbsp;</p>
@@ -3449,7 +3456,7 @@
         <title>Kakkerlakkenplaag in huis</title>
         <sort>0</sort>
       </page>
-      <page id="kakkerlakkenbestrijding" lastmodified="20-03-2019 09:48" published="false" tab="false" inhome="false">
+      <page id="kakkerlakkenbestrijding" lastmodified="20-03-2019 09:48" published="false" tab="false" inhome="false" guid="f7a712bb-90e2-49fd-bc72-b5832fd3deee">
         <content><![CDATA[<h1>Kakkerlakken bestrijden</h1>
 <p>Kakkerlakken bestrijden zonder professionele middelen is haast onmogelijk. Verder op deze pagina gaan wij hier verder op in.</p>
 <p>&nbsp;</p>
@@ -3485,7 +3492,7 @@
       </page>
     </pages>
   </page>
-  <page id="mieren" lastmodified="23-03-2019 11:37" published="false" tab="true" inhome="false">
+  <page id="mieren" lastmodified="23-03-2019 11:37" published="false" tab="true" inhome="false" guid="34d470a6-6530-47e4-aa01-6b65d06a59c6">
     <content><![CDATA[<h1>Mieren</h1>
 <p>De levenswijze van mieren is voor biologen en bestrijdingsdeskundigen zeer fascinerend.&nbsp;</p>
 <p>&nbsp;</p>
@@ -3520,7 +3527,7 @@
     <title>Mieren</title>
     <sort>5</sort>
     <pages>
-      <page id="hoe-leven-mieren" lastmodified="23-03-2019 11:31" published="false" tab="false" inhome="false">
+      <page id="hoe-leven-mieren" lastmodified="23-03-2019 11:31" published="false" tab="false" inhome="false" guid="e5c46819-d004-41b5-a2a7-b980cad07caf">
         <content><![CDATA[<h1>Hoe leven mieren?</h1>
 <p>Omdat er meer dan 10.000 mierensoorten bestaan zullen we ons moeten beperken tot de omschrijving van de kenmerken die de meeste soorten met elkaar delen en de<img class="right" style="float: right;" src="/image?name=mieren/veel soorten mieren.jpg&width=169&height=113" alt=""> soort waar wij in Nederland veel mee te maken hebben.</p>
 <h2>Sociale struktuur</h2>
@@ -3556,7 +3563,7 @@
         <pages>
         </pages>
       </page>
-      <page id="mierenbestrijding" lastmodified="23-03-2019 11:35" published="false" tab="false" inhome="false">
+      <page id="mierenbestrijding" lastmodified="23-03-2019 11:35" published="false" tab="false" inhome="false" guid="d42d8ab7-b7ba-4fa2-8765-859e705d3cbc">
         <content><![CDATA[<h1>Mierenbestrijding</h1>
 <p>&nbsp;</p>
 <h2>Zelf bestrijden of laten doen?</h2>
@@ -3605,7 +3612,7 @@
         <title>Mierenbestrijding</title>
         <sort>0</sort>
       </page>
-      <page id="soorten-mieren" lastmodified="23-03-2019 11:37" published="false" tab="false" inhome="false">
+      <page id="soorten-mieren" lastmodified="23-03-2019 11:37" published="false" tab="false" inhome="false" guid="35215f7b-b003-440d-a14e-72828f0a7167">
         <content><![CDATA[<h1>Onze soorten</h1>
 <p>Wereldwijd zijn er duizenden soorten mieren. Daarom beperken wij ons tot de enkele soorten die bij ons In Nederland soms overlast kunnen geven.</p>
 <h2>Zwarte Wegmier ( Lasius Niger )</h2>
@@ -3629,7 +3636,7 @@
         <title>Soorten mieren</title>
         <sort>0</sort>
       </page>
-      <page id="mieren-bestrijden-in-huis" lastmodified="23-03-2019 11:33" published="false" tab="false" inhome="false">
+      <page id="mieren-bestrijden-in-huis" lastmodified="23-03-2019 11:33" published="false" tab="false" inhome="false" guid="fc62e728-1f39-4fca-bd87-a00f43f6b8ed">
         <content><![CDATA[<h1>Mieren bestrijden in huis</h1>
 <p><img class="right" style="float: right;" title="Wat is de oorzaak?" src="/image?name=mieren/mieren waar komen ze vandaan.jpg&width=200&height=125" alt="waar komen de mieren vandaan">Heeft u last van mieren in huis of in uw bedrijf? Tref dan effectieve maatregelen. Een mierenplaag zorgt voor veel frustratie en onhygi&euml;nische omstandigheden. Hieronder geven wij de belangrijkste maatregelen en tips om mieren effectief te bestrijden en te voorkomen.&nbsp;</p>
 <p><img class="left" style="float: left;" title="professioneel mieren laten bestrijden" src="/image?name=mieren/baitgun mieren bestrijden.png&width=120&height=120" alt="professioneel mieren laten bestrijden"></p>
@@ -3801,7 +3808,7 @@
         <title>Mieren bestrijden in huis</title>
         <sort>0</sort>
       </page>
-      <page id="vliegende-mieren-in-huis" lastmodified="23-03-2019 11:36" published="false" tab="false" inhome="false">
+      <page id="vliegende-mieren-in-huis" lastmodified="23-03-2019 11:36" published="false" tab="false" inhome="false" guid="3e211255-9a67-42c2-ba95-102ff095956b">
         <content><![CDATA[<h1>Vliegende mieren in huis<img class="right" style="float: right;" src="/image?name=mieren/vliegende mier.jpg&width=177&height=118" alt="vliegende mier"></h1>
 <p><img class="" src="file:///C:/Users/marce/Desktop/Foto's%20Meldpunt%20Ongedierte/Mieren/Vliegende%20Mieren/Boomstam%20vliegende%20mieren.jpg" alt="" width="300" height="360">De koninginnen die in de mierennesten verblijven leggen tijdens het voorjaar honderden of zelfs duizenden eitjes. Bijna het gehele voorjaar komen hier steriele vrouwtjes uit, de 'werksters'.</p>
 <p>&nbsp;</p>
@@ -3832,13 +3839,13 @@
       </page>
     </pages>
   </page>
-  <page id="pagina-201923031220" lastmodified="23-03-2019 12:09">
+  <page id="pagina-201923031220" lastmodified="23-03-2019 12:09" guid="66c044f5-ada6-4cf4-a789-c76f077b580e">
     <content />
     <metadescription>
     </metadescription>
     <title>pagina-201923031220</title>
   </page>
-  <page id="muizen" lastmodified="24-03-2019 04:09" published="false" tab="true" inhome="false">
+  <page id="muizen" lastmodified="24-03-2019 04:09" published="false" tab="true" inhome="false" guid="59f55672-3093-4781-9266-4e7988e4164d">
     <content><![CDATA[<h1>Muizen</h1>
 <h2><img class="right" style="float: right;" title="muizen" src="/image?name=muizen/muizen voedsel.jpg&width=172&height=172" alt="muizen"></h2>
 <p>Zodra de muizen onze woning of onze kantoor- en werkruimte binnendringen ontstaat er overlast.</p>
@@ -3858,7 +3865,7 @@
     <title>Muizen</title>
     <sort>7</sort>
     <pages>
-      <page id="muizenoverlast" lastmodified="24-03-2019 03:23" published="false" tab="false" inhome="false">
+      <page id="muizenoverlast" lastmodified="24-03-2019 03:23" published="false" tab="false" inhome="false" guid="da3e6836-9c74-4ce6-888f-a83629237573">
         <content><![CDATA[<h1>Muizenoverlast</h1>
 <p><img class="right" style="float: right;" title="muizenoverlast" src="/image?name=muizen/muizenoverlast.jpg&width=195&height=130" alt="muizenoverlast">Muizenoverlast in huis, maar ook binnen bedrijven en instellingen zijn een bekend probleem in Nederland. Vooral instellingen zoals scholen, opvangcentra en zorginstellingen kunnen ermee te maken krijgen.</p>
 <p>&nbsp;</p>
@@ -3899,7 +3906,7 @@
         <title>Muizenoverlast</title>
         <sort>0</sort>
         <pages>
-          <page id="muizen-in-huis" lastmodified="24-03-2019 03:30" published="false" tab="false" inhome="false">
+          <page id="muizen-in-huis" lastmodified="24-03-2019 03:30" published="false" tab="false" inhome="false" guid="190cc85b-0c38-4f02-9dde-a1ade185534d">
             <content><![CDATA[<h1>Muizen in huis</h1>
 <h2><img class="right" style="float: right;" title="muis in huis" src="/image?name=muizen/muizen in huis/muis in huis.jpg&width=200&height=132" alt="muizen in huis"></h2>
 <p>Muizen in huis veroorzaken schade aan kabels en meubilair. Tevens zorgen ze voor de nodige gezondheidsrisico's. Vooral als de muizen in de spouwmuur zitten of tussen het plafond, kunnen ze veel stankoverlast en geluidsoverlast veroorzaken.&nbsp;</p>
@@ -3965,7 +3972,7 @@
             <title>Muizen in huis</title>
             <sort>0</sort>
           </page>
-          <page id="muizen-op-de-werkplek" lastmodified="24-03-2019 03:37" published="false" tab="false" inhome="false">
+          <page id="muizen-op-de-werkplek" lastmodified="24-03-2019 03:37" published="false" tab="false" inhome="false" guid="01a190fa-2cb9-4ba4-85e3-767abfc2f9ca">
             <content><![CDATA[<h1>Muizen op de werkplek</h1>
 <p>Overal waar geleefd en gewerkt wordt bestaat het risico op muizenoverlast.<img class="right" style="float: right;" src="/image?name=muizen/muizen op de werkplek/muizen op kantoor.jpg&width=200&height=134" alt="muizen op kantoor overlast"></p>
 <p>Veel gebouwen zijn onvoldoende beschermd tegen het binnendringen van muizen.</p>
@@ -4028,7 +4035,7 @@
             <title>Muizen op de werkplek</title>
             <sort>0</sort>
           </page>
-          <page id="muizen-en-buren" lastmodified="24-03-2019 03:33" published="false" tab="false" inhome="false">
+          <page id="muizen-en-buren" lastmodified="24-03-2019 03:33" published="false" tab="false" inhome="false" guid="d2547c4c-c67a-4f45-b0a0-e7de0e10b7a0">
             <content><![CDATA[<h1>Muizen door de buren</h1>
 <p>De keuze van muizen om bepaalde plekken als verblijfplaats of doorlooproute te hanteren is gebaseerd op veiligheid, warmte en de weg van de minste weerstand naar voedsel. Dit kan tot situaties leiden waarbij de ene persoon de overlast van de muizen ervaart, terwijl de andere, waar wellicht de oorzaak ligt, geen enkele muizenoverlast ondervindt.</p>
 <p>&nbsp;</p>
@@ -4075,7 +4082,7 @@
             <title>Muizen en buren</title>
             <sort>0</sort>
           </page>
-          <page id="hoe-voorkomt-u-een-muizenplaag" lastmodified="24-03-2019 03:39" published="false" tab="false" inhome="false">
+          <page id="hoe-voorkomt-u-een-muizenplaag" lastmodified="24-03-2019 03:39" published="false" tab="false" inhome="false" guid="0d6db9a7-4a59-4745-bc86-aa4b711fdc8d">
             <content><![CDATA[<h1>Muizenplaag voorkomen</h1>
 <p>Een muizenplaag dient direct aangepakt te worden. Wanneer dit niet gebeurt kan de plaag dusdanige vormen gaan aannemen, dat complete gebouwen, fabrieken en bedrijven stilgelegd, onwerkbaar of onbewoonbaar worden.</p>
 <p>&nbsp;</p>
@@ -4121,7 +4128,7 @@
             <title>Hoe voorkomt u een muizenplaag?</title>
             <sort>0</sort>
           </page>
-          <page id="gezondheidsrisico-s" lastmodified="24-03-2019 07:39" published="false" tab="false" inhome="false">
+          <page id="gezondheidsrisico-s" lastmodified="24-03-2019 07:39" published="false" tab="false" inhome="false" guid="7bf5f5f0-e8f1-4661-9832-dbaab8d5c6fd">
             <content><![CDATA[<h1>Gezondheidsrisico's</h1>
 <p>Muizen zijn op het oog schattige diertjes die weinig kwaad in de zin hebben.&nbsp;De aanwezigheid van een muis in huis vormt dan ook niet direct een gevaar. Toch moet men zich ervan bewust zijn dat muizen knagen, poepen, urineren, herrie maken en een muffe geur veroorzaken.&nbsp;&nbsp;</p>
 <p>&nbsp;</p>
@@ -4137,7 +4144,7 @@
             <title>Gezondheidsrisico's</title>
             <sort>0</sort>
           </page>
-          <page id="muizen-in-uw-bedrijf" lastmodified="24-03-2019 07:42" published="false" tab="false" inhome="false">
+          <page id="muizen-in-uw-bedrijf" lastmodified="24-03-2019 07:42" published="false" tab="false" inhome="false" guid="55b6fa38-a695-4141-950a-a954c50a13fb">
             <content><![CDATA[<h1>Muizen in uw bedrijf</h1>
 <p><img class="right" style="float: right;" title="Muizen komen ook graag in uw kantine" src="/image?name=muizen/muizen in bedrijf/muizen bedrijfskantine.jpg&width=200&height=133" alt="Muizen in de kantine">Muizen in een bedrijf zorgen voor serieuze risico's. De meeste bedrijven hebben structurele bescherming nodig vanwege de financi&euml;le risico's die muizen veroorzaken met hun knaaggedrag aan kabels en voorraden. Daarnaast mogen vooral de gezondheidsrisico's van de mensen op de werkvloer niet onderschat worden.</p>
 <h2><img class="left" style="float: left;" src="/image?name=muizen/muizen op de werkplek/muizen magazijn.jpg&width=200&height=134" alt="muizenbestrijding voor bedrijven">Muizenbestrijding voor bedrijven</h2>
@@ -4157,7 +4164,7 @@
           </page>
         </pages>
       </page>
-      <page id="muizenbestrijding" lastmodified="24-03-2019 08:16" published="false" tab="false" inhome="false">
+      <page id="muizenbestrijding" lastmodified="24-03-2019 08:16" published="false" tab="false" inhome="false" guid="a7886120-f22a-4277-82c0-5974a6a9fdde">
         <content><![CDATA[<h1>Muizenbestrijding</h1>
 <p><img class="right" style="float: right;" title="muizen bestrijden" src="/image?name=muizen/muizen bestrijden/muizen bestrijden huis.jpg&width=177&height=118" alt="muizen bestrijden">Muizen bestrijden is een vak apart. Kennis en goed materiaal ligt niet zomaar op straat. Toch zijn bepaalde materialen en biociden noodzakelijk om muizen effectief aan te pakken. Onze specialisten zijn gediplomeerd en bezitten de juiste materialen. Wij kunnen u daarom helpen.</p>
 <h2><img class="left" style="float: left;" title="muizen bestrijden in huis" src="/image?name=muizen/muizen bestrijden/muizen bestrijden particulieren.jpg&width=135&height=135" alt="muizen bestrijden in huis">In huis of op de werkplek?</h2>
@@ -4209,7 +4216,7 @@
         <title>Muizenbestrijding</title>
         <sort>0</sort>
         <pages>
-          <page id="muizen-bestrijden-in-en-om-het-huis" lastmodified="24-03-2019 06:51" published="false" tab="false" inhome="false">
+          <page id="muizen-bestrijden-in-en-om-het-huis" lastmodified="24-03-2019 06:51" published="false" tab="false" inhome="false" guid="7cb75bac-8c1b-48a5-8eb4-80c5c895823d">
             <content><![CDATA[<h1>Muizen bestrijden in huis</h1>
 <p>Onze werkwijze rondom muizenbestrijding bij particulieren aan huis is sinds de nieuwe regelgeving op enkele punten gewijzigd. Voordeel hiervan is dat de kosten beperkt blijven.&nbsp;&nbsp;</p>
 <h2><img class="right" style="float: right;" title="inspectie" src="/image?name=muizen/muizen bestrijden/hoe muizen bestrijden in huis.jpg&width=161&height=108" alt="hoe wij muizen bestrijden in huis"></h2>
@@ -4227,7 +4234,7 @@
             <title>Muizen bestrijden in en om het huis</title>
             <sort>0</sort>
             <pages>
-              <page id="muizen-laten-bestrijden" lastmodified="24-03-2019 06:52" published="false" tab="false" inhome="false">
+              <page id="muizen-laten-bestrijden" lastmodified="24-03-2019 06:52" published="false" tab="false" inhome="false" guid="773c8f94-7652-4ee0-8baf-85ad2b66ae49">
                 <content><![CDATA[<h1>Onze werkwijze</h1>
 <h2><img class="right" style="float: right;" src="/image?name=muizen/muizen op de werkplek/inspectie muizen bedrijf met zaklamp.jpg&width=200&height=134" alt="inspectie muizen in huis bestrijden">Inspectie</h2>
 <p>Onze deskundige&nbsp;voert eerst een inspectie uit. Hierbij wordt gezocht naar sporen van muizen en schade die ze toegebracht kunnen hebben in huis. Ook de toedracht van het muizenprobleem wordt geanalyseerd. Op basis van de bevindingen bespreekt hij met u de mogelijkheden om de muizen te bestrijden en te weren.</p>
@@ -4266,7 +4273,7 @@
                 <title>Muizen laten bestrijden</title>
                 <sort>0</sort>
               </page>
-              <page id="hoe-kunt-u-muizen-zelf-bestrijden" lastmodified="24-03-2019 03:47" published="false" tab="false" inhome="false">
+              <page id="hoe-kunt-u-muizen-zelf-bestrijden" lastmodified="24-03-2019 03:47" published="false" tab="false" inhome="false" guid="bdecbbb1-9510-4822-80ed-774b449b4680">
                 <content><![CDATA[<h1>Zelf muizen bestrijden</h1>
 <h2>Voorkom bloedige toestanden</h2>
 <p><img class="right" style="float: right;" src="/image?name=muizen/muizen bestrijden/zelf muizen bestrijden.jpg&width=150&height=100" alt="hoe muizen bestrijden en vangen?">Het bestrijden van muizen kan tot nare toestanden leiden wanneer u verkeerde middelen gebruikt. Let daar dus goed op voordat u producten aanschaft.</p>
@@ -4341,7 +4348,7 @@
                 <title>Hoe kunt u muizen zelf bestrijden?</title>
                 <sort>0</sort>
               </page>
-              <page id="muizen-bestrijden-met-gif" lastmodified="24-03-2019 03:51" published="false" tab="false" inhome="false">
+              <page id="muizen-bestrijden-met-gif" lastmodified="24-03-2019 03:51" published="false" tab="false" inhome="false" guid="0aa6f60a-ef52-4bb7-ba46-e4a1ebbaaf9f">
                 <content><![CDATA[<h1>Muizen bestrijden met gif</h1>
 <p><img class="right" style="float: right;" title="muizengif uit de winkel" src="/image?name=muizen/muizen bestrijden/muizen bestrijden met gif.jpg&width=191&height=132" alt="muizen bestrijden met gif">Over muizengif is een hoop te doen geweest de laatste jaren. Discussies rondom de diervriendelijkheid ervan, de veiligheid, de aanslag op het milieu, doorvergiftiging en tevens de resistentievorming onder muizen die toeneemt, maken de keuze voor deze methode er niet makkelijker op.</p>
 <h2>Effectiviteit</h2>
@@ -4378,7 +4385,7 @@
                 <title>Muizen bestrijden met gif</title>
                 <sort>0</sort>
               </page>
-              <page id="muizen-vangen" lastmodified="24-03-2019 03:50" published="false" tab="false" inhome="false">
+              <page id="muizen-vangen" lastmodified="24-03-2019 03:50" published="false" tab="false" inhome="false" guid="78af290f-acb4-42c4-b4a0-ec21cc1bff99">
                 <content><![CDATA[<h1>Muizen vangen</h1>
 <p><img class="right" style="float: right;" src="/image?name=muizen/muizen bestrijden/muizen levend vangen.jpg&width=170&height=113" alt="muizen levend vangen"></p>
 <p>Het is prima mogelijk om effectief muizen te vangen met behulp van kwalitatieve muizenvallen, maar om u goed te kunnen helpen moeten we eerst een paar belangrijke misverstanden de wereld uit helpen.&nbsp;</p>
@@ -4437,7 +4444,7 @@
                 <title>Muizen vangen</title>
                 <sort>0</sort>
               </page>
-              <page id="wat-te-doen-met-muizen-in-de-tuin" lastmodified="24-03-2019 06:49" published="false" tab="false" inhome="false">
+              <page id="wat-te-doen-met-muizen-in-de-tuin" lastmodified="24-03-2019 06:49" published="false" tab="false" inhome="false" guid="4436564c-1e72-4cd5-930f-8e45cd044fee">
                 <content><![CDATA[<h1>Muizen bestrijden in de tuin</h1>
 <p>Muizen in de tuin bestrijden zal alleen effect hebben wanneer de oorzaak ook aangepakt wordt. Bepaalde omstandigheden kunnen ervoor zorgen dat muizen onophoudelijk voor overlast kunnen zorgen en zelfs een plaag kunnen veroorzaken bij omwonenden. Belangrijke aandachtspunten zijn o.a. ;</p>
 <h2><img class="left" style="float: left;" src="/image?name=muizen/muizen bestrijden/vuilniszakken in de tuin.jpg&width=154&height=102" alt="vuilniszakken in de tuin aantrekkelijk voor muizen">Vuilniszakken</h2>
@@ -4461,7 +4468,7 @@
               </page>
             </pages>
           </page>
-          <page id="muizen-bestrijden-op-de-werkplek" lastmodified="24-03-2019 03:53" published="false" tab="false" inhome="false">
+          <page id="muizen-bestrijden-op-de-werkplek" lastmodified="24-03-2019 03:53" published="false" tab="false" inhome="false" guid="19ef3ee8-689d-421c-90d0-9bc221de8e9b">
             <content><![CDATA[<h1>Muizenbestrijding voor bedrijven</h1>
 <p>Muizenbestrijding in een bedrijf is meestal een proces van &eacute;&eacute;n tot drie weken. Onze muizenbestrijder voert in beginsel drie bezoeken uit. Daarna bespreekt hij met u de mogelijkheden voor structureel vervolg en muizenpreventie.</p>
 <h2><img class="left" style="float: left;" src="/image?name=muizen/muizen op de werkplek/inspectie muizen bedrijf met zaklamp.jpg&width=150&height=100" alt="muizen inpsectie in bedrijf">Onze werkwijze</h2>
@@ -4499,7 +4506,7 @@
           </page>
         </pages>
       </page>
-      <page id="muizen-herkennen" lastmodified="24-03-2019 03:25" published="false" tab="false" inhome="false">
+      <page id="muizen-herkennen" lastmodified="24-03-2019 03:25" published="false" tab="false" inhome="false" guid="f29225ef-73d4-42d4-be64-98e6d5963bdc">
         <content><![CDATA[<h1>Muizen herkennen</h1>
 <h2>Huismuizen ( Mus musculus )<img class="right" style="float: right;" src="/image?name=muizen/muizen herkennen vergrootglas.jpg&width=165&height=110" alt="muizen herkennen"></h2>
 <p>De naam zegt het al. Huismuizen zitten graag in huis. De Latijnse benaming is Mus Musculus. Huismuizen zijn het beste te herkennen aan de relatief lange staart. Deze is ongeveer net zo lang als het gehele lichaam.</p>
@@ -4566,7 +4573,7 @@
         <title>Muizen herkennen</title>
         <sort>0</sort>
         <pages>
-          <page id="bosmuizen" lastmodified="24-03-2019 03:53" published="false" tab="false" inhome="false">
+          <page id="bosmuizen" lastmodified="24-03-2019 03:53" published="false" tab="false" inhome="false" guid="3059ea78-9994-4ac0-906b-033cbb673f14">
             <content><![CDATA[<h1>Bosmuizen ( Apodemus sylvaticus )</h1>
 <p>Bosmuizen treffen we minder snel in huis aan. Meestal dringen ze alleen ons huis binnen wanneer de gelegenheid zich voordoet. Wanneer bijvoorbeeld de voedselbron zoals een notenboom dicht bij het huis staat.</p>
 <p>&nbsp;</p>
@@ -4597,7 +4604,7 @@
             <title>Bosmuizen</title>
             <sort>0</sort>
           </page>
-          <page id="veldmuizen" lastmodified="24-03-2019 03:54" published="false" tab="false" inhome="false">
+          <page id="veldmuizen" lastmodified="24-03-2019 03:54" published="false" tab="false" inhome="false" guid="3d643ef3-c015-4014-aa16-1c6c8a30238c">
             <content><![CDATA[<h1>Veldmuizen ( microtus arvalis )&nbsp;</h1>
 <p>De naam 'Veldmuis' geniet een behoorlijke bekendheid onder de mensen. Wij hebben gemerkt dat wanneer men een enkele muis signaleert, dat er dan meestal gedacht wordt aan een Veldmuis. In veel gevallen blijkt dan toch dat het om Huismuizen gaat.</p>
 <p>&nbsp;</p>
@@ -4620,7 +4627,7 @@
             <title>Veldmuizen</title>
             <sort>0</sort>
           </page>
-          <page id="spitsmuizen" lastmodified="24-03-2019 03:55" published="false" tab="false" inhome="false">
+          <page id="spitsmuizen" lastmodified="24-03-2019 03:55" published="false" tab="false" inhome="false" guid="8dca9d32-e581-43b8-9b07-64e41302a177">
             <content><![CDATA[<h1>Spitsmuizen ( Crocidura russula )</h1>
 <p>Spitsmuizen zijn vooral te herkennen aan de spitse snuit die ze hebben. Daarnaast hebben ze niet de kraalogen die huis &ndash; en bosmuizen hebben. De ogen van de spitsmuis zijn erg klein waardoor het zicht ook veel minder is.</p>
 <p><img class="right" style="float: right;" src="/image?name=muizen/muizen herkennen/spitsmuis buiten.jpg&width=202&height=135" alt="spitsmuis buiten"></p>

@@ -6,8 +6,6 @@ namespace Meldpunt.Models
 {
   public class PageModel
   {
-    private string host = "http://" + HttpContext.Current.Request.Url.Host + "/";
-
     public string Title
     {
       get
@@ -21,6 +19,7 @@ namespace Meldpunt.Models
       }
     }
 
+    public Guid Guid { get; set; }
     public string EditableTitle { get; set; }
     public string HeaderTitle { get; set; }
     public string Id { get; set; }

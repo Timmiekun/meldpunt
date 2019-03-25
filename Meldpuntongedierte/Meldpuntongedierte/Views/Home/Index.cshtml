@@ -10,8 +10,8 @@
 
 @Html.Raw(Model.Content)
 @*<div class="disquss">
-  @Html.Partial("Disqus")
-</div>*@
+    @Html.Partial("Disqus")
+  </div>*@
 
 @section menu{
   @if (subNav != null && subNav.Any())
@@ -42,7 +42,7 @@
             }
           </li>
         }
-      </ul>    
+      </ul>
       <button class="goto-menu-mobile">menu</button>
     </div>
   }
@@ -52,9 +52,9 @@
       <h2>Bekijk ook</h2>
       <ul>
         @foreach (var page in homeMenu.OrderByDescending(p => p.Sort))
-    {
-      <li><a href="@page.Url">@page.Title</a></li>
-}
+        {
+          <li><a href="@page.Url">@page.Title</a></li>
+        }
 
       </ul>
       <button class="goto-menu-mobile">menu</button>

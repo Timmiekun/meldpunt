@@ -1,10 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Globalization;
-using System.Web.Mvc;
-using System.Web.Security;
-using System.Xml;
 using Meldpunt.Models;
 using System.Web;
 using Meldpunt.Utils;
@@ -58,7 +53,7 @@ namespace Meldpunt.Services
         Document doc = new Document();
         doc.Add(new Field("title", plaats.Gemeentenaam, Field.Store.YES, Field.Index.ANALYZED));
         doc.Add(new Field("text", plaats.Text, Field.Store.YES, Field.Index.ANALYZED));
-        doc.Add(new Field("url", "/" + plaats.Gemeentenaam.XmlSafe(), Field.Store.YES, Field.Index.ANALYZED));       
+        doc.Add(new Field("url", plaats.Gemeentenaam.XmlSafe(), Field.Store.YES, Field.Index.ANALYZED));       
         doc.Add(new Field("all", "all", Field.Store.NO, Field.Index.ANALYZED));
 
         w.AddDocument(doc);
@@ -71,7 +66,7 @@ namespace Meldpunt.Services
         Document doc = new Document();
         doc.Add(new Field("title", gemeente.Key, Field.Store.YES, Field.Index.ANALYZED));
         doc.Add(new Field("text", fullText, Field.Store.YES, Field.Index.ANALYZED));
-        doc.Add(new Field("url", "/" + gemeente.Key.XmlSafe(), Field.Store.YES, Field.Index.ANALYZED));
+        doc.Add(new Field("url", gemeente.Key.XmlSafe(), Field.Store.YES, Field.Index.ANALYZED));
         if (gemeente.Value.Any())
         doc.Add(new Field("locations", String.Join(" ", gemeente.Value), Field.Store.YES, Field.Index.ANALYZED));
 

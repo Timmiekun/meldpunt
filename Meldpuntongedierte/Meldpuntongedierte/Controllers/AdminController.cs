@@ -1,40 +1,40 @@
-﻿using System;
+﻿using Meldpunt.ActionFilters;
+using Meldpunt.Models;
+using Meldpunt.Services;
+using Meldpunt.Utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Meldpunt.Services;
-using Meldpunt.Models;
-using Meldpunt.Utils;
-using Meldpunt.ActionFilters;
-using System.IO;
+using System.Web.Routing;
 
 namespace Meldpunt.Controllers
 {
   [MustBeAdmin]
   [RoutePrefix("admin")]
-	public class AdminController : Controller
-	{
-		private PageService pageService;
-		private PlaatsService plaatsService;
+  public class AdminController : Controller
+  {
+    private PageService pageService;
+    private PlaatsService plaatsService;
     private RedirectService redirectsService;
     private ImageService imageService;
 
     public AdminController()
-		{
-			pageService = new PageService();
-			plaatsService = new PlaatsService();
+    {
+      pageService = new PageService();
+      plaatsService = new PlaatsService();
       redirectsService = new RedirectService();
       imageService = new ImageService();
     }
 
     [Route]
     public ActionResult Index()
-		{
-			List<PageModel> allPages = pageService.GetAllPagesTree();
-			ViewBag.Locations = LocationUtils.placesByMunicipality.OrderBy(m => m.Key);
-			return View(allPages);
-		}
+    {
+      List<PageModel> allPages = pageService.GetAllPagesTree();
+      ViewBag.Locations = LocationUtils.placesByMunicipality.OrderBy(m => m.Key);
+      return View(allPages);
+    }
 
     [Route("updateimages")]
     public ActionResult UpdateImages()
@@ -43,12 +43,19 @@ namespace Meldpunt.Controllers
       return new EmptyResult();
     }
 
+    [Route("addguids")]
+    public ActionResult AddGuids()
+    {
+      pageService.AddGuids();
+      return new EmptyResult();
+    }
+
 
     #region redirects
     [Route("Redirects")]
     public ActionResult Redirects()
     {
-      
+
       return View(redirectsService.GetAllRedirects());
     }
 
@@ -60,7 +67,7 @@ namespace Meldpunt.Controllers
         return View(redirectsService.GetAllRedirects());
 
       var existingRedirect = redirectsService.FindByFrom(redirect.From);
-      if(existingRedirect != null && existingRedirect.Id != redirect.Id)
+      if (existingRedirect != null && existingRedirect.Id != redirect.Id)
       {
         ModelState.AddModelError("alreadyExists", "Er bestaat al een redirect van deze url");
         return View(redirectsService.GetAllRedirects());
@@ -97,43 +104,43 @@ namespace Meldpunt.Controllers
     [HttpGet]
     [Route("EditPlaats/{plaats}")]
     public ActionResult EditPlaats(String plaats)
-		{
-			// gemeente page?
-			var gemeente = LocationUtils.placesByMunicipality.Where(m => m.Key.XmlSafe().Equals(plaats.XmlSafe()));
-			if (gemeente.Any())
-			{
-				PlaatsModel plaatsModel = plaatsService.GetPlaats(plaats.XmlSafe());
-				if (plaatsModel == null)
-				{
-					plaatsModel = new PlaatsModel { Gemeentenaam = gemeente.First().Key.Capitalize() };
-				}
-				plaatsModel.Plaatsen = gemeente.First().Value.ToList();
-				ViewBag.Locations = LocationUtils.placesByMunicipality.OrderBy(m => m.Key);
-				return View(plaatsModel);
-			}
+    {
+      // gemeente page?
+      var gemeente = LocationUtils.placesByMunicipality.Where(m => m.Key.XmlSafe().Equals(plaats.XmlSafe()));
+      if (gemeente.Any())
+      {
+        PlaatsModel plaatsModel = plaatsService.GetPlaats(plaats.XmlSafe());
+        if (plaatsModel == null)
+        {
+          plaatsModel = new PlaatsModel { Gemeentenaam = gemeente.First().Key.Capitalize() };
+        }
+        plaatsModel.Plaatsen = gemeente.First().Value.ToList();
+        ViewBag.Locations = LocationUtils.placesByMunicipality.OrderBy(m => m.Key);
+        return View(plaatsModel);
+      }
 
-			// plaats to redirect?
-			var gemeentes = LocationUtils.placesByMunicipality.Where(m => m.Value.Any(p => p.Equals(plaats, StringComparison.CurrentCultureIgnoreCase)));
+      // plaats to redirect?
+      var gemeentes = LocationUtils.placesByMunicipality.Where(m => m.Value.Any(p => p.Equals(plaats, StringComparison.CurrentCultureIgnoreCase)));
 
-			if (gemeentes.Any())
-			{
-				String name = gemeentes.First().Key;
-				return RedirectPermanent("/admin/editplaats/" + name);
-			}
+      if (gemeentes.Any())
+      {
+        String name = gemeentes.First().Key;
+        return RedirectPermanent("/admin/editplaats/" + name);
+      }
 
-			throw new HttpException(404, "page not found");
+      throw new HttpException(404, "page not found");
 
-		}
+    }
 
     [Route("EditPlaats/{plaats}")]
     [HttpPost, ValidateInput(false)]
-		public ActionResult EditPlaats(PlaatsModel p)
-		{
-			plaatsService.UpdateOrInsert(p);
+    public ActionResult EditPlaats(PlaatsModel p)
+    {
+      plaatsService.UpdateOrInsert(p);
       Response.RemoveOutputCacheItem("/ongediertebestrijding-" + p.Gemeentenaam.XmlSafe());
 
       return Redirect("/admin/editplaats/" + p.Gemeentenaam.XmlSafe());
-		}
+    }
     #endregion
 
     #region pages
@@ -147,40 +154,69 @@ namespace Meldpunt.Controllers
 
     [Route("EditPage/{id}")]
     [HttpGet]
-		public ActionResult EditPage(string id)
-		{
-			PageModel page = pageService.GetPage(id);
-			ViewBag.Locations = LocationUtils.placesByMunicipality.OrderBy(m => m.Key);
-			return View(page);
-		}
+    public ActionResult EditPage(string id)
+    {
+      PageModel page = pageService.GetPageByGuid(id);
+      ViewBag.Locations = LocationUtils.placesByMunicipality.OrderBy(m => m.Key);
+      return View(page);
+    }
 
     [Route("EditPage/{id}")]
     [HttpPost, ValidateInput(false)]
-		public ActionResult EditPage(PageModel page)
-		{
-			var savedPage = pageService.SavePage(page);
+    public ActionResult EditPage(PageModel page)
+    {
+      var oldPage = pageService.GetPageByGuid(page.Guid.ToString());
+      var savedPage = pageService.SavePage(page);
       Response.RemoveOutputCacheItem(savedPage.Url);
-      return Redirect("/admin/editpage/" + savedPage.Id);
-		}
+
+      // update route table
+      if (oldPage.Url != savedPage.Url)
+      {
+        var routes = RouteTable.Routes;
+        using (routes.GetWriteLock())
+        {
+          //get last route (default).  ** by convention, it is the standard route.
+          var defaultRoute = routes.Last();
+          routes.Remove(defaultRoute);
+
+          // remove old route
+          var oldRoute = RouteTable.Routes[oldPage.Guid.ToString()];
+          routes.Remove(oldRoute);
+
+          //add some new route for a cms page
+          routes.MapRoute(
+            savedPage.Guid.ToString(), // Route name
+            savedPage.Url.TrimStart('/'), // URL with parameters
+            new { controller = "Home", action = "GetPage", guid = page.Guid } // Parameter defaults
+          );
+          
+
+          //add back default route
+          routes.Add(defaultRoute);
+        }
+      }
+      
+      return Redirect("/admin/editpage/" + savedPage.Guid);
+    }
 
     [Route("DeletePage")]
     public ActionResult DeletePage(string id)
-		{
-			var page = pageService.GetPage(id);
-			pageService.deletePage(id);
-			if (String.IsNullOrWhiteSpace(page.ParentId))
-				return Redirect("/admin");
-			return Redirect("/admin/editpage/" + page.ParentId);
-		}
+    {
+      var page = pageService.GetPage(id);
+      pageService.deletePage(id);
+      if (String.IsNullOrWhiteSpace(page.ParentId))
+        return Redirect("/admin");
+      return Redirect("/admin/editpage/" + page.ParentId);
+    }
 
     [Route("NewPage")]
     public ActionResult NewPage(string parentId)
-		{
-			var newPage = pageService.newPage(parentId);
-			return RedirectToAction("editpage", new {id = newPage.Id});
-		}
+    {
+      var newPage = pageService.newPage(parentId);
+      return RedirectToAction("editpage", new { id = newPage.Id });
+    }
     #endregion
 
-  
+
   }
 }
