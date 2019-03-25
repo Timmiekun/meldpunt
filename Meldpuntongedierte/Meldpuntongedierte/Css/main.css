@@ -171,6 +171,7 @@ h2 {
   margin-right: 5px;
   padding: 10px;
   border-radius: 6px;
+  background-color: #f3f3f3;
 }
 
   .topBar .tabItem:hover, .topBar .activeTab {
@@ -530,4 +531,9 @@ h3:hover {
 
 .disquss {
   margin-top: 40px;
+}
+
+.hotspot{
+  background-color: #d5d219;
+  padding: 20px;
 }
