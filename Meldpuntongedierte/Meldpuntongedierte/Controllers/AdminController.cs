@@ -195,8 +195,7 @@ namespace Meldpunt.Controllers
           routes.Add(defaultRoute);
         }
       }
-
-
+      
       return Redirect("/admin/editpage/" + savedPage.Guid);
     }
 

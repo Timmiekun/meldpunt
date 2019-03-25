@@ -1,5 +1,5 @@
 $(function () {
-  
+
 
   $(".goto-menu-mobile").on('click', function (evt) {
     evt.preventDefault();
@@ -16,6 +16,7 @@ $(function () {
 
   var scrollTimeout;
   var previousScroll = 0;
+
   window.addEventListener("scroll", function (event) {
     let scrollTop = $(window).scrollTop();
     let diff = scrollTop - previousScroll;
@@ -36,4 +37,4 @@ $(function () {
       $(".goto-menu-mobile").addClass("hidden");
     }
   });
-})
+});
