@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 
 namespace Meldpunt.Controllers
 {
@@ -164,8 +165,38 @@ namespace Meldpunt.Controllers
     [HttpPost, ValidateInput(false)]
     public ActionResult EditPage(PageModel page)
     {
+      var oldPage = pageService.GetPageByGuid(page.Guid.ToString());
       var savedPage = pageService.SavePage(page);
       Response.RemoveOutputCacheItem(savedPage.Url);
+
+      // update route table
+      if (oldPage.Url != savedPage.Url)
+      {
+        var routes = RouteTable.Routes;
+        using (routes.GetWriteLock())
+        {
+          //get last route (default).  ** by convention, it is the standard route.
+          var defaultRoute = routes.Last();
+          routes.Remove(defaultRoute);
+
+          // remove old route
+          var oldRoute = RouteTable.Routes[oldPage.Guid.ToString()];
+          routes.Remove(oldRoute);
+
+          //add some new route for a cms page
+          routes.MapRoute(
+            savedPage.Guid.ToString(), // Route name
+            savedPage.Url.TrimStart('/'), // URL with parameters
+            new { controller = "Home", action = "GetPage", guid = page.Guid } // Parameter defaults
+          );
+          
+
+          //add back default route
+          routes.Add(defaultRoute);
+        }
+      }
+
+
       return Redirect("/admin/editpage/" + savedPage.Guid);
     }
 

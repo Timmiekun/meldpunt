@@ -29,7 +29,7 @@ namespace Meldpunt.Controllers
     {
       Response.StatusCode = 404;
 
-      if (HttpContext.AllErrors.Any())
+      if (HttpContext.AllErrors != null && HttpContext.AllErrors.Any())
       {
         var error = HttpContext.AllErrors[0];
         ViewBag.Error = error.Message;
