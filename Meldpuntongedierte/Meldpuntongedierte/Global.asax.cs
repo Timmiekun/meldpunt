@@ -1,5 +1,6 @@
 ﻿using Meldpunt.ActionFilters;
 using Meldpunt.Controllers;
+using Meldpunt.Services;
 using System;
 using System.Web;
 using System.Web.Mvc;
@@ -21,7 +22,17 @@ namespace Meldpunt
     {
       routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-      routes.MapMvcAttributeRoutes();
+      routes.MapMvcAttributeRoutes(); 
+
+      PageService pageService = new PageService();
+      foreach (var page in pageService.GetAllPages())
+      {
+          routes.MapRoute(
+            page.Url, // Route name
+            page.Url.TrimStart('/'), // URL with parameters
+            new { controller = "Home", action = "Index" } // Parameter defaults
+        );
+      }
 
       routes.MapRoute(
         "Http404", // Route name
@@ -42,22 +53,16 @@ namespace Meldpunt
      );
 
       routes.MapRoute(
-         "Index", // Route name
+         "Search", // Route name
          "index", // URL with parameters
          new { controller = "Search", action = "Index" } // Parameter defaults
       );
 
       routes.MapRoute(
-          "Search", // Route name
+          "SearchPages", // Route name
           "zoek", // URL with parameters
           new { controller = "Search", action = "SearchPages" } // Parameter defaults
        );
-
-      routes.MapRoute(
-        "SearchPages", // Route name
-        "zoeken", // URL with parameters
-        new { controller = "Search", action = "SearchPages" } // Parameter defaults
-     );
 
       routes.MapRoute(
         "Login", // Route name
@@ -94,12 +99,6 @@ namespace Meldpunt
         "admin/editpage/{id}", // URL with parameters
         new { controller = "Admin", action = "EditPage", id = UrlParameter.Optional } // Parameter defaults
      );
-    
-      //routes.MapRoute(
-      //   "Admin", // Route name
-      //   "admin/{action}", // URL with parameters
-      //   new { controller = "Admin", action = "Index", id = UrlParameter.Optional } // Parameter defaults
-      //);
 
       routes.MapRoute(
         "SiteMap", // Route name
@@ -107,29 +106,29 @@ namespace Meldpunt
         new { controller = "Home", action = "SiteMap", id = UrlParameter.Optional } // Parameter defaults
       );
 
-      routes.MapRoute(
-         "Page", // Route name
-         "{id}", // URL with parameters
-         new { controller = "Home", action = "GetPage", id = UrlParameter.Optional } // Parameter defaults
-      );
-      
-      routes.MapRoute(
-        "SubPage", // Route name
-        "{a}/{id}", // URL with parameters
-        new { controller = "Home", action = "GetPage", id = UrlParameter.Optional } // Parameter defaults
-     );
+      // routes.MapRoute(
+      //    "Page", // Route name
+      //    "{id}", // URL with parameters
+      //    new { controller = "Home", action = "GetPage", id = UrlParameter.Optional } // Parameter defaults
+      // );
 
-      routes.MapRoute(
-       "SubSubPage", // Route name
-       "{a}/{b}/{id}", // URL with parameters
-       new { controller = "Home", action = "GetPage", id = UrlParameter.Optional } // Parameter defaults
-     );
+      // routes.MapRoute(
+      //   "SubPage", // Route name
+      //   "{a}/{id}", // URL with parameters
+      //   new { controller = "Home", action = "GetPage", id = UrlParameter.Optional } // Parameter defaults
+      //);
 
-      routes.MapRoute(
-        "SubSubSubPage", // Route name
-        "{a}/{b}/{c}/{id}", // URL with parameters
-        new { controller = "Home", action = "GetPage", id = UrlParameter.Optional } // Parameter defaults
-     );
+      // routes.MapRoute(
+      //  "SubSubPage", // Route name
+      //  "{a}/{b}/{id}", // URL with parameters
+      //  new { controller = "Home", action = "GetPage", id = UrlParameter.Optional } // Parameter defaults
+      //);
+
+      // routes.MapRoute(
+      //   "SubSubSubPage", // Route name
+      //   "{a}/{b}/{c}/{id}", // URL with parameters
+      //   new { controller = "Home", action = "GetPage", id = UrlParameter.Optional } // Parameter defaults
+      //);
 
       routes.MapRoute(
           "Default", // Route name
@@ -137,7 +136,7 @@ namespace Meldpunt
           new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
       );
 
-      
+
 
     }
 
@@ -153,42 +152,42 @@ namespace Meldpunt
       RegisterRoutes(RouteTable.Routes);
     }
 
-    protected void Application_Error(Object sender, System.EventArgs e)
-    {
-      var exception = Server.GetLastError();
-      if (!(exception is HttpException))
-        throw exception;
+    //protected void Application_Error(Object sender, System.EventArgs e)
+    //{
+    //  var exception = Server.GetLastError();
+    //  if (!(exception is HttpException))
+    //    throw exception;
 
-      var httpException = exception as HttpException;
+    //  var httpException = exception as HttpException;
 
-      var routeData = new RouteData();
-      routeData.Values["controller"] = "Error";
-      if (httpException != null)
-      {
-        Response.Clear();
-        Server.ClearError();
+    //  var routeData = new RouteData();
+    //  routeData.Values["controller"] = "Error";
+    //  if (httpException != null)
+    //  {
+    //    Response.Clear();
+    //    Server.ClearError();
 
-        Response.StatusCode = httpException.GetHttpCode();
-        switch (Response.StatusCode)
-        {
-          case 400:
-            routeData.Values["action"] = "Http404";
-            break;
-          case 403:
-            routeData.Values["action"] = "Http403";
-            break;
-          case 404:
-            routeData.Values["action"] = "Http404";
-            break;
-          default:
-            routeData.Values["action"] = "General";
-            break;
-        }
+    //    Response.StatusCode = httpException.GetHttpCode();
+    //    switch (Response.StatusCode)
+    //    {
+    //      case 400:
+    //        routeData.Values["action"] = "Http404";
+    //        break;
+    //      case 403:
+    //        routeData.Values["action"] = "Http403";
+    //        break;
+    //      case 404:
+    //        routeData.Values["action"] = "Http404";
+    //        break;
+    //      default:
+    //        routeData.Values["action"] = "General";
+    //        break;
+    //    }
 
-        IController errorsController = new ErrorController();
-        var rc = new RequestContext(new HttpContextWrapper(Context), routeData);
-        errorsController.Execute(rc);
-      }
-    }
+    //    IController errorsController = new ErrorController();
+    //    var rc = new RequestContext(new HttpContextWrapper(Context), routeData);
+    //    errorsController.Execute(rc);
+    //  }
+    //}
   }
 }

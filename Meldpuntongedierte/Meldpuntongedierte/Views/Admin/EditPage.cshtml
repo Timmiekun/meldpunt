@@ -67,22 +67,23 @@
     </div>
   </div>
 
-    <div class="field">
-      <label for="content">Content</label>
-      <textarea id="content" name="content" class="richtext">
+  <div class="field">
+    <label for="content">Content</label>
+    <textarea id="content" name="content" class="richtext">
 			@Model.Content
 		</textarea>
+  </div>
+
+  @if (Model.LastModified.HasValue)
+  {
+    <div class="field">
+      Voor het laatst aangepast: <b>@Model.LastModified.Value.ToString("R")</b>
     </div>
+  }
 
-    @if (Model.LastModified.HasValue)
-    {
-      <div class="field">
-        Voor het laatst aangepast: <b>@Model.LastModified.Value.ToString("R")</b>
-      </div>
-    }
-
-    <input type="hidden" name="Id" value="@Model.Id" />
-    <input type="submit" value="opslaan" class="float-left btn btn-info" />
+  <input type="hidden" name="Id" value="@Model.Id" />
+  <input type="hidden" name="Guid" value="@Model.Guid" />
+  <input type="submit" value="opslaan" class="float-left btn btn-info" />
 </form>
 
 <form action="/admin/deletepage" class="js-delete-page">
