@@ -1,0 +1,79 @@
+﻿@using Meldpunt.Models;
+@using Meldpunt.Utils;
+@model IEnumerable<ImageModel>
+@{
+  /**/
+
+  ViewBag.Title = "Admin";
+  var locations = ViewBag.Locations;
+  Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+@section scripts{
+  <link rel="stylesheet" href="/css/admin-images.css?v=@ViewBag.AppVersion">
+}
+<h1>Beheer afbeeldingen</h1>
+
+
+@if (!ViewData.ModelState.IsValid)
+{
+  <div class="alert alert-warning">
+    @Html.ValidationSummary()
+  </div>
+}
+
+
+<form method="post" class="imageUploadForm panel" enctype="multipart/form-data">
+  <div class="form-group">
+    <div class="custom-file">
+      <input type="file" class="custom-file-input" id="file" name="file" required>
+      <label class="custom-file-label" for="file">Upload nieuwe afbeelding...</label>
+    </div>
+    <img id="imagePreview" class="imagePreview float-right" src="~/Images/admin/upload_image.png" alt="upload image" />
+  </div>
+  <div class="form-group">
+    <button class="btn btn-primary" type="submit">Upload</button>
+  </div>
+</form>
+
+<div class="panel">
+  <p>
+    Afbeeldingen kunnen tegen elk formaat worden uitgeleverd aan de website. Hiervoor gebruik je de parameters:
+    <ul>
+      <li>- width</li>
+      <li>- height</li>
+      <li>- mode</li>
+    </ul>
+  </p>
+  <p>
+    Width en height spreken voor zich. Mode is de manier hoe de afbeelding de gegeven afmetingen toepast. Zie het plaatje hieronder voor uitleg:
+    <br>
+    <br>
+    <br>
+    <img src="http://z.zr.io/rw/diagrams/resizing-modes.png" />
+    <a href="https://imageresizing.net/docs/basics">Uitleg</a>
+  </p>
+
+</div>
+
+<div class="list-item list-item-header">
+  <div class="name">Naam</div>
+  <div class="url">Url</div>
+  <div class="image">Voorbeeld</div>
+  <div class="actions"></div>
+</div>
+
+@foreach (ImageModel p in Model.OrderBy(i => i.Name))
+{
+  @pageItem(p);
+}
+
+@helper pageItem(ImageModel image)
+{
+  <div class="list-item">
+    <div class="name">@image.Name</div>
+    <div class="url"><a target="_blank" href="/image?name=@image.Name">/image?name=@image.Name</a></div>
+    <div class="image"><a href="/image?name=@image.Name&width=80&height=45"><img src="/image?name=@image.Name&width=80&height=45" /></a></div>
+    <div class="actions"><a class="btn btn-danger" data-action-confirm href="/admin/deleteImage?filename=@image.Name">Verwijderen</a></div>
+  </div>
+}

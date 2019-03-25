@@ -7,44 +7,45 @@ using Meldpunt.Services;
 using Meldpunt.Models;
 using Meldpunt.Utils;
 using Meldpunt.ActionFilters;
+using System.IO;
 
 namespace Meldpunt.Controllers
 {
   [MustBeAdmin]
+  [RoutePrefix("admin")]
 	public class AdminController : Controller
 	{
 		private PageService pageService;
 		private PlaatsService plaatsService;
     private RedirectService redirectsService;
+    private ImageService imageService;
 
     public AdminController()
 		{
 			pageService = new PageService();
 			plaatsService = new PlaatsService();
       redirectsService = new RedirectService();
+      imageService = new ImageService();
     }
 
-		public ActionResult Index()
+    [Route]
+    public ActionResult Index()
 		{
 			List<PageModel> allPages = pageService.GetAllPagesTree();
 			ViewBag.Locations = LocationUtils.placesByMunicipality.OrderBy(m => m.Key);
 			return View(allPages);
 		}
 
-    public ActionResult Pages()
+    [Route("updateimages")]
+    public ActionResult UpdateImages()
     {
-      List<PageModel> allPages = pageService.GetAllPagesTree();
-      ViewBag.Locations = LocationUtils.placesByMunicipality.OrderBy(m => m.Key);
-      return View(allPages);
+      pageService.updateImages();
+      return new EmptyResult();
     }
 
-    public ActionResult Places()
-    {
-      List<PageModel> allPages = pageService.GetAllPagesTree();
-      ViewBag.Locations = LocationUtils.placesByMunicipality.OrderBy(m => m.Key);
-      return View(allPages);
-    }
 
+    #region redirects
+    [Route("Redirects")]
     public ActionResult Redirects()
     {
       
@@ -52,6 +53,7 @@ namespace Meldpunt.Controllers
     }
 
     [HttpPost]
+    [Route("Redirects")]
     public ActionResult Redirects(RedirectModel redirect)
     {
       if (!ModelState.IsValid)
@@ -68,14 +70,33 @@ namespace Meldpunt.Controllers
       return View(redirectsService.GetAllRedirects());
     }
 
+    [Route("NewRedirect")]
+    public ActionResult NewRedirect(string parentId)
+    {
+      var newPage = redirectsService.newRedirect();
+      return RedirectToAction("Redirects");
+    }
+
+    [Route("RemoveRedirect")]
     public ActionResult RemoveRedirect(string id)
     {
       redirectsService.deleteRedirect(id);
       return RedirectToAction("Redirects");
     }
+    #endregion
+
+    #region places
+    [Route("Places")]
+    public ActionResult Places()
+    {
+      List<PageModel> allPages = pageService.GetAllPagesTree();
+      ViewBag.Locations = LocationUtils.placesByMunicipality.OrderBy(m => m.Key);
+      return View(allPages);
+    }
 
     [HttpGet]
-		public ActionResult EditPlaats(String plaats)
+    [Route("EditPlaats/{plaats}")]
+    public ActionResult EditPlaats(String plaats)
 		{
 			// gemeente page?
 			var gemeente = LocationUtils.placesByMunicipality.Where(m => m.Key.XmlSafe().Equals(plaats.XmlSafe()));
@@ -104,15 +125,27 @@ namespace Meldpunt.Controllers
 
 		}
 
-		[HttpPost, ValidateInput(false)]
+    [Route("EditPlaats/{plaats}")]
+    [HttpPost, ValidateInput(false)]
 		public ActionResult EditPlaats(PlaatsModel p)
 		{
 			plaatsService.UpdateOrInsert(p);
 
 			return Redirect("/admin/editplaats/" + p.Gemeentenaam.XmlSafe());
 		}
+    #endregion
 
-		[HttpGet]
+    #region pages
+    [Route("Pages")]
+    public ActionResult Pages()
+    {
+      List<PageModel> allPages = pageService.GetAllPagesTree();
+      ViewBag.Locations = LocationUtils.placesByMunicipality.OrderBy(m => m.Key);
+      return View(allPages);
+    }
+
+    [Route("EditPage/{id}")]
+    [HttpGet]
 		public ActionResult EditPage(string id)
 		{
 			PageModel page = pageService.GetPage(id);
@@ -120,14 +153,16 @@ namespace Meldpunt.Controllers
 			return View(page);
 		}
 
-		[HttpPost, ValidateInput(false)]
+    [Route("EditPage/{id}")]
+    [HttpPost, ValidateInput(false)]
 		public ActionResult EditPage(PageModel page)
 		{
 			var savedPage = pageService.SavePage(page);
 			return Redirect("/admin/editpage/" + savedPage.Id);
 		}
 
-		public ActionResult DeletePage(string id)
+    [Route("DeletePage")]
+    public ActionResult DeletePage(string id)
 		{
 			var page = pageService.GetPage(id);
 			pageService.deletePage(id);
@@ -136,16 +171,14 @@ namespace Meldpunt.Controllers
 			return Redirect("/admin/editpage/" + page.ParentId);
 		}
 
-		public ActionResult NewPage(string parentId)
+    [Route("NewPage")]
+    public ActionResult NewPage(string parentId)
 		{
 			var newPage = pageService.newPage(parentId);
 			return RedirectToAction("editpage", new {id = newPage.Id});
 		}
+    #endregion
 
-    public ActionResult NewRedirect(string parentId)
-    {
-      var newPage = redirectsService.newRedirect();
-      return RedirectToAction("Redirects");
-    }
+  
   }
 }

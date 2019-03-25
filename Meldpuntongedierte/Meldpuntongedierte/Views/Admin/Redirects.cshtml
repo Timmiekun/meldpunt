@@ -1,50 +1,41 @@
 ﻿@using Meldpunt.Models;
 @using Meldpunt.Utils;
 @model List<RedirectModel>
-  @{
-    ViewBag.Title = "Admin";
-    var locations = ViewBag.Locations;
-    Layout = "~/Views/Shared/_Admin.cshtml";
-  }
-  <h1>Beheer redirects</h1>
+@{
+  ViewBag.Title = "Admin";
+  var locations = ViewBag.Locations;
+  Layout = "~/Views/Shared/_Admin.cshtml";
+}
+<h1>Beheer redirects</h1>
 
-@if (!ViewData.ModelState.IsValid) { 
+@if (!ViewData.ModelState.IsValid)
+{
   <div class="alert alert-warning">
-     @Html.ValidationSummary()
+    @Html.ValidationSummary()
   </div>
 }
 
 
-  <div class="list-item list-item-header">
-    <div class="from">Van</div>
-    <div class="to">Naar</div>
-    <div class="action">Actie</div>
+<div class="list-item list-item-header">
+  <div class="from">Van</div>
+  <div class="to">Naar</div>
+  <div class="action">Actie</div>
+</div>
+
+@foreach (RedirectModel r in Model)
+{
+  <div class="list-item">
+    <form method="post">
+      <div class="from"><input type="text" name="from" class="form-control" value="@r.From" /></div>
+      <div class="to"><input type="text" name="to" class="form-control" value="@r.To" /></div>
+      <div class="action">
+        <input type="hidden" name="id" value="@r.Id" />
+        <input type="submit" class="btn btn-info" value="opslaan" />
+        <a class="btn btn-danger" data-action-confirm href="/admin/removeRedirect?id=@r.Id">Verwijderen</a>
+      </div>
+    </form>
   </div>
-
-  @foreach (RedirectModel r in Model)
-  {
-    <div class="list-item">
-      <form method="post">
-        <div class="from"><input type="text" name="from" class="form-control" value="@r.From" /></div>
-        <div class="to"><input type="text" name="to" class="form-control" value="@r.To" /></div>
-        <div class="action">
-          <input type="hidden" name="id" value="@r.Id" />
-          <input type="submit" class="btn btn-info" value="opslaan" />
-          <button class="btn btn-danger" data-action-remove-redirect data-redirect="@r.Id">Verwijderen</button>
-        </div>
-      </form>
-    </div>
-  }
+}
 
 
-  <a class="btn btn-info new-button" href="/admin/newredirect" data-action="js-new-redirect">Nieuwe redirect</a>
-
-  @section menu{
-    <div class="menu">
-      <ul>
-        <li><a href="/admin/pages">Pagina's</a></li>
-        <li><a href="/admin/places">Plaatsen</a></li>
-        <li><a href="/admin/redirects">Redirects</a></li>
-      </ul>
-    </div>
-  }
+<a class="btn btn-info new-button" href="/admin/newredirect" data-action="js-new-redirect">Nieuwe redirect</a>

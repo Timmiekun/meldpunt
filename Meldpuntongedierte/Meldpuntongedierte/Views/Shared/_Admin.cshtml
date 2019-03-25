@@ -1,5 +1,5 @@
 ﻿@using Meldpunt.Models;
-@{ 
+@{
   string appVersion = ViewBag.AppVersion;
 }
 
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="/css/reset.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/admin.css?v=@appVersion">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Catamaran:400,700,900" >
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Catamaran:400,700,900">
 
   <script src="http://code.jquery.com/jquery-3.3.1.min.js"
           integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -43,23 +43,37 @@
       toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
     });
   </script>
+  @RenderSection("scripts", false)
 </head>
 <body>
 
-	<div class="topBar">
-		<h2><a href="/admin">Beheer Meldpunt Ongedierte</a></h2>
-		<div id="tabholder"></div>
-	</div>
+  <div class="topBar">
+    <a href="/admin">Beheer Meldpunt Ongedierte</a>
+  </div>
 
-	<div id="main" class="main">
-		@RenderSection("menu", false)
-		<div class="content">
-			@RenderBody()
-		</div>
+  <div id="main" class="main">
+    @if (IsSectionDefined("menu"))
+    {
+      @RenderSection("menu")
+    }
+    else
+    {
+      <div class="menu">
+        <ul>
+          <li><a href="/admin/pages">Pagina's</a></li>
+          <li><a href="/admin/places">Plaatsen</a></li>
+          <li><a href="/admin/redirects">Redirects</a></li>
+          <li><a href="/admin/images">Afbeeldingen</a></li>
+        </ul>
+      </div>
+    }
+    <div class="content">
+      @RenderBody()
+    </div>
 
-		<div class="footer">
-			<p class="disclaimer">&#160; @*<a href="/sitemap">sitemap</a>*@</p>
-		</div>
-	</div>
+    <div class="footer">
+      <p class="disclaimer">&#160; @*<a href="/sitemap">sitemap</a>*@</p>
+    </div>
+  </div>
 </body>
 </html>

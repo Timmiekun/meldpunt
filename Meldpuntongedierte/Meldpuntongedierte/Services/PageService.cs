@@ -1,9 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Xml;
+﻿using HtmlAgilityPack;
 using Meldpunt.Models;
-using System.Web;
 using Meldpunt.Utils;
+using System;
+using System.Collections.Generic;
+using System.Web;
+using System.Xml;
 
 namespace Meldpunt.Services
 {
@@ -23,6 +24,51 @@ namespace Meldpunt.Services
     {
       XmlNodeList pages = pagesDoc.DocumentElement.SelectNodes("page");
       return XmlToModel(pages, true);
+    }
+
+    public void updateImages()
+    {
+      XmlNodeList pages = pagesDoc.DocumentElement.SelectNodes("//page");
+      foreach (XmlNode page in pages)
+      {
+        string htmlstring = page.SelectSingleNode("content").InnerXml.Substring(9);
+        htmlstring = htmlstring.Substring(0, htmlstring.Length - 3);
+        htmlstring = "<html><body>" + htmlstring + "</body></html>";
+        var doc = new HtmlDocument();
+        doc.LoadHtml(htmlstring);
+
+        var images = doc.DocumentNode.SelectNodes("//img");
+        if (images == null || images.Count == 0)
+          continue;
+
+        foreach (var img in images)
+        {
+          var src = img.Attributes["src"].Value;
+          if (src.ToLower().Contains("/afbeeldingen/"))
+          {
+            var width = img.Attributes["width"];
+            var height = img.Attributes["height"];
+            var newSource = "/image?name=" + src.Substring(14) + "&";
+            if (width != null)
+            {
+              newSource += "width=" + width.Value + "&";
+              img.Attributes.Remove(width);
+            }
+            if (height != null)
+            {
+              newSource += "height=" + height.Value;
+              img.Attributes.Remove(height);
+            }
+            img.Attributes["src"].Value = newSource;
+          }
+        }
+
+        string newHtml = doc.DocumentNode.SelectSingleNode("//body").InnerHtml;
+        page.SelectSingleNode("content").InnerXml = String.Format("<![CDATA[{0}]]>", newHtml);
+        
+      }
+
+      pagesDoc.Save(pageFile);
     }
 
     public List<PageModel> GetAllPages()
@@ -210,12 +256,12 @@ namespace Meldpunt.Services
       if (!string.IsNullOrWhiteSpace(lastModifiedString))
       {
         DateTimeOffset lastModifiedParsed;
-        if(DateTimeOffset.TryParse(lastModifiedString, out lastModifiedParsed))
+        if (DateTimeOffset.TryParse(lastModifiedString, out lastModifiedParsed))
         {
           lastModified = lastModifiedParsed;
         }
       }
-      
+
 
       PageModel p = new PageModel()
       {
