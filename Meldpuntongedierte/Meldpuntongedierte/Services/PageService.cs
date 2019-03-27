@@ -244,13 +244,6 @@ namespace Meldpunt.Services
         parent = parent.SelectSingleNode("../../.");
       }
 
-      String text = "";
-      foreach (XmlNode t in page.SelectNodes("content//p"))
-        text += " " + t.InnerText;
-
-      foreach (XmlNode t in page.SelectNodes("content//h1"))
-        text += " " + t.InnerText;
-
       string headertitle = "";
       if (page.SelectSingleNode("content/h1") != null)
         headertitle = page.SelectSingleNode("content/h1").InnerText;
@@ -286,6 +279,11 @@ namespace Meldpunt.Services
         }
       }
 
+     
+      HtmlDocument hh = new HtmlDocument();
+      hh.LoadHtml("<html>" + html + "</html>");
+      string text = hh.DocumentNode.InnerText;
+      text += " " + headertitle;
 
       PageModel p = new PageModel()
       {

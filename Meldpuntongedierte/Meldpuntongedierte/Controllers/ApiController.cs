@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using Meldpunt.Services;
 using Meldpunt.Models;
-using Meldpunt.Utils;
 
 namespace Meldpunt.Controllers
 {
@@ -21,6 +17,12 @@ namespace Meldpunt.Controllers
     public JsonResult getSuggest(string plaats)
     {
       List<SearchResultModel> suggests = searchService.Search(plaats);
+      return Json(suggests, JsonRequestBehavior.AllowGet);
+    }
+
+    public JsonResult getPageSuggest(string query)
+    {
+      List<SearchResultModel> suggests = searchService.Search(query, SearchTypes.Page);
       return Json(suggests, JsonRequestBehavior.AllowGet);
     }
   }

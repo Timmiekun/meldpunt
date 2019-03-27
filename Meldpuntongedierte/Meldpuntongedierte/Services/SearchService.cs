@@ -40,6 +40,8 @@ namespace Meldpunt.Services
       foreach (PageModel page in pageService.GetAllPages())
       {
         Document doc = new Document();
+        doc.Add(new Field("type", SearchTypes.Page, Field.Store.YES, Field.Index.NOT_ANALYZED));
+        doc.Add(new Field("id", page.Guid.ToString(), Field.Store.YES, Field.Index.NOT_ANALYZED));
         doc.Add(new Field("title", page.Title, Field.Store.YES, Field.Index.ANALYZED));
         doc.Add(new Field("text", page.FullText, Field.Store.YES, Field.Index.ANALYZED));
         doc.Add(new Field("url", page.Url, Field.Store.YES, Field.Index.ANALYZED));
@@ -51,6 +53,7 @@ namespace Meldpunt.Services
       foreach (PlaatsModel plaats in plaatsService.GetAllPlaatsModels())
       {
         Document doc = new Document();
+        doc.Add(new Field("type", SearchTypes.Place, Field.Store.YES, Field.Index.NOT_ANALYZED));
         doc.Add(new Field("title", plaats.Gemeentenaam, Field.Store.YES, Field.Index.ANALYZED));
         doc.Add(new Field("text", plaats.Text, Field.Store.YES, Field.Index.ANALYZED));
         doc.Add(new Field("url", plaats.Gemeentenaam.XmlSafe(), Field.Store.YES, Field.Index.ANALYZED));       
@@ -79,7 +82,7 @@ namespace Meldpunt.Services
 
     }
 
-    public List<SearchResultModel> Search(string q)
+    public List<SearchResultModel> Search(string q,  string type = null)
     {
       dir = FSDirectory.Open(indexPath);
       IndexSearcher searcher = new IndexSearcher(dir);
@@ -103,7 +106,7 @@ namespace Meldpunt.Services
         QueryParser parser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, "text", new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30));
         Query query = parser.Parse(q);
         query.Boost = 0.2f;
-        bq.Add(query, Occur.SHOULD);
+        bq.Add(query, Occur.MUST);
 
         QueryParser titleParser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, "title", new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30));
         Query titleQuery = titleParser.Parse(q);
@@ -114,6 +117,12 @@ namespace Meldpunt.Services
         Query locationsQuery = locationsParser.Parse(q);
         locationsQuery.Boost = 0.4f;        
         bq.Add(locationsQuery, Occur.SHOULD);
+
+        if (!string.IsNullOrWhiteSpace(type)) { 
+          QueryParser typeParser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, "type", new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30));
+          Query typeQuery = typeParser.Parse(type);
+          bq.Add(typeQuery, Occur.MUST);
+        }
       }
 
       TopDocs results = searcher.Search(bq, resultcount);
@@ -138,6 +147,8 @@ namespace Meldpunt.Services
         model.Add(new SearchResultModel
         {
           Title = result.Get("title"),
+          Id = result.Get("id"),
+          Type = result.Get("type"),
           Url = result.Get("url"),
           Intro = intro
         });
@@ -145,5 +156,11 @@ namespace Meldpunt.Services
       }
       return model;
     }
+  }
+
+  public static class SearchTypes
+  {
+    public static string Page = "page";
+    public static string Place = "place";
   }
 }

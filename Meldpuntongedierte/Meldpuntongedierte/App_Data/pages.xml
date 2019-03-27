@@ -40,16 +40,16 @@
     </pages>
     <sort>10</sort>
   </page>
-  <page id="insectengids" tab="false" published="false" lastmodified="20-03-2019 06:19" inhome="false" guid="e2acfabb-0c43-47a1-a9c4-41fdbd824eb1">
+  <page id="insectengids" tab="false" published="false" lastmodified="27-03-2019 10:15" inhome="false" guid="e2acfabb-0c43-47a1-a9c4-41fdbd824eb1">
     <content><![CDATA[<h1>Insectengids</h1>
-<p><img class="right" style="float: right;" title="insectengids beestjes in huis" src="/image?name=promotie/insectengids.jpg&width=217&height=131" alt="insectengids beestjes in huis">Om u zoveel mogelijk van dienst te kunnen zijn hebben wij de meest voorkomende insecten in huis en binnen gebouwen voor u uiteengezet. Hiernaast (op de smartphone onderaan) kunt u klikken op de voor u relevante diersoort.</p>
+<p><img class="right" style="float: right;" title="insectengids beestjes in huis" src="/image?name=promotie/insectengids.jpg&amp;width=217&amp;height=131" alt="insectengids beestjes in huis" />Om u zoveel mogelijk van dienst te kunnen zijn hebben wij de meest voorkomende insecten in huis en binnen gebouwen voor u uiteengezet. Hiernaast (op de smartphone onderaan) kunt u klikken op de voor u relevante diersoort.</p>
 <p>&nbsp;</p>
 <p>Wij raden u aan om deze informatie aandachtig te lezen alvorens u overgaat tot maatregelen die het probleem eventueel kunnen verergeren of verplaatsen.</p>
 <h1>Insecten bestrijden</h1>
 <p>Onze wereld delen wij met zeer veel insecten. Wij beperken ons enkel tot de grootste overlastgevers in woningen en gebouwen. Advies en voorlichting staat voorop, maar bestrijding is soms noodzakelijk als laatste redmiddel.&nbsp;Enkele insecten bestrijden wij zeer frequent. Hieronder kunt u klikken op het onderwerp om via de korte route bij de juiste informatie te komen;</p>
 <p>&nbsp;</p>
-<p><img class="left" style="float: left;" src="/image?name=promotie/insecten laten bestrijden.jpg&width=282&height=189" alt="ongediertebestrijding insecten bestrijden"></p>
-<p><br><a href="/insectengids/mieren/mierenbestrijding">Mieren bestrijden</a></p>
+<p><img class="left" style="float: left;" src="/image?name=promotie/insecten laten bestrijden.jpg&amp;width=282&amp;height=189" alt="ongediertebestrijding insecten bestrijden" /></p>
+<p><br /><a href="/insectengids/mieren/mierenbestrijding">Mieren bestrijden</a></p>
 <p><a href="/insectengids/wespen/wespenbestrijding">Wespen bestrijden</a></p>
 <p><a href="/insectengids/kakkerlakken/kakkerlakkenbestrijding">Kakkerlakken bestrijden</a></p>
 <p><a href="/insectengids/zilvervisjes-en-papiervisjes/zilvervisjes-bestrijden">Zilvervisjes bestrijden</a></p>
@@ -1143,20 +1143,17 @@
               </p>
             </content>
           </page>
-          <page id="tapijtkever" guid="a0ef7a80-8d4e-472b-87b7-3bb850bd3130">
-            <content>
-              <h1>Tapijtkever ( Anthrenus verbasci L. )</h1>
-              <p>Tapijtkevers lijken op kleine lieveheersbeestjes. Ze zijn echter niet glimmend maar bezitten daarentegen een mooie matte tekening, gevormd door een aantal zwarte en roodgele kleine schubjes waarmee ze zijn bedekt. De larven zijn goudbruin behaard. In Engeland worden ze daarom wolbeertjes genoemd. Op het achterlijf bezitten ze een paar bosjes lange haren in de vorm van een kleine speer die ze overeind zetten als ze zich bedreigd voelen. De volwassen kevers zijn vooral in het voorjaar te vinden. Ze zijn vaak op zoek naar bloemen om nectar en stuifmeel te eten. De eitjes worden in vogelnesten, in nesten van andere dieren en ingedroogd aas gelegd, waar de larven voedsel vinden in de vorm van veren, haren en vleesresten. Het zijn algemeen voorkomende dieren en omdat de volwassen kevers uitstekend kunnen vliegen, zijn ze bijna overal aan te treffen. De larven kunnen over grote afstanden rond kruipen. Indien er in een bepaald huis een flink aantal wordt aangetroffen dan kan de broedplaats bijvoorbeeld zijn : mussennesten onder het dak, wollen lappen, stof op ontoegankelijke plekken of een verzameling dode insecten in bijvoorbeeld een spinnenweb. Hoewel ze dus in hun voedselkeuze zeer veelzijdig zijn, zijn de tapijtkevers als ze textiel aanknagen, juist erg kieskeurig. Ze hebben een voorkeur voor schone zuivere wol, zoals van geweven wollen gordijnen of zachte en dure gebreide artikelen.</p>
-              <h2>Hoe kom ik van het probleem af?</h2>
-              <p>
-                Als eerst dienen eventuele oude vogel - , muizen – en wespennesten en dode dieren geruimd te worden. Deze kunnen een bron van besmetting veroorzaken.<br />
-                Kleding kan chemisch gereinigd worden of ingevroren gedurende 4 dagen op -20 graden.
-              </p>
-              <p>
-                Voor 100% zekerheid kan onze bestrijdingsdeskundige nadat de bron is verwijderd een naden – en kierenbehandeling uitvoeren. Hiervoor kunt u ons bellen op het servicenummer <em> ( 0900-2556677 ) </em> of u stuurt een email met uw postcode en telefoonnummer naar <em><a href="mailto:info@meldpuntongedierte.nl">info@meldpuntongedierte.nl</a></em><br />
-                De bestrijdingsdeskundige neemt dan contact met u op om het plan van aanpak en de kosten te bespreken.
-              </p>
-            </content>
+          <page id="tapijtkever" guid="a0ef7a80-8d4e-472b-87b7-3bb850bd3130" published="false" tab="false" inhome="false" lastmodified="27-03-2019 10:34">
+            <content><![CDATA[<h1>Tapijtkever ( Anthrenus verbasci L. )</h1>
+<p>Tapijtkevers lijken op kleine lieveheersbeestjes. Ze zijn echter niet glimmend maar bezitten daarentegen een mooie matte tekening, gevormd door een aantal zwarte en roodgele kleine schubjes waarmee ze zijn bedekt. De larven zijn goudbruin behaard. In Engeland worden ze daarom wolbeertjes genoemd. Op het achterlijf bezitten ze een paar bosjes lange haren in de vorm van een kleine speer die ze overeind zetten als ze zich bedreigd voelen. De volwassen kevers zijn vooral in het voorjaar te vinden. Ze zijn vaak op zoek naar bloemen om nectar en stuifmeel te eten. De eitjes worden in vogelnesten, in nesten van andere dieren en ingedroogd aas gelegd, waar de larven voedsel vinden in de vorm van veren, haren en vleesresten. Het zijn algemeen voorkomende dieren en omdat de volwassen kevers uitstekend kunnen vliegen, zijn ze bijna overal aan te treffen. De larven kunnen over grote afstanden rond kruipen. Indien er in een bepaald huis een flink aantal wordt aangetroffen dan kan de broedplaats bijvoorbeeld zijn : mussennesten onder het dak, wollen lappen, stof op ontoegankelijke plekken of een verzameling dode insecten in bijvoorbeeld een spinnenweb. Hoewel ze dus in hun voedselkeuze zeer veelzijdig zijn, zijn de tapijtkevers als ze textiel aanknagen, juist erg kieskeurig. Ze hebben een voorkeur voor schone zuivere wol, zoals van geweven wollen gordijnen of zachte en dure gebreide artikelen.</p>
+<h2>Hoe kom ik van het probleem af?</h2>
+<p>Als eerst dienen eventuele oude vogel - , muizen &ndash; en wespennesten en dode dieren geruimd te worden. Deze kunnen een bron van besmetting veroorzaken.<br />Kleding kan chemisch gereinigd worden of ingevroren gedurende 4 dagen op -20 graden.</p>
+<p>Voor 100% zekerheid kan onze bestrijdingsdeskundige nadat de bron is verwijderd een naden &ndash; en kierenbehandeling uitvoeren. Hiervoor kunt u ons bellen op het servicenummer <em> ( 0900-2556677 ) </em> of u stuurt een email met uw postcode en telefoonnummer naar <em><a href="mailto:info@meldpuntongedierte.nl">info@meldpuntongedierte.nl</a></em><br />De bestrijdingsdeskundige neemt dan contact met u op om het plan van aanpak en de kosten te bespreken.</p>]]></content>
+            <metadescription>
+            </metadescription>
+            <title>Tapijtkever</title>
+            <sort>0</sort>
+            <urlPart>tapijtkever</urlPart>
           </page>
         </pages>
       </page>
@@ -1310,6 +1307,7 @@
     <metadescription>Om u zoveel mogelijk van dienst te kunnen zijn, hebben wij met deze insectengids de meest voorkomende insecten voor u uiteengezet. Mieren in huis, een wespennest of onherkenbare insecten. Alle informatie treft u hier aan.</metadescription>
     <title>Insectengids</title>
     <sort>0</sort>
+    <urlPart>insectengids</urlPart>
   </page>
   <page id="plaagdierengids" tab="false" published="false" lastmodified="20-03-2019 06:20" inhome="false" guid="92ad69db-b79b-485a-b96a-bce0e7c5a59f">
     <content><![CDATA[<h1>Plaagdierengids</h1>

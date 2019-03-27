@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Globalization;
-using System.Web.Mvc;
-using System.Web.Security;
-using System.Web;
-
-namespace Meldpunt.Models
+﻿namespace Meldpunt.Models
 {
   public class SearchResultModel
   {
+    public string Id { get; set; }
     public string Title { get;set; }
     public string Url { get; set; }
     public string Intro { get; set; }
+    public string Type { get; set; }
   }
 }
