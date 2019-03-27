@@ -150,6 +150,7 @@
     <Content Include="App_Data\plaatsen.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Css\admin-modal.css" />
     <Content Include="Css\admin-images.css" />
     <Content Include="Css\admin.css" />
     <Content Include="Css\main.css" />
@@ -195,6 +196,7 @@
     <Content Include="Images\whatsapp.png" />
     <Content Include="robots.txt" />
     <Content Include="Scripts\admin.js" />
+    <Content Include="Scripts\admin-modal.js" />
     <Content Include="Scripts\suggest.js" />
     <Content Include="Scripts\xmlhttp.js" />
     <Content Include="Scripts\meldpunt.js" />

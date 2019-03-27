@@ -79,6 +79,10 @@ h2 {
     margin: 10px 0px;
   }
 
+.selectParent {
+  cursor: pointer;
+}
+
 .menu {
   position: fixed;
   width: 250px;
@@ -101,13 +105,13 @@ h2 {
       background-color: #83003c26;
     }
 
-    .menu ul li .oi{
+    .menu ul li .oi {
       margin-right: 5px;
     }
 
-    .subpages {
-      margin-left: 10px;
-    }
+.subpages {
+  margin-left: 10px;
+}
 
 .menu > ul > li.selected > a {
   font-weight: bold;
@@ -141,7 +145,7 @@ h2 {
   color: White;
   clear: both;
   text-align: right;
-  width:100%;
+  width: 100%;
 }
 
   .footer p {
@@ -251,7 +255,7 @@ h3 {
     border: 1px solid #ced4da;
     border-radius: 4px;
     padding: 0 10px;
-    width:50px;
+    width: 50px;
   }
 /* List pages */
 .list-item {
@@ -324,28 +328,28 @@ h3 {
   margin-bottom: 10px;
 }
 
-  .actions .btn{
+  .actions .btn {
     margin-right: 10px;
   }
 
-  .toolbar {
-    border: 1px solid #ced4da;
-    border-radius: 5px;
-    padding: 5px;
-    overflow: hidden;
-    box-shadow: 0px 2px 7px 0px #b8b8b8;
-    background-color: #f9f9f9fa;
-    position: sticky;
-    top: 5px;
-    right: -15px;
-    z-index: 99;
-    text-align: right;
-  }
-
-.toolbar .btn{
-  margin-right: 10px;
+.toolbar {
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  padding: 5px;
+  overflow: hidden;
+  box-shadow: 0px 2px 7px 0px #b8b8b8;
+  background-color: #f9f9f9fa;
+  position: sticky;
+  top: 5px;
+  right: -15px;
+  z-index: 99;
+  text-align: right;
 }
 
-.deleteform{
-  display:inline-block;
+  .toolbar .btn {
+    margin-right: 10px;
+  }
+
+.deleteform {
+  display: inline-block;
 }

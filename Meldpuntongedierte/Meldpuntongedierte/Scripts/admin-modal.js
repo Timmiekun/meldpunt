@@ -32,18 +32,27 @@ var pageSuggest = {
 
   fillSuggestBox: function () {
     var suggestBox = document.querySelector('#suggests');
-    var content = "";
+    let content = "";
     for (var x = 0; x < pageSuggest.suggests.length; x++) {
       var result = pageSuggest.suggests[x];
-    console.log(result)
       if (result) {
-        content += '<div  data-id=' + result.Id + ' class="list-item">';
-        content += '<div class="title">' + result.Title + '</div>';
-        content += '<div class="url">' + result.Url + '</div>';
-        content += '</div>';
+        let el = '<div data-url='+result.Url+' data-id=' + result.Id + ' class="list-item">';
+        el += '<div class="title">' + result.Title + '</div>';
+        el += '<div class="url">' + result.Url + '</div>';
+        el += '</div>';
+        content += el;
       }
     }
+    console.log(content);
     suggestBox.innerHTML = content;
+    
+    suggestBox.querySelectorAll(".list-item").forEach(function (elem) {     
+      elem.addEventListener("click", function (evt) {
+        document.querySelector("#inputGroupPrepend").innerHTML = elem.dataset.url;
+        document.querySelector("#parentId").value = elem.dataset.id;
+        $(".m-modal").addClass("hidden");
+      });
+    });
   },
 
   cancelEvent: function (evt) {
@@ -70,6 +79,12 @@ var pageSuggest = {
 };
 
 function OpenModal() {
-  $(".modal").show();
+  $(".m-modal").removeClass("hidden");
 }
 
+function htmlToElement(html) {
+  var template = document.createElement('template');
+  html = html.trim(); // Never return a text node of whitespace as the result
+  template.innerHTML = html;
+  return template.content.firstChild;
+}

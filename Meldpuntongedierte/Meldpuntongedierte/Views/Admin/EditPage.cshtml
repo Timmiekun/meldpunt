@@ -70,9 +70,10 @@
   <div class="field">
     <label for="UrlPart">Url</label>
     <div class="input-group">
-      <div class="input-group-prepend">
+      <div class="input-group-prepend selectParent">
         <span class="input-group-text" id="inputGroupPrepend" onclick="OpenModal()">@Model.ParentPath</span>
       </div>
+      <input type="hidden" name="parentId" id="parentId" value="@Model.ParentId" />
       <input type="text" name="UrlPart" class="form-control" value="@(Model.UrlPart ?? Model.Id)" />
     </div>
   </div>
