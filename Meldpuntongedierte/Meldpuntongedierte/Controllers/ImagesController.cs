@@ -10,16 +10,19 @@ namespace Meldpunt.Controllers
   public class ImagesController : Controller
   {
     private ImageService imageService;
+    private SearchService searchService;
 
     public ImagesController()
     {
       imageService = new ImageService();
+      searchService = new SearchService();
     }
 
     [Route("images")]
-    public ActionResult Images()
+    public ActionResult Images(string q)
     {
-      return View("~/Views/Admin/Images.cshtml", imageService.GetAllImages());
+      var model = searchService.Search(q, SearchTypes.Image);
+      return View("~/Views/Admin/Images.cshtml", model);
     }
 
     // This action handles the form POST and the upload

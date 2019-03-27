@@ -267,6 +267,7 @@
     <Content Include="Views\ImageModels\Edit.cshtml" />
     <Content Include="Views\ImageModels\Index.cshtml" />
     <Content Include="Views\Admin\Settings.cshtml" />
+    <Content Include="Views\Shared\Modal.cshtml" />
     <None Include="Volksgezondheid.pdf" />
     <None Include="Web.azure.config">
       <DependentUpon>Web.config</DependentUpon>

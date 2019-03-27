@@ -23,9 +23,3 @@
   .imagePreview:focus{
     width:auto;
   }
-
-
-  .imageUploadForm {
-    float: right;
-    margin-left: 10px;
-  }

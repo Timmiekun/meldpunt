@@ -12,10 +12,8 @@
 @section scripts{
   <link rel="stylesheet" href="/css/admin-images.css?v=@ViewBag.AppVersion">
 }
-<h1>Beheer afbeeldingen</h1>
-<form class="on-page-search" method="get">
-  <input class="form-control" type="text" name="q" placeholder="Zoek afbeeldingen" value="@Request.QueryString["q"]" />
-</form>
+<h1>Beheer afbeeldingen <form class="on-page-search" method="get"><input type="text" name="q" /></form></h1>
+
 
 @if (!ViewData.ModelState.IsValid)
 {
@@ -48,6 +46,28 @@
 {
   @pageItem(p);
 }
+
+
+
+<div class="panel">
+  <p>
+    Afbeeldingen kunnen tegen elk formaat worden uitgeleverd aan de website. Hiervoor gebruik je de parameters:
+    <ul>
+      <li>- width</li>
+      <li>- height</li>
+      <li>- mode</li>
+    </ul>
+  </p>
+  <p>
+    Width en height spreken voor zich. Mode is de manier hoe de afbeelding de gegeven afmetingen toepast. Zie het plaatje hieronder voor uitleg:
+    <br>
+    <br>
+    <br>
+    <img src="http://z.zr.io/rw/diagrams/resizing-modes.png" />
+    <a href="https://imageresizing.net/docs/basics">Uitleg</a>
+  </p>
+
+</div>
 
 
 @helper pageItem(SearchResultModel image)

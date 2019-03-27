@@ -19,13 +19,16 @@ namespace Meldpunt.Services
     private Lucene.Net.Store.Directory dir;
     private PageService pageService;
     private PlaatsService plaatsService;
-    private String indexPath;
+    private ImageService imageService;
+    private string indexPath;
 
     public SearchService()
     {
       indexPath = HttpContext.Current.Server.MapPath("~/App_data/index");
       pageService = new PageService();
       plaatsService = new PlaatsService();
+      imageService = new ImageService();
+
     }
 
     public void Index()
@@ -72,6 +75,33 @@ namespace Meldpunt.Services
         doc.Add(new Field("url", "ongediertebestrijding-" + gemeente.Key.XmlSafe(), Field.Store.YES, Field.Index.ANALYZED));
         if (gemeente.Value.Any())
         doc.Add(new Field("locations", String.Join(" ", gemeente.Value), Field.Store.YES, Field.Index.ANALYZED));
+
+        w.AddDocument(doc);
+      }
+
+      w.Commit();
+      w.Dispose();
+      dir.Dispose();
+
+    }
+
+    public void IndexImages()
+    {
+      DirectoryInfo index = new DirectoryInfo(indexPath);
+      if (!index.Exists)
+        index.Create();
+
+      dir = FSDirectory.Open(indexPath);
+      IndexWriter w = new IndexWriter(dir, new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30), true, IndexWriter.MaxFieldLength.UNLIMITED);
+
+      foreach (ImageModel i in imageService.GetAllImages())
+      {
+        Document doc = new Document();
+        doc.Add(new Field("type", SearchTypes.Image, Field.Store.YES, Field.Index.NOT_ANALYZED));
+        doc.Add(new Field("id", i.Id.ToString(), Field.Store.YES, Field.Index.NOT_ANALYZED));
+        doc.Add(new Field("title", i.Name, Field.Store.YES, Field.Index.ANALYZED));
+        doc.Add(new Field("text", i.Name, Field.Store.YES, Field.Index.ANALYZED));
+        doc.Add(new Field("all", "all", Field.Store.NO, Field.Index.ANALYZED));
 
         w.AddDocument(doc);
       }
@@ -162,5 +192,6 @@ namespace Meldpunt.Services
   {
     public static string Page = "page";
     public static string Place = "place";
+    public static string Image = "image";
   }
 }

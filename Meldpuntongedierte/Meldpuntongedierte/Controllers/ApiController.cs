@@ -25,5 +25,11 @@ namespace Meldpunt.Controllers
       List<SearchResultModel> suggests = searchService.Search(query, SearchTypes.Page);
       return Json(suggests, JsonRequestBehavior.AllowGet);
     }
+
+    public JsonResult getImageSuggest(string query)
+    {
+      List<SearchResultModel> suggests = searchService.Search(query, SearchTypes.Image);
+      return Json(suggests, JsonRequestBehavior.AllowGet);
+    }
   }
 }

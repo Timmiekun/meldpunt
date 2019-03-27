@@ -198,7 +198,7 @@ namespace Meldpunt.Controllers
             new { controller = "Home", action = "GetPage", guid = page.Guid } // Parameter defaults
           );          
 
-          //add back default route
+          //add back default routes
           routes.Add(defaultRoute);
           routes.Add(defaultRouteOld);
           

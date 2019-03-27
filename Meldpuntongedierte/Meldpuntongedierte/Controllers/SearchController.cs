@@ -3,16 +3,13 @@ using System.Linq;
 using System.Web.Mvc;
 using Meldpunt.Services;
 using Meldpunt.Utils;
-using Lucene.Net.Store;
 using Meldpunt.ActionFilters;
 
 namespace Meldpunt.Controllers
 {
   public class SearchController : Controller
   {
-    private readonly Directory dir;
     private PageService pageService;
-    private readonly String indexPath;
     private SearchService searchService;
 
     public SearchController()
@@ -26,6 +23,14 @@ namespace Meldpunt.Controllers
     {
       searchService.Index();
       
+      return new EmptyResult();
+    }
+
+    [MustBeAdmin]
+    public ActionResult IndexImages()
+    {
+      searchService.IndexImages();
+
       return new EmptyResult();
     }
 

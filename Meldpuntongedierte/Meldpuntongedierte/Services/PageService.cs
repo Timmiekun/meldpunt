@@ -134,14 +134,21 @@ namespace Meldpunt.Services
         page.ParentNode.RemoveChild(page);
 
         //append to new parent
-        XmlNode pages = parent.SelectSingleNode("pages");
-        if (pages != null)
-          pages.AppendChild(page);
+        if (parent.Attributes["id"].Value == "home")
+        {
+          pagesDoc.DocumentElement.AppendChild(page);
+        }
         else
         {
-          pages = pagesDoc.CreateElement("pages");
-          pages.AppendChild(page);
-          parent.AppendChild(pages);
+          XmlNode pages = parent.SelectSingleNode("pages");
+          if (pages != null)
+            pages.AppendChild(page);
+          else
+          {
+            pages = pagesDoc.CreateElement("pages");
+            pages.AppendChild(page);
+            parent.AppendChild(pages);
+          }
         }
       }
 
@@ -303,7 +310,7 @@ namespace Meldpunt.Services
         }
       }
 
-     
+
       HtmlDocument hh = new HtmlDocument();
       hh.LoadHtml("<html>" + html + "</html>");
       string text = hh.DocumentNode.InnerText;
