@@ -7,12 +7,13 @@
   Layout = "~/Views/Shared/_Admin.cshtml";
 }
 
-<div class="toolbar">
+<h1>@Model.Title</h1>
+
+<div class="actions">
   <button onclick="$('#opslaan').click()" class="btn btn-info">Opslaan</button>
   <a class="btn btn-info" href="@Model.Url" target="_blank">Pagina bekijken</a>
 </div>
 
-<h1>@Model.Title</h1>
 
 <form method="post">
 
@@ -102,29 +103,17 @@
 
 
 
-@section menu{
-  <div class="menu">
+@section submenu{
+  @if (Model.SubPages.Any())
+  {
+    <h2>Subpagina's</h2>
     <ul>
-      <li><a href="/admin/pages">Pagina's</a></li>
-      @if (!String.IsNullOrWhiteSpace(Model.ParentId))
+      @foreach (PageModel p in Model.SubPages)
       {
-        <li><a href="/admin/editpage/@Model.ParentId">@Model.ParentId.Capitalize()</a></li>
+        <li>
+          <a href="/admin/editpage/@p.Guid">@p.Title</a>
+        </li>
       }
-      <li class="subpages">
-        <b>@Model.Title</b>
-        <ul>
-          @foreach (PageModel p in Model.SubPages)
-          {
-            <li class="subpages">
-              <a href="/admin/editpage/@p.Guid">@p.Title</a>
-            </li>
-          }
-        </ul>
-      </li>
-
-      <li><a href="/admin/places">Plaatsen</a></li>
-      <li><a href="/admin/redirects">Redirects</a></li>
-      <li><a href="/admin/images">Afbeeldingen</a></li>
-    </ul>
-  </div>
+    </ul>    
+  }
 }

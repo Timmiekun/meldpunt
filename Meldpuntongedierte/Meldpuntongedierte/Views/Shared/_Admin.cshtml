@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/admin.css?v=@appVersion">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Catamaran:400,700,900">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.css" >
 
   <script src="//code.jquery.com/jquery-3.3.1.min.js"
           integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -51,23 +52,19 @@
   <div class="topBar">
     <a href="/admin">Beheer Meldpunt Ongedierte</a>
   </div>
-
   <div id="main" class="main">
-    @if (IsSectionDefined("menu"))
-    {
-      @RenderSection("menu")
-    }
-    else
-    {
-      <div class="menu">
-        <ul>
-          <li><a href="/admin/pages">Pagina's</a></li>
-          <li><a href="/admin/places">Plaatsen</a></li>
-          <li><a href="/admin/redirects">Redirects</a></li>
-          <li><a href="/admin/images">Afbeeldingen</a></li>
-        </ul>
-      </div>
-    }
+   
+    <div class="menu">
+      <ul>
+        <li><a href="/admin/pages"><span class="oi oi-document"></span> Pagina's</a></li>
+        <li><a href="/admin/places"><span class="oi oi-globe"></span> Plaatsen</a></li>
+        <li><a href="/admin/redirects"><span class="oi oi-loop-square"></span> Redirects</a></li>
+        <li><a href="/admin/images"><span class="oi oi-image"></span> Afbeeldingen</a></li>
+      </ul>
+
+      @RenderSection("submenu")
+    </div>
+   
     <div class="content">
       @RenderBody()
     </div>
