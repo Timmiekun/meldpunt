@@ -4,6 +4,14 @@
     <from>/insectengids1/wespen/wespenbestrijding</from>
     <to>/wespenbestrijding</to>
   </redirect>
+  <redirect id="aba7b656-eed6-4bbf-9e86-c6268d074f5c" lastmodified="11-03-2019 02:54" created="11-03-2019 02:54">
+    <from>/blabla</from>
+    <to>/insectengids/wespen/wespenbestrijding</to>
+  </redirect>
+  <redirect id="bf8ee76b-82ff-487e-84ed-42f1ca54bdda" lastmodified="11-03-2019 04:58" created="11-03-2019 04:58">
+    <from>/iniets</from>
+    <to>/naar</to>
+  </redirect>
   <redirect id="cfb5440f-76f2-4385-804c-de39687f5b60" lastmodified="14-03-2019 10:46" created="14-03-2019 10:46">
     <from>/insectengids/wespen/wespenbestrijding/rondhangende-wespen</from>
     <to>/insectengids/wespen/wespenbestrijding/is-het-wel-een-wespennest?</to>
@@ -75,5 +83,33 @@
   <redirect id="a3ad155c-1b13-4812-bc15-a2d337f93ff1" lastmodified="24-03-2019 04:24" created="24-03-2019 04:24">
     <from>/plaagdierengids/muizen/muizenbestrijding/zelf-muizen-bestrijden</from>
     <to>/muizen/muizenbestrijding/muizen-bestrijden-in-en-om-het-huis/hoe-kunt-u-muizen-zelf-bestrijden</to>
+  </redirect>
+  <redirect id="abfb9913-15d0-4b97-9e4d-338cfdcdc76f" lastmodified="25-03-2019 03:28" created="25-03-2019 03:28">
+    <from>/muizen/muizenbestrijding/muizen-bestrijden-in-en-om-het-huis</from>
+    <to>/muizen-bestrijden-in-huis</to>
+  </redirect>
+  <redirect id="de9318ba-8cd5-4672-b064-7671436c974e" lastmodified="25-03-2019 04:31" created="25-03-2019 04:31">
+    <from>/muizen/muizenbestrijding/muizen-bestrijden-in-huis</from>
+    <to>/in-huis/zelf-vangen-en-bestrijden</to>
+  </redirect>
+  <redirect id="54ab661c-7355-42fb-9ddf-f7d552208e0d" lastmodified="25-03-2019 04:37" created="25-03-2019 04:37">
+    <from>/muizen/muizenbestrijding/muizen-bestrijden-in-huis/hoe-kunt-u-muizen-zelf-bestrijden</from>
+    <to>/in-huis/zelf-vangen-en-bestrijden</to>
+  </redirect>
+  <redirect id="958cb046-ffdf-4eaa-bcea-1761731797e3" lastmodified="25-03-2019 04:39" created="25-03-2019 04:39">
+    <from>/muizen/muizenbestrijding/muizen-bestrijden-in-huis/muizen-vangen</from>
+    <to>/in-huis/zelf-vangen-en-bestrijden</to>
+  </redirect>
+  <redirect id="cf5a8163-315b-49dc-a8ee-db3469083eb4" lastmodified="25-03-2019 04:49" created="25-03-2019 04:49">
+    <from>/muizen/muizenbestrijding/muizen-bestrijden-op-de-werkplek</from>
+    <to>/muizen/muizenbestrijding/op-de-werkplek</to>
+  </redirect>
+  <redirect id="875be65f-d8b5-401d-baf5-fc161555a33f" lastmodified="26-03-2019 07:58" created="26-03-2019 07:58">
+    <from>/muizen/muizenbestrijding/muizen-bestrijden-in-en-om-het-huis/hoe-kunt-u-muizen-zelf-bestrijden</from>
+    <to>/in-huis</to>
+  </redirect>
+  <redirect id="7deed4aa-cf66-4796-af27-537cd589dfb7" lastmodified="26-03-2019 11:10" created="26-03-2019 11:10">
+    <from>/plaagdierengids/muizen/muizenbestrijding/muizen-vangen</from>
+    <to>/muizen/muizenbestrijding/in-huis/zelf-vangen-en-bestrijden</to>
   </redirect>
 </redirects>
