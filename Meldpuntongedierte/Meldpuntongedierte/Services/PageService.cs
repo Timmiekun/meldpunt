@@ -123,6 +123,28 @@ namespace Meldpunt.Services
     {
       XmlElement page = (XmlElement)pagesDoc.SelectSingleNode("//page[@guid='" + p.Guid + "']");
 
+      //check if we should move the page
+      string parentpageId = page.Attributes["parentid"]?.Value;
+      if (!String.Equals(p.ParentId, parentpageId))
+      {
+        // parent changed, move element
+        XmlElement parent = (XmlElement)pagesDoc.SelectSingleNode("//page[@guid='" + p.ParentId + "']");
+
+        //remove page
+        page.ParentNode.RemoveChild(page);
+
+        //append to new parent
+        XmlNode pages = parent.SelectSingleNode("pages");
+        if (pages != null)
+          pages.AppendChild(page);
+        else
+        {
+          pages = pagesDoc.CreateElement("pages");
+          pages.AppendChild(page);
+          parent.AppendChild(pages);
+        }
+      }
+
       string html = String.Format("<![CDATA[{0}]]>", p.Content);
 
       page.SetAttribute("published", p.Published ? "true" : "false");
@@ -136,6 +158,7 @@ namespace Meldpunt.Services
       page.SetAttribute("id", p.UrlPart?.XmlSafe() ?? p.EditableTitle.XmlSafe());
       page.SetAttribute("tab", p.InTabMenu ? "true" : "false");
       page.SetAttribute("inhome", p.InHomeMenu ? "true" : "false");
+      page.SetAttribute("parentid", p.ParentId);
       page.SetAttribute("published", p.Published ? "true" : "false");
       page.SetAttribute("lastmodified", DateTime.Now.ToString("dd-MM-yyyy hh:mm"));
 
@@ -236,8 +259,9 @@ namespace Meldpunt.Services
 
       string id = page.Attributes["id"].Value;
       string url = "/" + id;
+
       XmlNode parent = page.SelectSingleNode("../../.");
-      string parentId = (parent != null && parent != page.OwnerDocument) ? parent.Attributes["id"].Value : "";
+      string parentId = (parent != null && parent != page.OwnerDocument) ? parent.Attributes["guid"].Value : "";
       while (parent != null && parent != page.OwnerDocument)
       {
         url = "/" + parent.Attributes["id"].Value + url;

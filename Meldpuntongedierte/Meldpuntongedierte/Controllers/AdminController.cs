@@ -173,7 +173,6 @@ namespace Meldpunt.Controllers
     {
       var oldPage = pageService.GetPageByGuid(page.Guid.ToString());
       var savedPage = pageService.SavePage(page);
-      Response.RemoveOutputCacheItem(savedPage.Url);
 
       // update route table
       if (oldPage.Url != savedPage.Url)
@@ -182,8 +181,11 @@ namespace Meldpunt.Controllers
         using (routes.GetWriteLock())
         {
           //get last route (default).  ** by convention, it is the standard route.
-          var defaultRoute = routes.Last();
+          var defaultRoute = routes.Last();          
           routes.Remove(defaultRoute);
+
+          var defaultRouteOld = routes.Last();
+          routes.Remove(defaultRouteOld);
 
           // remove old route
           var oldRoute = RouteTable.Routes[oldPage.Guid.ToString()];
@@ -194,14 +196,18 @@ namespace Meldpunt.Controllers
             savedPage.Guid.ToString(), // Route name
             savedPage.Url.TrimStart('/'), // URL with parameters
             new { controller = "Home", action = "GetPage", guid = page.Guid } // Parameter defaults
-          );
-          
+          );          
 
           //add back default route
           routes.Add(defaultRoute);
+          routes.Add(defaultRouteOld);
+          
         }
       }
-      
+
+      Response.RemoveOutputCacheItem(savedPage.Url);
+      Response.RemoveOutputCacheItem(oldPage.Url);
+
       return Redirect("/admin/editpage/" + savedPage.Guid);
     }
 
