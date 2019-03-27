@@ -4,6 +4,7 @@ using System.Web.Mvc;
 using Meldpunt.Services;
 using Meldpunt.Utils;
 using Lucene.Net.Store;
+using Meldpunt.ActionFilters;
 
 namespace Meldpunt.Controllers
 {
@@ -20,7 +21,7 @@ namespace Meldpunt.Controllers
       searchService = new SearchService();
     }
 
-
+    [MustBeAdmin]
     public ActionResult Index()
     {
       searchService.Index();

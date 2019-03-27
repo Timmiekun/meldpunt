@@ -36,6 +36,12 @@ namespace Meldpunt.Controllers
       return View(allPages);
     }
 
+    [Route("settings")]
+    public ActionResult Settings()
+    {
+      return View();
+    }
+
     [Route("updateimages")]
     public ActionResult UpdateImages()
     {

@@ -1,0 +1,14 @@
+﻿@using Meldpunt.Models;
+@using Meldpunt.Utils;
+@model List<PageModel>
+@{
+  ViewBag.Title = "Admin";
+  var locations = ViewBag.Locations;
+  Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<h1>Settings</h1>
+<p class="alert alert-warning">Let op! Deze dingen zijn nog in ontwikkeling!</p>
+<ul>
+  <li><a href="/search/index">Genereer nieuwe zoek index</a></li>
+</ul>

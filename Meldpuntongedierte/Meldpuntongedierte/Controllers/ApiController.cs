@@ -14,9 +14,9 @@ namespace Meldpunt.Controllers
       searchService = new SearchService();
     }
 
-    public JsonResult getSuggest(string plaats)
+    public JsonResult getSuggest(string query)
     {
-      List<SearchResultModel> suggests = searchService.Search(plaats);
+      List<SearchResultModel> suggests = searchService.Search(query);
       return Json(suggests, JsonRequestBehavior.AllowGet);
     }
 

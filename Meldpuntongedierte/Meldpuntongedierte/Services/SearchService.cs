@@ -56,7 +56,7 @@ namespace Meldpunt.Services
         doc.Add(new Field("type", SearchTypes.Place, Field.Store.YES, Field.Index.NOT_ANALYZED));
         doc.Add(new Field("title", plaats.Gemeentenaam, Field.Store.YES, Field.Index.ANALYZED));
         doc.Add(new Field("text", plaats.Text, Field.Store.YES, Field.Index.ANALYZED));
-        doc.Add(new Field("url", plaats.Gemeentenaam.XmlSafe(), Field.Store.YES, Field.Index.ANALYZED));       
+        doc.Add(new Field("url", "ongediertebestrijding-" + plaats.Gemeentenaam.XmlSafe(), Field.Store.YES, Field.Index.ANALYZED));       
         doc.Add(new Field("all", "all", Field.Store.NO, Field.Index.ANALYZED));
 
         w.AddDocument(doc);
@@ -69,7 +69,7 @@ namespace Meldpunt.Services
         Document doc = new Document();
         doc.Add(new Field("title", gemeente.Key, Field.Store.YES, Field.Index.ANALYZED));
         doc.Add(new Field("text", fullText, Field.Store.YES, Field.Index.ANALYZED));
-        doc.Add(new Field("url", gemeente.Key.XmlSafe(), Field.Store.YES, Field.Index.ANALYZED));
+        doc.Add(new Field("url", "ongediertebestrijding-" + gemeente.Key.XmlSafe(), Field.Store.YES, Field.Index.ANALYZED));
         if (gemeente.Value.Any())
         doc.Add(new Field("locations", String.Join(" ", gemeente.Value), Field.Store.YES, Field.Index.ANALYZED));
 

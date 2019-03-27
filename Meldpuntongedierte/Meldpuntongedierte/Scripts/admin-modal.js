@@ -1,4 +1,11 @@
-﻿var suggest = {
+﻿$(function () {
+  $(".m-modal .background").on('click', function () {
+    $(".m-modal").addClass("hidden");
+  });
+});
+
+
+var pageSuggest = {
   suggests: {},
   timeout: null,
 
@@ -8,14 +15,14 @@
     }
     var inputValue = input.value;
     if (inputValue.length > 1) {
-      var url = "/api/getSuggest?query=" + inputValue;
+      var url = "/api/getPageSuggest?query=" + inputValue;
       this.timeout = setTimeout(function () {
         $.ajax({
           dataType: "json",
           url: url,
           success: function (data) {
-            suggest.suggests = data;
-            suggest.fillSuggestBox();
+            pageSuggest.suggests = data;
+            pageSuggest.fillSuggestBox();
           },
           error: function () { alert("xmlhttpproblem: " + xhr.status); }
         });
@@ -24,22 +31,24 @@
   },
 
   fillSuggestBox: function () {
-    var suggestBox = document.getElementById('suggests');
+    var suggestBox = document.querySelector('#suggests');
     var content = "";
-    for (var x = 0; x < suggest.suggests.length; x++) {
-      var result = suggest.suggests[x];
-    
-      if (result)
-        content += '<a href="' + result.Url + '">' + result.Title + '</a>';
+    for (var x = 0; x < pageSuggest.suggests.length; x++) {
+      var result = pageSuggest.suggests[x];
+    console.log(result)
+      if (result) {
+        content += '<div  data-id=' + result.Id + ' class="list-item">';
+        content += '<div class="title">' + result.Title + '</div>';
+        content += '<div class="url">' + result.Url + '</div>';
+        content += '</div>';
+      }
     }
     suggestBox.innerHTML = content;
-    suggestBox.className = 'suggest-shown';
-
   },
 
   cancelEvent: function (evt) {
     if (evt.keyCode === 13) {
-      console.log(evt.target.value);
+
       if (isIE || isIE7) {
         evt.cancelBubble = true;
         evt.returnValue = 0;
@@ -52,7 +61,7 @@
   },
 
   hide: function (evt) {
-    var suggestBox = document.getElementById('suggests');
+    var suggestBox = document.querySelector('.m-modal');
     evt = evt || window.event;
     var el = evt.target || evt.srcElement;
     if (suggestBox && el.id !== 'suggest')
@@ -60,4 +69,7 @@
   }
 };
 
-document.onclick = suggest.hide;
+function OpenModal() {
+  $(".modal").show();
+}
+
