@@ -22,17 +22,15 @@
 
 <a href="/admin/newpage" class="btn btn-info new-button js-new-page">Nieuwe pagina</a>
 
-5
 @helper pageItem(PageModel page)
 {
   <div class="list-item">
     <div class="title"><a class="link-to-edit" href="/admin/editpage/@page.Guid">@page.Title</a></div>
-    <div class="url">@page.Url</div>
+    <a href="@page.Url" class="url">@page.Url</a>
   </div>
   foreach (PageModel subpage in page.SubPages)
   {
-  <div class="subpages">
+ 
     @pageItem(subpage)
-  </div>
   }
 }

@@ -19,6 +19,7 @@ namespace Meldpunt.Controllers
     private PlaatsService plaatsService;
     private RedirectService redirectsService;
     private ImageService imageService;
+    private SearchService searchService;
 
     public AdminController()
     {
@@ -26,14 +27,17 @@ namespace Meldpunt.Controllers
       plaatsService = new PlaatsService();
       redirectsService = new RedirectService();
       imageService = new ImageService();
+      searchService = new SearchService();
     }
 
     [Route]
-    public ActionResult Index()
+    public ActionResult Index(string q)
     {
-      List<PageModel> allPages = pageService.GetAllPagesTree();
-      ViewBag.Locations = LocationUtils.placesByMunicipality.OrderBy(m => m.Key);
-      return View(allPages);
+      if (String.IsNullOrEmpty(q))
+        return View(new List<SearchResultModel>());
+
+      var model = searchService.Search(q);
+      return View(model);
     }
 
     [Route("settings")]
@@ -211,20 +215,19 @@ namespace Meldpunt.Controllers
       return Redirect("/admin/editpage/" + savedPage.Guid);
     }
 
-    [Route("DeletePage")]
+    [Route("DeletePage/{id}")]
     public ActionResult DeletePage(string id)
     {
-      var page = pageService.GetPage(id);
+      var page = pageService.GetPageByGuid(id);
       pageService.deletePage(id);
-      if (String.IsNullOrWhiteSpace(page.ParentId))
-        return Redirect("/admin");
-      return Redirect("/admin/editpage/" + page.ParentId);
+
+      return Redirect("/admin/pages");
     }
 
     [Route("NewPage")]
     public ActionResult NewPage(string parentId)
     {
-      var newPage = pageService.newPage(parentId);
+      var newPage = pageService.newPage();
       return RedirectToAction("editpage", new { id = newPage.Id });
     }
     #endregion

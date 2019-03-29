@@ -89,20 +89,12 @@
   <input type="hidden" name="Guid" value="@Model.Guid" />
 
   <div class="toolbar">
-    <a href="/admin/newpage?parentid=@Model.Id" class="js-new-page btn btn-info">Nieuwe pagina</a>
+    <a href="/admin/newpage?parentid=@Model.Id" class="btn btn-info">Nieuwe pagina</a>
     <input type="submit" id="opslaan" value="opslaan" class="btn btn-info" />
     <a class="btn btn-info" href="@Model.Url" target="_blank">Pagina bekijken</a>
-    <form action="/admin/deletepage" class="js-delete-page deleteform">
-      <input type="hidden" name="Id" value="@Model.Id" />
-      <input type="submit" value="pagina verwijderen" class="btn btn-danger" />
-    </form>
+    <a href="/admin/deletepage/@Model.Guid" class="btn btn-danger" data-action-confirm>Verwijderen</a>
   </div>
 </form>
-
-
-
-
-
 
 @section submenu{
   @if (Model.SubPages.Any())
@@ -115,6 +107,6 @@
           <a href="/admin/editpage/@p.Guid">@p.Title</a>
         </li>
       }
-    </ul>    
+    </ul>
   }
 }

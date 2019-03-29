@@ -37,10 +37,11 @@ namespace Meldpunt.Controllers
     public ActionResult SearchPages(String q)
     {
       if (LocationUtils.IsLocation(q))
-        return Redirect("/" + q.XmlSafe());
+        return Redirect("/ongediertebestrijding-" + q.XmlSafe());
       
-      var results = searchService.Search(q);
+      var results = searchService.Search(q, SearchTypes.Page);
       if (results.Count == 1)
+
         return Redirect(results.First().Url);
       return View("index", results);
     }

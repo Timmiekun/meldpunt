@@ -1,4 +1,12 @@
-﻿.list-item .name {
+﻿.search-form {
+  margin-bottom: 20px;
+}
+
+.menu-panel{
+  padding: 10px;
+}
+
+.list-item .name {
   width: 33%;
 }
 
