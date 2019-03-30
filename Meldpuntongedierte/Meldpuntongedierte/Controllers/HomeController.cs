@@ -59,7 +59,7 @@ namespace Meldpunt.Controllers
           return View("index", model);
         }
         
-        PageModel parent = pageService.GetPage(model.ParentId);
+        PageModel parent = pageService.GetPageByGuid(model.ParentId);
         if (parent != null)
           ViewBag.SubNav = parent.SubPages;
 
