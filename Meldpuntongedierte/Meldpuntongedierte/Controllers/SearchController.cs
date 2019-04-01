@@ -31,7 +31,7 @@ namespace Meldpunt.Controllers
     [MustBeAdmin]
     public ActionResult IndexImages()
     {
-      searchService.IndexImages(imageService.GetAllImages());
+      searchService.IndexItems(imageService.GetAllImages());
 
       return new EmptyResult();
     }

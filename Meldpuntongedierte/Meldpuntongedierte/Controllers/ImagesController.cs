@@ -2,7 +2,6 @@
 using Meldpunt.Models;
 using Meldpunt.Services;
 using Meldpunt.Utils;
-using System;
 using System.Web;
 using System.Web.Mvc;
 
@@ -15,7 +14,7 @@ namespace Meldpunt.Controllers
     private IImageService imageService;
     private ISearchService searchService;
 
-    public ImagesController(ISearchService _searchService , IImageService _imageService)
+    public ImagesController(ISearchService _searchService, IImageService _imageService)
     {
       imageService = _imageService;
       searchService = _searchService;
@@ -37,12 +36,13 @@ namespace Meldpunt.Controllers
       if (file != null && file.ContentLength > 0)
       {
         string fullFileName = imageService.saveImage(file);
-
-        searchService.IndexObject(new ImageModel
+        var imageModel = new ImageModel
         {
           Name = fullFileName.Substring(fullFileName.IndexOf("afbeeldingen") + 13),
           Url = ""
-        });
+        };
+
+        searchService.IndexDocument(imageModel.ToLuceneDocument(), imageModel.Name.XmlSafe());
       }
 
       return RedirectToAction("Images");

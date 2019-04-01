@@ -1,24 +1,31 @@
 ﻿@using Meldpunt.Models;
 @using Meldpunt.Utils;
-@model List<PageModel>
-  @{
-    ViewBag.Title = "Admin";
-    var locations = ViewBag.Locations;
-    Layout = "~/Views/Shared/_Admin.cshtml";
-  }
+@model SearchResultModel
+@{
+  ViewBag.Title = "Admin";
+  var locations = ViewBag.Locations;
+  Layout = "~/Views/Shared/_Admin.cshtml";
+}
 
-  <h1>Beheer plaatsen</h1>
+<h1>Beheer plaatsen</h1>
 
-  <div class="list-item list-item-header">
-    <div class="title">Titel</div>
-    <div class="url">Url</div>
+<form class="search-form" method="get">
+  <input class="form-control" type="text" name="q" placeholder="Zoek plaats" value="@Request.QueryString["q"]" />
+</form>
+
+<p>@Model.Total plaatsen</p>
+
+@Html.Partial("Pagination")
+
+<div class="list-item list-item-header">
+  <div class="title">Titel</div>
+  <div class="url">Url</div>
+</div>
+
+@foreach (var place in Model.Results)
+{
+ <div class="list-item">
+    <div class="title"><a class="link-to-edit" href="/admin/editplaats/@place.Title.XmlSafe()">@place.Title</a></div>
+    <a href="@place.Url" class="url">@place.Url</a>
   </div>
-
-  @foreach (var kv in locations)
-  {
-    string url = ((string)kv.Key).XmlSafe();
-    <div class="list-item">
-      <div class="title"><a class="link-to-edit" href="/admin/editplaats/@url">@kv.Key</a></div>
-      <a href="/meldpuntongedierte-@url" class="url">/meldpuntongedierte-@url</a>
-    </div>
-  }
+}

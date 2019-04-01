@@ -140,6 +140,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Controllers\ImageModelsController.cs" />
+    <Compile Include="Models\IndexableItem.cs" />
     <Compile Include="Models\ImageRequestModel.cs" />
     <Compile Include="Models\ImageModel.cs" />
     <Compile Include="Models\MeldpuntContext.cs" />
@@ -291,6 +292,7 @@
     <Content Include="Views\Admin\Settings.cshtml" />
     <Content Include="Views\Shared\Modal.cshtml" />
     <Content Include="Views\Admin\ImageResizeHelp.cshtml" />
+    <Content Include="Views\Admin\Pagination.cshtml" />
     <None Include="Volksgezondheid.pdf" />
     <None Include="Web.azure.config">
       <DependentUpon>Web.config</DependentUpon>

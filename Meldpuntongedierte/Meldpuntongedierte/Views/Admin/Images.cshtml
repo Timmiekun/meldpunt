@@ -29,22 +29,7 @@
 
 <p>@Model.Total afbeeldingen</p>
 
-@{
-  int numOfPages = Model.Total / SearchResultModel.PageSize;
-  for (int i = 0; i <= numOfPages; i++)
-  {
-    string className = "btn-secondary";
-    int currentPage = -1;
-    if (Int32.TryParse(Request.QueryString["page"], out currentPage))
-    {
-      if (currentPage == i)
-      {
-        className = "btn-info";
-      }
-    }
-    <a class="btn  @className" href="?q=@Request.QueryString["q"]&page=@i">@(i + 1)</a>
-  }
-}
+@Html.Partial("Pagination")
 
 <div class="list-item list-item-header">
   <div class="name">Naam</div>

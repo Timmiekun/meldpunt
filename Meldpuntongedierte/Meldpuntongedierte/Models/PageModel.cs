@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Lucene.Net.Documents;
+using Meldpunt.Services;
+using System;
 using System.Collections.Generic;
-using System.Web;
 
 namespace Meldpunt.Models
 {
-  public class PageModel
+  public class PageModel : IndexableItem
   {
     public string Title
     {
@@ -44,5 +45,17 @@ namespace Meldpunt.Models
     public bool InHomeMenu { get; set; }
     public string MetaDescription { get; set; }
 
+
+    public Document ToLuceneDocument()
+    {
+      Document doc = new Document();
+      doc.Add(new Field("type", SearchTypes.Page, Field.Store.YES, Field.Index.NOT_ANALYZED));
+      doc.Add(new Field("id", Guid.ToString(), Field.Store.YES, Field.Index.NOT_ANALYZED));
+      doc.Add(new Field("title", Title, Field.Store.YES, Field.Index.ANALYZED));
+      doc.Add(new Field("text", FullText, Field.Store.YES, Field.Index.ANALYZED));
+      doc.Add(new Field("url", Url, Field.Store.YES, Field.Index.ANALYZED));
+      doc.Add(new Field("all", "all", Field.Store.NO, Field.Index.ANALYZED));
+      return doc;
+    }
   }
 }

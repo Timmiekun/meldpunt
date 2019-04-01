@@ -1,0 +1,21 @@
+﻿@using Meldpunt.Models;
+@using Meldpunt.Utils;
+@model SearchResultModel
+
+@{
+  int numOfPages = Model.Total / SearchResultModel.PageSize;
+  int currentPage = 0;
+  Int32.TryParse(Request.QueryString["page"], out currentPage);
+
+
+  for (int i = 0; i <= numOfPages; i++)
+  {
+    string className = "btn-secondary";
+    if (currentPage == i)
+    {
+      className = "btn-info";
+    }
+
+    <a class="btn  @className" href="?q=@Request.QueryString["q"]&page=@i">@(i + 1)</a>
+  }
+}

@@ -35,7 +35,8 @@ namespace Meldpunt.Controllers
     public ActionResult Index(string q)
     {
       if (String.IsNullOrEmpty(q))
-        return View(new SearchResultModel() {
+        return View(new SearchResultModel()
+        {
           Results = new List<SearchResult>(),
           Total = 0
         });
@@ -108,11 +109,9 @@ namespace Meldpunt.Controllers
 
     #region places
     [Route("Places")]
-    public ActionResult Places()
+    public ActionResult Places(string q, int page = 0)
     {
-      List<PageModel> allPages = pageService.GetAllPagesTree();
-      ViewBag.Locations = LocationUtils.placesByMunicipality.OrderBy(m => m.Key);
-      return View(allPages);
+      return View(searchService.Search(q, SearchTypes.Place, page));
     }
 
     [HttpGet]
@@ -159,11 +158,9 @@ namespace Meldpunt.Controllers
 
     #region pages
     [Route("Pages")]
-    public ActionResult Pages()
+    public ActionResult Pages(string q, int page = 0)
     {
-      List<PageModel> allPages = pageService.GetAllPagesTree();
-      ViewBag.Locations = LocationUtils.placesByMunicipality.OrderBy(m => m.Key);
-      return View(allPages);
+      return View(searchService.Search(q, SearchTypes.Page, page));
     }
 
     [Route("EditPage/{id}")]
@@ -207,14 +204,15 @@ namespace Meldpunt.Controllers
           );
 
           //add back default routes
-          routes.Add(defaultRoute);
           routes.Add(defaultRouteOld);
-
+          routes.Add(defaultRoute);
         }
       }
 
       Response.RemoveOutputCacheItem(savedPage.Url);
       Response.RemoveOutputCacheItem(oldPage.Url);
+
+      searchService.IndexDocument(savedPage.ToLuceneDocument(), savedPage.Guid.ToString());
 
       return Redirect("/admin/editpage/" + savedPage.Guid);
     }

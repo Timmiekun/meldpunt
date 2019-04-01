@@ -8,11 +8,9 @@ namespace Meldpunt.Services
   public interface ISearchService
   {
     void Index();
-    void IndexImages(IEnumerable<ImageModel> images);
-    void IndexObject(Object o);
-    void IndexDocument(Document doc);
+    void IndexItems(IEnumerable<IndexableItem> images);
+    void IndexDocument(Document doc, string id);
     void DeleteDocument(string id);
-
 
     SearchResultModel Search(string q, string type = null, int page = 0);
 

@@ -39,27 +39,12 @@ namespace Meldpunt.Services
 
       foreach (PageModel page in pageService.GetAllPages())
       {
-        Document doc = new Document();
-        doc.Add(new Field("type", SearchTypes.Page, Field.Store.YES, Field.Index.NOT_ANALYZED));
-        doc.Add(new Field("id", page.Guid.ToString(), Field.Store.YES, Field.Index.NOT_ANALYZED));
-        doc.Add(new Field("title", page.Title, Field.Store.YES, Field.Index.ANALYZED));
-        doc.Add(new Field("text", page.FullText, Field.Store.YES, Field.Index.ANALYZED));
-        doc.Add(new Field("url", page.Url, Field.Store.YES, Field.Index.ANALYZED));
-        doc.Add(new Field("all", "all", Field.Store.NO, Field.Index.ANALYZED));
-
-        w.AddDocument(doc);
+        w.AddDocument(page.ToLuceneDocument());
       }
 
       foreach (PlaatsModel plaats in plaatsService.GetAllPlaatsModels())
       {
-        Document doc = new Document();
-        doc.Add(new Field("type", SearchTypes.Place, Field.Store.YES, Field.Index.NOT_ANALYZED));
-        doc.Add(new Field("title", plaats.Gemeentenaam, Field.Store.YES, Field.Index.ANALYZED));
-        doc.Add(new Field("text", plaats.Text, Field.Store.YES, Field.Index.ANALYZED));
-        doc.Add(new Field("url", "ongediertebestrijding-" + plaats.Gemeentenaam.XmlSafe(), Field.Store.YES, Field.Index.ANALYZED));
-        doc.Add(new Field("all", "all", Field.Store.NO, Field.Index.ANALYZED));
-
-        w.AddDocument(doc);
+        w.AddDocument(plaats.ToLuceneDocument());
       }
 
       foreach (var gemeente in LocationUtils.placesByMunicipality)
@@ -82,7 +67,7 @@ namespace Meldpunt.Services
 
     }
 
-    public void IndexImages(IEnumerable<ImageModel> images)
+    public void IndexItems(IEnumerable<IndexableItem> items)
     {
       DirectoryInfo index = new DirectoryInfo(indexPath);
       if (!index.Exists)
@@ -91,7 +76,7 @@ namespace Meldpunt.Services
       dir = FSDirectory.Open(indexPath);
       IndexWriter w = new IndexWriter(dir, new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30), false, IndexWriter.MaxFieldLength.UNLIMITED);
 
-      foreach (ImageModel i in images)
+      foreach (IndexableItem i in items)
       {
         var doc = i.ToLuceneDocument();
 
@@ -104,21 +89,12 @@ namespace Meldpunt.Services
 
     }
 
-    public void IndexObject(Object o)
-    {
-      if (o is ImageModel)
-      {
-        var doc = ((ImageModel)o).ToLuceneDocument();
-        IndexDocument(doc);
-      }
-    }
-
-    public void IndexDocument(Document doc)
+    public void IndexDocument(Document doc, string id)
     {
       dir = FSDirectory.Open(indexPath);
       IndexWriter w = new IndexWriter(dir, new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30), false, IndexWriter.MaxFieldLength.UNLIMITED);
 
-      w.AddDocument(doc);
+      w.UpdateDocument(new Term("id", id), doc);
 
       w.Commit();
       w.Dispose();
@@ -127,14 +103,16 @@ namespace Meldpunt.Services
 
     public void DeleteDocument(string id)
     {
-      dir = FSDirectory.Open(indexPath);
-      IndexWriter w = new IndexWriter(dir, new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30), false, IndexWriter.MaxFieldLength.UNLIMITED);
+      using (dir = FSDirectory.Open(indexPath))
+      {
+        using (IndexWriter w = new IndexWriter(dir, new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30), false, IndexWriter.MaxFieldLength.UNLIMITED))
+        {
 
-      w.DeleteDocuments(new Term("id", id));
+          w.DeleteDocuments(new Term("id", id));
 
-      w.Commit();
-      w.Dispose();
-      dir.Dispose();
+          w.Commit();
+        }
+      }
     }
 
     public SearchResultModel Search(string q, string type = null, int page = 0)
@@ -147,17 +125,17 @@ namespace Meldpunt.Services
       if (String.IsNullOrWhiteSpace(q))
       {
         QueryParser allParser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, "all", new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30));
-        if (type == SearchTypes.Image)
-        {
-          Query all = allParser.Parse("allimages");
-          bq.Add(all, Occur.MUST);
 
-        }
-        else
+        if (!string.IsNullOrWhiteSpace(type))
         {
-          Query all = allParser.Parse("all");
-          bq.Add(all, Occur.MUST);
+          QueryParser typeParser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, "type", new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30));
+          Query typeQuery = typeParser.Parse(type);
+          bq.Add(typeQuery, Occur.MUST);
         }
+
+        Query all = allParser.Parse("all");
+        bq.Add(all, Occur.MUST);
+
       }
       else
       {
@@ -190,7 +168,7 @@ namespace Meldpunt.Services
       }
 
       var sorter = new Sort();
-      if(String.IsNullOrWhiteSpace(q))
+      if (String.IsNullOrWhiteSpace(q))
         sorter.SetSort(new SortField("sortableTitle", SortField.STRING, false));
 
       TopDocs results = searcher.Search(bq, null, resultcount, sorter);

@@ -1,24 +1,24 @@
 ﻿@using Meldpunt.Models;
-@model List<SearchResult>
+@model SearchResultModel
 @{
-  ViewBag.Title = "Zoeken - Meldpunt Ongedierte";    
+  ViewBag.Title = "Zoeken - Meldpunt Ongedierte";
 }
 
-@if (Model.Any())
+@if (Model.Results.Any())
 {
-<ul class="searchResults">
-@foreach (SearchResult result in Model)
-{
-  <li>
-  <article>
-    <h1><a href="@result.Url">@result.Title</a></h1>
-    <p class="url">@result.Url</p>
-    <p>@result.Intro</p>
-    
-  </article>
-  </li>
-}
-</ul>
+  <ul class="searchResults">
+    @foreach (SearchResult result in Model.Results)
+    {
+      <li>
+        <article>
+          <h1><a href="@result.Url">@result.Title</a></h1>
+          <p class="url">@result.Url</p>
+          <p>@result.Intro</p>
+
+        </article>
+      </li>
+    }
+  </ul>
 }
 else
 {

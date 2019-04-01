@@ -301,7 +301,7 @@ namespace Meldpunt.Services
       HtmlDocument hh = new HtmlDocument();
       hh.LoadHtml("<html>" + html + "</html>");
       string text = hh.DocumentNode.InnerText;
-      text += " " + headertitle + " " + id;
+      text += " " + headertitle + " " + id + " " + url;
 
       PageModel p = new PageModel()
       {
