@@ -24,7 +24,7 @@ namespace Meldpunt.Services
     void DeleteImage(string fileName);
 
 
-    void saveImage(HttpPostedFileBase file);
+    string saveImage(HttpPostedFileBase file);
 
   }
 }

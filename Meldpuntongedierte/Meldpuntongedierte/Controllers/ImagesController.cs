@@ -1,6 +1,7 @@
 ﻿using Meldpunt.ActionFilters;
 using Meldpunt.Models;
 using Meldpunt.Services;
+using System;
 using System.Web;
 using System.Web.Mvc;
 
@@ -20,9 +21,9 @@ namespace Meldpunt.Controllers
     }
 
     [Route("images")]
-    public ActionResult Images(string q)
+    public ActionResult Images(string q, int page = 0)
     {
-      var model = searchService.Search(q, SearchTypes.Image);
+      var model = searchService.Search(q, SearchTypes.Image, page);
       return View("~/Views/Admin/Images.cshtml", model);
     }
 
@@ -34,7 +35,13 @@ namespace Meldpunt.Controllers
       // Verify that the user selected a file
       if (file != null && file.ContentLength > 0)
       {
-        imageService.saveImage(file);
+        string fullFileName = imageService.saveImage(file);
+
+        searchService.IndexObject(new ImageModel
+        {
+          Name = fullFileName.Substring(fullFileName.IndexOf("afbeeldingen") + 13),
+          Url = ""
+        });
       }
 
       return RedirectToAction("Images");

@@ -16,19 +16,19 @@ namespace Meldpunt.Controllers
 
     public JsonResult getSuggest(string query)
     {
-      List<SearchResultModel> suggests = searchService.Search(query);
+      IEnumerable<SearchResult> suggests = searchService.Search(query).Results;
       return Json(suggests, JsonRequestBehavior.AllowGet);
     }
 
     public JsonResult getPageSuggest(string query)
     {
-      List<SearchResultModel> suggests = searchService.Search(query, SearchTypes.Page);
+      IEnumerable<SearchResult> suggests = searchService.Search(query, SearchTypes.Page).Results;
       return Json(suggests, JsonRequestBehavior.AllowGet);
     }
 
     public JsonResult getImageSuggest(string query)
     {
-      List<SearchResultModel> suggests = searchService.Search(query, SearchTypes.Image);
+      IEnumerable<SearchResult> suggests = searchService.Search(query, SearchTypes.Image).Results;
       return Json(suggests, JsonRequestBehavior.AllowGet);
     }
   }

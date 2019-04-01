@@ -71,20 +71,15 @@ namespace Meldpunt.Services
       file.Delete();
     }
 
-    public void saveImage(HttpPostedFileBase file)
+    public string saveImage(HttpPostedFileBase file)
     {
       // get filename without path
       var fileName = Path.GetFileName(file.FileName);
 
       // store the file
-      var path = Path.Combine(imageFolder.FullName, fileName);
-      file.SaveAs(path);
-
-      searchService.IndexObject(new ImageModel {
-          Id = Guid.NewGuid(),
-          Name = path.Substring(path.IndexOf("afbeeldingen") + 13),
-          Url = ""
-        });
+      var fullFilePath = Path.Combine(imageFolder.FullName, fileName);
+      file.SaveAs(fullFilePath);
+      return fullFilePath;
     }
   }
 }

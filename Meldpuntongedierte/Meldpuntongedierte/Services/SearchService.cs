@@ -10,7 +10,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Web;
 using System.Web.Hosting;
 
 namespace Meldpunt.Services
@@ -20,7 +19,6 @@ namespace Meldpunt.Services
     private Lucene.Net.Store.Directory dir;
     private IPageService pageService;
     private IPlaatsService plaatsService;
-    private IImageService imageService;
     private string indexPath;
 
     public SearchService(IPageService _pageService, IPlaatsService _plaatsService)
@@ -28,7 +26,6 @@ namespace Meldpunt.Services
       indexPath = HostingEnvironment.MapPath("~/App_data/index");
       pageService = _pageService;
       plaatsService = _plaatsService;
-      //imageService = _imageService;
     }
 
     public void Index()
@@ -85,7 +82,7 @@ namespace Meldpunt.Services
 
     }
 
-    public void IndexImages()
+    public void IndexImages(IEnumerable<ImageModel> images)
     {
       DirectoryInfo index = new DirectoryInfo(indexPath);
       if (!index.Exists)
@@ -94,7 +91,7 @@ namespace Meldpunt.Services
       dir = FSDirectory.Open(indexPath);
       IndexWriter w = new IndexWriter(dir, new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30), false, IndexWriter.MaxFieldLength.UNLIMITED);
 
-      foreach (ImageModel i in imageService.GetAllImages())
+      foreach (ImageModel i in images)
       {
         var doc = ImageModelToDocument(i);
 
@@ -109,7 +106,7 @@ namespace Meldpunt.Services
 
     public void IndexObject(Object o)
     {
-      if(o is ImageModel)
+      if (o is ImageModel)
       {
         var doc = ImageModelToDocument((ImageModel)o);
         IndexDocument(doc);
@@ -123,6 +120,7 @@ namespace Meldpunt.Services
       doc.Add(new Field("type", SearchTypes.Image, Field.Store.YES, Field.Index.NOT_ANALYZED));
       doc.Add(new Field("id", i.Id.ToString(), Field.Store.YES, Field.Index.NOT_ANALYZED));
       doc.Add(new Field("title", i.Name, Field.Store.YES, Field.Index.ANALYZED));
+      doc.Add(new Field("sortableTitle", i.Name.ToLower(), Field.Store.YES, Field.Index.NOT_ANALYZED));
       doc.Add(new Field("text", i.Name, Field.Store.YES, Field.Index.ANALYZED));
       doc.Add(new Field("all", "allimages", Field.Store.NO, Field.Index.ANALYZED));
 
@@ -141,12 +139,12 @@ namespace Meldpunt.Services
       dir.Dispose();
     }
 
-    public List<SearchResultModel> Search(string q, string type = null)
+    public SearchResultModel Search(string q, string type = null, int page = 0)
     {
       dir = FSDirectory.Open(indexPath);
       IndexSearcher searcher = new IndexSearcher(dir);
       BooleanQuery bq = new BooleanQuery();
-      int resultcount = 50;
+      int resultcount = 2000;
 
       if (String.IsNullOrWhiteSpace(q))
       {
@@ -155,13 +153,13 @@ namespace Meldpunt.Services
         {
           Query all = allParser.Parse("allimages");
           bq.Add(all, Occur.MUST);
+
         }
         else
         {
           Query all = allParser.Parse("all");
           bq.Add(all, Occur.MUST);
         }
-        resultcount = 50;
       }
       else
       {
@@ -193,17 +191,25 @@ namespace Meldpunt.Services
         }
       }
 
-      TopDocs results = searcher.Search(bq, resultcount);
+      var sorter = new Sort();
+      if(String.IsNullOrWhiteSpace(q))
+        sorter.SetSort(new SortField("sortableTitle", SortField.STRING, false));
 
-      List<SearchResultModel> model = docsToModel(searcher, results);
+      TopDocs results = searcher.Search(bq, null, resultcount, sorter);
+
+      var model = new SearchResultModel
+      {
+        Results = docsToModel(searcher, results.ScoreDocs.Skip(page * SearchResultModel.PageSize).Take(SearchResultModel.PageSize)),
+        Total = results.TotalHits
+      };
 
       return model;
     }
 
-    private static List<SearchResultModel> docsToModel(IndexSearcher searcher, TopDocs results)
+    private static List<SearchResult> docsToModel(IndexSearcher searcher, IEnumerable<ScoreDoc> docs)
     {
-      List<SearchResultModel> model = new List<SearchResultModel>();
-      foreach (ScoreDoc d in results.ScoreDocs)
+      List<SearchResult> model = new List<SearchResult>();
+      foreach (ScoreDoc d in docs)
       {
         Document result = searcher.Doc(d.Doc);
         String intro = result.Get("text");
@@ -212,7 +218,7 @@ namespace Meldpunt.Services
           intro = intro.TruncateAtWord(200);
           intro += " ...";
         }
-        model.Add(new SearchResultModel
+        model.Add(new SearchResult
         {
           Title = result.Get("title"),
           Id = result.Get("id"),

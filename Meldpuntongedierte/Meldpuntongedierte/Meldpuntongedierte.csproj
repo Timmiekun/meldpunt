@@ -144,6 +144,7 @@
     <Compile Include="Models\ImageModel.cs" />
     <Compile Include="Models\MeldpuntContext.cs" />
     <Compile Include="Models\RedirectModel.cs" />
+    <Compile Include="Models\SearchResult.cs" />
     <Compile Include="Models\SearchResultModel.cs" />
     <Compile Include="Models\PlaatsModel.cs" />
     <Compile Include="Models\MailModel.cs" />
@@ -328,13 +329,13 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>5175</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:5175/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>False</UseCustomServer>
+          <UseCustomServer>True</UseCustomServer>
           <CustomServerUrl>http://meldpunt.localtest.me</CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>

@@ -1,11 +1,11 @@
-﻿namespace Meldpunt.Models
+﻿using System.Collections.Generic;
+
+namespace Meldpunt.Models
 {
   public class SearchResultModel
   {
-    public string Id { get; set; }
-    public string Title { get;set; }
-    public string Url { get; set; }
-    public string Intro { get; set; }
-    public string Type { get; set; }
+    public IEnumerable<SearchResult> Results;
+    public int Total;
+    public static int PageSize = 50;
   }
 }

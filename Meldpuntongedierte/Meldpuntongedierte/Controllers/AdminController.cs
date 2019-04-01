@@ -35,7 +35,10 @@ namespace Meldpunt.Controllers
     public ActionResult Index(string q)
     {
       if (String.IsNullOrEmpty(q))
-        return View(new List<SearchResultModel>());
+        return View(new SearchResultModel() {
+          Results = new List<SearchResult>(),
+          Total = 0
+        });
 
       var model = searchService.Search(q);
       return View(model);
