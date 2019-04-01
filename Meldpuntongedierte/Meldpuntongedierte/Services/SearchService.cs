@@ -93,7 +93,7 @@ namespace Meldpunt.Services
 
       foreach (ImageModel i in images)
       {
-        var doc = ImageModelToDocument(i);
+        var doc = i.ToLuceneDocument();
 
         w.AddDocument(doc);
       }
@@ -108,23 +108,9 @@ namespace Meldpunt.Services
     {
       if (o is ImageModel)
       {
-        var doc = ImageModelToDocument((ImageModel)o);
+        var doc = ((ImageModel)o).ToLuceneDocument();
         IndexDocument(doc);
       }
-    }
-
-    public Document ImageModelToDocument(ImageModel i)
-    {
-      Document doc = new Document();
-
-      doc.Add(new Field("type", SearchTypes.Image, Field.Store.YES, Field.Index.NOT_ANALYZED));
-      doc.Add(new Field("id", i.Id.ToString(), Field.Store.YES, Field.Index.NOT_ANALYZED));
-      doc.Add(new Field("title", i.Name, Field.Store.YES, Field.Index.ANALYZED));
-      doc.Add(new Field("sortableTitle", i.Name.ToLower(), Field.Store.YES, Field.Index.NOT_ANALYZED));
-      doc.Add(new Field("text", i.Name, Field.Store.YES, Field.Index.ANALYZED));
-      doc.Add(new Field("all", "allimages", Field.Store.NO, Field.Index.ANALYZED));
-
-      return doc;
     }
 
     public void IndexDocument(Document doc)
@@ -133,6 +119,18 @@ namespace Meldpunt.Services
       IndexWriter w = new IndexWriter(dir, new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30), false, IndexWriter.MaxFieldLength.UNLIMITED);
 
       w.AddDocument(doc);
+
+      w.Commit();
+      w.Dispose();
+      dir.Dispose();
+    }
+
+    public void DeleteDocument(string id)
+    {
+      dir = FSDirectory.Open(indexPath);
+      IndexWriter w = new IndexWriter(dir, new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30), false, IndexWriter.MaxFieldLength.UNLIMITED);
+
+      w.DeleteDocuments(new Term("id", id));
 
       w.Commit();
       w.Dispose();

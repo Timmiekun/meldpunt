@@ -1,6 +1,7 @@
 ﻿using Meldpunt.ActionFilters;
 using Meldpunt.Models;
 using Meldpunt.Services;
+using Meldpunt.Utils;
 using System;
 using System.Web;
 using System.Web.Mvc;
@@ -57,6 +58,7 @@ namespace Meldpunt.Controllers
     public ActionResult DeleteImage(string filename)
     {
       imageService.DeleteImage(filename);
+      searchService.DeleteDocument(filename.XmlSafe());
       return RedirectToAction("Images");
     }
   }

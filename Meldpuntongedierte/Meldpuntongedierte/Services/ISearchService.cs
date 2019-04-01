@@ -10,8 +10,10 @@ namespace Meldpunt.Services
     void Index();
     void IndexImages(IEnumerable<ImageModel> images);
     void IndexObject(Object o);
-    Document ImageModelToDocument(ImageModel i);
     void IndexDocument(Document doc);
+    void DeleteDocument(string id);
+
+
     SearchResultModel Search(string q, string type = null, int page = 0);
 
   }
