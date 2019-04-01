@@ -1,6 +1,6 @@
 ﻿@using Meldpunt.Models;
 @using Meldpunt.Utils;
-@model IEnumerable<SearchResultModel>
+@model SearchResultModel
 @{
   /**/
 
@@ -13,9 +13,7 @@
   <link rel="stylesheet" href="/css/admin-images.css?v=@ViewBag.AppVersion">
 }
 <h1>Beheer afbeeldingen</h1>
-<form class="on-page-search" method="get">
-  <input class="form-control" type="text" name="q" placeholder="Zoek afbeeldingen" value="@Request.QueryString["q"]" />
-</form>
+
 
 @if (!ViewData.ModelState.IsValid)
 {
@@ -25,18 +23,29 @@
 }
 
 
-<form method="post" class="panel" enctype="multipart/form-data">
-  <div class="form-group">
-    <div class="custom-file">
-      <input type="file" class="custom-file-input" id="file" name="file" required>
-      <label class="custom-file-label" for="file">Upload nieuwe afbeelding...</label>
-    </div>
-    <img id="imagePreview" class="imagePreview float-right" src="~/Images/admin/upload_image.png" alt="upload image" />
-  </div>
-  <div class="form-group">
-    <button class="btn btn-primary" type="submit">Upload</button>
-  </div>
+<form class="search-form" method="get">
+  <input class="form-control" type="text" name="q" placeholder="Zoek afbeeldingen" value="@Request.QueryString["q"]" />
 </form>
+
+<p>@Model.Total afbeeldingen</p>
+
+@{
+  int numOfPages = Model.Total / SearchResultModel.PageSize;
+  for (int i = 0; i <= numOfPages; i++)
+  {
+    string className = "btn-secondary";
+    int currentPage = -1;
+    if (Int32.TryParse(Request.QueryString["page"], out currentPage))
+    {
+      if (currentPage == i)
+      {
+        className = "btn-info";
+      }
+    }
+    <a class="btn  @className" href="?q=@Request.QueryString["q"]&page=@i">@(i + 1)</a>
+  }
+}
+
 <div class="list-item list-item-header">
   <div class="name">Naam</div>
   <div class="url">Url</div>
@@ -44,13 +53,13 @@
   <div class="actions"></div>
 </div>
 
-@foreach (SearchResultModel p in Model)
+@foreach (SearchResult p in Model.Results)
 {
   @pageItem(p);
 }
 
 
-@helper pageItem(SearchResultModel image)
+@helper pageItem(SearchResult image)
 {
   <div class="list-item">
     <div class="name">@image.Title</div>
@@ -58,4 +67,21 @@
     <div class="image"><a href="/image?name=@image.Title&width=80&height=45"><img src="/image?name=@image.Title&width=80&height=45" /></a></div>
     <div class="actions"><a class="btn btn-danger" data-action-confirm href="/admin/deleteImage?filename=@image.Title">Verwijderen</a></div>
   </div>
+}
+
+
+@section submenu{
+  <h2>Upload nieuwe afbeelding</h2>
+  <form method="post" class="menu-panel" enctype="multipart/form-data">
+    <div class="form-group">
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" id="file" name="file" required>
+        <label class="custom-file-label" for="file">Uploaden...</label>
+      </div>
+      <img id="imagePreview" class="imagePreview float-right" src="~/Images/admin/upload_image.png" alt="upload image" />
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary" type="submit">Upload</button>
+    </div>
+  </form>
 }

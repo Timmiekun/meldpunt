@@ -19,18 +19,15 @@ em {
 
 h1 {
   margin: -20px -20px 20px -20px;
-  padding: 20px;
-  font-size: 200%;
+  padding: 10px;
+  font-size: 125%;
   color: #4f4f4f;
   font-weight: bold;
-  background-color: #ababab1f;
+  background-color: #f0f0f0f2;
   border-bottom: 1px solid #d2d2d2;
-}
-
-.on-page-search {
-  position: absolute;
-  top: 16px;
-  right: 20px;
+  position: sticky;
+  top: 0px;
+  z-index: 10;
 }
 
 h2 {
@@ -335,24 +332,6 @@ h3 {
 }
 
   .actions .btn {
-    margin-right: 10px;
-  }
-
-.toolbar {
-  border: 1px solid #ced4da;
-  border-radius: 5px;
-  padding: 5px;
-  overflow: hidden;
-  box-shadow: 0px 2px 7px 0px #b8b8b8;
-  background-color: #f9f9f9fa;
-  position: sticky;
-  top: 5px;
-  right: -15px;
-  z-index: 99;
-  text-align: right;
-}
-
-  .toolbar .btn {
     margin-right: 10px;
   }
 

@@ -15,25 +15,33 @@ namespace Meldpunt.Controllers
   [RoutePrefix("admin")]
   public class AdminController : Controller
   {
-    private PageService pageService;
-    private PlaatsService plaatsService;
+    private IPageService pageService;
+    private IPlaatsService plaatsService;
     private RedirectService redirectsService;
-    private ImageService imageService;
+    private IImageService imageService;
+    private ISearchService searchService;
 
-    public AdminController()
+    public AdminController(IPageService _pageService, IPlaatsService _plaatsService, ISearchService _searchService, IImageService _imageService)
     {
-      pageService = new PageService();
-      plaatsService = new PlaatsService();
+      pageService = _pageService;
+      plaatsService = _plaatsService;
+      searchService = _searchService;
       redirectsService = new RedirectService();
-      imageService = new ImageService();
+      imageService = _imageService;
+
     }
 
     [Route]
-    public ActionResult Index()
+    public ActionResult Index(string q)
     {
-      List<PageModel> allPages = pageService.GetAllPagesTree();
-      ViewBag.Locations = LocationUtils.placesByMunicipality.OrderBy(m => m.Key);
-      return View(allPages);
+      if (String.IsNullOrEmpty(q))
+        return View(new SearchResultModel() {
+          Results = new List<SearchResult>(),
+          Total = 0
+        });
+
+      var model = searchService.Search(q);
+      return View(model);
     }
 
     [Route("settings")]
@@ -45,14 +53,14 @@ namespace Meldpunt.Controllers
     [Route("updateimages")]
     public ActionResult UpdateImages()
     {
-      pageService.updateImages();
+      //pageService.updateImages();
       return new EmptyResult();
     }
 
     [Route("addguids")]
     public ActionResult AddGuids()
     {
-      pageService.AddGuids();
+      //pageService.AddGuids();
       return new EmptyResult();
     }
 
@@ -181,7 +189,7 @@ namespace Meldpunt.Controllers
         using (routes.GetWriteLock())
         {
           //get last route (default).  ** by convention, it is the standard route.
-          var defaultRoute = routes.Last();          
+          var defaultRoute = routes.Last();
           routes.Remove(defaultRoute);
 
           var defaultRouteOld = routes.Last();
@@ -196,12 +204,12 @@ namespace Meldpunt.Controllers
             savedPage.Guid.ToString(), // Route name
             savedPage.Url.TrimStart('/'), // URL with parameters
             new { controller = "Home", action = "GetPage", guid = page.Guid } // Parameter defaults
-          );          
+          );
 
           //add back default routes
           routes.Add(defaultRoute);
           routes.Add(defaultRouteOld);
-          
+
         }
       }
 
@@ -211,20 +219,19 @@ namespace Meldpunt.Controllers
       return Redirect("/admin/editpage/" + savedPage.Guid);
     }
 
-    [Route("DeletePage")]
+    [Route("DeletePage/{id}")]
     public ActionResult DeletePage(string id)
     {
-      var page = pageService.GetPage(id);
+      var page = pageService.GetPageByGuid(id);
       pageService.deletePage(id);
-      if (String.IsNullOrWhiteSpace(page.ParentId))
-        return Redirect("/admin");
-      return Redirect("/admin/editpage/" + page.ParentId);
+
+      return Redirect("/admin/pages");
     }
 
     [Route("NewPage")]
     public ActionResult NewPage(string parentId)
     {
-      var newPage = pageService.newPage(parentId);
+      var newPage = pageService.newPage();
       return RedirectToAction("editpage", new { id = newPage.Id });
     }
     #endregion

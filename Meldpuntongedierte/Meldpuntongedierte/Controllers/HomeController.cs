@@ -12,13 +12,13 @@ namespace Meldpunt.Controllers
  
   public class HomeController : Controller
   {
-    private PageService pageService;
-    private PlaatsService plaatsService;
+    private IPageService pageService;
+    private IPlaatsService plaatsService;
 
-    public HomeController()
+    public HomeController(IPlaatsService _plaatsService, IPageService _pageService)
     {
-      pageService = new PageService();
-      plaatsService = new PlaatsService();
+      pageService = _pageService;
+      plaatsService = _plaatsService;
     }
 
     [OutputCache(Duration = 10, VaryByParam = "none")]
@@ -59,7 +59,7 @@ namespace Meldpunt.Controllers
           return View("index", model);
         }
         
-        PageModel parent = pageService.GetPage(model.ParentId);
+        PageModel parent = pageService.GetPageByGuid(model.ParentId);
         if (parent != null)
           ViewBag.SubNav = parent.SubPages;
 

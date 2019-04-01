@@ -1,6 +1,6 @@
 ﻿@using Meldpunt.Models;
 @using Meldpunt.Utils;
-@model IEnumerable<SearchResultModel>
+@model IEnumerable<SearchResult>
 @{
   /**/
 
@@ -42,7 +42,7 @@
   <div class="actions"></div>
 </div>
 
-@foreach (SearchResultModel p in Model)
+@foreach (SearchResult p in Model)
 {
   @pageItem(p);
 }
@@ -70,7 +70,7 @@
 </div>
 
 
-@helper pageItem(SearchResultModel image)
+@helper pageItem(SearchResult image)
 {
   <div class="list-item">
     <div class="name">@image.Title</div>

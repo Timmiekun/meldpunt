@@ -15,7 +15,7 @@
     <AssemblyName>Meldpuntongedierte</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -73,6 +73,9 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -106,11 +109,25 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="Unity.Abstractions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Abstractions.4.1.1\lib\net46\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.10.0.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Container.5.10.0\lib\net46\Unity.Container.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mvc, Version=5.10.0.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Mvc.5.10.0\lib\net46\Unity.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionFilters\RedirectActionFilter.cs" />
     <Compile Include="ActionFilters\MustBeAdminActionFilter.cs" />
     <Compile Include="ActionFilters\GlobalActionFilter.cs" />
+    <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Controllers\ImagesController.cs" />
     <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\ApiController.cs" />
@@ -127,12 +144,17 @@
     <Compile Include="Models\ImageModel.cs" />
     <Compile Include="Models\MeldpuntContext.cs" />
     <Compile Include="Models\RedirectModel.cs" />
+    <Compile Include="Models\SearchResult.cs" />
     <Compile Include="Models\SearchResultModel.cs" />
     <Compile Include="Models\PlaatsModel.cs" />
     <Compile Include="Models\MailModel.cs" />
     <Compile Include="Models\PageModel.cs" />
+    <Compile Include="Services\IImageService.cs" />
     <Compile Include="Services\ImageService.cs" />
+    <Compile Include="Services\IPlaatsService.cs" />
+    <Compile Include="Services\IPageService.cs" />
     <Compile Include="Services\RedirectService.cs" />
+    <Compile Include="Services\ISearchService.cs" />
     <Compile Include="Services\SearchService.cs" />
     <Compile Include="Services\PlaatsService.cs" />
     <Compile Include="Services\PageService.cs" />
@@ -268,6 +290,7 @@
     <Content Include="Views\ImageModels\Index.cshtml" />
     <Content Include="Views\Admin\Settings.cshtml" />
     <Content Include="Views\Shared\Modal.cshtml" />
+    <Content Include="Views\Admin\ImageResizeHelp.cshtml" />
     <None Include="Volksgezondheid.pdf" />
     <None Include="Web.azure.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -310,8 +333,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>5175</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>
-          </IISUrl>
+          <IISUrl>http://localhost:5175/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>True</UseCustomServer>
           <CustomServerUrl>http://meldpunt.localtest.me</CustomServerUrl>

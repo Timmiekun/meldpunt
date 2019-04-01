@@ -4,18 +4,20 @@ using Meldpunt.Utils;
 using System;
 using System.Collections.Generic;
 using System.Web;
+using System.Web.Hosting;
 using System.Xml;
 
 namespace Meldpunt.Services
 {
-  public class PageService
+  public class PageService : IPageService
   {
     private XmlDocument pagesDoc;
     string pageFile = "~/App_Data/pages.xml";
 
+
     public PageService()
     {
-      pageFile = HttpContext.Current.Server.MapPath(pageFile);
+      pageFile = HostingEnvironment.MapPath(pageFile);
       pagesDoc = new XmlDocument();
       pagesDoc.Load(pageFile);
     }
@@ -129,12 +131,14 @@ namespace Meldpunt.Services
       {
         // parent changed, move element
         XmlElement parent = (XmlElement)pagesDoc.SelectSingleNode("//page[@guid='" + p.ParentId + "']");
+        if (parent == null)
+          parent = (XmlElement)pagesDoc.SelectSingleNode("//page[@id='home']");
 
         //remove page
         page.ParentNode.RemoveChild(page);
 
         //append to new parent
-        if (parent.Attributes["id"].Value == "home")
+        if (parent.Attributes["id"]?.Value == "home")
         {
           pagesDoc.DocumentElement.AppendChild(page);
         }
@@ -197,17 +201,15 @@ namespace Meldpunt.Services
       return pageModels;
     }
 
-    public PageModel newPage(string parentId)
+    public PageModel newPage()
     {
-      var parent = (XmlElement)pagesDoc.SelectSingleNode("//page[@id='" + parentId + "']");
-      var page = CreateNewPage(parent, "pagina-" + DateTime.Now.ToString("yyyyddMMHHss"));
+      var page = CreateNewPage();
       return XmlToModel(page);
-
     }
 
-    public void deletePage(string pageid)
+    public void deletePage(string guid)
     {
-      var page = pagesDoc.SelectSingleNode("//page[@id='" + pageid + "']");
+      var page = pagesDoc.SelectSingleNode("//page[@guid='" + guid + "']");
       if (page != null)
       {
         page.ParentNode.RemoveChild(page);
@@ -215,39 +217,24 @@ namespace Meldpunt.Services
       }
     }
 
-    private XmlElement CreateNewPage(XmlElement parent, string id)
+    private XmlElement CreateNewPage()
     {
+      var guid = Guid.NewGuid().ToString();
       var page = pagesDoc.CreateElement("page");
-      page.SetAttribute("guid", Guid.NewGuid().ToString());
+      page.SetAttribute("guid", guid);
       XmlElement content = pagesDoc.CreateElement("content");
       XmlElement metaDescription = pagesDoc.CreateElement("metadescription");
       XmlElement title = pagesDoc.CreateElement("title");
       content.InnerXml = "";
       metaDescription.InnerText = "";
-      title.InnerText = id;
+      title.InnerText = "Nieuwe pagina";
       page.AppendChild(content);
       page.AppendChild(metaDescription);
       page.AppendChild(title);
-      page.SetAttribute("id", id);
+      page.SetAttribute("id", guid);
       page.SetAttribute("lastmodified", DateTime.Now.ToString("dd-MM-yyyy hh:mm"));
 
-      if (parent == null)
-      {
-        pagesDoc.DocumentElement.AppendChild(page);
-      }
-      else
-      {
-
-        XmlNode pages = parent.SelectSingleNode("pages");
-        if (pages != null)
-          pages.AppendChild(page);
-        else
-        {
-          pages = pagesDoc.CreateElement("pages");
-          pages.AppendChild(page);
-          parent.AppendChild(pages);
-        }
-      }
+      pagesDoc.DocumentElement.AppendChild(page);
       pagesDoc.Save(pageFile);
 
       return page;

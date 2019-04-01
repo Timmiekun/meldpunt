@@ -1,24 +1,32 @@
 ﻿using ImageResizer;
 using Meldpunt.Models;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Web;
+using System.Web.Hosting;
 
 namespace Meldpunt.Services
 {
-  public class ImageService
+  public class ImageService : IImageService
   {
-    string imagesDir = HttpContext.Current.Server.MapPath("~/afbeeldingen");
-    string cacheDir = HttpContext.Current.Server.MapPath("~/imagecache");
+    string imagesDir;
+    string cacheDir;
+
     DirectoryInfo imageFolder;
     DirectoryInfo cacheFolder;
 
-    public ImageService()
+    private ISearchService searchService;
+
+    public ImageService(ISearchService _searchService)
     {
+      string imagesDir = HostingEnvironment.MapPath("~/afbeeldingen");
+      string cacheDir = HostingEnvironment.MapPath("~/imagecache");
       imageFolder = new DirectoryInfo(imagesDir);
       cacheFolder = new DirectoryInfo(cacheDir);
+      searchService = _searchService;
 
       if (!cacheFolder.Exists)
         cacheFolder.Create();
@@ -63,14 +71,15 @@ namespace Meldpunt.Services
       file.Delete();
     }
 
-    public void saveImage(HttpPostedFileBase file)
+    public string saveImage(HttpPostedFileBase file)
     {
       // get filename without path
       var fileName = Path.GetFileName(file.FileName);
 
       // store the file
-      var path = Path.Combine(imageFolder.FullName, fileName);
-      file.SaveAs(path);
+      var fullFilePath = Path.Combine(imageFolder.FullName, fileName);
+      file.SaveAs(fullFilePath);
+      return fullFilePath;
     }
   }
 }

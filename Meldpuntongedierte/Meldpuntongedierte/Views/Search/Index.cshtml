@@ -1,5 +1,5 @@
 ﻿@using Meldpunt.Models;
-@model List<SearchResultModel>
+@model List<SearchResult>
 @{
   ViewBag.Title = "Zoeken - Meldpunt Ongedierte";    
 }
@@ -7,7 +7,7 @@
 @if (Model.Any())
 {
 <ul class="searchResults">
-@foreach (SearchResultModel result in Model)
+@foreach (SearchResult result in Model)
 {
   <li>
   <article>

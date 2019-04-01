@@ -1,6 +1,6 @@
 ﻿@using Meldpunt.Models;
 @using Meldpunt.Utils;
-@model List<PageModel>
+@model SearchResultModel
 @{
   ViewBag.Title = "Admin";
   var locations = ViewBag.Locations;
@@ -8,4 +8,13 @@
 }
 
 <h1>Zoek pagina of plaats</h1>
-<input type="text" class="form-control" placeholder="b.v. Wespen of Amsterdam" />
+<form method="get">
+  <input type="text" class="form-control" placeholder="b.v. Wespen of Amsterdam" name="q" value="@Request.QueryString["q"]" />
+</form>
+@foreach (var result in Model.Results)
+{
+  <div class="list-item">
+    <div class="title"><a class="link-to-edit" href="/admin/@("edit" + result.Type)/@result.Id">@result.Title</a></div>
+    <div class="url">@result.Url</div>
+  </div>
+}

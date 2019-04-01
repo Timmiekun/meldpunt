@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Web;
 using System.Web.Mvc;
@@ -12,11 +11,11 @@ namespace Meldpunt.Controllers
   [RoutePrefix("image")]
   public class ImageController : Controller
   {
-    private ImageService imageService;
+    private IImageService imageService;
 
-    public ImageController()
+    public ImageController(IImageService _imageService)
     {
-      imageService = new ImageService();
+      imageService = _imageService;
     }
 
     [Route]
