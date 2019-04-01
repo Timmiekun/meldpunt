@@ -9,13 +9,13 @@ namespace Meldpunt.Controllers
 {
   public class SearchController : Controller
   {
-    private PageService pageService;
-    private SearchService searchService;
+    private IPageService pageService;
+    private ISearchService searchService;
 
-    public SearchController()
+    public SearchController(IPageService _pageService, ISearchService _searchService)
     {
       pageService = new PageService();
-      searchService = new SearchService();
+      searchService = _searchService;
     }
 
     [MustBeAdmin]

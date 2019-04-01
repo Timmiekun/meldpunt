@@ -1,4 +1,5 @@
 ﻿using Meldpunt.ActionFilters;
+using Meldpunt.Models;
 using Meldpunt.Services;
 using System.Web;
 using System.Web.Mvc;
@@ -9,13 +10,13 @@ namespace Meldpunt.Controllers
   [RoutePrefix("admin")]
   public class ImagesController : Controller
   {
-    private ImageService imageService;
-    private SearchService searchService;
+    private IImageService imageService;
+    private ISearchService searchService;
 
-    public ImagesController()
+    public ImagesController(ISearchService _searchService , IImageService _imageService)
     {
-      imageService = new ImageService();
-      searchService = new SearchService();
+      imageService = _imageService;
+      searchService = _searchService;
     }
 
     [Route("images")]

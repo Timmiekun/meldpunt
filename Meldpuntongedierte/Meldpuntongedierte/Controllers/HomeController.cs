@@ -12,13 +12,13 @@ namespace Meldpunt.Controllers
  
   public class HomeController : Controller
   {
-    private PageService pageService;
-    private PlaatsService plaatsService;
+    private IPageService pageService;
+    private IPlaatsService plaatsService;
 
-    public HomeController()
+    public HomeController(IPlaatsService _plaatsService, IPageService _pageService)
     {
-      pageService = new PageService();
-      plaatsService = new PlaatsService();
+      pageService = _pageService;
+      plaatsService = _plaatsService;
     }
 
     [OutputCache(Duration = 10, VaryByParam = "none")]

@@ -4,18 +4,20 @@ using Meldpunt.Utils;
 using System;
 using System.Collections.Generic;
 using System.Web;
+using System.Web.Hosting;
 using System.Xml;
 
 namespace Meldpunt.Services
 {
-  public class PageService
+  public class PageService : IPageService
   {
     private XmlDocument pagesDoc;
     string pageFile = "~/App_Data/pages.xml";
 
+
     public PageService()
     {
-      pageFile = HttpContext.Current.Server.MapPath(pageFile);
+      pageFile = HostingEnvironment.MapPath(pageFile);
       pagesDoc = new XmlDocument();
       pagesDoc.Load(pageFile);
     }
@@ -129,7 +131,7 @@ namespace Meldpunt.Services
       {
         // parent changed, move element
         XmlElement parent = (XmlElement)pagesDoc.SelectSingleNode("//page[@guid='" + p.ParentId + "']");
-        if(parent == null)
+        if (parent == null)
           parent = (XmlElement)pagesDoc.SelectSingleNode("//page[@id='home']");
 
         //remove page
@@ -219,7 +221,7 @@ namespace Meldpunt.Services
     {
       var guid = Guid.NewGuid().ToString();
       var page = pagesDoc.CreateElement("page");
-      page.SetAttribute("guid", guid );
+      page.SetAttribute("guid", guid);
       XmlElement content = pagesDoc.CreateElement("content");
       XmlElement metaDescription = pagesDoc.CreateElement("metadescription");
       XmlElement title = pagesDoc.CreateElement("title");

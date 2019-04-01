@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Globalization;
-using System.Web.Mvc;
 using System.Linq;
-using System.Web.Security;
 using System.Xml;
 using Meldpunt.Models;
 using System.Web;
 using Meldpunt.Utils;
+using System.Web.Hosting;
 
 namespace Meldpunt.Services
 {
-  public class PlaatsService
+  public class PlaatsService : IPlaatsService
   {
     private XmlDocument plaatsenDoc;
     string plaatsFile = "~/App_Data/plaatsen.xml";
@@ -21,7 +19,7 @@ namespace Meldpunt.Services
 
     public PlaatsService()
     {
-      plaatsFile = HttpContext.Current.Server.MapPath(plaatsFile);
+      plaatsFile = HostingEnvironment.MapPath(plaatsFile);
       plaatsenDoc = new XmlDocument();
       plaatsenDoc.Load(plaatsFile);
 
@@ -142,5 +140,7 @@ namespace Meldpunt.Services
       }
 
     }
+
+   
   }
 }

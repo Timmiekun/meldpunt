@@ -11,24 +11,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
+using System.Web.Hosting;
 
 namespace Meldpunt.Services
 {
-  public class SearchService
+  public class SearchService : ISearchService
   {
     private Lucene.Net.Store.Directory dir;
-    private PageService pageService;
-    private PlaatsService plaatsService;
-    private ImageService imageService;
+    private IPageService pageService;
+    private IPlaatsService plaatsService;
+    private IImageService imageService;
     private string indexPath;
 
-    public SearchService()
+    public SearchService(IPageService _pageService, IPlaatsService _plaatsService)
     {
-      indexPath = HttpContext.Current.Server.MapPath("~/App_data/index");
-      pageService = new PageService();
-      plaatsService = new PlaatsService();
-      imageService = new ImageService();
-
+      indexPath = HostingEnvironment.MapPath("~/App_data/index");
+      pageService = _pageService;
+      plaatsService = _plaatsService;
+      //imageService = _imageService;
     }
 
     public void Index()
@@ -96,12 +96,7 @@ namespace Meldpunt.Services
 
       foreach (ImageModel i in imageService.GetAllImages())
       {
-        Document doc = new Document();
-        doc.Add(new Field("type", SearchTypes.Image, Field.Store.YES, Field.Index.NOT_ANALYZED));
-        doc.Add(new Field("id", i.Id.ToString(), Field.Store.YES, Field.Index.NOT_ANALYZED));
-        doc.Add(new Field("title", i.Name, Field.Store.YES, Field.Index.ANALYZED));
-        doc.Add(new Field("text", i.Name, Field.Store.YES, Field.Index.ANALYZED));
-        doc.Add(new Field("all", "allimages", Field.Store.NO, Field.Index.ANALYZED));
+        var doc = ImageModelToDocument(i);
 
         w.AddDocument(doc);
       }
@@ -110,6 +105,40 @@ namespace Meldpunt.Services
       w.Dispose();
       dir.Dispose();
 
+    }
+
+    public void IndexObject(Object o)
+    {
+      if(o is ImageModel)
+      {
+        var doc = ImageModelToDocument((ImageModel)o);
+        IndexDocument(doc);
+      }
+    }
+
+    public Document ImageModelToDocument(ImageModel i)
+    {
+      Document doc = new Document();
+
+      doc.Add(new Field("type", SearchTypes.Image, Field.Store.YES, Field.Index.NOT_ANALYZED));
+      doc.Add(new Field("id", i.Id.ToString(), Field.Store.YES, Field.Index.NOT_ANALYZED));
+      doc.Add(new Field("title", i.Name, Field.Store.YES, Field.Index.ANALYZED));
+      doc.Add(new Field("text", i.Name, Field.Store.YES, Field.Index.ANALYZED));
+      doc.Add(new Field("all", "allimages", Field.Store.NO, Field.Index.ANALYZED));
+
+      return doc;
+    }
+
+    public void IndexDocument(Document doc)
+    {
+      dir = FSDirectory.Open(indexPath);
+      IndexWriter w = new IndexWriter(dir, new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30), false, IndexWriter.MaxFieldLength.UNLIMITED);
+
+      w.AddDocument(doc);
+
+      w.Commit();
+      w.Dispose();
+      dir.Dispose();
     }
 
     public List<SearchResultModel> Search(string q, string type = null)

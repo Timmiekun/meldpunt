@@ -7,11 +7,11 @@ namespace Meldpunt.Controllers
 {
   public class ApiController : Controller
   {
-    private SearchService searchService;
+    private ISearchService searchService;
 
-    public ApiController()
+    public ApiController(ISearchService _searchService)
     {
-      searchService = new SearchService();
+      searchService = _searchService;
     }
 
     public JsonResult getSuggest(string query)

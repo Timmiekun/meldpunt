@@ -15,19 +15,20 @@ namespace Meldpunt.Controllers
   [RoutePrefix("admin")]
   public class AdminController : Controller
   {
-    private PageService pageService;
-    private PlaatsService plaatsService;
+    private IPageService pageService;
+    private IPlaatsService plaatsService;
     private RedirectService redirectsService;
-    private ImageService imageService;
-    private SearchService searchService;
+    private IImageService imageService;
+    private ISearchService searchService;
 
-    public AdminController()
+    public AdminController(IPageService _pageService, IPlaatsService _plaatsService, ISearchService _searchService, IImageService _imageService)
     {
-      pageService = new PageService();
-      plaatsService = new PlaatsService();
+      pageService = _pageService;
+      plaatsService = _plaatsService;
+      searchService = _searchService;
       redirectsService = new RedirectService();
-      imageService = new ImageService();
-      searchService = new SearchService();
+      imageService = _imageService;
+
     }
 
     [Route]
@@ -49,14 +50,14 @@ namespace Meldpunt.Controllers
     [Route("updateimages")]
     public ActionResult UpdateImages()
     {
-      pageService.updateImages();
+      //pageService.updateImages();
       return new EmptyResult();
     }
 
     [Route("addguids")]
     public ActionResult AddGuids()
     {
-      pageService.AddGuids();
+      //pageService.AddGuids();
       return new EmptyResult();
     }
 
@@ -185,7 +186,7 @@ namespace Meldpunt.Controllers
         using (routes.GetWriteLock())
         {
           //get last route (default).  ** by convention, it is the standard route.
-          var defaultRoute = routes.Last();          
+          var defaultRoute = routes.Last();
           routes.Remove(defaultRoute);
 
           var defaultRouteOld = routes.Last();
@@ -200,12 +201,12 @@ namespace Meldpunt.Controllers
             savedPage.Guid.ToString(), // Route name
             savedPage.Url.TrimStart('/'), // URL with parameters
             new { controller = "Home", action = "GetPage", guid = page.Guid } // Parameter defaults
-          );          
+          );
 
           //add back default routes
           routes.Add(defaultRoute);
           routes.Add(defaultRouteOld);
-          
+
         }
       }
 
