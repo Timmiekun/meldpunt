@@ -24,23 +24,23 @@ namespace Meldpunt
     {
       routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-     
-
-      routes.MapMvcAttributeRoutes(); 
+      routes.MapMvcAttributeRoutes();
 
       PageService pageService = new PageService();
+
       foreach (var page in pageService.GetAllPages())
       {
-          routes.MapRoute(
-            page.Guid.ToString(), // Route name
-            page.Url.TrimStart('/'), // URL with parameters
-            new { controller = "Home", action = "GetPage", guid = page.Guid } // Parameter defaults
-        );
+        routes.MapRoute(
+          page.Guid.ToString(), // Route name
+          page.Url.TrimStart('/'), // URL with parameters
+          new { controller = "Home", action = "GetPage", guid = page.Guid } // Parameter defaults
+      );
       }
 
-      foreach(var municipality in LocationUtils.placesByMunicipality)
+      foreach (var municipality in LocationUtils.placesByMunicipality)
       {
-        foreach(var plaats in municipality.Value) { 
+        foreach (var plaats in municipality.Value)
+        {
           routes.MapRoute(
               plaats + "-" + municipality.Key.XmlSafe(), // Route name
               "ongediertebestrijding-" + municipality.Key.XmlSafe(), // URL with parameters
@@ -49,72 +49,10 @@ namespace Meldpunt
         }
       }
 
-     
-
       routes.MapRoute(
-        "Homepage", // Route name
-        "", // URL with parameters
+        "Default", // Route name
+        "{controller}/{action}/{id}", // URL with parameters
         new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
-      );
-
-      routes.MapRoute(
-        "Image", // Route name
-        "GetImage", // URL with parameters
-        new { controller = "Image", action = "GetImage" } // Parameter defaults
-     );
-
-      routes.MapRoute(
-         "Search", // Route name
-         "index", // URL with parameters
-         new { controller = "Search", action = "Index" } // Parameter defaults
-      );
-
-      routes.MapRoute(
-          "SearchPages", // Route name
-          "zoek", // URL with parameters
-          new { controller = "Search", action = "SearchPages" } // Parameter defaults
-       );
-
-      routes.MapRoute(
-        "Login", // Route name
-        "login", // URL with parameters
-          new { controller = "Login", action = "Login", id = UrlParameter.Optional } // Parameter defaults
-       );
-
-      routes.MapRoute(
-       "Logout", // Route name
-       "logout", // URL with parameters
-         new { controller = "Login", action = "Logout", id = UrlParameter.Optional } // Parameter defaults
-      );
-
-      routes.MapRoute(
-         "PlaceSuggest", // Route name
-         "api/{action}", // URL with parameters
-         new { controller = "Api" } // Parameter defaults
-      );
-
-      routes.MapRoute(
-         "EditPlaats", // Route name
-         "admin/editplaats/{plaats}", // URL with parameters
-         new { controller = "Admin", action = "EditPlaats", id = UrlParameter.Optional } // Parameter defaults
-      );
-
-      routes.MapRoute(
-        "EditPage", // Route name
-        "admin/editpage/{id}", // URL with parameters
-        new { controller = "Admin", action = "EditPage", id = UrlParameter.Optional } // Parameter defaults
-     );
-
-      routes.MapRoute(
-        "SiteMap", // Route name
-        "sitemap", // URL with parameters
-        new { controller = "Home", action = "SiteMap", id = UrlParameter.Optional } // Parameter defaults
-      );
-
-      routes.MapRoute(
-          "Default", // Route name
-          "{controller}/{action}/{id}", // URL with parameters
-          new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
       );
 
       routes.MapRoute(
@@ -167,7 +105,7 @@ namespace Meldpunt
           default:
             routeData.Values["action"] = "General";
             break;
-        }
+        } 
 
         IController errorsController = new ErrorController();
         var rc = new RequestContext(new HttpContextWrapper(Context), routeData);

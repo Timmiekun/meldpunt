@@ -22,12 +22,14 @@ namespace Meldpunt.Controllers
     }
 
     [OutputCache(Duration = 10, VaryByParam = "none")]
+    [Route]
     public ActionResult Index()
     {
       PageModel model = pageService.GetPage("home");      
       return View(model);
-    }  
+    }
 
+    [Route("sitemap")]
     public ActionResult SiteMap()
     {
       ViewBag.Pages = pageService.GetAllPages();

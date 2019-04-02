@@ -193,7 +193,7 @@ namespace Meldpunt.Controllers
           routes.Remove(defaultRouteOld);
 
           // remove old route
-          var oldRoute = RouteTable.Routes[oldPage.Guid.ToString()];
+          var oldRoute = routes[oldPage.Guid.ToString()];
           routes.Remove(oldRoute);
 
           //add some new route for a cms page

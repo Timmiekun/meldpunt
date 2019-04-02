@@ -21,6 +21,7 @@ namespace Meldpunt.Controllers
     }
 
     [MustBeAdmin]
+    [Route("search/index")]
     public ActionResult Index()
     {
       searchService.Index();
@@ -29,6 +30,7 @@ namespace Meldpunt.Controllers
     }
 
     [MustBeAdmin]
+    [Route("search/indeximages")]
     public ActionResult IndexImages()
     {
       searchService.IndexItems(imageService.GetAllImages());
@@ -36,6 +38,7 @@ namespace Meldpunt.Controllers
       return new EmptyResult();
     }
 
+    [Route("zoek")]
     public ActionResult SearchPages(String q)
     {
       if (LocationUtils.IsLocation(q))

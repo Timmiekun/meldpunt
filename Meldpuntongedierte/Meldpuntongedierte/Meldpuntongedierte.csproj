@@ -292,7 +292,7 @@
     <Content Include="Views\Admin\Settings.cshtml" />
     <Content Include="Views\Shared\Modal.cshtml" />
     <Content Include="Views\Admin\ImageResizeHelp.cshtml" />
-    <Content Include="Views\Admin\Pagination.cshtml" />
+    <Content Include="Views\Shared\Pagination.cshtml" />
     <None Include="Volksgezondheid.pdf" />
     <None Include="Web.azure.config">
       <DependentUpon>Web.config</DependentUpon>

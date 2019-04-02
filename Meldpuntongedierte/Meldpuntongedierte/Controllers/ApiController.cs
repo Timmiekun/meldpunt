@@ -5,6 +5,7 @@ using Meldpunt.Models;
 
 namespace Meldpunt.Controllers
 {
+  [RoutePrefix("api")]
   public class ApiController : Controller
   {
     private ISearchService searchService;
@@ -14,18 +15,21 @@ namespace Meldpunt.Controllers
       searchService = _searchService;
     }
 
+    [Route("getSuggest")]
     public JsonResult getSuggest(string query)
     {
       IEnumerable<SearchResult> suggests = searchService.Search(query).Results;
       return Json(suggests, JsonRequestBehavior.AllowGet);
     }
 
+    [Route("getPageSuggest")]
     public JsonResult getPageSuggest(string query)
     {
       IEnumerable<SearchResult> suggests = searchService.Search(query, SearchTypes.Page).Results;
       return Json(suggests, JsonRequestBehavior.AllowGet);
     }
 
+    [Route("getImageSuggest")]
     public JsonResult getImageSuggest(string query)
     {
       IEnumerable<SearchResult> suggests = searchService.Search(query, SearchTypes.Image).Results;

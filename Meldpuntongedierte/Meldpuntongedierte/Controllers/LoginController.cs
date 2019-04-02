@@ -19,19 +19,22 @@ namespace Meldpunt.Controllers
 			plaatsService = new PlaatsService();
 		}
 
+    [Route("login")]
 		public ActionResult Login()
 		{
 			return View();
 		}
 
-		public ActionResult Logoff()
+    [Route("logout")]
+    public ActionResult Logoff()
 		{
 			Session.Clear();
 			return Redirect("/");
 		}
 
 		[HttpPost]
-		public ActionResult Login(string username, string password)
+    [Route("login")]
+    public ActionResult Login(string username, string password)
 		{
       if (username == this.username && password == this.password)
       {
