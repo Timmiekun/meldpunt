@@ -73,6 +73,9 @@ namespace Meldpunt
       RegisterGlobalFilters(GlobalFilters.Filters);
 
       RegisterRoutes(RouteTable.Routes);
+
+      ViewEngines.Engines.Add(new CustomViewEngine());
+
     }
 
     protected void Application_Error(Object sender, System.EventArgs e)
@@ -105,7 +108,7 @@ namespace Meldpunt
           default:
             routeData.Values["action"] = "General";
             break;
-        } 
+        }
 
         IController errorsController = new ErrorController();
         var rc = new RequestContext(new HttpContextWrapper(Context), routeData);

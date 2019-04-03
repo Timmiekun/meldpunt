@@ -128,6 +128,8 @@
     <Compile Include="ActionFilters\GlobalActionFilter.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
+    <Compile Include="CustomViewEngine.cs" />
+    <Compile Include="Controllers\AdminPagesController.cs" />
     <Compile Include="Controllers\ImagesController.cs" />
     <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\ApiController.cs" />
@@ -277,10 +279,10 @@
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Home\SiteMap.cshtml" />
     <Content Include="Views\Admin\adminNav.cshtml" />
-    <Content Include="Views\Admin\EditPage.cshtml" />
+    <Content Include="Views\Admin\AdminPages\EditPage.cshtml" />
     <Content Include="Views\Home\PlaatsWespennest.cshtml" />
     <Content Include="Views\Home\Disqus.cshtml" />
-    <Content Include="Views\Admin\Pages.cshtml" />
+    <Content Include="Views\Admin\AdminPages\Pages.cshtml" />
     <Content Include="Views\Admin\Places.cshtml" />
     <Content Include="Views\Admin\Redirects.cshtml" />
     <Content Include="Views\Admin\Images.cshtml" />
