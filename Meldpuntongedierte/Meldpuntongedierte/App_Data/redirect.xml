@@ -82,11 +82,11 @@
   </redirect>
   <redirect id="a3ad155c-1b13-4812-bc15-a2d337f93ff1" lastmodified="24-03-2019 04:24" created="24-03-2019 04:24">
     <from>/plaagdierengids/muizen/muizenbestrijding/zelf-muizen-bestrijden</from>
-    <to>/muizen/muizenbestrijding/muizen-bestrijden-in-en-om-het-huis/hoe-kunt-u-muizen-zelf-bestrijden</to>
+    <to>/muizen/muizenbestrijding/in-huis/zelf-vangen-en-bestrijden</to>
   </redirect>
   <redirect id="abfb9913-15d0-4b97-9e4d-338cfdcdc76f" lastmodified="25-03-2019 03:28" created="25-03-2019 03:28">
     <from>/muizen/muizenbestrijding/muizen-bestrijden-in-en-om-het-huis</from>
-    <to>/muizen-bestrijden-in-huis</to>
+    <to>/muizen/muizenbestrijding/in-huis</to>
   </redirect>
   <redirect id="de9318ba-8cd5-4672-b064-7671436c974e" lastmodified="25-03-2019 04:31" created="25-03-2019 04:31">
     <from>/muizen/muizenbestrijding/muizen-bestrijden-in-huis</from>
@@ -101,15 +101,67 @@
     <to>/in-huis/zelf-vangen-en-bestrijden</to>
   </redirect>
   <redirect id="cf5a8163-315b-49dc-a8ee-db3469083eb4" lastmodified="25-03-2019 04:49" created="25-03-2019 04:49">
-    <from>/muizen/muizenbestrijding/muizen-bestrijden-op-de-werkplek</from>
+    <from>/muizen/muizenoverlast/muizen-bestrijden-op-de-werkplek</from>
     <to>/muizen/muizenbestrijding/op-de-werkplek</to>
   </redirect>
   <redirect id="875be65f-d8b5-401d-baf5-fc161555a33f" lastmodified="26-03-2019 07:58" created="26-03-2019 07:58">
     <from>/muizen/muizenbestrijding/muizen-bestrijden-in-en-om-het-huis/hoe-kunt-u-muizen-zelf-bestrijden</from>
-    <to>/in-huis</to>
+    <to>/muizen/muizenbestrijding</to>
   </redirect>
   <redirect id="7deed4aa-cf66-4796-af27-537cd589dfb7" lastmodified="26-03-2019 11:10" created="26-03-2019 11:10">
     <from>/plaagdierengids/muizen/muizenbestrijding/muizen-vangen</from>
     <to>/muizen/muizenbestrijding/in-huis/zelf-vangen-en-bestrijden</to>
+  </redirect>
+  <redirect id="40d45e18-d18d-46c5-8c57-38d43c3ec163" lastmodified="27-03-2019 02:40" created="27-03-2019 02:40">
+    <from>/plaagdierengids/muizen/muizenoverlast/muizen-in-huis</from>
+    <to>/muizen/muizenbestrijding/in-huis</to>
+  </redirect>
+  <redirect id="767c0707-c6d3-4858-a5d2-f5d697b12e5b" lastmodified="27-03-2019 09:00" created="27-03-2019 09:00">
+    <from>/plaagdierengids/muizen/muizenbestrijding</from>
+    <to>/muizen/muizenbestrijding</to>
+  </redirect>
+  <redirect id="da2fc868-639d-44b2-9945-bb4fec9e09f2" lastmodified="27-03-2019 09:02" created="27-03-2019 09:02">
+    <from>/plaagdierengids/muizen/muizenoverlast/muizen-op-de-werkplek</from>
+    <to>/muizen/muizenoverlast/muizen-op-de-werkplek</to>
+  </redirect>
+  <redirect id="a29c042c-099b-4059-8e61-d9bf332da1ee" lastmodified="27-03-2019 09:06" created="27-03-2019 09:06">
+    <from>/plaagdierengids/muizen/muizenoverlast</from>
+    <to>/muizen/muizenoverlast</to>
+  </redirect>
+  <redirect id="9c0162a2-6a3a-4991-9c6d-7452cf03fcfe" lastmodified="27-03-2019 09:08" created="27-03-2019 09:08">
+    <from>/plaagdierengids/muizen/muizenoverlast/muizen-in-uw-bedrijf</from>
+    <to>/muizen/muizenoverlast/muizen-in-uw-bedrijf</to>
+  </redirect>
+  <redirect id="2b48baf3-09d5-4d3a-81e3-3497666bb3be" lastmodified="27-03-2019 09:09" created="27-03-2019 09:09">
+    <from>/plaagdierengids/muizen</from>
+    <to>/muizen</to>
+  </redirect>
+  <redirect id="8bbdfcb9-9c3b-4935-9913-8d558346d68b" lastmodified="27-03-2019 09:19" created="27-03-2019 09:19">
+    <from>/plaagdierengids/muizen/muizenoverlast/hoe-voorkomt-u-een-muizenplaag</from>
+    <to>/muizen//muizenoverlast/hoe-voorkomt-u-een-muizenplaag</to>
+  </redirect>
+  <redirect id="20454824-1ae6-4f29-bdea-38e56a662bd3" lastmodified="28-03-2019 08:16" created="28-03-2019 08:16">
+    <from>/plaagdierengids/muizen/muizen-herkennen/bosmuizen</from>
+    <to>/muizen/muizen-herkennen/bosmuizen</to>
+  </redirect>
+  <redirect id="c1c66f0d-c243-4fe9-8f4e-2715e89f120a" lastmodified="28-03-2019 08:17" created="28-03-2019 08:17">
+    <from>/plaagdierengids/muizen/muizen-herkennen/veldmuizen</from>
+    <to>/muizen/muizen-herkennen/veldmuizen</to>
+  </redirect>
+  <redirect id="d6cf71bc-ea4d-4ffd-a91f-198df6ade9ba" lastmodified="28-03-2019 08:17" created="28-03-2019 08:17">
+    <from>/plaagdierengids/muizen/muizen-herkennen/spitsmuizen</from>
+    <to>/muizen/muizen-herkennen/spitsmuizen</to>
+  </redirect>
+  <redirect id="a71776c8-b689-46b0-be5e-08d1394fe423" lastmodified="28-03-2019 08:19" created="28-03-2019 08:19">
+    <from>/plaagdierengids/muizen/muizen-herkennen</from>
+    <to>/muizen/muizen-herkennen</to>
+  </redirect>
+  <redirect id="dabe7a24-6b9d-4028-ad14-d2b2ab093a77" lastmodified="28-03-2019 02:34" created="28-03-2019 02:34">
+    <from>/plaagdierengids/muizen/muizenoverlast/muizen-en-buren</from>
+    <to>/muizen/muizenoverlast/muizen-en-buren</to>
+  </redirect>
+  <redirect id="f3be2439-755d-438a-a710-b72dd1a10842" lastmodified="30-03-2019 10:15" created="30-03-2019 10:15">
+    <from>/plaagdierengids/muizen/muizenbestrijding/muizenbestrijding-voor-bedrijven</from>
+    <to>/muizen/muizenbestrijding/op-de-werkplek</to>
   </redirect>
 </redirects>
