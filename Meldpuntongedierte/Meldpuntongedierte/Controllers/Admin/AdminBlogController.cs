@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
+using System.Web.Routing;
 
 namespace Meldpunt
 {
@@ -20,7 +21,7 @@ namespace Meldpunt
       return View(db.BlogModels.ToList());
     }
 
-   
+
     [Route("create")]
     public ActionResult Create()
     {
@@ -67,14 +68,17 @@ namespace Meldpunt
     [HttpPost, ValidateInput(false)]
     [Route("{id}")]
     [ValidateAntiForgeryToken]
-    public ActionResult Edit([Bind(Include = "Id,Title,MetaTitle,MetaDescription,Content,Url,UrlPart,ParentId,LastModified,Published")] BlogModel blogModel)
+    public ActionResult Edit([Bind(Include = "Id,Title,MetaTitle,MetaDescription,Content,UrlPart,ParentId,Image, Intro,Published")] BlogModel blogModel)
     {
       if (ModelState.IsValid)
       {
         blogModel.UrlPart = blogModel.UrlPart.XmlSafe();
+        blogModel.LastModified = DateTimeOffset.Now;
         db.Entry(blogModel).State = EntityState.Modified;
         db.SaveChanges();
-        return RedirectToAction("Index");
+
+        UpdateRouteForBlogItem(blogModel);
+        Response.RemoveOutputCacheItem("/" + blogModel.Url);
       }
       return View(blogModel);
     }
@@ -113,6 +117,36 @@ namespace Meldpunt
         db.Dispose();
       }
       base.Dispose(disposing);
+    }
+
+    private void UpdateRouteForBlogItem(BlogModel blog)
+    {
+      var routes = RouteTable.Routes;
+      using (routes.GetWriteLock())
+      {
+        //get last route (default).  ** by convention, it is the standard route.
+        var defaultRoute = routes.Last();
+        routes.Remove(defaultRoute);
+
+        var defaultRouteOld = routes.Last();
+        routes.Remove(defaultRouteOld);
+
+        // remove old route
+        var oldRoute = routes[blog.RouteId];
+        if(oldRoute != null)
+          routes.Remove(oldRoute);
+
+        //add some new route for a cms page
+        routes.MapRoute(
+          blog.RouteId, // Route name
+          blog.Url.TrimStart('/'), // URL with parameters
+          new { controller = "Blog", action = "Details", id = blog.Id } // Parameter defaults
+        );
+
+        //add back default routes
+        routes.Add(defaultRouteOld);
+        routes.Add(defaultRoute);
+      }
     }
   }
 }

@@ -152,6 +152,18 @@
     <Compile Include="Migrations\201904031015377_add_blog.Designer.cs">
       <DependentUpon>201904031015377_add_blog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904040926052_add_intro_to_blog.cs" />
+    <Compile Include="Migrations\201904040926052_add_intro_to_blog.Designer.cs">
+      <DependentUpon>201904040926052_add_intro_to_blog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904040928395_add_image_to_blog.cs" />
+    <Compile Include="Migrations\201904040928395_add_image_to_blog.Designer.cs">
+      <DependentUpon>201904040928395_add_image_to_blog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904041007099_update_blog.cs" />
+    <Compile Include="Migrations\201904041007099_update_blog.Designer.cs">
+      <DependentUpon>201904041007099_update_blog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IndexableItem.cs" />
     <Compile Include="Models\ImageRequestModel.cs" />
@@ -190,6 +202,7 @@
     <Content Include="Css\admin-modal.css" />
     <Content Include="Css\admin-images.css" />
     <Content Include="Css\admin.css" />
+    <Content Include="Css\blog.css" />
     <Content Include="Css\main.css" />
     <Content Include="Css\mobile.css" />
     <Content Include="Css\reset.css" />
@@ -322,6 +335,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904031015377_add_blog.resx">
       <DependentUpon>201904031015377_add_blog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904040926052_add_intro_to_blog.resx">
+      <DependentUpon>201904040926052_add_intro_to_blog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904040928395_add_image_to_blog.resx">
+      <DependentUpon>201904040928395_add_image_to_blog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904041007099_update_blog.resx">
+      <DependentUpon>201904041007099_update_blog.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

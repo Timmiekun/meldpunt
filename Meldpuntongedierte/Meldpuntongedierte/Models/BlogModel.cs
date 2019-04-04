@@ -1,7 +1,9 @@
 ﻿using Lucene.Net.Documents;
 using Meldpunt.Services;
+using Meldpunt.Utils;
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Meldpunt.Models
 {
@@ -12,13 +14,18 @@ namespace Meldpunt.Models
 
     public string Title { get; set; }
 
+    public String Image { get; set; }
+
+    public string Intro { get; set; }
+
     public string MetaTitle { get; set; }
 
     public string MetaDescription { get; set; }
 
     public string Content { get; set; }
-    public string Url { get; set; }
+
     public string UrlPart { get; set; }
+    
 
     /// <summary>
     /// for search
@@ -40,6 +47,14 @@ namespace Meldpunt.Models
     [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
     public DateTimeOffset? Published { get; set; }
 
+    [NotMapped]
+    public string RouteId
+    {
+      get { return "Blog-" + Id.ToString(); }
+    }
+
+    [NotMapped]
+    public string Url { get { return "blog/" + UrlPart.XmlSafe(); } }
 
     public Document ToLuceneDocument()
     {

@@ -3,8 +3,10 @@
 @{
   ViewBag.Title = "Blog - Meldpunt Ongedierte";
   ViewBag.Description = "Blog";
-  List<PageModel> subNav = ViewBag.SubNav as List<PageModel>;
-  List<PageModel> homeMenu = ViewBag.HomeMenuItems as List<PageModel>;
+}
+
+@section style{
+  <link type="text/css" rel="stylesheet" href="/css/blog.css?v=@ViewBag.AppVersion">
 }
 
 <h1>Blog</h1>
@@ -12,10 +14,12 @@
 @foreach (var blogItem in Model)
 {
   <div class="blogItem">
+    <img src="@blogItem.Image&width=200" />
     <h2>@blogItem.Title</h2>
     <date>
-      @blogItem.Published.ToString()
+      @blogItem.Published.Value.ToString("D")
     </date>
+    <p>@blogItem.Intro</p>
     <div>
       <a href="/blog/@blogItem.UrlPart">/blog/@blogItem.UrlPart</a>
     </div>

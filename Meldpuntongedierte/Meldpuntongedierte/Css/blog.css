@@ -1,0 +1,12 @@
+﻿.blogItem {
+  margin-bottom: 30px;
+  overflow:hidden;
+}
+
+  .blogItem img {
+    float: left;
+  }
+
+  .blogItem date {
+    color: #ababab;
+  }

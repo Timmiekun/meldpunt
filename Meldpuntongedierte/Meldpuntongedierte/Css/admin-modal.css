@@ -53,3 +53,9 @@
   .m-modal .popup .suggest-results .list-item {
     cursor: pointer;
   }
+
+  .m-modal .popup .suggest-results .list-item-image {
+    float: left;
+    margin-right: 5px;
+    border-bottom:none;
+  }

@@ -17,15 +17,13 @@ namespace Meldpunt.Controllers
       context = new MeldpuntContext();
     }
 
-
     [Route]
     public ActionResult Index()
     {
       return View(context.BlogModels.ToList());
     }
-
-
-    //[OutputCache(Duration = 10, VaryByParam = "none")]
+    
+    [OutputCache(Duration = 10, VaryByParam = "none")]
     public ActionResult Details()
     {
       var id = Guid.Parse(RouteData.Values["id"].ToString());

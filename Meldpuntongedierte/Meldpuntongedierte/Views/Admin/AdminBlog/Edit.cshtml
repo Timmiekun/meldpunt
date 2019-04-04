@@ -1,14 +1,16 @@
 ﻿@model Meldpunt.Models.BlogModel
 
 @{
-  /**/
-
-  ViewBag.Title = "Edit";
+  ViewBag.Title = "Edit Blog";
   Layout = "~/Views/Shared/_Admin.cshtml";
 }
 
 <h1>@Model.Title</h1>
 
+@if (Model.LastModified.HasValue)
+{
+  <p>Laatst aangepast: @Model.LastModified.Value.ToString("f")</p>
+}
 <div class="actions">
   <button onclick="$('#opslaan').click()" class="btn btn-info">Opslaan</button>
   <a class="btn btn-info" href="/blog/@Model.UrlPart" target="_blank">Pagina bekijken</a>
@@ -23,14 +25,14 @@
   @Html.HiddenFor(model => model.Id)
 
   <div class="field">
-    @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+    @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label" })
 
     @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
     @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
   </div>
 
   <div class="field">
-    @Html.LabelFor(model => model.MetaTitle, htmlAttributes: new { @class = "control-label col-md-2" })
+    @Html.LabelFor(model => model.MetaTitle, htmlAttributes: new { @class = "control-label" })
 
     @Html.EditorFor(model => model.MetaTitle, new { htmlAttributes = new { @class = "form-control" } })
     @Html.ValidationMessageFor(model => model.MetaTitle, "", new { @class = "text-danger" })
@@ -38,17 +40,30 @@
   </div>
 
   <div class="field">
-    @Html.LabelFor(model => model.MetaDescription, htmlAttributes: new { @class = "control-label col-md-2" })
+    @Html.LabelFor(model => model.MetaDescription, htmlAttributes: new { @class = "control-label" })
     @Html.TextAreaFor(model => model.MetaDescription, htmlAttributes: new { @class = "form-control" })
     @Html.ValidationMessageFor(model => model.MetaDescription, "", new { @class = "text-danger" })
   </div>
 
   <div class="field">
-    @Html.LabelFor(model => model.Published, htmlAttributes: new { @class = "control-label col-md-2" })
+    @Html.LabelFor(model => model.Published, htmlAttributes: new { @class = "control-label" })
 
     @Html.EditorFor(model => model.Published, new { htmlAttributes = new { @class = "form-control datepicker" } })
     @Html.ValidationMessageFor(model => model.Published, "", new { @class = "text-danger" })
 
+  </div>
+
+  <div class="field">
+    @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label" })
+    @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "form-control", onclick = "OpenModal('image')" } })
+    @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+    <img class="imagePreview" src="@Model.Image&width=200&height=140" id="imagePreview" />
+  </div>
+
+  <div class="field">
+    @Html.LabelFor(model => model.Intro, htmlAttributes: new { @class = "control-label" })
+    @Html.TextAreaFor(model => model.Intro, htmlAttributes: new { @class = "form-control" })
+    @Html.ValidationMessageFor(model => model.Intro, "", new { @class = "text-danger" })
   </div>
 
   <div class="field">
