@@ -1,0 +1,13 @@
+﻿@using Meldpunt.Models;
+@model BlogModel
+@{
+  ViewBag.Title = Model.Title + " - Meldpunt Ongedierte";
+  ViewBag.Description = Model.MetaDescription;
+  ViewBag.Url = Model.Url;
+  List<PageModel> subNav = ViewBag.SubNav as List<PageModel>;
+  List<PageModel> homeMenu = ViewBag.HomeMenuItems as List<PageModel>;
+}
+
+<h1>@Model.Title</h1>
+<date>@Model.Published.Value.ToString("D")</date>
+@Html.Raw(Model.Content)

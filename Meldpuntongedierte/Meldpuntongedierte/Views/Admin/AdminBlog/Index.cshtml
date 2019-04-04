@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Meldpunt.Models.BlogModel>
+
+@{
+  ViewBag.Title = "Index";
+  Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<h1>Beheer blog</h1>
+
+<div class="list-item list-item-header">
+  <div class="title">Titel</div>
+  <div class="url">Url</div>
+</div>
+
+@foreach (var item in Model)
+{
+  <div class="list-item">
+    <div class="title"><a class="link-to-edit" href="/admin/blogitems/@item.Id">@item.Title</a></div>
+    <a href="/blog/@item.UrlPart" class="url">/blog/@item.UrlPart</a>
+  </div>
+}
+
+
+@Html.ActionLink("Nieuw item", "Create", null, new { @class = "btn btn-info" })

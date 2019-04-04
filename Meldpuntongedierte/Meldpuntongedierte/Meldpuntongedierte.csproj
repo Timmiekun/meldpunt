@@ -128,12 +128,14 @@
     <Compile Include="ActionFilters\GlobalActionFilter.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
+    <Compile Include="Controllers\Admin\AdminBlogController.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="CustomViewEngine.cs" />
-    <Compile Include="Controllers\AdminPagesController.cs" />
-    <Compile Include="Controllers\ImagesController.cs" />
+    <Compile Include="Controllers\Admin\AdminPagesController.cs" />
+    <Compile Include="Controllers\Admin\ImagesController.cs" />
     <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\ApiController.cs" />
-    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\Admin\AdminController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
@@ -141,11 +143,21 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\ImageModelsController.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Migrations\201903200929548_InitialCreate.cs" />
+    <Compile Include="Migrations\201903200929548_InitialCreate.Designer.cs">
+      <DependentUpon>201903200929548_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904031015377_add_blog.cs" />
+    <Compile Include="Migrations\201904031015377_add_blog.Designer.cs">
+      <DependentUpon>201904031015377_add_blog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IndexableItem.cs" />
     <Compile Include="Models\ImageRequestModel.cs" />
     <Compile Include="Models\ImageModel.cs" />
     <Compile Include="Models\MeldpuntContext.cs" />
+    <Compile Include="Models\BlogModel.cs" />
     <Compile Include="Models\RedirectModel.cs" />
     <Compile Include="Models\SearchResult.cs" />
     <Compile Include="Models\SearchResultModel.cs" />
@@ -286,15 +298,16 @@
     <Content Include="Views\Admin\Places.cshtml" />
     <Content Include="Views\Admin\Redirects.cshtml" />
     <Content Include="Views\Admin\Images.cshtml" />
-    <Content Include="Views\ImageModels\Create.cshtml" />
-    <Content Include="Views\ImageModels\Delete.cshtml" />
-    <Content Include="Views\ImageModels\Details.cshtml" />
-    <Content Include="Views\ImageModels\Edit.cshtml" />
-    <Content Include="Views\ImageModels\Index.cshtml" />
     <Content Include="Views\Admin\Settings.cshtml" />
     <Content Include="Views\Shared\Modal.cshtml" />
     <Content Include="Views\Admin\ImageResizeHelp.cshtml" />
     <Content Include="Views\Shared\Pagination.cshtml" />
+    <Content Include="Views\Admin\AdminBlog\Create.cshtml" />
+    <Content Include="Views\Admin\AdminBlog\Delete.cshtml" />
+    <Content Include="Views\Admin\AdminBlog\Edit.cshtml" />
+    <Content Include="Views\Admin\AdminBlog\Index.cshtml" />
+    <Content Include="Views\Blog\Index.cshtml" />
+    <Content Include="Views\Blog\Details.cshtml" />
     <None Include="Volksgezondheid.pdf" />
     <None Include="Web.azure.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -302,6 +315,14 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201903200929548_InitialCreate.resx">
+      <DependentUpon>201903200929548_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904031015377_add_blog.resx">
+      <DependentUpon>201904031015377_add_blog.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

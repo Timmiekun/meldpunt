@@ -28,7 +28,6 @@ namespace Meldpunt.Controllers
       searchService = _searchService;
       redirectsService = new RedirectService();
       imageService = _imageService;
-
     }
     
     #region pages

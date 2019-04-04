@@ -5,7 +5,7 @@ namespace Meldpunt
   public class CustomViewEngine : RazorViewEngine
   {
     public CustomViewEngine()
-    {
+    { 
       var viewLocations = new[] {
             "~/Views/Admin/{1}/{0}.cshtml"
         };

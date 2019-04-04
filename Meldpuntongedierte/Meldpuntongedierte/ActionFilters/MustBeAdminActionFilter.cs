@@ -1,16 +1,14 @@
 ﻿using System.Web;
 using System.Web.Mvc;
-using Meldpunt.Services;
 using System.Web.Routing;
 
 namespace Meldpunt.ActionFilters
 {
   public class MustBeAdminAttribute : ActionFilterAttribute
   {
-    private readonly PageService pageService;
     public MustBeAdminAttribute()
     {
-            
+
     }
 
     public override void OnActionExecuting(ActionExecutingContext filterContext)
@@ -26,7 +24,7 @@ namespace Meldpunt.ActionFilters
 
     public override void OnActionExecuted(ActionExecutedContext filterContext)
     {
-      
+
       base.OnActionExecuted(filterContext);
     }
   }

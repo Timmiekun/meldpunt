@@ -65,7 +65,6 @@ namespace Meldpunt.Controllers
       return new EmptyResult();
     }
 
-
     #region redirects
     [Route("Redirects")]
     public ActionResult Redirects()

@@ -1,5 +1,6 @@
 ﻿using Meldpunt.ActionFilters;
 using Meldpunt.Controllers;
+using Meldpunt.Models;
 using Meldpunt.Services;
 using Meldpunt.Utils;
 using System;
@@ -47,6 +48,15 @@ namespace Meldpunt
               new { controller = "Home", action = "GetPlace", gemeente = municipality.Key.XmlSafe() } // Parameter defaults
           );
         }
+      }
+
+      foreach(var blog in new MeldpuntContext().BlogModels)
+      {
+        routes.MapRoute(
+        "Blog-" + blog.Id.ToString(), // Route name
+        "blog/" + blog.UrlPart.XmlSafe(), // URL with parameters
+        new { controller = "Blog", action = "Details", id = blog.Id }
+        ); // Parameter defaults
       }
 
       routes.MapRoute(

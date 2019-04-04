@@ -1,0 +1,23 @@
+﻿@using Meldpunt.Models;
+@model List<BlogModel>
+@{
+  ViewBag.Title = "Blog - Meldpunt Ongedierte";
+  ViewBag.Description = "Blog";
+  List<PageModel> subNav = ViewBag.SubNav as List<PageModel>;
+  List<PageModel> homeMenu = ViewBag.HomeMenuItems as List<PageModel>;
+}
+
+<h1>Blog</h1>
+
+@foreach (var blogItem in Model)
+{
+  <div class="blogItem">
+    <h2>@blogItem.Title</h2>
+    <date>
+      @blogItem.Published.ToString()
+    </date>
+    <div>
+      <a href="/blog/@blogItem.UrlPart">/blog/@blogItem.UrlPart</a>
+    </div>
+  </div>
+}

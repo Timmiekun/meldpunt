@@ -19,9 +19,47 @@
   <link rel="stylesheet" href="/css/admin-modal.css?v=@appVersion">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Catamaran:400,700,900">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  @RenderSection("scripts", false)
+</head>
+<body>
+
+  <div class="topBar">
+    <a href="/admin">Beheer Meldpunt Ongedierte</a>
+  </div>
+  <div id="main" class="main">
+
+    <div class="menu">
+      <ul>
+        <li><a href="/admin/pages"><span class="oi oi-document"></span> Pagina's</a></li>
+        <li><a href="/admin/blogitems"><span class="oi oi-list-rich"></span> Blog</a></li>
+        <li><a href="/admin/places"><span class="oi oi-globe"></span> Plaatsen</a></li>
+        <li><a href="/admin/redirects"><span class="oi oi-loop-square"></span> Redirects</a></li>
+        <li><a href="/admin/images"><span class="oi oi-image"></span> Afbeeldingen</a></li>
+        <li><a href="/admin/settings"><span class="oi oi-warning"></span> Danger Zone</a></li>
+
+      </ul>
+
+      @RenderSection("submenu", false)
+    </div>
+
+    <div class="content">
+      @RenderBody()
+    </div>
+
+    <div class="footer">
+      <p class="disclaimer">&#160; @*<a href="/sitemap">sitemap</a>*@</p>
+    </div>
+  </div>
+  @Html.Partial("Modal")
 
   <script src="//code.jquery.com/jquery-3.3.1.min.js"
           integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+          crossorigin="anonymous"></script>
+  
+  <script src="//code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+          integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
           crossorigin="anonymous"></script>
 
   <script type="text/javascript" src="/Scripts/admin.js?v=@appVersion"></script>
@@ -47,36 +85,5 @@
       toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
     });
   </script>
-  @RenderSection("scripts", false)
-</head>
-<body>
-
-  <div class="topBar">
-    <a href="/admin">Beheer Meldpunt Ongedierte</a>
-  </div>
-  <div id="main" class="main">
-   
-    <div class="menu">
-      <ul>
-        <li><a href="/admin/pages"><span class="oi oi-document"></span> Pagina's</a></li>
-        <li><a href="/admin/places"><span class="oi oi-globe"></span> Plaatsen</a></li>
-        <li><a href="/admin/redirects"><span class="oi oi-loop-square"></span> Redirects</a></li>
-        <li><a href="/admin/images"><span class="oi oi-image"></span> Afbeeldingen</a></li>
-        <li><a href="/admin/settings"><span class="oi oi-warning"></span> Danger Zone</a></li>
-        
-      </ul>
-
-      @RenderSection("submenu", false)
-    </div>
-   
-    <div class="content">
-      @RenderBody()
-    </div>
-
-    <div class="footer">
-      <p class="disclaimer">&#160; @*<a href="/sitemap">sitemap</a>*@</p>
-    </div>
-  </div>
-  @Html.Partial("Modal")
 </body>
 </html>

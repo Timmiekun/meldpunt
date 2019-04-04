@@ -1,5 +1,5 @@
-﻿using Meldpunt.ActionFilters;
-using Meldpunt.Models;
+﻿using Meldpunt.Models;
+using Meldpunt.Utils;
 using System;
 using System.Data.Entity;
 using System.Linq;
@@ -8,118 +8,103 @@ using System.Web.Mvc;
 
 namespace Meldpunt
 {
-  [MustBeAdmin]
-  [RoutePrefix("admin/ImageModels")]
-  public class ImageModelsController : Controller
+  [RoutePrefix("admin/blogitems")]
+  public class AdminBlogController : Controller
   {
     private MeldpuntContext db = new MeldpuntContext();
 
-    // GET: ImageModels
+    // GET: BlogModels
     [Route]
     public ActionResult Index()
     {
-      return View(db.ImageModels.ToList());
+      return View(db.BlogModels.ToList());
     }
 
-    [Route("Details/{id}")]
-    public ActionResult Details(Guid? id)
-    {
-      if (id == null)
-      {
-        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-      }
-      ImageModel imageModel = db.ImageModels.Find(id);
-      if (imageModel == null)
-      {
-        return HttpNotFound();
-      }
-      return View(imageModel);
-    }
-
-    [Route("Create")]
+   
+    [Route("create")]
     public ActionResult Create()
     {
       return View();
     }
 
-    // POST: ImageModels/Create
+    // POST: BlogModels/Create
     // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
     // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
+    [Route("create")]
     [ValidateAntiForgeryToken]
-    [Route("Create")]
-    public ActionResult Create([Bind(Include = "Id,Name")] ImageModel imageModel)
+    public ActionResult Create([Bind(Include = "Id,Title,MetaTitle,MetaDescription,Content,Url,UrlPart,ParentId,LastModified,Published")] BlogModel blogModel)
     {
       if (ModelState.IsValid)
       {
-        imageModel.Id = Guid.NewGuid();
-        db.ImageModels.Add(imageModel);
+        blogModel.Id = Guid.NewGuid();
+        db.BlogModels.Add(blogModel);
         db.SaveChanges();
         return RedirectToAction("Index");
       }
 
-      return View(imageModel);
+      return View(blogModel);
     }
 
-    [Route("Edit/{id}")]
+    [Route("{id}")]
     public ActionResult Edit(Guid? id)
     {
       if (id == null)
       {
         return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
       }
-      ImageModel imageModel = db.ImageModels.Find(id);
-      if (imageModel == null)
+      BlogModel blogModel = db.BlogModels.Find(id);
+      if (blogModel == null)
       {
         return HttpNotFound();
       }
-      return View(imageModel);
+      return View(blogModel);
     }
 
-    // POST: ImageModels/Edit/5
+    // POST: BlogModels/Edit/5
     // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
     // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-    [HttpPost]
+    [HttpPost, ValidateInput(false)]
+    [Route("{id}")]
     [ValidateAntiForgeryToken]
-    [Route("Edit/{id}")]
-    public ActionResult Edit([Bind(Include = "Id,Name")] ImageModel imageModel)
+    public ActionResult Edit([Bind(Include = "Id,Title,MetaTitle,MetaDescription,Content,Url,UrlPart,ParentId,LastModified,Published")] BlogModel blogModel)
     {
       if (ModelState.IsValid)
       {
-        db.Entry(imageModel).State = EntityState.Modified;
+        blogModel.UrlPart = blogModel.UrlPart.XmlSafe();
+        db.Entry(blogModel).State = EntityState.Modified;
         db.SaveChanges();
         return RedirectToAction("Index");
       }
-      return View(imageModel);
+      return View(blogModel);
     }
 
-    [Route("Delete/{id}")]
+    [Route("delete")]
     public ActionResult Delete(Guid? id)
     {
       if (id == null)
       {
         return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
       }
-      ImageModel imageModel = db.ImageModels.Find(id);
-      if (imageModel == null)
+      BlogModel blogModel = db.BlogModels.Find(id);
+      if (blogModel == null)
       {
         return HttpNotFound();
       }
-      return View(imageModel);
+      return View(blogModel);
     }
 
-    // POST: ImageModels/Delete/5
+    // POST: BlogModels/Delete/5
     [HttpPost, ActionName("Delete")]
     [ValidateAntiForgeryToken]
-    [Route("Delete/{id}")]
+    [Route("delete")]
     public ActionResult DeleteConfirmed(Guid id)
     {
-      ImageModel imageModel = db.ImageModels.Find(id);
-      db.ImageModels.Remove(imageModel);
+      BlogModel blogModel = db.BlogModels.Find(id);
+      db.BlogModels.Remove(blogModel);
       db.SaveChanges();
       return RedirectToAction("Index");
     }
-
 
     protected override void Dispose(bool disposing)
     {
