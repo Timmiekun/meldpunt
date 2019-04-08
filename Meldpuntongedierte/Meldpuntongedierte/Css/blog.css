@@ -1,12 +1,39 @@
-﻿.blogItem {
-  margin-bottom: 30px;
-  overflow:hidden;
+﻿.blog-article h1{
+  margin-top: 20px;
 }
+
+.blog-article date {
+  font-weight: 700;
+}
+
+
+
+.blogItem {
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+  .blogItem h1 {
+    margin: 50px 0 20px 0;
+  }
 
   .blogItem img {
     float: left;
+    margin-right: 15px;
   }
 
   .blogItem date {
-    color: #ababab;
+    font-weight: 700;
+  }
+
+  .blogItem .read-more {
+    display: inline-block;
+    color: #85003c;
+    text-decoration: none;
+    line-height: 32px;
+    background-image: url(/images/chevron.svg);
+    background-repeat: no-repeat;
+    background-position: 10px 8px;
+    padding: 0 30px;
+    margin-top: 10px;
   }

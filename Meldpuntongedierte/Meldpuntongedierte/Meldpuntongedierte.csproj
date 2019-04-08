@@ -187,6 +187,7 @@
     <Compile Include="Services\PageService.cs" />
     <Compile Include="Utils\LocationUtils.cs" />
     <Compile Include="Utils\Utils.cs" />
+    <Compile Include="ViewModels\BreadCrumb.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="500.html" />

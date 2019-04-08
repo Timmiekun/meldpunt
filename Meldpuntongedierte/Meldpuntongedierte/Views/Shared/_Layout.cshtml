@@ -1,7 +1,7 @@
 ﻿@using Meldpunt.Models;
 @{
   List<PageModel> pagesForTabs = ViewBag.NavItems as List<PageModel>;
-  List<PageModel> breadcrumbs = ViewBag.BreadCrumbs as List<PageModel>;
+  List<BreadCrumb> breadcrumbs = ViewBag.BreadCrumbs as List<BreadCrumb>;
   List<List<PageModel>> regioPages = ViewBag.RegioPages as List<List<PageModel>>;
   string appVersion = ViewBag.AppVersion;
   string logoText = ViewBag.HeaderTitle;

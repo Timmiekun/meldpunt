@@ -18,7 +18,7 @@ $(function () {
     readURL(this);
   });
 
-  $(".datepicker").datepicker();
+  $(".datepicker").datepicker({ dateFormat: 'dd-mm-yy' });
 
 });
 

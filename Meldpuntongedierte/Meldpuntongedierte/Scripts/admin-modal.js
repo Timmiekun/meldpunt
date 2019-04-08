@@ -39,6 +39,13 @@ var pageSuggest = {
 
   fillSuggestBox: function () {
     var suggestBox = document.querySelector('#suggests');
+    suggestBox.innerHTML = "";
+
+    if (!pageSuggest.suggests.length) {
+      suggestBox.innerHTML = "Niets gevonden";
+      return;
+    }
+
     for (var x = 0; x < pageSuggest.suggests.length; x++) {
       var result = pageSuggest.suggests[x];
       if (result) {
@@ -46,7 +53,7 @@ var pageSuggest = {
           suggestBox.appendChild(pageSuggest.createImageElement(result));
         else
           suggestBox.appendChild(pageSuggest.createPageElement(result));
-      }
+      }     
     }
 
     suggestBox.querySelectorAll("[data-role=result-item]").forEach(function (item) {

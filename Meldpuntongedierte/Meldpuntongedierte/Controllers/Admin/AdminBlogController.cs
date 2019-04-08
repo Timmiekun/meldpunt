@@ -30,16 +30,16 @@ namespace Meldpunt
     [Route("create")]
     public ActionResult Create()
     {
-      return View();
+      return View("edit", new BlogModel());
     }
 
     // POST: BlogModels/Create
     // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
     // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-    [HttpPost]
+    [HttpPost, ValidateInput(false)]
     [Route("create")]
     [ValidateAntiForgeryToken]
-    public ActionResult Create([Bind(Include = "Id,Title,MetaTitle,MetaDescription,Content,Url,UrlPart,ParentId,LastModified,Published")] BlogModel blogModel)
+    public ActionResult Create([Bind(Include = "Id,Title,MetaTitle,MetaDescription,Content,UrlPart,ParentId,Image, Intro,Published")] BlogModel blogModel)
     {
       if (ModelState.IsValid)
       {
@@ -138,7 +138,7 @@ namespace Meldpunt
 
         // remove old route
         var oldRoute = routes[blog.RouteId];
-        if(oldRoute != null)
+        if (oldRoute != null)
           routes.Remove(oldRoute);
 
         //add some new route for a cms page
