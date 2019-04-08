@@ -74,6 +74,7 @@
       </div>
       @Html.EditorFor(model => model.UrlPart, new { htmlAttributes = new { @class = "form-control" } })
     </div>
+    @Html.ValidationMessageFor(model => model.UrlPart, "", new { @class = "text-danger" })
   </div>
 
   <div class="field">

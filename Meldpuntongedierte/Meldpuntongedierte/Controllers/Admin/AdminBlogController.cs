@@ -49,7 +49,7 @@ namespace Meldpunt
         return RedirectToAction("Index");
       }
 
-      return View(blogModel);
+      return View("edit",blogModel);
     }
 
     [Route("{id}")]
