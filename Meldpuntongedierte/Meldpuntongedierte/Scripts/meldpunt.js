@@ -1,7 +1,7 @@
 $(function () {
 
 
-  $(".goto-menu-mobile").on('click', function (evt) {
+  $("[data-action=toggle-menu]").on('click', function (evt) {
     evt.preventDefault();
 
     // prevent scroll trigger from closing menu

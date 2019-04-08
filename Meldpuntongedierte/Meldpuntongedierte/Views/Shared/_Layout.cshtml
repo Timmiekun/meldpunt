@@ -31,7 +31,7 @@
   <link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Catamaran:400,700,900" rel="stylesheet">
 
   @RenderSection("style", false)
- 
+
 </head>
 <body>
 
@@ -120,12 +120,29 @@
   </div>
 
   <div class="goto-menu-mobile">
-    <div class="hamburger">
-      <div class="toppings"></div>
-      <div class="burger"></div>
-      <div class="bun"></div>
+    @{
+      if (breadcrumbs.Count >= 2)
+      {
+        var parent = breadcrumbs.ElementAt<BreadCrumb>(breadcrumbs.Count - 2);
+        if (parent != null)
+        {
+          <a class="go-to-parent" href="@parent.Url">< @parent.Title</a>
+        }
+      }
+      else if(breadcrumbs.Count > 0)
+      {
+        <a class="go-to-parent" href="/">< Home</a>
+      }
+    }
+
+    <div data-action="toggle-menu">
+      <div class="hamburger">
+        <div class="toppings"></div>
+        <div class="burger"></div>
+        <div class="bun"></div>
+      </div>
+      <span>menu</span>
     </div>
-    menu
   </div>
 
   <script src="//code.jquery.com/jquery-3.3.1.min.js"

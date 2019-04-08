@@ -1,15 +1,18 @@
-﻿.blog-article h1{
+﻿
+
+.blog-article h1{
   margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .blog-article date {
   font-weight: 700;
+  margin-bottom: 40px;
+  display: block;
 }
 
-
-
 .blogItem {
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   overflow: hidden;
 }
 

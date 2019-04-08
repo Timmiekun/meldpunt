@@ -35,7 +35,14 @@
     box-shadow: none;
   }
 
-  .menu {
+  .goto-menu-mobile .go-to-parent {
+    position: absolute;
+    left: 15px;
+    text-decoration: none;
+    color: #85003c;
+  }
+
+  #tabs {
     position: fixed;
     left: 0;
     top: 0;
@@ -47,14 +54,31 @@
     background-color: #efefef;
     transform: translate3d(0,-100%,0);
     transition: all 0.2s cubic-bezier(0.39, 0.58, 0.57, 1);
+    z-index: 2;
   }
 
-  .showMe .menu {
-    transform: translate3d(0,0,0);
+  .topBar #tabs .tabItem {
+    list-style-type: none;
+    background-image: url(/images/chevron.svg);
+    background-repeat: no-repeat;
+    background-position: 20px 9px;
+    padding: 10px 40px;
+    display: block;
+    width: 100%;
+    color: #85003c;
   }
 
-  .menu h2 {
+    .topBar #tabs .tabItem:hover,
+    .topBar #tabs .activeTab {
+      background-color: transparent;
+    }
+
+  .menu {
     display: none;
+  }
+
+  .showMe #tabs {
+    transform: translate3d(0,0,0);
   }
 
   .showMe {
@@ -134,12 +158,6 @@
     font-size: 24px;
   }
 
-  .topBar #tabs .tabItem {
-    width: 100%;
-    margin: 0px;
-    padding: 10px;
-  }
-
   .woordmerk {
     margin: 30px 10px 10px 10px;
     text-align: center;
@@ -151,10 +169,6 @@
 
   .zoekForm input {
     width: 200px;
-  }
-
-  #tabs {
-    display: none;
   }
 }
 

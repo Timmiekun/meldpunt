@@ -18,6 +18,7 @@ namespace Meldpunt.Controllers
     }
 
     [Route]
+    [OutputCache(Duration = 10, VaryByParam = "none")]
     public ActionResult Index()
     {
       return View(context.BlogModels.ToList());

@@ -84,6 +84,7 @@ namespace Meldpunt
 
         UpdateRouteForBlogItem(blogModel);
         Response.RemoveOutputCacheItem("/" + blogModel.Url);
+        Response.RemoveOutputCacheItem("/blog");
       }
       return View(blogModel);
     }
