@@ -4,30 +4,47 @@
   Layout = "";
 
   var pages = ViewBag.Pages as List<PageModel>;
+  var blog = ViewBag.Blog as List<BlogModel>;
   var locations = ViewBag.Locations as Dictionary<string, HashSet<string>>;
 
 }<?xml version="1.0" encoding="UTF-8" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+ <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 
-  @foreach (var page in pages)
-  {
-    <url>
-      <loc>http://meldpuntongedierte.nl@(page.Url)</loc>
-      <changefreq>monthly</changefreq>
-      @if (page.LastModified.HasValue)
-      {
-        <lastmod>@page.LastModified.Value.ToString("yyyy-MM-dd")</lastmod>
-      }
-    </url>
-  }
+   @foreach (var page in pages)
+   {
+     <url>
+       <loc>http://meldpuntongedierte.nl@(page.Url)</loc>
+       <changefreq>monthly</changefreq>
+       @if (page.LastModified.HasValue)
+       {
+         <lastmod>@page.LastModified.Value.ToString("yyyy-MM-dd")</lastmod>
+       }
+     </url>
+   }
 
-  @foreach (var location in locations)
-  {
-    <url>
-      <loc>http://meldpuntongedierte.nl/ongediertebestrijding-@location.Key.XmlSafe()</loc>
-      <changefreq>monthly</changefreq>
-    </url>
-  }
-</urlset>
+   @foreach (var location in locations)
+   {
+     <url>
+       <loc>http://meldpuntongedierte.nl/ongediertebestrijding-@location.Key.XmlSafe()</loc>
+       <changefreq>monthly</changefreq>
+     </url>
+   }
+
+   <url>
+     <loc>http://meldpuntongedierte.nl/blog</loc>
+     <changefreq>monthly</changefreq>
+   </url>
+
+   @foreach (var blogItem in blog)
+   {
+   <url>
+     <loc>http://meldpuntongedierte.nl/blog/@blogItem.UrlPart</loc>   
+     @if (blogItem.LastModified.HasValue)
+     {
+       <lastmod>@blogItem.LastModified.Value.ToString("yyyy-MM-dd")</lastmod>
+     }
+   </url>
+   }
+ </urlset>

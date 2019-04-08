@@ -12,6 +12,7 @@ namespace Meldpunt.Models
     [Key]
     public Guid Id { get; set; }
 
+    [Required]
     public string Title { get; set; }
 
     public String Image { get; set; }
@@ -24,6 +25,7 @@ namespace Meldpunt.Models
 
     public string Content { get; set; }
 
+    [Required]
     public string UrlPart { get; set; }
     
 

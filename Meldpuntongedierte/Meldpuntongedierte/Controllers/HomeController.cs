@@ -14,11 +14,13 @@ namespace Meldpunt.Controllers
   {
     private IPageService pageService;
     private IPlaatsService plaatsService;
+    private MeldpuntContext db;
 
-    public HomeController(IPlaatsService _plaatsService, IPageService _pageService)
+    public HomeController(IPlaatsService _plaatsService, IPageService _pageService, MeldpuntContext _db)
     {
       pageService = _pageService;
       plaatsService = _plaatsService;
+      db = _db;
     }
 
     [OutputCache(Duration = 10, VaryByParam = "none")]
@@ -34,6 +36,7 @@ namespace Meldpunt.Controllers
     {
       ViewBag.Pages = pageService.GetAllPages();
       ViewBag.Locations = LocationUtils.placesByMunicipality;
+      ViewBag.Blog = db.BlogModels.Where(b => b.LastModified != null && b.Published != null).ToList();
 
       Response.ContentType = "text/xml";
       return View();

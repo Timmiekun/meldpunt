@@ -164,6 +164,10 @@
     <Compile Include="Migrations\201904041007099_update_blog.Designer.cs">
       <DependentUpon>201904041007099_update_blog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904080923161_urlpart_required_for_blog.cs" />
+    <Compile Include="Migrations\201904080923161_urlpart_required_for_blog.Designer.cs">
+      <DependentUpon>201904080923161_urlpart_required_for_blog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IndexableItem.cs" />
     <Compile Include="Models\ImageRequestModel.cs" />
@@ -345,6 +349,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904041007099_update_blog.resx">
       <DependentUpon>201904041007099_update_blog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904080923161_urlpart_required_for_blog.resx">
+      <DependentUpon>201904080923161_urlpart_required_for_blog.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
