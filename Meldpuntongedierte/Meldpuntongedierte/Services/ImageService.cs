@@ -12,8 +12,12 @@ namespace Meldpunt.Services
 {
   public class ImageService : IImageService
   {
+#pragma warning disable CS0169 // The field 'ImageService.imagesDir' is never used
     string imagesDir;
+#pragma warning restore CS0169 // The field 'ImageService.imagesDir' is never used
+#pragma warning disable CS0169 // The field 'ImageService.cacheDir' is never used
     string cacheDir;
+#pragma warning restore CS0169 // The field 'ImageService.cacheDir' is never used
 
     DirectoryInfo imageFolder;
     DirectoryInfo cacheFolder;

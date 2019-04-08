@@ -4,7 +4,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 99;
+  z-index: 999999;
 }
 
   .m-modal.hidden {
@@ -53,3 +53,33 @@
   .m-modal .popup .suggest-results .list-item {
     cursor: pointer;
   }
+
+  .m-modal .popup .suggest-results .list-item-image {
+    float: left;
+    padding: 10px;
+    margin-right: 5px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    width: 49%;
+  }
+
+  .m-modal .popup .suggest-results .list-item-image img{
+    margin: 0 auto;
+    width: 200px;
+    display: block;
+    position: relative;
+  }
+
+    .m-modal .popup .suggest-results .list-item-image input {
+      width: 45%;
+      display: inline-block;
+    }
+
+    .m-modal .popup .suggest-results .list-item-image .size-select.hidden {
+      display: none;
+    }
+
+    .m-modal .popup .suggest-results .list-item-image .size-select{
+      margin:10px 0;
+    }

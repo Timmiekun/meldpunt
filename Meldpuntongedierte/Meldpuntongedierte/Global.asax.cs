@@ -1,8 +1,10 @@
 ﻿using Meldpunt.ActionFilters;
 using Meldpunt.Controllers;
+using Meldpunt.Models;
 using Meldpunt.Services;
 using Meldpunt.Utils;
 using System;
+using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
@@ -49,6 +51,15 @@ namespace Meldpunt
         }
       }
 
+      foreach(var blog in new MeldpuntContext().BlogModels.Where(b=> b.UrlPart != null && b.Published.HasValue))
+      {
+        routes.MapRoute(
+        "Blog-" + blog.Id.ToString(), // Route name
+        "blog/" + blog.UrlPart.XmlSafe(), // URL with parameters
+        new { controller = "Blog", action = "Details", id = blog.Id }
+        ); // Parameter defaults
+      }
+
       routes.MapRoute(
         "Default", // Route name
         "{controller}/{action}/{id}", // URL with parameters
@@ -73,6 +84,9 @@ namespace Meldpunt
       RegisterGlobalFilters(GlobalFilters.Filters);
 
       RegisterRoutes(RouteTable.Routes);
+
+      ViewEngines.Engines.Add(new CustomViewEngine());
+
     }
 
     protected void Application_Error(Object sender, System.EventArgs e)
@@ -105,7 +119,7 @@ namespace Meldpunt
           default:
             routeData.Values["action"] = "General";
             break;
-        } 
+        }
 
         IController errorsController = new ErrorController();
         var rc = new RequestContext(new HttpContextWrapper(Context), routeData);

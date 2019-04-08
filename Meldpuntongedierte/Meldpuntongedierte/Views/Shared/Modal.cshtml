@@ -1,10 +1,24 @@
 ﻿<div class="m-modal hidden">
   <div class="background"></div>
   <div class="popup">
-    <h2>Zoek pagina</h2>
+    <h2 id="modal-title">Zoek pagina</h2>
     <div class="innerPopup">
-      <input type="text" placeholder="zoek pagina.." class="form-control" onkeyup="pageSuggest.getSuggests(event,this)" />
+      <input id="modal-search" type="text" placeholder="zoek pagina.." class="form-control" onkeyup="pageSuggest.getSuggests(event,this)" />
       <div id="suggests" class="suggest-results"></div>
     </div>
   </div>
 </div>
+
+<template id="image-result">
+  <div data-role="result-item" data-url="/image?name=rat.jpg" data-title="rat.jpg" class="list-item list-item-image" data-width="">
+    <img src="/image?name=rat.jpg&amp;width=200&amp;height=140">
+    <div data-role="size-select" class="size-select hidden">
+      <input name="width" class="form-control" type="number" onblur="addPropertyToDataset(this)">
+      <span> x </span>
+      <input name="height" class="form-control" type="number" onblur="addPropertyToDataset(this)">
+    </div>
+    <div class="float-right">
+      <button class="btn btn-info">Kies</button>
+    </div>
+  </div>
+</template>

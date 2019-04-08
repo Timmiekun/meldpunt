@@ -18,16 +18,7 @@ $(function () {
     readURL(this);
   });
 
-  //window.addEventListener("scroll", function (event) {
-  //  let scrollTop = $(window).scrollTop();
-  //  $(".toolbar").offset();
-  //  if (scrollTop > 100) {
-  //    $(".toolbar").addClass("sticky");
-  //  }
-  //  else {
-  //    $(".toolbar").removeClass("sticky");
-  //  }
-  //});
+  $(".datepicker").datepicker({ dateFormat: 'dd-mm-yy' });
 
 });
 

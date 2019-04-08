@@ -4,18 +4,25 @@
   });
 });
 
-
 var pageSuggest = {
   suggests: {},
   timeout: null,
+  type: null,
+  callback: null,
+  imageTemplate: document.querySelector("#image-result"),
 
   getSuggests: function (evt, input) {
+
     if (this.timeout) {
       clearTimeout(this.timeout);
     }
+
     var inputValue = input.value;
     if (inputValue.length > 1) {
       var url = "/api/getPageSuggest?query=" + inputValue;
+      if (pageSuggest.type === "image")
+        url = "/api/getImageSuggest?query=" + inputValue;
+
       this.timeout = setTimeout(function () {
         $.ajax({
           dataType: "json",
@@ -32,27 +39,81 @@ var pageSuggest = {
 
   fillSuggestBox: function () {
     var suggestBox = document.querySelector('#suggests');
-    let content = "";
+    suggestBox.innerHTML = "";
+
+    if (!pageSuggest.suggests.length) {
+      suggestBox.innerHTML = "Niets gevonden";
+      return;
+    }
+
     for (var x = 0; x < pageSuggest.suggests.length; x++) {
       var result = pageSuggest.suggests[x];
       if (result) {
-        let el = '<div data-url='+result.Url+' data-id=' + result.Id + ' class="list-item">';
-        el += '<div class="title">' + result.Title + '</div>';
-        el += '<div class="url">' + result.Url + '</div>';
-        el += '</div>';
-        content += el;
-      }
+        if (pageSuggest.type === "image")
+          suggestBox.appendChild(pageSuggest.createImageElement(result));
+        else
+          suggestBox.appendChild(pageSuggest.createPageElement(result));
+      }     
     }
-    console.log(content);
-    suggestBox.innerHTML = content;
-    
-    suggestBox.querySelectorAll(".list-item").forEach(function (elem) {     
-      elem.addEventListener("click", function (evt) {
-        document.querySelector("#inputGroupPrepend").innerHTML = elem.dataset.url;
-        document.querySelector("#parentId").value = elem.dataset.id;
-        $(".m-modal").addClass("hidden");
-      });
+
+    suggestBox.querySelectorAll("[data-role=result-item]").forEach(function (item) {
+      if (pageSuggest.type === "image") {
+        item.querySelector("button").addEventListener("click", function (evt) {        
+          if (pageSuggest.callback) {
+            var imageUrl = item.dataset.url;
+            if (item.dataset.width)
+              imageUrl += "&width=" + item.dataset.width;
+            if (item.dataset.height)
+              imageUrl += "&height=" + item.dataset.height;
+
+            pageSuggest.callback(imageUrl, {
+              alt: item.dataset.title
+            });
+          }
+          else {          
+            document.querySelector("#Image").value = item.dataset.url;
+            document.querySelector("#imagePreview").src = item.dataset.url + "&width=200&height=140";
+          }
+          $(".m-modal").addClass("hidden");
+
+        });
+      }
+      else {
+        item.addEventListener("click", function () {
+          document.querySelector("#parentId").value = item.dataset.id;
+          document.querySelector("#inputGroupPrepend").innerHTML = item.dataset.url;
+          $(".m-modal").addClass("hidden");
+        });
+      }
     });
+  },
+
+  createPageElement: function (result) {
+    let el = document.createElement("div");
+    el.dataset.url = result.Url;
+    el.dataset.id = result.Id;
+    el.dataset.role = "result-item";
+    el.className = "list-item";
+
+    el.innerHTML += '<div class="title">' + result.Title + '</div>';
+    el.innerHTML += '<div class="url">' + result.Url + '</div>';
+    return el;
+  },
+
+  createImageElement: function (result) {
+    let template = this.imageTemplate;
+    let el = document.importNode(template.content, true).querySelector("div");
+    let url = "/image?name=" + result.Title;
+
+    el.dataset.url = url;
+    el.dataset.title = result.Title;
+
+    el.querySelector("img").src = url + '&width=200&height=140';
+
+    if (pageSuggest.showAdvanced) {
+      el.querySelector("[data-role=size-select]").classList.remove("hidden");
+    }
+    return el;
   },
 
   cancelEvent: function (evt) {
@@ -78,8 +139,21 @@ var pageSuggest = {
   }
 };
 
-function OpenModal() {
+function addPropertyToDataset(el) {
+  el.parentElement.parentElement.dataset[el.name] = el.value;
+}
+
+function OpenModal(type, callback, showAdvanced) {
+  pageSuggest.type = type;
+  pageSuggest.callback = callback;
+  pageSuggest.showAdvanced = showAdvanced;
+
+  document.querySelector('#suggests').innerHTML = "";
+  document.querySelector('#modal-search').value = "";
+  
   $(".m-modal").removeClass("hidden");
+
+  document.querySelector('#modal-search').focus();
 }
 
 function htmlToElement(html) {

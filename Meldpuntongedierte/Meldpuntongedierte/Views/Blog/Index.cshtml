@@ -1,0 +1,27 @@
+﻿@using Meldpunt.Models;
+@model List<BlogModel>
+@{
+  ViewBag.Title = "Blog - Meldpunt Ongedierte";
+  ViewBag.Description = "Blog";
+  ViewBag.BreadCrumbs = new List<BreadCrumb>() { new BreadCrumb { Title = "Blog", Url = "/blog" } };
+}
+
+@section style{
+  <link type="text/css" rel="stylesheet" href="/css/blog.css?v=@ViewBag.AppVersion">
+}
+
+@foreach (var blogItem in Model.OrderByDescending(b => b.Published))
+{
+  <article class="blogItem">
+
+    <h1>@blogItem.Title</h1>
+    <date>
+      @blogItem.Published.Value.ToString("D")
+    </date>
+    <img src="@blogItem.Image&width=375&height=150&mode=crop" />
+    <p>@blogItem.Intro</p>
+    <div>
+      <a class="read-more" href="/blog/@blogItem.UrlPart">Lees meer</a>
+    </div>
+  </article>
+}
