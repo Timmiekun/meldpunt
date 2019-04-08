@@ -1,7 +1,8 @@
+using Meldpunt.Models;
 using Meldpunt.Services;
 using System;
-
 using Unity;
+using Unity.AspNet.Mvc;
 using Unity.Lifetime;
 
 namespace Meldpunt
@@ -42,16 +43,11 @@ namespace Meldpunt
       // Make sure to add a Unity.Configuration to the using statements.
       // container.LoadConfiguration();
 
-      container.RegisterType<IPlaatsService, PlaatsService>(new ContainerControlledLifetimeManager());
-      container.RegisterType<IPageService, PageService>(new ContainerControlledLifetimeManager());
+      container.RegisterType<IPlaatsService, PlaatsService>();
+      container.RegisterType<IPageService, PageService>();
       container.RegisterType<ISearchService, SearchService>();
-      container.RegisterType<IImageService, ImageService>(new ContainerControlledLifetimeManager());
-
-      var plaats = container.Resolve<PlaatsService>();
-      var page = container.Resolve<PageService>();
-      var search = container.Resolve<SearchService>();
-      var image = container.Resolve<ImageService>();
-
+      container.RegisterType<IImageService, ImageService>();
+      container.RegisterType<MeldpuntContext>();
     }
   }
 }

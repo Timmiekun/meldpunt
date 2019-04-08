@@ -13,9 +13,9 @@
 
 @foreach (var blogItem in Model)
 {
-  <div class="blogItem">
+  <article class="blogItem">
     <img src="@blogItem.Image&width=200" />
-    <h2>@blogItem.Title</h2>
+    <h1>@blogItem.Title</h1>
     <date>
       @blogItem.Published.Value.ToString("D")
     </date>
@@ -23,5 +23,5 @@
     <div>
       <a href="/blog/@blogItem.UrlPart">/blog/@blogItem.UrlPart</a>
     </div>
-  </div>
+  </article>
 }

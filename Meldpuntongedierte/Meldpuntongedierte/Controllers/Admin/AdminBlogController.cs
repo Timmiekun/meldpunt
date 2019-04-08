@@ -12,7 +12,12 @@ namespace Meldpunt
   [RoutePrefix("admin/blogitems")]
   public class AdminBlogController : Controller
   {
-    private MeldpuntContext db = new MeldpuntContext();
+    private MeldpuntContext db;
+
+    public AdminBlogController(MeldpuntContext _db)
+    {
+      db = _db;
+    }
 
     // GET: BlogModels
     [Route]

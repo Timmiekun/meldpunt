@@ -12,9 +12,9 @@ namespace Meldpunt.Controllers
   {
     MeldpuntContext context;
 
-    public BlogController()
+    public BlogController(MeldpuntContext _context)
     {
-      context = new MeldpuntContext();
+      context = _context;
     }
 
     [Route]
