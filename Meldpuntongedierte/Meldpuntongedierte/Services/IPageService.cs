@@ -7,6 +7,7 @@ namespace Meldpunt.Services
   {
 
     List<PageModel> GetAllPagesTree();
+
     List<PageModel> GetAllPages();
 
     List<PageModel> GetPagesForTabs();
@@ -24,6 +25,6 @@ namespace Meldpunt.Services
     PageModel newPage();
 
     void deletePage(string guid);
-
+    void AddMetaTitles();
   }
 }

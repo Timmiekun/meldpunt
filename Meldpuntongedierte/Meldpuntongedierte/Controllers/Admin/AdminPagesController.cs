@@ -129,6 +129,27 @@ namespace Meldpunt.Controllers
     }
     #endregion
 
+    #region stayaway
+    [Route("updateimages")]
+    public ActionResult UpdateImages()
+    {
+      //pageService.updateImages();
+      return new EmptyResult();
+    }
 
+    [Route("addguids")]
+    public ActionResult AddGuids()
+    {
+      //pageService.AddGuids();
+      return new EmptyResult();
+    }
+
+    [Route("AddMetaTitles")]
+    public ActionResult AddMetaTitles()
+    {
+      pageService.AddMetaTitles();
+      return new EmptyResult();
+    }
+    #endregion
   }
 }

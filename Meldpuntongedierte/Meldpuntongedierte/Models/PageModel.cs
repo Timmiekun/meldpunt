@@ -7,23 +7,12 @@ namespace Meldpunt.Models
 {
   public class PageModel : IndexableItem
   {
-    public string Title
-    {
-      get
-      {
-        if (string.IsNullOrWhiteSpace(EditableTitle))
-        {
-          return Utils.Utils.Capitalize(Id.Replace("-", " ").Trim());
-        }
-
-        return EditableTitle;
-      }
-    }
-
-    public Guid Guid { get; set; }
-    public string EditableTitle { get; set; }
-    public string HeaderTitle { get; set; }
     public string Id { get; set; }
+    public Guid Guid { get; set; }
+
+    public string Title { get; set; }
+    public string MetaTitle { get; set; }
+   
     public string Content { get; set; }
     public string Url { get; set; }
     public string UrlPart { get; set; }

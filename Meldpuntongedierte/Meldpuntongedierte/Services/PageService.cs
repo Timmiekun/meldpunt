@@ -3,7 +3,6 @@ using Meldpunt.Models;
 using Meldpunt.Utils;
 using System;
 using System.Collections.Generic;
-using System.Web;
 using System.Web.Hosting;
 using System.Xml;
 
@@ -85,6 +84,28 @@ namespace Meldpunt.Services
       pagesDoc.Save(pageFile);
     }
 
+    public void AddMetaTitles()
+    {
+      XmlNodeList pages = pagesDoc.DocumentElement.SelectNodes("//page");
+      foreach (XmlElement page in pages)
+      {
+        string title = page.SelectSingleNode("title")?.InnerText;
+        if (String.IsNullOrWhiteSpace(title))
+        {
+          if (page.SelectSingleNode("content/h1") != null)
+            title = page.SelectSingleNode("content/h1").InnerText;
+          else if (page.SelectSingleNode("content/h2") != null)
+            title = page.SelectSingleNode("content/h2").InnerText;
+          else
+            title = page.Attributes["id"].Value;
+        }
+
+        createOrUpdateElement(page, "title", title);
+        createOrUpdateElement(page, "metatitle", title);
+      }
+      pagesDoc.Save(pageFile);
+    }
+
     public List<PageModel> GetAllPages()
     {
       XmlNodeList pages = pagesDoc.DocumentElement.SelectNodes("//page");
@@ -162,11 +183,12 @@ namespace Meldpunt.Services
       page.SelectSingleNode("content").InnerXml = html;
 
       createOrUpdateElement(page, "metadescription", p.MetaDescription);
-      createOrUpdateElement(page, "title", p.EditableTitle);
+      createOrUpdateElement(page, "metatitle", p.MetaTitle);
+      createOrUpdateElement(page, "title", p.Title);
       createOrUpdateElement(page, "sort", p.Sort.ToString());
       createOrUpdateElement(page, "urlPart", p.UrlPart);
 
-      page.SetAttribute("id", p.UrlPart?.XmlSafe() ?? p.EditableTitle.XmlSafe());
+      page.SetAttribute("id", p.UrlPart?.XmlSafe() ?? p.MetaTitle.XmlSafe());
       page.SetAttribute("tab", p.InTabMenu ? "true" : "false");
       page.SetAttribute("inhome", p.InHomeMenu ? "true" : "false");
       page.SetAttribute("parentid", p.ParentId);
@@ -262,10 +284,6 @@ namespace Meldpunt.Services
         parent = parent.SelectSingleNode("../../.");
       }
 
-      string headertitle = "";
-      if (page.SelectSingleNode("content/h1") != null)
-        headertitle = page.SelectSingleNode("content/h1").InnerText;
-
       string metadescription = null;
       if (page.SelectSingleNode("metadescription") != null)
         metadescription = page.SelectSingleNode("metadescription").InnerText;
@@ -297,11 +315,13 @@ namespace Meldpunt.Services
         }
       }
 
+      string title = page.SelectSingleNode("title")?.InnerText;
+      string metaTitle = page.SelectSingleNode("metatitle")?.InnerText;
 
       HtmlDocument hh = new HtmlDocument();
       hh.LoadHtml("<html>" + html + "</html>");
       string text = hh.DocumentNode.InnerText;
-      text += " " + headertitle + " " + id + " " + url;
+      text += title + " " + metaTitle + " " + id + " " + url;
 
       PageModel p = new PageModel()
       {
@@ -315,13 +335,13 @@ namespace Meldpunt.Services
         ParentId = parentId,
         HasSublingMenu = page.Attributes["haschildmenu"] != null && page.Attributes["haschildmenu"].Value == "true",
         FullText = text,
-        HeaderTitle = headertitle,
         InTabMenu = page.Attributes["tab"] != null && page.Attributes["tab"].Value == "true",
         InHomeMenu = page.Attributes["inhome"] != null && page.Attributes["inhome"].Value == "true",
         MetaDescription = metadescription,
         Published = published,
         Sort = sort,
-        EditableTitle = page.SelectSingleNode("title")?.InnerText,
+        Title = page.SelectSingleNode("title")?.InnerText,
+        MetaTitle = page.SelectSingleNode("metatitle")?.InnerText,
         LastModified = lastModified
       };
 

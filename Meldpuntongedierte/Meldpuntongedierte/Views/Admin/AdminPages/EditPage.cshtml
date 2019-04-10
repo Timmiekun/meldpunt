@@ -9,6 +9,11 @@
 
 <h1>@Model.Title</h1>
 
+@if (Model.LastModified.HasValue)
+{
+  <p>Laatst aangepast: @Model.LastModified.Value.ToString("f")</p>
+}
+
 <div class="actions">
   <button onclick="$('#opslaan').click()" class="btn btn-info">Opslaan</button>
   <a class="btn btn-info" href="@Model.Url" target="_blank">Pagina bekijken</a>
@@ -49,21 +54,18 @@
 
   </div>
 
-
-  @if (Model.LastModified.HasValue)
-  {
-    <div class="field">
-      Voor het laatst aangepast: <b>@Model.LastModified.Value.ToString("R")</b>
-    </div>
-  }
-
   <div class="field">
-    <label for="MetaDescription">Meta Titel</label>
-    <input type="text" name="EditableTitle" class="form-control" value="@Model.Title" />
+    <label for="Title">Title</label>
+    <input type="text" name="Title" class="form-control" value="@Model.Title" />
   </div>
 
   <div class="field">
-    <label for="MetaDescription">Meta description</label>
+    <label for="MetaTitle">MetaTitel</label>
+    <input type="text" name="MetaTitle" class="form-control" value="@Model.MetaTitle" />
+  </div>
+
+  <div class="field">
+    <label for="MetaDescription">MetaDescription</label>
     <textarea id="MetaDescription" class="form-control" name="MetaDescription" type="text">@Model.MetaDescription</textarea>
   </div>
 

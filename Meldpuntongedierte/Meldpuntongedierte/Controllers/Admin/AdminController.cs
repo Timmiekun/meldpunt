@@ -50,20 +50,7 @@ namespace Meldpunt.Controllers
     {
       return View();
     }
-
-    [Route("updateimages")]
-    public ActionResult UpdateImages()
-    {
-      //pageService.updateImages();
-      return new EmptyResult();
-    }
-
-    [Route("addguids")]
-    public ActionResult AddGuids()
-    {
-      //pageService.AddGuids();
-      return new EmptyResult();
-    }
+   
 
     #region redirects
     [Route("Redirects")]
