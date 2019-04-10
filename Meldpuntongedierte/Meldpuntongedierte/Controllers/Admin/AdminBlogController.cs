@@ -44,6 +44,9 @@ namespace Meldpunt
       if (ModelState.IsValid)
       {
         blogModel.Id = Guid.NewGuid();
+        blogModel.UrlPart = blogModel.UrlPart.XmlSafe();
+        blogModel.LastModified = DateTimeOffset.Now;
+        db.Entry(blogModel).State = EntityState.Modified;
         db.BlogModels.Add(blogModel);
         db.SaveChanges();
         return RedirectToAction("Index");
@@ -89,25 +92,8 @@ namespace Meldpunt
       return View(blogModel);
     }
 
-    [Route("delete")]
-    public ActionResult Delete(Guid? id)
-    {
-      if (id == null)
-      {
-        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-      }
-      BlogModel blogModel = db.BlogModels.Find(id);
-      if (blogModel == null)
-      {
-        return HttpNotFound();
-      }
-      return View(blogModel);
-    }
 
-    // POST: BlogModels/Delete/5
-    [HttpPost, ActionName("Delete")]
-    [ValidateAntiForgeryToken]
-    [Route("delete")]
+    [Route("delete/{id}")]
     public ActionResult DeleteConfirmed(Guid id)
     {
       BlogModel blogModel = db.BlogModels.Find(id);
