@@ -12,10 +12,12 @@ namespace Meldpunt.Models
 
     public string Title { get; set; }
     public string MetaTitle { get; set; }
-   
-    public string Content { get; set; }
     public string Url { get; set; }
     public string UrlPart { get; set; }
+
+    public string Image { get; set; }
+    public string Content { get; set; }
+    
     public string ParentPath { get; set; }
     public string FullText { get; set; }
     public bool HasSublingMenu { get; set; }

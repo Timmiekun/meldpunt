@@ -81,6 +81,13 @@
   </div>
 
   <div class="field">
+    @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label" })
+    @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "form-control", onclick = "OpenModal('image')" } })
+    @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+    <img class="imagePreview" src="@Model.Image&width=200&height=140" id="imagePreview" />
+  </div>
+
+  <div class="field">
     <label for="content">Content</label>
     <textarea id="content" name="content" class="richtext">
 			@Model.Content

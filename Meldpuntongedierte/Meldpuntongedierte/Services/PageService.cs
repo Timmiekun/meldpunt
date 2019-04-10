@@ -185,6 +185,7 @@ namespace Meldpunt.Services
       createOrUpdateElement(page, "metadescription", p.MetaDescription);
       createOrUpdateElement(page, "metatitle", p.MetaTitle);
       createOrUpdateElement(page, "title", p.Title);
+      createOrUpdateElement(page, "image", p.Image);
       createOrUpdateElement(page, "sort", p.Sort.ToString());
       createOrUpdateElement(page, "urlPart", p.UrlPart);
 
@@ -317,6 +318,7 @@ namespace Meldpunt.Services
 
       string title = page.SelectSingleNode("title")?.InnerText;
       string metaTitle = page.SelectSingleNode("metatitle")?.InnerText;
+      string image = page.SelectSingleNode("image")?.InnerText;
 
       HtmlDocument hh = new HtmlDocument();
       hh.LoadHtml("<html>" + html + "</html>");
@@ -342,6 +344,7 @@ namespace Meldpunt.Services
         Sort = sort,
         Title = page.SelectSingleNode("title")?.InnerText,
         MetaTitle = page.SelectSingleNode("metatitle")?.InnerText,
+        Image = image,
         LastModified = lastModified
       };
 
