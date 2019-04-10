@@ -1,2 +1,3 @@
 User-agent: *
-Disallow: /sitemap
+Sitemap: https://www.meldpuntongedierte.nl/sitemap
+Disallow: /admin
