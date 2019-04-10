@@ -13,7 +13,7 @@
   @foreach (var page in pages)
   {
     <url>
-      <loc>https://meldpuntongedierte.nl@(page.Url)</loc>
+      <loc>https://www.meldpuntongedierte.nl@(page.Url)</loc>
       <changefreq>monthly</changefreq>
       @if (page.LastModified.HasValue)
       {
@@ -25,20 +25,20 @@
   @foreach (var location in locations)
   {
     <url>
-      <loc>https://meldpuntongedierte.nl/ongediertebestrijding-@location.Key.XmlSafe()</loc>
+      <loc>https://www.meldpuntongedierte.nl/ongediertebestrijding-@location.Key.XmlSafe()</loc>
       <changefreq>monthly</changefreq>
     </url>
   }
 
   <url>
-    <loc>https://meldpuntongedierte.nl/blog</loc>
+    <loc>https://www.meldpuntongedierte.nl/blog</loc>
     <changefreq>monthly</changefreq>
   </url>
 
   @foreach (var blogItem in blog)
   {
     <url>
-      <loc>https://meldpuntongedierte.nl/blog/@blogItem.UrlPart</loc>
+      <loc>https://www.meldpuntongedierte.nl/blog/@blogItem.UrlPart</loc>
       @if (blogItem.LastModified.HasValue)
       {
         <lastmod>@blogItem.LastModified.Value.ToString("yyyy-MM-dd")</lastmod>

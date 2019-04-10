@@ -1,17 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <redirects>
-  <redirect id="41156553-e2b6-4315-ba03-5330f2a084c0" created="11-03-2019 13:18" lastmodified="11-03-2019 11:41">
-    <from>/insectengids1/wespen/wespenbestrijding</from>
-    <to>/wespenbestrijding</to>
-  </redirect>
-  <redirect id="aba7b656-eed6-4bbf-9e86-c6268d074f5c" lastmodified="11-03-2019 02:54" created="11-03-2019 02:54">
-    <from>/blabla</from>
-    <to>/insectengids/wespen/wespenbestrijding</to>
-  </redirect>
-  <redirect id="bf8ee76b-82ff-487e-84ed-42f1ca54bdda" lastmodified="11-03-2019 04:58" created="11-03-2019 04:58">
-    <from>/iniets</from>
-    <to>/naar</to>
-  </redirect>
   <redirect id="cfb5440f-76f2-4385-804c-de39687f5b60" lastmodified="14-03-2019 10:46" created="14-03-2019 10:46">
     <from>/insectengids/wespen/wespenbestrijding/rondhangende-wespen</from>
     <to>/insectengids/wespen/wespenbestrijding/is-het-wel-een-wespennest?</to>

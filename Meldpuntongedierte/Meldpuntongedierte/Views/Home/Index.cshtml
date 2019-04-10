@@ -9,20 +9,23 @@
 }
 
 @section SD{
-  <script type="application/ld+json">
-    {
-    "@("@context")": "http://schema.org/",
-    "@("@type"): "Article",
-    "dateModified" : "@Model.LastModified.Value.ToString("yyyy-MM-dd")",
-    "datePublished" : "@Model.Published.Value.ToString("yyyy-MM-dd")",
-    "headline": "@Model.MetaDescription",
-    "image" : "https://www.meldpuntongedierte.nl@(Model.Image + "&width=700")"
-    }
-  </script>
+<script type="application/ld+json">
+  {
+  "@("@context")": "http://schema.org/",
+  "@("@type"): "Article",
+  "dateModified" : "@Model.LastModified.Value.ToString("yyyy-MM-dd")",
+  "datePublished" : "@Model.Published.Value.ToString("yyyy-MM-dd")",
+  "headline": "@Model.MetaDescription",
+  @if (!String.IsNullOrEmpty(Model.Image))
+  {
+    <text>"image" : "https://www.meldpuntongedierte.nl@(Model.Image)@Html.Raw("&width=700")",</text>
+  }
+  }
+</script>
 }
-
-@Html.Raw(Model.Content)
-
+<article>
+  @Html.Raw(Model.Content)
+</article>
 
 @section menu{
   @if (subNav != null && subNav.Any())

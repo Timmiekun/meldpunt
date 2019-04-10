@@ -26,5 +26,6 @@ namespace Meldpunt.Services
 
     void deletePage(string guid);
     void AddMetaTitles();
+    void UpdatePublished();
   }
 }

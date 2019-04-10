@@ -150,6 +150,13 @@ namespace Meldpunt.Controllers
       pageService.AddMetaTitles();
       return new EmptyResult();
     }
+
+    [Route("UpdatePublished")]
+    public ActionResult UpdatePublished()
+    {
+      pageService.UpdatePublished();
+      return new EmptyResult();
+    }
     #endregion
   }
 }

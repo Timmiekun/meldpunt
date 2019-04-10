@@ -24,6 +24,7 @@ namespace Meldpunt.Models
     public string ParentId { get; set; }
     public List<PageModel> SubPages { get; set; }
     public DateTimeOffset? LastModified { get; set; }
+    public DateTimeOffset? Published { get; set; }
 
     /// <summary>
     /// Used to sort Childpages
@@ -31,7 +32,6 @@ namespace Meldpunt.Models
     public int Sort { get; set; }
 
     //admin
-    public bool Published { get; set; }
     public bool InTabMenu { get; set; }
     public bool InHomeMenu { get; set; }
     public string MetaDescription { get; set; }

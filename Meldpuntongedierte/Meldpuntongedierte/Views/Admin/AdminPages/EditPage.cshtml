@@ -25,21 +25,14 @@
   <div class="checkboxes">
 
     <div class="field">
-      <label for="publish">
-        @Html.CheckBoxFor(p => p.Published)
-        gepubliceerd
-      </label>
-    </div>
-
-    <div class="field">
-      <label for="publish">
+      <label for="InTabMenu">
         @Html.CheckBoxFor(p => p.InTabMenu)
         tonen in top menu
       </label>
     </div>
 
     <div class="field">
-      <label for="publish">
+      <label for="InHomeMenu">
         @Html.CheckBoxFor(p => p.InHomeMenu)
         tonen in hoofd menu
       </label>
@@ -78,6 +71,14 @@
       <input type="hidden" name="parentId" id="parentId" value="@Model.ParentId" />
       <input type="text" name="UrlPart" class="form-control" value="@(Model.UrlPart ?? Model.Id)" />
     </div>
+  </div>
+
+  <div class="field">
+    @Html.LabelFor(model => model.Published, htmlAttributes: new { @class = "control-label" })
+
+    @Html.EditorFor(model => model.Published, new { htmlAttributes = new { @class = "form-control datepicker" } })
+    @Html.ValidationMessageFor(model => model.Published, "", new { @class = "text-danger" })
+
   </div>
 
   <div class="field">

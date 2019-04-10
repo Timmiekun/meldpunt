@@ -27,84 +27,7 @@ namespace Meldpunt.Services
       return XmlToModel(pages, true);
     }
 
-    public void updateImages()
-    {
-      XmlNodeList pages = pagesDoc.DocumentElement.SelectNodes("//page");
-      foreach (XmlNode page in pages)
-      {
-        if (String.IsNullOrWhiteSpace(page.SelectSingleNode("content").InnerXml))
-          continue;
-        string htmlstring = page.SelectSingleNode("content").InnerXml.Substring(9);
-        htmlstring = htmlstring.Substring(0, htmlstring.Length - 3);
-        htmlstring = "<html><body>" + htmlstring + "</body></html>";
-        var doc = new HtmlDocument();
-        doc.LoadHtml(htmlstring);
-
-        var images = doc.DocumentNode.SelectNodes("//img");
-        if (images == null || images.Count == 0)
-          continue;
-
-        foreach (var img in images)
-        {
-          var src = img.Attributes["src"].Value;
-          if (src.ToLower().Contains("/afbeeldingen/"))
-          {
-            var width = img.Attributes["width"];
-            var height = img.Attributes["height"];
-            var newSource = "/image?name=" + src.Substring(14) + "&";
-            if (width != null)
-            {
-              newSource += "width=" + width.Value + "&";
-              img.Attributes.Remove(width);
-            }
-            if (height != null)
-            {
-              newSource += "height=" + height.Value;
-              img.Attributes.Remove(height);
-            }
-            img.Attributes["src"].Value = newSource;
-          }
-        }
-
-        string newHtml = doc.DocumentNode.SelectSingleNode("//body").InnerHtml;
-        page.SelectSingleNode("content").InnerXml = String.Format("<![CDATA[{0}]]>", newHtml);
-
-      }
-
-      pagesDoc.Save(pageFile);
-    }
-
-    internal void AddGuids()
-    {
-      XmlNodeList pages = pagesDoc.DocumentElement.SelectNodes("//page");
-      foreach (XmlElement page in pages)
-      {
-        page.SetAttribute("guid", Guid.NewGuid().ToString());
-      }
-      pagesDoc.Save(pageFile);
-    }
-
-    public void AddMetaTitles()
-    {
-      XmlNodeList pages = pagesDoc.DocumentElement.SelectNodes("//page");
-      foreach (XmlElement page in pages)
-      {
-        string title = page.SelectSingleNode("title")?.InnerText;
-        if (String.IsNullOrWhiteSpace(title))
-        {
-          if (page.SelectSingleNode("content/h1") != null)
-            title = page.SelectSingleNode("content/h1").InnerText;
-          else if (page.SelectSingleNode("content/h2") != null)
-            title = page.SelectSingleNode("content/h2").InnerText;
-          else
-            title = page.Attributes["id"].Value;
-        }
-
-        createOrUpdateElement(page, "title", title);
-        createOrUpdateElement(page, "metatitle", title);
-      }
-      pagesDoc.Save(pageFile);
-    }
+   
 
     public List<PageModel> GetAllPages()
     {
@@ -148,7 +71,7 @@ namespace Meldpunt.Services
 
       //check if we should move the page
       string parentpageId = page.Attributes["parentid"]?.Value;
-      if (!String.Equals(p.ParentId, parentpageId))
+      if (!String.Equals((p.ParentId ?? ""), (parentpageId ?? "")))
       {
         // parent changed, move element
         XmlElement parent = (XmlElement)pagesDoc.SelectSingleNode("//page[@guid='" + p.ParentId + "']");
@@ -178,8 +101,7 @@ namespace Meldpunt.Services
       }
 
       string html = String.Format("<![CDATA[{0}]]>", p.Content);
-
-      page.SetAttribute("published", p.Published ? "true" : "false");
+   
       page.SelectSingleNode("content").InnerXml = html;
 
       createOrUpdateElement(page, "metadescription", p.MetaDescription);
@@ -193,7 +115,7 @@ namespace Meldpunt.Services
       page.SetAttribute("tab", p.InTabMenu ? "true" : "false");
       page.SetAttribute("inhome", p.InHomeMenu ? "true" : "false");
       page.SetAttribute("parentid", p.ParentId);
-      page.SetAttribute("published", p.Published ? "true" : "false");
+      page.SetAttribute("published", p.Published.HasValue ? p.Published.Value.ToString() : "");
       page.SetAttribute("lastmodified", DateTime.Now.ToString("dd-MM-yyyy hh:mm"));
 
       pagesDoc.Save(pageFile);
@@ -303,8 +225,7 @@ namespace Meldpunt.Services
       if (html.StartsWith("<![CDATA["))
         html = html.Trim().Substring(9, html.Length - 12);
 
-      bool published = page.Attributes != null && page.Attributes["published"] != null && page.Attributes["published"].Value == "true";
-
+     
       string lastModifiedString = page.Attributes["lastmodified"]?.Value;
       DateTimeOffset? lastModified = null;
       if (!string.IsNullOrWhiteSpace(lastModifiedString))
@@ -319,6 +240,9 @@ namespace Meldpunt.Services
       string title = page.SelectSingleNode("title")?.InnerText;
       string metaTitle = page.SelectSingleNode("metatitle")?.InnerText;
       string image = page.SelectSingleNode("image")?.InnerText;
+      DateTimeOffset? published = null;
+      if (DateTimeOffset.TryParse(page.Attributes["published"]?.Value, out DateTimeOffset publishedDate))
+        published = publishedDate;
 
       HtmlDocument hh = new HtmlDocument();
       hh.LoadHtml("<html>" + html + "</html>");
@@ -349,6 +273,104 @@ namespace Meldpunt.Services
       };
 
       return p;
+    }
+
+   
+
+    public void updateImages()
+    {
+      XmlNodeList pages = pagesDoc.DocumentElement.SelectNodes("//page");
+      foreach (XmlNode page in pages)
+      {
+        if (String.IsNullOrWhiteSpace(page.SelectSingleNode("content").InnerXml))
+          continue;
+        string htmlstring = page.SelectSingleNode("content").InnerXml.Substring(9);
+        htmlstring = htmlstring.Substring(0, htmlstring.Length - 3);
+        htmlstring = "<html><body>" + htmlstring + "</body></html>";
+        var doc = new HtmlDocument();
+        doc.LoadHtml(htmlstring);
+
+        var images = doc.DocumentNode.SelectNodes("//img");
+        if (images == null || images.Count == 0)
+          continue;
+
+        foreach (var img in images)
+        {
+          var src = img.Attributes["src"].Value;
+          if (src.ToLower().Contains("/afbeeldingen/"))
+          {
+            var width = img.Attributes["width"];
+            var height = img.Attributes["height"];
+            var newSource = "/image?name=" + src.Substring(14) + "&";
+            if (width != null)
+            {
+              newSource += "width=" + width.Value + "&";
+              img.Attributes.Remove(width);
+            }
+            if (height != null)
+            {
+              newSource += "height=" + height.Value;
+              img.Attributes.Remove(height);
+            }
+            img.Attributes["src"].Value = newSource;
+          }
+        }
+
+        string newHtml = doc.DocumentNode.SelectSingleNode("//body").InnerHtml;
+        page.SelectSingleNode("content").InnerXml = String.Format("<![CDATA[{0}]]>", newHtml);
+
+      }
+
+      pagesDoc.Save(pageFile);
+    }
+
+    internal void AddGuids()
+    {
+      XmlNodeList pages = pagesDoc.DocumentElement.SelectNodes("//page");
+      foreach (XmlElement page in pages)
+      {
+        page.SetAttribute("guid", Guid.NewGuid().ToString());
+      }
+      pagesDoc.Save(pageFile);
+    }
+
+    public void AddMetaTitles()
+    {
+      XmlNodeList pages = pagesDoc.DocumentElement.SelectNodes("//page");
+      foreach (XmlElement page in pages)
+      {
+        string title = page.SelectSingleNode("title")?.InnerText;
+        if (String.IsNullOrWhiteSpace(title))
+        {
+          if (page.SelectSingleNode("content/h1") != null)
+            title = page.SelectSingleNode("content/h1").InnerText;
+          else if (page.SelectSingleNode("content/h2") != null)
+            title = page.SelectSingleNode("content/h2").InnerText;
+          else
+            title = page.Attributes["id"].Value;
+        }
+
+        createOrUpdateElement(page, "title", title);
+        createOrUpdateElement(page, "metatitle", title);
+      }
+      pagesDoc.Save(pageFile);
+    }
+
+    public void UpdatePublished()
+    {
+      XmlNodeList pages = pagesDoc.DocumentElement.SelectNodes("//page");
+      foreach (XmlElement page in pages)
+      {
+        // for variation and published date guess, get last modified date
+        if (DateTimeOffset.TryParse(page.Attributes["lastmodified"]?.Value, out DateTimeOffset lastMod))
+          page.SetAttribute("published", lastMod.AddDays(1).ToString());
+        else
+        {
+          page.SetAttribute("published", DateTimeOffset.UtcNow.AddYears(-2).ToString());
+          page.SetAttribute("lastmodified", DateTimeOffset.UtcNow.AddYears(-2).ToString());
+        }
+      }
+      pagesDoc.Save(pageFile);
     }
   }
 }
