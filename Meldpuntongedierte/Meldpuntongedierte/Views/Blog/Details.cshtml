@@ -5,14 +5,27 @@
   ViewBag.Description = Model.MetaDescription;
   ViewBag.Url = Model.Url;
   ViewBag.BreadCrumbs = new List<BreadCrumb>() {
-    new BreadCrumb { Title = "Blog", Url = "/blog" },
-    new BreadCrumb { Title = Model.Title, Url = "/blog/" + Model.UrlPart }
-    };
+new BreadCrumb { Title = "Blog", Url = "/blog" },
+new BreadCrumb { Title = Model.Title, Url = "/blog/" + Model.UrlPart }
+};
   List<PageModel> homeMenu = ViewBag.HomeMenuItems as List<PageModel>;
 }
 
 @section style{
   <link type="text/css" rel="stylesheet" href="/css/blog.css?v=@ViewBag.AppVersion">
+}
+
+@section SD{
+  <script type="application/ld+json">
+    {
+    "@("@context")": "http://schema.org/",
+    "@("@type"): "Article",
+    "dateModified" : "@Model.LastModified.Value.ToString("yyyy-MM-dd")",
+    "datePublished" : "@Model.Published.Value.ToString("yyyy-MM-dd")",
+    "headline": "@Model.Intro",
+    "image" : "https://www.meldpuntongedierte.nl@(Model.Image + "&width=700")"
+    }
+  </script>
 }
 
 <article class="blog-article">
