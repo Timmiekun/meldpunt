@@ -4,24 +4,24 @@
   ViewBag.Title = Model.MetaTitle + " - Meldpunt Ongedierte";
   ViewBag.Description = Model.MetaDescription;
   ViewBag.Url = Model.Url;
-  List<ContentPageModel> subNav = ViewBag.SubNav as List<ContentPageModel>;
-  List<ContentPageModel> homeMenu = ViewBag.HomeMenuItems as List<ContentPageModel>;
+  IEnumerable<ContentPageModel> subNav = ViewBag.SubNav as IEnumerable<ContentPageModel>;
+  IEnumerable<ContentPageModel> homeMenu = ViewBag.HomeMenuItems as IEnumerable<ContentPageModel>;
 }
 
 @section SD{
-<script type="application/ld+json">
-  {
-  "@("@context")": "http://schema.org/",
-  "@("@type"): "Article",
-  "dateModified" : "@Model.LastModified.Value.ToString("yyyy-MM-dd")",
-  "datePublished" : "@Model.Published.Value.ToString("yyyy-MM-dd")",
-  "headline": "@Model.MetaDescription",
-  @if (!String.IsNullOrEmpty(Model.Image))
-  {
-    <text>"image" : "https://www.meldpuntongedierte.nl@(Model.Image)@Html.Raw("&width=700")",</text>
-  }
-  }
-</script>
+  <script type="application/ld+json">
+    {
+    "@("@context")": "http://schema.org/",
+    "@("@type"): "Article",
+    "dateModified" : "@Model.LastModified.Value.ToString("yyyy-MM-dd")",
+    "datePublished" : "@Model.Published.Value.ToString("yyyy-MM-dd")",
+    "headline": "@Model.MetaDescription",
+    @if (!String.IsNullOrEmpty(Model.Image))
+    {
+      <text>"image" : "https://www.meldpuntongedierte.nl@(Model.Image)@Html.Raw("&width=700")",</text>
+    }
+    }
+  </script>
 }
 <article>
   @Html.Raw(Model.Content)
@@ -45,15 +45,6 @@
 
           <li class="@selected">
             <a href="@item.Url">@item.Title</a>
-            @if (item.Id == Model.Id && item.SubPages.Any())
-            {
-              <ul class="subNav">
-                @foreach (ContentPageModel subItem in item.SubPages.OrderByDescending(p => p.Sort))
-                {
-                  <li><a href="@subItem.Url">@subItem.Title</a></li>
-                }
-              </ul>
-            }
           </li>
         }
       </ul>

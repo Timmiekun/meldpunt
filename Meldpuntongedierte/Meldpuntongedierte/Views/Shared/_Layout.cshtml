@@ -107,10 +107,10 @@
           <div class="phone-button phone-icon"><a href="tel:0900-2556677">0900-2556677</a></div>
           <p><a href="mailto:info@meldpuntongedierte.nl">info@meldpuntongedierte.nl</a></p>
         </div>
-        @foreach (List<PageModel> list in regioPages)
+        @foreach (IEnumerable<ContentPageModel> list in regioPages)
         {
           <ul class="regiolist">
-            @foreach (PageModel p in list)
+            @foreach (ContentPageModel p in list)
             {
               <li><a href="@p.Url">@p.Title</a></li>
             }

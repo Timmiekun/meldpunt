@@ -44,6 +44,11 @@ namespace Meldpunt.Services
       return db.ContentPages.Where(p => p.InHomeMenu);
     }
 
+    public IEnumerable<ContentPageModel> GetChildPages(Guid id)
+    {
+      return db.ContentPages.Where(p => p.ParentId == id);
+    }
+
     public ContentPageModel SavePage(ContentPageModel pageToSave)
     {
       var pageFromDb = db.ContentPages.Find(pageToSave.Id);
@@ -69,5 +74,6 @@ namespace Meldpunt.Services
       db.SaveChanges();
     }
 
+   
   }
 }

@@ -46,8 +46,6 @@ namespace Meldpunt.Models
     public bool InHomeMenu { get; set; }
     public string MetaDescription { get; set; }
 
-    [ForeignKey("Id")]
-    public ICollection<ContentPageModel> SubPages { get; set; }
 
     public Document ToLuceneDocument()
     {

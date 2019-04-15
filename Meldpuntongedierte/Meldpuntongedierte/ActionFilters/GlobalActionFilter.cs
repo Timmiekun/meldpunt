@@ -29,10 +29,13 @@ namespace Meldpunt.ActionFilters
               breadCrumbs.Add(new BreadCrumb { Title = p.Title, Url = p.Url });
           }
 
+        var regiosPage = pageService.GetPageByUrlPart("regios");
+        var regioPages = pageService.GetChildPages(regiosPage.Id);
+
         viewResult.ViewBag.AppVersion = ConfigurationManager.AppSettings["appversion"];
         viewResult.ViewBag.BreadCrumbs = breadCrumbs;
         viewResult.ViewBag.NavItems = pageService.GetPagesForTabs();
-        viewResult.ViewBag.RegioPages = Utils.Utils.Split(pageService.GetPageByUrlPart("regios").SubPages);
+        viewResult.ViewBag.RegioPages = Utils.Utils.Split(regioPages);
         viewResult.ViewBag.HomeMenuItems = pageService.GetPagesForHomeMenu().ToList();
 
       }

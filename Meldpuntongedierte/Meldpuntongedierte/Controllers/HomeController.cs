@@ -9,7 +9,7 @@ using System.Web.Routing;
 
 namespace Meldpunt.Controllers
 {
- 
+
   public class HomeController : Controller
   {
     private IContentPageService pageService;
@@ -27,7 +27,7 @@ namespace Meldpunt.Controllers
     [Route]
     public ActionResult Index()
     {
-      ContentPageModel model = pageService.GetPageByUrlPart("home");      
+      ContentPageModel model = pageService.GetPageByUrlPart("home");
       return View(model);
     }
 
@@ -59,19 +59,20 @@ namespace Meldpunt.Controllers
         if (model.UrlPart == "openbare-ruimte")
           ViewBag.HidePhoneNumber = true;
 
-        if (model.SubPages.Any())
+        var subPages = pageService.GetChildPages(model.Id);
+        if (subPages.Any())
         {
-          ViewBag.SubNav = model.SubPages;
+          ViewBag.SubNav = subPages;
           return View("index", model);
         }
-        
+
         ContentPageModel parent = pageService.GetPageById(model.ParentId);
         if (parent != null)
-          ViewBag.SubNav = parent.SubPages;
+          ViewBag.SubNav = pageService.GetChildPages(parent.Id);
 
         return View("index", model);
       }
-    
+
       throw new HttpException(404, "page not found");
     }
 

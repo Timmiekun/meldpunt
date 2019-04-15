@@ -13,6 +13,8 @@ namespace Meldpunt.Services
 
     IEnumerable<ContentPageModel> GetPagesForHomeMenu();
 
+    IEnumerable<ContentPageModel> GetChildPages(Guid id);
+
     ContentPageModel GetPageById(Guid id);
 
     ContentPageModel GetPageByUrlPart(string urlPart);
