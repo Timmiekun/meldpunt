@@ -13,7 +13,6 @@ namespace Meldpunt.Services
     private XmlDocument pagesDoc;
     string pageFile = "~/App_Data/pages.xml";
 
-
     public PageService()
     {
       pageFile = HostingEnvironment.MapPath(pageFile);
@@ -21,33 +20,26 @@ namespace Meldpunt.Services
       pagesDoc.Load(pageFile);
     }
 
-    public List<PageModel> GetAllPagesTree()
-    {
-      XmlNodeList pages = pagesDoc.DocumentElement.SelectNodes("page");
-      return XmlToModel(pages, true);
-    }
 
-   
-
-    public List<PageModel> GetAllPages()
+    public IEnumerable<PageModel> GetAllPages()
     {
       XmlNodeList pages = pagesDoc.DocumentElement.SelectNodes("//page");
       return XmlToModel(pages);
     }
 
-    public List<PageModel> GetPagesForTabs()
+    public IEnumerable<PageModel> GetPagesForTabs()
     {
       XmlNodeList pages = pagesDoc.DocumentElement.SelectNodes("//page[@tab='true']");
       return XmlToModel(pages);
     }
 
-    public List<PageModel> GetPagesForHomeMenu()
+    public IEnumerable<PageModel> GetPagesForHomeMenu()
     {
       XmlNodeList pages = pagesDoc.DocumentElement.SelectNodes("//page[@inhome='true']");
       return XmlToModel(pages);
     }
 
-    public PageModel GetPageByGuid(string guid)
+    public PageModel GetPageById(string guid)
     {
       XmlNode page = pagesDoc.DocumentElement.SelectSingleNode("//page[@guid='" + guid + "']");
       if (page == null)
@@ -56,14 +48,15 @@ namespace Meldpunt.Services
       return XmlToModel(page);
     }
 
-    public PageModel GetPage(string pageId)
+    public PageModel GetPageByUrlPart(string urlPart)
     {
-      XmlNode page = pagesDoc.DocumentElement.SelectSingleNode("//page[@id='" + pageId + "']");
+      XmlNode page = pagesDoc.DocumentElement.SelectSingleNode("//page[urlPart='" + urlPart + "']");
       if (page == null)
         return null;
 
       return XmlToModel(page);
     }
+
 
     public PageModel SavePage(PageModel p)
     {
@@ -131,14 +124,7 @@ namespace Meldpunt.Services
       page.SelectSingleNode(nodeName).InnerText = value;
     }
 
-    public List<PageModel> SearchPages(string query)
-    {
-      query = query.Trim();
-      XmlNodeList pages = pagesDoc.SelectNodes("//page[contains(content,'" + query + "') or contains(title,'" + query + "') or contains(@id,'" + query + "')]");
-      return XmlToModel(pages);
-    }
-
-    private List<PageModel> XmlToModel(XmlNodeList pages, bool deep = false)
+    private IEnumerable<PageModel> XmlToModel(XmlNodeList pages, bool deep = false)
     {
       List<PageModel> pageModels = new List<PageModel>();
       foreach (XmlNode n in pages)

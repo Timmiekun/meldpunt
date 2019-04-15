@@ -12,11 +12,11 @@ namespace Meldpunt.Controllers
  
   public class HomeController : Controller
   {
-    private IPageService pageService;
+    private IContentPageService pageService;
     private IPlaatsService plaatsService;
     private MeldpuntContext db;
 
-    public HomeController(IPlaatsService _plaatsService, IPageService _pageService, MeldpuntContext _db)
+    public HomeController(IPlaatsService _plaatsService, IContentPageService _pageService, MeldpuntContext _db)
     {
       pageService = _pageService;
       plaatsService = _plaatsService;
@@ -27,7 +27,7 @@ namespace Meldpunt.Controllers
     [Route]
     public ActionResult Index()
     {
-      PageModel model = pageService.GetPage("home");      
+      ContentPageModel model = pageService.GetPageByUrlPart("home");      
       return View(model);
     }
 
@@ -45,8 +45,9 @@ namespace Meldpunt.Controllers
     [OutputCache(Duration = 100, VaryByParam = "none")]
     public ActionResult GetPage()
     {
+      Guid id = Guid.Parse(RouteData.Values["guid"].ToString());
       // content page?
-      PageModel model = pageService.GetPageByGuid(RouteData.Values["guid"].ToString());
+      ContentPageModel model = pageService.GetPageById(id);
       if (model != null)
       {
         // correct url?
@@ -55,7 +56,7 @@ namespace Meldpunt.Controllers
           return RedirectPermanent(model.Url);
         }
 
-        if (model.Id == "openbare-ruimte")
+        if (model.UrlPart == "openbare-ruimte")
           ViewBag.HidePhoneNumber = true;
 
         if (model.SubPages.Any())
@@ -64,7 +65,7 @@ namespace Meldpunt.Controllers
           return View("index", model);
         }
         
-        PageModel parent = pageService.GetPageByGuid(model.ParentId);
+        ContentPageModel parent = pageService.GetPageById(model.ParentId);
         if (parent != null)
           ViewBag.SubNav = parent.SubPages;
 

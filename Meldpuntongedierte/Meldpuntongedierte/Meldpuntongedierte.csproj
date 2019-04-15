@@ -168,20 +168,31 @@
     <Compile Include="Migrations\201904080923161_urlpart_required_for_blog.Designer.cs">
       <DependentUpon>201904080923161_urlpart_required_for_blog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904150804089_add_contentPages.cs" />
+    <Compile Include="Migrations\201904150804089_add_contentPages.Designer.cs">
+      <DependentUpon>201904150804089_add_contentPages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904150852425_contentPages_update.cs" />
+    <Compile Include="Migrations\201904150852425_contentPages_update.Designer.cs">
+      <DependentUpon>201904150852425_contentPages_update.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IndexableItem.cs" />
     <Compile Include="Models\ImageRequestModel.cs" />
     <Compile Include="Models\ImageModel.cs" />
     <Compile Include="Models\MeldpuntContext.cs" />
     <Compile Include="Models\BlogModel.cs" />
+    <Compile Include="Models\ContentPageModel.cs" />
     <Compile Include="Models\RedirectModel.cs" />
     <Compile Include="Models\SearchResult.cs" />
     <Compile Include="Models\SearchResultModel.cs" />
     <Compile Include="Models\PlaatsModel.cs" />
     <Compile Include="Models\MailModel.cs" />
     <Compile Include="Models\PageModel.cs" />
+    <Compile Include="Services\ContentPageService.cs" />
     <Compile Include="Services\IImageService.cs" />
     <Compile Include="Services\ImageService.cs" />
+    <Compile Include="Services\IContentPageService.cs" />
     <Compile Include="Services\IPlaatsService.cs" />
     <Compile Include="Services\IPageService.cs" />
     <Compile Include="Services\RedirectService.cs" />
@@ -190,6 +201,7 @@
     <Compile Include="Services\PlaatsService.cs" />
     <Compile Include="Services\PageService.cs" />
     <Compile Include="Utils\LocationUtils.cs" />
+    <Compile Include="Utils\PropertyCopier.cs" />
     <Compile Include="Utils\Utils.cs" />
     <Compile Include="ViewModels\BreadCrumb.cs" />
   </ItemGroup>
@@ -291,9 +303,6 @@
     <Content Include="Views\Shared\subPagesPartial.cshtml" />
     <Content Include="Views\Shared\_Admin.cshtml" />
     <Content Include="App_Data\Woonplaatsen_in_Nede_160516123828.csv" />
-    <Content Include="Config\connectionstrings.config">
-      <SubType>Designer</SubType>
-    </Content>
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\local.pubxml" />
     <None Include="Properties\PublishProfiles\meldpuntongedierte - FTP.pubxml" />
@@ -355,6 +364,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904080923161_urlpart_required_for_blog.resx">
       <DependentUpon>201904080923161_urlpart_required_for_blog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904150804089_add_contentPages.resx">
+      <DependentUpon>201904150804089_add_contentPages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904150852425_contentPages_update.resx">
+      <DependentUpon>201904150852425_contentPages_update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

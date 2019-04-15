@@ -90,9 +90,12 @@
 
   <div class="field">
     <label for="content">Content</label>
-    <textarea id="content" name="content" class="richtext">
-			@Model.Content
-		</textarea>
+    <textarea id="content" name="content" class="richtext">@Model.Content</textarea>
+  </div>
+
+  <div class="field">
+    <label for="sidecontent">Side content</label>
+    <textarea id="sidecontent" name="sidecontent" class="richtext">@Model.SideContent</textarea>
   </div>
 
   <input type="hidden" name="Id" value="@Model.Id" />

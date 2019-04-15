@@ -6,26 +6,20 @@ namespace Meldpunt.Services
   public interface IPageService
   {
 
-    List<PageModel> GetAllPagesTree();
+    IEnumerable<PageModel> GetAllPages();
 
-    List<PageModel> GetAllPages();
+    IEnumerable<PageModel> GetPagesForTabs();
 
-    List<PageModel> GetPagesForTabs();
+    IEnumerable<PageModel> GetPagesForHomeMenu();
 
-    List<PageModel> GetPagesForHomeMenu();
+    PageModel GetPageById(string guid);
 
-    PageModel GetPageByGuid(string guid);
-
-    PageModel GetPage(string pageId);
+    PageModel GetPageByUrlPart(string urlPart);
 
     PageModel SavePage(PageModel p);
-
-    List<PageModel> SearchPages(string query);
 
     PageModel newPage();
 
     void deletePage(string guid);
-    void AddMetaTitles();
-    void UpdatePublished();
   }
 }

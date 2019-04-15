@@ -1,11 +1,11 @@
 ﻿@using Meldpunt.Models;
-@model PageModel
+@model ContentPageModel
 @{
   ViewBag.Title = Model.MetaTitle + " - Meldpunt Ongedierte";
   ViewBag.Description = Model.MetaDescription;
   ViewBag.Url = Model.Url;
-  List<PageModel> subNav = ViewBag.SubNav as List<PageModel>;
-  List<PageModel> homeMenu = ViewBag.HomeMenuItems as List<PageModel>;
+  List<ContentPageModel> subNav = ViewBag.SubNav as List<ContentPageModel>;
+  List<ContentPageModel> homeMenu = ViewBag.HomeMenuItems as List<ContentPageModel>;
 }
 
 @section SD{
@@ -34,7 +34,7 @@
       <h2>Bekijk ook</h2>
       <ul>
         <li class="showOnMobile"><a href="/">Home</a></li>
-        @foreach (PageModel item in subNav.OrderByDescending(p => p.Sort))
+        @foreach (ContentPageModel item in subNav.OrderByDescending(p => p.Sort))
         {
 
           string selected = "";
@@ -48,7 +48,7 @@
             @if (item.Id == Model.Id && item.SubPages.Any())
             {
               <ul class="subNav">
-                @foreach (PageModel subItem in item.SubPages.OrderByDescending(p => p.Sort))
+                @foreach (ContentPageModel subItem in item.SubPages.OrderByDescending(p => p.Sort))
                 {
                   <li><a href="@subItem.Url">@subItem.Title</a></li>
                 }

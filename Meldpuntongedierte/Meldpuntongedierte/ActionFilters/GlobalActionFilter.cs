@@ -5,6 +5,7 @@ using Meldpunt.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace Meldpunt.ActionFilters
@@ -13,7 +14,7 @@ namespace Meldpunt.ActionFilters
   {
     public override void OnActionExecuted(ActionExecutedContext filterContext)
     {
-      PageService pageService = new PageService();
+      var pageService = DependencyResolver.Current.GetService<IContentPageService>();
       var viewResult = filterContext.Result as ViewResult;
 
       if (viewResult != null)
@@ -23,7 +24,7 @@ namespace Meldpunt.ActionFilters
         foreach (string s in filterContext.HttpContext.Request.Path.Split('/'))
           if (!String.IsNullOrWhiteSpace(s) && !s.Equals("in"))
           {
-            PageModel p = pageService.GetPage(s.XmlSafe());
+            var p = pageService.GetPageByUrlPart(s.XmlSafe());
             if (p != null)
               breadCrumbs.Add(new BreadCrumb { Title = p.Title, Url = p.Url });
           }
@@ -31,8 +32,8 @@ namespace Meldpunt.ActionFilters
         viewResult.ViewBag.AppVersion = ConfigurationManager.AppSettings["appversion"];
         viewResult.ViewBag.BreadCrumbs = breadCrumbs;
         viewResult.ViewBag.NavItems = pageService.GetPagesForTabs();
-        viewResult.ViewBag.RegioPages = Utils.Utils.Split(pageService.GetPage("regios").SubPages);
-        viewResult.ViewBag.HomeMenuItems = new PageService().GetPagesForHomeMenu();
+        viewResult.ViewBag.RegioPages = Utils.Utils.Split(pageService.GetPageByUrlPart("regios").SubPages);
+        viewResult.ViewBag.HomeMenuItems = pageService.GetPagesForHomeMenu().ToList();
 
       }
 

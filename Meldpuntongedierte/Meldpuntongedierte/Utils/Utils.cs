@@ -36,7 +36,7 @@ namespace Meldpunt.Utils
         return s.ToUpper();
     }
 
-    public static List<List<PageModel>> Split(List<PageModel> source)
+    public static IEnumerable<IEnumerable<ContentPageModel>> Split(IEnumerable<ContentPageModel> source)
     {
       int numOfItemsPerList = (int)Math.Ceiling(source.Count() / 3f);
       return source
