@@ -168,13 +168,9 @@
     <Compile Include="Migrations\201904080923161_urlpart_required_for_blog.Designer.cs">
       <DependentUpon>201904080923161_urlpart_required_for_blog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904150804089_add_contentPages.cs" />
-    <Compile Include="Migrations\201904150804089_add_contentPages.Designer.cs">
-      <DependentUpon>201904150804089_add_contentPages.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904150852425_contentPages_update.cs" />
-    <Compile Include="Migrations\201904150852425_contentPages_update.Designer.cs">
-      <DependentUpon>201904150852425_contentPages_update.cs</DependentUpon>
+    <Compile Include="Migrations\201904151148089_add_contentpages.cs" />
+    <Compile Include="Migrations\201904151148089_add_contentpages.Designer.cs">
+      <DependentUpon>201904151148089_add_contentpages.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IndexableItem.cs" />
@@ -365,11 +361,8 @@
     <EmbeddedResource Include="Migrations\201904080923161_urlpart_required_for_blog.resx">
       <DependentUpon>201904080923161_urlpart_required_for_blog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904150804089_add_contentPages.resx">
-      <DependentUpon>201904150804089_add_contentPages.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904150852425_contentPages_update.resx">
-      <DependentUpon>201904150852425_contentPages_update.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904151148089_add_contentpages.resx">
+      <DependentUpon>201904151148089_add_contentpages.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

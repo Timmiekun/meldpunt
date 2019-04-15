@@ -8,12 +8,12 @@ using System.Xml;
 
 namespace Meldpunt.Services
 {
-  public class PageService : IPageService
+  public class XMLPageService : IPageService
   {
     private XmlDocument pagesDoc;
     string pageFile = "~/App_Data/pages.xml";
 
-    public PageService()
+    public XMLPageService()
     {
       pageFile = HostingEnvironment.MapPath(pageFile);
       pagesDoc = new XmlDocument();
@@ -260,8 +260,6 @@ namespace Meldpunt.Services
 
       return p;
     }
-
-   
 
     public void updateImages()
     {

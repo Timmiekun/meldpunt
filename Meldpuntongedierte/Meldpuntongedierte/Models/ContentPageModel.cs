@@ -1,11 +1,8 @@
 ﻿using Lucene.Net.Documents;
 using Meldpunt.Services;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
 
 namespace Meldpunt.Models
 {
@@ -27,7 +24,7 @@ namespace Meldpunt.Models
     public string SideContent { get; set; }
 
     public string ParentPath { get; set; }
-    public string FullText { get; set; }
+   
     public bool HasSublingMenu { get; set; }
 
     [Required]
@@ -46,6 +43,18 @@ namespace Meldpunt.Models
     public bool InHomeMenu { get; set; }
     public string MetaDescription { get; set; }
 
+    [NotMapped]
+    public string FullText
+    {
+      get
+      {
+        string contentstring = Meldpunt.Utils.Utils.GetStringFromHTML(Content);
+        string sideContentstring = Meldpunt.Utils.Utils.GetStringFromHTML(SideContent);
+
+        return string.Join(" ", new { Title, MetaTitle, UrlPart, contentstring, sideContentstring });
+      }
+    }
+
 
     public Document ToLuceneDocument()
     {
@@ -53,6 +62,7 @@ namespace Meldpunt.Models
       doc.Add(new Field("type", SearchTypes.Page, Field.Store.YES, Field.Index.NOT_ANALYZED));
       doc.Add(new Field("id", Id.ToString(), Field.Store.YES, Field.Index.NOT_ANALYZED));
       doc.Add(new Field("title", Title, Field.Store.YES, Field.Index.ANALYZED));
+      doc.Add(new Field("sortableTitle", Title.ToLower(), Field.Store.YES, Field.Index.NOT_ANALYZED));      
       doc.Add(new Field("text", FullText, Field.Store.YES, Field.Index.ANALYZED));
       doc.Add(new Field("url", Url, Field.Store.YES, Field.Index.ANALYZED));
       doc.Add(new Field("all", "all", Field.Store.NO, Field.Index.ANALYZED));

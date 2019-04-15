@@ -8,14 +8,14 @@ namespace Meldpunt.Controllers
 {
 	public class LoginController : Controller
 	{
-		private PageService pageService;
+		private XMLPageService pageService;
 		private PlaatsService plaatsService;
 		private string username = ConfigurationManager.AppSettings["username"];
 		private string password = ConfigurationManager.AppSettings["password"];
 
 		public LoginController()
 		{
-			pageService = new PageService();
+			pageService = new XMLPageService();
 			plaatsService = new PlaatsService();
 		}
 

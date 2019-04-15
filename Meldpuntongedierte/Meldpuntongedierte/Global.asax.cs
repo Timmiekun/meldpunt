@@ -28,14 +28,14 @@ namespace Meldpunt
 
       routes.MapMvcAttributeRoutes();
 
-      PageService pageService = new PageService();
+      var pageService = DependencyResolver.Current.GetService<IContentPageService>();
 
-      foreach (var page in pageService.GetAllPages())
+      foreach (var page in pageService.GetAllPages().Where(p => p.Url != null))
       {
         routes.MapRoute(
-          page.Guid.ToString(), // Route name
+          page.Id.ToString(), // Route name
           page.Url.TrimStart('/'), // URL with parameters
-          new { controller = "Home", action = "GetPage", guid = page.Guid } // Parameter defaults
+          new { controller = "Home", action = "GetPage", guid = page.Id } // Parameter defaults
       );
       }
 

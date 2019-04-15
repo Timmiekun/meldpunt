@@ -3,7 +3,7 @@ namespace Meldpunt.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class add_contentPages : DbMigration
+    public partial class add_contentpages : DbMigration
     {
         public override void Up()
         {
@@ -20,9 +20,8 @@ namespace Meldpunt.Migrations
                         Content = c.String(),
                         SideContent = c.String(),
                         ParentPath = c.String(),
-                        FullText = c.String(),
                         HasSublingMenu = c.Boolean(nullable: false),
-                        ParentId = c.String(),
+                        ParentId = c.Guid(nullable: false),
                         LastModified = c.DateTimeOffset(precision: 7),
                         Published = c.DateTimeOffset(precision: 7),
                         Sort = c.Int(nullable: false),

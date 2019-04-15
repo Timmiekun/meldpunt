@@ -9,13 +9,11 @@ namespace Meldpunt.Controllers
 {
   public class SearchController : Controller
   {
-    private IPageService pageService;
     private ISearchService searchService;
     IImageService imageService;
 
-    public SearchController(IPageService _pageService, ISearchService _searchService, IImageService _imageService)
+    public SearchController(ISearchService _searchService, IImageService _imageService)
     {
-      pageService = _pageService;
       searchService = _searchService;
       imageService = _imageService;
     }
@@ -25,7 +23,7 @@ namespace Meldpunt.Controllers
     public ActionResult Index()
     {
       searchService.Index();
-      
+
       return new EmptyResult();
     }
 
@@ -43,7 +41,7 @@ namespace Meldpunt.Controllers
     {
       if (LocationUtils.IsLocation(q))
         return Redirect("/ongediertebestrijding-" + q.XmlSafe());
-      
+
       var results = searchService.Search(q, SearchTypes.Page);
       if (results.Total == 1)
         return Redirect(results.Results.First().Url);

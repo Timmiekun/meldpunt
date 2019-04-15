@@ -29,6 +29,11 @@ namespace Meldpunt.Services
       return db.ContentPages.Find(id);
     }
 
+    public ContentPageModel GetByIdUntracked(Guid id)
+    {
+      return db.ContentPages.AsNoTracking().FirstOrDefault(p=> p.Id == id);
+    }
+
     public ContentPageModel GetPageByUrlPart(string urlPart)
     {
       return db.ContentPages.FirstOrDefault(p => p.UrlPart == urlPart);
@@ -49,22 +54,32 @@ namespace Meldpunt.Services
       return db.ContentPages.Where(p => p.ParentId == id);
     }
 
+
     public ContentPageModel SavePage(ContentPageModel pageToSave)
     {
-      var pageFromDb = db.ContentPages.Find(pageToSave.Id);
-
-      //check if we should move the page      
-      if (pageToSave.ParentId != pageFromDb.ParentId)
-      {
-        // calculate parent?
-      }
-
+      pageToSave.Url = "/" + generateUrl(pageToSave);
       pageToSave.UrlPart = pageToSave.UrlPart.XmlSafe();
       pageToSave.LastModified = DateTimeOffset.Now;
       db.Entry(pageToSave).State = EntityState.Modified;
       db.SaveChanges();
 
       return pageToSave;
+    }
+
+    private string generateUrl(ContentPageModel page)
+    {
+      var parents = GetParentPath(page, new List<ContentPageModel>());    
+      return string.Join("/", parents.Select(p => p.UrlPart));
+    }
+
+    private List<ContentPageModel> GetParentPath(ContentPageModel page, List<ContentPageModel> parents)
+    {
+      var parent = GetPageById(page.ParentId);
+      if (parent.UrlPart != "home")
+        GetParentPath(parent, parents);
+
+      parents.Add(page);
+      return parents;
     }
 
     public void deletePage(Guid id)
@@ -74,6 +89,6 @@ namespace Meldpunt.Services
       db.SaveChanges();
     }
 
-   
+
   }
 }

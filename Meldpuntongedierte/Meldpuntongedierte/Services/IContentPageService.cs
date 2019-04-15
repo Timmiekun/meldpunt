@@ -17,6 +17,8 @@ namespace Meldpunt.Services
 
     ContentPageModel GetPageById(Guid id);
 
+    ContentPageModel GetByIdUntracked(Guid id);
+
     ContentPageModel GetPageByUrlPart(string urlPart);
 
     ContentPageModel SavePage(ContentPageModel p);

@@ -17,11 +17,11 @@ namespace Meldpunt.Services
   public class SearchService : ISearchService
   {
     private Lucene.Net.Store.Directory dir;
-    private IPageService pageService;
+    private IContentPageService pageService;
     private IPlaatsService plaatsService;
     private string indexPath;
 
-    public SearchService(IPageService _pageService, IPlaatsService _plaatsService)
+    public SearchService(IContentPageService _pageService, IPlaatsService _plaatsService)
     {
       indexPath = HostingEnvironment.MapPath("~/App_data/index");
       pageService = _pageService;
@@ -37,7 +37,7 @@ namespace Meldpunt.Services
       dir = FSDirectory.Open(indexPath);
       IndexWriter w = new IndexWriter(dir, new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30), true, IndexWriter.MaxFieldLength.UNLIMITED);
 
-      foreach (PageModel page in pageService.GetAllPages())
+      foreach (var page in pageService.GetAllPages())
       {
         w.AddDocument(page.ToLuceneDocument());
       }

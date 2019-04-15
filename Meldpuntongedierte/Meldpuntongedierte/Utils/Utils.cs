@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web; 
 using System.Text.RegularExpressions;
 using Meldpunt.Models;
+using HtmlAgilityPack;
 
 namespace Meldpunt.Utils
 {
@@ -44,6 +45,13 @@ namespace Meldpunt.Utils
           .GroupBy(x => x.Index / numOfItemsPerList)
           .Select(x => x.Select(v => v.Value).ToList())
           .ToList();
+    }
+
+    public static string GetStringFromHTML(string html)
+    {
+      HtmlDocument hh = new HtmlDocument();
+      hh.LoadHtml("<html>" + html + "</html>");
+      return hh.DocumentNode.InnerText;
     }
   }
 }

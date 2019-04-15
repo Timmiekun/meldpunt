@@ -7,13 +7,13 @@ namespace Meldpunt.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class contentPages_update : IMigrationMetadata
+    public sealed partial class add_contentpages : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(contentPages_update));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(add_contentpages));
         
         string IMigrationMetadata.Id
         {
-            get { return "201904150852425_contentPages_update"; }
+            get { return "201904151148089_add_contentpages"; }
         }
         
         string IMigrationMetadata.Source

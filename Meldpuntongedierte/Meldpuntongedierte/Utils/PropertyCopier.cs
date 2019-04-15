@@ -12,7 +12,7 @@
       {
         foreach (var childProperty in childProperties)
         {
-          if (parentProperty.Name == childProperty.Name && parentProperty.PropertyType == childProperty.PropertyType)
+          if (parentProperty.Name == childProperty.Name && parentProperty.PropertyType == childProperty.PropertyType && childProperty.CanWrite)
           {
             childProperty.SetValue(child, parentProperty.GetValue(parent));
             break;
