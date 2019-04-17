@@ -57,6 +57,8 @@
         }
       </ul>
       <button class="goto-menu-mobile">menu</button>
+
+
     </nav>
   }
   else
@@ -72,6 +74,31 @@
 
       </ul>
       <button class="goto-menu-mobile">menu</button>
+
     </nav>
   }
+}
+
+@section readmore{
+  <h2>Lees verder</h2>
+
+  <div class="readmore">
+    @foreach (var page in subNav)
+    {
+      var image = page.Image;
+      if (image != null && image.Contains("\\"))
+      {
+        image = image.Replace("\\", "/");
+      }
+      <div class="page-tile">
+        <a href="@page.Url">
+          <div class="tile-image" style="background-image:url('@image')"></div>
+          <div class="tile-text">
+            <h2>@page.Title</h2>
+            <p>@page.MetaTitle</p>
+          </div>
+        </a>
+      </div>
+    }
+  </div>
 }

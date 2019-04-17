@@ -95,8 +95,10 @@
     <div class="content-and-sidebar">
       <div class="content">
         @RenderBody()
+
+        @RenderSection("readmore", false)
       </div>
-      @RenderSection("menu", false)
+      @RenderSection("menu", false)     
     </div>
 
     <div class="footer">
