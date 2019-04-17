@@ -73,12 +73,16 @@ namespace Meldpunt.Controllers
       // update route table
       if (oldPage.Url != savedPage.Url)
       {
-        var allChildPages = pageService.GetChildPages(page.Id, true);
+        var allChildPages = pageService.GetChildPages(page.Id, true).ToList();
         foreach (var child in allChildPages)
+        {
           pageService.SavePage(child);
+          searchService.IndexDocument(child.ToLuceneDocument(), savedPage.Id.ToString());
+        }
+        allChildPages.Add(savedPage);
 
-        // update route. Includes childpages
-        UpdateRouteForPage(savedPage);
+        // update routes
+        UpdateRouteForPages(allChildPages);
       }
 
       searchService.IndexDocument(savedPage.ToLuceneDocument(), savedPage.Id.ToString());
@@ -89,25 +93,8 @@ namespace Meldpunt.Controllers
       return Redirect("/admin/editpage/" + savedPage.Id);
     }
 
-    /// <summary>
-    /// Get all childpages. So also child pages of childpages
-    /// </summary>
-    /// <param name="page"></param>
-    /// <param name="pageList"></param>
-    private void GetAllChildPages(ContentPageModel page, List<ContentPageModel> pageList)
+    private void UpdateRouteForPages(List<ContentPageModel> pages)
     {
-      foreach (var subPage in pageService.GetChildPages(page.Id).ToList())
-        GetAllChildPages(subPage, pageList);
-
-      // add to pageList
-      pageList.Add(page);
-    }
-
-    private void UpdateRouteForPage(ContentPageModel page)
-    {
-      List<ContentPageModel> pageList = new List<ContentPageModel>();
-      GetAllChildPages(page, pageList);
-
       var routes = RouteTable.Routes;
       using (routes.GetWriteLock())
       {
@@ -118,7 +105,7 @@ namespace Meldpunt.Controllers
         var defaultRouteOld = routes.Last();
         routes.Remove(defaultRouteOld);
 
-        foreach (var routePage in pageList)
+        foreach (var routePage in pages)
         {
           // remove old route
           var oldRoute = routes[routePage.Id.ToString()];
@@ -130,9 +117,6 @@ namespace Meldpunt.Controllers
             routePage.Url.TrimStart('/'), // URL with parameters
             new { controller = "Home", action = "GetPage", guid = routePage.Id } // Parameter defaults
           );
-
-          // also, re-index
-          searchService.IndexDocument(routePage.ToLuceneDocument(), routePage.Id.ToString());
         }
 
         //add back default routes

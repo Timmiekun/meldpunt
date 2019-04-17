@@ -51,7 +51,7 @@ namespace Meldpunt.Models
         string contentstring = Meldpunt.Utils.Utils.GetStringFromHTML(Content);
         string sideContentstring = Meldpunt.Utils.Utils.GetStringFromHTML(SideContent);
 
-        return string.Join(" ", new { Title, MetaTitle, UrlPart, contentstring, sideContentstring });
+        return string.Join(" ", new { Title, MetaTitle, UrlPart, Url, contentstring, sideContentstring });
       }
     }
 
