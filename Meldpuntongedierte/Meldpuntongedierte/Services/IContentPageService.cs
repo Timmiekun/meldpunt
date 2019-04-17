@@ -15,6 +15,8 @@ namespace Meldpunt.Services
 
     IEnumerable<ContentPageModel> GetChildPages(Guid id);
 
+    IEnumerable<ContentPageModel> GetChildPages(Guid id, bool deep);
+
     ContentPageModel GetPageById(Guid id);
 
     ContentPageModel GetByIdUntracked(Guid id);

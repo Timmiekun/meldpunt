@@ -1,9 +1,8 @@
 using Meldpunt.Models;
 using Meldpunt.Services;
 using System;
+
 using Unity;
-using Unity.AspNet.Mvc;
-using Unity.Lifetime;
 
 namespace Meldpunt
 {

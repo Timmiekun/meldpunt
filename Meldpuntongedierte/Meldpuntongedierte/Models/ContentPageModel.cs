@@ -23,7 +23,7 @@ namespace Meldpunt.Models
     public string Content { get; set; }
     public string SideContent { get; set; }
 
-    public string ParentPath { get; set; }
+   
    
     public bool HasSublingMenu { get; set; }
 
@@ -55,6 +55,11 @@ namespace Meldpunt.Models
       }
     }
 
+    /// <summary>
+    /// used for fancy display in edit page
+    /// </summary>
+    [NotMapped]
+    public string ParentPath { get; set; }
 
     public Document ToLuceneDocument()
     {

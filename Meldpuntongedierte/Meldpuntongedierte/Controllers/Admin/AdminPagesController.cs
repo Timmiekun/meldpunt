@@ -52,7 +52,11 @@ namespace Meldpunt.Controllers
       if (page == null)
         throw new HttpException(404, "page not found");
 
-      ViewBag.Locations = LocationUtils.placesByMunicipality.OrderBy(m => m.Key);
+      var parent = pageService.GetPageById(page.ParentId);
+      page.ParentPath = parent.Url;
+
+      ViewBag.SubPages = pageService.GetChildPages(page.Id);
+
       return View(page);
     }
 
@@ -69,6 +73,11 @@ namespace Meldpunt.Controllers
       // update route table
       if (oldPage.Url != savedPage.Url)
       {
+        var allChildPages = pageService.GetChildPages(page.Id, true);
+        foreach (var child in allChildPages)
+          pageService.SavePage(child);
+
+        // update route. Includes childpages
         UpdateRouteForPage(savedPage);
       }
 
@@ -77,16 +86,20 @@ namespace Meldpunt.Controllers
       Response.RemoveOutputCacheItem(savedPage.Url);
       Response.RemoveOutputCacheItem(oldPage.Url);
 
-
       return Redirect("/admin/editpage/" + savedPage.Id);
     }
 
+    /// <summary>
+    /// Get all childpages. So also child pages of childpages
+    /// </summary>
+    /// <param name="page"></param>
+    /// <param name="pageList"></param>
     private void GetAllChildPages(ContentPageModel page, List<ContentPageModel> pageList)
     {
-      foreach (var subPage in pageService.GetChildPages(page.Id))
+      foreach (var subPage in pageService.GetChildPages(page.Id).ToList())
         GetAllChildPages(subPage, pageList);
 
-      // add to routeList
+      // add to pageList
       pageList.Add(page);
     }
 

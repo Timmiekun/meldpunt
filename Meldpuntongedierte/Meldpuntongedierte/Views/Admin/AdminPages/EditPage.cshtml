@@ -3,8 +3,11 @@
 @model ContentPageModel
 @{
   ViewBag.Title = "Admin";
-  var locations = ViewBag.Locations;
   Layout = "~/Views/Shared/_Admin.cshtml";
+
+  var subPages = ViewBag.SubPages as IEnumerable<ContentPageModel>;
+
+
 }
 
 <h1>@Model.Title</h1>
@@ -66,7 +69,7 @@
     <label for="UrlPart">Url</label>
     <div class="input-group">
       <div class="input-group-prepend selectParent">
-        <span class="input-group-text" id="inputGroupPrepend" onclick="OpenModal()">@Model.ParentPath</span>
+        <span class="input-group-text" id="inputGroupPrepend" onclick="OpenModal()">@Model.ParentPath/</span>
       </div>
       <input type="hidden" name="parentId" id="parentId" value="@Model.ParentId" />
       <input type="text" name="UrlPart" class="form-control" value="@Model.UrlPart" />
@@ -109,17 +112,17 @@
   </div>
 </form>
 
-@*@section submenu{
-  @if (Model.SubPages.Any())
+@section submenu{
+  @if (subPages.Any())
   {
     <h2>Subpagina's</h2>
     <ul>
-      @foreach (PageModel p in Model.SubPages)
+      @foreach (var p in subPages)
       {
         <li>
-          <a href="/admin/editpage/@p.Guid">@p.Title</a>
+          <a href="/admin/editpage/@p.Id">@p.Title</a>
         </li>
       }
     </ul>
   }
-}*@
+}

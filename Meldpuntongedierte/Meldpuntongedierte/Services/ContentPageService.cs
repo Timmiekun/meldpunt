@@ -49,6 +49,24 @@ namespace Meldpunt.Services
       return db.ContentPages.Where(p => p.InHomeMenu);
     }
 
+    public IEnumerable<ContentPageModel> GetChildPages(Guid id, bool deep)
+    {
+      var childpages = GetChildPages(id).ToList();
+
+      if (!deep || !childpages.Any())
+        return childpages;
+
+      var allPages = new List<ContentPageModel>();
+      allPages.AddRange(childpages);
+      foreach(var child in childpages)
+      {
+        var c = GetChildPages(child.Id, true).ToList();
+        allPages.AddRange(c);
+      }
+
+      return allPages;
+    }
+
     public IEnumerable<ContentPageModel> GetChildPages(Guid id)
     {
       return db.ContentPages.Where(p => p.ParentId == id);

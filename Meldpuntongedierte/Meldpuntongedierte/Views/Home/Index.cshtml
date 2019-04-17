@@ -27,10 +27,18 @@
   @Html.Raw(Model.Content)
 </article>
 
+
+
 @section menu{
-  @if (subNav != null && subNav.Any())
+  @if (!String.IsNullOrWhiteSpace(Model.SideContent))
   {
-    <div class="menu">
+    <aside class="menu">
+      @Html.Raw(Model.SideContent)
+    </aside>
+  }
+  else if (subNav != null && subNav.Any())
+  {
+    <nav class="menu">
       <h2>Bekijk ook</h2>
       <ul>
         <li class="showOnMobile"><a href="/">Home</a></li>
@@ -49,11 +57,11 @@
         }
       </ul>
       <button class="goto-menu-mobile">menu</button>
-    </div>
+    </nav>
   }
   else
   {
-    <div class="menu">
+    <nav class="menu">
       <h2>Bekijk ook</h2>
       <ul>
         @foreach (var page in homeMenu.OrderByDescending(p => p.Sort))
@@ -64,6 +72,6 @@
 
       </ul>
       <button class="goto-menu-mobile">menu</button>
-    </div>
+    </nav>
   }
 }
