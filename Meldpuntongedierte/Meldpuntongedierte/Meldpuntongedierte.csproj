@@ -264,7 +264,6 @@
     <Content Include="robots.txt" />
     <Content Include="Scripts\admin.js" />
     <Content Include="Scripts\admin-modal.js" />
-    <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\suggest.js" />
     <Content Include="Scripts\xmlhttp.js" />
     <Content Include="Scripts\meldpunt.js" />
