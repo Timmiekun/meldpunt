@@ -558,19 +558,23 @@ h3:hover {
     height: 100%;
     background-size: cover;
     background-position: center;
-    transition: ease 300ms all;
+    transition: ease 600ms all;
   }
 
   .page-tile:hover .tile-image {
-    transform: scale(1.1)
+    transform: scale(1.05)
   }
 
-.tile-text {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  color: white;
-  padding: 0 10px;
-  background-color: rgba(0, 0, 0, 0.4392156862745098);
-}
+  .page-tile .tile-text {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    color: white;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.4392156862745098);
+  }
+
+  .page-tile .tile-text h2{
+    margin: 10px 0;
+  }
