@@ -15,13 +15,13 @@ namespace Meldpunt.Controllers
   [RoutePrefix("admin")]
   public class AdminController : Controller
   {
-    private IPageService pageService;
+    private IContentPageService pageService;
     private IPlaatsService plaatsService;
     private RedirectService redirectsService;
     private IImageService imageService;
     private ISearchService searchService;
 
-    public AdminController(IPageService _pageService, IPlaatsService _plaatsService, ISearchService _searchService, IImageService _imageService)
+    public AdminController(IContentPageService _pageService, IPlaatsService _plaatsService, ISearchService _searchService, IImageService _imageService)
     {
       pageService = _pageService;
       plaatsService = _plaatsService;
