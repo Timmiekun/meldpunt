@@ -23,7 +23,7 @@ namespace Meldpunt.Controllers
       db = _db;
     }
 
-    [OutputCache(Duration = 10, VaryByParam = "none")]
+    [OutputCache(CacheProfile = "pageCache")]
     [Route]
     public ActionResult Index()
     {
@@ -42,7 +42,7 @@ namespace Meldpunt.Controllers
       return View();
     }
 
-    [OutputCache(Duration = 100, VaryByParam = "none")]
+    [OutputCache(CacheProfile = "pageCache")]
     public ActionResult GetPage()
     {
       Guid id = Guid.Parse(RouteData.Values["guid"].ToString());
@@ -76,6 +76,7 @@ namespace Meldpunt.Controllers
       throw new HttpException(404, "page not found");
     }
 
+    [OutputCache(CacheProfile = "pageCache")]
     public ActionResult GetPlace()
     {
       var id = RouteData.Values["gemeente"].ToString();
