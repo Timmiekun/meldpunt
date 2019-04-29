@@ -338,6 +338,7 @@
     <Content Include="Views\Admin\AdminBlog\Index.cshtml" />
     <Content Include="Views\Blog\Index.cshtml" />
     <Content Include="Views\Blog\Details.cshtml" />
+    <Content Include="Views\Shared\_Page_Tile.cshtml" />
     <None Include="Volksgezondheid.pdf" />
     <None Include="Web.azure.config">
       <DependentUpon>Web.config</DependentUpon>
