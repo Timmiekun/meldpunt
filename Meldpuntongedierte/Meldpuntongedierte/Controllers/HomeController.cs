@@ -9,25 +9,25 @@ using System.Web.Routing;
 
 namespace Meldpunt.Controllers
 {
- 
+
   public class HomeController : Controller
   {
-    private IPageService pageService;
+    private IContentPageService pageService;
     private IPlaatsService plaatsService;
     private MeldpuntContext db;
 
-    public HomeController(IPlaatsService _plaatsService, IPageService _pageService, MeldpuntContext _db)
+    public HomeController(IPlaatsService _plaatsService, IContentPageService _pageService, MeldpuntContext _db)
     {
       pageService = _pageService;
       plaatsService = _plaatsService;
       db = _db;
     }
 
-    [OutputCache(Duration = 10, VaryByParam = "none")]
+    [OutputCache(CacheProfile = "pageCache")]
     [Route]
     public ActionResult Index()
     {
-      PageModel model = pageService.GetPage("home");      
+      ContentPageModel model = pageService.GetPageByUrlPart("home");
       return View(model);
     }
 
@@ -42,11 +42,12 @@ namespace Meldpunt.Controllers
       return View();
     }
 
-    [OutputCache(Duration = 100, VaryByParam = "none")]
+    [OutputCache(CacheProfile = "pageCache")]
     public ActionResult GetPage()
     {
+      Guid id = Guid.Parse(RouteData.Values["guid"].ToString());
       // content page?
-      PageModel model = pageService.GetPageByGuid(RouteData.Values["guid"].ToString());
+      ContentPageModel model = pageService.GetPageById(id);
       if (model != null)
       {
         // correct url?
@@ -55,25 +56,27 @@ namespace Meldpunt.Controllers
           return RedirectPermanent(model.Url);
         }
 
-        if (model.Id == "openbare-ruimte")
+        if (model.UrlPart == "openbare-ruimte")
           ViewBag.HidePhoneNumber = true;
 
-        if (model.SubPages.Any())
+        var subPages = pageService.GetChildPages(model.Id);
+        if (subPages.Any())
         {
-          ViewBag.SubNav = model.SubPages;
+          ViewBag.SubNav = subPages;
           return View("index", model);
         }
-        
-        PageModel parent = pageService.GetPageByGuid(model.ParentId);
+
+        ContentPageModel parent = pageService.GetPageById(model.ParentId);
         if (parent != null)
-          ViewBag.SubNav = parent.SubPages;
+          ViewBag.SubNav = pageService.GetChildPages(parent.Id);
 
         return View("index", model);
       }
-    
+
       throw new HttpException(404, "page not found");
     }
 
+    [OutputCache(CacheProfile = "pageCache")]
     public ActionResult GetPlace()
     {
       var id = RouteData.Values["gemeente"].ToString();

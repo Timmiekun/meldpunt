@@ -1,9 +1,8 @@
 using Meldpunt.Models;
 using Meldpunt.Services;
 using System;
+
 using Unity;
-using Unity.AspNet.Mvc;
-using Unity.Lifetime;
 
 namespace Meldpunt
 {
@@ -44,7 +43,7 @@ namespace Meldpunt
       // container.LoadConfiguration();
 
       container.RegisterType<IPlaatsService, PlaatsService>();
-      container.RegisterType<IPageService, PageService>();
+      container.RegisterType<IContentPageService, ContentPageService>();
       container.RegisterType<ISearchService, SearchService>();
       container.RegisterType<IImageService, ImageService>();
       container.RegisterType<MeldpuntContext>();

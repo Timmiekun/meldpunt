@@ -1,8 +1,8 @@
 ﻿@using Meldpunt.Models;
 @{
-  List<PageModel> pagesForTabs = ViewBag.NavItems as List<PageModel>;
+  IEnumerable<ContentPageModel> pagesForTabs = ViewBag.NavItems as IEnumerable<ContentPageModel>;
   List<BreadCrumb> breadcrumbs = ViewBag.BreadCrumbs as List<BreadCrumb>;
-  List<List<PageModel>> regioPages = ViewBag.RegioPages as List<List<PageModel>>;
+  IEnumerable<IEnumerable<ContentPageModel>> regioPages = ViewBag.RegioPages as IEnumerable<IEnumerable<ContentPageModel>>;
   string appVersion = ViewBag.AppVersion;
   string logoText = ViewBag.HeaderTitle;
   if (String.IsNullOrEmpty(logoText))
@@ -52,10 +52,10 @@
     </div>
     <div id="tabholder">
       <div id="tabs">
-        @foreach (PageModel tabItem in pagesForTabs.OrderByDescending(t => t.Sort))
+        @foreach (ContentPageModel tabItem in pagesForTabs.OrderByDescending(t => t.Sort))
         {
           string className = "tabItem";
-          if (Request.Url.AbsolutePath.Contains(tabItem.Id) || tabItem.Id == "home" && Request.Url.AbsolutePath == "/")
+          if (Request.Url.AbsolutePath.Contains(tabItem.UrlPart) || tabItem.UrlPart == "home" && Request.Url.AbsolutePath == "/")
           {
             className += " activeTab";
           }
@@ -95,8 +95,10 @@
     <div class="content-and-sidebar">
       <div class="content">
         @RenderBody()
+
+        @RenderSection("readmore", false)
       </div>
-      @RenderSection("menu", false)
+      @RenderSection("menu", false)     
     </div>
 
     <div class="footer">
@@ -107,10 +109,10 @@
           <div class="phone-button phone-icon"><a href="tel:0900-2556677">0900-2556677</a></div>
           <p><a href="mailto:info@meldpuntongedierte.nl">info@meldpuntongedierte.nl</a></p>
         </div>
-        @foreach (List<PageModel> list in regioPages)
+        @foreach (IEnumerable<ContentPageModel> list in regioPages)
         {
           <ul class="regiolist">
-            @foreach (PageModel p in list)
+            @foreach (ContentPageModel p in list)
             {
               <li><a href="@p.Url">@p.Title</a></li>
             }

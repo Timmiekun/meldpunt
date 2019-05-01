@@ -1,0 +1,18 @@
+﻿@using Meldpunt.Models;
+@model ContentPageModel
+@{
+  var image = Model.Image;
+  if (image != null && image.Contains("\\"))
+  {
+    image = image.Replace("\\", "/");
+  }
+}
+<div class="page-tile">
+  <a href="@Model.Url">
+    <div class="tile-image" style="background-image:url('@image&width=400')"></div>
+    <div class="tile-text">
+      <h2>@Model.Title</h2>
+      <p>@Model.MetaTitle</p>
+    </div>
+  </a>
+</div>

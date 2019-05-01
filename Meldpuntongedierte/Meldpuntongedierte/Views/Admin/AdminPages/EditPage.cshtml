@@ -1,10 +1,13 @@
 ﻿@using Meldpunt.Models;
 @using Meldpunt.Utils;
-@model PageModel
+@model ContentPageModel
 @{
   ViewBag.Title = "Admin";
-  var locations = ViewBag.Locations;
   Layout = "~/Views/Shared/_Admin.cshtml";
+
+  var subPages = ViewBag.SubPages as IEnumerable<ContentPageModel>;
+
+
 }
 
 <h1>@Model.Title</h1>
@@ -18,7 +21,6 @@
   <button onclick="$('#opslaan').click()" class="btn btn-info">Opslaan</button>
   <a class="btn btn-info" href="@Model.Url" target="_blank">Pagina bekijken</a>
 </div>
-
 
 <form method="post">
 
@@ -50,6 +52,7 @@
   <div class="field">
     <label for="Title">Title</label>
     <input type="text" name="Title" class="form-control" value="@Model.Title" />
+    @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
   </div>
 
   <div class="field">
@@ -66,11 +69,12 @@
     <label for="UrlPart">Url</label>
     <div class="input-group">
       <div class="input-group-prepend selectParent">
-        <span class="input-group-text" id="inputGroupPrepend" onclick="OpenModal()">@Model.ParentPath</span>
+        <span class="input-group-text" id="inputGroupPrepend" onclick="OpenModal()">@Model.ParentPath/</span>
       </div>
       <input type="hidden" name="parentId" id="parentId" value="@Model.ParentId" />
-      <input type="text" name="UrlPart" class="form-control" value="@(Model.UrlPart ?? Model.Id)" />
+      <input type="text" name="UrlPart" class="form-control" value="@Model.UrlPart" />
     </div>
+    @Html.ValidationMessageFor(model => model.UrlPart, "", new { @class = "text-danger" })
   </div>
 
   <div class="field">
@@ -90,31 +94,33 @@
 
   <div class="field">
     <label for="content">Content</label>
-    <textarea id="content" name="content" class="richtext">
-			@Model.Content
-		</textarea>
+    <textarea id="content" name="content" class="richtext">@Model.Content</textarea>
+  </div>
+
+  <div class="field">
+    <label for="sidecontent">Side content</label>
+    <textarea id="sidecontent" name="sidecontent" class="richtext">@Model.SideContent</textarea>
   </div>
 
   <input type="hidden" name="Id" value="@Model.Id" />
-  <input type="hidden" name="Guid" value="@Model.Guid" />
 
   <div class="actions">
     <a href="/admin/newpage?parentid=@Model.Id" class="btn btn-info">Nieuwe pagina</a>
     <input type="submit" id="opslaan" value="opslaan" class="btn btn-info" />
     <a class="btn btn-info" href="@Model.Url" target="_blank">Pagina bekijken</a>
-    <a href="/admin/deletepage/@Model.Guid" class="btn btn-danger" data-action-confirm>Verwijderen</a>
+    <a href="/admin/deletepage/@Model.Id" class="btn btn-danger" data-action-confirm>Verwijderen</a>
   </div>
 </form>
 
 @section submenu{
-  @if (Model.SubPages.Any())
+  @if (subPages.Any())
   {
     <h2>Subpagina's</h2>
     <ul>
-      @foreach (PageModel p in Model.SubPages)
+      @foreach (var p in subPages)
       {
         <li>
-          <a href="/admin/editpage/@p.Guid">@p.Title</a>
+          <a href="/admin/editpage/@p.Id">@p.Title</a>
         </li>
       }
     </ul>

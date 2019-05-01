@@ -4,6 +4,7 @@ using Meldpunt.Services;
 using Meldpunt.Utils;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -15,21 +16,27 @@ namespace Meldpunt.Controllers
   [RoutePrefix("admin")]
   public class AdminPagesController : Controller
   {
-    private IPageService pageService;
+    private IContentPageService pageService;
     private IPlaatsService plaatsService;
     private RedirectService redirectsService;
     private IImageService imageService;
     private ISearchService searchService;
+    MeldpuntContext db;
 
-    public AdminPagesController(IPageService _pageService, IPlaatsService _plaatsService, ISearchService _searchService, IImageService _imageService)
+    public AdminPagesController(IContentPageService _pageService,
+                                IPlaatsService _plaatsService,
+                                ISearchService _searchService,
+                                IImageService _imageService,
+                                MeldpuntContext _db)
     {
       pageService = _pageService;
       plaatsService = _plaatsService;
       searchService = _searchService;
       redirectsService = new RedirectService();
       imageService = _imageService;
+      db = _db;
     }
-    
+
     #region pages
     [Route("Pages")]
     public ActionResult Pages(string q, int page = 0)
@@ -39,47 +46,55 @@ namespace Meldpunt.Controllers
 
     [Route("EditPage/{id}")]
     [HttpGet]
-    public ActionResult EditPage(string id)
+    public ActionResult EditPage(Guid id)
     {
-      PageModel page = pageService.GetPageByGuid(id);
-      ViewBag.Locations = LocationUtils.placesByMunicipality.OrderBy(m => m.Key);
+      ContentPageModel page = pageService.GetPageById(id);
+      if (page == null)
+        throw new HttpException(404, "page not found");
+
+      var parent = pageService.GetPageById(page.ParentId);
+      page.ParentPath = parent.Url;
+
+      ViewBag.SubPages = pageService.GetChildPages(page.Id);
+
       return View(page);
     }
 
     [Route("EditPage/{id}")]
     [HttpPost, ValidateInput(false)]
-    public ActionResult EditPage(PageModel page)
+    public ActionResult EditPage(ContentPageModel page)
     {
-      var oldPage = pageService.GetPageByGuid(page.Guid.ToString());
+      if (!ModelState.IsValid)
+        return View(page);
+
+      var oldPage = pageService.GetByIdUntracked(page.Id);
       var savedPage = pageService.SavePage(page);
 
       // update route table
       if (oldPage.Url != savedPage.Url)
       {
-        UpdateRouteForPage(savedPage);
+        var allChildPages = pageService.GetChildPages(page.Id, true).ToList();
+        foreach (var child in allChildPages)
+        {
+          pageService.SavePage(child);
+          searchService.IndexDocument(child.ToLuceneDocument(), savedPage.Id.ToString());
+        }
+        allChildPages.Add(savedPage);
+
+        // update routes
+        UpdateRouteForPages(allChildPages);
       }
+
+      searchService.IndexDocument(savedPage.ToLuceneDocument(), savedPage.Id.ToString());
 
       Response.RemoveOutputCacheItem(savedPage.Url);
       Response.RemoveOutputCacheItem(oldPage.Url);
-      
 
-      return Redirect("/admin/editpage/" + savedPage.Guid);
+      return Redirect("/admin/editpage/" + savedPage.Id);
     }
 
-    private void GetAllChildPages(PageModel page, List<PageModel> pageList)
+    private void UpdateRouteForPages(List<ContentPageModel> pages)
     {
-      foreach (var subPage in page.SubPages)
-        GetAllChildPages(subPage, pageList);
-
-      // add to routeList
-      pageList.Add(page);
-    }
-
-    private void UpdateRouteForPage(PageModel page)
-    {
-      List<PageModel> pageList = new List<PageModel>();
-      GetAllChildPages(page, pageList);
-
       var routes = RouteTable.Routes;
       using (routes.GetWriteLock())
       {
@@ -90,20 +105,18 @@ namespace Meldpunt.Controllers
         var defaultRouteOld = routes.Last();
         routes.Remove(defaultRouteOld);
 
-        foreach(var routePage in pageList) {
+        foreach (var routePage in pages)
+        {
           // remove old route
-          var oldRoute = routes[routePage.Guid.ToString()];
+          var oldRoute = routes[routePage.Id.ToString()];
           routes.Remove(oldRoute);
 
           //add some new route for a cms page
           routes.MapRoute(
-            routePage.Guid.ToString(), // Route name
+            routePage.Id.ToString(), // Route name
             routePage.Url.TrimStart('/'), // URL with parameters
-            new { controller = "Home", action = "GetPage", guid = routePage.Guid } // Parameter defaults
+            new { controller = "Home", action = "GetPage", guid = routePage.Id } // Parameter defaults
           );
-
-          // also, re-index
-          searchService.IndexDocument(routePage.ToLuceneDocument(), routePage.Guid.ToString());
         }
 
         //add back default routes
@@ -113,21 +126,51 @@ namespace Meldpunt.Controllers
     }
 
     [Route("DeletePage/{id}")]
-    public ActionResult DeletePage(string id)
+    public ActionResult DeletePage(Guid id)
     {
-      var page = pageService.GetPageByGuid(id);
       pageService.deletePage(id);
+
+      searchService.DeleteDocument(id.ToString());
 
       return Redirect("/admin/pages");
     }
 
     [Route("NewPage")]
-    public ActionResult NewPage(string parentId)
+    public ActionResult NewPage()
     {
-      var newPage = pageService.newPage();
-      return RedirectToAction("editpage", new { id = newPage.Id });
+      ContentPageModel newPage = new ContentPageModel();
+      newPage.Title = "Nieuwe pagina";
+      return View("editpage", newPage);
+    }
+
+    [Route("NewPage")]
+    [HttpPost]
+    public ActionResult NewPage(ContentPageModel page)
+    {
+      if (!ModelState.IsValid)
+        return View("editpage", page);
+
+      if (page.ParentId == null || page.ParentId == Guid.Empty)
+      {
+        var homepage = pageService.GetPageByUrlPart("home");
+        page.ParentId = homepage.Id;
+      }
+
+
+      page.Id = Guid.NewGuid();
+      db.Entry(page).State = EntityState.Modified;
+      db.ContentPages.Add(page);
+      db.SaveChanges();
+
+      // save again, for generating url etc..
+      pageService.SavePage(page);
+
+      searchService.IndexDocument(page.ToLuceneDocument(), page.Id.ToString());
+
+      return RedirectToAction("editpage", new { Id = page.Id });
     }
     #endregion
+
 
     #region stayaway
     [Route("updateimages")]
@@ -137,24 +180,69 @@ namespace Meldpunt.Controllers
       return new EmptyResult();
     }
 
-    [Route("addguids")]
-    public ActionResult AddGuids()
+    [Route("addurlpart")]
+    public ActionResult AddUrlPart()
     {
-      //pageService.AddGuids();
+      var XMLPageService = new XMLPageService();
+      var pages = XMLPageService.GetAllPages();
+
+      foreach (var page in pages)
+      {
+        if (String.IsNullOrWhiteSpace(page.UrlPart))
+        {
+          page.UrlPart = page.Id;
+          Response.Write(String.Format("<div>page [{0}] got url [{1}]</div>", page.Id, page.UrlPart));
+          Response.Flush();
+          XMLPageService.SavePage(page);
+        }
+      }
       return new EmptyResult();
     }
 
-    [Route("AddMetaTitles")]
-    public ActionResult AddMetaTitles()
+    [Route("migratepages")]
+    public ActionResult MigratePages()
     {
-      pageService.AddMetaTitles();
-      return new EmptyResult();
-    }
+      var XMLPageService = new XMLPageService();
+      var pages = XMLPageService.GetAllPages();
+      var home = pages.FirstOrDefault(p => p.UrlPart == "home");
+      int pageCount = 0;
 
-    [Route("UpdatePublished")]
-    public ActionResult UpdatePublished()
-    {
-      pageService.UpdatePublished();
+      foreach (var page in pages)
+      {
+        try
+        {
+          var contentPage = new ContentPageModel();
+
+          PropertyCopier<PageModel, ContentPageModel>.Copy(page, contentPage);
+
+          if (Guid.TryParse(page.ParentId, out Guid parentId))
+          {
+            contentPage.ParentId = parentId;
+          }
+          else
+            contentPage.ParentId = home.Guid;
+
+          contentPage.Id = page.Guid;
+          db.ContentPages.Add(contentPage);
+          db.SaveChanges();
+
+          Response.Write(String.Format("<div>page [{0}] copied [{1}]</div>", page.Guid, page.UrlPart));
+          Response.Flush();
+
+          pageCount++;
+        }
+        catch (Exception e)
+        {
+          Response.Write(String.Format("<div style='color:red'>page [{0}] error happenend [{1}]</div>", page.Guid, e.InnerException.InnerException.Message));
+          Response.Flush();
+
+          pageCount++;
+        }
+
+      }
+
+      Response.Write(String.Format("<div>[{0}] pages</div>", pageCount));
+      Response.Flush();
       return new EmptyResult();
     }
     #endregion

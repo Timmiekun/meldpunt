@@ -15,6 +15,8 @@ namespace Meldpunt.Models
     {
     }
 
-    public System.Data.Entity.DbSet<Meldpunt.Models.BlogModel> BlogModels { get; set; }
+    public DbSet<BlogModel> BlogModels { get; set; }
+
+    public DbSet<ContentPageModel> ContentPages { get; set; }
   }
 }
