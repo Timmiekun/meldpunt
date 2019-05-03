@@ -43,6 +43,7 @@ namespace Meldpunt
       // container.LoadConfiguration();
 
       container.RegisterType<IPlaatsService, PlaatsService>();
+      container.RegisterType<IPlaatsPageService, PlaatsPageService>();
       container.RegisterType<IContentPageService, ContentPageService>();
       container.RegisterType<ISearchService, SearchService>();
       container.RegisterType<IImageService, ImageService>();

@@ -1,0 +1,41 @@
+﻿@using Meldpunt.Models;
+@using Meldpunt.Utils;
+@model ReactionModel
+@{
+  ViewBag.Title = "Admin";
+  Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<h1>Gemeente @Model.GemeenteNaam</h1>
+
+<a class="viewPage btn btn-info" href="/@Model.GemeenteNaam" target="_blank">Pagina bekijken</a>
+
+<form method="post">
+
+  <div class="field">
+    <label for="publish">Publiceer</label>
+    @Html.EditorFor(model => model.Approved, new { htmlAttributes = new { @class = "form-control datepicker" } })
+  </div>
+
+  <div class="field">
+    <label for="Sender">Naam</label>
+    @Model.Sender
+  </div>
+
+  <div class="field">
+    <label for="MetaDescription">Beschrijving</label>
+    @Model.SenderDescription
+  </div>
+
+  <div class="field">
+    <label for="MetaDescription">E-mail</label>
+    @Model.SenderEmail
+  </div>
+
+  <div class="field">
+    Voor het laatst aangepast: <b>@Model.Created.ToString("R")</b>
+  </div>
+
+  <input type="hidden" name="Gemeentenaam" value="@Model.GemeenteNaam" />
+  <input type="submit" class="btn btn-info" value="opslaan" />
+</form>

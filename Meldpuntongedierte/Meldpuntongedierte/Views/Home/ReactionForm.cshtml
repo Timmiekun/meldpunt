@@ -1,0 +1,33 @@
+﻿@using Meldpunt.Utils;
+@using Meldpunt.Models;
+@model Meldpunt.Models.ReactionModel
+
+
+<form method="POST" class="react">
+  <h2>Melding maken</h2>
+  <div class="form-group">
+    <label for="name">Naam: </label>
+    @Html.TextBoxFor(m => m.Sender)
+  </div>
+
+  <div class="form-group">
+    <label for="name">Omschrijving: </label>
+    @Html.TextAreaFor(m => m.SenderDescription)
+  </div>
+
+  @Html.HiddenFor(m => m.GemeenteNaam)
+  <button type="submit">Verzenden</button>
+</form>
+
+<script src="https://www.google.com/recaptcha/api.js?render=6Lf9c6EUAAAAAEPOPlrllz5maz9TdIqlBB8_WQ26"></script>
+<script> 
+  grecaptcha.ready(function () {
+    grecaptcha.execute('6Lf9c6EUAAAAAEPOPlrllz5maz9TdIqlBB8_WQ26', { action: 'homepage' }).then(function (token) {
+
+      console.log("token", token);
+    
+      // verify at     
+      @*// @String.Format("https://www.google.com/recaptcha/api/siteverify?secret={}&response={}")*@
+        });
+  });
+</script>

@@ -93,54 +93,5 @@ namespace Meldpunt.Controllers
     }
     #endregion
 
-    #region places
-    [Route("Places")]
-    public ActionResult Places(string q, int page = 0)
-    {
-      return View(searchService.Search(q, SearchTypes.Place, page));
-    }
-
-    [HttpGet]
-    [Route("EditPlaats/{plaats}")]
-    public ActionResult EditPlaats(String plaats)
-    {
-      // gemeente page?
-      var gemeente = LocationUtils.placesByMunicipality.Where(m => m.Key.XmlSafe().Equals(plaats.XmlSafe()));
-      if (gemeente.Any())
-      {
-        PlaatsModel plaatsModel = plaatsService.GetPlaats(plaats.XmlSafe());
-        if (plaatsModel == null)
-        {
-          plaatsModel = new PlaatsModel { Gemeentenaam = gemeente.First().Key.Capitalize() };
-        }
-        plaatsModel.Plaatsen = gemeente.First().Value.ToList();
-        ViewBag.Locations = LocationUtils.placesByMunicipality.OrderBy(m => m.Key);
-        return View(plaatsModel);
-      }
-
-      // plaats to redirect?
-      var gemeentes = LocationUtils.placesByMunicipality.Where(m => m.Value.Any(p => p.Equals(plaats, StringComparison.CurrentCultureIgnoreCase)));
-
-      if (gemeentes.Any())
-      {
-        String name = gemeentes.First().Key;
-        return RedirectPermanent("/admin/editplaats/" + name);
-      }
-
-      throw new HttpException(404, "page not found");
-
-    }
-
-    [Route("EditPlaats/{plaats}")]
-    [HttpPost, ValidateInput(false)]
-    public ActionResult EditPlaats(PlaatsModel p)
-    {
-      plaatsService.UpdateOrInsert(p);
-      Response.RemoveOutputCacheItem("/ongediertebestrijding-" + p.Gemeentenaam.XmlSafe());
-
-      return Redirect("/admin/editplaats/" + p.Gemeentenaam.XmlSafe());
-    }
-    #endregion
-
   }
 }

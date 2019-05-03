@@ -6,6 +6,7 @@ using Meldpunt.Services;
 using Meldpunt.Models;
 using Meldpunt.Utils;
 using System.Web.Routing;
+using Meldpunt.ViewModels;
 
 namespace Meldpunt.Controllers
 {
@@ -13,13 +14,13 @@ namespace Meldpunt.Controllers
   public class HomeController : Controller
   {
     private IContentPageService pageService;
-    private IPlaatsService plaatsService;
+    private IPlaatsPageService plaatsPageService;
     private MeldpuntContext db;
 
-    public HomeController(IPlaatsService _plaatsService, IContentPageService _pageService, MeldpuntContext _db)
+    public HomeController(IPlaatsPageService _plaatsPageService, IContentPageService _pageService, MeldpuntContext _db)
     {
       pageService = _pageService;
-      plaatsService = _plaatsService;
+      plaatsPageService = _plaatsPageService;
       db = _db;
     }
 
@@ -31,16 +32,6 @@ namespace Meldpunt.Controllers
       return View(model);
     }
 
-    [Route("sitemap")]
-    public ActionResult SiteMap()
-    {
-      ViewBag.Pages = pageService.GetAllPages();
-      ViewBag.Locations = LocationUtils.placesByMunicipality;
-      ViewBag.Blog = db.BlogModels.Where(b => b.LastModified != null && b.Published != null).ToList();
-
-      Response.ContentType = "text/xml";
-      return View();
-    }
 
     [OutputCache(CacheProfile = "pageCache")]
     public ActionResult GetPage()
@@ -83,20 +74,23 @@ namespace Meldpunt.Controllers
       var gemeente = LocationUtils.placesByMunicipality.Where(m => m.Key.XmlSafe().Equals(id, StringComparison.CurrentCultureIgnoreCase));
       if (gemeente.Any())
       {
-        PlaatsModel plaatsModel = plaatsService.GetPlaats(id);
+        PlaatsPageModel plaatsModel = plaatsPageService.GetPlaatsByUrlPart(id);
         if (plaatsModel == null)
         {
-          plaatsModel = new PlaatsModel { Gemeentenaam = gemeente.First().Key.Capitalize() };
+          plaatsModel = new PlaatsPageModel { Gemeentenaam = gemeente.First().Key.Capitalize() };
         }
         plaatsModel.Plaatsen = gemeente.First().Value.ToList();
         ViewBag.Locations = LocationUtils.placesByMunicipality.OrderBy(m => m.Key);
         ViewBag.HidePhoneNumber = true;
-        return View("Plaats", plaatsModel);
+        return View("Plaats", new PlaatsPageViewModel
+        {
+          Content = plaatsModel,
+          Reactions = db.Reactions.Where(r => r.GemeenteNaam == id)
+        });
       }
 
       // plaats to redirect?
       var gemeentes = LocationUtils.placesByMunicipality.Where(m => m.Value.Any(p => p.XmlSafe().Equals(id, StringComparison.CurrentCultureIgnoreCase)));
-
 
       if (gemeentes.Any())
       {
@@ -105,6 +99,27 @@ namespace Meldpunt.Controllers
       }
 
       throw new HttpException(404, "page not found");
+    }
+
+    [HttpPost]
+    public ActionResult GetPlace(ReactionModel reaction)
+    {
+      reaction.Created = DateTimeOffset.Now;
+      db.Reactions.Add(reaction);
+      db.SaveChanges();
+
+      return GetPlace();
+    }
+
+    [Route("sitemap")]
+    public ActionResult SiteMap()
+    {
+      ViewBag.Pages = pageService.GetAllPages();
+      ViewBag.Locations = LocationUtils.placesByMunicipality;
+      ViewBag.Blog = db.BlogModels.Where(b => b.LastModified != null && b.Published != null).ToList();
+
+      Response.ContentType = "text/xml";
+      return View();
     }
   }
 }

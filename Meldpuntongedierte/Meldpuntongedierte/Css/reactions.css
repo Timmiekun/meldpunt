@@ -1,0 +1,35 @@
+﻿.react h2,
+.reactions h2 {
+  color: white;
+  background-color: #85003c;
+  padding: 20px;
+  margin-bottom: 50px;
+}
+
+.reactions .reaction {
+  margin-bottom: 50px;
+  box-shadow: 2px 3px 6px 1px #d1d1d1;
+  padding: 10px;
+  border-radius: 5px;  
+}
+
+
+  .react .form-group {
+  }
+
+  .react .form-group label {
+    display: block;
+  }
+
+
+  .react .form-group input[type=text] {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5px 3px;
+  }
+
+  .react .form-group textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5px 3px;
+  }

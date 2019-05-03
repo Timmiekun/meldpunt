@@ -1,0 +1,30 @@
+﻿@using Meldpunt.Models;
+@using Meldpunt.Utils;
+@model IEnumerable<ReactionModel>
+@{
+  ViewBag.Title = "Admin";
+  var locations = ViewBag.Locations;
+  Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<h1>Beheer plaatsen</h1>
+
+<form class="search-form" method="get">
+  <input class="form-control" type="text" name="q" placeholder="Zoek plaats" value="@Request.QueryString["q"]" />
+</form>
+
+<p>@Model.Count() reacties</p>
+
+
+<div class="list-item list-item-header">
+  <div class="title">Gemeente</div>
+  <div class="url">Gebruiker</div>
+</div>
+
+@foreach (var reactie in Model)
+{
+ <div class="list-item">
+    <div class="title"><a class="link-to-edit" href="/admin/editreaction/@reactie.Id">@reactie.GemeenteNaam</a></div>
+    <div class="url">@reactie.Sender</div>
+  </div>
+}
