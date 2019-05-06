@@ -591,3 +591,13 @@ h3:hover {
     .page-tile .tile-text h2 {
       margin: 10px 0;
     }
+
+.button {
+  border-radius: 4px;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  background-color: #efefef;
+  border: 1px solid #c3c3c3;
+  cursor:pointer;
+}
