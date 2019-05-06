@@ -85,7 +85,7 @@ namespace Meldpunt.Controllers
         return View("Plaats", new PlaatsPageViewModel
         {
           Content = plaatsModel,
-          Reactions = db.Reactions.Where(r => r.GemeenteNaam == id)
+          Reactions = db.Reactions.Where(r => r.GemeenteNaam == plaatsModel.Gemeentenaam)
         });
       }
 

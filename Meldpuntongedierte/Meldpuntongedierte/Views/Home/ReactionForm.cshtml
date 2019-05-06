@@ -2,6 +2,15 @@
 @using Meldpunt.Models;
 @model Meldpunt.Models.ReactionModel
 
+<script>
+  function recaptureCallback(opt_widget_id) {
+    var url = "https://www.google.com/recaptcha/api/siteverify";
+    url += "?secret=6LdHvaEUAAAAAGPw1WYO7uOF3n9LprgZsdH2glti";
+    url += "&response=" + opt_widget_id;
+    console.log('url: ', url);
+
+  }
+</script>
 
 <form method="POST" class="react">
   <h2>Melding maken</h2>
@@ -17,17 +26,23 @@
 
   @Html.HiddenFor(m => m.GemeenteNaam)
   <button type="submit">Verzenden</button>
+  <div class="g-recaptcha" data-sitekey="6LdHvaEUAAAAAK61UFX_InlvrQuJWrw-5Imv8aIr" data-callback="recaptureCallback"></div>
 </form>
 
-<script src="https://www.google.com/recaptcha/api.js?render=6Lf9c6EUAAAAAEPOPlrllz5maz9TdIqlBB8_WQ26"></script>
-<script> 
-  grecaptcha.ready(function () {
-    grecaptcha.execute('6Lf9c6EUAAAAAEPOPlrllz5maz9TdIqlBB8_WQ26', { action: 'homepage' }).then(function (token) {
 
-      console.log("token", token);
-    
-      // verify at     
-      @*// @String.Format("https://www.google.com/recaptcha/api/siteverify?secret={}&response={}")*@
-        });
-  });
-</script>
+
+
+@*<script src="https://www.google.com/recaptcha/api.js?render=6Lf9c6EUAAAAAEPOPlrllz5maz9TdIqlBB8_WQ26"></script>
+  <script>
+
+    grecaptcha.ready(function () {
+      grecaptcha.execute('6Lf9c6EUAAAAAEPOPlrllz5maz9TdIqlBB8_WQ26', { action: 'homepage' }).then(function (token) {
+
+        console.log("token", token);
+
+        // verify at
+
+          });
+    });
+  </script>*@
+@*// @String.Format("https://www.google.com/recaptcha/api/siteverify?secret={}&response={}")*@

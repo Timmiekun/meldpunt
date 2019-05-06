@@ -4,6 +4,7 @@ using Meldpunt.Services;
 using Meldpunt.Utils;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -37,6 +38,16 @@ namespace Meldpunt.Controllers
     {
       var reaction = db.Reactions.Find(id);
       return View(reaction);
+    }
+
+    [Route("approvereaction/{id}")]
+    public ActionResult Approve(Guid id)
+    {
+      var reaction = db.Reactions.Find(id);
+      reaction.Approved = DateTimeOffset.Now;
+      db.Entry(reaction).State = EntityState.Modified;
+      db.SaveChanges();
+      return RedirectToAction("Edit", new { id = id });
     }
   }
 }

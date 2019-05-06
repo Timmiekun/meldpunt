@@ -267,9 +267,17 @@ h3 {
   overflow: hidden;
 }
 
-.list-item-header {
-  font-weight: bold;
-}
+  .list-item.unapproved {
+    border-left: 5px solid red;
+  }
+
+  .list-item.approved{
+    border-left: 5px solid green;
+  }
+
+  .list-item-header {
+    font-weight: bold;
+  }
 
 .list-item .link-to-edit {
   color: #83003c;
@@ -303,6 +311,18 @@ h3 {
 
 .list-item .action {
   width: 25%;
+}
+
+.list-item .date {
+  width: 30%;
+}
+
+.list-item .place {
+  width: 40%;
+}
+
+.list-item .sender {
+  width: 20%;
 }
 
 .subpages {

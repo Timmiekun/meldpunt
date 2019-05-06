@@ -8,34 +8,41 @@
 
 <h1>Gemeente @Model.GemeenteNaam</h1>
 
-<a class="viewPage btn btn-info" href="/@Model.GemeenteNaam" target="_blank">Pagina bekijken</a>
+<div class="field">
+  Aangemaakt: <b>@Model.Created.ToString("f")</b>
+</div>
 
-<form method="post">
-
+@if (Model.Approved.HasValue)
+{
   <div class="field">
-    <label for="publish">Publiceer</label>
-    @Html.EditorFor(model => model.Approved, new { htmlAttributes = new { @class = "form-control datepicker" } })
+    Goegekeurd: <b>@Model.Approved.Value.ToString("f")</b>
   </div>
+}
 
-  <div class="field">
-    <label for="Sender">Naam</label>
-    @Model.Sender
-  </div>
 
-  <div class="field">
-    <label for="MetaDescription">Beschrijving</label>
-    @Model.SenderDescription
-  </div>
+<div class="field">
+  <label for="Sender">Naam: </label>
+  @Model.Sender
+</div>
 
-  <div class="field">
-    <label for="MetaDescription">E-mail</label>
-    @Model.SenderEmail
-  </div>
+<div class="field">
+  <label for="MetaDescription">Beschrijving: </label>
+  @Model.SenderDescription
+</div>
 
-  <div class="field">
-    Voor het laatst aangepast: <b>@Model.Created.ToString("R")</b>
-  </div>
+<div class="field">
+  <label for="MetaDescription">E-mail: </label>
+  @Model.SenderEmail
+</div>
 
-  <input type="hidden" name="Gemeentenaam" value="@Model.GemeenteNaam" />
-  <input type="submit" class="btn btn-info" value="opslaan" />
-</form>
+@if (Model.Approved.HasValue)
+{
+  <a class="btn btn-success" href="/admin/approvereaction/@Model.Id">Afkeuren</a>
+
+}
+else
+{
+  <a class="btn btn-success" href="/admin/approvereaction/@Model.Id">Goedkeuren</a>
+}
+
+
