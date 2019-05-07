@@ -185,33 +185,25 @@ h3 {
     color: white;
   }
 
-.content {
-  padding-top: 40px;
+.content img.left {
+  margin-right: 15px;
+  float: right;
 }
 
-  .content h1:first-of-type {
-    margin-top: 20px;
-  }
+.content img.right {
+  margin-left: 15px;
+  float: right;
+}
 
-  .content img.left {
-    margin-right: 15px;
-    float: right;
-  }
+.content img {
+  border-radius: 6px;
+}
 
-  .content img.right {
-    margin-left: 15px;
-    float: right;
-  }
-
-  .content img {
-    border-radius: 6px;
-  }
-
-  .content ul {
-    list-style-type: disc;
-    padding-left: 10px;
-    margin-left: 20px;
-  }
+.content ul {
+  list-style-type: disc;
+  padding-left: 10px;
+  margin-left: 20px;
+}
 
 #header {
   display: flex;
@@ -599,5 +591,5 @@ h3:hover {
   line-height: 1.5;
   background-color: #efefef;
   border: 1px solid #c3c3c3;
-  cursor:pointer;
+  cursor: pointer;
 }
