@@ -144,7 +144,7 @@ namespace Meldpunt.Controllers
     }
 
     [Route("NewPage")]
-    [HttpPost]
+    [HttpPost, ValidateInput(false)]
     public ActionResult NewPage(ContentPageModel page)
     {
       if (!ModelState.IsValid)
@@ -158,13 +158,15 @@ namespace Meldpunt.Controllers
 
 
       page.Id = Guid.NewGuid();
+      page.Published = DateTimeOffset.Now;
       db.Entry(page).State = EntityState.Modified;
       db.ContentPages.Add(page);
       db.SaveChanges();
 
       // save again, for generating url etc..
-      pageService.SavePage(page);
+      page = pageService.SavePage(page);
 
+      UpdateRouteForPages(new List<ContentPageModel>() { page });
       searchService.IndexDocument(page.ToLuceneDocument(), page.Id.ToString());
 
       return RedirectToAction("editpage", new { Id = page.Id });

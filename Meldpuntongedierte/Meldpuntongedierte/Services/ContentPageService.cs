@@ -75,8 +75,8 @@ namespace Meldpunt.Services
 
     public ContentPageModel SavePage(ContentPageModel pageToSave)
     {
-      pageToSave.Url = "/" + generateUrl(pageToSave);
       pageToSave.UrlPart = pageToSave.UrlPart.XmlSafe();
+      pageToSave.Url = "/" + generateUrl(pageToSave);
       pageToSave.LastModified = DateTimeOffset.Now;
       db.Entry(pageToSave).State = EntityState.Modified;
       db.SaveChanges();
