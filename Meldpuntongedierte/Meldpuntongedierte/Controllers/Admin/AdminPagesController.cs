@@ -87,8 +87,16 @@ namespace Meldpunt.Controllers
 
       searchService.IndexDocument(savedPage.ToLuceneDocument(), savedPage.Id.ToString());
 
-      Response.RemoveOutputCacheItem(savedPage.Url);
+      // remove outputcache for old url
       Response.RemoveOutputCacheItem(oldPage.Url);
+
+      // remove outputcache for current url, including parents
+      string path = savedPage.Url;
+      while (path.LastIndexOf("/") > -1)
+      {
+        Response.RemoveOutputCacheItem(path);
+        path = path.Substring(0, path.LastIndexOf("/"));
+      }
 
       return Redirect("/admin/editpage/" + savedPage.Id);
     }
