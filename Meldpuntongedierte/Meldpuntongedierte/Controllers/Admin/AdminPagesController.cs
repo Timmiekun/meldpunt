@@ -76,8 +76,26 @@ namespace Meldpunt.Controllers
         var allChildPages = pageService.GetChildPages(page.Id, true).ToList();
         foreach (var child in allChildPages)
         {
+          string oldUrl = child.Url;
           pageService.SavePage(child);
-          searchService.IndexDocument(child.ToLuceneDocument(), savedPage.Id.ToString());
+          string newUrl = child.Url;
+
+          if (oldUrl != newUrl)
+          {
+            var redirect = redirectsService.FindByFrom(oldUrl);
+            if (redirect == null)
+              redirect = redirectsService.newRedirect();
+
+            redirect.From = oldUrl;
+            redirect.To = newUrl;
+            redirectsService.SaveRedirect(redirect);
+          }
+          else
+          {
+            //huh?
+          }
+
+          searchService.IndexDocument(child.ToLuceneDocument(), child.Id.ToString());
         }
         allChildPages.Add(savedPage);
 
@@ -101,6 +119,10 @@ namespace Meldpunt.Controllers
       return Redirect("/admin/editpage/" + savedPage.Id);
     }
 
+    /// <summary>
+    /// update routes in the route table
+    /// </summary>
+    /// <param name="pages"></param>
     private void UpdateRouteForPages(List<ContentPageModel> pages)
     {
       var routes = RouteTable.Routes;
@@ -148,10 +170,10 @@ namespace Meldpunt.Controllers
     public ActionResult DeletePage(Guid id)
     {
       var page = pageService.GetByIdUntracked(id);
-      
+
       // delete from search
       searchService.DeleteDocument(id.ToString());
-      
+
       // delete route
       DeleteRouteForPage(id);
 
