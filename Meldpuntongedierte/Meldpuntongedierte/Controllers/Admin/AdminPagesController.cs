@@ -112,7 +112,7 @@ namespace Meldpunt.Controllers
     }
 
     [Route("NewPage")]
-    [HttpPost]
+    [HttpPost, ValidateInput(false)]
     public ActionResult NewPage(ContentPageModel page)
     {
       if (!ModelState.IsValid)
@@ -132,10 +132,11 @@ namespace Meldpunt.Controllers
 
       // save again, for generating url etc..
       pageService.SavePage(page);
+      UpdateRouteForPages(new List<ContentPageModel> { page });
 
       searchService.IndexDocument(page.ToLuceneDocument(), page.Id.ToString());
 
-      return RedirectToAction("editpage", new { Id = page.Id });
+      return RedirectToAction("editpage", new { page.Id });
     }
     #endregion
 
