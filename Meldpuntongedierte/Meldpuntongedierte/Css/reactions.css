@@ -1,4 +1,8 @@
-﻿.react h2,
+﻿.react{
+  overflow:hidden;
+}
+
+.react h2,
 .reactions h2 {
   color: white;
   background-color: #85003c;
@@ -15,6 +19,7 @@
 
 
   .react .form-group {
+    margin-bottom: 20px;
   }
 
   .react .form-group label {
@@ -33,3 +38,7 @@
     width: 100%;
     padding: 5px 3px;
   }
+
+.g-recaptcha{
+  float:right;
+}

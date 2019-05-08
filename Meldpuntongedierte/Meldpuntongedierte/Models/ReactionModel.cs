@@ -17,6 +17,8 @@ namespace Meldpunt.Models
 
     public String SenderEmail { get; set; }
 
+    public String SenderPhone { get; set; }
+
     public String SenderDescription { get; set; } 
 
     public DateTimeOffset? Approved { get; set; }

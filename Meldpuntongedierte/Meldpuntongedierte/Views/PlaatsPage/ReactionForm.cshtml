@@ -1,0 +1,77 @@
+﻿@model Meldpunt.Models.ReactionModel
+
+<script>
+  function recaptureCallback(opt_widget_id) {
+    var url = "https://www.google.com/recaptcha/api/siteverify";
+    url += "?secret=6LdHvaEUAAAAAGPw1WYO7uOF3n9LprgZsdH2glti";
+    url += "&response=" + opt_widget_id;
+    console.log('url: ', url);
+    document.querySelector("#sendreaction").removeAttribute("disabled");
+    document.querySelector("#opt_widget_id").value = opt_widget_id;
+  }
+</script>
+
+<form id="melding" method="POST" class="react">
+  <h2>Melding maken</h2>
+  @* <p><b>Let op!</b> Als last hebt van ongedierte en op zoek bent naar een bestrijder belt u 0900-12345.</p>*@
+  <p>
+    Uw melding gebruiken wij om een beter beeld te krijgen van ongedierte binnen de leefomgeving. Uw melding kan ons ook helpen
+    om eventueel met de gemeente tot een oplossing te komen.
+  </p>
+  <br />
+  <div class="form-group">
+    <label for="SenderDescription">Geef een korte omschrijving van het probleem (diersoort en locatie)</label>
+    @Html.TextAreaFor(m => m.SenderDescription)
+  </div>
+
+  <div class="form-group">
+    <label for="name">Mogen wij hierover contact met u opnemen?</label>
+    <input type="radio" onclick="document.querySelector('.optional-fields').removeAttribute('style')"/>Ja
+    <input type="radio" />Nee
+  </div>
+
+  <div class="optional-fields" style="display:none">
+    <div class="form-group">
+      <label for="name">Uw naam</label>
+      @Html.TextBoxFor(m => m.Sender)
+    </div>
+
+    <div class="form-group">
+      <label for="SenderEmail">Uw e-mail</label>
+      @Html.TextBoxFor(m => m.SenderEmail)
+    </div>
+
+    <div class="form-group">
+      <label for="SenderEmail">Uw telefoonnummer</label>
+      @Html.TextBoxFor(m => m.SenderPhone)
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="name"><input type="checkbox" />Ik ga er mee akkoord dat de omschrijving van mijn melding op de website wordt getoond.</label>
+
+  </div>
+
+  @Html.HiddenFor(m => m.GemeenteNaam)
+  <button class="button" disabled id="sendreaction" type="submit">Verzenden</button>
+  <input type="hidden" id="opt_widget_id" name="opt_widget_id" />
+  <div class="g-recaptcha" data-sitekey="6LdHvaEUAAAAAK61UFX_InlvrQuJWrw-5Imv8aIr" data-callback="recaptureCallback"></div>
+</form>
+
+
+
+
+@*<script src="https://www.google.com/recaptcha/api.js?render=6Lf9c6EUAAAAAEPOPlrllz5maz9TdIqlBB8_WQ26"></script>
+  <script>
+
+    grecaptcha.ready(function () {
+      grecaptcha.execute('6Lf9c6EUAAAAAEPOPlrllz5maz9TdIqlBB8_WQ26', { action: 'homepage' }).then(function (token) {
+
+        console.log("token", token);
+
+        // verify at
+
+          });
+    });
+  </script>*@
+@*// @String.Format("https://www.google.com/recaptcha/api/siteverify?secret={}&response={}")*@

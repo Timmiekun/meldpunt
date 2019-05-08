@@ -30,7 +30,7 @@ namespace Meldpunt.Controllers
     [Route("reactions")]
     public ActionResult Reactions()
     {
-      return View(db.Reactions);
+      return View(db.Reactions.OrderByDescending(r => r.Created));
     }
 
     [Route("editreaction/{id}")]
@@ -48,6 +48,15 @@ namespace Meldpunt.Controllers
       db.Entry(reaction).State = EntityState.Modified;
       db.SaveChanges();
       return RedirectToAction("Edit", new { id = id });
+    }
+
+    [Route("deletereaction/{id}")]
+    public ActionResult Delete(Guid id)
+    {
+      var reaction = db.Reactions.Find(id);
+      db.Reactions.Remove(reaction);
+      db.SaveChanges();
+      return RedirectToAction("Reactions");
     }
   }
 }

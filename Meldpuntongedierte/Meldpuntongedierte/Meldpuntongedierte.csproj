@@ -69,6 +69,9 @@
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -132,6 +135,7 @@
     <Compile Include="Controllers\Admin\AdminPlaatsPagesController.cs" />
     <Compile Include="Controllers\Admin\AdminReactionsController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\PlacePageController.cs" />
     <Compile Include="CustomViewEngine.cs" />
     <Compile Include="Controllers\Admin\AdminPagesController.cs" />
     <Compile Include="Controllers\Admin\ImagesController.cs" />
@@ -182,7 +186,12 @@
     <Compile Include="Migrations\201905031942168_plaatsPages_and_reactions.Designer.cs">
       <DependentUpon>201905031942168_plaatsPages_and_reactions.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905071350556_plaatsPages_and_reactions1.cs" />
+    <Compile Include="Migrations\201905071350556_plaatsPages_and_reactions1.Designer.cs">
+      <DependentUpon>201905071350556_plaatsPages_and_reactions1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\RecaptchRequestModel.cs" />
     <Compile Include="Models\PlaatsPageModel .cs" />
     <Compile Include="Models\ReactionModel.cs" />
     <Compile Include="Models\IndexableItem.cs" />
@@ -309,7 +318,7 @@
     <Content Include="Views\Search\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\Plaats.cshtml" />
+    <Content Include="Views\PlaatsPage\Plaats.cshtml" />
     <Content Include="App_Data\2012_Woonplaatsen_in_Nederland.csv" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Shared\subPagesPartial.cshtml" />
@@ -334,7 +343,7 @@
     <Content Include="Views\Home\SiteMap.cshtml" />
     <Content Include="Views\Admin\adminNav.cshtml" />
     <Content Include="Views\Admin\AdminPages\EditPage.cshtml" />
-    <Content Include="Views\Home\PlaatsWespennest.cshtml" />
+    <Content Include="Views\PlaatsPage\PlaatsWespennest.cshtml" />
     <Content Include="Views\Home\Disqus.cshtml" />
     <Content Include="Views\Admin\AdminPages\Pages.cshtml" />
     <Content Include="Views\Admin\AdminPlaatsPages\Places.cshtml" />
@@ -351,8 +360,8 @@
     <Content Include="Views\Blog\Index.cshtml" />
     <Content Include="Views\Blog\Details.cshtml" />
     <Content Include="Views\Shared\_Page_Tile.cshtml" />
-    <Content Include="Views\Home\Plaats_Static_Content.cshtml" />
-    <Content Include="Views\Home\ReactionForm.cshtml" />
+    <Content Include="Views\PlaatsPage\Plaats_Static_Content.cshtml" />
+    <Content Include="Views\PlaatsPage\ReactionForm.cshtml" />
     <Content Include="Views\Admin\AdminReactions\Edit.cshtml" />
     <Content Include="Views\Admin\AdminReactions\Reactions.cshtml" />
     <None Include="Volksgezondheid.pdf" />
@@ -390,6 +399,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905031942168_plaatsPages_and_reactions.resx">
       <DependentUpon>201905031942168_plaatsPages_and_reactions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905071350556_plaatsPages_and_reactions1.resx">
+      <DependentUpon>201905071350556_plaatsPages_and_reactions1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

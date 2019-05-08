@@ -38,11 +38,11 @@
 @if (Model.Approved.HasValue)
 {
   <a class="btn btn-success" href="/admin/approvereaction/@Model.Id">Afkeuren</a>
-
 }
 else
 {
   <a class="btn btn-success" href="/admin/approvereaction/@Model.Id">Goedkeuren</a>
 }
 
+<a href="/admin/deletereaction/@Model.Id" class="btn btn-danger" data-action-confirm>Verwijderen</a>
 

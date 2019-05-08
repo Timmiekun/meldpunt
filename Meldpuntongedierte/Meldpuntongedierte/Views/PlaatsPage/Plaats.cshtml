@@ -42,14 +42,12 @@
   </div>
 }
 
-
-@Html.Partial("ReactionForm", new ReactionModel { GemeenteNaam = Model.Content.Gemeentenaam })
-
-
 @if (!String.IsNullOrWhiteSpace(Model.Content.Content))
 {
   <h1 class="plaatsheader"><span class="pre-header">Meldpunt Ongediertebestrijding</span> @Model.Content.Gemeentenaam</h1>
   <div class="phone-button phone-icon"><a href="tel:@Model.Content.PhoneNumber">@Model.Content.PhoneNumber</a></div>
+  <a class="phone-button" href="#melding">Doe een melding</a>
+  
   @*<div class="phone-button"><a href="#">Doe alleen een melding</a></div>*@
   @*<a class="phone-button whatsapp-icon" href="https://api.whatsapp.com/send?phone=+31611690664&text=">Contact via whatsapp</a>*@
 
@@ -108,6 +106,10 @@ else
   @Html.Partial("Plaats_Static_Content", Model.Content);
 }
 
+
+@Html.Partial("ReactionForm", new ReactionModel { GemeenteNaam = Model.Content.Gemeentenaam })
+
+
 @if (Model.Reactions.Any())
 {
   <div class="reactions">
@@ -116,7 +118,7 @@ else
     {
       <div class="reaction">
         <date>@reaction.Created.ToString("f")</date>
-        <h3>@reaction.Sender</h3>
+        @*<h3>@reaction.Sender</h3>*@
         <p>“@reaction.SenderDescription”</p>
       </div>
     }

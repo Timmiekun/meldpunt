@@ -47,7 +47,7 @@ namespace Meldpunt
           routes.MapRoute(
               plaats + "-" + municipality.Key.XmlSafe(), // Route name
               "ongediertebestrijding-" + municipality.Key.XmlSafe(), // URL with parameters
-              new { controller = "Home", action = "GetPlace", gemeente = municipality.Key.XmlSafe() } // Parameter defaults
+              new { controller = "PlaatsPage", action = "GetPlace", gemeente = municipality.Key.XmlSafe() } // Parameter defaults
           );
         }
       }
