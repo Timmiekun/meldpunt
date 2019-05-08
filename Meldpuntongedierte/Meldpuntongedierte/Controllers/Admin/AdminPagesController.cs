@@ -125,12 +125,33 @@ namespace Meldpunt.Controllers
       }
     }
 
+    private void DeleteRouteForPage(Guid id)
+    {
+      var routes = RouteTable.Routes;
+      using (routes.GetWriteLock())
+      {
+        // remove route
+        var oldRoute = routes[id.ToString()];
+        routes.Remove(oldRoute);
+      }
+    }
+
     [Route("DeletePage/{id}")]
     public ActionResult DeletePage(Guid id)
     {
-      pageService.deletePage(id);
-
+      var page = pageService.GetByIdUntracked(id);
+      
+      // delete from search
       searchService.DeleteDocument(id.ToString());
+      
+      // delete route
+      DeleteRouteForPage(id);
+
+      // clear cache
+      Response.RemoveOutputCacheItem(page.Url);
+
+      // delete from db
+      pageService.deletePage(id);
 
       return Redirect("/admin/pages");
     }
