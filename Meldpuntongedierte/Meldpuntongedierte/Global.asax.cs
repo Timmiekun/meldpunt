@@ -36,7 +36,7 @@ namespace Meldpunt
           page.Id.ToString(), // Route name
           page.Url.TrimStart('/'), // URL with parameters
           new { controller = "Home", action = "GetPage", guid = page.Id } // Parameter defaults
-      );
+        );
       }
 
       foreach (var municipality in LocationUtils.placesByMunicipality)
@@ -60,17 +60,17 @@ namespace Meldpunt
         ); // Parameter defaults
       }
 
-      routes.MapRoute(
-        "Default", // Route name
-        "{controller}/{action}/{id}", // URL with parameters
-        new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
-      );
+      //routes.MapRoute(
+      //  "Default", // Route name
+      //  "{controller}/{action}/{id}", // URL with parameters
+      //  new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+      //);
 
       routes.MapRoute(
-      "Error",
-      "{*url}",
-      new { controller = "Error", action = "http404" }
-    );
+        "Error",
+        "{*url}",
+        new { controller = "Error", action = "http404" }
+      );
 
     }
 
@@ -91,40 +91,40 @@ namespace Meldpunt
 
     protected void Application_Error(Object sender, System.EventArgs e)
     {
-      var exception = Server.GetLastError();
-      if (!(exception is HttpException))
-        throw exception;
+      //var exception = Server.GetLastError();
+      //if (!(exception is HttpException))
+      //  throw exception;
 
-      var httpException = exception as HttpException;
+      //var httpException = exception as HttpException;
 
-      var routeData = new RouteData();
-      routeData.Values["controller"] = "Error";
-      if (httpException != null)
-      {
-        Response.Clear();
-        Server.ClearError();
+      //var routeData = new RouteData();
+      //routeData.Values["controller"] = "Error";
+      //if (httpException != null)
+      //{
+      //  Response.Clear();
+      //  Server.ClearError();
 
-        Response.StatusCode = httpException.GetHttpCode();
-        switch (Response.StatusCode)
-        {
-          case 400:
-            routeData.Values["action"] = "Http404";
-            break;
-          case 403:
-            routeData.Values["action"] = "Http403";
-            break;
-          case 404:
-            routeData.Values["action"] = "Http404";
-            break;
-          default:
-            routeData.Values["action"] = "General";
-            break;
-        }
+      //  Response.StatusCode = httpException.GetHttpCode();
+      //  switch (Response.StatusCode)
+      //  {
+      //    case 400:
+      //      routeData.Values["action"] = "Http404";
+      //      break;
+      //    case 403:
+      //      routeData.Values["action"] = "Http403";
+      //      break;
+      //    case 404:
+      //      routeData.Values["action"] = "Http404";
+      //      break;
+      //    default:
+      //      routeData.Values["action"] = "General";
+      //      break;
+      //  }
 
-        IController errorsController = new ErrorController();
-        var rc = new RequestContext(new HttpContextWrapper(Context), routeData);
-        errorsController.Execute(rc);
-      }
+      //  IController errorsController = new ErrorController();
+      //  var rc = new RequestContext(new HttpContextWrapper(Context), routeData);
+      //  errorsController.Execute(rc);
+      //}
     }
   }
 }

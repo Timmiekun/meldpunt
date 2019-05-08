@@ -132,9 +132,6 @@ namespace Meldpunt.Controllers
         var defaultRoute = routes.Last();
         routes.Remove(defaultRoute);
 
-        var defaultRouteOld = routes.Last();
-        routes.Remove(defaultRouteOld);
-
         foreach (var routePage in pages)
         {
           // remove old route
@@ -149,8 +146,7 @@ namespace Meldpunt.Controllers
           );
         }
 
-        //add back default routes
-        routes.Add(defaultRouteOld);
+        //add back default routes       
         routes.Add(defaultRoute);
       }
     }
