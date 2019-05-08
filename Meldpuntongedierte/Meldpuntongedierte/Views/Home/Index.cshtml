@@ -36,7 +36,7 @@
       @Html.Raw(Model.SideContent)
     </aside>
   }
-  else if (subNav != null && subNav.Any())
+  else if (subNav != null && subNav.Any() && Model.UrlPart != "home")
   {
     <nav class="menu">
       <h2>Bekijk ook</h2>
