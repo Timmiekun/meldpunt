@@ -58,7 +58,10 @@ namespace Meldpunt.Controllers
         }
 
         ContentPageModel parent = pageService.GetPageById(model.ParentId);
-        if (parent != null)
+        if (parent != null && parent.UrlPart == "home")
+          ViewBag.SubNav = pageService.GetPagesForHomeMenu();
+
+        else if (parent != null)
           ViewBag.SubNav = pageService.GetChildPages(parent.Id);
 
         return View("index", model);

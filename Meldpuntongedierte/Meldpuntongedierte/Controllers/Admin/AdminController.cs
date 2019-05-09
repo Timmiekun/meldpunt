@@ -81,8 +81,8 @@ namespace Meldpunt.Controllers
     [Route("NewRedirect")]
     public ActionResult NewRedirect(string parentId)
     {
-      var newPage = redirectsService.newRedirect();
-      return RedirectToAction("Redirects");
+      var redirect = redirectsService.newRedirect();
+      return Redirect("/admin/redirects#" + redirect.Id);
     }
 
     [Route("RemoveRedirect")]

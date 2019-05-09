@@ -37,7 +37,7 @@ namespace Meldpunt
           page.Id.ToString(), // Route name
           page.Url.TrimStart('/'), // URL with parameters
           new { controller = "Home", action = "GetPage", guid = page.Id } // Parameter defaults
-      );
+        );
       }
 
       foreach (var municipality in LocationUtils.placesByMunicipality)
@@ -68,10 +68,10 @@ namespace Meldpunt
       );
 
       routes.MapRoute(
-      "Error",
-      "{*url}",
-      new { controller = "Error", action = "http404" }
-    );
+        "Error",
+        "{*url}",
+        new { controller = "Error", action = "http404" }
+      );
 
     }
 

@@ -1,6 +1,6 @@
 ﻿@using Meldpunt.Models;
 @using Meldpunt.Utils;
-@model PlaatsModel
+@model PlaatsPageModel
 @{
   ViewBag.Title = "Admin";
   var locations = ViewBag.Locations;
@@ -21,7 +21,7 @@
 
     <div class="field">
       <label for="publish">
-        @Html.CheckBoxFor(p => p.Published)
+        @Html.EditorFor(p => p.Published)
         gepubliceerd
       </label>
     </div>
@@ -33,7 +33,7 @@
 
     <div class="field">
       <label for="MetaDescription">Title</label>
-      <input type="text" name="title" class="form-control" value="@Model.Title" />
+      <input type="text" name="title" class="form-control" value="@Model.MetaTitle" />
     </div>
 
     <div class="field">

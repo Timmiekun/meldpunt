@@ -76,8 +76,26 @@ namespace Meldpunt.Controllers
         var allChildPages = pageService.GetChildPages(page.Id, true).ToList();
         foreach (var child in allChildPages)
         {
+          string oldUrl = child.Url;
           pageService.SavePage(child);
-          searchService.IndexDocument(child.ToLuceneDocument(), savedPage.Id.ToString());
+          string newUrl = child.Url;
+
+          if (oldUrl != newUrl)
+          {
+            var redirect = redirectsService.FindByFrom(oldUrl);
+            if (redirect == null)
+              redirect = redirectsService.newRedirect();
+
+            redirect.From = oldUrl;
+            redirect.To = newUrl;
+            redirectsService.SaveRedirect(redirect);
+          }
+          else
+          {
+            //huh?
+          }
+
+          searchService.IndexDocument(child.ToLuceneDocument(), child.Id.ToString());
         }
         allChildPages.Add(savedPage);
 
@@ -87,18 +105,47 @@ namespace Meldpunt.Controllers
 
       searchService.IndexDocument(savedPage.ToLuceneDocument(), savedPage.Id.ToString());
 
-      Response.RemoveOutputCacheItem(savedPage.Url);
+      // remove outputcache for old url
       Response.RemoveOutputCacheItem(oldPage.Url);
 
+      // remove outputcache for current url, including parents
+      string path = savedPage.Url;
+      while (path.LastIndexOf("/") > -1)
+      {
+        Response.RemoveOutputCacheItem(path);
+        path = path.Substring(0, path.LastIndexOf("/"));
+      }
+
       return Redirect("/admin/editpage/" + savedPage.Id);
+    }
+
+    private void DeleteRouteForPage(Guid id)
+    {
+      var routes = RouteTable.Routes;
+      using (routes.GetWriteLock())
+      {
+        // remove route
+        var oldRoute = routes[id.ToString()];
+        routes.Remove(oldRoute);
+      }
     }
 
     [Route("DeletePage/{id}")]
     public ActionResult DeletePage(Guid id)
     {
-      pageService.deletePage(id);
+      var page = pageService.GetByIdUntracked(id);
 
+      // delete from search
       searchService.DeleteDocument(id.ToString());
+
+      // delete route
+      DeleteRouteForPage(id);
+
+      // clear cache
+      Response.RemoveOutputCacheItem(page.Url);
+
+      // delete from db
+      pageService.deletePage(id);
 
       return Redirect("/admin/pages");
     }
@@ -126,14 +173,16 @@ namespace Meldpunt.Controllers
 
 
       page.Id = Guid.NewGuid();
+      page.Published = DateTimeOffset.Now;
       db.Entry(page).State = EntityState.Modified;
       db.ContentPages.Add(page);
       db.SaveChanges();
 
       // save again, for generating url etc..
-      pageService.SavePage(page);
+      page = pageService.SavePage(page);
       UpdateRouteForPages(new List<ContentPageModel> { page });
 
+      UpdateRouteForPages(new List<ContentPageModel>() { page });
       searchService.IndexDocument(page.ToLuceneDocument(), page.Id.ToString());
 
       return RedirectToAction("editpage", new { page.Id });

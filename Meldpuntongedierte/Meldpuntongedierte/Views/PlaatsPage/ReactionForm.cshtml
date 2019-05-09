@@ -13,12 +13,18 @@
 
 <form id="melding" method="POST" class="react">
   <h2>Melding maken</h2>
-  @* <p><b>Let op!</b> Als last hebt van ongedierte en op zoek bent naar een bestrijder belt u 0900-12345.</p>*@
   <p>
-    Uw melding gebruiken wij om een beter beeld te krijgen van ongedierte binnen de leefomgeving. Uw melding kan ons ook helpen
-    om eventueel met de gemeente tot een oplossing te komen.
+    Uw melding helpt ons een beter beeld te krijgen van toenamen en afnamen van bepaalde insecten en
+    (plaag)dieren. Verder gebruiken wij sommige meldingen om in samenspraak met de gemeente of een
+    andere instelling tot een oplossing te komen.
   </p>
   <br />
+  <p>
+    Let op! i.v.m. de privacy zullen meldingen die gaan over specifieke adressen bij voorbaat niet gedeeld
+    of in behandeling worden genomen. Indien toch actie vereist is omdat de volksgezondheid in gevaar
+    komt, dan verzoeken wij u om direct telefonisch contact op te nemen met de gemeente.
+  </p>
+
   <div class="form-group">
     <label for="SenderDescription">Geef een korte omschrijving van het probleem (diersoort en locatie)</label>
     @Html.TextAreaFor(m => m.SenderDescription)
@@ -26,7 +32,7 @@
 
   <div class="form-group">
     <label for="name">Mogen wij hierover contact met u opnemen?</label>
-    <input type="radio" onclick="document.querySelector('.optional-fields').removeAttribute('style')"/>Ja
+    <input type="radio" onclick="document.querySelector('.optional-fields').removeAttribute('style')" />Ja
     <input type="radio" />Nee
   </div>
 

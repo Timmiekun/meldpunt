@@ -55,8 +55,8 @@ namespace Meldpunt.Services
 
     public RedirectModel newRedirect()
     {
-      var page = CreateNewRedirect();
-      return XmlToModel(page);
+      var redirect = CreateNewRedirect();
+      return XmlToModel(redirect);
     }
 
     public void deleteRedirect(string id)
