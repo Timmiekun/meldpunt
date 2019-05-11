@@ -24,5 +24,9 @@ namespace Meldpunt.Models
     public DateTimeOffset? Approved { get; set; }
 
     public DateTimeOffset Created { get; set; }
+
+    public bool AllowDisplayOnSite { get; set; }
+
+    public bool AllowContact { get; set; }
   }
 }

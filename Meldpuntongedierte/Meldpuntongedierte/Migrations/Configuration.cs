@@ -4,6 +4,7 @@ namespace Meldpunt.Migrations
   using Meldpunt.Services;
   using Meldpunt.Utils;
   using System;
+  using System.Configuration;
   using System.Data.Entity.Migrations;
   using System.Linq;
   using System.Web.Mvc;
@@ -12,7 +13,7 @@ namespace Meldpunt.Migrations
   {
     public Configuration()
     {
-      AutomaticMigrationsEnabled = false;
+      AutomaticMigrationsEnabled = Boolean.Parse(ConfigurationManager.AppSettings["AutomaticMigrationsEnabled"] ?? "false");
       ContextKey = "Meldpunt.Models.MeldpuntContext";
     }
 
@@ -20,7 +21,7 @@ namespace Meldpunt.Migrations
     {
       //  This method will be called after migrating to the latest version.
 
-    
+
       //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
       //  to avoid creating duplicate seed data.
     }

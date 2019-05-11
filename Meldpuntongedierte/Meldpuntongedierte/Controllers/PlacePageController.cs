@@ -41,6 +41,7 @@ namespace Meldpunt.Controllers
         plaatsModel.Plaatsen = gemeente.First().Value.ToList();
         ViewBag.Locations = LocationUtils.placesByMunicipality.OrderBy(m => m.Key);
         ViewBag.HidePhoneNumber = true;
+        ViewBag.RecaptchaKey = ConfigurationManager.AppSettings["recaptchaSite"];
         return View("Plaats", new PlaatsPageViewModel
         {
           Content = plaatsModel,
@@ -60,11 +61,11 @@ namespace Meldpunt.Controllers
       throw new HttpException(404, "page not found");
     }
 
-    [HttpPost]
+    [HttpPost, ValidateInput(false)]
     public ActionResult GetPlace(ReactionModel reaction)
     {
       var url = "https://www.google.com/recaptcha/api/siteverify";
-      url += "?secret=" + ConfigurationManager.AppSettings["recaptchaSite"];
+      url += "?secret=" + ConfigurationManager.AppSettings["recaptchaSecret"];
       url += "&response=" + Request["opt_widget_id"];
 
       using (var client = new WebClient())

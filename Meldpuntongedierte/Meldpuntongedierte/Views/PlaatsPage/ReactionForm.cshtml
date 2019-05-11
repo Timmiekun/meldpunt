@@ -35,8 +35,8 @@
 
     <div class="form-group">
       <label for="contactagree">Mogen wij hierover contact met u opnemen?</label>
-      <input data-role=show-contact-details name="contactagree" type="radio" value="yes" />Ja
-      <input data-role=show-contact-details name="contactagree" type="radio" value="no" checked />Nee
+      <input data-role=show-contact-details name="allowContact" type="radio" value="true" />Ja
+      <input data-role=show-contact-details name="allowContact" type="radio" value="no" checked />Nee
     </div>
 
     <div class="optional-fields">
@@ -58,8 +58,8 @@
 
     <div class="form-group">
       <label for="name">Mogen wij uw melding openbaar maken op onze webpagina?</label>
-      <input type="radio" name="showOnSite" value="yes"/>Ja
-      <input type="radio" name="showOnSite" value="no" checked/>Nee
+      <input type="radio" name="allowDisplayOnSite" value="true"/>Ja
+      <input type="radio" name="allowDisplayOnSite" value="no" checked/>Nee
       <div class="tooltip">
         <div class="icon">?</div>
         <div class="tooltip-content">
@@ -79,6 +79,6 @@
     @Html.HiddenFor(m => m.GemeenteNaam)
     <button class="button" disabled id="sendreaction" type="submit">Verzenden</button>
     <input type="hidden" id="opt_widget_id" name="opt_widget_id" />
-    <div class="g-recaptcha" data-sitekey="6LdHvaEUAAAAAK61UFX_InlvrQuJWrw-5Imv8aIr" data-callback="recaptureCallback"></div>
+    <div class="g-recaptcha" data-sitekey="@ViewBag.RecaptchaKey" data-callback="recaptureCallback"></div>
   </form>
 </div>

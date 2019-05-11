@@ -11,7 +11,7 @@ $(function () {
 
   $("[data-role=show-contact-details]").on('click', function (evt) {
     console.log(evt.target);
-    if (evt.target.value === "yes")
+    if (evt.target.value === "true")
       $(".optional-fields").show();
     else
       $(".optional-fields").hide();

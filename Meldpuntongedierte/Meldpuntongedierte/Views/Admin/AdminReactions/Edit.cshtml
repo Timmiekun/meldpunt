@@ -31,17 +31,38 @@
 </div>
 
 <div class="field">
-  <label for="MetaDescription">E-mail: </label>
-  @Model.SenderEmail
+  <label for="Sender">Mag contact opnemen?</label>
+  @(Model.AllowContact ? "ja" : "nee")
 </div>
 
-@if (Model.Approved.HasValue)
+@if (Model.AllowContact)
 {
-  <a class="btn btn-success" href="/admin/approvereaction/@Model.Id">Afkeuren</a>
+  <div class="field">
+    <label for="MetaDescription">E-mail: </label>
+    @Model.SenderEmail
+  </div>
+
+  <div class="field">
+    <label for="MetaDescription">Telefoon: </label>
+    @Model.SenderPhone
+  </div>
 }
-else
+
+<div class="field">
+  <label for="Sender">Mag tonen op site?</label>
+  @(Model.AllowDisplayOnSite ? "ja" : "nee")
+</div>
+
+@if (Model.AllowDisplayOnSite)
 {
-  <a class="btn btn-success" href="/admin/approvereaction/@Model.Id">Goedkeuren</a>
+  if (Model.Approved.HasValue)
+  {
+    <a class="btn btn-success" href="/admin/approvereaction/@Model.Id">Afkeuren</a>
+  }
+  else
+  {
+    <a class="btn btn-success" href="/admin/approvereaction/@Model.Id">Goedkeuren</a>
+  }
 }
 
 <a href="/admin/deletereaction/@Model.Id" class="btn btn-danger" data-action-confirm>Verwijderen</a>

@@ -190,6 +190,10 @@
     <Compile Include="Migrations\201905071350556_plaatsPages_and_reactions1.Designer.cs">
       <DependentUpon>201905071350556_plaatsPages_and_reactions1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905111341284_add_reation_fields.cs" />
+    <Compile Include="Migrations\201905111341284_add_reation_fields.Designer.cs">
+      <DependentUpon>201905111341284_add_reation_fields.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\RecaptchRequestModel.cs" />
     <Compile Include="Models\PlaatsPageModel .cs" />
@@ -285,6 +289,7 @@
     <Content Include="robots.txt" />
     <Content Include="Scripts\admin.js" />
     <Content Include="Scripts\admin-modal.js" />
+    <Content Include="Scripts\reactions.js" />
     <Content Include="Scripts\suggest.js" />
     <Content Include="Scripts\xmlhttp.js" />
     <Content Include="Scripts\meldpunt.js" />
@@ -324,6 +329,7 @@
     <Content Include="Views\Shared\subPagesPartial.cshtml" />
     <Content Include="Views\Shared\_Admin.cshtml" />
     <Content Include="App_Data\Woonplaatsen_in_Nede_160516123828.csv" />
+    <Content Include="Config\appsettings.config" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\local.pubxml" />
     <None Include="Properties\PublishProfiles\meldpuntongedierte - FTP.pubxml" />
@@ -402,6 +408,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905071350556_plaatsPages_and_reactions1.resx">
       <DependentUpon>201905071350556_plaatsPages_and_reactions1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905111341284_add_reation_fields.resx">
+      <DependentUpon>201905111341284_add_reation_fields.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
