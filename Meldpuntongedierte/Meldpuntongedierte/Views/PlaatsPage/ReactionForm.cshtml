@@ -1,83 +1,84 @@
 ﻿@model Meldpunt.Models.ReactionModel
 
-<script>
-  function recaptureCallback(opt_widget_id) {
-    var url = "https://www.google.com/recaptcha/api/siteverify";
-    url += "?secret=6LdHvaEUAAAAAGPw1WYO7uOF3n9LprgZsdH2glti";
-    url += "&response=" + opt_widget_id;
-    console.log('url: ', url);
-    document.querySelector("#sendreaction").removeAttribute("disabled");
-    document.querySelector("#opt_widget_id").value = opt_widget_id;
-  }
-</script>
 
-<form id="melding" method="POST" class="react">
-  <h2>Melding maken</h2>
-  <p>
-    Uw melding helpt ons een beter beeld te krijgen van toenamen en afnamen van bepaalde insecten en
-    (plaag)dieren. Verder gebruiken wij sommige meldingen om in samenspraak met de gemeente of een
-    andere instelling tot een oplossing te komen.
-  </p>
-  <br />
-  <p>
-    Let op! i.v.m. de privacy zullen meldingen die gaan over specifieke adressen bij voorbaat niet gedeeld
-    of in behandeling worden genomen. Indien toch actie vereist is omdat de volksgezondheid in gevaar
-    komt, dan verzoeken wij u om direct telefonisch contact op te nemen met de gemeente.
-  </p>
 
-  <div class="form-group">
-    <label for="SenderDescription">Geef een korte omschrijving van het probleem (diersoort en locatie)</label>
-    @Html.TextAreaFor(m => m.SenderDescription)
-  </div>
+<div class="overlay" data-role="overlay">
+  <form id="melding" method="POST" class="reaction-form">
+    <a href="#" data-role="close-overlay" class="close-button">X</a>
+    <h2>Melding maken</h2>
+    <p>
+      Uw melding helpt ons een beter beeld te krijgen van toenamen en afnamen van bepaalde insecten en
+      (plaag)dieren. Verder gebruiken wij sommige meldingen om in samenspraak met de gemeente of een
+      andere instelling tot een oplossing te komen.
+    </p>
+    <br />
 
-  <div class="form-group">
-    <label for="name">Mogen wij hierover contact met u opnemen?</label>
-    <input type="radio" onclick="document.querySelector('.optional-fields').removeAttribute('style')" />Ja
-    <input type="radio" />Nee
-  </div>
+    <p>
+      Let op! i.v.m. de privacy zullen meldingen die gaan over specifieke adressen bij voorbaat niet gedeeld
+      of in behandeling worden genomen. Indien toch actie vereist is omdat de volksgezondheid in gevaar
+      komt, dan verzoeken wij u om direct telefonisch contact op te nemen met de gemeente.
+    </p>
 
-  <div class="optional-fields" style="display:none">
     <div class="form-group">
-      <label for="name">Uw naam</label>
-      @Html.TextBoxFor(m => m.Sender)
+      <label for="SenderDescription">Geef een korte omschrijving van het probleem (diersoort en locatie)</label>
+      @Html.TextAreaFor(m => m.SenderDescription, new { @class = "form-field" })
+      <div class="tooltip">
+        <div class="icon">?</div>
+        <div class="tooltip-content">
+          Wij nemen alleen meldingen in
+          behandeling welke diersoorten betreffen die daadwerkelijk een risico vormen voor de leefomgeving zoals ratten,
+          kakkerlakken of wespennesten. Voorbeelden van diersoorten die wij niet in behandeling nemen of registreren zijn
+          bijvoorbeeld vogels, mollen of konijnen.
+        </div>
+      </div>
     </div>
 
     <div class="form-group">
-      <label for="SenderEmail">Uw e-mail</label>
-      @Html.TextBoxFor(m => m.SenderEmail)
+      <label for="contactagree">Mogen wij hierover contact met u opnemen?</label>
+      <input data-role=show-contact-details name="contactagree" type="radio" value="yes" />Ja
+      <input data-role=show-contact-details name="contactagree" type="radio" value="no" checked />Nee
+    </div>
+
+    <div class="optional-fields">
+      <div class="form-group">
+        <label for="name">Uw naam</label>
+        @Html.TextBoxFor(m => m.Sender, new { @class = "form-field" })
+      </div>
+
+      <div class="form-group">
+        <label for="SenderEmail">Uw e-mail</label>
+        @Html.TextBoxFor(m => m.SenderEmail, new { @class = "form-field" })
+      </div>
+
+      <div class="form-group">
+        <label for="SenderEmail">Uw telefoonnummer</label>
+        @Html.TextBoxFor(m => m.SenderPhone, new { @class = "form-field" })
+      </div>
     </div>
 
     <div class="form-group">
-      <label for="SenderEmail">Uw telefoonnummer</label>
-      @Html.TextBoxFor(m => m.SenderPhone)
+      <label for="name">Mogen wij uw melding openbaar maken op onze webpagina?</label>
+      <input type="radio" name="showOnSite" value="yes"/>Ja
+      <input type="radio" name="showOnSite" value="no" checked/>Nee
+      <div class="tooltip">
+        <div class="icon">?</div>
+        <div class="tooltip-content">
+          <p>
+            Als u voor ‘ja’ kiest, dan kunnen wij uw omschrijving toevoegen onderaan de pagina. Dit helpt nieuwe bezoekers
+            om de geschiedenis en de omvang van de situatie in de buurt beter in kaart te krijgen. U blijft anoniem.
+          </p>
+          <p>
+            Als u voor ‘nee’ kiest, dan blijft uw melding alleen bij ons in het systeem en delen wij deze alleen met de
+            verantwoordelijke instantie indien zij deze gegevens bij ons opvragen . Denk hierbij vooral aan de gemeente of de
+            provincie.
+          </p>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <div class="form-group">
-    <label for="name"><input type="checkbox" />Ik ga er mee akkoord dat de omschrijving van mijn melding op de website wordt getoond.</label>
-
-  </div>
-
-  @Html.HiddenFor(m => m.GemeenteNaam)
-  <button class="button" disabled id="sendreaction" type="submit">Verzenden</button>
-  <input type="hidden" id="opt_widget_id" name="opt_widget_id" />
-  <div class="g-recaptcha" data-sitekey="6LdHvaEUAAAAAK61UFX_InlvrQuJWrw-5Imv8aIr" data-callback="recaptureCallback"></div>
-</form>
-
-
-
-
-@*<script src="https://www.google.com/recaptcha/api.js?render=6Lf9c6EUAAAAAEPOPlrllz5maz9TdIqlBB8_WQ26"></script>
-  <script>
-
-    grecaptcha.ready(function () {
-      grecaptcha.execute('6Lf9c6EUAAAAAEPOPlrllz5maz9TdIqlBB8_WQ26', { action: 'homepage' }).then(function (token) {
-
-        console.log("token", token);
-
-        // verify at
-
-          });
-    });
-  </script>*@
-@*// @String.Format("https://www.google.com/recaptcha/api/siteverify?secret={}&response={}")*@
+    @Html.HiddenFor(m => m.GemeenteNaam)
+    <button class="button" disabled id="sendreaction" type="submit">Verzenden</button>
+    <input type="hidden" id="opt_widget_id" name="opt_widget_id" />
+    <div class="g-recaptcha" data-sitekey="6LdHvaEUAAAAAK61UFX_InlvrQuJWrw-5Imv8aIr" data-callback="recaptureCallback"></div>
+  </form>
+</div>

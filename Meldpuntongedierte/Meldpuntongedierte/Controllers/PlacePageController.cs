@@ -9,6 +9,7 @@ using System.Web.Routing;
 using Meldpunt.ViewModels;
 using System.Net;
 using Newtonsoft.Json;
+using System.Configuration;
 
 namespace Meldpunt.Controllers
 {
@@ -63,7 +64,7 @@ namespace Meldpunt.Controllers
     public ActionResult GetPlace(ReactionModel reaction)
     {
       var url = "https://www.google.com/recaptcha/api/siteverify";
-      url += "?secret=6LdHvaEUAAAAAGPw1WYO7uOF3n9LprgZsdH2glti";
+      url += "?secret=" + ConfigurationManager.AppSettings["recaptchaSite"];
       url += "&response=" + Request["opt_widget_id"];
 
       using (var client = new WebClient())
