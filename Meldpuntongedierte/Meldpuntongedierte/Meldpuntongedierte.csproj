@@ -329,7 +329,6 @@
     <Content Include="Views\Shared\subPagesPartial.cshtml" />
     <Content Include="Views\Shared\_Admin.cshtml" />
     <Content Include="App_Data\Woonplaatsen_in_Nede_160516123828.csv" />
-    <Content Include="Config\appsettings.config" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\local.pubxml" />
     <None Include="Properties\PublishProfiles\meldpuntongedierte - FTP.pubxml" />
@@ -412,6 +411,9 @@
     <EmbeddedResource Include="Migrations\201905111341284_add_reation_fields.resx">
       <DependentUpon>201905111341284_add_reation_fields.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Config\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -44,9 +44,14 @@ namespace Meldpunt.Controllers
     public ActionResult Approve(Guid id)
     {
       var reaction = db.Reactions.Find(id);
+
       reaction.Approved = DateTimeOffset.Now;
       db.Entry(reaction).State = EntityState.Modified;
       db.SaveChanges();
+
+      // remove outputcache so the reaction shows on the site
+      Response.RemoveOutputCacheItem("/ongediertebestrijding-" + reaction.GemeenteNaam.XmlSafe());
+
       return RedirectToAction("Edit", new { id = id });
     }
 
@@ -56,6 +61,12 @@ namespace Meldpunt.Controllers
       var reaction = db.Reactions.Find(id);
       db.Reactions.Remove(reaction);
       db.SaveChanges();
+
+      if (reaction.AllowDisplayOnSite) { 
+        // remove outputcache
+        Response.RemoveOutputCacheItem("/ongediertebestrijding-" + reaction.GemeenteNaam.XmlSafe());
+      }
+
       return RedirectToAction("Reactions");
     }
   }
