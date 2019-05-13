@@ -31,6 +31,20 @@
   <script type="text/javascript" src="/Scripts/reactions.js?v=@((string)ViewBag.AppVersion)">;</script>
 }
 
+@section SD{
+  <script type="application/ld+json">
+    {
+    "@("@context")": "http://schema.org/",
+    "@("@type"): "Article",
+    "dateModified" : "@Model.Content.LastModified.Value.ToString("yyyy-MM-dd")",
+    @if (Model.Content.Published.HasValue)
+    {
+      <text>"datePublished" : "@Model.Content.Published.Value.ToString("yyyy-MM-dd")",</text>
+    }
+    "headline": "@Model.Content.MetaDescription",  
+    }
+  </script>
+}
 
 @section menu{
   <div class="menu">
