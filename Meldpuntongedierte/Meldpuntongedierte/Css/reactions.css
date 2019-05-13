@@ -85,7 +85,7 @@ a.close-button {
     display: block;
     font-style: italic;
     margin-bottom: 5px;
-    padding-right: 30px;
+    padding-right: 60px;
   }
 
 
@@ -150,19 +150,48 @@ a.close-button {
 
 @media only screen and (max-width:768px) {
   .reaction-form {
-    top: 2vh;
-    left: 2vw;
-    right: 2vw;
-    margin-bottom: 2vh;
-    padding: 10px;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 00px 10px 200px 10px;
   }
 
     .reaction-form h2 {
-      margin: -10px -10px 10px -10px;
+      margin: 0 -10px 10px;
+      font-size: 1.4em;
+      border-radius: 0;
     }
 
-  .g-recaptcha{
-    float:none;
-    margin-top:10px;
+  a.close-button {
+    position: fixed;
+    top: 2vw;
+    right: 2vw;
+    padding: 13px;
+    z-index: 9;
+    box-shadow: 1px 1px 5px 1px #969696;
+  }
+
+  .tooltip {
+    top: 20px;
+  }
+
+    .tooltip .icon {
+      padding: 10px;
+      line-height: 10px;
+      font-size: 1.3em;
+    }
+
+    .tooltip .tooltip-content {
+      width: 80vw;
+      z-index: 8;
+    }
+
+  .g-recaptcha {
+    float: none;
+    margin-top: 10px;
+  }
+
+  body.show-overlay {
+    -webkit-overflow-scrolling: touch;
   }
 }
