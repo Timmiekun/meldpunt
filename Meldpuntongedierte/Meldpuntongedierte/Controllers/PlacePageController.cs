@@ -87,7 +87,7 @@ namespace Meldpunt.Controllers
         }
       }
 
-      return RedirectToAction("GetPlace");
+      return RedirectToAction("GetPlace", new { Gemeente = reaction.GemeenteNaam });
     }
 
 
