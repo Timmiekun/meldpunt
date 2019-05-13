@@ -7,11 +7,6 @@ $(function () {
     }
   });
 
-  $("[data-action=open-reaction-form]").on('click', function (evt) {
-    document.body.classList.remove("overlay-hidden");
-    document.body.classList.add("show-reaction-form");
-  });
-
   $("[data-action=toggle-menu]").on('click', function (evt) {
     evt.preventDefault();
 

@@ -1,17 +1,17 @@
-﻿body.show-reaction-form {
-  overflow-y: hidden;
-}
-
-.overlay {
+﻿.overlay {
   position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
   width: 100vw;
   background-color: rgba(125, 125, 125, 0.59);
-  z-index: 2;
+  z-index: 6;
   overflow-y: scroll;
   display: none;
+}
+
+body.show-overlay {
+  overflow-y: hidden;
 }
 
 .show-overlay .overlay {
@@ -85,6 +85,7 @@ a.close-button {
     display: block;
     font-style: italic;
     margin-bottom: 5px;
+    padding-right: 30px;
   }
 
 
@@ -132,7 +133,7 @@ a.close-button {
     padding: 10px;
     border-radius: 3px;
     box-shadow: 1px 4px 5px 4px rgba(0, 0, 0, 0.28);
-    z-index:4;
+    z-index: 4;
   }
 
   .tooltip:hover .tooltip-content {
@@ -141,8 +142,27 @@ a.close-button {
 
 
 /* Reactions that are shown content website */
-.reaction date{
-  display:block;
-  font-style:italic;
+.reaction date {
+  display: block;
+  font-style: italic;
   margin-bottom: 10px;
+}
+
+@media only screen and (max-width:768px) {
+  .reaction-form {
+    top: 2vh;
+    left: 2vw;
+    right: 2vw;
+    margin-bottom: 2vh;
+    padding: 10px;
+  }
+
+    .reaction-form h2 {
+      margin: -10px -10px 10px -10px;
+    }
+
+  .g-recaptcha{
+    float:none;
+    margin-top:10px;
+  }
 }
