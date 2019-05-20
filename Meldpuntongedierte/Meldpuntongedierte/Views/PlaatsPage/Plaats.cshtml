@@ -143,12 +143,11 @@ else
 @if (Model.Reactions.Any())
 {
   <div class="reactions">
-    <h2>Meldingen: </h2>
+    <h2>Actuele meldingen: </h2>
     @foreach (var reaction in Model.Reactions)
     {
       <div class="reaction">
         <date>@reaction.Created.ToString("f")</date>
-        @*<h3>@reaction.Sender</h3>*@
         <p>“@reaction.SenderDescription”</p>
       </div>
     }
