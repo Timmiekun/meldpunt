@@ -80,6 +80,7 @@ namespace Meldpunt.Controllers
             db.Reactions.Add(reaction);
             db.SaveChanges();
             TempData["reactionsuccess"] = true;
+            Response.RemoveOutputCacheItem(Request.Path);
           }
         }
         catch (Exception e)
