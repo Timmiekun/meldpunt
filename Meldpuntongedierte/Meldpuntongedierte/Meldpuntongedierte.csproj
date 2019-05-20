@@ -235,12 +235,6 @@
     <Content Include="App_Data\redirect.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Data\pages.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Data\plaatsen.xml">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="Css\admin-modal.css" />
     <Content Include="Css\admin-images.css" />
     <Content Include="Css\admin.css" />
@@ -325,7 +319,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\PlaatsPage\Plaats.cshtml" />
-    <Content Include="App_Data\2012_Woonplaatsen_in_Nederland.csv" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Shared\subPagesPartial.cshtml" />
     <Content Include="Views\Shared\_Admin.cshtml" />

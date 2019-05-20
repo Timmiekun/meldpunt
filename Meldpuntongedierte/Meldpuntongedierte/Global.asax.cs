@@ -42,17 +42,24 @@ namespace Meldpunt
 
       foreach (var municipality in LocationUtils.placesByMunicipality)
       {
+        // gemeente zelf
+        routes.MapRoute(
+             municipality.Key.XmlSafe(), // Route name
+             "ongediertebestrijding-" + municipality.Key.XmlSafe(), // URL with parameters
+             new { controller = "PlaatsPage", action = "GetPlace", gemeente = municipality.Key.XmlSafe() } // Parameter defaults
+         );
+
         foreach (var plaats in municipality.Value)
         {
           routes.MapRoute(
               plaats + "-" + municipality.Key.XmlSafe(), // Route name
-              "ongediertebestrijding-" + municipality.Key.XmlSafe(), // URL with parameters
+              "ongediertebestrijding-" + plaats.XmlSafe(), // URL with parameters
               new { controller = "PlaatsPage", action = "GetPlace", gemeente = municipality.Key.XmlSafe() } // Parameter defaults
           );
         }
       }
 
-      foreach(var blog in new MeldpuntContext().BlogModels.Where(b=> b.UrlPart != null && b.Published.HasValue))
+      foreach (var blog in new MeldpuntContext().BlogModels.Where(b => b.UrlPart != null && b.Published.HasValue))
       {
         routes.MapRoute(
         "Blog-" + blog.Id.ToString(), // Route name
@@ -92,40 +99,40 @@ namespace Meldpunt
 
     protected void Application_Error(Object sender, System.EventArgs e)
     {
-      var exception = Server.GetLastError();
-      if (!(exception is HttpException))
-        throw exception;
+      //var exception = Server.GetLastError();
+      //if (!(exception is HttpException))
+      //  throw exception;
 
-      var httpException = exception as HttpException;
+      //var httpException = exception as HttpException;
 
-      var routeData = new RouteData();
-      routeData.Values["controller"] = "Error";
-      if (httpException != null)
-      {
-        Response.Clear();
-        Server.ClearError();
+      //var routeData = new RouteData();
+      //routeData.Values["controller"] = "Error";
+      //if (httpException != null)
+      //{
+      //  Response.Clear();
+      //  Server.ClearError();
 
-        Response.StatusCode = httpException.GetHttpCode();
-        switch (Response.StatusCode)
-        {
-          case 400:
-            routeData.Values["action"] = "Http404";
-            break;
-          case 403:
-            routeData.Values["action"] = "Http403";
-            break;
-          case 404:
-            routeData.Values["action"] = "Http404";
-            break;
-          default:
-            routeData.Values["action"] = "General";
-            break;
-        }
+      //  Response.StatusCode = httpException.GetHttpCode();
+      //  switch (Response.StatusCode)
+      //  {
+      //    case 400:
+      //      routeData.Values["action"] = "Http404";
+      //      break;
+      //    case 403:
+      //      routeData.Values["action"] = "Http403";
+      //      break;
+      //    case 404:
+      //      routeData.Values["action"] = "Http404";
+      //      break;
+      //    default:
+      //      routeData.Values["action"] = "General";
+      //      break;
+      //  }
 
-        IController errorsController = new ErrorController();
-        var rc = new RequestContext(new HttpContextWrapper(Context), routeData);
-        errorsController.Execute(rc);
-      }
+      //  IController errorsController = new ErrorController();
+      //  var rc = new RequestContext(new HttpContextWrapper(Context), routeData);
+      //  errorsController.Execute(rc);
+      //}
     }
   }
 }

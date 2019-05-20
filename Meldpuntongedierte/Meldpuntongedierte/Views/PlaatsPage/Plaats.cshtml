@@ -36,7 +36,10 @@
     {
     "@("@context")": "http://schema.org/",
     "@("@type"): "Article",
-    "dateModified" : "@Model.Content.LastModified.Value.ToString("yyyy-MM-dd")",
+    @if (Model.Content.LastModified.HasValue)
+    {
+      <text>"dateModified" : "@Model.Content.LastModified.Value.ToString("yyyy-MM-dd")",</text>
+    }
     @if (Model.Content.Published.HasValue)
     {
       <text>"datePublished" : "@Model.Content.Published.Value.ToString("yyyy-MM-dd")",</text>
@@ -143,7 +146,7 @@ else
 @if (Model.Reactions.Any())
 {
   <div class="reactions">
-    <h2>Meldingen: </h2>
+    <h2>Actuele meldingen: </h2>
     @foreach (var reaction in Model.Reactions)
     {
       <div class="reaction">

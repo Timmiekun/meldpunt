@@ -18,14 +18,14 @@ namespace Meldpunt.Services
   {
     private Lucene.Net.Store.Directory dir;
     private IContentPageService pageService;
-    private IPlaatsService plaatsService;
+    private IPlaatsPageService plaatsPageService;
     private string indexPath;
 
-    public SearchService(IContentPageService _pageService, IPlaatsService _plaatsService)
+    public SearchService(IContentPageService _pageService, IPlaatsPageService _plaatsPageService)
     {
       indexPath = HostingEnvironment.MapPath("~/App_data/index");
       pageService = _pageService;
-      plaatsService = _plaatsService;
+      plaatsPageService = _plaatsPageService;
     }
 
     public void Index()
@@ -42,7 +42,7 @@ namespace Meldpunt.Services
         w.AddDocument(page.ToLuceneDocument());
       }
 
-      foreach (PlaatsModel plaats in plaatsService.GetAllPlaatsModels())
+      foreach (PlaatsPageModel plaats in plaatsPageService.GetAllPlaatsModels())
       {
         w.AddDocument(plaats.ToLuceneDocument());
       }
