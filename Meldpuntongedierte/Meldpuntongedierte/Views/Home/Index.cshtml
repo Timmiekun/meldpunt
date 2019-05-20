@@ -18,11 +18,10 @@
     {
       <text>"datePublished" : "@Model.Published.Value.ToString("yyyy-MM-dd")",</text>
     }
-    "headline": "@Model.MetaDescription",
-    @if (!String.IsNullOrEmpty(Model.Image))
-    {
-      <text>"image" : "https://www.meldpuntongedierte.nl@(Model.Image)@Html.Raw("&width=700")",</text>
-    }
+    "headline": "@Model.MetaDescription"
+    @if (!String.IsNullOrEmpty(Model.Image)) {
+        <text>,"image" : "https://www.meldpuntongedierte.nl@(Model.Image)@Html.Raw("&width=700")"</text>
+      }
     }
   </script>
 }
