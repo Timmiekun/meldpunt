@@ -226,6 +226,7 @@
     <Compile Include="Utils\LocationUtils.cs" />
     <Compile Include="Utils\PropertyCopier.cs" />
     <Compile Include="Utils\Utils.cs" />
+    <Compile Include="ViewModels\SitemapViewModel.cs" />
     <Compile Include="ViewModels\PlaatsPageViewModel.cs" />
     <Compile Include="ViewModels\BreadCrumb.cs" />
   </ItemGroup>

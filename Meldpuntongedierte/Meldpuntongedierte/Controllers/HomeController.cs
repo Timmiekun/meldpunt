@@ -16,11 +16,13 @@ namespace Meldpunt.Controllers
   public class HomeController : Controller
   {
     private IContentPageService pageService;
+    private IPlaatsPageService placePageService;
     private MeldpuntContext db;
 
-    public HomeController(IContentPageService _pageService, MeldpuntContext _db)
+    public HomeController(IContentPageService _pageService, IPlaatsPageService _placePageService, MeldpuntContext _db)
     {
       pageService = _pageService;
+      placePageService = _placePageService;
       db = _db;
     }
 
@@ -73,12 +75,13 @@ namespace Meldpunt.Controllers
     [Route("sitemap")]
     public ActionResult SiteMap()
     {
-      ViewBag.Pages = pageService.GetAllPages();
-      ViewBag.Locations = LocationUtils.placesByMunicipality;
-      ViewBag.Blog = db.BlogModels.Where(b => b.LastModified != null && b.Published != null).ToList();
+      var model = new SitemapViewModel();
+      model.Pages = pageService.GetAllPages();
+      model.PlacePages = placePageService.GetAllPlaatsModels();
+      model.BlogItems = db.BlogModels.Where(b => b.LastModified != null && b.Published != null).ToList();
 
       Response.ContentType = "text/xml";
-      return View();
+      return View(model);
     }
   }
 }

@@ -1,16 +1,12 @@
 ﻿@using Meldpunt.Models;
 @using Meldpunt.Utils;
+@model SitemapViewModel
 @{
   Layout = "";
-
-  var pages = ViewBag.Pages as List<PageModel>;
-  var blog = ViewBag.Blog as List<BlogModel>;
-  var locations = ViewBag.Locations as Dictionary<string, HashSet<string>>;
-
 }<?xml version="1.0" encoding="UTF-8" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  @foreach (var page in pages)
+  @foreach (var page in Model.Pages)
   {
     <url>
       <loc>https://www.meldpuntongedierte.nl@(page.Url)</loc>
@@ -22,10 +18,10 @@
     </url>
   }
 
-  @foreach (var location in locations)
+  @foreach (var location in Model.PlacePages)
   {
     <url>
-      <loc>https://www.meldpuntongedierte.nl/ongediertebestrijding-@location.Key.XmlSafe()</loc>
+      <loc>https://www.meldpuntongedierte.nl@(location.Url)</loc>
       <changefreq>monthly</changefreq>
     </url>
   }
@@ -35,7 +31,7 @@
     <changefreq>monthly</changefreq>
   </url>
 
-  @foreach (var blogItem in blog)
+  @foreach (var blogItem in Model.BlogItems)
   {
     <url>
       <loc>https://www.meldpuntongedierte.nl/blog/@blogItem.UrlPart</loc>
