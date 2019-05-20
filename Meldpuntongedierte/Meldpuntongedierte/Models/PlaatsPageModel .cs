@@ -13,6 +13,7 @@ namespace Meldpunt.Models
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public Guid Id { get; set; }
     public string UrlPart { get; set; }
+   
     public string Gemeentenaam { get; set; }
     public DateTimeOffset? Published { get; set; }
     public string MetaTitle { get; set; }
@@ -26,6 +27,9 @@ namespace Meldpunt.Models
     public List<string> Plaatsen { get; set; }
 
     public DateTimeOffset? LastModified { get; set; }
+
+    [NotMapped]
+    public string Url { get { return "/ongediertebestrijding-" + Gemeentenaam.XmlSafe(); } }
 
     [NotMapped]
     public string FullText

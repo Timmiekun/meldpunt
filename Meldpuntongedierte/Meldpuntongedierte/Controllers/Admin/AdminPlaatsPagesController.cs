@@ -75,7 +75,7 @@ namespace Meldpunt.Controllers
     public ActionResult EditPlaats(PlaatsPageModel p)
     {
       plaatsPageService.UpdateOrInsert(p);
-      Response.RemoveOutputCacheItem("/ongediertebestrijding-" + p.Gemeentenaam.XmlSafe());
+      Response.RemoveOutputCacheItem(p.Url);
 
       return Redirect("/admin/editplaats/" + p.Gemeentenaam.XmlSafe());
     }

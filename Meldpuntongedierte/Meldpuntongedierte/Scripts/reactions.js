@@ -6,11 +6,11 @@ $(function () {
   });
 
   $("[data-action=open-reaction-form]").on('click', function (evt) {
+    evt.preventDefault();
     document.body.classList.add("show-overlay");
   });
 
   $("[data-role=show-contact-details]").on('click', function (evt) {
-    console.log(evt.target);
     if (evt.target.value === "true")
       $(".optional-fields").show();
     else

@@ -79,6 +79,7 @@ namespace Meldpunt.Controllers
             reaction.Created = DateTimeOffset.Now;
             db.Reactions.Add(reaction);
             db.SaveChanges();
+            TempData["reactionsuccess"] = true;
           }
         }
         catch (Exception e)

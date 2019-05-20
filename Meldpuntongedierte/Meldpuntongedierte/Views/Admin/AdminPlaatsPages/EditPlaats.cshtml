@@ -9,7 +9,7 @@
 
 <h1>Gemeente @Model.Gemeentenaam</h1>
 
-<a class="viewPage btn btn-info" href="/@Model.Gemeentenaam" target="_blank">Pagina bekijken</a>
+<a class="viewPage btn btn-info" href="@Model.Url" target="_blank">Pagina bekijken</a>
 
 @if (Model.Plaatsen.Count > 1)
 {
@@ -17,42 +17,48 @@
 }
 
 
-  <form method="post">
+<form method="post">
 
-    <div class="field">
+  @*<div class="field">
       <label for="publish">
         @Html.EditorFor(p => p.Published)
         gepubliceerd
       </label>
-    </div>
+    </div>*@
 
-    <div class="field">
-      <label for="MetaDescription">Meta description</label>
-      <textarea id="MetaDescription" class="form-control" name="MetaDescription" type="text">@Model.MetaDescription</textarea>
-    </div>
+  <div class="field">
+    <label for="MetaDescription">Meta description</label>
+    <textarea id="MetaDescription" class="form-control" name="MetaDescription" type="text">@Model.MetaDescription</textarea>
+  </div>
 
-    <div class="field">
-      <label for="MetaDescription">Title</label>
-      <input type="text" name="title" class="form-control" value="@Model.MetaTitle" />
-    </div>
+  <div class="field">
+    <label for="MetaDescription">Title</label>
+    <input type="text" name="title" class="form-control" value="@Model.MetaTitle" />
+  </div>
 
-    <div class="field">
-      <label for="MetaDescription">Telefoonnummer</label>
-      <input type="text" name="PhoneNumber" class="form-control" value="@Model.PhoneNumber" />
-    </div>
+  <div class="field">
+    <label for="MetaDescription">Telefoonnummer</label>
+    <input type="text" name="PhoneNumber" class="form-control" value="@Model.PhoneNumber" />
+  </div>
 
 
-    <div class="field">
-      <label for="content">Content</label>
-      <textarea id="content" name="content" class="richtext">
+  <div class="field">
+    <label for="content">Content</label>
+    <textarea id="content" name="content" class="richtext">
       @Model.Content
     </textarea>
-    </div>
+  </div>
 
+  @if (Model.LastModified.HasValue)
+  {
     <div class="field">
-      Voor het laatst aangepast: <b>@Model.LastModified.ToString("R")</b>
+      Voor het laatst aangepast: <b>@Model.LastModified.Value.ToString("R")</b>
     </div>
+  }
 
-    <input type="hidden" name="Gemeentenaam" value="@Model.Gemeentenaam" />
-    <input type="submit" class="btn btn-info" value="opslaan" />
-  </form>
+  @Html.HiddenFor(p => p.UrlPart)
+  @Html.HiddenFor(p => p.Published)
+  @Html.HiddenFor(p => p.Id)
+  @Html.HiddenFor(p => p.Gemeentenaam)
+  <input type="submit" class="btn btn-info" value="opslaan" />
+</form>

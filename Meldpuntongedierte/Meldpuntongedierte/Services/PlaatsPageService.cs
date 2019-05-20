@@ -25,6 +25,11 @@ namespace Meldpunt.Services
       return db.PlaatsPages.Find(id);
     }
 
+    public PlaatsPageModel GetByIdUntracked(Guid id)
+    {
+      return db.PlaatsPages.AsNoTracking().FirstOrDefault(p => p.Id == id);
+    }
+
     public PlaatsPageModel GetPlaatsByUrlPart(string urlPart)
     {
       return db.PlaatsPages.FirstOrDefault(p => p.UrlPart == urlPart);
@@ -32,7 +37,7 @@ namespace Meldpunt.Services
 
     public PlaatsPageModel UpdateOrInsert(PlaatsPageModel pageToSave)
     {
-      var existingModel = db.PlaatsPages.Find(pageToSave.Id);
+      var existingModel = GetByIdUntracked(pageToSave.Id);
 
       if (existingModel == null)
       {

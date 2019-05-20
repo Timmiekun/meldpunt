@@ -10,6 +10,9 @@ namespace Meldpunt.Services
 
     PlaatsPageModel GetPlaatsById(Guid id);
 
+    PlaatsPageModel GetByIdUntracked(Guid id);
+  
+
     PlaatsPageModel GetPlaatsByUrlPart(string urlPart);
 
     PlaatsPageModel UpdateOrInsert(PlaatsPageModel p);
