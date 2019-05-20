@@ -1,0 +1,69 @@
+﻿@using Meldpunt.Models;
+@using Meldpunt.Utils;
+@model ReactionModel
+@{
+  ViewBag.Title = "Admin";
+  Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<h1>Gemeente @Model.GemeenteNaam</h1>
+
+<div class="field">
+  Aangemaakt: <b>@Model.Created.ToString("f")</b>
+</div>
+
+@if (Model.Approved.HasValue)
+{
+  <div class="field">
+    Goegekeurd: <b>@Model.Approved.Value.ToString("f")</b>
+  </div>
+}
+
+
+<div class="field">
+  <label for="Sender">Naam: </label>
+  @Model.Sender
+</div>
+
+<div class="field">
+  <label for="MetaDescription">Beschrijving: </label>
+  @Model.SenderDescription
+</div>
+
+<div class="field">
+  <label for="Sender">Mag contact opnemen?</label>
+  @(Model.AllowContact ? "ja" : "nee")
+</div>
+
+@if (Model.AllowContact)
+{
+  <div class="field">
+    <label for="MetaDescription">E-mail: </label>
+    @Model.SenderEmail
+  </div>
+
+  <div class="field">
+    <label for="MetaDescription">Telefoon: </label>
+    @Model.SenderPhone
+  </div>
+}
+
+<div class="field">
+  <label for="Sender">Mag tonen op site?</label>
+  @(Model.AllowDisplayOnSite ? "ja" : "nee")
+</div>
+
+@if (Model.AllowDisplayOnSite)
+{
+  if (Model.Approved.HasValue)
+  {
+    <a class="btn btn-success" href="/admin/approvereaction/@Model.Id">Afkeuren</a>
+  }
+  else
+  {
+    <a class="btn btn-success" href="/admin/approvereaction/@Model.Id">Goedkeuren</a>
+  }
+}
+
+<a href="/admin/deletereaction/@Model.Id" class="btn btn-danger" data-action-confirm>Verwijderen</a>
+

@@ -1,0 +1,37 @@
+﻿@using Meldpunt.Models;
+@using Meldpunt.Utils;
+@model IEnumerable<ReactionModel>
+@{
+  ViewBag.Title = "Admin";
+  var locations = ViewBag.Locations;
+  Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<h1>Beheer reacties</h1>
+
+<form class="search-form" method="get">
+  <input class="form-control" type="text" name="q" placeholder="Zoek reactie" value="@Request.QueryString["q"]" />
+</form>
+
+<p>@Model.Count() reacties</p>
+
+
+<div class="list-item list-item-header">
+  <div class="date">Datum</div>
+  <div class="place">Gemeente</div>
+  <div class="sender">Gebruiker</div>
+</div>
+
+@foreach (var reactie in Model)
+{
+  string className = "unapproved";
+  if (reactie.Approved.HasValue)
+  {
+    className = "approved";
+  }
+  <div class="list-item @className">
+    <div class="date"><a class="link-to-edit" href="/admin/editreaction/@reactie.Id">@reactie.Created.ToString("f")</a></div>
+    <div class="place"><a class="link-to-edit" href="/admin/editreaction/@reactie.Id">@reactie.GemeenteNaam</a></div>
+    <div class="sender">@reactie.Sender</div>
+  </div>
+}

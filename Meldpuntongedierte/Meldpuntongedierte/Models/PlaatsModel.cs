@@ -18,6 +18,9 @@ namespace Meldpunt.Models
     /// </summary>
     public string Text { get; set; }
     public string MetaDescription { get; set; }
+    /// <summary>
+    /// plaatsen die bij de gemeente horen
+    /// </summary>
     public List<string> Plaatsen { get; set; }
     public DateTime LastModified { get; set; }
 

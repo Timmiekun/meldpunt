@@ -1,0 +1,209 @@
+﻿.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(125, 125, 125, 0.59);
+  z-index: 6;
+  overflow-y: scroll;
+  display: none;
+}
+
+body.show-overlay {
+  overflow-y: hidden;
+}
+
+.show-overlay .overlay {
+  display: block;
+}
+
+.reaction-form {
+  box-sizing: border-box;
+  position: absolute;
+  top: 10vh;
+  left: 10vw;
+  right: 10vw;
+  margin-bottom: 10vh;
+  background-color: white;
+  box-shadow: 2px 3px 6px 1px rgba(64, 64, 64, 0.30980392156862746);
+  border-radius: 5px;
+  padding: 20px;
+  z-index: 3;
+}
+
+a.close-button {
+  position: absolute;
+  top: 17px;
+  right: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 26px;
+  padding: 8px;
+  line-height: 9px;
+  text-decoration: none;
+  color: #85003c;
+  background-color: #ffffff;
+}
+
+.reaction-form h2 {
+  color: white;
+  background-color: #85003c;
+  padding: 20px;
+  margin: -20px -20px 20px -20px;
+  border-radius: 5px 5px 0 0;
+}
+
+.reactions h2 {
+  color: white;
+  background-color: #85003c;
+  padding: 20px;
+  margin-bottom: 50px;
+}
+
+.reaction-form p {
+  margin-bottom: 10px;
+}
+
+
+.reactions .reaction {
+  margin-bottom: 50px;
+  box-shadow: 2px 3px 6px 1px #d1d1d1;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+
+.reaction-form .form-group {
+  position: relative;
+  border-top: 1px solid #dddddd;
+  padding-top: 20px;
+  margin-bottom: 40px;
+}
+
+  .reaction-form .form-group label {
+    display: block;
+    font-style: italic;
+    margin-bottom: 5px;
+    padding-right: 60px;
+  }
+
+
+.reaction-form .form-field {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 5px 3px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  font-family: 'Catamaran', sans-serif;
+}
+
+.optional-fields {
+  display: none;
+}
+
+.g-recaptcha {
+  float: right;
+}
+
+.tooltip {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+}
+
+  .tooltip .icon {
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid #85003c;
+    border-radius: 26px;
+    padding: 6px;
+    line-height: 7px;
+    color: white;
+    background-color: #85003c;
+  }
+
+  .tooltip .tooltip-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    width: 50vw;
+    background-color: white;
+    border: 1px solid #989898;
+    padding: 10px;
+    border-radius: 3px;
+    box-shadow: 1px 4px 5px 4px rgba(0, 0, 0, 0.28);
+    z-index: 4;
+  }
+
+  .tooltip:hover .tooltip-content {
+    display: block;
+  }
+
+
+/* Reactions that are shown content website */
+.reaction date {
+  display: block;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.reaction-recieved {
+  background-color: #2b9ef4;
+  padding: 20px;
+  margin-top: 40px;
+  border-radius: 5px;
+  color: white;
+}
+
+  .reaction-recieved h2 {
+    margin: 0px 0px 15px 0px;
+  }
+
+  @media only screen and (max-width:768px) {
+    .reaction-form {
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 00px 10px 200px 10px;
+  }
+
+    .reaction-form h2 {
+      margin: 0 -10px 10px;
+      font-size: 1.4em;
+      border-radius: 0;
+    }
+
+  a.close-button {
+    position: fixed;
+    top: 2vw;
+    right: 2vw;
+    padding: 13px;
+    z-index: 9;
+    box-shadow: 1px 1px 5px 1px #969696;
+  }
+
+  .tooltip {
+    top: 20px;
+  }
+
+    .tooltip .icon {
+      padding: 10px;
+      line-height: 10px;
+      font-size: 1.3em;
+    }
+
+    .tooltip .tooltip-content {
+      width: 80vw;
+      z-index: 8;
+    }
+
+  .g-recaptcha {
+    float: none;
+    margin-top: 10px;
+  }
+
+  body.show-overlay {
+    -webkit-overflow-scrolling: touch;
+  }
+}

@@ -69,6 +69,9 @@
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -129,7 +132,10 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Controllers\Admin\AdminBlogController.cs" />
+    <Compile Include="Controllers\Admin\AdminPlaatsPagesController.cs" />
+    <Compile Include="Controllers\Admin\AdminReactionsController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\PlacePageController.cs" />
     <Compile Include="CustomViewEngine.cs" />
     <Compile Include="Controllers\Admin\AdminPagesController.cs" />
     <Compile Include="Controllers\Admin\ImagesController.cs" />
@@ -176,7 +182,22 @@
     <Compile Include="Migrations\201904151409124_remove_parentPath_from_page.Designer.cs">
       <DependentUpon>201904151409124_remove_parentPath_from_page.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905031942168_plaatsPages_and_reactions.cs" />
+    <Compile Include="Migrations\201905031942168_plaatsPages_and_reactions.Designer.cs">
+      <DependentUpon>201905031942168_plaatsPages_and_reactions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905071350556_plaatsPages_and_reactions1.cs" />
+    <Compile Include="Migrations\201905071350556_plaatsPages_and_reactions1.Designer.cs">
+      <DependentUpon>201905071350556_plaatsPages_and_reactions1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905111341284_add_reation_fields.cs" />
+    <Compile Include="Migrations\201905111341284_add_reation_fields.Designer.cs">
+      <DependentUpon>201905111341284_add_reation_fields.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\RecaptchRequestModel.cs" />
+    <Compile Include="Models\PlaatsPageModel .cs" />
+    <Compile Include="Models\ReactionModel.cs" />
     <Compile Include="Models\IndexableItem.cs" />
     <Compile Include="Models\ImageRequestModel.cs" />
     <Compile Include="Models\ImageModel.cs" />
@@ -193,8 +214,10 @@
     <Compile Include="Services\IImageService.cs" />
     <Compile Include="Services\ImageService.cs" />
     <Compile Include="Services\IContentPageService.cs" />
+    <Compile Include="Services\IPlaatsPageService.cs" />
     <Compile Include="Services\IPlaatsService.cs" />
     <Compile Include="Services\IPageService.cs" />
+    <Compile Include="Services\PlaatsPageService.cs" />
     <Compile Include="Services\RedirectService.cs" />
     <Compile Include="Services\ISearchService.cs" />
     <Compile Include="Services\SearchService.cs" />
@@ -203,6 +226,7 @@
     <Compile Include="Utils\LocationUtils.cs" />
     <Compile Include="Utils\PropertyCopier.cs" />
     <Compile Include="Utils\Utils.cs" />
+    <Compile Include="ViewModels\PlaatsPageViewModel.cs" />
     <Compile Include="ViewModels\BreadCrumb.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -220,6 +244,7 @@
     <Content Include="Css\admin-images.css" />
     <Content Include="Css\admin.css" />
     <Content Include="Css\blog.css" />
+    <Content Include="Css\reactions.css" />
     <Content Include="Css\main.css" />
     <Content Include="Css\mobile.css" />
     <Content Include="Css\reset.css" />
@@ -264,6 +289,7 @@
     <Content Include="robots.txt" />
     <Content Include="Scripts\admin.js" />
     <Content Include="Scripts\admin-modal.js" />
+    <Content Include="Scripts\reactions.js" />
     <Content Include="Scripts\suggest.js" />
     <Content Include="Scripts\xmlhttp.js" />
     <Content Include="Scripts\meldpunt.js" />
@@ -297,7 +323,7 @@
     <Content Include="Views\Search\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\Plaats.cshtml" />
+    <Content Include="Views\PlaatsPage\Plaats.cshtml" />
     <Content Include="App_Data\2012_Woonplaatsen_in_Nederland.csv" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Shared\subPagesPartial.cshtml" />
@@ -317,15 +343,15 @@
     <None Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.eot" />
     <None Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.ttf" />
     <None Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.woff" />
-    <Content Include="Views\Admin\EditPlaats.cshtml" />
+    <Content Include="Views\Admin\AdminPlaatsPages\EditPlaats.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Home\SiteMap.cshtml" />
     <Content Include="Views\Admin\adminNav.cshtml" />
     <Content Include="Views\Admin\AdminPages\EditPage.cshtml" />
-    <Content Include="Views\Home\PlaatsWespennest.cshtml" />
+    <Content Include="Views\PlaatsPage\PlaatsWespennest.cshtml" />
     <Content Include="Views\Home\Disqus.cshtml" />
     <Content Include="Views\Admin\AdminPages\Pages.cshtml" />
-    <Content Include="Views\Admin\Places.cshtml" />
+    <Content Include="Views\Admin\AdminPlaatsPages\Places.cshtml" />
     <Content Include="Views\Admin\Redirects.cshtml" />
     <Content Include="Views\Admin\Images.cshtml" />
     <Content Include="Views\Admin\Settings.cshtml" />
@@ -339,6 +365,10 @@
     <Content Include="Views\Blog\Index.cshtml" />
     <Content Include="Views\Blog\Details.cshtml" />
     <Content Include="Views\Shared\_Page_Tile.cshtml" />
+    <Content Include="Views\PlaatsPage\Plaats_Static_Content.cshtml" />
+    <Content Include="Views\PlaatsPage\ReactionForm.cshtml" />
+    <Content Include="Views\Admin\AdminReactions\Edit.cshtml" />
+    <Content Include="Views\Admin\AdminReactions\Reactions.cshtml" />
     <None Include="Volksgezondheid.pdf" />
     <None Include="Web.azure.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -372,6 +402,18 @@
     <EmbeddedResource Include="Migrations\201904151409124_remove_parentPath_from_page.resx">
       <DependentUpon>201904151409124_remove_parentPath_from_page.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905031942168_plaatsPages_and_reactions.resx">
+      <DependentUpon>201905031942168_plaatsPages_and_reactions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905071350556_plaatsPages_and_reactions1.resx">
+      <DependentUpon>201905071350556_plaatsPages_and_reactions1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905111341284_add_reation_fields.resx">
+      <DependentUpon>201905111341284_add_reation_fields.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Config\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

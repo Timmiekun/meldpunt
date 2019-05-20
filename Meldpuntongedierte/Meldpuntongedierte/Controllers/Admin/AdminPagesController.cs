@@ -117,39 +117,7 @@ namespace Meldpunt.Controllers
       }
 
       return Redirect("/admin/editpage/" + savedPage.Id);
-    }
-
-    /// <summary>
-    /// update routes in the route table
-    /// </summary>
-    /// <param name="pages"></param>
-    private void UpdateRouteForPages(List<ContentPageModel> pages)
-    {
-      var routes = RouteTable.Routes;
-      using (routes.GetWriteLock())
-      {
-        //get last route (default).  ** by convention, it is the standard route.
-        var defaultRoute = routes.Last();
-        routes.Remove(defaultRoute);
-
-        foreach (var routePage in pages)
-        {
-          // remove old route
-          var oldRoute = routes[routePage.Id.ToString()];
-          routes.Remove(oldRoute);
-
-          //add some new route for a cms page
-          routes.MapRoute(
-            routePage.Id.ToString(), // Route name
-            routePage.Url.TrimStart('/'), // URL with parameters
-            new { controller = "Home", action = "GetPage", guid = routePage.Id } // Parameter defaults
-          );
-        }
-
-        //add back default routes       
-        routes.Add(defaultRoute);
-      }
-    }
+    }  
 
     private void DeleteRouteForPage(Guid id)
     {
@@ -212,14 +180,46 @@ namespace Meldpunt.Controllers
 
       // save again, for generating url etc..
       page = pageService.SavePage(page);
+      UpdateRouteForPages(new List<ContentPageModel> { page });
 
       UpdateRouteForPages(new List<ContentPageModel>() { page });
       searchService.IndexDocument(page.ToLuceneDocument(), page.Id.ToString());
 
-      return RedirectToAction("editpage", new { Id = page.Id });
+      return RedirectToAction("editpage", new { page.Id });
     }
     #endregion
 
+    private void UpdateRouteForPages(List<ContentPageModel> pages)
+    {
+      var routes = RouteTable.Routes;
+      using (routes.GetWriteLock())
+      {
+        //get last route (default).  ** by convention, it is the standard route.
+        var defaultRoute = routes.Last();
+        routes.Remove(defaultRoute);
+
+        var defaultRouteOld = routes.Last();
+        routes.Remove(defaultRouteOld);
+
+        foreach (var routePage in pages)
+        {
+          // remove old route
+          var oldRoute = routes[routePage.Id.ToString()];
+          routes.Remove(oldRoute);
+
+          //add some new route for a cms page
+          routes.MapRoute(
+            routePage.Id.ToString(), // Route name
+            routePage.Url.TrimStart('/'), // URL with parameters
+            new { controller = "Home", action = "GetPage", guid = routePage.Id } // Parameter defaults
+          );
+        }
+
+        //add back default routes
+        routes.Add(defaultRouteOld);
+        routes.Add(defaultRoute);
+      }
+    }
 
     #region stayaway
     [Route("updateimages")]

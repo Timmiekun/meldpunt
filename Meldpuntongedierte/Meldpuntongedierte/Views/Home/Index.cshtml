@@ -14,7 +14,10 @@
     "@("@context")": "http://schema.org/",
     "@("@type")": "Article",
     "dateModified" : "@Model.LastModified.Value.ToString("yyyy-MM-dd")",
-    "datePublished" : "@Model.Published.Value.ToString("yyyy-MM-dd")",
+    @if (Model.Published.HasValue)
+    {
+      <text>"datePublished" : "@Model.Published.Value.ToString("yyyy-MM-dd")",</text>
+    }
     "headline": "@Model.MetaDescription",
     @if (!String.IsNullOrEmpty(Model.Image))
     {

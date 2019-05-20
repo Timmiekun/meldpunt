@@ -30,11 +30,12 @@
   <link type="text/css" rel="stylesheet" href="/css/suggest.css?v=@appVersion">
   <link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Catamaran:400,700,900" rel="stylesheet">
 
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   @RenderSection("style", false)
 
   @RenderSection("SD", false)
 </head>
-<body>
+<body class="">
 
   <div class="topBar">
     <div class="heading">
@@ -98,7 +99,7 @@
 
         @RenderSection("readmore", false)
       </div>
-      @RenderSection("menu", false)     
+      @RenderSection("menu", false)
     </div>
 
     <div class="footer">
@@ -132,7 +133,7 @@
           <a class="go-to-parent" href="@parent.Url">< @parent.Title</a>
         }
       }
-      else if(breadcrumbs.Count > 0)
+      else if (breadcrumbs.Count > 0)
       {
         <a class="go-to-parent" href="/">< Home</a>
       }
@@ -148,12 +149,16 @@
     </div>
   </div>
 
+
+
   <script src="//code.jquery.com/jquery-3.3.1.min.js"
           integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
           crossorigin="anonymous"></script>
   <script type="text/javascript" src="/Scripts/meldpunt.js?v=@appVersion">;</script>
   <script type="text/javascript" src="/Scripts/suggest.js?v=@appVersion">;</script>
   <script type="text/javascript" src="/Scripts/xmlhttp.js?v=@appVersion">;</script>
+  @RenderSection("script", false)
+
   <script type="text/javascript">
 
     var _gaq = _gaq || [];

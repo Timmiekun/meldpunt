@@ -1,0 +1,71 @@
+﻿@using Meldpunt.Utils
+@model Meldpunt.Models.PlaatsModel
+@{
+  // Default values
+  ViewBag.HeaderTitle = "Meldpunt Ongedierte";
+  ViewBag.Title = "Ongediertebestrijding " + Model.Gemeentenaam + " - Meldpunt Ongedierte";
+  ViewBag.Description = String.Format("Als u inwoner bent van de gemeente {0} kunt u ons bellen voor bijvoorbeeld een muizenbestrijding of een mierenbestrijding aan huis. Een wespennest verwijderen kan pas geschieden nadat wij de wespenbestrijding hebben uitgevoerd.", Model.Gemeentenaam);
+
+  // Curated items
+  if (!String.IsNullOrEmpty(Model.Title))
+  {
+    ViewBag.Title = Model.Title;
+  }
+
+  if (!String.IsNullOrWhiteSpace(Model.MetaDescription))
+  {
+    ViewBag.Description = Model.MetaDescription;
+  }
+  ViewBag.Url = Model.Gemeentenaam;
+}
+
+@section menu{
+  <div class="menu">
+    <h2>Bekijk ook</h2>
+    <ul>
+      <li><a href="/plaagdierengids/muizen/muizen-in-huis">Muizen in huis</a></li>
+      <li><a href="/plaagdierengids/ratten/rattenbestrijding">Rattenbestrijding</a></li>
+      <li><a href="/insectengids/mieren/mierenplaag-in-huis">Mieren in huis</a></li>
+      <li><a href="/insectengids/wespen/wespennest-verwijderen">Wespennest verwijderen</a></li>
+      <li><a href="/stankoverlast">Stankoverlast</a></li>
+      <li><a href="/volksgezondheid">Ongedierte en volksgezondheid</a></li>
+      <li><a href="/wettelijke-kaders-en-verantwoordelijkheden">Wettelijke kaders en verantwoordelijkheden</a></li>
+    </ul>
+  </div>
+}
+
+@if (!String.IsNullOrWhiteSpace(Model.Content) && Model.Published)
+{
+  @Html.Raw(Model.Content)
+}
+else
+{
+  <h1 class="plaatsheader"><span class="pre-header">Wespennest bestrijding</span> @Model.Gemeentenaam</h1>
+  <div class="phone"><a href="tel:+31900-2800200">0900-2800200</a></div>
+
+  <p>Als u inwoner bent van de gemeente @Model.Gemeentenaam en u ondervindt wespenoverlast door de aanwezigheid van een wespennest, dan kunt u telefonisch een afspraak met ons maken.</p>
+
+  <h2>Wespennest verwijderen</h2>
+  <p>
+    Drie weken nadat wij de wespenbestrijding hebben uitgevoerd kan het wespennest verwijderd worden. Het is
+    echter per situatie verschillend of dit zinvol of wenselijk is. Een wespennest is gemaakt van een soort
+    papier wat meestal verweven is om houtwerk.
+  </p>
+  <p>
+    Een bestreden wespennest kan verder geen kwaad. Ook gaan wespen nooit opnieuw in een oud nest zitten.
+    Om deze reden raden wij af om sloopwerk te verrichten enkel en alleen om een nest te verwijderen.
+  </p>
+
+  <p>Meer informatie vindt u <a href="http://www.meldpuntongedierte.nl/insectengids/wespen/wespennest-verwijderen">hier</a></p>
+
+  <h2>Let op!</h2>
+  <p>
+    Blokkeer nooit de in- en uitvliegopening van het wespennest! In Nijmegen leidt dit ieder jaar weer tot
+    problemen van wespen die hierdoor massaal in huis terecht komen.
+  </p>
+  <p>
+    Ook wanneer een wespennest in de grond of in bijvoorbeeld een plantenbak of een biels zit raden wij dit
+    sterk af. Naast het feit dat een wespenvolk in staat is om zich door vele materialen heen te knagen,
+    kunnen wespen die terugkomen van weggeweest ook voor een hoop narigheid zorgen.
+  </p>
+}

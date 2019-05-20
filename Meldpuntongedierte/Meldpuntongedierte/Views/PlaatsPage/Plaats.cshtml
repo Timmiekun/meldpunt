@@ -1,0 +1,157 @@
+﻿@using Meldpunt.Utils;
+@using Meldpunt.Models;
+@model Meldpunt.ViewModels.PlaatsPageViewModel
+@{
+  // Default values
+  ViewBag.HeaderTitle = "Meldpunt Ongedierte";
+  ViewBag.Title = "Ongediertebestrijding " + Model.Content.Gemeentenaam + " - Meldpunt Ongedierte";
+  ViewBag.Description = String.Format("Als u inwoner bent van de gemeente {0} kunt u ons bellen voor bijvoorbeeld een muizenbestrijding of een mierenbestrijding aan huis. Een wespennest verwijderen kan pas geschieden nadat wij de wespenbestrijding hebben uitgevoerd.", Model.Content.Gemeentenaam);
+
+  // Curated items
+  if (!String.IsNullOrEmpty(Model.Content.MetaTitle))
+  {
+    ViewBag.Title = Model.Content.MetaTitle;
+  }
+
+  if (!String.IsNullOrWhiteSpace(Model.Content.MetaDescription))
+  {
+    ViewBag.Description = Model.Content.MetaDescription;
+  }
+  ViewBag.Url = Model.Content.Gemeentenaam;
+
+
+  List<ContentPageModel> homeMenu = ViewBag.HomeMenuItems as List<ContentPageModel>;
+}
+
+@section style{
+  <link type="text/css" rel="stylesheet" href="/css/reactions.css?v=@((string)ViewBag.AppVersion)">
+}
+
+@section script{
+  <script type="text/javascript" src="/Scripts/reactions.js?v=@((string)ViewBag.AppVersion)">;</script>
+}
+
+@section SD{
+  <script type="application/ld+json">
+    {
+    "@("@context")": "http://schema.org/",
+    "@("@type"): "Article",
+    "dateModified" : "@Model.Content.LastModified.Value.ToString("yyyy-MM-dd")",
+    @if (Model.Content.Published.HasValue)
+    {
+      <text>"datePublished" : "@Model.Content.Published.Value.ToString("yyyy-MM-dd")",</text>
+    }
+    "headline": "@Model.Content.MetaDescription",
+    }
+  </script>
+}
+
+@section menu{
+  <div class="menu">
+    <h2>Bekijk ook</h2>
+    <ul>
+      <li class="showOnMobile"><a href="/">Home</a></li>
+      @foreach (var page in homeMenu.OrderByDescending(p => p.Sort))
+      {
+        <li><a href="@page.Url">@page.MetaTitle</a></li>
+      }
+    </ul>
+    <button class="goto-menu-mobile">menu</button>
+  </div>
+}
+
+@if (Convert.ToBoolean(TempData["reactionsuccess"]))
+{
+  <div class="reaction-recieved">
+    <h2>Bedankt!</h2>
+    <p>Bedankt voor uw melding. We nemen het in behandeling.</p>
+  </div>
+}
+
+@if (!String.IsNullOrWhiteSpace(Model.Content.Content))
+{
+  <h1 class="plaatsheader"><span class="pre-header">Meldpunt Ongediertebestrijding</span> @Model.Content.Gemeentenaam</h1>
+  <div class="phone-button phone-icon"><a href="tel:@Model.Content.PhoneNumber">@Model.Content.PhoneNumber</a></div>
+  <a class="phone-button" href="#melding" data-action="open-reaction-form">Doe een melding</a>
+
+  @*<div class="phone-button"><a href="#">Doe alleen een melding</a></div>*@
+  @*<a class="phone-button whatsapp-icon" href="https://api.whatsapp.com/send?phone=+31611690664&text=">Contact via whatsapp</a>*@
+
+  <div class="aankleuren">
+    <div class="folder-image">
+      <a href="/plaagdierengids/muizen">
+        <figure title="muizen" style="background-image:url(/Images/aankleuren/Muizen.jpg)">
+          <img alt="muizen bestrijden" src="/Images/aankleuren/Muizen.jpg" />
+          <figcaption>Muizen</figcaption>
+        </figure>
+      </a>
+    </div>
+    <div class="folder-image">
+      <a href="/plaagdierengids/ratten ">
+        <figure title="ratten" style="background-image:url(/Images/aankleuren/Ratten.jpg)">
+          <img alt="ratten bestrijden" src="/Images/aankleuren/Ratten.jpg" />
+          <figcaption>Ratten</figcaption>
+        </figure>
+      </a>
+    </div>
+    <div class="folder-image">
+      <a href="/insectengids/wespen">
+        <figure title="wespen" style="background-image:url(/Images/aankleuren/Wespen.jpg)">
+          <img alt="wespen bestrijden" src="/Images/aankleuren/Wespen.jpg" />
+          <figcaption>Wespen</figcaption>
+        </figure>
+      </a>
+    </div>
+    <div class="folder-image">
+      <a href="/insectengids/mieren">
+        <figure title="mieren" style="background-image:url(/Images/aankleuren/Mieren.jpg)">
+          <img alt="mieren bestrijden" src="/Images/aankleuren/Mieren.jpg" />
+          <figcaption>Mieren</figcaption>
+        </figure>
+      </a>
+    </div>
+    <div class="folder-image">
+      <a href="/insectengids">
+        <figure title="insectengids" style="background-image:url(/Images/aankleuren/Overige.jpg)">
+          <img alt="insecten bestrijden" src="/Images/aankleuren/Overige.jpg" />
+          <figcaption>Overige</figcaption>
+        </figure>
+      </a>
+    </div>
+  </div>
+
+  <div class="created-content">
+    @Html.Raw(Model.Content.Content)
+  </div>
+
+  @*<h2>Indeling</h2>
+  <p>Onder de gemeente @Model.Content.Gemeentenaam vallen de plaatsen: aap, noot, mies</p>*@
+
+
+
+
+
+}
+else
+{
+  @Html.Partial("Plaats_Static_Content", Model.Content);
+}
+
+
+@Html.Partial("ReactionForm", new ReactionModel { GemeenteNaam = Model.Content.Gemeentenaam })
+
+
+@if (Model.Reactions.Any())
+{
+  <div class="reactions">
+    <h2>Meldingen: </h2>
+    @foreach (var reaction in Model.Reactions)
+    {
+      <div class="reaction">
+        <date>@reaction.Created.ToString("f")</date>
+        @*<h3>@reaction.Sender</h3>*@
+        <p>“@reaction.SenderDescription”</p>
+      </div>
+    }
+  </div>
+}

@@ -1,5 +1,11 @@
 $(function () {
 
+  $("[data-role=overlay]").on('click', function (evt) {
+    if (evt.target.dataset.role === "overlay") {
+      document.body.classList.add("overlay-hidden");
+      document.body.classList.remove("show-reaction-form");
+    }
+  });
 
   $("[data-action=toggle-menu]").on('click', function (evt) {
     evt.preventDefault();

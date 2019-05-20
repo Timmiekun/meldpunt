@@ -18,5 +18,9 @@ namespace Meldpunt.Models
     public DbSet<BlogModel> BlogModels { get; set; }
 
     public DbSet<ContentPageModel> ContentPages { get; set; }
+
+    public DbSet<PlaatsPageModel> PlaatsPages { get; set; }
+
+    public DbSet<ReactionModel> Reactions { get; set; }
   }
 }

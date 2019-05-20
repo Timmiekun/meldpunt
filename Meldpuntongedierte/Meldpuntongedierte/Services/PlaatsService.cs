@@ -49,18 +49,18 @@ namespace Meldpunt.Services
       html = html.Trim().Substring(9, html.Length - 12);
       XmlDocument d = LoadAsXml(html);
       string text = d != null ? d.InnerText : "";
-      
+
       string gemeentenaam = plaatsElement.Attributes["name"].Value;
       string plaatsnaam = LocationUtils.allPlaces.FirstOrDefault(g => g.XmlSafe().Equals(gemeentenaam));
-      if(!String.IsNullOrWhiteSpace(plaatsnaam))
+      if (!String.IsNullOrWhiteSpace(plaatsnaam))
         gemeentenaam = plaatsnaam;
-      var gemeente = LocationUtils.placesByMunicipality.FirstOrDefault(m=> m.Key.XmlSafe().Equals(gemeentenaam.XmlSafe()));
-      if(gemeente.Key != null)
+      var gemeente = LocationUtils.placesByMunicipality.FirstOrDefault(m => m.Key.XmlSafe().Equals(gemeentenaam.XmlSafe()));
+      if (gemeente.Key != null)
         gemeentenaam = gemeente.Key;
 
       string title = "";
-      if(plaatsElement.SelectSingleNode("title")!=null)
-        title=plaatsElement.SelectSingleNode("title").InnerText;
+      if (plaatsElement.SelectSingleNode("title") != null)
+        title = plaatsElement.SelectSingleNode("title").InnerText;
 
       string phone = "";
       if (plaatsElement.SelectSingleNode("phone") != null)
@@ -141,6 +141,7 @@ namespace Meldpunt.Services
 
     }
 
-   
+  
+
   }
 }
