@@ -21,12 +21,13 @@ namespace Meldpunt.Models
     public string PhoneNumber { get; set; }
     public string Content { get; set; }
 
+    public DateTimeOffset? LastModified { get; set; }
+
     /// <summary>
     /// plaatsen die bij de gemeente horen
     /// </summary>
+    [NotMapped]
     public List<string> Plaatsen { get; set; }
-
-    public DateTimeOffset? LastModified { get; set; }
 
     [NotMapped]
     public string Url { get { return "/ongediertebestrijding-" + Gemeentenaam.XmlSafe(); } }
@@ -38,7 +39,7 @@ namespace Meldpunt.Models
       {
         string contentstring = Meldpunt.Utils.Utils.GetStringFromHTML(Content);
 
-        return string.Join(" ", new { MetaTitle, MetaDescription, contentstring });
+        return string.Join(" ", new { MetaTitle, MetaDescription, Plaatsen, contentstring });
       }
     }
 
