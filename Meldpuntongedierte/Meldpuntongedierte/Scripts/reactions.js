@@ -1,4 +1,12 @@
 $(function () {
+
+  $("[data-action=open-toggle]").on('click', function (evt) {
+    evt.preventDefault();
+    let target = document.querySelector(evt.target.hash);
+    target.classList.remove("hidden");
+    evt.target.classList.add("hidden");
+  });
+
   $("[data-role=overlay], [data-role=close-overlay]").on('click', function (evt) {
     if (evt.target.dataset.role === "overlay" || evt.target.dataset.role === "close-overlay") {
       document.body.classList.remove("show-overlay");
