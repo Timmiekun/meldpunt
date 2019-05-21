@@ -144,7 +144,7 @@ else
 {
   <div class="reactions">
     <h2>Actuele meldingen: </h2>
-    @foreach (var reaction in Model.Reactions)
+    @foreach (var reaction in Model.Reactions.OrderByDescending(r=> r.Created))
     {
       <div class="reaction">
         <date>@reaction.Created.ToString("f")</date>
