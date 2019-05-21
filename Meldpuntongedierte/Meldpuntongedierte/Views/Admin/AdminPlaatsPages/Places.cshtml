@@ -18,9 +18,22 @@
 @Html.Partial("Pagination")
 
 <div class="list-item list-item-header">
-  <div class="title"><a href="?sort=title">Titel</a></div>
+  <div class="title">
+
+    <a href="?sort=title">Titel</a>
+    @if (Request["sort"] == "title")
+    {
+      <span class="oi oi-sort-ascending"></span>
+    }
+  </div>
   <div class="url">Url</div>
-  <div class="lastmod"><a href="?sort=date">Laatst aangepast</a></div>
+  <div class="lastmod">
+    @if (Request["sort"] == "date")
+    {
+      <span class="oi oi-sort-descending"></span>
+    }
+    <a href="?sort=date">Laatst aangepast</a>
+  </div>
 </div>
 
 @foreach (var place in Model.Results)
