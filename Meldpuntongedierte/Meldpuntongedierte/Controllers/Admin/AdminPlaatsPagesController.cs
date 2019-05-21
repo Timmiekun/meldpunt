@@ -4,6 +4,7 @@ using Meldpunt.Services;
 using Meldpunt.Utils;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -34,51 +35,46 @@ namespace Meldpunt.Controllers
 
     #region places
     [Route("Places")]
-    public ActionResult Places(string q, int page = 0)
+    public ActionResult Places(string q, int page = 0, string sort = "title")
     {
-      return View(searchService.Search(q, SearchTypes.Place, page));
+      return View(searchService.Search(q, SearchTypes.Place, page, sort));
     }
 
     [HttpGet]
-    [Route("EditPlaats/{plaats}")]
-    public ActionResult EditPlaats(String plaats)
+    [Route("EditPlaats/{id}")]
+    public ActionResult EditPlaats(Guid id)
     {
-      // gemeente page?
-      var gemeente = LocationUtils.placesByMunicipality.Where(m => m.Key.XmlSafe().Equals(plaats.XmlSafe()));
-      if (gemeente.Any())
+      PlaatsPageModel plaatsModel = plaatsPageService.GetPlaatsById(id);
+      if (plaatsModel == null)
       {
-        PlaatsPageModel plaatsModel = plaatsPageService.GetPlaatsByUrlPart(plaats.XmlSafe());
-        if (plaatsModel == null)
-        {
-          plaatsModel = new PlaatsPageModel { Gemeentenaam = gemeente.First().Key.Capitalize() };
-        }
-        plaatsModel.Plaatsen = gemeente.First().Value.ToList();
-        ViewBag.Locations = LocationUtils.placesByMunicipality.OrderBy(m => m.Key);
-        return View(plaatsModel);
+        throw new HttpException(404, "page not found");
       }
-
-      // plaats to redirect?
-      var gemeentes = LocationUtils.placesByMunicipality.Where(m => m.Value.Any(p => p.Equals(plaats, StringComparison.CurrentCultureIgnoreCase)));
-
-      if (gemeentes.Any())
-      {
-        String name = gemeentes.First().Key;
-        return RedirectPermanent("/admin/editplaats/" + name);
-      }
-
-      throw new HttpException(404, "page not found");
-
+      var gemeente = LocationUtils.placesByMunicipality.Where(m => m.Key.XmlSafe().Equals(plaatsModel.Gemeentenaam.XmlSafe()));
+      plaatsModel.Plaatsen = gemeente.First().Value.ToList();
+      ViewBag.Locations = LocationUtils.placesByMunicipality.OrderBy(m => m.Key);
+      return View(plaatsModel);
     }
 
-    [Route("EditPlaats/{plaats}")]
+    [Route("EditPlaats/{id}")]
     [HttpPost, ValidateInput(false)]
     public ActionResult EditPlaats(PlaatsPageModel p)
     {
       plaatsPageService.UpdateOrInsert(p);
       Response.RemoveOutputCacheItem(p.Url);
 
-      return Redirect("/admin/editplaats/" + p.Gemeentenaam.XmlSafe());
+      return Redirect("/admin/editplaats/" + p.Id.ToString());
     }
+
+    [Route("DeletePlaats/{id}")]
+    public ActionResult DeletePlaats(Guid id)
+    {
+      plaatsPageService.Delete(id);
+
+      searchService.DeleteDocument(id.ToString());
+
+      return Redirect("/admin/places");
+    }
+    
     #endregion
 
     #region stayaway
@@ -109,6 +105,62 @@ namespace Meldpunt.Controllers
 
       return new EmptyResult();
     }
+
+    /// <summary>
+    /// sync pages with gemeente/plaats list
+    /// </summary>
+    /// <returns></returns>
+    [Route("syncplaces")]
+    public ActionResult SyncPlaces()
+    {
+      Stopwatch sw = new Stopwatch();
+      sw.Start();
+      WriteLine("Loading places and pages..");
+      var allMunicipalities = Utils.LocationUtils.placesByMunicipality;
+      var allPages = plaatsPageService.GetAllPlaatsModels().ToList();
+      WriteLine("Done. Syncing pages with places list..");
+      foreach (var gemeente in allMunicipalities)
+      {
+        var plaatsPage = allPages.FirstOrDefault(p => p.Gemeentenaam.ToLowerInvariant() == gemeente.Key.ToLowerInvariant());
+        if (plaatsPage == null)
+        {
+          WriteLine("Not found: " + gemeente.Key.ToLowerInvariant(), "red");
+
+          try
+          {
+            var newPage = new PlaatsPageModel()
+            {
+              Gemeentenaam = gemeente.Key,
+              Plaatsen = gemeente.Value.ToList()
+            };
+            plaatsPageService.UpdateOrInsert(newPage);
+          }
+          catch (Exception e)
+          {
+            WriteLine("Error creating new page: " + gemeente.Key.ToLowerInvariant(), "red");
+          }
+        }
+        else
+        {
+          //WriteLine("Found: " + gemeente.Key.ToLowerInvariant(), "green");
+        }
+      }
+
+      sw.Stop();
+      WriteLine("Finished in " + sw.Elapsed.ToString("c"));
+
+      WriteLine("Perhaps a new index is a good idea now.");
+
+      return new EmptyResult();
+    }
     #endregion
+
+    private void WriteLine(string text, string color = "blue")
+    {
+      Response.Write(String.Format("<p style=\"margin:0;color:{1}\">{0}</p>", text, color));
+      Response.Flush();
+    }
   }
+
+
 }

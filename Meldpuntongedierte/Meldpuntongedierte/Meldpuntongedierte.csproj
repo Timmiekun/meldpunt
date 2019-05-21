@@ -135,7 +135,7 @@
     <Compile Include="Controllers\Admin\AdminPlaatsPagesController.cs" />
     <Compile Include="Controllers\Admin\AdminReactionsController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
-    <Compile Include="Controllers\PlacePageController.cs" />
+    <Compile Include="Controllers\PlaatsPageController.cs" />
     <Compile Include="CustomViewEngine.cs" />
     <Compile Include="Controllers\Admin\AdminPagesController.cs" />
     <Compile Include="Controllers\Admin\ImagesController.cs" />

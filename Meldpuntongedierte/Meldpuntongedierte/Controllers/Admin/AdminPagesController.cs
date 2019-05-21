@@ -17,20 +17,17 @@ namespace Meldpunt.Controllers
   public class AdminPagesController : Controller
   {
     private IContentPageService pageService;
-    private IPlaatsService plaatsService;
     private RedirectService redirectsService;
     private IImageService imageService;
     private ISearchService searchService;
     MeldpuntContext db;
 
-    public AdminPagesController(IContentPageService _pageService,
-                                IPlaatsService _plaatsService,
+    public AdminPagesController(IContentPageService _pageService,                               
                                 ISearchService _searchService,
                                 IImageService _imageService,
                                 MeldpuntContext _db)
     {
       pageService = _pageService;
-      plaatsService = _plaatsService;
       searchService = _searchService;
       redirectsService = new RedirectService();
       imageService = _imageService;

@@ -18,14 +18,16 @@
 @Html.Partial("Pagination")
 
 <div class="list-item list-item-header">
-  <div class="title">Titel</div>
+  <div class="title"><a href="?sort=title">Titel</a></div>
   <div class="url">Url</div>
+  <div class="lastmod"><a href="?sort=date">Laatst aangepast</a></div>
 </div>
 
 @foreach (var place in Model.Results)
 {
- <div class="list-item">
-    <div class="title"><a class="link-to-edit" href="/admin/editplaats/@place.Title.XmlSafe()">@place.Title</a></div>
-    <a href="@place.Url" class="url">@place.Url</a>
+  <div class="list-item">
+    <div class="title"><a class="link-to-edit" href="/admin/editplaats/@place.Id.ToString()">@place.Title</a></div>
+    <div class="url"><a href="@place.Url">@place.Url</a></div>
+    <div class="lastmod">@place.LastModified.ToString("dd-MM-yyyy hh:mm")</div>
   </div>
 }

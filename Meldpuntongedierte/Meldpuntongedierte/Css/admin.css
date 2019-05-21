@@ -296,8 +296,14 @@ h3 {
 }
 
 .list-item .url {
-  width: 40%;
+  width: 30%;
 }
+
+
+.list-item .lastmod {
+  width: 20%;
+}
+
 
 .list-item .from {
   width: 35%;
