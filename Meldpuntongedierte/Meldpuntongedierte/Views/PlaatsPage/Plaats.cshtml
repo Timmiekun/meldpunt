@@ -126,8 +126,8 @@
     @Html.Raw(Model.Content.Content)
   </div>
 
-  @*<h2>Indeling</h2>
-  <p>Onder de gemeente @Model.Content.Gemeentenaam vallen de plaatsen: aap, noot, mies</p>*@
+  <h2>Indeling</h2>
+  <p>Onder de gemeente @Model.Content.Gemeentenaam vallen de plaatsen: @String.Join(", ", Model.Content.Plaatsen)</p>
 
 
 

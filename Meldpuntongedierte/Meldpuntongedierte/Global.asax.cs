@@ -40,21 +40,21 @@ namespace Meldpunt
         );
       }
 
-      foreach (var municipality in LocationUtils.placesByMunicipality)
+      foreach (var plaatsPage in plaatsPageService.GetAllPlaatsModels())
       {
         // gemeente zelf
         routes.MapRoute(
-             municipality.Key.XmlSafe(), // Route name
-             "ongediertebestrijding-" + municipality.Key.XmlSafe(), // URL with parameters
-             new { controller = "PlaatsPage", action = "GetPlace", gemeente = municipality.Key.XmlSafe() } // Parameter defaults
+             plaatsPage.Id.ToString(), // Route name
+             plaatsPage.Url.TrimStart('/'), // URL with parameters
+             new { controller = "PlaatsPage", action = "GetPlace", guid = plaatsPage.Id } // Parameter defaults
          );
 
-        foreach (var plaats in municipality.Value)
+        foreach (var plaats in plaatsPage.Plaatsen.Where(p => !String.IsNullOrWhiteSpace(p)))
         {
           routes.MapRoute(
-              plaats + "-" + municipality.Key.XmlSafe(), // Route name
+              plaatsPage.Id.ToString() + plaats.XmlSafe(), // Route name
               "ongediertebestrijding-" + plaats.XmlSafe(), // URL with parameters
-              new { controller = "PlaatsPage", action = "GetPlace", gemeente = municipality.Key.XmlSafe() } // Parameter defaults
+              new { controller = "PlaatsPage", action = "GetPlace", guid = plaatsPage.Id } // Parameter defaults
           );
         }
       }

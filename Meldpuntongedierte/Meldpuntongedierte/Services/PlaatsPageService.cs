@@ -51,6 +51,7 @@ namespace Meldpunt.Services
       else
       {
         pageToSave.LastModified = DateTimeOffset.Now;
+        pageToSave.UrlPart = pageToSave.UrlPart.XmlSafe();
         db.Entry(pageToSave).State = EntityState.Modified;
         db.SaveChanges();
       }

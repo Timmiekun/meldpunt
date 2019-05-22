@@ -132,6 +132,7 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Controllers\Admin\AdminBlogController.cs" />
+    <Compile Include="Controllers\Admin\BasePagesController.cs" />
     <Compile Include="Controllers\Admin\AdminPlaatsPagesController.cs" />
     <Compile Include="Controllers\Admin\AdminReactionsController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
@@ -199,6 +200,7 @@
       <DependentUpon>201905220849540_add_PlaatsList_to_PlaatsPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\RouteableItem.cs" />
     <Compile Include="Models\RecaptchRequestModel.cs" />
     <Compile Include="Models\PlaatsPageModel .cs" />
     <Compile Include="Models\ReactionModel.cs" />

@@ -38,7 +38,12 @@ namespace Meldpunt.Models
 
     public string PlaatsenAsString
     {
-      get { return String.Join(",", _plaatsen); }
+      get {
+        if (_plaatsen == null)
+          return "";
+
+        return String.Join(",", _plaatsen);
+      }
       set
       {
         if (value == null) { _plaatsen = new List<string>(); }
@@ -47,7 +52,7 @@ namespace Meldpunt.Models
     }
 
     [NotMapped]
-    public string Url { get { return "/ongediertebestrijding-" + Gemeentenaam.XmlSafe(); } }
+    public string Url { get { return "/ongediertebestrijding-" + UrlPart; } }
 
     [NotMapped]
     public string FullText

@@ -14,7 +14,7 @@ namespace Meldpunt.Controllers
 {
   [MustBeAdmin]
   [RoutePrefix("admin")]
-  public class AdminPlaatsPagesController : Controller
+  public class AdminPlaatsPagesController : BasePagesController
   {
     private IContentPageService pageService;
     private IPlaatsPageService plaatsPageService;
@@ -58,7 +58,15 @@ namespace Meldpunt.Controllers
     public ActionResult EditPlaats(PlaatsPageModel p)
     {
       plaatsPageService.UpdateOrInsert(p);
+
       Response.RemoveOutputCacheItem(p.Url);
+
+      UpdateRouteForPages(new List<RouteableItem> { new RouteableItem {
+          Action = "GetPlace",
+          Controller = "PlaatsPage",
+          RouteName = p.Id.ToString(),
+          Url = p.Url.TrimStart('/')
+        } });
 
       return Redirect("/admin/editplaats/" + p.Id.ToString());
     }
@@ -135,7 +143,8 @@ namespace Meldpunt.Controllers
             var newPage = new PlaatsPageModel()
             {
               Gemeentenaam = gemeente.Key,
-              Plaatsen = gemeente.Value.ToList()
+              Plaatsen = gemeente.Value.ToList(),
+              PhoneNumber = "0800-2900200"
             };
             plaatsPageService.UpdateOrInsert(newPage);
           }

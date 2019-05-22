@@ -29,36 +29,16 @@ namespace Meldpunt.Controllers
     [OutputCache(CacheProfile = "pageCache")]
     public ActionResult GetPlace()
     {
-      var id = RouteData.Values["gemeente"].ToString();
-      var gemeente = LocationUtils.placesByMunicipality.Where(m => m.Key.XmlSafe().Equals(id, StringComparison.CurrentCultureIgnoreCase));
-      if (gemeente.Any())
+      var id = RouteData.Values["guid"];
+
+      PlaatsPageModel plaatsModel = plaatsPageService.GetPlaatsById(Guid.Parse(id.ToString()));    
+      ViewBag.HidePhoneNumber = true;
+      ViewBag.RecaptchaKey = ConfigurationManager.AppSettings["recaptchaSite"];
+      return View("Plaats", new PlaatsPageViewModel
       {
-        PlaatsPageModel plaatsModel = plaatsPageService.GetPlaatsByUrlPart(id);
-        if (plaatsModel == null)
-        {
-          plaatsModel = new PlaatsPageModel { Gemeentenaam = gemeente.First().Key.Capitalize() };
-        }
-        plaatsModel.Plaatsen = gemeente.First().Value.ToList();
-        ViewBag.Locations = LocationUtils.placesByMunicipality.OrderBy(m => m.Key);
-        ViewBag.HidePhoneNumber = true;
-        ViewBag.RecaptchaKey = ConfigurationManager.AppSettings["recaptchaSite"];
-        return View("Plaats", new PlaatsPageViewModel
-        {
-          Content = plaatsModel,
-          Reactions = db.Reactions.Where(r => r.GemeenteNaam == plaatsModel.Gemeentenaam && r.Approved != null)
-        });
-      }
-
-      // plaats to redirect?
-      var gemeentes = LocationUtils.placesByMunicipality.Where(m => m.Value.Any(p => p.XmlSafe().Equals(id, StringComparison.CurrentCultureIgnoreCase)));
-
-      if (gemeentes.Any())
-      {
-        String name = gemeentes.First().Key;
-        return RedirectPermanent("/" + name.XmlSafe());
-      }
-
-      throw new HttpException(404, "page not found");
+        Content = plaatsModel,
+        Reactions = db.Reactions.Where(r => r.GemeenteNaam == plaatsModel.Gemeentenaam && r.Approved != null)
+      });
     }
 
     [HttpPost, ValidateInput(false)]

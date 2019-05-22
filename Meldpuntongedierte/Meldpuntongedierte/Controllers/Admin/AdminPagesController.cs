@@ -14,7 +14,7 @@ namespace Meldpunt.Controllers
 {
   [MustBeAdmin]
   [RoutePrefix("admin")]
-  public class AdminPagesController : Controller
+  public class AdminPagesController : BasePagesController
   {
     private IContentPageService pageService;
     private RedirectService redirectsService;
@@ -22,7 +22,7 @@ namespace Meldpunt.Controllers
     private ISearchService searchService;
     MeldpuntContext db;
 
-    public AdminPagesController(IContentPageService _pageService,                               
+    public AdminPagesController(IContentPageService _pageService,
                                 ISearchService _searchService,
                                 IImageService _imageService,
                                 MeldpuntContext _db)
@@ -97,7 +97,14 @@ namespace Meldpunt.Controllers
         allChildPages.Add(savedPage);
 
         // update routes
-        UpdateRouteForPages(allChildPages);
+        UpdateRouteForPages(allChildPages.Select(p => 
+        new RouteableItem {
+          Action = "GetPage",
+          Controller = "Home",
+          RouteName = p.Id.ToString(),
+          Url = p.Url.TrimStart('/')
+        }
+        ));
       }
 
       searchService.IndexDocument(savedPage.ToLuceneDocument(), savedPage.Id.ToString());
@@ -114,17 +121,6 @@ namespace Meldpunt.Controllers
       }
 
       return Redirect("/admin/editpage/" + savedPage.Id);
-    }  
-
-    private void DeleteRouteForPage(Guid id)
-    {
-      var routes = RouteTable.Routes;
-      using (routes.GetWriteLock())
-      {
-        // remove route
-        var oldRoute = routes[id.ToString()];
-        routes.Remove(oldRoute);
-      }
     }
 
     [Route("DeletePage/{id}")]
@@ -177,46 +173,19 @@ namespace Meldpunt.Controllers
 
       // save again, for generating url etc..
       page = pageService.SavePage(page);
-      UpdateRouteForPages(new List<ContentPageModel> { page });
 
-      UpdateRouteForPages(new List<ContentPageModel>() { page });
+      UpdateRouteForPages(new List<RouteableItem> { new RouteableItem {
+          Action = "GetPage",
+          Controller = "Home",
+          RouteName = page.Id.ToString(),
+          Url = page.Url.TrimStart('/')
+        } });
+
       searchService.IndexDocument(page.ToLuceneDocument(), page.Id.ToString());
 
       return RedirectToAction("editpage", new { page.Id });
     }
     #endregion
-
-    private void UpdateRouteForPages(List<ContentPageModel> pages)
-    {
-      var routes = RouteTable.Routes;
-      using (routes.GetWriteLock())
-      {
-        //get last route (default).  ** by convention, it is the standard route.
-        var defaultRoute = routes.Last();
-        routes.Remove(defaultRoute);
-
-        var defaultRouteOld = routes.Last();
-        routes.Remove(defaultRouteOld);
-
-        foreach (var routePage in pages)
-        {
-          // remove old route
-          var oldRoute = routes[routePage.Id.ToString()];
-          routes.Remove(oldRoute);
-
-          //add some new route for a cms page
-          routes.MapRoute(
-            routePage.Id.ToString(), // Route name
-            routePage.Url.TrimStart('/'), // URL with parameters
-            new { controller = "Home", action = "GetPage", guid = routePage.Id } // Parameter defaults
-          );
-        }
-
-        //add back default routes
-        routes.Add(defaultRouteOld);
-        routes.Add(defaultRoute);
-      }
-    }
 
     #region stayaway
     [Route("updateimages")]
