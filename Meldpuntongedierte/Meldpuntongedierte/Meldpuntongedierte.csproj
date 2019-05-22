@@ -194,6 +194,10 @@
     <Compile Include="Migrations\201905111341284_add_reation_fields.Designer.cs">
       <DependentUpon>201905111341284_add_reation_fields.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905220849540_add_PlaatsList_to_PlaatsPage.cs" />
+    <Compile Include="Migrations\201905220849540_add_PlaatsList_to_PlaatsPage.Designer.cs">
+      <DependentUpon>201905220849540_add_PlaatsList_to_PlaatsPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\RecaptchRequestModel.cs" />
     <Compile Include="Models\PlaatsPageModel .cs" />
@@ -404,6 +408,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905111341284_add_reation_fields.resx">
       <DependentUpon>201905111341284_add_reation_fields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905220849540_add_PlaatsList_to_PlaatsPage.resx">
+      <DependentUpon>201905220849540_add_PlaatsList_to_PlaatsPage.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

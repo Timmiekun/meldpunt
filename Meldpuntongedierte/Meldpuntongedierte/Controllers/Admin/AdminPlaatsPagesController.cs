@@ -49,8 +49,6 @@ namespace Meldpunt.Controllers
       {
         throw new HttpException(404, "page not found");
       }
-      var gemeente = LocationUtils.placesByMunicipality.Where(m => m.Key.XmlSafe().Equals(plaatsModel.Gemeentenaam.XmlSafe()));
-      plaatsModel.Plaatsen = gemeente.First().Value.ToList();
       ViewBag.Locations = LocationUtils.placesByMunicipality.OrderBy(m => m.Key);
       return View(plaatsModel);
     }
@@ -74,7 +72,7 @@ namespace Meldpunt.Controllers
 
       return Redirect("/admin/places");
     }
-    
+
     #endregion
 
     #region stayaway
@@ -115,16 +113,22 @@ namespace Meldpunt.Controllers
     {
       Stopwatch sw = new Stopwatch();
       sw.Start();
+      WriteLine("<body style=\"font-family: monospace;\"");
       WriteLine("Loading places and pages..");
+
+      // gather data
       var allMunicipalities = Utils.LocationUtils.placesByMunicipality;
       var allPages = plaatsPageService.GetAllPlaatsModels().ToList();
+      var allFoundPlaces = new List<PlaatsPageModel>();
       WriteLine("Done. Syncing pages with places list..");
+
+      // check data
       foreach (var gemeente in allMunicipalities)
       {
         var plaatsPage = allPages.FirstOrDefault(p => p.Gemeentenaam.ToLowerInvariant() == gemeente.Key.ToLowerInvariant());
         if (plaatsPage == null)
         {
-          WriteLine("Not found: " + gemeente.Key.ToLowerInvariant(), "red");
+          WriteLine("Not found, creating new page: " + gemeente.Key.ToLowerInvariant(), "red");
 
           try
           {
@@ -142,7 +146,35 @@ namespace Meldpunt.Controllers
         }
         else
         {
-          //WriteLine("Found: " + gemeente.Key.ToLowerInvariant(), "green");
+          string plaatsenAsString = String.Join(",", gemeente.Value);
+          if (plaatsPage.PlaatsenAsString != plaatsenAsString)
+          {
+            WriteLine(String.Format("Updating plaatsnamen for <b>{0}</b>", plaatsPage.Gemeentenaam), "orange");
+            WriteLine(String.Format("Old list [{0}]", plaatsPage.PlaatsenAsString), "orange");
+            WriteLine(String.Format("New list [{0}]", plaatsenAsString), "orange");
+            WriteLine("<hr/>");
+            plaatsPage.Plaatsen = gemeente.Value.ToList();
+            try
+            {
+              plaatsPageService.UpdateOrInsert(plaatsPage);
+            }
+            catch (Exception e)
+            {
+              WriteLine("Whoops! Error - ", e.ToString());
+            }
+          }
+          allFoundPlaces.Add(plaatsPage);
+        }
+      }
+
+      WriteLine("Finding old gemeentes..");
+      foreach (var plaats in allPages.Except(allFoundPlaces).Select((value, i) => new { i, value }))
+      {
+        WriteLine(plaats.i + " - Found: " + plaats.value.Gemeentenaam, "green");
+        if (!String.IsNullOrWhiteSpace(plaats.value.PlaatsenAsString))
+        {
+          plaats.value.PlaatsenAsString = "";
+          plaatsPageService.UpdateOrInsert(plaats.value);
         }
       }
 

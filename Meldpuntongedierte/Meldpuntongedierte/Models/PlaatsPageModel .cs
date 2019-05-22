@@ -3,8 +3,8 @@ using Meldpunt.Services;
 using Meldpunt.Utils;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace Meldpunt.Models
 {
@@ -22,11 +22,29 @@ namespace Meldpunt.Models
 
     public DateTimeOffset? LastModified { get; set; }
 
+
+
     /// <summary>
     /// plaatsen die bij de gemeente horen
     /// </summary>
     [NotMapped]
-    public List<string> Plaatsen { get; set; }
+    public List<string> Plaatsen
+    {
+      get { return _plaatsen; }
+      set { _plaatsen = value; }
+    }
+
+    private List<String> _plaatsen { get; set; }
+
+    public string PlaatsenAsString
+    {
+      get { return String.Join(",", _plaatsen); }
+      set
+      {
+        if (value == null) { _plaatsen = new List<string>(); }
+        else { _plaatsen = value.Split(',').ToList(); }
+      }
+    }
 
     [NotMapped]
     public string Url { get { return "/ongediertebestrijding-" + Gemeentenaam.XmlSafe(); } }
@@ -38,11 +56,11 @@ namespace Meldpunt.Models
       {
         string contentstring = Meldpunt.Utils.Utils.GetStringFromHTML(Content);
 
-        return string.Join(" ", new { Gemeentenaam, MetaTitle, MetaDescription, Plaatsen, contentstring });
+        return string.Join(" ", new { Gemeentenaam, MetaTitle, MetaDescription, PlaatsenAsString, contentstring });
       }
     }
 
-    
+
 
     public Document ToLuceneDocument()
     {
