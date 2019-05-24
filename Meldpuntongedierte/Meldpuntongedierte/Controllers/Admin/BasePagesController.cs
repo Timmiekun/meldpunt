@@ -50,7 +50,7 @@ namespace Meldpunt.Controllers
       }
     }
 
-    public void DeleteRouteForPage(Guid id)
+    public void DeleteRouteById(Guid id)
     {
       var routes = RouteTable.Routes;
       using (routes.GetWriteLock())

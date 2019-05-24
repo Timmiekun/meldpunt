@@ -163,6 +163,7 @@ namespace Meldpunt.Services
           Id = result.Get("id"),
           Type = result.Get("type"),
           Url = result.Get("url"),
+          HasPlaatsen = Convert.ToBoolean(result.Get("hasplaatsen")),
           Intro = intro,
           LastModified = DateTimeOffset.Parse(lastmodified.ToString())
         });

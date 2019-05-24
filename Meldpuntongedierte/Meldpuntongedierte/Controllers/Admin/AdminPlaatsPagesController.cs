@@ -59,6 +59,7 @@ namespace Meldpunt.Controllers
     {
       plaatsPageService.UpdateOrInsert(p);
 
+      searchService.IndexDocument(p.ToLuceneDocument(),p.Id.ToString());
       Response.RemoveOutputCacheItem(p.Url);
 
       UpdateRouteForPages(new List<RouteableItem> { new RouteableItem {
@@ -77,6 +78,8 @@ namespace Meldpunt.Controllers
       plaatsPageService.Delete(id);
 
       searchService.DeleteDocument(id.ToString());
+
+      DeleteRouteById(id);
 
       return Redirect("/admin/places");
     }
@@ -176,7 +179,7 @@ namespace Meldpunt.Controllers
         }
       }
 
-      WriteLine("Finding old gemeentes..");
+      WriteLine("Finding old gemeentes and removing places..");
       foreach (var plaats in allPages.Except(allFoundPlaces).Select((value, i) => new { i, value }))
       {
         WriteLine(plaats.i + " - Found: " + plaats.value.Gemeentenaam, "green");

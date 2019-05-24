@@ -132,7 +132,7 @@ namespace Meldpunt.Controllers
       searchService.DeleteDocument(id.ToString());
 
       // delete route
-      DeleteRouteForPage(id);
+      DeleteRouteById(id);
 
       // clear cache
       Response.RemoveOutputCacheItem(page.Url);

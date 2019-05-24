@@ -75,6 +75,7 @@ namespace Meldpunt.Models
       doc.Add(new Field("title", Gemeentenaam, Field.Store.YES, Field.Index.ANALYZED));
       doc.Add(new Field("sortableTitle", Gemeentenaam.XmlSafe(), Field.Store.NO, Field.Index.NOT_ANALYZED));
       doc.Add(new Field("lastModified", DateTools.DateToString(LastModified.Value.UtcDateTime, DateTools.Resolution.SECOND), Field.Store.YES, Field.Index.ANALYZED));
+      doc.Add(new Field("hasplaatsen", (!String.IsNullOrWhiteSpace(PlaatsenAsString)).ToString().ToLower(), Field.Store.YES, Field.Index.ANALYZED));
       doc.Add(new Field("text", FullText, Field.Store.YES, Field.Index.ANALYZED));
       doc.Add(new Field("url", Url, Field.Store.YES, Field.Index.ANALYZED));
       doc.Add(new Field("all", "all", Field.Store.NO, Field.Index.ANALYZED));
