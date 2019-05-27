@@ -283,10 +283,12 @@ h3 {
 
 .list-item-header {
   font-weight: bold;
+  line-height: 150%;
 }
 
   .list-item-header .oi {
     top: 3px;
+    color:brown;
   }
 
 .list-item .link-to-edit {
