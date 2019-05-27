@@ -213,7 +213,7 @@ h3 {
   color: #83003c;
 }
 
-.filters{
+.filters {
   padding: 10px 0;
 }
 
@@ -275,14 +275,18 @@ h3 {
     border-left: 5px solid red;
   }
 
-  .list-item.approved{
+  .list-item.approved {
     border-left: 5px solid green;
   }
 
- 
 
-  .list-item-header {
-    font-weight: bold;
+
+.list-item-header {
+  font-weight: bold;
+}
+
+  .list-item-header .oi {
+    top: 3px;
   }
 
 .list-item .link-to-edit {
@@ -298,7 +302,7 @@ h3 {
 }
 
 .list-item .hasplaatsen {
-  width:10%;
+  width: 10%;
 }
 
 .old {

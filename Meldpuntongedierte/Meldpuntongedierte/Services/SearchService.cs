@@ -72,7 +72,7 @@ namespace Meldpunt.Services
       }
     }
 
-    public SearchResultModel Search(string q, string type = null, int page = 0, string sort = "title")
+    public SearchResultModel Search(string q, string type = null, int page = 0, string sort = "title", bool sortDesc = true)
     {
       dir = FSDirectory.Open(indexPath);
       IndexSearcher searcher = new IndexSearcher(dir);
@@ -124,20 +124,7 @@ namespace Meldpunt.Services
         }
       }
 
-
-      var sorter = new Sort();
-      if (!String.IsNullOrWhiteSpace(sort) && sort == "date")
-        sorter.SetSort(new SortField("lastModified", SortField.STRING, true));
-
-      else if (!String.IsNullOrWhiteSpace(sort) && sort == "hasplaatsen") {
-        sorter.SetSort(
-          new SortField("hasplaatsen", SortField.STRING, false),
-          new SortField("sortableTitle", SortField.STRING, false)          
-          );
-      }
-
-      else if (String.IsNullOrWhiteSpace(q))
-        sorter.SetSort(new SortField("sortableTitle", SortField.STRING, false));
+      Sort sorter = GetSorter(q, sort, sortDesc);
 
       TopDocs results = searcher.Search(bq, null, resultcount, sorter);
 
@@ -148,6 +135,29 @@ namespace Meldpunt.Services
       };
 
       return model;
+    }
+
+    private static Sort GetSorter(string q, string sort, bool sortDesc)
+    {
+      var sorter = new Sort();
+
+      // set default
+      if (!String.IsNullOrWhiteSpace(sort) && sort == "date")
+        sorter.SetSort(new SortField("lastModified", SortField.STRING, sortDesc));
+
+      else if (!String.IsNullOrWhiteSpace(sort) && sort == "hasplaatsen")
+      {
+        sorter.SetSort(
+          new SortField("hasplaatsen", SortField.STRING, !sortDesc),
+          new SortField("sortableTitle", SortField.STRING, !sortDesc)
+          );
+      }
+
+      else if (String.IsNullOrWhiteSpace(q))
+        sorter.SetSort(new SortField("sortableTitle", SortField.STRING, !sortDesc));
+
+
+      return sorter;
     }
 
     private static List<SearchResult> docsToModel(IndexSearcher searcher, IEnumerable<ScoreDoc> docs)

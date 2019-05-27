@@ -16,6 +16,6 @@
       className = "btn-info";
     }
 
-    <a class="btn  @className" href="?q=@Request.QueryString["q"]&page=@i">@(i + 1)</a>
+    <a class="btn  @className" href="?q=@Request.QueryString["q"]&page=@i&sort=@Request.QueryString["sort"]&sortDesc=@Request.QueryString["sortDesc"]">@(i + 1)</a>
   }
 }

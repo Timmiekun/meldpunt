@@ -11,7 +11,7 @@ namespace Meldpunt.Services
     void IndexDocument(Document doc, string id);
     void DeleteDocument(string id);
 
-    SearchResultModel Search(string q, string type = null, int page = 0, string sort = "title");
+    SearchResultModel Search(string q, string type = null, int page = 0, string sort = "title", bool sortAsc = true);
 
   }
 }
