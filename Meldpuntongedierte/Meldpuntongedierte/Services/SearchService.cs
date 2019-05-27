@@ -8,7 +8,6 @@ using Meldpunt.Models;
 using Meldpunt.Utils;
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Web.Hosting;
@@ -125,9 +124,17 @@ namespace Meldpunt.Services
         }
       }
 
+
       var sorter = new Sort();
       if (!String.IsNullOrWhiteSpace(sort) && sort == "date")
         sorter.SetSort(new SortField("lastModified", SortField.STRING, true));
+
+      else if (!String.IsNullOrWhiteSpace(sort) && sort == "hasplaatsen") {
+        sorter.SetSort(
+          new SortField("hasplaatsen", SortField.STRING, false),
+          new SortField("sortableTitle", SortField.STRING, false)          
+          );
+      }
 
       else if (String.IsNullOrWhiteSpace(q))
         sorter.SetSort(new SortField("sortableTitle", SortField.STRING, false));

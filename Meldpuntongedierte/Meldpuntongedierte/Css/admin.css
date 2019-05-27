@@ -213,6 +213,10 @@ h3 {
   color: #83003c;
 }
 
+.filters{
+  padding: 10px 0;
+}
+
 .phone {
   font-size: 22px;
   margin: 30px 0px;
@@ -275,9 +279,7 @@ h3 {
     border-left: 5px solid green;
   }
 
-  .list-item.old{
-    border-left: 5px solid brown;
-  }
+ 
 
   .list-item-header {
     font-weight: bold;
@@ -295,12 +297,20 @@ h3 {
   float: left;
 }
 
+.list-item .hasplaatsen {
+  width:10%;
+}
+
+.old {
+  border-left: 5px solid brown;
+}
+
 .list-item .title {
-  width: 40%;
+  width: 35%;
 }
 
 .list-item .url {
-  width: 40%;
+  width: 35%;
   margin-right: 10px;
 }
 

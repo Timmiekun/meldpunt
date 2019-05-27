@@ -35,7 +35,7 @@ namespace Meldpunt.Controllers
 
     #region places
     [Route("Places")]
-    public ActionResult Places(string q, int page = 0, string sort = "title")
+    public ActionResult Places(string q, int page = 0, string sort = "title", string filter = "")
     {
       return View(searchService.Search(q, SearchTypes.Place, page, sort));
     }
