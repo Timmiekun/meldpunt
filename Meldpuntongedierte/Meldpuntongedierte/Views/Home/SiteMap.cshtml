@@ -25,7 +25,7 @@
       <changefreq>monthly</changefreq>
     </url>
 
-    foreach (var place in location.Plaatsen)
+    foreach (var place in location.Plaatsen.Where(p=> !p.Equals(location.Gemeentenaam)))
     {
       <url>
         <loc>https://www.meldpuntongedierte.nl/ongediertebestrijding-@place.XmlSafe()</loc>
