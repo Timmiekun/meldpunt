@@ -2,7 +2,7 @@
 @using Meldpunt.Utils;
 @model PlaatsPageModel
 @{
-  ViewBag.Title = "Admin";
+  ViewBag.Title = Model.Gemeentenaam + " - Admin";
   var locations = ViewBag.Locations;
   Layout = "~/Views/Shared/_Admin.cshtml";
 }
@@ -11,7 +11,7 @@
 
 <a class="viewPage btn btn-info" href="@Model.Url" target="_blank">Pagina bekijken</a>
 
-@if (Model.Plaatsen.Count > 1)
+@if (Model.Plaatsen.Count > 0)
 {
   <p>Onder de gemeente @Model.Gemeentenaam vallen de plaatsen: @String.Join(", ", Model.Plaatsen.Select(p => p.Capitalize()))</p>
 }
