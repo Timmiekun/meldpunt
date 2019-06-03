@@ -60,7 +60,12 @@ namespace Meldpunt.Controllers
       plaatsPageService.UpdateOrInsert(p);
 
       searchService.IndexDocument(p.ToLuceneDocument(),p.Id.ToString());
+
       Response.RemoveOutputCacheItem(p.Url);
+
+      foreach (string plaats in p.Plaatsen) { 
+        Response.RemoveOutputCacheItem("/ongediertebestrijding-" + plaats.XmlSafe());
+      }
 
       UpdateRouteForPages(new List<RouteableItem> { new RouteableItem {
           Action = "GetPlace",
