@@ -132,10 +132,11 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Controllers\Admin\AdminBlogController.cs" />
+    <Compile Include="Controllers\Admin\BasePagesController.cs" />
     <Compile Include="Controllers\Admin\AdminPlaatsPagesController.cs" />
     <Compile Include="Controllers\Admin\AdminReactionsController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
-    <Compile Include="Controllers\PlacePageController.cs" />
+    <Compile Include="Controllers\PlaatsPageController.cs" />
     <Compile Include="CustomViewEngine.cs" />
     <Compile Include="Controllers\Admin\AdminPagesController.cs" />
     <Compile Include="Controllers\Admin\ImagesController.cs" />
@@ -194,7 +195,12 @@
     <Compile Include="Migrations\201905111341284_add_reation_fields.Designer.cs">
       <DependentUpon>201905111341284_add_reation_fields.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905220849540_add_PlaatsList_to_PlaatsPage.cs" />
+    <Compile Include="Migrations\201905220849540_add_PlaatsList_to_PlaatsPage.Designer.cs">
+      <DependentUpon>201905220849540_add_PlaatsList_to_PlaatsPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\RouteableItem.cs" />
     <Compile Include="Models\RecaptchRequestModel.cs" />
     <Compile Include="Models\PlaatsPageModel .cs" />
     <Compile Include="Models\ReactionModel.cs" />
@@ -233,12 +239,6 @@
   <ItemGroup>
     <Content Include="500.html" />
     <Content Include="App_Data\redirect.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Data\pages.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Data\plaatsen.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Css\admin-modal.css" />
@@ -325,11 +325,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\PlaatsPage\Plaats.cshtml" />
-    <Content Include="App_Data\2012_Woonplaatsen_in_Nederland.csv" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Shared\subPagesPartial.cshtml" />
     <Content Include="Views\Shared\_Admin.cshtml" />
-    <Content Include="App_Data\Woonplaatsen_in_Nede_160516123828.csv" />
+    <Content Include="App_Data\Woonplaatsen_in_Nede_20190520.csv" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\local.pubxml" />
     <None Include="Properties\PublishProfiles\meldpuntongedierte - FTP.pubxml" />
@@ -411,6 +410,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905111341284_add_reation_fields.resx">
       <DependentUpon>201905111341284_add_reation_fields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905220849540_add_PlaatsList_to_PlaatsPage.resx">
+      <DependentUpon>201905220849540_add_PlaatsList_to_PlaatsPage.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

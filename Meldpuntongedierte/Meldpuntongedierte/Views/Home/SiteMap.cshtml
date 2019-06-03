@@ -24,6 +24,14 @@
       <loc>https://www.meldpuntongedierte.nl@(location.Url)</loc>
       <changefreq>monthly</changefreq>
     </url>
+
+    foreach (var place in location.Plaatsen)
+    {
+      <url>
+        <loc>https://www.meldpuntongedierte.nl/ongediertebestrijding-@place.XmlSafe()</loc>
+        <changefreq>monthly</changefreq>
+      </url>
+    }
   }
 
   <url>

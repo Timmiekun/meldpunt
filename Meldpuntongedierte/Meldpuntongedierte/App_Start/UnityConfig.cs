@@ -42,7 +42,6 @@ namespace Meldpunt
       // Make sure to add a Unity.Configuration to the using statements.
       // container.LoadConfiguration();
 
-      container.RegisterType<IPlaatsService, PlaatsService>();
       container.RegisterType<IPlaatsPageService, PlaatsPageService>();
       container.RegisterType<IContentPageService, ContentPageService>();
       container.RegisterType<ISearchService, SearchService>();

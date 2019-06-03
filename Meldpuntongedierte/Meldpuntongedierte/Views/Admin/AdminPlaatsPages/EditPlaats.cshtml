@@ -19,21 +19,25 @@
 
 <form method="post">
 
-  @*<div class="field">
-      <label for="publish">
-        @Html.EditorFor(p => p.Published)
-        gepubliceerd
-      </label>
-    </div>*@
-
   <div class="field">
     <label for="MetaDescription">Meta description</label>
     <textarea id="MetaDescription" class="form-control" name="MetaDescription" type="text">@Model.MetaDescription</textarea>
   </div>
 
   <div class="field">
-    <label for="MetaDescription">Title</label>
-    <input type="text" name="title" class="form-control" value="@Model.MetaTitle" />
+    <label for="MetaDescription">Meta title</label>
+    @Html.EditorFor(m => m.MetaTitle, "", new { htmlAttributes = new { @class = "form-control" } })
+  </div>
+
+  <div class="field">
+    <label for="UrlPart">Url</label>
+    <div class="input-group">
+      <div class="input-group-prepend selectParent">
+        <span class="input-group-text" id="inputGroupPrepend">/ongediertebestrijding-</span>
+      </div>
+      <input type="text" name="UrlPart" class="form-control" value="@Model.UrlPart" />
+    </div>
+    @Html.ValidationMessageFor(model => model.UrlPart, "", new { @class = "text-danger" })
   </div>
 
   <div class="field">
@@ -58,7 +62,10 @@
 
   @Html.HiddenFor(p => p.UrlPart)
   @Html.HiddenFor(p => p.Published)
+  @Html.HiddenFor(p => p.PlaatsenAsString)
   @Html.HiddenFor(p => p.Id)
   @Html.HiddenFor(p => p.Gemeentenaam)
   <input type="submit" class="btn btn-info" value="opslaan" />
+
+  <a href="/admin/deleteplaats/@Model.Id" class="btn btn-danger" data-action-confirm>Verwijderen</a>
 </form>

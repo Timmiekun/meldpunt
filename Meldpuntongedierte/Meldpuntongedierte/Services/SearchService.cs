@@ -17,64 +17,21 @@ namespace Meldpunt.Services
   public class SearchService : ISearchService
   {
     private Lucene.Net.Store.Directory dir;
-    private IContentPageService pageService;
-    private IPlaatsService plaatsService;
     private string indexPath;
 
-    public SearchService(IContentPageService _pageService, IPlaatsService _plaatsService)
+    public SearchService()
     {
       indexPath = HostingEnvironment.MapPath("~/App_data/index");
-      pageService = _pageService;
-      plaatsService = _plaatsService;
     }
 
-    public void Index()
+    public void IndexItems(IEnumerable<IndexableItem> items, bool create = false)
     {
       DirectoryInfo index = new DirectoryInfo(indexPath);
       if (!index.Exists)
         index.Create();
 
       dir = FSDirectory.Open(indexPath);
-      IndexWriter w = new IndexWriter(dir, new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30), true, IndexWriter.MaxFieldLength.UNLIMITED);
-
-      foreach (var page in pageService.GetAllPages())
-      {
-        w.AddDocument(page.ToLuceneDocument());
-      }
-
-      foreach (PlaatsModel plaats in plaatsService.GetAllPlaatsModels())
-      {
-        w.AddDocument(plaats.ToLuceneDocument());
-      }
-
-      foreach (var gemeente in LocationUtils.placesByMunicipality)
-      {
-        string fullText = String.Format("Onder de gemeente {0} vallen de plaatsen: {1}. Als u inwoner bent van de gemeente {0} en u heeft te maken met overlast van ongedierte, neem dan contact op met ons meldpunt het servicenummer: 0900-2800200", gemeente.Key, String.Join(", ", gemeente.Value.Select(p => p.Capitalize())));
-
-        Document doc = new Document();
-        doc.Add(new Field("title", gemeente.Key, Field.Store.YES, Field.Index.ANALYZED));
-        doc.Add(new Field("text", fullText, Field.Store.YES, Field.Index.ANALYZED));
-        doc.Add(new Field("url", "ongediertebestrijding-" + gemeente.Key.XmlSafe(), Field.Store.YES, Field.Index.ANALYZED));
-        if (gemeente.Value.Any())
-          doc.Add(new Field("locations", String.Join(" ", gemeente.Value), Field.Store.YES, Field.Index.ANALYZED));
-
-        w.AddDocument(doc);
-      }
-
-      w.Commit();
-      w.Dispose();
-      dir.Dispose();
-
-    }
-
-    public void IndexItems(IEnumerable<IndexableItem> items)
-    {
-      DirectoryInfo index = new DirectoryInfo(indexPath);
-      if (!index.Exists)
-        index.Create();
-
-      dir = FSDirectory.Open(indexPath);
-      IndexWriter w = new IndexWriter(dir, new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30), false, IndexWriter.MaxFieldLength.UNLIMITED);
+      IndexWriter w = new IndexWriter(dir, new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30), create, IndexWriter.MaxFieldLength.UNLIMITED);
 
       foreach (IndexableItem i in items)
       {
@@ -115,7 +72,7 @@ namespace Meldpunt.Services
       }
     }
 
-    public SearchResultModel Search(string q, string type = null, int page = 0)
+    public SearchResultModel Search(string q, string type = null, int page = 0, string sort = "title", bool sortDesc = true)
     {
       dir = FSDirectory.Open(indexPath);
       IndexSearcher searcher = new IndexSearcher(dir);
@@ -167,9 +124,7 @@ namespace Meldpunt.Services
         }
       }
 
-      var sorter = new Sort();
-      if (String.IsNullOrWhiteSpace(q))
-        sorter.SetSort(new SortField("sortableTitle", SortField.STRING, false));
+      Sort sorter = GetSorter(q, sort, sortDesc);
 
       TopDocs results = searcher.Search(bq, null, resultcount, sorter);
 
@@ -180,6 +135,29 @@ namespace Meldpunt.Services
       };
 
       return model;
+    }
+
+    private static Sort GetSorter(string q, string sort, bool sortDesc)
+    {
+      var sorter = new Sort();
+
+      // set default
+      if (!String.IsNullOrWhiteSpace(sort) && sort == "date")
+        sorter.SetSort(new SortField("lastModified", SortField.STRING, sortDesc));
+
+      else if (!String.IsNullOrWhiteSpace(sort) && sort == "hasplaatsen")
+      {
+        sorter.SetSort(
+          new SortField("hasplaatsen", SortField.STRING, !sortDesc),
+          new SortField("sortableTitle", SortField.STRING, !sortDesc)
+          );
+      }
+
+      else if (String.IsNullOrWhiteSpace(q))
+        sorter.SetSort(new SortField("sortableTitle", SortField.STRING, !sortDesc));
+
+
+      return sorter;
     }
 
     private static List<SearchResult> docsToModel(IndexSearcher searcher, IEnumerable<ScoreDoc> docs)
@@ -194,13 +172,17 @@ namespace Meldpunt.Services
           intro = intro.TruncateAtWord(200);
           intro += " ...";
         }
+
+        DateTime lastmodified = DateTools.StringToDate(result.Get("lastModified"));
         model.Add(new SearchResult
         {
           Title = result.Get("title"),
           Id = result.Get("id"),
           Type = result.Get("type"),
           Url = result.Get("url"),
-          Intro = intro
+          HasPlaatsen = Convert.ToBoolean(result.Get("hasplaatsen")),
+          Intro = intro,
+          LastModified = DateTimeOffset.Parse(lastmodified.ToString())
         });
 
       }

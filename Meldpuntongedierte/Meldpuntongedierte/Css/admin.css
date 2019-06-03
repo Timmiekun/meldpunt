@@ -213,6 +213,10 @@ h3 {
   color: #83003c;
 }
 
+.filters {
+  padding: 10px 0;
+}
+
 .phone {
   font-size: 22px;
   margin: 30px 0px;
@@ -271,12 +275,20 @@ h3 {
     border-left: 5px solid red;
   }
 
-  .list-item.approved{
+  .list-item.approved {
     border-left: 5px solid green;
   }
 
-  .list-item-header {
-    font-weight: bold;
+
+
+.list-item-header {
+  font-weight: bold;
+  line-height: 150%;
+}
+
+  .list-item-header .oi {
+    top: 3px;
+    color:brown;
   }
 
 .list-item .link-to-edit {
@@ -291,13 +303,29 @@ h3 {
   float: left;
 }
 
+.list-item .hasplaatsen {
+  width: 10%;
+}
+
+.old {
+  border-left: 5px solid brown;
+}
+
 .list-item .title {
-  width: 50%;
+  width: 35%;
 }
 
 .list-item .url {
-  width: 40%;
+  width: 35%;
+  margin-right: 10px;
 }
+
+
+.list-item .lastmod {
+  width: 15%;
+  text-align: right;
+}
+
 
 .list-item .from {
   width: 35%;

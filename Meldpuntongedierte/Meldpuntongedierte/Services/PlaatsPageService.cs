@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Meldpunt.Models;
 using System.Data.Entity;
+using Meldpunt.Utils;
 
 namespace Meldpunt.Services
 {
@@ -43,12 +44,14 @@ namespace Meldpunt.Services
       {
         pageToSave.LastModified = DateTimeOffset.Now;
         db.Entry(pageToSave).State = EntityState.Modified;
+        pageToSave.UrlPart = pageToSave.Gemeentenaam.XmlSafe();
         db.PlaatsPages.Add(pageToSave);
         db.SaveChanges();
       }
       else
       {
         pageToSave.LastModified = DateTimeOffset.Now;
+        pageToSave.UrlPart = pageToSave.UrlPart.XmlSafe();
         db.Entry(pageToSave).State = EntityState.Modified;
         db.SaveChanges();
       }
@@ -56,5 +59,11 @@ namespace Meldpunt.Services
       return pageToSave;
     }
 
+    public void Delete(Guid id)
+    {
+      PlaatsPageModel model = db.PlaatsPages.Find(id);
+      db.PlaatsPages.Remove(model);
+      db.SaveChanges();
+    }
   }
 }

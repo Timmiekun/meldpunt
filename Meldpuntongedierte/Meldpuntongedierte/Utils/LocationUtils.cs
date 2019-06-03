@@ -1,25 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Text.RegularExpressions;
-using System.Configuration;
 using System.IO;
 using System.Text;
+using System.Web.Hosting;
 
 namespace Meldpunt.Utils
 {
   public class LocationUtils
   {
-    private static string _placesByMunicipality = ConfigurationManager.AppSettings["PlacesByMunicipality"];
-
     public static Dictionary<string, HashSet<string>> placesByMunicipality;
     
     public static List<String> allPlaces;
 
     static LocationUtils()
     {
-      String file = HttpContext.Current.Server.MapPath("~/App_Data/Woonplaatsen_in_Nede_160516123828.csv");
+      // https://statline.cbs.nl/Statweb/selection/?DM=SLNL&PA=84489NED&VW=T
+      String file = HostingEnvironment.MapPath("~/App_Data/Woonplaatsen_in_Nede_20190520.csv");
 
       // load places by municipality
       placesByMunicipality = new Dictionary<string, HashSet<string>>();
@@ -40,9 +37,9 @@ namespace Meldpunt.Utils
           {
             continue;
           }
-
+          // "Onderwerpen";"Woonplaatscode";"Gemeente";"Gemeente";"Provincie";"Provincie";"Landsdeel";"Landsdeel"
           string plaats = values[0].Trim('"');
-          string gemeente = values[1].Trim('"');
+          string gemeente = values[2].Trim('"');
           allPlaces.Add(plaats);
 
           if (!placesByMunicipality.ContainsKey(gemeente))

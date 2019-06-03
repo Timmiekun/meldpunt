@@ -67,7 +67,8 @@ namespace Meldpunt.Models
       doc.Add(new Field("type", SearchTypes.Page, Field.Store.YES, Field.Index.NOT_ANALYZED));
       doc.Add(new Field("id", Id.ToString(), Field.Store.YES, Field.Index.NOT_ANALYZED));
       doc.Add(new Field("title", Title, Field.Store.YES, Field.Index.ANALYZED));
-      doc.Add(new Field("sortableTitle", Title.ToLower(), Field.Store.YES, Field.Index.NOT_ANALYZED));      
+      doc.Add(new Field("sortableTitle", Title.ToLower(), Field.Store.YES, Field.Index.NOT_ANALYZED));
+      doc.Add(new Field("lastModified", DateTools.DateToString(LastModified.Value.UtcDateTime, DateTools.Resolution.SECOND), Field.Store.YES, Field.Index.ANALYZED));
       doc.Add(new Field("text", FullText, Field.Store.YES, Field.Index.ANALYZED));
       doc.Add(new Field("url", Url, Field.Store.YES, Field.Index.ANALYZED));
       doc.Add(new Field("all", "all", Field.Store.NO, Field.Index.ANALYZED));

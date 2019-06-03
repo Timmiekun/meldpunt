@@ -18,14 +18,67 @@
 @Html.Partial("Pagination")
 
 <div class="list-item list-item-header">
-  <div class="title">Titel</div>
+  <div class="hasplaatsen">
+    @if (Request["sort"] == "hasplaatsen" && Request["sortDesc"] != "false")
+    {
+      <a href="?sort=hasplaatsen&sortDesc=false">Alert</a>
+      <span class="oi oi-arrow-circle-bottom"></span>
+    }
+    else
+    {
+      <a href="?sort=hasplaatsen">Alert</a>
+      if (Request["sort"] == "hasplaatsen")
+      {
+        <span class="oi oi-arrow-circle-top"></span>
+      }
+    }
+  </div>
+  <div class="title">
+    @if (Request["sort"] == "title" && Request["sortDesc"] != "false")
+    {
+      <a href="?sort=title&sortDesc=false">Titel</a>
+      <span class="oi oi-arrow-circle-bottom"></span>
+    }
+    else
+    {
+      <a href="?sort=title">Titel</a>
+      if (Request["sort"] == "title")
+      {
+        <span class="oi oi-arrow-circle-top"></span>
+      }
+    }
+  </div>
   <div class="url">Url</div>
+  <div class="lastmod">
+    @if (Request["sort"] == "date" && Request["sortDesc"] != "false")
+    {
+      <span class="oi oi-arrow-circle-bottom"></span>
+      <a href="?sort=date&sortDesc=false">Laatst aangepast</a>
+    }
+    else
+    {
+      if (Request["sort"] == "date")
+      {
+        <span class="oi oi-arrow-circle-top"></span>
+      }
+
+      <a href="?sort=date">Laatst aangepast</a>
+    }
+
+  </div>
 </div>
 
 @foreach (var place in Model.Results)
 {
- <div class="list-item">
-    <div class="title"><a class="link-to-edit" href="/admin/editplaats/@place.Title.XmlSafe()">@place.Title</a></div>
-    <a href="@place.Url" class="url">@place.Url</a>
+  string className = "";
+  if (!place.HasPlaatsen)
+  {
+    className += " old";
+  }
+  <div class="list-item">
+    <div class="hasplaatsen @className">&#160;</div>
+    <div class="title"><a class="link-to-edit" href="/admin/editplaats/@place.Id.ToString()">@place.Title</a></div>
+    <div class="url"><a href="@place.Url">@place.Url</a></div>
+    <div class="lastmod">@place.LastModified.ToString("dd MMM yyy hh:mm")</div>
   </div>
 }
