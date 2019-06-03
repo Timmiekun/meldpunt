@@ -63,13 +63,13 @@
   </div>
 }
 
-@if (Convert.ToBoolean(TempData["reactionsuccess"]))
+@*@if (Convert.ToBoolean(TempData["reactionsuccess"]))
 {
   <div class="reaction-recieved">
     <h2>Bedankt!</h2>
     <p>Bedankt voor uw melding. We nemen het in behandeling.</p>
   </div>
-}
+}*@
 
 @if (!String.IsNullOrWhiteSpace(Model.Content.Content))
 {
@@ -147,7 +147,7 @@ else
 {
   <div class="reactions">
     <h2>Actuele meldingen: </h2>
-    @foreach (var reaction in Model.Reactions)
+    @foreach (var reaction in Model.Reactions.OrderByDescending(r=> r.Created))
     {
       <div class="reaction">
         <date>@reaction.Created.ToString("f")</date>

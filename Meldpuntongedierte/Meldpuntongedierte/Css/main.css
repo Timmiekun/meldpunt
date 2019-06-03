@@ -593,3 +593,7 @@ h3:hover {
   border: 1px solid #c3c3c3;
   cursor: pointer;
 }
+
+.hidden{
+  display:none;
+}
