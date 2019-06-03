@@ -193,73 +193,7 @@ namespace Meldpunt.Controllers
     {
       //pageService.updateImages();
       return new EmptyResult();
-    }
-
-    [Route("addurlpart")]
-    public ActionResult AddUrlPart()
-    {
-      var XMLPageService = new XMLPageService();
-      var pages = XMLPageService.GetAllPages();
-
-      foreach (var page in pages)
-      {
-        if (String.IsNullOrWhiteSpace(page.UrlPart))
-        {
-          page.UrlPart = page.Id;
-          Response.Write(String.Format("<div>page [{0}] got url [{1}]</div>", page.Id, page.UrlPart));
-          Response.Flush();
-          XMLPageService.SavePage(page);
-        }
-      }
-      return new EmptyResult();
-    }
-
-    [Route("migratepages")]
-    public ActionResult MigratePages()
-    {
-      var XMLPageService = new XMLPageService();
-      var pages = XMLPageService.GetAllPages();
-      var home = pages.FirstOrDefault(p => p.UrlPart == "home");
-      int pageCount = 0;
-
-      foreach (var page in pages)
-      {
-        try
-        {
-          var contentPage = new ContentPageModel();
-
-          PropertyCopier<PageModel, ContentPageModel>.Copy(page, contentPage);
-
-          if (Guid.TryParse(page.ParentId, out Guid parentId))
-          {
-            contentPage.ParentId = parentId;
-          }
-          else
-            contentPage.ParentId = home.Guid;
-
-          contentPage.Id = page.Guid;
-          db.ContentPages.Add(contentPage);
-          db.SaveChanges();
-
-          Response.Write(String.Format("<div>page [{0}] copied [{1}]</div>", page.Guid, page.UrlPart));
-          Response.Flush();
-
-          pageCount++;
-        }
-        catch (Exception e)
-        {
-          Response.Write(String.Format("<div style='color:red'>page [{0}] error happenend [{1}]</div>", page.Guid, e.InnerException.InnerException.Message));
-          Response.Flush();
-
-          pageCount++;
-        }
-
-      }
-
-      Response.Write(String.Format("<div>[{0}] pages</div>", pageCount));
-      Response.Flush();
-      return new EmptyResult();
-    }
+    }   
     #endregion
   }
 }

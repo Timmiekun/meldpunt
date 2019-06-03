@@ -92,34 +92,6 @@ namespace Meldpunt.Controllers
     #endregion
 
     #region stayaway
-    [Route("migrateplaces")]
-    public ActionResult Migrateplaces()
-    {
-      var s = new PlaatsService();
-      foreach (PlaatsModel oldPlaats in s.GetAllPlaatsModels())
-      {
-        try
-        {
-          PlaatsPageModel newPlaats = new PlaatsPageModel();
-
-          PropertyCopier<PlaatsModel, PlaatsPageModel>.Copy(oldPlaats, newPlaats);
-          newPlaats.UrlPart = oldPlaats.Gemeentenaam.XmlSafe();
-          plaatsPageService.UpdateOrInsert(newPlaats);
-
-          Response.Write(String.Format("<div>Moved: {0} - [{1}]</div>", oldPlaats.Gemeentenaam, newPlaats.Id.ToString()));
-          Response.Flush();
-        }
-        catch (Exception e)
-        {
-          Response.Write("<div>Error: " + e.Message + "</div>");
-          Response.Flush();
-        }
-      }
-
-
-      return new EmptyResult();
-    }
-
     /// <summary>
     /// sync pages with gemeente/plaats list
     /// </summary>
