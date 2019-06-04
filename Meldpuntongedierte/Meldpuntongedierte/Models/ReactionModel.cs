@@ -17,6 +17,8 @@ namespace Meldpunt.Models
 
     public string Sender { get; set; }
 
+    // for finding e-mail in serach use a specific tokenizer: 
+    // https://stackoverflow.com/questions/19014/using-lucene-to-search-for-email-addresses/20468#20468
     public string SenderEmail { get; set; }
 
     public string SenderPhone { get; set; }

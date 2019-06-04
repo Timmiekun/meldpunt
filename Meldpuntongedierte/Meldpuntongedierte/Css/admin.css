@@ -386,3 +386,30 @@ h3 {
 .deleteform {
   display: inline-block;
 }
+
+.archive-tab {
+  border-bottom: 5px solid #17a2b8;
+  overflow: hidden;
+}
+.archive-tab.active {
+  border-color: #6c757d;
+}
+
+.archive-toggle {
+  margin-top: 10px;
+  position: relative;
+  bottom: -3px;
+}
+
+.inbox-button {
+  float: left;
+}
+
+.archive-button{
+  float:right;
+}
+
+  .archive-toggle .oi {
+    top: 3px;
+    margin-right:5px;
+  }

@@ -13,6 +13,18 @@
   <input class="form-control" type="text" name="q" placeholder="Zoek reactie" value="@Request.QueryString["q"]" />
 </form>
 
+@{
+  var archiveClassName = "";
+  if (Request.QueryString["archived"] == "true")
+  {
+    archiveClassName = "active";
+  }
+}
+<div class="archive-tab @archiveClassName">
+  <a class="inbox-button archive-toggle btn btn-info" href="/admin/reactions"><span class="oi oi-box"></span> Inbox</a>
+  <a class="archive-button archive-toggle btn btn-secondary" href="?archived=true"><span class="oi oi-box"></span> Archief</a>
+</div>
+
 <p>@Model.Results.Count() reacties</p>
 
 @Html.Partial("Pagination")

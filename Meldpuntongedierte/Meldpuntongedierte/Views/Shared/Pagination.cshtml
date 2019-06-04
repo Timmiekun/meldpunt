@@ -1,5 +1,4 @@
 ﻿@using Meldpunt.Models;
-@using System.Collections.Specialized;
 @model SearchResultModel
 
 @{
@@ -7,9 +6,9 @@
   int currentPage = 0;
   Int32.TryParse(Request.QueryString["page"], out currentPage);
 
-
-  NameValueCollection qs;
-  Request.QueryString.CopyTo(qs);
+  // copy querystring so we can manipulate it
+  IDictionary<string,object> qs = new Dictionary<string, object>();
+  Request.QueryString.CopyTo(qs,true);
   qs.Remove("page");
 
 
@@ -20,7 +19,8 @@
     {
       className = "btn-info";
     }
+    qs["page"] = i;
 
-    <a class="btn  @className" href="?@qs.ToString()&page=@i">@(i + 1)</a>
+    <a class="btn  @className" href="?@string.Join("&", qs.Select(kv => kv.Key + "=" + kv.Value))">@(i + 1)</a>
   }
 }
