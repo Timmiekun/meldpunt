@@ -597,3 +597,29 @@ h3:hover {
 .hidden{
   display:none;
 }
+
+.login-form {
+  margin-top:20px;
+}
+
+.form-field {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 5px 3px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  font-family: 'Catamaran', sans-serif;
+}
+
+.login-form .form-field{
+  margin-bottom: 5px;
+}
+
+.login-form input[type=submit]{
+  cursor:pointer;
+}
+
+  .login-form input[type=submit]:hover {
+    cursor: pointer;
+    background-color: #efefef;
+  }

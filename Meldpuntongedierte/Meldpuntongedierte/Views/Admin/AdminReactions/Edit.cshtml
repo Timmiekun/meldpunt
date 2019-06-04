@@ -53,6 +53,19 @@
   @(Model.AllowDisplayOnSite ? "ja" : "nee")
 </div>
 
+@if (Model.Archived.HasValue)
+{
+  <p class="alert alert-warning">
+    Deze reactie is gearchiveerd. Je kan deze reactie gewoon terug vinden door te zoeken en de
+    reactie wordt -indien van toepassing- ook gewoon getoond op de website.
+  </p>
+}
+else
+{
+  <a href="/admin/archiveaction/@Model.Id" class="btn btn-info" data-action-confirm>Archiveren</a>
+}
+
+
 @if (Model.AllowDisplayOnSite)
 {
   if (Model.Approved.HasValue)
@@ -64,6 +77,7 @@
     <a class="btn btn-success" href="/admin/approvereaction/@Model.Id">Goedkeuren</a>
   }
 }
+
 
 <a href="/admin/deletereaction/@Model.Id" class="btn btn-danger" data-action-confirm>Verwijderen</a>
 

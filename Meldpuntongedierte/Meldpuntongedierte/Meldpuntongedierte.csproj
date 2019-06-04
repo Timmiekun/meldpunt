@@ -199,6 +199,10 @@
     <Compile Include="Migrations\201905220849540_add_PlaatsList_to_PlaatsPage.Designer.cs">
       <DependentUpon>201905220849540_add_PlaatsList_to_PlaatsPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906031430232_add_archive_to_reaction.cs" />
+    <Compile Include="Migrations\201906031430232_add_archive_to_reaction.Designer.cs">
+      <DependentUpon>201906031430232_add_archive_to_reaction.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\RouteableItem.cs" />
     <Compile Include="Models\RecaptchRequestModel.cs" />
@@ -215,13 +219,15 @@
     <Compile Include="Models\SearchResultModel.cs" />
     <Compile Include="Models\MailModel.cs" />
     <Compile Include="Services\ContentPageService.cs" />
-    <Compile Include="Services\IImageService.cs" />
+    <Compile Include="Services\Interfaces\IReactionService.cs" />
+    <Compile Include="Services\Interfaces\IImageService.cs" />
     <Compile Include="Services\ImageService.cs" />
-    <Compile Include="Services\IContentPageService.cs" />
-    <Compile Include="Services\IPlaatsPageService.cs" />
+    <Compile Include="Services\Interfaces\IContentPageService.cs" />
+    <Compile Include="Services\Interfaces\IPlaatsPageService.cs" />
+    <Compile Include="Services\ISearchService.cs" />
+    <Compile Include="Services\ReactionService.cs" />
     <Compile Include="Services\PlaatsPageService.cs" />
     <Compile Include="Services\RedirectService.cs" />
-    <Compile Include="Services\ISearchService.cs" />
     <Compile Include="Services\SearchService.cs" />
     <Compile Include="Utils\LocationUtils.cs" />
     <Compile Include="Utils\PropertyCopier.cs" />
@@ -407,6 +413,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905220849540_add_PlaatsList_to_PlaatsPage.resx">
       <DependentUpon>201905220849540_add_PlaatsList_to_PlaatsPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906031430232_add_archive_to_reaction.resx">
+      <DependentUpon>201906031430232_add_archive_to_reaction.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

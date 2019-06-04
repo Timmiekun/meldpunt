@@ -1,12 +1,11 @@
 ﻿using Meldpunt.ActionFilters;
 using Meldpunt.Models;
 using Meldpunt.Services;
+using Meldpunt.Services.Interfaces;
 using Meldpunt.Utils;
 using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
@@ -28,9 +27,11 @@ namespace Meldpunt.Controllers
     }
 
     [Route("reactions")]
-    public ActionResult Reactions()
+    public ActionResult Reactions(string q, string archived = "false")
     {
-      return View(db.Reactions.OrderByDescending(r => r.Created));
+      var results = searchService.Search(q, SearchTypes.Reaction, sort: "date", archived: archived);
+
+      return View(results);
     }
 
     [Route("editreaction/{id}")]
@@ -55,6 +56,20 @@ namespace Meldpunt.Controllers
       return RedirectToAction("Edit", new { id = id });
     }
 
+    [Route("archiveaction/{id}")]
+    public ActionResult Archive(Guid id)
+    {
+      var reaction = db.Reactions.Find(id);
+
+      reaction.Archived = DateTimeOffset.Now;
+      db.Entry(reaction).State = EntityState.Modified;
+      db.SaveChanges();
+
+      searchService.IndexDocument(reaction.ToLuceneDocument(), id.ToString());
+
+      return RedirectToAction("Edit", new { id = id });
+    }
+
     [Route("deletereaction/{id}")]
     public ActionResult Delete(Guid id)
     {
@@ -62,7 +77,8 @@ namespace Meldpunt.Controllers
       db.Reactions.Remove(reaction);
       db.SaveChanges();
 
-      if (reaction.AllowDisplayOnSite) { 
+      if (reaction.AllowDisplayOnSite)
+      {
         // remove outputcache
         Response.RemoveOutputCacheItem("/ongediertebestrijding-" + reaction.GemeenteNaam.XmlSafe());
       }

@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using Meldpunt.Services;
 using Meldpunt.Models;
-using Meldpunt.Utils;
 using System.Web.Routing;
 using Meldpunt.ViewModels;
 using System.Net;
 using Newtonsoft.Json;
 using System.Configuration;
+using Meldpunt.Services.Interfaces;
 
 namespace Meldpunt.Controllers
 {

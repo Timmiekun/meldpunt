@@ -4,6 +4,7 @@ using System.Linq;
 using Meldpunt.Models;
 using System.Data.Entity;
 using Meldpunt.Utils;
+using Meldpunt.Services.Interfaces;
 
 namespace Meldpunt.Services
 {
