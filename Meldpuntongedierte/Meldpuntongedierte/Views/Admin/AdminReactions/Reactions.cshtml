@@ -80,7 +80,7 @@
 {
   var reactionModel = (ReactionModel)reactie.Model;
   string className = "unapproved";
-  if (reactionModel.Approved.HasValue)
+  if (reactionModel.AllowDisplayOnSite)
   {
     className = "approved";
   }

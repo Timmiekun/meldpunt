@@ -55,8 +55,11 @@ namespace Meldpunt.Controllers
       var reaction = db.Reactions.Find(id);
 
       reaction.Approved = DateTimeOffset.Now;
+      reaction.Archived = DateTimeOffset.Now;
       db.Entry(reaction).State = EntityState.Modified;
       db.SaveChanges();
+
+      searchService.IndexDocument(reaction.ToLuceneDocument(), id.ToString());
 
       // remove outputcache so the reaction shows on the site
       Response.RemoveOutputCacheItem("/ongediertebestrijding-" + reaction.GemeenteNaam.XmlSafe());
