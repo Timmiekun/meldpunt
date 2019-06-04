@@ -15,5 +15,8 @@ namespace Meldpunt.Models
     /// </summary>
     public bool HasPlaatsen { get; set; }
     public DateTimeOffset LastModified { get; set; }
+    public string ModelAsJson { get; set; }
+
+    public object Model { get; set; }
   }
 }

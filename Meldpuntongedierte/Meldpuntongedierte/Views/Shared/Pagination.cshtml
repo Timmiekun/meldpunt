@@ -1,5 +1,4 @@
 ﻿@using Meldpunt.Models;
-@using Meldpunt.Utils;
 @model SearchResultModel
 
 @{
@@ -7,15 +6,22 @@
   int currentPage = 0;
   Int32.TryParse(Request.QueryString["page"], out currentPage);
 
+  // copy querystring so we can manipulate it
+  IDictionary<string,object> qs = new Dictionary<string, object>();
+  Request.QueryString.CopyTo(qs,true);
+  qs.Remove("page");
 
-  for (int i = 0; i <= numOfPages; i++)
-  {
+  <div class="pagination">
+    @for (int i = 0; i <= numOfPages; i++)
+    {
     string className = "btn-secondary";
     if (currentPage == i)
     {
-      className = "btn-info";
+    className = "btn-info";
     }
+    qs["page"] = i;
 
-    <a class="btn  @className" href="?q=@Request.QueryString["q"]&page=@i&sort=@Request.QueryString["sort"]&sortDesc=@Request.QueryString["sortDesc"]">@(i + 1)</a>
-  }
+    <a class="btn  @className" href="?@string.Join("&", qs.Select(kv => kv.Key + "=" + kv.Value))">@(i + 1)</a>
+    }
+  </div>
 }

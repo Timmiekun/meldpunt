@@ -1,6 +1,7 @@
 ﻿using Lucene.Net.Documents;
 using Meldpunt.Services;
 using Meldpunt.Utils;
+using Newtonsoft.Json;
 using System;
 using System.ComponentModel.DataAnnotations;
 
@@ -15,7 +16,6 @@ namespace Meldpunt.Models
     [Required]
     public string Name { get; set; }
 
-
     public string Url { get; set; }
 
     public Document ToLuceneDocument()
@@ -29,6 +29,10 @@ namespace Meldpunt.Models
       doc.Add(new Field("lastModified", DateTools.DateToString(DateTime.MinValue, DateTools.Resolution.SECOND), Field.Store.YES, Field.Index.ANALYZED));
       doc.Add(new Field("text", Name, Field.Store.YES, Field.Index.ANALYZED));
       doc.Add(new Field("all", "all", Field.Store.NO, Field.Index.NOT_ANALYZED));
+      doc.Add(new Field("archived", "false", Field.Store.NO, Field.Index.NOT_ANALYZED));
+
+      string modelAsJson = JsonConvert.SerializeObject(this);
+      doc.Add(new Field("model", modelAsJson, Field.Store.YES, Field.Index.NOT_ANALYZED));
 
       return doc;
     }

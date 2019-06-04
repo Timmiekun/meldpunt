@@ -5,6 +5,7 @@ using Meldpunt.Services;
 using Meldpunt.Utils;
 using Meldpunt.ActionFilters;
 using System.Diagnostics;
+using Meldpunt.Services.Interfaces;
 
 namespace Meldpunt.Controllers
 {
@@ -14,13 +15,15 @@ namespace Meldpunt.Controllers
     private IContentPageService contentPageService;
     private IPlaatsPageService plaatsPageeService;
     private IImageService imageService;
+    private IReactionService reactionService;
 
-    public SearchController(ISearchService _searchService, IContentPageService _contentPageService, IPlaatsPageService _plaatsPageeService, IImageService _imageService)
+    public SearchController(ISearchService _searchService, IContentPageService _contentPageService, IPlaatsPageService _plaatsPageeService, IImageService _imageService, IReactionService _reactionService)
     {
       searchService = _searchService;
       contentPageService = _contentPageService;
       plaatsPageeService = _plaatsPageeService;
       imageService = _imageService;
+      reactionService = _reactionService;
     }
 
     [MustBeAdmin]
@@ -31,17 +34,25 @@ namespace Meldpunt.Controllers
       sw.Start();
       WriteLine("Start indexing..");
 
-      WriteLine("Indexing pages..");
+      WriteLine("Indexing pages.. ");
       var allPages = contentPageService.GetAllPages();
       searchService.IndexItems(allPages, true);
+      WriteLine(allPages.Count().ToString());
 
-      WriteLine("Indexing places..");
+      WriteLine("Indexing places.. ");
       var allPlaces = plaatsPageeService.GetAllPlaatsModels();
       searchService.IndexItems(allPlaces);
+      WriteLine(allPlaces.Count().ToString());
 
-      WriteLine("Indexing images..");
+      WriteLine("Indexing images.. ");
       var allImages = imageService.GetAllImages();
       searchService.IndexItems(allImages);
+      WriteLine(allImages.Count().ToString());
+
+      WriteLine("Indexing reactions.. ");
+      var allReactions = reactionService.GetAllReactions();
+      searchService.IndexItems(allReactions);
+      WriteLine(allReactions.Count().ToString());
 
       sw.Stop();
       WriteLine("Finished in " + sw.Elapsed.ToString("c"));

@@ -1,5 +1,6 @@
 ﻿using HtmlAgilityPack;
 using Meldpunt.Models;
+using Meldpunt.Services.Interfaces;
 using Meldpunt.Utils;
 using System;
 using System.Collections.Generic;

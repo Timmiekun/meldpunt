@@ -2,7 +2,7 @@
 @using Meldpunt.Utils;
 @model SearchResultModel
 @{
-  ViewBag.Title = "Admin";
+  ViewBag.Title = "Plaats pagina's - Admin";
   var locations = ViewBag.Locations;
   Layout = "~/Views/Shared/_Admin.cshtml";
 }
@@ -82,3 +82,5 @@
     <div class="lastmod">@place.LastModified.ToString("dd MMM yyy hh:mm")</div>
   </div>
 }
+
+@Html.Partial("Pagination")

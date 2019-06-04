@@ -1,5 +1,6 @@
 using Meldpunt.Models;
 using Meldpunt.Services;
+using Meldpunt.Services.Interfaces;
 using System;
 
 using Unity;
@@ -46,6 +47,8 @@ namespace Meldpunt
       container.RegisterType<IContentPageService, ContentPageService>();
       container.RegisterType<ISearchService, SearchService>();
       container.RegisterType<IImageService, ImageService>();
+      container.RegisterType<IReactionService, ReactionService>();
+
       container.RegisterType<MeldpuntContext>();
     }
   }

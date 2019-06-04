@@ -1,5 +1,6 @@
 ﻿using ImageResizer;
 using Meldpunt.Models;
+using Meldpunt.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Globalization;

@@ -6,6 +6,7 @@ using Lucene.Net.Search;
 using Lucene.Net.Store;
 using Meldpunt.Models;
 using Meldpunt.Utils;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -72,27 +73,32 @@ namespace Meldpunt.Services
       }
     }
 
-    public SearchResultModel Search(string q, string type = null, int page = 0, string sort = "title", bool sortDesc = true)
+    public SearchResultModel Search(string q, string type = null, int page = 0, string sort = "title", bool sortDesc = true, string archived = "")
     {
       dir = FSDirectory.Open(indexPath);
       IndexSearcher searcher = new IndexSearcher(dir);
       BooleanQuery bq = new BooleanQuery();
       int resultcount = 2000;
 
+      if (!string.IsNullOrWhiteSpace(type))
+      {
+        QueryParser typeParser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, "type", new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30));
+        Query typeQuery = typeParser.Parse(type);
+        bq.Add(typeQuery, Occur.MUST);
+      }
+
+      if (!string.IsNullOrWhiteSpace(archived))
+      {
+        QueryParser archivedParser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, "archived", new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30));
+        Query archivedQuery = archivedParser.Parse(archived);
+        bq.Add(archivedQuery, Occur.MUST);
+      }
+
       if (String.IsNullOrWhiteSpace(q))
       {
         QueryParser allParser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, "all", new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30));
-
-        if (!string.IsNullOrWhiteSpace(type))
-        {
-          QueryParser typeParser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, "type", new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30));
-          Query typeQuery = typeParser.Parse(type);
-          bq.Add(typeQuery, Occur.MUST);
-        }
-
         Query all = allParser.Parse("all");
         bq.Add(all, Occur.MUST);
-
       }
       else
       {
@@ -110,22 +116,9 @@ namespace Meldpunt.Services
         Query titleQuery = titleParser.Parse(q);
         titleQuery.Boost = 0.4f;
         bq.Add(titleQuery, Occur.SHOULD);
-
-        QueryParser locationsParser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, "locations", new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30));
-        Query locationsQuery = locationsParser.Parse(q);
-        locationsQuery.Boost = 0.4f;
-        bq.Add(locationsQuery, Occur.SHOULD);
-
-        if (!string.IsNullOrWhiteSpace(type))
-        {
-          QueryParser typeParser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, "type", new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30));
-          Query typeQuery = typeParser.Parse(type);
-          bq.Add(typeQuery, Occur.MUST);
-        }
       }
 
       Sort sorter = GetSorter(q, sort, sortDesc);
-
       TopDocs results = searcher.Search(bq, null, resultcount, sorter);
 
       var model = new SearchResultModel
@@ -174,19 +167,40 @@ namespace Meldpunt.Services
         }
 
         DateTime lastmodified = DateTools.StringToDate(result.Get("lastModified"));
+        var _model = getModelForResult(result);
         model.Add(new SearchResult
         {
           Title = result.Get("title"),
           Id = result.Get("id"),
           Type = result.Get("type"),
           Url = result.Get("url"),
+          ModelAsJson = result.Get("model"),
           HasPlaatsen = Convert.ToBoolean(result.Get("hasplaatsen")),
           Intro = intro,
-          LastModified = DateTimeOffset.Parse(lastmodified.ToString())
+          LastModified = DateTimeOffset.Parse(lastmodified.ToString()),
+          Model = _model
         });
 
       }
       return model;
+    }
+
+    private static object getModelForResult(Document result)
+    {
+      string type = result.Get("type");
+      switch (type)
+      {
+        case "page":
+          return JsonConvert.DeserializeObject<ContentPageModel>(result.Get("model"));
+        case "place":
+          return JsonConvert.DeserializeObject<PlaatsPageModel>(result.Get("model"));
+        case "image":
+          return JsonConvert.DeserializeObject<ImageModel>(result.Get("model"));
+        case "reaction":
+          return JsonConvert.DeserializeObject<ReactionModel>(result.Get("model"));
+      }
+
+      throw new ApplicationException("error getting searchresult type");
     }
   }
 
@@ -195,5 +209,6 @@ namespace Meldpunt.Services
     public static string Page = "page";
     public static string Place = "place";
     public static string Image = "image";
+    public static string Reaction = "reaction";
   }
 }
