@@ -271,11 +271,11 @@ h3 {
   overflow: hidden;
 }
 
-  .list-item.unapproved {
+  .list-item .unapproved {
     border-left: 5px solid red;
   }
 
-  .list-item.approved {
+  .list-item .approved {
     border-left: 5px solid green;
   }
 
@@ -303,6 +303,7 @@ h3 {
   float: left;
 }
 
+.list-item .hasAlert,
 .list-item .hasplaatsen {
   width: 10%;
 }
@@ -353,6 +354,11 @@ h3 {
   width: 20%;
 }
 
+.list-item .date-created {
+  text-align:right;
+  width:30%;
+}
+
 .subpages {
   border-left: 5px solid #efefef;
 }
@@ -385,4 +391,39 @@ h3 {
 
 .deleteform {
   display: inline-block;
+}
+
+.archive-tab {
+  border-bottom: 5px solid #17a2b8;
+  overflow: hidden;
+}
+.archive-tab.active {
+  border-color: #6c757d;
+}
+
+.archive-toggle {
+  margin-top: 10px;
+  position: relative;
+  bottom: -3px;
+}
+
+.inbox-button {
+  float: left;
+}
+
+.archive-button{
+  float:right;
+}
+
+  .archive-toggle .oi {
+    top: 3px;
+    margin-right:5px;
+  }
+
+.pagination{
+  margin-top:10px;
+}
+
+.pagination .btn{
+  margin-right: 5px;
 }

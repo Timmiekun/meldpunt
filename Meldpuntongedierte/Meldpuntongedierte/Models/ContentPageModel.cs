@@ -1,5 +1,6 @@
 ﻿using Lucene.Net.Documents;
 using Meldpunt.Services;
+using Newtonsoft.Json;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -23,8 +24,8 @@ namespace Meldpunt.Models
     public string Content { get; set; }
     public string SideContent { get; set; }
 
-   
-   
+
+
     public bool HasSublingMenu { get; set; }
 
     [Required]
@@ -51,7 +52,7 @@ namespace Meldpunt.Models
         string contentstring = Meldpunt.Utils.Utils.GetStringFromHTML(Content);
         string sideContentstring = Meldpunt.Utils.Utils.GetStringFromHTML(SideContent);
 
-        return string.Join(" ", new { Title, MetaTitle, UrlPart, Url, contentstring, sideContentstring });
+        return string.Join(" ", new[] { Title, MetaTitle, UrlPart, Url, contentstring, sideContentstring });
       }
     }
 
@@ -72,6 +73,11 @@ namespace Meldpunt.Models
       doc.Add(new Field("text", FullText, Field.Store.YES, Field.Index.ANALYZED));
       doc.Add(new Field("url", Url, Field.Store.YES, Field.Index.ANALYZED));
       doc.Add(new Field("all", "all", Field.Store.NO, Field.Index.ANALYZED));
+      doc.Add(new Field("archived", "false", Field.Store.NO, Field.Index.NOT_ANALYZED));
+
+      string modelAsJson = JsonConvert.SerializeObject(this);
+      doc.Add(new Field("model", modelAsJson, Field.Store.YES, Field.Index.NOT_ANALYZED));
+
       return doc;
     }
   }

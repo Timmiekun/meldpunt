@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Meldpunt.Services
+namespace Meldpunt.Services.Interfaces
 {
   public interface IContentPageService
   {

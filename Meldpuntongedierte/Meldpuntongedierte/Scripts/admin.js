@@ -8,7 +8,7 @@ $(function () {
     evt.preventDefault();
     let target = this.href;
 
-    if (confirm('Verwijderen? Zeker weten?'))
+    if (confirm('Zeker weten?'))
       window.location = target;
 
     return false;

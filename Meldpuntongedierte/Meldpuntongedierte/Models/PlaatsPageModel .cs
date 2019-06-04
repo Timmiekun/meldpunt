@@ -1,6 +1,7 @@
 ﻿using Lucene.Net.Documents;
 using Meldpunt.Services;
 using Meldpunt.Utils;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -38,7 +39,8 @@ namespace Meldpunt.Models
 
     public string PlaatsenAsString
     {
-      get {
+      get
+      {
         if (_plaatsen == null)
           return "";
 
@@ -61,7 +63,7 @@ namespace Meldpunt.Models
       {
         string contentstring = Meldpunt.Utils.Utils.GetStringFromHTML(Content);
 
-        return string.Join(" ", new { Gemeentenaam, MetaTitle, MetaDescription, PlaatsenAsString, contentstring });
+        return string.Join(" ", new[] { Gemeentenaam, MetaTitle, MetaDescription, PlaatsenAsString, contentstring });
       }
     }
 
@@ -79,6 +81,11 @@ namespace Meldpunt.Models
       doc.Add(new Field("text", FullText, Field.Store.YES, Field.Index.ANALYZED));
       doc.Add(new Field("url", Url, Field.Store.YES, Field.Index.ANALYZED));
       doc.Add(new Field("all", "all", Field.Store.NO, Field.Index.ANALYZED));
+      doc.Add(new Field("archived", "false", Field.Store.NO, Field.Index.NOT_ANALYZED));
+
+      string modelAsJson = JsonConvert.SerializeObject(this);
+      doc.Add(new Field("model", modelAsJson, Field.Store.YES, Field.Index.NOT_ANALYZED));
+
       return doc;
     }
   }

@@ -1,12 +1,11 @@
 ﻿using Meldpunt.ActionFilters;
 using Meldpunt.Models;
 using Meldpunt.Services;
+using Meldpunt.Services.Interfaces;
 using Meldpunt.Utils;
 using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
@@ -28,9 +27,19 @@ namespace Meldpunt.Controllers
     }
 
     [Route("reactions")]
-    public ActionResult Reactions()
+    public ActionResult Reactions(string q, string archived = "false", string sort = "date", bool sortDesc = true)
     {
-      return View(db.Reactions.OrderByDescending(r => r.Created));
+      var inboxResults = searchService.Search(q, SearchTypes.Reaction, sort: sort, sortAsc: sortDesc, archived: "false");
+
+      var archivedResults = searchService.Search(q, SearchTypes.Reaction, sort: sort, sortAsc: sortDesc, archived: "true");
+
+      ViewBag.InboxTotal = inboxResults.Total;
+      ViewBag.ArchivedTotal = archivedResults.Total;
+
+      if (archived == "false")
+        return View(inboxResults);
+
+      return View(archivedResults);
     }
 
     [Route("editreaction/{id}")]
@@ -46,11 +55,28 @@ namespace Meldpunt.Controllers
       var reaction = db.Reactions.Find(id);
 
       reaction.Approved = DateTimeOffset.Now;
+      reaction.Archived = DateTimeOffset.Now;
       db.Entry(reaction).State = EntityState.Modified;
       db.SaveChanges();
 
+      searchService.IndexDocument(reaction.ToLuceneDocument(), id.ToString());
+
       // remove outputcache so the reaction shows on the site
       Response.RemoveOutputCacheItem("/ongediertebestrijding-" + reaction.GemeenteNaam.XmlSafe());
+
+      return RedirectToAction("Edit", new { id = id });
+    }
+
+    [Route("archiveaction/{id}")]
+    public ActionResult Archive(Guid id)
+    {
+      var reaction = db.Reactions.Find(id);
+
+      reaction.Archived = DateTimeOffset.Now;
+      db.Entry(reaction).State = EntityState.Modified;
+      db.SaveChanges();
+
+      searchService.IndexDocument(reaction.ToLuceneDocument(), id.ToString());
 
       return RedirectToAction("Edit", new { id = id });
     }
@@ -62,10 +88,13 @@ namespace Meldpunt.Controllers
       db.Reactions.Remove(reaction);
       db.SaveChanges();
 
-      if (reaction.AllowDisplayOnSite) { 
+      if (reaction.AllowDisplayOnSite)
+      {
         // remove outputcache
         Response.RemoveOutputCacheItem("/ongediertebestrijding-" + reaction.GemeenteNaam.XmlSafe());
       }
+
+      searchService.DeleteDocument(id.ToString());
 
       return RedirectToAction("Reactions");
     }
