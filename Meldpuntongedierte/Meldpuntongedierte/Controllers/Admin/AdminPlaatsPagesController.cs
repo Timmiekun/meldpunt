@@ -60,11 +60,12 @@ namespace Meldpunt.Controllers
     {
       plaatsPageService.UpdateOrInsert(p);
 
-      searchService.IndexDocument(p.ToLuceneDocument(),p.Id.ToString());
+      searchService.IndexDocument(p.ToLuceneDocument(), p.Id.ToString());
 
       Response.RemoveOutputCacheItem(p.Url);
 
-      foreach (string plaats in p.Plaatsen) { 
+      foreach (string plaats in p.Plaatsen)
+      {
         Response.RemoveOutputCacheItem("/ongediertebestrijding-" + plaats.XmlSafe());
       }
 
@@ -86,6 +87,8 @@ namespace Meldpunt.Controllers
       searchService.DeleteDocument(id.ToString());
 
       DeleteRouteById(id);
+
+      // TODO: remove from cache
 
       return Redirect("/admin/places");
     }

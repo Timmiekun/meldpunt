@@ -2,7 +2,7 @@
 @using Meldpunt.Utils;
 @model ContentPageModel
 @{
-  ViewBag.Title = "Admin";
+  ViewBag.Title = Model.Title + " - Admin";
   Layout = "~/Views/Shared/_Admin.cshtml";
 
   var subPages = ViewBag.SubPages as IEnumerable<ContentPageModel>;

@@ -4,7 +4,7 @@
 @{
   /**/
 
-  ViewBag.Title = "Admin";
+  ViewBag.Title = "Pagina's - Admin";
   var locations = ViewBag.Locations;
   Layout = "~/Views/Shared/_Admin.cshtml";
 }
@@ -17,6 +17,7 @@
 <p>@Model.Total pagina's</p>
 
 @Html.Partial("Pagination")
+
 <div class="list-item list-item-header">
   <div class="title">
     @if (Request["sort"] == "title" && Request["sortDesc"] != "false")
@@ -61,5 +62,7 @@
     <div class="lastmod">@page.LastModified.ToString("dd MMM yyy hh:mm")</div>
   </div>
 }
+
+@Html.Partial("Pagination")
 
 <a href="/admin/newpage" class="btn btn-info new-button js-new-page">Nieuwe pagina</a>

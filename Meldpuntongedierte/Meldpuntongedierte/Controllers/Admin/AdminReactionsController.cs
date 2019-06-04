@@ -27,11 +27,19 @@ namespace Meldpunt.Controllers
     }
 
     [Route("reactions")]
-    public ActionResult Reactions(string q, string archived = "false")
+    public ActionResult Reactions(string q, string archived = "false", string sort = "date", bool sortDesc = true)
     {
-      var results = searchService.Search(q, SearchTypes.Reaction, sort: "date", archived: archived);
+      var inboxResults = searchService.Search(q, SearchTypes.Reaction, sort: sort, sortAsc: sortDesc, archived: "false");
 
-      return View(results);
+      var archivedResults = searchService.Search(q, SearchTypes.Reaction, sort: sort, sortAsc: sortDesc, archived: "true");
+
+      ViewBag.InboxTotal = inboxResults.Total;
+      ViewBag.ArchivedTotal = archivedResults.Total;
+
+      if (archived == "false")
+        return View(inboxResults);
+
+      return View(archivedResults);
     }
 
     [Route("editreaction/{id}")]
@@ -82,6 +90,8 @@ namespace Meldpunt.Controllers
         // remove outputcache
         Response.RemoveOutputCacheItem("/ongediertebestrijding-" + reaction.GemeenteNaam.XmlSafe());
       }
+
+      searchService.DeleteDocument(id.ToString());
 
       return RedirectToAction("Reactions");
     }
