@@ -49,7 +49,7 @@ namespace Meldpunt.Controllers
     {
       return View();
     }
-   
+
 
     #region redirects
     [Route("Redirects")]
@@ -66,10 +66,21 @@ namespace Meldpunt.Controllers
       if (!ModelState.IsValid)
         return View(redirectsService.GetAllRedirects());
 
+      var existingRoute = RouteTable.Routes
+        .OfType<Route>()
+        .Select(r => (Route)r)
+        .FirstOrDefault(r => r.Url == redirect.From.TrimStart('/'));
+
+      if (existingRoute != null)
+      {
+        ModelState.AddModelError("alreadyExists", "Deze url wordt gebruikt door een bestaande pagina");
+        return View(redirectsService.GetAllRedirects());
+      }
+
       var existingRedirect = redirectsService.FindByFrom(redirect.From);
       if (existingRedirect != null && existingRedirect.Id != redirect.Id)
       {
-        ModelState.AddModelError("alreadyExists", "Er bestaat al een redirect van deze url");
+        ModelState.AddModelError("alreadyExists", "Er bestaat al een redirect van deze url (" + redirect.From + ")");
         return View(redirectsService.GetAllRedirects());
       }
 
