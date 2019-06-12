@@ -26,7 +26,7 @@ namespace Meldpunt.Models
       doc.Add(new Field("id", Name.XmlSafe(), Field.Store.YES, Field.Index.NOT_ANALYZED));
       doc.Add(new Field("title", Name, Field.Store.YES, Field.Index.ANALYZED));
       doc.Add(new Field("sortableTitle", Name.ToLower(), Field.Store.YES, Field.Index.NOT_ANALYZED));
-      doc.Add(new Field("lastModified", DateTools.DateToString(DateTime.MinValue, DateTools.Resolution.SECOND), Field.Store.YES, Field.Index.ANALYZED));
+      doc.Add(new Field("lastModified", DateTools.DateToString(DateTime.UtcNow, DateTools.Resolution.SECOND), Field.Store.YES, Field.Index.ANALYZED));
       doc.Add(new Field("text", Name, Field.Store.YES, Field.Index.ANALYZED));
       doc.Add(new Field("all", "all", Field.Store.NO, Field.Index.NOT_ANALYZED));
       doc.Add(new Field("archived", "false", Field.Store.NO, Field.Index.NOT_ANALYZED));
