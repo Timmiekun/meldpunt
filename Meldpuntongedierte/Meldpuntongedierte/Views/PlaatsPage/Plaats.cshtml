@@ -126,8 +126,10 @@
     @Html.Raw(Model.Content.Content)
   </div>
 
-  <h2>Indeling</h2>
-  <p>Onder de gemeente @Model.Content.Gemeentenaam vallen de plaatsen: @String.Join(", ", Model.Content.Plaatsen)</p>
+  if(Model.Content.Plaatsen.Any() && Model.Content.Plaatsen.Count() > 0) { 
+    <h2>Indeling</h2>
+    <p>Onder de gemeente @Model.Content.Gemeentenaam vallen de plaatsen: @String.Join(", ", Model.Content.Plaatsen)</p>
+  }
 }
 else
 {
