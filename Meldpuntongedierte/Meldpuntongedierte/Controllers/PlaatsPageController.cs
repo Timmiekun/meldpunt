@@ -8,6 +8,7 @@ using System.Net;
 using Newtonsoft.Json;
 using System.Configuration;
 using Meldpunt.Services.Interfaces;
+using Meldpunt.Services;
 
 namespace Meldpunt.Controllers
 {
@@ -16,11 +17,13 @@ namespace Meldpunt.Controllers
   {
 
     private IPlaatsPageService plaatsPageService;
+    private ISearchService searchService;
     private MeldpuntContext db;
 
-    public PlaatsPageController(IPlaatsPageService _plaatsPageService, MeldpuntContext _db)
+    public PlaatsPageController(IPlaatsPageService _plaatsPageService, MeldpuntContext _db, ISearchService _searchService)
     {
       plaatsPageService = _plaatsPageService;
+      searchService = _searchService;
       db = _db;
     }
 
@@ -57,6 +60,9 @@ namespace Meldpunt.Controllers
             reaction.Created = DateTimeOffset.Now;
             db.Reactions.Add(reaction);
             db.SaveChanges();
+
+            searchService.IndexDocument(reaction.ToLuceneDocument(), reaction.Id.ToString());
+
             TempData["reactionsuccess"] = true;
             Response.RemoveOutputCacheItem(Request.Path);
           }

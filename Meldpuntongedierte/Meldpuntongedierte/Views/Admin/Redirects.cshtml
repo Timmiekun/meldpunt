@@ -24,7 +24,7 @@
   <div class="action">Actie</div>
 </div>
 
-@foreach (RedirectModel r in Model)
+@foreach (RedirectModel r in Model.OrderBy(r=> r.From))
 {
   <div class="list-item" id="@r.Id">
     <form method="post">
@@ -36,6 +36,13 @@
         <a class="btn btn-danger" data-action-confirm href="/admin/removeRedirect?id=@r.Id">Verwijderen</a>
       </div>
     </form>
+  </div>
+}
+
+@if (!ViewData.ModelState.IsValid)
+{
+  <div class="alert alert-warning">
+    @Html.ValidationSummary()
   </div>
 }
 

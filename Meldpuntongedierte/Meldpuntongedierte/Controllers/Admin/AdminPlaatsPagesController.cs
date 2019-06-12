@@ -82,6 +82,8 @@ namespace Meldpunt.Controllers
     [Route("DeletePlaats/{id}")]
     public ActionResult DeletePlaats(Guid id)
     {
+      var plaatsToDelete = plaatsPageService.GetByIdUntracked(id);
+
       plaatsPageService.Delete(id);
 
       searchService.DeleteDocument(id.ToString());
@@ -89,6 +91,7 @@ namespace Meldpunt.Controllers
       DeleteRouteById(id);
 
       // TODO: remove from cache
+      Response.RemoveOutputCacheItem(plaatsToDelete.Url);
 
       return Redirect("/admin/places");
     }

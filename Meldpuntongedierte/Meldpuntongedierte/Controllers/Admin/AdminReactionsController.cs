@@ -64,7 +64,7 @@ namespace Meldpunt.Controllers
       // remove outputcache so the reaction shows on the site
       Response.RemoveOutputCacheItem("/ongediertebestrijding-" + reaction.GemeenteNaam.XmlSafe());
 
-      return RedirectToAction("Edit", new { id = id });
+      return RedirectToAction("Reactions");
     }
 
     [Route("archiveaction/{id}")]
@@ -78,7 +78,7 @@ namespace Meldpunt.Controllers
 
       searchService.IndexDocument(reaction.ToLuceneDocument(), id.ToString());
 
-      return RedirectToAction("Edit", new { id = id });
+      return RedirectToAction("Reactions");
     }
 
     [Route("deletereaction/{id}")]

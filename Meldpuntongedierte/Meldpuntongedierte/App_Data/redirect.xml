@@ -152,4 +152,14 @@
     <from>/plaagdierengids/muizen/muizenbestrijding/muizenbestrijding-voor-bedrijven</from>
     <to>/muizen/muizenbestrijding/op-de-werkplek</to>
   </redirect>
+  <redirect id="bb0da0f2-7a35-4027-8bbd-be884f95e826" lastmodified="04-06-2019 06:14" created="04-06-2019 06:14">
+    <from>/ongediertebestrijding-binnenmaas</from>
+    <to>/ongediertebestrijding-hoeksche-waard</to>
+  </redirect>
+  <redirect id="400cd151-af25-46c9-b644-7d7169345c5e" lastmodified="04-06-2019 06:25" created="04-06-2019 06:25">
+    <from>
+    </from>
+    <to>
+    </to>
+  </redirect>
 </redirects>
