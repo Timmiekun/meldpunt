@@ -40,7 +40,9 @@ namespace Meldpunt
         );
       }
 
-      foreach (var plaatsPage in plaatsPageService.GetAllPlaatsModels())
+      var allPlaatsPageModels = plaatsPageService.GetAllPlaatsModels().ToList();
+
+      foreach (var plaatsPage in allPlaatsPageModels)
       {
         // gemeente zelf
         routes.MapRoute(
@@ -48,14 +50,25 @@ namespace Meldpunt
              plaatsPage.Url.TrimStart('/'), // URL with parameters
              new { controller = "PlaatsPage", action = "GetPlace", guid = plaatsPage.Id } // Parameter defaults
          );
-
+  
         foreach (var plaats in plaatsPage.Plaatsen.Where(p => !String.IsNullOrWhiteSpace(p)))
         {
-          routes.MapRoute(
-              plaatsPage.Id.ToString() + plaats.XmlSafe(), // Route name
-              "ongediertebestrijding-" + plaats.XmlSafe(), // URL with parameters
-              new { controller = "PlaatsPage", action = "GetPlace", guid = plaatsPage.Id } // Parameter defaults
-          );
+          if (!allPlaatsPageModels.Any(pm => pm.Gemeentenaam.XmlSafe() == plaats.XmlSafe()))
+          {
+            routes.MapRoute(
+                plaatsPage.Id.ToString() + plaats.XmlSafe(), // Route name
+                "ongediertebestrijding-" + plaats.XmlSafe(), // URL with parameters
+                new { controller = "PlaatsPage", action = "GetPlace", guid = plaatsPage.Id } // Parameter defaults
+            );
+          }
+          else
+          {
+            routes.MapRoute(
+               plaatsPage.Id.ToString() + plaats.XmlSafe(), // Route name
+               "ongediertebestrijding-" + plaatsPage.Gemeentenaam.XmlSafe() + "-" + plaats.XmlSafe(), // URL with parameters
+               new { controller = "PlaatsPage", action = "GetPlace", guid = plaatsPage.Id } // Parameter defaults
+           );
+          }
         }
       }
 
