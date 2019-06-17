@@ -132,6 +132,7 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Controllers\Admin\AdminBlogController.cs" />
+    <Compile Include="Controllers\Admin\AdminRedirectController.cs" />
     <Compile Include="Controllers\Admin\BasePagesController.cs" />
     <Compile Include="Controllers\Admin\AdminPlaatsPagesController.cs" />
     <Compile Include="Controllers\Admin\AdminReactionsController.cs" />
