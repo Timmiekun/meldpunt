@@ -353,7 +353,7 @@
     <Content Include="Views\Home\Disqus.cshtml" />
     <Content Include="Views\Admin\AdminPages\Pages.cshtml" />
     <Content Include="Views\Admin\AdminPlaatsPages\Places.cshtml" />
-    <Content Include="Views\Admin\Redirects.cshtml" />
+    <Content Include="Views\Admin\AdminRedirect\Redirects.cshtml" />
     <Content Include="Views\Admin\Images.cshtml" />
     <Content Include="Views\Admin\Settings.cshtml" />
     <Content Include="Views\Shared\Modal.cshtml" />
@@ -370,6 +370,7 @@
     <Content Include="Views\PlaatsPage\ReactionForm.cshtml" />
     <Content Include="Views\Admin\AdminReactions\Edit.cshtml" />
     <Content Include="Views\Admin\AdminReactions\Reactions.cshtml" />
+    <Content Include="Views\Home\Cookie.cshtml" />
     <None Include="Volksgezondheid.pdf" />
     <None Include="Web.azure.config">
       <DependentUpon>Web.config</DependentUpon>
