@@ -1,4 +1,14 @@
 $(function () {
+  $("#SenderDescription")[0].oninvalid = function () {  
+      let minLength = this.getAttribute("minlength");
+      this.setCustomValidity("Gebruik minimaal " + minLength + " tekens");
+  };
+
+  // reset customvalidity stil buggy on chrome
+  // https://stackoverflow.com/questions/14043589/html5-oninvalid-doesnt-work-after-fixed-the-input-field/30136146#30136146
+  $("#SenderDescription")[0].oninput = function () {    
+      this.setCustomValidity("");      
+  };
 
   $("[data-action=open-toggle]").on('click', function (evt) {
     evt.preventDefault();

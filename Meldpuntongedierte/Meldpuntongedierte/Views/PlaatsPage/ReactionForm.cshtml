@@ -27,7 +27,7 @@
 
     <div class="form-group">
       <label for="SenderDescription">Geef een korte omschrijving van het probleem (diersoort en locatie)</label>
-      @Html.TextAreaFor(m => m.SenderDescription, new { @class = "form-field" })
+      @Html.TextAreaFor(m => m.SenderDescription, new { @class = "form-field", minlength = 20 })
       <div class="tooltip">
         <div class="icon">?</div>
         <div class="tooltip-content">
