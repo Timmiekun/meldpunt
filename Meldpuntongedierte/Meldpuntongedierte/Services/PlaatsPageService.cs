@@ -44,6 +44,7 @@ namespace Meldpunt.Services
       if (existingModel == null)
       {
         pageToSave.LastModified = DateTimeOffset.Now;
+        pageToSave.Published = DateTimeOffset.Now;
         db.Entry(pageToSave).State = EntityState.Modified;
         pageToSave.UrlPart = pageToSave.Gemeentenaam.XmlSafe();
         db.PlaatsPages.Add(pageToSave);

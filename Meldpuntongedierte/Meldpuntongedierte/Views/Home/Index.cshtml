@@ -11,17 +11,24 @@
 @section SD{
   <script type="application/ld+json">
     {
-    "@("@context")": "http://schema.org/",
-    "@("@type")": "Article",
-    "dateModified" : "@Model.LastModified.Value.ToString("yyyy-MM-dd")",
-    @if (Model.Published.HasValue)
-    {
-      <text>"datePublished" : "@Model.Published.Value.ToString("yyyy-MM-dd")",</text>
-    }
-    "headline": "@Model.MetaDescription"
-    @if (!String.IsNullOrEmpty(Model.Image)) {
-        <text>,"image" : "https://www.meldpuntongedierte.nl@(Model.Image.Replace("\\","/"))@Html.Raw("&width=700")"</text>
+    <script type="application/ld+json">
+      {
+      "@("@context")": "http://schema.org/",
+      "@("@type")": "Article",
+      @if (Model.LastModified.HasValue)
+      {
+        <text>"dateModified" : "@Model.LastModified.Value.ToString("yyyy-MM-dd")",</text>
       }
+      @if (Model.Published.HasValue)
+      {
+        <text>"datePublished" : "@Model.Published.Value.ToString("yyyy-MM-dd")",</text>
+      }
+      "headline": "@Model.MetaDescription",
+      "author" : "Meldpunt Ongedierte",
+      "publisher" : "Meldpunt Ongedierte",
+      
+      }
+    </script>
     }
   </script>
 }

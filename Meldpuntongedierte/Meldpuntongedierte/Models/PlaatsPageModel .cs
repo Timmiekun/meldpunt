@@ -18,6 +18,13 @@ namespace Meldpunt.Models
     public DateTimeOffset? Published { get; set; }
     public string MetaTitle { get; set; }
     public string MetaDescription { get; set; }
+
+    [NotMapped]
+    public string HeadLine {
+      get {
+        return MetaDescription.TruncateAtWord(100);
+      }
+    }
     public string PhoneNumber { get; set; }
     public string Content { get; set; }
 
