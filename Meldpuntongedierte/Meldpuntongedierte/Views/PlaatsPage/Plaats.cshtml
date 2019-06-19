@@ -35,7 +35,7 @@
   <script type="application/ld+json">
     {
     "@("@context")": "http://schema.org/",
-    "@("@type"): "Article",
+    "@("@type")": "Article",
     @if (Model.Content.LastModified.HasValue)
     {
       <text>"dateModified" : "@Model.Content.LastModified.Value.ToString("yyyy-MM-dd")",</text>
