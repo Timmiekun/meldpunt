@@ -1,7 +1,6 @@
-﻿using ImageResizer;
-using System;
+﻿using System;
 
-namespace Meldpunt.Models
+namespace Meldpunt.ViewModels
 {
 
   public class RecaptchRequestModel

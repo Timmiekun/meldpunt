@@ -38,7 +38,7 @@
     "@("@type")": "Article",
     "dateModified" : "@Model.Content.LastModified.Value.ToString("yyyy-MM-dd")",
     "datePublished" : "@Model.Content.Published.Value.ToString("yyyy-MM-dd")",   
-    "headline": "@Model.Content.HeadLine",
+    "headline": "@Model.Content.MetaDescription.TruncateAtWord(110)",
     "author" : "Meldpunt Ongedierte",
     "publisher" : "Meldpunt Ongedierte",
     "mainEntityOfPage" : "https://meldpuntongedierte.nl@(Model.Content.Url)"
@@ -123,7 +123,7 @@
     @Html.Raw(Model.Content.Content)
   </article>
 
-  if (Model.Content.Plaatsen.Any() && Model.Content.Plaatsen.Count() > 0)
+  if (Model.Content.Plaatsen.Any() && Model.Content.Plaatsen.Count() > 1)
   {
     <h2>Indeling</h2>
     <p>Onder de gemeente @Model.Content.Gemeentenaam vallen de plaatsen: @String.Join(", ", Model.Content.Plaatsen)</p>

@@ -10,6 +10,7 @@
 <h1>Gemeente @Model.Gemeentenaam</h1>
 
 <a class="viewPage btn btn-info" href="@Model.Url" target="_blank">Pagina bekijken</a>
+<button class="btn btn-info" onclick="$('#sumbitform').click()">Opslaan</button>
 
 @if (Model.Plaatsen.Count > 0)
 {
@@ -17,11 +18,21 @@
 }
 
 
-<form method="post">
+<form method="post" id="plaatspageform">
 
   <div class="field">
     <label for="MetaDescription">Meta description</label>
     <textarea id="MetaDescription" class="form-control" name="MetaDescription" type="text">@Model.MetaDescription</textarea>
+  </div>
+
+  <div class="field">
+    <label for="Headline">Headline</label>
+    @Html.EditorFor(m => m.Headline, new { htmlAttributes = new { maxLength = 110, @class = "form-control" } })
+  </div>
+
+  <div class="field">
+    <label for="Image">Image</label>
+    @Html.EditorFor(m => m.Image, new { htmlAttributes = new { maxLength = 110, @class = "form-control" } })
   </div>
 
   <div class="field">
@@ -65,7 +76,7 @@
   @Html.HiddenFor(p => p.PlaatsenAsString)
   @Html.HiddenFor(p => p.Id)
   @Html.HiddenFor(p => p.Gemeentenaam)
-  <input type="submit" class="btn btn-info" value="opslaan" />
+  <input id="sumbitform" type="submit" class="btn btn-info" value="opslaan" />
 
   <a href="/admin/deleteplaats/@Model.Id" class="btn btn-danger" data-action-confirm>Verwijderen</a>
 </form>

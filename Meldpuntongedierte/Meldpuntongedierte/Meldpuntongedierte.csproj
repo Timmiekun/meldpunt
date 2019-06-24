@@ -138,6 +138,7 @@
     <Compile Include="Controllers\Admin\AdminReactionsController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\PlaatsPageController.cs" />
+    <Compile Include="CustomAttributes\JsonStoreAttribute.cs" />
     <Compile Include="CustomViewEngine.cs" />
     <Compile Include="Controllers\Admin\AdminPagesController.cs" />
     <Compile Include="Controllers\Admin\ImagesController.cs" />
@@ -204,9 +205,14 @@
     <Compile Include="Migrations\201906031430232_add_archive_to_reaction.Designer.cs">
       <DependentUpon>201906031430232_add_archive_to_reaction.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906240820238_add_components_to_pages.cs" />
+    <Compile Include="Migrations\201906240820238_add_components_to_pages.Designer.cs">
+      <DependentUpon>201906240820238_add_components_to_pages.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\helpers\JsonComponent.cs" />
     <Compile Include="Models\RouteableItem.cs" />
-    <Compile Include="Models\RecaptchRequestModel.cs" />
+    <Compile Include="ViewModels\RecaptchRequestModel.cs" />
     <Compile Include="Models\PlaatsPageModel .cs" />
     <Compile Include="Models\ReactionModel.cs" />
     <Compile Include="Models\IndexableItem.cs" />
@@ -218,7 +224,6 @@
     <Compile Include="Models\RedirectModel.cs" />
     <Compile Include="Models\SearchResult.cs" />
     <Compile Include="Models\SearchResultModel.cs" />
-    <Compile Include="Models\MailModel.cs" />
     <Compile Include="Services\ContentPageService.cs" />
     <Compile Include="Services\Interfaces\IReactionService.cs" />
     <Compile Include="Services\Interfaces\IImageService.cs" />
@@ -418,6 +423,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906031430232_add_archive_to_reaction.resx">
       <DependentUpon>201906031430232_add_archive_to_reaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906240820238_add_components_to_pages.resx">
+      <DependentUpon>201906240820238_add_components_to_pages.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

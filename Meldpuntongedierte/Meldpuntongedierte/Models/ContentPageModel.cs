@@ -44,6 +44,11 @@ namespace Meldpunt.Models
     public bool InHomeMenu { get; set; }
     public string MetaDescription { get; set; }
 
+    /// <summary>
+    /// Used to store all the serialized jsonstore components
+    /// </summary>
+    public string Components { get; set; }
+
     [NotMapped]
     public string FullText
     {
