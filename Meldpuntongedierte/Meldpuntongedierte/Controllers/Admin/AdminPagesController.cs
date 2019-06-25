@@ -164,9 +164,6 @@ namespace Meldpunt.Controllers
         var homepage = pageService.GetPageByUrlPart("home");
         page.ParentId = homepage.Id;
       }
-
-
-      page.Id = Guid.NewGuid();
       page.Published = DateTimeOffset.Now;
       db.Entry(page).State = EntityState.Modified;
       db.ContentPages.Add(page);

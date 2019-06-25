@@ -209,9 +209,15 @@
     <Compile Include="Migrations\201906240820238_add_components_to_pages.Designer.cs">
       <DependentUpon>201906240820238_add_components_to_pages.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906250747140_added_basepagemodel.cs" />
+    <Compile Include="Migrations\201906250747140_added_basepagemodel.Designer.cs">
+      <DependentUpon>201906250747140_added_basepagemodel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\helpers\JsonComponent.cs" />
+    <Compile Include="Models\BasePageModel.cs" />
     <Compile Include="Models\RouteableItem.cs" />
+    <Compile Include="Services\BasePageService.cs" />
     <Compile Include="ViewModels\RecaptchRequestModel.cs" />
     <Compile Include="Models\PlaatsPageModel .cs" />
     <Compile Include="Models\ReactionModel.cs" />
@@ -426,6 +432,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906240820238_add_components_to_pages.resx">
       <DependentUpon>201906240820238_add_components_to_pages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906250747140_added_basepagemodel.resx">
+      <DependentUpon>201906250747140_added_basepagemodel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

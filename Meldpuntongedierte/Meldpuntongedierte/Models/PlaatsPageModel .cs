@@ -10,30 +10,16 @@ using System.Linq;
 
 namespace Meldpunt.Models
 {
-  public class PlaatsPageModel : IndexableItem
+  public class PlaatsPageModel : BasePageModel, IndexableItem
   {
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public Guid Id { get; set; }
-    public string UrlPart { get; set; }
-    public string Gemeentenaam { get; set; }
-    public DateTimeOffset? Published { get; set; }
-    public string MetaTitle { get; set; }
-    public string MetaDescription { get; set; }
+    public string Gemeentenaam { get; set; } 
     public string PhoneNumber { get; set; }
-    public string Content { get; set; }
-
-    public DateTimeOffset? LastModified { get; set; }
 
     [JsonStore]
     public string Image { get; set; }
 
     [JsonStore]
-    public string Headline { get; set; }
-
-    /// <summary>
-    /// Used to store all the serialized jsonstore components
-    /// </summary>
-    public string Components { get; set; }
+    public string Headline { get; set; }    
 
 
     /// <summary>
@@ -77,8 +63,6 @@ namespace Meldpunt.Models
         return string.Join(" ", new[] { Gemeentenaam, MetaTitle, MetaDescription, PlaatsenAsString, contentstring });
       }
     }
-
-
 
     public Document ToLuceneDocument()
     {
