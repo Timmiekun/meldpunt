@@ -1,6 +1,6 @@
 ﻿using Lucene.Net.Documents;
 using Meldpunt.Models;
-using System;
+using Meldpunt.Models.helpers;
 using System.Collections.Generic;
 
 namespace Meldpunt.Services
@@ -11,7 +11,8 @@ namespace Meldpunt.Services
     void IndexDocument(Document doc, string id);
     void DeleteDocument(string id);
 
-    SearchResultModel Search(string q, string type = null, int page = 0, string sort = "title", bool sortAsc = true, string archived = "false");
+    SearchResultModel Search(string q, string type, int page = 0);
+    SearchResultModel Search(SearchRequestOptions options);
 
   }
 }

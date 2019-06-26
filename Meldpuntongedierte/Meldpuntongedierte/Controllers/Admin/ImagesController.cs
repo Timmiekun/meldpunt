@@ -1,5 +1,6 @@
 ﻿using Meldpunt.ActionFilters;
 using Meldpunt.Models;
+using Meldpunt.Models.helpers;
 using Meldpunt.Services;
 using Meldpunt.Services.Interfaces;
 using Meldpunt.Utils;
@@ -24,7 +25,7 @@ namespace Meldpunt.Controllers
     [Route("images")]
     public ActionResult Images(string q, int page = 0)
     {
-      var model = searchService.Search(q, SearchTypes.Image, page);
+      var model = searchService.Search(new SearchRequestOptions() { Q = q, Page = page, Filters = { { "type", SearchTypes.Image } } });
       return View("~/Views/Admin/Images.cshtml", model);
     }
 

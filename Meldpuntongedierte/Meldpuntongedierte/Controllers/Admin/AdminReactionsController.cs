@@ -1,5 +1,6 @@
 ﻿using Meldpunt.ActionFilters;
 using Meldpunt.Models;
+using Meldpunt.Models.helpers;
 using Meldpunt.Services;
 using Meldpunt.Services.Interfaces;
 using Meldpunt.Utils;
@@ -29,9 +30,9 @@ namespace Meldpunt.Controllers
     [Route("reactions")]
     public ActionResult Reactions(string q, string archived = "false", string sort = "date", bool sortDesc = true)
     {
-      var inboxResults = searchService.Search(q, SearchTypes.Reaction, sort: sort, sortAsc: sortDesc, archived: "false");
+      var inboxResults = searchService.Search(new SearchRequestOptions() { Q = q, Sort = sort, SortDesc = sortDesc, Filters = { { "archived", "false" }, { "type", "reaction" } } });
 
-      var archivedResults = searchService.Search(q, SearchTypes.Reaction, sort: sort, sortAsc: sortDesc, archived: "true");
+      var archivedResults = searchService.Search(new SearchRequestOptions() { Q = q, Sort = sort, SortDesc = sortDesc, Filters = { { "archived", "true" }, { "type", "reaction" } } });
 
       ViewBag.InboxTotal = inboxResults.Total;
       ViewBag.ArchivedTotal = archivedResults.Total;

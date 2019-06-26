@@ -217,9 +217,14 @@
     <Compile Include="Migrations\201906261423334_add_plaatsnaam_to_plaatspage.Designer.cs">
       <DependentUpon>201906261423334_add_plaatsnaam_to_plaatspage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906262035218_required_lastmodified.cs" />
+    <Compile Include="Migrations\201906262035218_required_lastmodified.Designer.cs">
+      <DependentUpon>201906262035218_required_lastmodified.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\helpers\JsonComponent.cs" />
     <Compile Include="Models\BasePageModel.cs" />
+    <Compile Include="Models\helpers\SearchRequestOptions.cs" />
     <Compile Include="Models\RouteableItem.cs" />
     <Compile Include="Services\BasePageService.cs" />
     <Compile Include="ViewModels\RecaptchRequestModel.cs" />
@@ -442,6 +447,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906261423334_add_plaatsnaam_to_plaatspage.resx">
       <DependentUpon>201906261423334_add_plaatsnaam_to_plaatspage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906262035218_required_lastmodified.resx">
+      <DependentUpon>201906262035218_required_lastmodified.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

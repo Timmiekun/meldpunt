@@ -1,5 +1,6 @@
 ﻿using Meldpunt.ActionFilters;
 using Meldpunt.Models;
+using Meldpunt.Models.helpers;
 using Meldpunt.Services;
 using Meldpunt.Services.Interfaces;
 using Meldpunt.Utils;
@@ -39,7 +40,13 @@ namespace Meldpunt.Controllers
     [Route("Pages")]
     public ActionResult Pages(string q, int page = 0)
     {
-      return View(searchService.Search(q, SearchTypes.Page, page));
+      var options = new SearchRequestOptions()
+      {
+        Q = q,
+        Page = page,
+        Filters = new Dictionary<string, string> { { "type", SearchTypes.Page } }
+      };
+      return View(searchService.Search(options));
     }
 
     [Route("EditPage/{id}")]

@@ -5,6 +5,7 @@ using Lucene.Net.QueryParsers;
 using Lucene.Net.Search;
 using Lucene.Net.Store;
 using Meldpunt.Models;
+using Meldpunt.Models.helpers;
 using Meldpunt.Utils;
 using Newtonsoft.Json;
 using System;
@@ -73,26 +74,33 @@ namespace Meldpunt.Services
       }
     }
 
-    public SearchResultModel Search(string q, string type = null, int page = 0, string sort = "title", bool sortDesc = true, string archived = "")
+    public SearchResultModel Search(string q, string type, int page = 0)
+    {
+      var options = new SearchRequestOptions
+      {
+        Q = q,
+        Filters = { { "type", type } },
+        Page = page
+      };
+
+      return Search(options);
+    }
+    public SearchResultModel Search(SearchRequestOptions options)
     {
       dir = FSDirectory.Open(indexPath);
       IndexSearcher searcher = new IndexSearcher(dir);
       BooleanQuery bq = new BooleanQuery();
       int resultcount = 2000;
 
-      if (!string.IsNullOrWhiteSpace(type))
-      {
-        QueryParser typeParser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, "type", new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30));
-        Query typeQuery = typeParser.Parse(type);
-        bq.Add(typeQuery, Occur.MUST);
+      foreach(var filter in options.Filters) { 
+        if (!string.IsNullOrWhiteSpace(filter.Value))
+        {
+          QueryParser filterParser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, filter.Key, new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30));
+          Query filterQuery = filterParser.Parse(filter.Value);
+          bq.Add(filterQuery, Occur.MUST);
+        }
       }
-
-      if (!string.IsNullOrWhiteSpace(archived))
-      {
-        QueryParser archivedParser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, "archived", new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30));
-        Query archivedQuery = archivedParser.Parse(archived);
-        bq.Add(archivedQuery, Occur.MUST);
-      }
+      string q = options.Q;
 
       if (String.IsNullOrWhiteSpace(q))
       {
@@ -102,7 +110,6 @@ namespace Meldpunt.Services
       }
       else
       {
-
         // only one word? Then we can use wildcard
         if (q.Split(' ').Length == 1)
           q += "*";
@@ -118,12 +125,12 @@ namespace Meldpunt.Services
         bq.Add(titleQuery, Occur.SHOULD);
       }
 
-      Sort sorter = GetSorter(q, sort, sortDesc);
+      Sort sorter = GetSorter(q, options.Sort, options.SortDesc);
       TopDocs results = searcher.Search(bq, null, resultcount, sorter);
 
       var model = new SearchResultModel
       {
-        Results = docsToModel(searcher, results.ScoreDocs.Skip(page * SearchResultModel.PageSize).Take(SearchResultModel.PageSize)),
+        Results = docsToModel(searcher, results.ScoreDocs.Skip(options.Page * SearchResultModel.PageSize).Take(SearchResultModel.PageSize)),
         Total = results.TotalHits
       };
 

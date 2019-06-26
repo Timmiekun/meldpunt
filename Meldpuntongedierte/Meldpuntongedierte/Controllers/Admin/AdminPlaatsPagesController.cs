@@ -1,5 +1,6 @@
 ﻿using Meldpunt.ActionFilters;
 using Meldpunt.Models;
+using Meldpunt.Models.helpers;
 using Meldpunt.Services;
 using Meldpunt.Services.Interfaces;
 using Meldpunt.Utils;
@@ -36,9 +37,31 @@ namespace Meldpunt.Controllers
 
     #region places
     [Route("Places")]
-    public ActionResult Places(string q, int page = 0, string sort = "title", bool sortDesc = true)
+    public ActionResult Places(string q, int page = 0, string sort = "title", bool sortDesc = true, string showplaatsen = "false")
     {
-      return View(searchService.Search(q, SearchTypes.Place, page, sort, sortDesc));
+      var options = new SearchRequestOptions() {
+        Q = q,
+        Page = page,
+        Filters = new Dictionary<string, string> {
+          { "type", SearchTypes.Place },
+          { "isPlaats", "false" }
+        },
+        Sort = sort,
+        SortDesc = sortDesc
+      };
+
+      var gemeenteResults = searchService.Search(options);
+
+      options.Filters = new Dictionary<string, string> { { "type", SearchTypes.Place }, { "isPlaats", "true" } };
+      var plaatsResults = searchService.Search(options);
+
+      ViewBag.GemeenteTotal = gemeenteResults.Total;
+      ViewBag.PlaatsenTotal = plaatsResults.Total;
+
+      if (showplaatsen == "false")
+        return View(gemeenteResults);
+
+      return View(plaatsResults);
     }
 
     [HttpGet]

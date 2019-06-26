@@ -19,8 +19,8 @@ namespace Meldpunt.Controllers
     [Route("getSuggest")]
     public JsonResult getSuggest(string query)
     {
-      IEnumerable<SearchResult> suggests = searchService.Search(query).Results
-        .Where(r=> r.Type == SearchTypes.Page || r.Type == SearchTypes.Place)
+      IEnumerable<SearchResult> suggests = searchService.Search(query, null).Results
+        .Where(r => r.Type == SearchTypes.Page || r.Type == SearchTypes.Place)
         .Take(20);
 
       return Json(suggests, JsonRequestBehavior.AllowGet);
