@@ -148,7 +148,6 @@ namespace Meldpunt.Controllers
     public ActionResult NewPage()
     {
       ContentPageModel newPage = new ContentPageModel();
-      newPage.Title = "Nieuwe pagina";
       return View("editpage", newPage);
     }
 

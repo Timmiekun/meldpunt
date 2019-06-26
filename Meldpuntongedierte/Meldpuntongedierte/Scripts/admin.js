@@ -20,6 +20,14 @@ $(function () {
 
   $(".datepicker").datepicker({ dateFormat: 'dd-mm-yy' });
 
+  $("[data-action=update-url]").on('blur', function () {
+    let urlPart = $("input[name=UrlPart]");
+    if (!urlPart.val()) {
+      let url = encodeURIComponent(this.value.replace(/ /g, '-'));
+      urlPart.val(url.toLowerCase());
+    }
+  });
+
 });
 
 function readURL(input) {

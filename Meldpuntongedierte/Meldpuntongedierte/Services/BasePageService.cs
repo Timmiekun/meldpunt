@@ -9,7 +9,7 @@ namespace Meldpunt.Services
 {
   public class BasePageService
   {   
-    public string GetJsonComponentsAsJson(PlaatsPageModel pageToSave)
+    public string GetJsonComponentsAsJson(BasePageModel pageToSave)
     {
       var objProps = pageToSave.GetType().GetProperties().Where(p => p.GetCustomAttributes(typeof(JsonStoreAttribute), false).Length > 0);
       List<object> jsonObjs = new List<object>();
@@ -32,8 +32,11 @@ namespace Meldpunt.Services
       return jsonToSave;
     }
 
-    public void SetJsonstoreProperties(PlaatsPageModel model)
+    public void SetJsonstoreProperties(BasePageModel model)
     {
+      if (model.Components == null)
+        return;
+      
       // get jsoncomponents
       List<JsonComponent> jsonObjs = JsonConvert.DeserializeObject<List<JsonComponent>>(model.Components);
 

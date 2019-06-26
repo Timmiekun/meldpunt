@@ -14,7 +14,6 @@ namespace Meldpunt.Models
     /// </summary>
     public string UrlPart { get; set; }   
     public DateTimeOffset? Published { get; set; }
-
     public DateTimeOffset? LastModified { get; set; }
     public string MetaTitle { get; set; }
     public string MetaDescription { get; set; }   

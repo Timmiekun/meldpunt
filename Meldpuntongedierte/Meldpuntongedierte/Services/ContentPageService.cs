@@ -10,7 +10,7 @@ using System.Xml;
 
 namespace Meldpunt.Services
 {
-  public class ContentPageService : IContentPageService
+  public class ContentPageService : BasePageService, IContentPageService
   {
     private MeldpuntContext db;
 
@@ -27,7 +27,9 @@ namespace Meldpunt.Services
 
     public ContentPageModel GetPageById(Guid id)
     {
-      return db.ContentPages.Find(id);
+      var page = db.ContentPages.Find(id);
+      SetJsonstoreProperties(page);
+      return page;
     }
 
     public ContentPageModel GetByIdUntracked(Guid id)
@@ -73,12 +75,14 @@ namespace Meldpunt.Services
       return db.ContentPages.Where(p => p.ParentId == id);
     }
 
-
     public ContentPageModel SavePage(ContentPageModel pageToSave)
     {
       pageToSave.UrlPart = pageToSave.UrlPart.XmlSafe();
       pageToSave.Url = "/" + generateUrl(pageToSave);
       pageToSave.LastModified = DateTimeOffset.Now;
+
+      pageToSave.Components = GetJsonComponentsAsJson(pageToSave);
+
       db.Entry(pageToSave).State = EntityState.Modified;
       db.SaveChanges();
 
