@@ -48,9 +48,8 @@ namespace Meldpunt.Services
       if (existingModel == null)
       {
         pageToSave.Published = DateTimeOffset.Now;
-        pageToSave.Components = GetJsonComponentsAsJson(pageToSave);
         pageToSave.LastModified = DateTimeOffset.Now;
-        pageToSave.UrlPart = pageToSave.Gemeentenaam.XmlSafe();
+        pageToSave.Components = GetJsonComponentsAsJson(pageToSave);
 
         db.Entry(pageToSave).State = EntityState.Modified;
         db.PlaatsPages.Add(pageToSave);
@@ -61,7 +60,6 @@ namespace Meldpunt.Services
       {
         pageToSave.Components = GetJsonComponentsAsJson(pageToSave);
         pageToSave.LastModified = DateTimeOffset.Now;
-        pageToSave.UrlPart = pageToSave.UrlPart.XmlSafe();
 
         db.Entry(pageToSave).State = EntityState.Modified;
 
