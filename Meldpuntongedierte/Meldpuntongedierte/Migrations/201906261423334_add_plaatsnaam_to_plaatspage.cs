@@ -1,0 +1,18 @@
+namespace Meldpunt.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class add_plaatsnaam_to_plaatspage : DbMigration
+    {
+        public override void Up()
+        {
+            AddColumn("dbo.PlaatsPageModels", "PlaatsNaam", c => c.String());
+        }
+        
+        public override void Down()
+        {
+            DropColumn("dbo.PlaatsPageModels", "PlaatsNaam");
+        }
+    }
+}

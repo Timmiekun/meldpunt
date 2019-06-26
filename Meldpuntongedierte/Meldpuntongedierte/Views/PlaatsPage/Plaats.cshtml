@@ -60,14 +60,6 @@
   </div>
 }
 
-@*@if (Convert.ToBoolean(TempData["reactionsuccess"]))
-  {
-    <div class="reaction-recieved">
-      <h2>Bedankt!</h2>
-      <p>Bedankt voor uw melding. We nemen het in behandeling.</p>
-    </div>
-  }*@
-
 @if (!String.IsNullOrWhiteSpace(Model.Content.Content))
 {
   <h1 class="plaatsheader"><span class="pre-header">Meldpunt Ongediertebestrijding</span> @Model.Content.Gemeentenaam</h1>

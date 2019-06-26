@@ -213,6 +213,10 @@
     <Compile Include="Migrations\201906250747140_added_basepagemodel.Designer.cs">
       <DependentUpon>201906250747140_added_basepagemodel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906261423334_add_plaatsnaam_to_plaatspage.cs" />
+    <Compile Include="Migrations\201906261423334_add_plaatsnaam_to_plaatspage.Designer.cs">
+      <DependentUpon>201906261423334_add_plaatsnaam_to_plaatspage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\helpers\JsonComponent.cs" />
     <Compile Include="Models\BasePageModel.cs" />
@@ -435,6 +439,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906250747140_added_basepagemodel.resx">
       <DependentUpon>201906250747140_added_basepagemodel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906261423334_add_plaatsnaam_to_plaatspage.resx">
+      <DependentUpon>201906261423334_add_plaatsnaam_to_plaatspage.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

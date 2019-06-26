@@ -96,6 +96,22 @@ namespace Meldpunt.Controllers
       return Redirect("/admin/places");
     }
 
+    [Route("AddPlacePage/{id}")]
+    public ActionResult AddPlacePage(Guid id, string plaats)
+    {
+      var gemeentePage = plaatsPageService.GetByIdUntracked(id);
+      var newPage = new PlaatsPageModel();
+
+      // copy some properties for convenience
+      newPage.Gemeentenaam = gemeentePage.Gemeentenaam;
+      newPage.Content = gemeentePage.Content;
+      newPage.Components = gemeentePage.Components;
+      newPage.PlaatsNaam = plaats;
+      newPage.UrlPart = gemeentePage.Url.TrimStart('/') + "/" + plaats.XmlSafe();
+
+      plaatsPageService.UpdateOrInsert(newPage);
+      return Redirect("/admin/editplaats/" + newPage.Id.ToString());
+    }
     #endregion
 
     #region stayaway

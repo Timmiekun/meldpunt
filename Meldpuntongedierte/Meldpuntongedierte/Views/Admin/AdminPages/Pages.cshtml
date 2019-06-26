@@ -10,6 +10,10 @@
 }
 <h1>Beheer pagina's</h1>
 
+<div class="toolbar-top">
+  <a href="/admin/newpage" class="btn btn-info new-button js-new-page">Nieuwe pagina</a>
+</div>
+
 <form class="search-form" method="get">
   <input class="form-control" type="text" name="q" placeholder="Zoek pagina" value="@Request.QueryString["q"]" />
 </form>
