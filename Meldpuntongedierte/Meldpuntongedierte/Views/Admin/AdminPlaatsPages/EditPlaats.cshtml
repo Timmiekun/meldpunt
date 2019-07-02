@@ -13,24 +13,29 @@
 }
 else
 {
-  <h1>Gemeente @Model.Gemeentenaam</h1>}
+  <h1>Gemeente @Model.Gemeentenaam</h1>
+}
 
-<a class="viewPage btn btn-info" href="@Model.Url" target="_blank">Pagina bekijken</a>
-<button class="btn btn-info" onclick="$('#sumbitform').click()">Opslaan</button>
+@if (Model.LastModified.HasValue)
+{
+  <p>Laatst aangepast: @Model.LastModified.Value.ToString("f")</p>
+}
+<div class="actions">
+  <button class="btn btn-info" onclick="$('#sumbitform').click()">Opslaan</button>
+  <a class="viewPage btn btn-info" href="@Model.Url" target="_blank">Pagina bekijken</a>
+</div>
 
 @if (Model.Plaatsen != null && Model.Plaatsen.Count() > 1)
 {
-  <p>Onder de gemeente @Model.Gemeentenaam vallen de plaatsen: @String.Join(", ", Model.Plaatsen.Select(p => p.Capitalize()))</p>
-
-  <p>
-    Maak pagina aan voor:
+  <div class="field">
+    <label>Onder de gemeente @Model.Gemeentenaam vallen de plaatsen:</label><br />
     @foreach (var plaats in Model.Plaatsen)
     {
-      <a href="/admin/AddPlacePage/@Model.Id?plaats=@plaats">@plaats</a>
+      <a class="btn btn-info" href="/admin/AddPlacePage/@Model.Id?plaats=@plaats">@plaats</a>
     }
-  </p>
+  </div>
 }
-else if(String.IsNullOrWhiteSpace(Model.PlaatsNaam))
+else if (String.IsNullOrWhiteSpace(Model.PlaatsNaam))
 {
   <p>Deze gemeente bevat geen plaatsen.</p>
 }
@@ -89,12 +94,7 @@ else if(String.IsNullOrWhiteSpace(Model.PlaatsNaam))
     </textarea>
   </div>
 
-  @if (Model.LastModified.HasValue)
-  {
-    <div class="field">
-      Voor het laatst aangepast: <b>@Model.LastModified.Value.ToString("R")</b>
-    </div>
-  }
+
 
   @Html.HiddenFor(p => p.PlaatsNaam)
   @Html.HiddenFor(p => p.Published)
