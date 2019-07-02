@@ -66,10 +66,10 @@ namespace Meldpunt.Controllers
     }
 
     [Route("NewRedirect")]
-    public ActionResult NewRedirect(string parentId)
+    public ActionResult NewRedirect()
     {
       redirectsService.newRedirect();
-      return Redirect("/admin/redirect");
+      return Redirect("/admin/redirects");
     }
 
     [Route("RemoveRedirect")]
