@@ -41,6 +41,11 @@ namespace Meldpunt.Services
       return db.PlaatsPages.FirstOrDefault(p => p.UrlPart == urlPart);
     }
 
+    public PlaatsPageModel GetByPlaats(string plaats)
+    {
+      return db.PlaatsPages.FirstOrDefault(p => p.PlaatsNaam == plaats);
+    }
+
     public PlaatsPageModel UpdateOrInsert(PlaatsPageModel pageToSave)
     {
       var existingModel = GetByIdUntracked(pageToSave.Id);
@@ -76,5 +81,7 @@ namespace Meldpunt.Services
       db.PlaatsPages.Remove(model);
       db.SaveChanges();
     }
+
+  
   }
 }

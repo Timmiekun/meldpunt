@@ -122,6 +122,10 @@ namespace Meldpunt.Controllers
     [Route("AddPlacePage/{id}")]
     public ActionResult AddPlacePage(Guid id, string plaats)
     {
+      var plaatsPage = plaatsPageService.GetByPlaats(plaats);
+      if (plaatsPage != null)
+        return RedirectToAction("EditPlaats", new { plaatsPage.Id });
+
       var gemeentePage = plaatsPageService.GetByIdUntracked(id);
       var newPage = new PlaatsPageModel();
 
@@ -129,10 +133,21 @@ namespace Meldpunt.Controllers
       newPage.Gemeentenaam = gemeentePage.Gemeentenaam;
       newPage.Content = gemeentePage.Content;
       newPage.Components = gemeentePage.Components;
+      newPage.MetaDescription = gemeentePage.MetaDescription;
+      newPage.PhoneNumber = gemeentePage.PhoneNumber;
+
       newPage.PlaatsNaam = plaats;
-      newPage.UrlPart = gemeentePage.Url.TrimStart('/') + "/" + plaats.XmlSafe();
+      newPage.UrlPart = gemeentePage.Gemeentenaam.XmlSafe() + "/" + plaats.XmlSafe();
 
       plaatsPageService.UpdateOrInsert(newPage);
+      searchService.IndexDocument(newPage.ToLuceneDocument(), newPage.Id.ToString());
+      UpdateRouteForPages(new[] {
+        new RouteableItem {
+          Action = "GetPlace",
+          Controller = "PlaatsPage",
+          RouteName = newPage.Id.ToString(),
+          Url = newPage.Url.TrimStart('/')
+        } });
       return Redirect("/admin/editplaats/" + newPage.Id.ToString());
     }
     #endregion

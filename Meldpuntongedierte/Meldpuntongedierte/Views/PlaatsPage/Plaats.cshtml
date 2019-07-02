@@ -4,7 +4,7 @@
 @{
   // Default values
   ViewBag.HeaderTitle = "Meldpunt Ongedierte";
-  ViewBag.Title = "Ongediertebestrijding " + Model.Content.Gemeentenaam + " - Meldpunt Ongedierte";
+  ViewBag.Title = "Ongediertebestrijding " + Model.Content.Title + " - Meldpunt Ongedierte";
   ViewBag.Description = String.Format("Als u inwoner bent van de gemeente {0} kunt u ons bellen voor bijvoorbeeld een muizenbestrijding of een mierenbestrijding aan huis. Een wespennest verwijderen kan pas geschieden nadat wij de wespenbestrijding hebben uitgevoerd.", Model.Content.Gemeentenaam);
 
   // Curated items
@@ -17,7 +17,6 @@
   {
     ViewBag.Description = Model.Content.MetaDescription;
   }
-  ViewBag.Url = Model.Content.Gemeentenaam;
 
 
   List<ContentPageModel> homeMenu = ViewBag.HomeMenuItems as List<ContentPageModel>;
@@ -37,7 +36,7 @@
     "@("@context")": "http://schema.org/",
     "@("@type")": "Article",
     "dateModified" : "@Model.Content.LastModified.Value.ToString("yyyy-MM-dd")",
-    "datePublished" : "@Model.Content.Published.Value.ToString("yyyy-MM-dd")",   
+    "datePublished" : "@Model.Content.Published.Value.ToString("yyyy-MM-dd")",
     "headline": "@Model.Content.MetaDescription.TruncateAtWord(110)",
     "author" : "Meldpunt Ongedierte",
     "publisher" : "Meldpunt Ongedierte",
@@ -70,7 +69,7 @@
 
 @if (!String.IsNullOrWhiteSpace(Model.Content.Content))
 {
-  <h1 class="plaatsheader"><span class="pre-header">Meldpunt Ongediertebestrijding</span> @Model.Content.Gemeentenaam</h1>
+  <h1 class="plaatsheader"><span class="pre-header">Meldpunt Ongediertebestrijding</span> @Model.Content.Title</h1>
   <div class="phone-button phone-icon"><a href="tel:@Model.Content.PhoneNumber">Maak een afspraak</a></div>
   <a class="phone-button" href="#melding" data-action="open-reaction-form">Doe een melding</a>
 
@@ -123,20 +122,32 @@
     @Html.Raw(Model.Content.Content)
   </article>
 
-  if (Model.Content.Plaatsen.Any() && Model.Content.Plaatsen.Count() > 1)
-  {
-    <h2>Indeling</h2>
-    <p>Onder de gemeente @Model.Content.Gemeentenaam vallen de plaatsen: @String.Join(", ", Model.Content.Plaatsen)</p>
-  }
 }
 else
 {
   @Html.Partial("Plaats_Static_Content", Model.Content);
 }
 
+@if (Model.Content.Plaatsen.Any() && Model.Content.Plaatsen.Count() > 1)
+{
+  <h2>Indeling</h2>
+  <p>Onder de gemeente @Model.Content.Gemeentenaam vallen de plaatsen: @Html.Raw(String.Join(", ", Model.Content.Plaatsen.Where(p => p != Model.Content.Gemeentenaam).Select(p=> getLinkForPlaats(p))))</p>
+}
 
-@Html.Partial("ReactionForm", new ReactionModel { GemeenteNaam = Model.Content.Gemeentenaam })
+else if (!string.IsNullOrWhiteSpace(Model.Content.PlaatsNaam))
+{
+  <p>De @Model.Content.PlaatsNaam valt onder gemeente <a href="/ongediertebestrijding-@Model.Content.Gemeentenaam.XmlSafe()">@Model.Content.Gemeentenaam</a></p>
+}
 
+
+@Html.Partial("ReactionForm", new ReactionModel { GemeenteNaam = Model.Content.Title })
+
+@helper getLinkForPlaats(string plaats)
+{
+  string url = string.Format("/ongediertebestrijding-{0}/{1}", Model.Content.Gemeentenaam.XmlSafe(), plaats.XmlSafe());
+  var link = string.Format("<a href=\"{0}\">{1}</a>", url, plaats);
+  @Html.Raw(link)
+}
 
 @if (Model.Reactions.Any())
 {

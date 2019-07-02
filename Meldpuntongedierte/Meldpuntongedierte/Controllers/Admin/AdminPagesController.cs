@@ -3,7 +3,6 @@ using Meldpunt.Models;
 using Meldpunt.Models.helpers;
 using Meldpunt.Services;
 using Meldpunt.Services.Interfaces;
-using Meldpunt.Utils;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -36,7 +35,6 @@ namespace Meldpunt.Controllers
       db = _db;
     }
 
-    #region pages
     [Route("Pages")]
     public ActionResult Pages(string q, int page = 0)
     {
@@ -106,12 +104,12 @@ namespace Meldpunt.Controllers
 
         // update routes
         UpdateRouteForPages(allChildPages.Select(p => 
-        new RouteableItem {
-          Action = "GetPage",
-          Controller = "Home",
-          RouteName = p.Id.ToString(),
-          Url = p.Url.TrimStart('/')
-        }
+          new RouteableItem {
+            Action = "GetPage",
+            Controller = "Home",
+            RouteName = p.Id.ToString(),
+            Url = p.Url.TrimStart('/')
+          }
         ));
       }
 
@@ -171,6 +169,7 @@ namespace Meldpunt.Controllers
         page.ParentId = homepage.Id;
       }
       page.Published = DateTimeOffset.Now;
+      page.LastModified = DateTimeOffset.Now;
       db.Entry(page).State = EntityState.Modified;
       db.ContentPages.Add(page);
       db.SaveChanges();
@@ -189,16 +188,5 @@ namespace Meldpunt.Controllers
 
       return RedirectToAction("editpage", new { page.Id });
     }
-
-    #endregion
-
-    #region stayaway
-    [Route("updateimages")]
-    public ActionResult UpdateImages()
-    {
-      //pageService.updateImages();
-      return new EmptyResult();
-    }   
-    #endregion
   }
 }

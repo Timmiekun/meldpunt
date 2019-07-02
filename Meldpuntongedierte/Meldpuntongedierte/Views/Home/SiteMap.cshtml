@@ -23,15 +23,11 @@
     <url>
       <loc>https://www.meldpuntongedierte.nl@(location.Url)</loc>
       <changefreq>monthly</changefreq>
+      @if (location.LastModified.HasValue)
+      {
+        <lastmod>@location.LastModified.Value.ToString("yyyy-MM-dd")</lastmod>
+      }
     </url>
-
-    foreach (var place in location.Plaatsen.Where(p=> !p.Equals(location.Gemeentenaam)))
-    {
-      <url>
-        <loc>https://www.meldpuntongedierte.nl/ongediertebestrijding-@place.XmlSafe()</loc>
-        <changefreq>monthly</changefreq>
-      </url>
-    }
   }
 
   <url>

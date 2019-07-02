@@ -93,26 +93,6 @@ namespace Meldpunt
              gemeentePage.Url.TrimStart('/'), // URL with parameters
              new { controller = "PlaatsPage", action = "GetPlace", guid = gemeentePage.Id } // Parameter defaults
          );
-
-        foreach (var plaats in gemeentePage.Plaatsen.Where(p => !String.IsNullOrWhiteSpace(p)))
-        {
-          if (!allPlaatsPageModels.Any(pm => pm.Gemeentenaam.XmlSafe() == plaats.XmlSafe()))
-          {
-            routes.MapRoute(
-                gemeentePage.Id.ToString() + plaats.XmlSafe(), // Route name
-                "ongediertebestrijding-" + plaats.XmlSafe(), // URL with parameters
-                new { controller = "PlaatsPage", action = "GetPlace", guid = gemeentePage.Id } // Parameter defaults
-            );
-          }
-          else
-          {
-            routes.MapRoute(
-               gemeentePage.Id.ToString() + plaats.XmlSafe(), // Route name
-               gemeentePage.Url.TrimStart('/') + "/" + plaats.XmlSafe(), // URL with parameters
-               new { controller = "PlaatsPage", action = "GetPlace", guid = gemeentePage.Id } // Parameter defaults
-           );
-          }
-        }
       }
     }
 

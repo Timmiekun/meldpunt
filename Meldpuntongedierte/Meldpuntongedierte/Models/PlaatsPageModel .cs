@@ -18,13 +18,25 @@ namespace Meldpunt.Models
     /// indicates if this page belongs to a plaats instead of gemeente
     /// </summary>
     public string PlaatsNaam { get; set; }
+
+    [NotMapped]
+    public string Title
+    {
+      get
+      {
+        if (!String.IsNullOrWhiteSpace(PlaatsNaam))
+          return PlaatsNaam;
+
+        return Gemeentenaam;
+      }
+    }
     public string PhoneNumber { get; set; }
 
     [JsonStore]
     public string Image { get; set; }
 
     [JsonStore]
-    public string Headline { get; set; }    
+    public string Headline { get; set; }
 
 
     /// <summary>
@@ -74,8 +86,8 @@ namespace Meldpunt.Models
       Document doc = new Document();
       doc.Add(new Field("type", SearchTypes.Place, Field.Store.YES, Field.Index.NOT_ANALYZED));
       doc.Add(new Field("id", Id.ToString(), Field.Store.YES, Field.Index.NOT_ANALYZED));
-      doc.Add(new Field("title", Gemeentenaam, Field.Store.YES, Field.Index.ANALYZED));
-      doc.Add(new Field("sortableTitle", Gemeentenaam.XmlSafe(), Field.Store.NO, Field.Index.NOT_ANALYZED));
+      doc.Add(new Field("title", Title, Field.Store.YES, Field.Index.ANALYZED));
+      doc.Add(new Field("sortableTitle", Title.XmlSafe(), Field.Store.NO, Field.Index.NOT_ANALYZED));
       doc.Add(new Field("lastModified", DateTools.DateToString(LastModified.Value.UtcDateTime, DateTools.Resolution.SECOND), Field.Store.YES, Field.Index.ANALYZED));
       doc.Add(new Field("hasplaatsen", (!String.IsNullOrWhiteSpace(PlaatsenAsString)).ToString().ToLower(), Field.Store.YES, Field.Index.ANALYZED));
       doc.Add(new Field("isPlaats", (!String.IsNullOrWhiteSpace(PlaatsNaam)).ToString().ToLower(), Field.Store.NO, Field.Index.ANALYZED));
