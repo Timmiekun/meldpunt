@@ -131,7 +131,7 @@ else
 @if (Model.Content.Plaatsen.Any() && Model.Content.Plaatsen.Count() > 1)
 {
   <h2>Indeling</h2>
-  <p>Onder de gemeente @Model.Content.Gemeentenaam vallen de plaatsen: @Html.Raw(String.Join(", ", Model.Content.Plaatsen.Where(p => p != Model.Content.Gemeentenaam).Select(p=> getLinkForPlaats(p))))</p>
+  <p>Onder de gemeente @Model.Content.Gemeentenaam vallen de plaatsen: @Html.Raw(String.Join(", ", Model.Content.Plaatsen.Where(p => p != Model.Content.Gemeentenaam)))</p>
 }
 
 else if (!string.IsNullOrWhiteSpace(Model.Content.PlaatsNaam))
@@ -141,13 +141,6 @@ else if (!string.IsNullOrWhiteSpace(Model.Content.PlaatsNaam))
 
 
 @Html.Partial("ReactionForm", new ReactionModel { GemeenteNaam = Model.Content.Title })
-
-@helper getLinkForPlaats(string plaats)
-{
-  string url = string.Format("/ongediertebestrijding-{0}/{1}", Model.Content.Gemeentenaam.XmlSafe(), plaats.XmlSafe());
-  var link = string.Format("<a href=\"{0}\">{1}</a>", url, plaats);
-  @Html.Raw(link)
-}
 
 @if (Model.Reactions.Any())
 {
@@ -161,4 +154,11 @@ else if (!string.IsNullOrWhiteSpace(Model.Content.PlaatsNaam))
       </div>
     }
   </div>
+}
+
+@helper getLinkForPlaats(string plaats)
+{
+  string url = string.Format("/ongediertebestrijding-{0}/{1}", Model.Content.Gemeentenaam.XmlSafe(), plaats.XmlSafe());
+  var link = string.Format("<a href=\"{0}\">{1}</a>", url, plaats);
+  @Html.Raw(link)
 }
