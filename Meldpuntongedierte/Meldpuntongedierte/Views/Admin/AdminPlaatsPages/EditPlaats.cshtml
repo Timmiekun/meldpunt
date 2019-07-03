@@ -27,11 +27,11 @@ else
 
 @if (Model.Plaatsen != null && Model.Plaatsen.Count() > 1)
 {
-  <div class="field">
+  <div class="field maak-plaats">
     <label>Onder de gemeente @Model.Gemeentenaam vallen de plaatsen:</label><br />
     @foreach (var plaats in Model.Plaatsen)
     {
-      <a class="btn btn-info" href="/admin/AddPlacePage/@Model.Id?plaats=@plaats">@plaats</a>
+      <a class="btn btn-primary" href="/admin/AddPlacePage/@Model.Id?plaats=@plaats">@plaats</a>
     }
   </div>
 }
