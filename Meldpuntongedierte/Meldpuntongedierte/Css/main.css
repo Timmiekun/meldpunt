@@ -298,7 +298,7 @@ h3 {
   }
 
   .menu > ul > li.selected {
-    background-color: #f2f2f2;
+    font-weight: 900;
   }
 
 .subNav {
@@ -594,12 +594,12 @@ h3:hover {
   cursor: pointer;
 }
 
-.hidden{
-  display:none;
+.hidden {
+  display: none;
 }
 
 .login-form {
-  margin-top:20px;
+  margin-top: 20px;
 }
 
 .form-field {
@@ -611,12 +611,12 @@ h3:hover {
   font-family: 'Catamaran', sans-serif;
 }
 
-.login-form .form-field{
+.login-form .form-field {
   margin-bottom: 5px;
 }
 
-.login-form input[type=submit]{
-  cursor:pointer;
+.login-form input[type=submit] {
+  cursor: pointer;
 }
 
   .login-form input[type=submit]:hover {
