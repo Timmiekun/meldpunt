@@ -124,21 +124,6 @@
   </div>
 
   <div class="goto-menu-mobile">
-    @{
-      if (breadcrumbs.Count >= 2)
-      {
-        var parent = breadcrumbs.ElementAt<BreadCrumb>(breadcrumbs.Count - 2);
-        if (parent != null)
-        {
-          <a class="go-to-parent" href="@parent.Url">< @parent.Title</a>
-        }
-      }
-      else if (breadcrumbs.Count > 0)
-      {
-        <a class="go-to-parent" href="/">< Home</a>
-      }
-    }
-
     <div data-action="toggle-menu">
       <div class="hamburger">
         <div class="toppings"></div>

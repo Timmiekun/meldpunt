@@ -35,13 +35,6 @@
     box-shadow: none;
   }
 
-  .goto-menu-mobile .go-to-parent {
-    position: absolute;
-    left: 15px;
-    text-decoration: none;
-    color: #85003c;
-  }
-
   #tabs {
     position: fixed;
     left: 0;
