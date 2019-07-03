@@ -1,4 +1,5 @@
 ﻿using Lucene.Net.Documents;
+using Meldpunt.CustomAttributes;
 using Meldpunt.Services;
 using Meldpunt.Utils;
 using Newtonsoft.Json;
@@ -9,27 +10,33 @@ using System.Linq;
 
 namespace Meldpunt.Models
 {
-  public class PlaatsPageModel : IndexableItem
+  public class PlaatsPageModel : BasePageModel, IndexableItem
   {
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public Guid Id { get; set; }
-    public string UrlPart { get; set; }
     public string Gemeentenaam { get; set; }
-    public DateTimeOffset? Published { get; set; }
-    public string MetaTitle { get; set; }
-    public string MetaDescription { get; set; }
+
+    /// <summary>
+    /// indicates if this page belongs to a plaats instead of gemeente
+    /// </summary>
+    public string PlaatsNaam { get; set; }
 
     [NotMapped]
-    public string HeadLine {
-      get {
-        return MetaDescription.TruncateAtWord(100);
+    public string Title
+    {
+      get
+      {
+        if (!String.IsNullOrWhiteSpace(PlaatsNaam))
+          return PlaatsNaam;
+
+        return Gemeentenaam;
       }
     }
     public string PhoneNumber { get; set; }
-    public string Content { get; set; }
 
-    public DateTimeOffset? LastModified { get; set; }
+    [JsonStore]
+    public string Image { get; set; }
 
+    [JsonStore]
+    public string Headline { get; set; }
 
 
     /// <summary>
@@ -74,17 +81,16 @@ namespace Meldpunt.Models
       }
     }
 
-
-
     public Document ToLuceneDocument()
     {
       Document doc = new Document();
       doc.Add(new Field("type", SearchTypes.Place, Field.Store.YES, Field.Index.NOT_ANALYZED));
       doc.Add(new Field("id", Id.ToString(), Field.Store.YES, Field.Index.NOT_ANALYZED));
-      doc.Add(new Field("title", Gemeentenaam, Field.Store.YES, Field.Index.ANALYZED));
-      doc.Add(new Field("sortableTitle", Gemeentenaam.XmlSafe(), Field.Store.NO, Field.Index.NOT_ANALYZED));
+      doc.Add(new Field("title", Title, Field.Store.YES, Field.Index.ANALYZED));
+      doc.Add(new Field("sortableTitle", Title.XmlSafe(), Field.Store.NO, Field.Index.NOT_ANALYZED));
       doc.Add(new Field("lastModified", DateTools.DateToString(LastModified.Value.UtcDateTime, DateTools.Resolution.SECOND), Field.Store.YES, Field.Index.ANALYZED));
       doc.Add(new Field("hasplaatsen", (!String.IsNullOrWhiteSpace(PlaatsenAsString)).ToString().ToLower(), Field.Store.YES, Field.Index.ANALYZED));
+      doc.Add(new Field("isPlaats", (!String.IsNullOrWhiteSpace(PlaatsNaam)).ToString().ToLower(), Field.Store.NO, Field.Index.ANALYZED));
       doc.Add(new Field("text", FullText, Field.Store.YES, Field.Index.ANALYZED));
       doc.Add(new Field("url", Url, Field.Store.YES, Field.Index.ANALYZED));
       doc.Add(new Field("all", "all", Field.Store.NO, Field.Index.ANALYZED));

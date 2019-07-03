@@ -1,8 +1,8 @@
 ﻿using Meldpunt.ActionFilters;
 using Meldpunt.Models;
+using Meldpunt.Models.helpers;
 using Meldpunt.Services;
 using Meldpunt.Services.Interfaces;
-using Meldpunt.Utils;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -35,11 +35,16 @@ namespace Meldpunt.Controllers
       db = _db;
     }
 
-    #region pages
     [Route("Pages")]
     public ActionResult Pages(string q, int page = 0)
     {
-      return View(searchService.Search(q, SearchTypes.Page, page));
+      var options = new SearchRequestOptions()
+      {
+        Q = q,
+        Page = page,
+        Filters = new Dictionary<string, string> { { "type", SearchTypes.Page } }
+      };
+      return View(searchService.Search(options));
     }
 
     [Route("EditPage/{id}")]
@@ -99,12 +104,12 @@ namespace Meldpunt.Controllers
 
         // update routes
         UpdateRouteForPages(allChildPages.Select(p => 
-        new RouteableItem {
-          Action = "GetPage",
-          Controller = "Home",
-          RouteName = p.Id.ToString(),
-          Url = p.Url.TrimStart('/')
-        }
+          new RouteableItem {
+            Action = "GetPage",
+            Controller = "Home",
+            RouteName = p.Id.ToString(),
+            Url = p.Url.TrimStart('/')
+          }
         ));
       }
 
@@ -148,7 +153,6 @@ namespace Meldpunt.Controllers
     public ActionResult NewPage()
     {
       ContentPageModel newPage = new ContentPageModel();
-      newPage.Title = "Nieuwe pagina";
       return View("editpage", newPage);
     }
 
@@ -164,10 +168,8 @@ namespace Meldpunt.Controllers
         var homepage = pageService.GetPageByUrlPart("home");
         page.ParentId = homepage.Id;
       }
-
-
-      page.Id = Guid.NewGuid();
       page.Published = DateTimeOffset.Now;
+      page.LastModified = DateTimeOffset.Now;
       db.Entry(page).State = EntityState.Modified;
       db.ContentPages.Add(page);
       db.SaveChanges();
@@ -186,15 +188,5 @@ namespace Meldpunt.Controllers
 
       return RedirectToAction("editpage", new { page.Id });
     }
-    #endregion
-
-    #region stayaway
-    [Route("updateimages")]
-    public ActionResult UpdateImages()
-    {
-      //pageService.updateImages();
-      return new EmptyResult();
-    }   
-    #endregion
   }
 }

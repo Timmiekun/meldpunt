@@ -8,7 +8,7 @@ using Meldpunt.Services.Interfaces;
 
 namespace Meldpunt.Services
 {
-  public class PlaatsPageService : IPlaatsPageService
+  public class PlaatsPageService : BasePageService, IPlaatsPageService
   {
 
     private MeldpuntContext db;
@@ -24,7 +24,11 @@ namespace Meldpunt.Services
 
     public PlaatsPageModel GetPlaatsById(Guid id)
     {
-      return db.PlaatsPages.Find(id);
+      var plaatsModel = db.PlaatsPages.Find(id);
+
+      SetJsonstoreProperties(plaatsModel);
+
+      return plaatsModel;
     }
 
     public PlaatsPageModel GetByIdUntracked(Guid id)
@@ -37,29 +41,39 @@ namespace Meldpunt.Services
       return db.PlaatsPages.FirstOrDefault(p => p.UrlPart == urlPart);
     }
 
+    public PlaatsPageModel GetByPlaats(string plaats)
+    {
+      return db.PlaatsPages.FirstOrDefault(p => p.PlaatsNaam == plaats);
+    }
+
     public PlaatsPageModel UpdateOrInsert(PlaatsPageModel pageToSave)
     {
       var existingModel = GetByIdUntracked(pageToSave.Id);
 
       if (existingModel == null)
       {
-        pageToSave.LastModified = DateTimeOffset.Now;
         pageToSave.Published = DateTimeOffset.Now;
+        pageToSave.LastModified = DateTimeOffset.Now;
+        pageToSave.Components = GetJsonComponentsAsJson(pageToSave);
+
         db.Entry(pageToSave).State = EntityState.Modified;
-        pageToSave.UrlPart = pageToSave.Gemeentenaam.XmlSafe();
         db.PlaatsPages.Add(pageToSave);
+
         db.SaveChanges();
       }
       else
       {
+        pageToSave.Components = GetJsonComponentsAsJson(pageToSave);
         pageToSave.LastModified = DateTimeOffset.Now;
-        pageToSave.UrlPart = pageToSave.UrlPart.XmlSafe();
+
         db.Entry(pageToSave).State = EntityState.Modified;
+
         db.SaveChanges();
       }
 
       return pageToSave;
     }
+
 
     public void Delete(Guid id)
     {
@@ -67,5 +81,7 @@ namespace Meldpunt.Services
       db.PlaatsPages.Remove(model);
       db.SaveChanges();
     }
+
+  
   }
 }

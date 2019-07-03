@@ -1,5 +1,6 @@
 ﻿using Meldpunt.ActionFilters;
 using Meldpunt.Models;
+using Meldpunt.Models.helpers;
 using Meldpunt.Services;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace Meldpunt.Controllers
   [RoutePrefix("admin")]
   public class AdminController : Controller
   {
-   
+
     private ISearchService searchService;
 
     public AdminController(ISearchService _searchService)
@@ -30,7 +31,8 @@ namespace Meldpunt.Controllers
           Total = 0
         });
 
-      var model = searchService.Search(q);
+
+      var model = searchService.Search(new SearchRequestOptions() { Q = q });
       return View(model);
     }
 

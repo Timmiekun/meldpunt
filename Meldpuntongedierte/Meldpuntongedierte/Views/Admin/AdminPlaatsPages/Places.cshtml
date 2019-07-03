@@ -13,7 +13,20 @@
   <input class="form-control" type="text" name="q" placeholder="Zoek plaats" value="@Request.QueryString["q"]" />
 </form>
 
-<p>@Model.Total plaatsen</p>
+@{
+  var archiveClassName = "";
+  if (Request.QueryString["showplaatsen"] == "true")
+  {
+    archiveClassName = "active";
+  }
+}
+
+<div class="archive-tab @archiveClassName">
+  <a class="inbox-button archive-toggle btn btn-info" href="?q=@Request["q"]"><span class="oi oi-inbox"></span> Gemeentes (@ViewBag.GemeenteTotal)</a>
+  <a class="archive-button archive-toggle btn btn-secondary" href="?showplaatsen=true&q=@Request["q"]"><span class="oi oi-box"></span> Plaatsen (@ViewBag.PlaatsenTotal)</a>
+</div>
+
+<p>@Model.Total gevonden</p>
 
 @Html.Partial("Pagination")
 
@@ -36,12 +49,12 @@
   <div class="title">
     @if (Request["sort"] == "title" && Request["sortDesc"] != "false")
     {
-      <a href="?sort=title&sortDesc=false">Titel</a>
+      <a href="?sort=title&sortDesc=false">Gemeente</a>
       <span class="oi oi-arrow-circle-bottom"></span>
     }
     else
     {
-      <a href="?sort=title">Titel</a>
+      <a href="?sort=title">Gemeente</a>
       if (Request["sort"] == "title")
       {
         <span class="oi oi-arrow-circle-top"></span>

@@ -28,58 +28,7 @@ namespace Meldpunt
 
       routes.MapMvcAttributeRoutes();
 
-      var pageService = DependencyResolver.Current.GetService<IContentPageService>();
-      var plaatsPageService = DependencyResolver.Current.GetService<IPlaatsPageService>();
-
-      foreach (var page in pageService.GetAllPages().Where(p => p.Url != null))
-      {
-        routes.MapRoute(
-          page.Id.ToString(), // Route name
-          page.Url.TrimStart('/'), // URL with parameters
-          new { controller = "Home", action = "GetPage", guid = page.Id } // Parameter defaults
-        );
-      }
-
-      var allPlaatsPageModels = plaatsPageService.GetAllPlaatsModels().ToList();
-
-      foreach (var plaatsPage in allPlaatsPageModels)
-      {
-        // gemeente zelf
-        routes.MapRoute(
-             plaatsPage.Id.ToString(), // Route name
-             plaatsPage.Url.TrimStart('/'), // URL with parameters
-             new { controller = "PlaatsPage", action = "GetPlace", guid = plaatsPage.Id } // Parameter defaults
-         );
-  
-        foreach (var plaats in plaatsPage.Plaatsen.Where(p => !String.IsNullOrWhiteSpace(p)))
-        {
-          if (!allPlaatsPageModels.Any(pm => pm.Gemeentenaam.XmlSafe() == plaats.XmlSafe()))
-          {
-            routes.MapRoute(
-                plaatsPage.Id.ToString() + plaats.XmlSafe(), // Route name
-                "ongediertebestrijding-" + plaats.XmlSafe(), // URL with parameters
-                new { controller = "PlaatsPage", action = "GetPlace", guid = plaatsPage.Id } // Parameter defaults
-            );
-          }
-          else
-          {
-            routes.MapRoute(
-               plaatsPage.Id.ToString() + plaats.XmlSafe(), // Route name
-               "ongediertebestrijding-" + plaatsPage.Gemeentenaam.XmlSafe() + "-" + plaats.XmlSafe(), // URL with parameters
-               new { controller = "PlaatsPage", action = "GetPlace", guid = plaatsPage.Id } // Parameter defaults
-           );
-          }
-        }
-      }
-
-      foreach (var blog in new MeldpuntContext().BlogModels.Where(b => b.UrlPart != null && b.Published.HasValue))
-      {
-        routes.MapRoute(
-        "Blog-" + blog.Id.ToString(), // Route name
-        "blog/" + blog.UrlPart.XmlSafe(), // URL with parameters
-        new { controller = "Blog", action = "Details", id = blog.Id }
-        ); // Parameter defaults
-      }
+      MapContentRoutes(routes);
 
       routes.MapRoute(
         "Default", // Route name
@@ -93,6 +42,58 @@ namespace Meldpunt
         new { controller = "Error", action = "http404" }
       );
 
+    }
+
+    private static void MapContentRoutes(RouteCollection routes)
+    {
+      MapContentPageRoutes(routes);
+
+      MapPlaatsRoutes(routes);
+
+      MapBlogRoutes(routes);
+    }
+
+    private static void MapBlogRoutes(RouteCollection routes)
+    {
+      foreach (var blog in new MeldpuntContext().BlogModels.Where(b => b.UrlPart != null && b.Published.HasValue))
+      {
+        routes.MapRoute(
+        "Blog-" + blog.Id.ToString(), // Route name
+        "blog/" + blog.UrlPart.XmlSafe(), // URL with parameters
+        new { controller = "Blog", action = "Details", id = blog.Id }
+        ); // Parameter defaults
+      }
+    }
+
+    private static void MapContentPageRoutes(RouteCollection routes)
+    {
+      var pageService = DependencyResolver.Current.GetService<IContentPageService>();
+
+
+      foreach (var page in pageService.GetAllPages().Where(p => p.Url != null))
+      {
+        routes.MapRoute(
+          page.Id.ToString(), // Route name
+          page.Url.TrimStart('/'), // URL with parameters
+          new { controller = "Home", action = "GetPage", guid = page.Id } // Parameter defaults
+        );
+      }
+    }
+
+    private static void MapPlaatsRoutes(RouteCollection routes)
+    {
+      var plaatsPageService = DependencyResolver.Current.GetService<IPlaatsPageService>();
+      var allPlaatsPageModels = plaatsPageService.GetAllPlaatsModels().ToList();
+
+      foreach (var gemeentePage in allPlaatsPageModels)
+      {
+        // gemeente zelf
+        routes.MapRoute(
+             gemeentePage.Id.ToString(), // Route name
+             gemeentePage.Url.TrimStart('/'), // URL with parameters
+             new { controller = "PlaatsPage", action = "GetPlace", guid = gemeentePage.Id } // Parameter defaults
+         );
+      }
     }
 
     protected void Application_Start()

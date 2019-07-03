@@ -7,32 +7,17 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Meldpunt.Models
 {
-  public class ContentPageModel : IndexableItem
+  public class ContentPageModel : BasePageModel, IndexableItem
   {
-    [Key]
-    public Guid Id { get; set; }
-
     [Required]
-    public string Title { get; set; }
-    public string MetaTitle { get; set; }
+    public string Title { get; set; }  
     public string Url { get; set; }
-
-    [Required]
-    public string UrlPart { get; set; }
-
-    public string Image { get; set; }
-    public string Content { get; set; }
+    public string Image { get; set; }   
     public string SideContent { get; set; }
-
-
-
     public bool HasSublingMenu { get; set; }
 
     [Required]
     public Guid ParentId { get; set; }
-
-    public DateTimeOffset? LastModified { get; set; }
-    public DateTimeOffset? Published { get; set; }
 
     /// <summary>
     /// Used to sort Childpages
@@ -42,7 +27,7 @@ namespace Meldpunt.Models
     //admin
     public bool InTabMenu { get; set; }
     public bool InHomeMenu { get; set; }
-    public string MetaDescription { get; set; }
+  
 
     [NotMapped]
     public string FullText

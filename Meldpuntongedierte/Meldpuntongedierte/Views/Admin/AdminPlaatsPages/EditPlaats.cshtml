@@ -7,17 +7,53 @@
   Layout = "~/Views/Shared/_Admin.cshtml";
 }
 
-<h1>Gemeente @Model.Gemeentenaam</h1>
-
-<a class="viewPage btn btn-info" href="@Model.Url" target="_blank">Pagina bekijken</a>
-
-@if (Model.Plaatsen.Count > 0)
+@if (!String.IsNullOrWhiteSpace(Model.PlaatsNaam))
 {
-  <p>Onder de gemeente @Model.Gemeentenaam vallen de plaatsen: @String.Join(", ", Model.Plaatsen.Select(p => p.Capitalize()))</p>
+  <h1>@Model.PlaatsNaam - Gemeente @Model.Gemeentenaam</h1>
+}
+else
+{
+  <h1>Gemeente @Model.Gemeentenaam</h1>
+}
+
+@if (Model.LastModified.HasValue)
+{
+  <p>Laatst aangepast: @Model.LastModified.Value.ToString("f")</p>
+}
+<div class="actions">
+  <button class="btn btn-info" onclick="$('#sumbitform').click()">Opslaan</button>
+  <a class="viewPage btn btn-info" href="@Model.Url" target="_blank">Pagina bekijken</a>
+</div>
+
+@if (Model.Plaatsen != null && Model.Plaatsen.Count() > 1)
+{
+  <div class="field">
+    <label>Onder de gemeente @Model.Gemeentenaam vallen de plaatsen:</label><br />
+    @foreach (var plaats in Model.Plaatsen)
+    {
+      <a class="btn btn-info" href="/admin/AddPlacePage/@Model.Id?plaats=@plaats">@plaats</a>
+    }
+  </div>
+}
+else if (String.IsNullOrWhiteSpace(Model.PlaatsNaam))
+{
+  <p>Deze gemeente bevat geen plaatsen.</p>
 }
 
 
-<form method="post">
+<form method="post" id="plaatspageform">
+
+  <div class="field">
+    <label for="MetaDescription">Meta title</label>
+    @Html.EditorFor(m => m.MetaTitle, "", new
+    {
+      htmlAttributes = new
+      {
+        @class = "form-control",
+        placeholder = "Ongediertebestrijding " + Model.Gemeentenaam + " - Meldpunt Ongedierte"
+      }
+    })
+  </div>
 
   <div class="field">
     <label for="MetaDescription">Meta description</label>
@@ -25,8 +61,13 @@
   </div>
 
   <div class="field">
-    <label for="MetaDescription">Meta title</label>
-    @Html.EditorFor(m => m.MetaTitle, "", new { htmlAttributes = new { @class = "form-control" } })
+    <label for="Headline">Headline</label>
+    @Html.EditorFor(m => m.Headline, new { htmlAttributes = new { maxLength = 110, @class = "form-control" } })
+  </div>
+
+  <div class="field">
+    <label for="Image">Image</label>
+    @Html.EditorFor(m => m.Image, new { htmlAttributes = new { maxLength = 110, @class = "form-control" } })
   </div>
 
   <div class="field">
@@ -53,19 +94,14 @@
     </textarea>
   </div>
 
-  @if (Model.LastModified.HasValue)
-  {
-    <div class="field">
-      Voor het laatst aangepast: <b>@Model.LastModified.Value.ToString("R")</b>
-    </div>
-  }
 
-  @Html.HiddenFor(p => p.UrlPart)
+
+  @Html.HiddenFor(p => p.PlaatsNaam)
   @Html.HiddenFor(p => p.Published)
   @Html.HiddenFor(p => p.PlaatsenAsString)
   @Html.HiddenFor(p => p.Id)
   @Html.HiddenFor(p => p.Gemeentenaam)
-  <input type="submit" class="btn btn-info" value="opslaan" />
+  <input id="sumbitform" type="submit" class="btn btn-info" value="opslaan" />
 
   <a href="/admin/deleteplaats/@Model.Id" class="btn btn-danger" data-action-confirm>Verwijderen</a>
 </form>

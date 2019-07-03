@@ -1,5 +1,6 @@
 ﻿using Meldpunt.ActionFilters;
 using Meldpunt.Models;
+using Meldpunt.Models.helpers;
 using Meldpunt.Services;
 using Meldpunt.Services.Interfaces;
 using Meldpunt.Utils;
@@ -36,9 +37,31 @@ namespace Meldpunt.Controllers
 
     #region places
     [Route("Places")]
-    public ActionResult Places(string q, int page = 0, string sort = "title", bool sortDesc = true)
+    public ActionResult Places(string q, int page = 0, string sort = "title", bool sortDesc = true, string showplaatsen = "false")
     {
-      return View(searchService.Search(q, SearchTypes.Place, page, sort, sortDesc));
+      var options = new SearchRequestOptions() {
+        Q = q,
+        Page = page,
+        Filters = new Dictionary<string, string> {
+          { "type", SearchTypes.Place },
+          { "isPlaats", "false" }
+        },
+        Sort = sort,
+        SortDesc = sortDesc
+      };
+
+      var gemeenteResults = searchService.Search(options);
+
+      options.Filters = new Dictionary<string, string> { { "type", SearchTypes.Place }, { "isPlaats", "true" } };
+      var plaatsResults = searchService.Search(options);
+
+      ViewBag.GemeenteTotal = gemeenteResults.Total;
+      ViewBag.PlaatsenTotal = plaatsResults.Total;
+
+      if (showplaatsen == "false")
+        return View(gemeenteResults);
+
+      return View(plaatsResults);
     }
 
     [HttpGet]
@@ -96,6 +119,37 @@ namespace Meldpunt.Controllers
       return Redirect("/admin/places");
     }
 
+    [Route("AddPlacePage/{id}")]
+    public ActionResult AddPlacePage(Guid id, string plaats)
+    {
+      var plaatsPage = plaatsPageService.GetByPlaats(plaats);
+      if (plaatsPage != null)
+        return RedirectToAction("EditPlaats", new { plaatsPage.Id });
+
+      var gemeentePage = plaatsPageService.GetByIdUntracked(id);
+      var newPage = new PlaatsPageModel();
+
+      // copy some properties for convenience
+      newPage.Gemeentenaam = gemeentePage.Gemeentenaam;
+      newPage.Content = gemeentePage.Content;
+      newPage.Components = gemeentePage.Components;
+      newPage.MetaDescription = gemeentePage.MetaDescription;
+      newPage.PhoneNumber = gemeentePage.PhoneNumber;
+
+      newPage.PlaatsNaam = plaats;
+      newPage.UrlPart = gemeentePage.Gemeentenaam.XmlSafe() + "/" + plaats.XmlSafe();
+
+      plaatsPageService.UpdateOrInsert(newPage);
+      searchService.IndexDocument(newPage.ToLuceneDocument(), newPage.Id.ToString());
+      UpdateRouteForPages(new[] {
+        new RouteableItem {
+          Action = "GetPlace",
+          Controller = "PlaatsPage",
+          RouteName = newPage.Id.ToString(),
+          Url = newPage.Url.TrimStart('/')
+        } });
+      return Redirect("/admin/editplaats/" + newPage.Id.ToString());
+    }
     #endregion
 
     #region stayaway
