@@ -18,19 +18,20 @@ namespace Meldpunt.Controllers
   public class AdminPagesController : BasePagesController
   {
     private IContentPageService pageService;
-    private RedirectService redirectsService;
+    private IRedirectService redirectsService;
     private IImageService imageService;
     private ISearchService searchService;
     MeldpuntContext db;
 
     public AdminPagesController(IContentPageService _pageService,
+                                IRedirectService _redirectsService,
                                 ISearchService _searchService,
                                 IImageService _imageService,
                                 MeldpuntContext _db)
     {
       pageService = _pageService;
+      redirectsService = _redirectsService;
       searchService = _searchService;
-      redirectsService = new RedirectService();
       imageService = _imageService;
       db = _db;
     }
@@ -87,7 +88,7 @@ namespace Meldpunt.Controllers
           {
             var redirect = redirectsService.FindByFrom(oldUrl);
             if (redirect == null)
-              redirect = redirectsService.newRedirect();
+              redirect = redirectsService.NewRedirect();
 
             redirect.From = oldUrl;
             redirect.To = newUrl;

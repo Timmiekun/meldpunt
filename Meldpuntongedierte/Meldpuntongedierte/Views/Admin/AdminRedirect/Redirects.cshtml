@@ -1,6 +1,6 @@
 ﻿@using Meldpunt.Models;
 @using Meldpunt.Utils;
-@model List<RedirectModel>
+@model IEnumerable<RedirectModel>
 @{
   ViewBag.Title = "Admin";
   var locations = ViewBag.Locations;
@@ -15,13 +15,20 @@
   </div>
 }
 
-
-<a class="btn btn-info new-button" href="/admin/newredirect" data-action="js-new-redirect">Nieuwe redirect</a>
-
 <div class="list-item list-item-header">
   <div class="from">Van</div>
   <div class="to">Naar</div>
   <div class="action">Actie</div>
+</div>
+
+<div class="list-item">
+  <form method="post">
+    <div class="from"><input type="text" name="from" class="form-control" placeholder="van.." /></div>
+    <div class="to"><input type="text" name="to" class="form-control" placeholder="naar.." /></div>
+    <div class="action">
+      <input type="submit" class="btn btn-info" value="opslaan" />
+    </div>
+  </form>
 </div>
 
 @foreach (RedirectModel r in Model.OrderBy(r=> r.From))

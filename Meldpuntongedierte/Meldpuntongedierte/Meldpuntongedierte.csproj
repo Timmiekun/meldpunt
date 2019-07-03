@@ -221,12 +221,22 @@
     <Compile Include="Migrations\201906262035218_required_lastmodified.Designer.cs">
       <DependentUpon>201906262035218_required_lastmodified.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907031237425_add_redirects.cs" />
+    <Compile Include="Migrations\201907031237425_add_redirects.Designer.cs">
+      <DependentUpon>201907031237425_add_redirects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907031338509_add_date_to_redirects.cs" />
+    <Compile Include="Migrations\201907031338509_add_date_to_redirects.Designer.cs">
+      <DependentUpon>201907031338509_add_date_to_redirects.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\helpers\JsonComponent.cs" />
     <Compile Include="Models\BasePageModel.cs" />
     <Compile Include="Models\helpers\SearchRequestOptions.cs" />
     <Compile Include="Models\RouteableItem.cs" />
     <Compile Include="Services\BasePageService.cs" />
+    <Compile Include="Services\Interfaces\IRedirectService.cs" />
+    <Compile Include="Services\RedirectService.cs" />
     <Compile Include="ViewModels\RecaptchRequestModel.cs" />
     <Compile Include="Models\PlaatsPageModel .cs" />
     <Compile Include="Models\ReactionModel.cs" />
@@ -248,7 +258,7 @@
     <Compile Include="Services\ISearchService.cs" />
     <Compile Include="Services\ReactionService.cs" />
     <Compile Include="Services\PlaatsPageService.cs" />
-    <Compile Include="Services\RedirectService.cs" />
+    <Compile Include="Services\XmlRedirectService.cs" />
     <Compile Include="Services\SearchService.cs" />
     <Compile Include="Utils\LocationUtils.cs" />
     <Compile Include="Utils\PropertyCopier.cs" />
@@ -450,6 +460,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906262035218_required_lastmodified.resx">
       <DependentUpon>201906262035218_required_lastmodified.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907031237425_add_redirects.resx">
+      <DependentUpon>201907031237425_add_redirects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907031338509_add_date_to_redirects.resx">
+      <DependentUpon>201907031338509_add_date_to_redirects.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

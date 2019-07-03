@@ -2,11 +2,8 @@
 using Meldpunt.Models;
 using Meldpunt.Services;
 using Meldpunt.Services.Interfaces;
-using Meldpunt.Utils;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
@@ -17,20 +14,19 @@ namespace Meldpunt.Controllers
   public class AdminRedirectController : Controller
   {
 
-    private RedirectService redirectsService;
-    private ISearchService searchService;
+    private XmlRedirectService redirectXmlService;
+    IRedirectService redirectService;
 
-    public AdminRedirectController(IContentPageService _pageService, ISearchService _searchService, IImageService _imageService)
+    public AdminRedirectController(IRedirectService _redirectService)
     {
-      searchService = _searchService;
-      redirectsService = new RedirectService();
+      redirectXmlService = new XmlRedirectService();
+      redirectService = _redirectService;
     }
 
     [Route("Redirects")]
     public ActionResult Redirects()
     {
-
-      return View(redirectsService.GetAllRedirects());
+      return View(redirectService.GetAllRedirects());
     }
 
     [HttpPost]
@@ -38,7 +34,7 @@ namespace Meldpunt.Controllers
     public ActionResult Redirects(RedirectModel redirect)
     {
       if (!ModelState.IsValid)
-        return View(redirectsService.GetAllRedirects());
+        return View(redirectService.GetAllRedirects());
 
       var existingRoute = RouteTable.Routes
         .OfType<Route>()
@@ -48,36 +44,66 @@ namespace Meldpunt.Controllers
       if (existingRoute != null)
       {
         ModelState.AddModelError("alreadyExists", "Deze url wordt gebruikt door een bestaande pagina");
-        return View(redirectsService.GetAllRedirects());
+        return View(redirectService.GetAllRedirects());
       }
 
-      var existingRedirect = redirectsService.FindByFrom(redirect.From);
+      var existingRedirect = redirectService.FindByFrom(redirect.From);
       if (existingRedirect != null && existingRedirect.Id != redirect.Id)
       {
         ModelState.AddModelError("alreadyExists", "Er bestaat al een redirect van deze url (" + redirect.From + ")");
-        return View(redirectsService.GetAllRedirects());
+        return View(redirectService.GetAllRedirects());
       }
 
-      redirectsService.SaveRedirect(redirect);
+      redirectService.SaveRedirect(redirect);
 
       Response.RemoveOutputCacheItem(redirect.From);
 
-      return View(redirectsService.GetAllRedirects());
-    }
-
-    [Route("NewRedirect")]
-    public ActionResult NewRedirect()
-    {
-      redirectsService.newRedirect();
-      return Redirect("/admin/redirects");
-    }
+      return View(redirectService.GetAllRedirects());
+    }  
 
     [Route("RemoveRedirect")]
-    public ActionResult RemoveRedirect(string id)
+    public ActionResult RemoveRedirect(Guid id)
     {
-      redirectsService.deleteRedirect(id);
+      redirectService.DeleteRedirect(id);
       return RedirectToAction("Redirects");
     }
 
+    [Route("MigrateRedirects")]
+    public ActionResult MigrateRedirects()
+    {
+
+      foreach (var redirect in redirectXmlService.GetAllRedirects())
+      {
+        if (String.IsNullOrWhiteSpace(redirect.From))
+        {
+          continue;
+        }
+
+        if (String.IsNullOrWhiteSpace(redirect.To))
+        {
+          continue;
+        }
+
+        var newRedirect = new RedirectModel();
+
+        newRedirect.From = redirect.From;
+        newRedirect.To = redirect.To;
+
+        
+
+        WriteLine(String.Format("Added redirect from [{0}] to [{1}]", redirect.From, redirect.To));
+
+        redirectService.SaveRedirect(newRedirect);
+      }
+
+      return new EmptyResult();
+
+    }
+
+    private void WriteLine(string text, string color = "blue")
+    {
+      Response.Write(String.Format("<p style=\"margin:0;color:{1}\">{0}</p>", text, color));
+      Response.Flush();
+    }
   }
 }

@@ -20,7 +20,6 @@ namespace Meldpunt.Controllers
   {
     private IContentPageService pageService;
     private IPlaatsPageService plaatsPageService;
-    private RedirectService redirectsService;
     private IImageService imageService;
     private ISearchService searchService;
 
@@ -30,7 +29,6 @@ namespace Meldpunt.Controllers
       plaatsPageService = _plaatsPageService;
 
       searchService = _searchService;
-      redirectsService = new RedirectService();
       imageService = _imageService;
 
     }
