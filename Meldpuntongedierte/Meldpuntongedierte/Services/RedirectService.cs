@@ -1,105 +1,61 @@
 ﻿using Meldpunt.Models;
+using Meldpunt.Services.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Web;
-using System.Xml;
+using System.Data.Entity;
+using System.Linq;
 
 namespace Meldpunt.Services
 {
-  public class RedirectService
+  public class RedirectService : IRedirectService
   {
-    private XmlDocument redirectsDoc;
-    string redirectsFile = "~/App_Data/redirect.xml";
+    private readonly MeldpuntContext db;
 
-    public RedirectService()
+    public RedirectService(MeldpuntContext _db)
     {
-      redirectsFile = HttpContext.Current.Server.MapPath(redirectsFile);
-      redirectsDoc = new XmlDocument();
-      redirectsDoc.Load(redirectsFile);
+      db = _db;
     }
 
-    public List<RedirectModel> GetAllRedirects()
+    public IEnumerable<RedirectModel> GetAllRedirects()
     {
-      XmlNodeList redirects = redirectsDoc.DocumentElement.SelectNodes("//redirect");
-      return XmlToModel(redirects);
+      return db.Redirects;
     }
 
     public RedirectModel FindByFrom(string from)
     {
-      XmlElement redirect = (XmlElement)redirectsDoc.SelectSingleNode("//redirect[from='" + from + "']");
-      if (redirect == null)
-        return null;
-
-      return XmlToModel(redirect);
+      return db.Redirects.FirstOrDefault(r => r.From == from);
     }
 
-    public RedirectModel SaveRedirect(RedirectModel p)
+    public RedirectModel SaveRedirect(RedirectModel redirect)
     {
-      XmlElement redirect = (XmlElement)redirectsDoc.SelectSingleNode("//redirect[@id='" + p.Id.ToString() + "']");
+      redirect.LastModified = DateTimeOffset.Now;
 
-      redirect.SelectSingleNode("from").InnerText = p.From;
-      redirect.SelectSingleNode("to").InnerText = p.To;
+      db.Entry(redirect).State = EntityState.Modified;
 
-      redirectsDoc.Save(redirectsFile);
+      var existingRedirect = db.Redirects.AsNoTracking().FirstOrDefault(r => r.Id == redirect.Id);
+      if (existingRedirect == null)
+        db.Redirects.Add(redirect);
 
-      return XmlToModel(redirect);
-    }
-
-    private List<RedirectModel> XmlToModel(XmlNodeList pages, bool deep = false)
-    {
-      List<RedirectModel> pageModels = new List<RedirectModel>();
-      foreach (XmlNode n in pages)
-        pageModels.Add(XmlToModel(n));
-      return pageModels;
-    }
-
-    public RedirectModel newRedirect()
-    {
-      var redirect = CreateNewRedirect();
-      return XmlToModel(redirect);
-    }
-
-    public void deleteRedirect(string id)
-    {
-      var redirect = redirectsDoc.SelectSingleNode("//redirect[@id='" + id + "']");
-      if (redirect != null)
-      {
-        redirect.ParentNode.RemoveChild(redirect);
-        redirectsDoc.Save(redirectsFile);
-      }
-    }
-
-    private XmlElement CreateNewRedirect()
-    {
-      var redirect = redirectsDoc.CreateElement("redirect");
-      XmlElement from = redirectsDoc.CreateElement("from");
-      XmlElement to = redirectsDoc.CreateElement("to");
-      from.InnerText = "";
-      to.InnerText = "";
-      redirect.AppendChild(from);
-      redirect.AppendChild(to);
-      redirect.SetAttribute("id", Guid.NewGuid().ToString());
-      redirect.SetAttribute("lastmodified", DateTime.Now.ToString("dd-MM-yyyy hh:mm"));
-      redirect.SetAttribute("created", DateTime.Now.ToString("dd-MM-yyyy hh:mm"));
-
-      XmlElement parent = redirectsDoc.DocumentElement;
-      parent.AppendChild(redirect);
-      redirectsDoc.Save(redirectsFile);
+      db.SaveChanges();
       return redirect;
     }
 
-    private RedirectModel XmlToModel(XmlNode redirect)
+
+    public RedirectModel NewRedirect()
     {
-      string id = redirect.Attributes["id"].Value;
-
-      RedirectModel p = new RedirectModel()
-      {
-        Id = Guid.Parse(id),
-        From = redirect.SelectSingleNode("from").InnerText,
-        To = redirect.SelectSingleNode("to").InnerText
-      };
-
-      return p;
+      var redirect = new RedirectModel();
+      redirect.LastModified = DateTimeOffset.Now;
+      db.Redirects.Add(redirect);
+      db.SaveChanges();
+      return redirect;
     }
+
+    public void DeleteRedirect(Guid id)
+    {
+      var redirect = db.Redirects.Find(id);
+      db.Redirects.Remove(redirect);
+      db.SaveChanges();
+    }
+
   }
 }

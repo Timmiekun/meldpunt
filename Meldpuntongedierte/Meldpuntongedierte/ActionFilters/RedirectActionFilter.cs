@@ -2,6 +2,7 @@
 using Meldpunt.Services;
 using Meldpunt.Models;
 using System.Web;
+using Meldpunt.Services.Interfaces;
 
 namespace Meldpunt.ActionFilters
 {
@@ -9,7 +10,7 @@ namespace Meldpunt.ActionFilters
   {
     public override void OnActionExecuting(ActionExecutingContext filterContext)
     {
-      RedirectService redirectService = new RedirectService();
+      IRedirectService redirectService = DependencyResolver.Current.GetService<IRedirectService>();
       string path = HttpContext.Current.Request.Path;
 
       RedirectModel r = redirectService.FindByFrom(path);

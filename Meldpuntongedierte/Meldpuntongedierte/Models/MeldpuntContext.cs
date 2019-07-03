@@ -22,5 +22,7 @@ namespace Meldpunt.Models
     public DbSet<PlaatsPageModel> PlaatsPages { get; set; }
 
     public DbSet<ReactionModel> Reactions { get; set; }
+
+    public DbSet<RedirectModel> Redirects { get; set; }
   }
 }

@@ -48,6 +48,8 @@ namespace Meldpunt
       container.RegisterType<ISearchService, SearchService>();
       container.RegisterType<IImageService, ImageService>();
       container.RegisterType<IReactionService, ReactionService>();
+      container.RegisterType<IRedirectService, RedirectService>();
+      
 
       container.RegisterType<MeldpuntContext>();
     }
