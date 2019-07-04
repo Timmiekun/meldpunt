@@ -154,7 +154,7 @@ namespace Meldpunt.Services
       }
 
       else if (String.IsNullOrWhiteSpace(q))
-        sorter.SetSort(new SortField("sortableTitle", SortField.STRING, !sortDesc));
+        sorter.SetSort(new SortField("sortableTitle", SortField.STRING, sortDesc));
 
 
       return sorter;

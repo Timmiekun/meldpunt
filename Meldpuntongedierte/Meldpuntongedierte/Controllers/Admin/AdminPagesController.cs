@@ -43,7 +43,9 @@ namespace Meldpunt.Controllers
       {
         Q = q,
         Page = page,
-        Filters = new Dictionary<string, string> { { "type", SearchTypes.Page } }
+        Filters = new Dictionary<string, string> { { "type", SearchTypes.Page } },
+        Sort = "date",
+        SortDesc = true
       };
       return View(searchService.Search(options));
     }
@@ -56,8 +58,9 @@ namespace Meldpunt.Controllers
       if (page == null)
         throw new HttpException(404, "page not found");
 
-      var parent = pageService.GetPageById(page.ParentId);
-      page.ParentPath = parent.Url;
+      var parent = pageService.GetByIdUntracked(page.ParentId);
+      if(parent != null)
+        page.ParentPath = parent.Url;
 
       ViewBag.SubPages = pageService.GetChildPages(page.Id);
 

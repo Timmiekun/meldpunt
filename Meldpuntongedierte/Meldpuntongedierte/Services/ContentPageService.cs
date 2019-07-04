@@ -91,13 +91,19 @@ namespace Meldpunt.Services
 
     private string generateUrl(ContentPageModel page)
     {
-      var parents = GetParentPath(page, new List<ContentPageModel>());    
+      var parents = GetParentPath(page, new List<ContentPageModel>());
+      if (parents == null)
+        return "";
+
       return string.Join("/", parents.Select(p => p.UrlPart));
     }
 
     private List<ContentPageModel> GetParentPath(ContentPageModel page, List<ContentPageModel> parents)
     {
-      var parent = GetPageById(page.ParentId);
+      var parent = GetByIdUntracked(page.ParentId);
+      if (parent == null)
+        return null;
+
       if (parent.UrlPart != "home")
         GetParentPath(parent, parents);
 
