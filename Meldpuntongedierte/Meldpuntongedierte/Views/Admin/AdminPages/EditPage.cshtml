@@ -102,7 +102,8 @@
     <textarea id="sidecontent" name="sidecontent" class="richtext">@Model.SideContent</textarea>
   </div>
 
-  <input type="hidden" name="Id" value="@Model.Id" />
+  @Html.HiddenFor(m => m.Id)
+  @Html.HiddenFor(m => m.LastModified)
 
   <div class="actions">
     <a href="/admin/newpage?parentid=@Model.Id" class="btn btn-info">Nieuwe pagina</a>
