@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Serilog;
+using System;
 using System.Linq;
-using System.Web;
+using System.Web.Hosting;
 using System.Web.Mvc;
-using System.Configuration;
 
 namespace Meldpunt.Controllers
 {
@@ -11,7 +10,7 @@ namespace Meldpunt.Controllers
   {
     public ErrorController()
     {
-    
+
     }
 
     public ActionResult General(Exception exception)
@@ -28,12 +27,16 @@ namespace Meldpunt.Controllers
     public ActionResult Http404()
     {
       Response.StatusCode = 404;
+      Response.ContentType = "text/html";
 
-      if (HttpContext.AllErrors != null && HttpContext.AllErrors.Any())
-      {
-        var error = HttpContext.AllErrors[0];
-        ViewBag.Error = error.Message;
-      }
+      string filePath = HostingEnvironment.MapPath("/_logs/404.txt");
+      Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Debug()
+                .WriteTo.File(filePath, rollingInterval: RollingInterval.Day)
+                .CreateLogger();
+
+      Log.Information("Page not found: {0}", Request.Url.PathAndQuery);
+      Log.CloseAndFlush();
 
       return View();
     }
