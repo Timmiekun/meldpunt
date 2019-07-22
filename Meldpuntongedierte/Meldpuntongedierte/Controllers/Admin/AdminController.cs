@@ -4,6 +4,8 @@ using Meldpunt.Models.helpers;
 using Meldpunt.Services;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Web.Hosting;
 using System.Web.Mvc;
 using System.Web.Routing;
 
@@ -40,6 +42,14 @@ namespace Meldpunt.Controllers
     public ActionResult Settings()
     {
       return View();
+    }
+
+    [Route("settings/logs")]
+    public ActionResult Logs()
+    {
+      DirectoryInfo logDir = new DirectoryInfo(HostingEnvironment.MapPath("/_logs"));
+      var files = logDir.GetFiles();
+      return View(files);
     }
   }
 }

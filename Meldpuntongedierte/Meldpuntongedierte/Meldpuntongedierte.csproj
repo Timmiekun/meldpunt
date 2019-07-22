@@ -408,6 +408,7 @@
     <Content Include="Views\Admin\AdminReactions\Reactions.cshtml" />
     <Content Include="Views\Home\Cookie.cshtml" />
     <Content Include="Views\PlaatsPage\Smurfdorp.cshtml" />
+    <Content Include="Views\Admin\Logs.cshtml" />
     <None Include="Volksgezondheid.pdf" />
     <None Include="Web.azure.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -1,0 +1,19 @@
+﻿@model FileInfo[]
+@{
+  ViewBag.Title = "Logs";
+  Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<h1>Logs</h1>
+
+<p>Hier staan de log bestanden per dag.</p>
+
+<ul>
+  @foreach (var file in Model)
+  {
+  <li>
+    <a target="_blank" href="/_logs/@file.Name">@file.Name</a> <span>(@file.Length bytes)</span>
+  </li>
+  }
+</ul>
+<b>Totaal @Model.Sum(f => f.Length) bytes</b>

@@ -1,6 +1,4 @@
 ﻿@using Meldpunt.Models;
-@using Meldpunt.Utils;
-@model List<ContentPageModel>
 @{
   ViewBag.Title = "Admin";
   var locations = ViewBag.Locations;
@@ -8,11 +6,21 @@
 }
 
 <h1>Settings</h1>
-<p class="alert alert-warning">Let op! Deze dingen zijn nog in ontwikkeling!</p>
-<ul>
-  <li><a href="/search/index" target="_blank">Nieuwe index</a></li>
-</ul>
+<p class="alert alert-warning">Let op! Gebruiken op eigen risico!</p>
 
-<ul>
-  <li><a href="@Url.Action("SyncPlaces","AdminPlaatsPages")  target="_blank"">Synchroniseer plaatsen</a></li>
-</ul>
+<div class="panel">
+  <p>
+    Gebruik deze functie om een nieuwe zoek index te creeren. De huidige index wordt verwijderen
+    en er wordt en nieuwe index opgebouwd.
+  </p>
+  <a class="btn btn-info" href="/search/index" target="_blank">Nieuwe index</a>
+</div>
+
+<div class="panel">
+  <p>
+    Gebruik deze functie om de lijst met gemeentes en plaatsen te synchroniseren met de pagina's
+    van de website. Voor nieuwe gemeenten wordt automagisch een pagina aangemaakt en bij gemeenten
+    die niet meer bestaan maar waar wel een pagina van bestaat wordt een vinkje gezet (alert)
+  </p>
+  <a class="btn btn-info" href="@Url.Action("SyncPlaces","AdminPlaatsPages")  target=" _blank"" data-action-confirm>Synchroniseer plaatsen</a>
+</div>
