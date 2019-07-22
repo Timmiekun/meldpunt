@@ -92,7 +92,17 @@ namespace Meldpunt.Services
       BooleanQuery bq = new BooleanQuery();
       int resultcount = 2000;
 
-      foreach(var filter in options.Filters) { 
+      foreach (var type in options.Types)
+      {
+        if (!string.IsNullOrWhiteSpace(type))
+        {
+          QueryParser filterParser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, "type", new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30));
+          Query filterQuery = filterParser.Parse(type);
+          bq.Add(filterQuery, Occur.SHOULD);
+        }
+      }
+
+      foreach (var filter in options.Filters) { 
         if (!string.IsNullOrWhiteSpace(filter.Value))
         {
           QueryParser filterParser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, filter.Key, new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30));

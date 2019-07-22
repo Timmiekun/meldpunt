@@ -6,6 +6,7 @@ using Meldpunt.Utils;
 using Meldpunt.ActionFilters;
 using System.Diagnostics;
 using Meldpunt.Services.Interfaces;
+using Meldpunt.Models.helpers;
 
 namespace Meldpunt.Controllers
 {
@@ -72,10 +73,13 @@ namespace Meldpunt.Controllers
     [Route("zoek")]
     public ActionResult SearchPages(String q)
     {
-      if (LocationUtils.IsLocation(q))
-        return Redirect("/ongediertebestrijding-" + q.XmlSafe());
+      SearchRequestOptions options = new SearchRequestOptions()
+      {
+        Q = q,
+        Types = new[] { SearchTypes.Page, SearchTypes.Place }
+      };
 
-      var results = searchService.Search(q, SearchTypes.Page);
+      var results = searchService.Search(options);
       if (results.Total == 1)
         return Redirect(results.Results.First().Url);
 

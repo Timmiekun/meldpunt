@@ -1,4 +1,5 @@
-﻿using Serilog;
+﻿using Newtonsoft.Json;
+using Serilog;
 using System;
 using System.Linq;
 using System.Web.Hosting;
@@ -44,10 +45,13 @@ namespace Meldpunt.Controllers
                 .MinimumLevel.Debug()
                 .WriteTo.File(filePath, rollingInterval: RollingInterval.Day)
                 .CreateLogger();
-      
+
+      Log.Information("-------------------------------------------------------------------");
       Log.Information("Page not found: {0}", Request.Url.PathAndQuery);
       if(Request.UrlReferrer != null)
         Log.Information("Referrer {0}", Request.UrlReferrer);
+      if (Request.UserAgent != null)
+        Log.Information("UserAgent {0}", Request.UserAgent);
       Log.CloseAndFlush();
 
       return View();

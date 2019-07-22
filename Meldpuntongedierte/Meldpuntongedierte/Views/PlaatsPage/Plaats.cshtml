@@ -140,7 +140,8 @@ else
 
 else if (!string.IsNullOrWhiteSpace(Model.Content.PlaatsNaam))
 {
-  <p>De @Model.Content.PlaatsNaam valt onder gemeente <a href="/ongediertebestrijding-@Model.Content.Gemeentenaam.XmlSafe()">@Model.Content.Gemeentenaam</a></p>
+  <br /><br />
+  <p>@Model.Content.PlaatsNaam valt onder gemeente <a href="/ongediertebestrijding-@Model.Content.Gemeentenaam.XmlSafe()">@Model.Content.Gemeentenaam</a></p>
 }
 
 
