@@ -92,14 +92,15 @@ namespace Meldpunt.Services
       BooleanQuery bq = new BooleanQuery();
       int resultcount = 2000;
 
-      if (options.Types.Any())
+      // check if there are any allowed types to filter
+      if (options.Types.Any(t => SearchTypes.AllTypes.Contains(t)))
       {
+        // all types that are not included in options MUST NOT be included in the results
         foreach (var type in SearchTypes.AllTypes.Where(t => !options.Types.Contains(t)))
         {
           QueryParser filterParser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, "type", new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30));
           Query filterQuery = filterParser.Parse(type);
           bq.Add(filterQuery, Occur.MUST_NOT);
-
         }
       }
 
