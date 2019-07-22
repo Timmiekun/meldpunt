@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Meldpunt.Models;
 using Meldpunt.CustomAttributes;
 using Newtonsoft.Json;
 using Meldpunt.Models.helpers;
+using Meldpunt.Models.Domain;
 
 namespace Meldpunt.Services
 {

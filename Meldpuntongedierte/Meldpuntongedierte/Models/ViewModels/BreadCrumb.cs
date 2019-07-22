@@ -1,4 +1,4 @@
-﻿namespace Meldpunt.ViewModels
+﻿namespace Meldpunt.Models.ViewModels
 {
   public class BreadCrumb
   {

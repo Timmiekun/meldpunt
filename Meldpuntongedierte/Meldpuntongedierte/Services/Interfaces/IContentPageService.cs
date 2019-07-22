@@ -1,4 +1,4 @@
-﻿using Meldpunt.Models;
+﻿using Meldpunt.Models.Domain;
 using System;
 using System.Collections.Generic;
 

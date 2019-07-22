@@ -1,8 +1,6 @@
-﻿using Meldpunt.Models;
-using Meldpunt.Services;
+﻿using Meldpunt.Models.ViewModels;
 using Meldpunt.Services.Interfaces;
 using Meldpunt.Utils;
-using Meldpunt.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Configuration;

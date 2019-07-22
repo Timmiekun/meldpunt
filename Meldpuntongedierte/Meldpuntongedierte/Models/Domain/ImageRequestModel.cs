@@ -1,6 +1,6 @@
 ﻿using ImageResizer;
 
-namespace Meldpunt.Models
+namespace Meldpunt.Models.Domain
 {
 
   public class ImageRequestModel

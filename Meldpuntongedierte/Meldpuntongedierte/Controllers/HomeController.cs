@@ -4,8 +4,9 @@ using System.Web;
 using System.Web.Mvc;
 using Meldpunt.Models;
 using System.Web.Routing;
-using Meldpunt.ViewModels;
 using Meldpunt.Services.Interfaces;
+using Meldpunt.Models.Domain;
+using Meldpunt.Models.ViewModels;
 
 namespace Meldpunt.Controllers
 {

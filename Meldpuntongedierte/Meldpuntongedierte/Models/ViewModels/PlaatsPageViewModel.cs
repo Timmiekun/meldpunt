@@ -1,7 +1,7 @@
-﻿using Meldpunt.Models;
+﻿using Meldpunt.Models.Domain;
 using System.Collections.Generic;
 
-namespace Meldpunt.ViewModels
+namespace Meldpunt.Models.ViewModels
 {
   public class PlaatsPageViewModel
   {

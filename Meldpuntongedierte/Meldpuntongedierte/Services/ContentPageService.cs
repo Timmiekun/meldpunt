@@ -1,12 +1,11 @@
-﻿using HtmlAgilityPack;
-using Meldpunt.Models;
+﻿using Meldpunt.Models;
+using Meldpunt.Models.Domain;
 using Meldpunt.Services.Interfaces;
 using Meldpunt.Utils;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Xml;
 
 namespace Meldpunt.Services
 {

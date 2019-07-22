@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using Meldpunt.Services;
-using Meldpunt.Models;
 using System.Linq;
+using Meldpunt.Models.Domain;
 
 namespace Meldpunt.Controllers
 {

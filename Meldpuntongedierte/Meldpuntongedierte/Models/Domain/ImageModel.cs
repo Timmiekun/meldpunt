@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Meldpunt.Models
+namespace Meldpunt.Models.Domain
 {
 
   public class ImageModel : IndexableItem

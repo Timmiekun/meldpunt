@@ -4,7 +4,7 @@ using Lucene.Net.Index;
 using Lucene.Net.QueryParsers;
 using Lucene.Net.Search;
 using Lucene.Net.Store;
-using Meldpunt.Models;
+using Meldpunt.Models.Domain;
 using Meldpunt.Models.helpers;
 using Meldpunt.Utils;
 using Newtonsoft.Json;

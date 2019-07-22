@@ -155,6 +155,7 @@
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Database\Domain\ReactionModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -237,24 +238,23 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\helpers\JsonComponent.cs" />
-    <Compile Include="Models\BasePageModel.cs" />
+    <Compile Include="Models\Domain\BasePageModel.cs" />
     <Compile Include="Models\helpers\SearchRequestOptions.cs" />
-    <Compile Include="Models\RouteableItem.cs" />
+    <Compile Include="Models\Domain\RouteableItem.cs" />
     <Compile Include="Services\BasePageService.cs" />
     <Compile Include="Services\Interfaces\IRedirectService.cs" />
     <Compile Include="Services\RedirectService.cs" />
-    <Compile Include="ViewModels\RecaptchRequestModel.cs" />
-    <Compile Include="Models\PlaatsPageModel .cs" />
-    <Compile Include="Models\ReactionModel.cs" />
-    <Compile Include="Models\IndexableItem.cs" />
-    <Compile Include="Models\ImageRequestModel.cs" />
-    <Compile Include="Models\ImageModel.cs" />
-    <Compile Include="Models\MeldpuntContext.cs" />
-    <Compile Include="Models\BlogModel.cs" />
-    <Compile Include="Models\ContentPageModel.cs" />
-    <Compile Include="Models\RedirectModel.cs" />
-    <Compile Include="Models\SearchResult.cs" />
-    <Compile Include="Models\SearchResultModel.cs" />
+    <Compile Include="Models\ViewModels\RecaptchRequestModel.cs" />
+    <Compile Include="Models\Domain\PlaatsPageModel .cs" />
+    <Compile Include="Models\Domain\IndexableItem.cs" />
+    <Compile Include="Models\Domain\ImageRequestModel.cs" />
+    <Compile Include="Models\Domain\ImageModel.cs" />
+    <Compile Include="Database\MeldpuntContext.cs" />
+    <Compile Include="Models\Domain\BlogModel.cs" />
+    <Compile Include="Models\Domain\ContentPageModel.cs" />
+    <Compile Include="Models\Domain\RedirectModel.cs" />
+    <Compile Include="Models\Domain\SearchResult.cs" />
+    <Compile Include="Models\Domain\SearchResultModel.cs" />
     <Compile Include="Services\ContentPageService.cs" />
     <Compile Include="Services\Interfaces\IReactionService.cs" />
     <Compile Include="Services\Interfaces\IImageService.cs" />
@@ -269,9 +269,9 @@
     <Compile Include="Utils\LocationUtils.cs" />
     <Compile Include="Utils\PropertyCopier.cs" />
     <Compile Include="Utils\Utils.cs" />
-    <Compile Include="ViewModels\SitemapViewModel.cs" />
-    <Compile Include="ViewModels\PlaatsPageViewModel.cs" />
-    <Compile Include="ViewModels\BreadCrumb.cs" />
+    <Compile Include="Models\ViewModels\SitemapViewModel.cs" />
+    <Compile Include="Models\ViewModels\PlaatsPageViewModel.cs" />
+    <Compile Include="Models\ViewModels\BreadCrumb.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="500.html" />
@@ -385,7 +385,6 @@
     <Content Include="Views\Home\SiteMap.cshtml" />
     <Content Include="Views\Admin\adminNav.cshtml" />
     <Content Include="Views\Admin\AdminPages\EditPage.cshtml" />
-    <Content Include="Views\PlaatsPage\PlaatsWespennest.cshtml" />
     <Content Include="Views\Home\Disqus.cshtml" />
     <Content Include="Views\Admin\AdminPages\Pages.cshtml" />
     <Content Include="Views\Admin\AdminPlaatsPages\Places.cshtml" />

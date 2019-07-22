@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Meldpunt.Models
+namespace Meldpunt.Models.Domain
 {
   public class BasePageModel
   {

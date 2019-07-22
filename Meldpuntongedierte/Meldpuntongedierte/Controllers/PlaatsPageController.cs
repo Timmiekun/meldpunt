@@ -3,12 +3,13 @@ using System.Linq;
 using System.Web.Mvc;
 using Meldpunt.Models;
 using System.Web.Routing;
-using Meldpunt.ViewModels;
 using System.Net;
 using Newtonsoft.Json;
 using System.Configuration;
 using Meldpunt.Services.Interfaces;
 using Meldpunt.Services;
+using Meldpunt.Models.Domain;
+using Meldpunt.Models.ViewModels;
 
 namespace Meldpunt.Controllers
 {

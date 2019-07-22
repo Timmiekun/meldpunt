@@ -1,4 +1,6 @@
-﻿using System.Data.Entity;
+﻿using Meldpunt.Models.Domain;
+using Meldpunt.Models.Domain;
+using System.Data.Entity;
 
 namespace Meldpunt.Models
 {

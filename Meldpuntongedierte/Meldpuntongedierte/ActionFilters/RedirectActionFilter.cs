@@ -3,6 +3,7 @@ using Meldpunt.Services;
 using Meldpunt.Models;
 using System.Web;
 using Meldpunt.Services.Interfaces;
+using Meldpunt.Models.Domain;
 
 namespace Meldpunt.ActionFilters
 {

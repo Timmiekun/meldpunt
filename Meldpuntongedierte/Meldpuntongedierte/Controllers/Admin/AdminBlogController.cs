@@ -1,4 +1,5 @@
 ﻿using Meldpunt.Models;
+using Meldpunt.Models.Domain;
 using Meldpunt.Utils;
 using System;
 using System.Data.Entity;
