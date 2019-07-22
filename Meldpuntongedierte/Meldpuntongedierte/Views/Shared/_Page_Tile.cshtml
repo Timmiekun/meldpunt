@@ -9,7 +9,14 @@
 }
 <div class="page-tile">
   <a href="@Model.Url">
-    <div class="tile-image" style="background-image:url('@image&width=400')"></div>
+    @if (String.IsNullOrWhiteSpace(image) || image == "/" || image.Length < 2)
+    {
+      <div class="tile-image"></div>
+    }
+    else
+    {
+      <div class="tile-image" style="background-image:url('@image&width=400')"></div>
+    }
     <div class="tile-text">
       <h2>@Model.Title</h2>
       <p>@Model.MetaTitle</p>

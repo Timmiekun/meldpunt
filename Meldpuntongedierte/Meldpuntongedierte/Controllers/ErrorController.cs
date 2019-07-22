@@ -21,6 +21,16 @@ namespace Meldpunt.Controllers
         var error = HttpContext.AllErrors[0];
         ViewBag.Error = error.Message;
       }
+
+      string filePath = HostingEnvironment.MapPath("/_logs/500-.txt");
+      Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Debug()
+                .WriteTo.File(filePath, rollingInterval: RollingInterval.Day)
+                .CreateLogger();
+
+      Log.Error(exception,"Something error happened");
+      Log.CloseAndFlush();
+
       return View();
     }
 
@@ -34,8 +44,10 @@ namespace Meldpunt.Controllers
                 .MinimumLevel.Debug()
                 .WriteTo.File(filePath, rollingInterval: RollingInterval.Day)
                 .CreateLogger();
-
+      
       Log.Information("Page not found: {0}", Request.Url.PathAndQuery);
+      if(Request.UrlReferrer != null)
+        Log.Information("Referrer {0}", Request.UrlReferrer);
       Log.CloseAndFlush();
 
       return View();
