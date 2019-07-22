@@ -92,17 +92,19 @@ namespace Meldpunt.Services
       BooleanQuery bq = new BooleanQuery();
       int resultcount = 2000;
 
-      foreach (var type in options.Types)
+      if (options.Types.Any())
       {
-        if (!string.IsNullOrWhiteSpace(type))
+        foreach (var type in SearchTypes.AllTypes.Where(t => !options.Types.Contains(t)))
         {
           QueryParser filterParser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, "type", new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30));
           Query filterQuery = filterParser.Parse(type);
-          bq.Add(filterQuery, Occur.SHOULD);
+          bq.Add(filterQuery, Occur.MUST_NOT);
+
         }
       }
 
-      foreach (var filter in options.Filters) { 
+      foreach (var filter in options.Filters)
+      {
         if (!string.IsNullOrWhiteSpace(filter.Value))
         {
           QueryParser filterParser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, filter.Key, new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30));
@@ -227,5 +229,7 @@ namespace Meldpunt.Services
     public static string Place = "place";
     public static string Image = "image";
     public static string Reaction = "reaction";
+
+    public static IEnumerable<string> AllTypes = new[] { Page, Place, Image, Reaction };
   }
 }
