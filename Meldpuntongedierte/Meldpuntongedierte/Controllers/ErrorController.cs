@@ -29,7 +29,7 @@ namespace Meldpunt.Controllers
       Response.StatusCode = 404;
       Response.ContentType = "text/html";
 
-      string filePath = HostingEnvironment.MapPath("/_logs/404.txt");
+      string filePath = HostingEnvironment.MapPath("/_logs/404-.txt");
       Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Debug()
                 .WriteTo.File(filePath, rollingInterval: RollingInterval.Day)
