@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Meldpunt.Models.helpers
 {
@@ -7,6 +8,7 @@ namespace Meldpunt.Models.helpers
     public SearchRequestOptions()
     {
       Filters = new Dictionary<string, string>();
+      Types = Enumerable.Empty<string>();
     }
     public string Q { get; set; }
     public int Page { get; set; }

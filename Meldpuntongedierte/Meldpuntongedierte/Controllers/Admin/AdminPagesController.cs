@@ -37,7 +37,7 @@ namespace Meldpunt.Controllers
     }
 
     [Route("Pages")]
-    public ActionResult Pages(string q, int page = 0)
+    public ActionResult Pages(string q, int page = 0, bool sortDesc = true)
     {
       var options = new SearchRequestOptions()
       {
@@ -45,7 +45,7 @@ namespace Meldpunt.Controllers
         Page = page,
         Filters = new Dictionary<string, string> { { "type", SearchTypes.Page } },
         Sort = "date",
-        SortDesc = true
+        SortDesc = sortDesc
       };
       return View(searchService.Search(options));
     }
