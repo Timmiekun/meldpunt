@@ -123,6 +123,10 @@
   </article>
 
 }
+else if (!String.IsNullOrWhiteSpace(Model.Content.PlaatsNaam))
+{
+  @Html.Partial("Smurfdorp", Model.Content);
+}
 else
 {
   @Html.Partial("Plaats_Static_Content", Model.Content);

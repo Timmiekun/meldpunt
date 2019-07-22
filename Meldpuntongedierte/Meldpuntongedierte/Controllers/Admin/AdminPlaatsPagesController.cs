@@ -129,7 +129,6 @@ namespace Meldpunt.Controllers
 
       // copy some properties for convenience
       newPage.Gemeentenaam = gemeentePage.Gemeentenaam;
-      newPage.Content = gemeentePage.Content;
       newPage.Components = gemeentePage.Components;
       newPage.MetaDescription = gemeentePage.MetaDescription;
       newPage.PhoneNumber = gemeentePage.PhoneNumber;
