@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Meldpunt.CustomAttributes;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -19,7 +20,10 @@ namespace Meldpunt.Models.Domain
     public DateTimeOffset? LastModified { get; set; }
     public string MetaTitle { get; set; }
     public string MetaDescription { get; set; }   
-    public string Content { get; set; }    
+    public string Content { get; set; }
+
+    [JsonStore]
+    public Guid? TemplateId { get; set; }
 
     /// <summary>
     /// Used to store all the serialized jsonstore components

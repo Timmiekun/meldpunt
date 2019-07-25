@@ -1,0 +1,37 @@
+﻿@model TextTemplateModel
+@{
+  ViewBag.Title = "Templates - Admin";
+  Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<h1>Template aanpassen</h1>
+
+<p>Laatst aangepast: @Model.LastModified.ToString("f")</p>
+
+
+<div class="actions">
+  <button onclick="$('#opslaan').click()" class="btn btn-info">Opslaan</button>
+</div>
+
+<form method="post">
+
+  <div class="field">
+    @Html.LabelFor(m => m.Name, htmlAttributes: new { @class = "control-label" })
+    @Html.EditorFor(m => m.Name, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+  </div>
+
+  <div class="field">
+    @Html.LabelFor(m => m.Text, htmlAttributes: new { @class = "control-label" })
+    @Html.TextAreaFor(m => m.Text, htmlAttributes: new { @class = "richtext form-control" } )
+
+  </div>
+
+  @Html.HiddenFor(m => m.Id)
+  @Html.HiddenFor(m => m.LastModified)
+
+  <div class="actions">
+    <input type="submit" id="opslaan" value="opslaan" class="btn btn-info" />
+    <a href="/admin/templates/delete/@Model.Id" class="btn btn-danger" data-action-confirm>Verwijderen</a>
+  </div>
+</form>

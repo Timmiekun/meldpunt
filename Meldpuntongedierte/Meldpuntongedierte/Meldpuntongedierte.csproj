@@ -138,6 +138,7 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Controllers\Admin\AdminBlogController.cs" />
+    <Compile Include="Controllers\Admin\AdminTemplatesController.cs" />
     <Compile Include="Controllers\Admin\AdminRedirectController.cs" />
     <Compile Include="Controllers\Admin\BasePagesController.cs" />
     <Compile Include="Controllers\Admin\AdminPlaatsPagesController.cs" />
@@ -155,7 +156,12 @@
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Database\Domain\ReactionModel.cs" />
+    <Compile Include="Migrations\201907251033083_add_templates.cs" />
+    <Compile Include="Migrations\201907251033083_add_templates.Designer.cs">
+      <DependentUpon>201907251033083_add_templates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Domain\TextTemplateModel.cs" />
+    <Compile Include="Models\Domain\ReactionModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -237,12 +243,14 @@
       <DependentUpon>201907031338509_add_date_to_redirects.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\helpers\JsonComponent.cs" />
+    <Compile Include="Models\Helpers\JsonComponent.cs" />
     <Compile Include="Models\Domain\BasePageModel.cs" />
-    <Compile Include="Models\helpers\SearchRequestOptions.cs" />
+    <Compile Include="Models\Helpers\SearchRequestOptions.cs" />
     <Compile Include="Models\Domain\RouteableItem.cs" />
     <Compile Include="Services\BasePageService.cs" />
+    <Compile Include="Services\Interfaces\ITemplateService.cs" />
     <Compile Include="Services\Interfaces\IRedirectService.cs" />
+    <Compile Include="Services\TemplateService.cs" />
     <Compile Include="Services\RedirectService.cs" />
     <Compile Include="Models\ViewModels\RecaptchRequestModel.cs" />
     <Compile Include="Models\Domain\PlaatsPageModel .cs" />
@@ -325,6 +333,7 @@
     <Content Include="Images\wasp.png" />
     <Content Include="Images\whatsapp.png" />
     <Content Include="robots.txt" />
+    <Content Include="Scripts\tiny-mce.js" />
     <Content Include="Scripts\admin.js" />
     <Content Include="Scripts\admin-modal.js" />
     <Content Include="Scripts\reactions.js" />
@@ -408,6 +417,8 @@
     <Content Include="Views\Home\Cookie.cshtml" />
     <Content Include="Views\PlaatsPage\Smurfdorp.cshtml" />
     <Content Include="Views\Admin\Logs.cshtml" />
+    <Content Include="Views\Admin\AdminTemplates\Templates.cshtml" />
+    <Content Include="Views\Admin\AdminTemplates\Details.cshtml" />
     <None Include="Volksgezondheid.pdf" />
     <None Include="Web.azure.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -473,6 +484,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907031338509_add_date_to_redirects.resx">
       <DependentUpon>201907031338509_add_date_to_redirects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907251033083_add_templates.resx">
+      <DependentUpon>201907251033083_add_templates.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

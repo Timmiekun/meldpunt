@@ -2,6 +2,7 @@
 @{
   ViewBag.Title = Model.Gemeentenaam + " - Admin";
   var locations = ViewBag.Locations;
+  var templates = ViewBag.Templates as IEnumerable<TextTemplateModel>;
   Layout = "~/Views/Shared/_Admin.cshtml";
 }
 
@@ -84,12 +85,40 @@ else if (String.IsNullOrWhiteSpace(Model.PlaatsNaam))
     <input type="text" name="PhoneNumber" class="form-control" value="@Model.PhoneNumber" />
   </div>
 
-
   <div class="field">
+    <label for="TemplateId">Template</label>
+    <input type="text" name="TemplateId" id="TemplateId" list="templates" class="form-control" value="@Model.TemplateId" />
+    <datalist id="templates">
+      @foreach (var template in templates)
+      {
+        <option value="@template.Id">@template.Name</option>
+      }
+    </datalist>
+
+    @if (Model.TemplateId.HasValue)
+    {
+      <br/>
+      <label>Template voorbeeld</label><br/>
+      <b>Let op!</b> <span>Tekst aannpassingen worden hier niet opgeslagen!</span>
+      <textarea class="form-control richtext readonly">@templates.First(t=> t.Id == Model.TemplateId).Text</textarea>
+    }
+  </div>
+
+  @{
+    string className = "field panel";
+    if (Model.TemplateId.HasValue)
+    {
+      className += " panel-closed";
+    }
+  }
+  <div class="@className">
+    <a href="#" class="open-toggle">open/close</a>
     <label for="content">Content</label>
-    <textarea id="content" name="content" class="richtext">
+    <div class="panel-content">
+      <textarea id="content" name="content" class="richtext">
       @Model.Content
     </textarea>
+    </div>
   </div>
 
 

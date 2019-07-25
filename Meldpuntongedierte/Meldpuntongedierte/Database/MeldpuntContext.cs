@@ -26,5 +26,9 @@ namespace Meldpunt.Models
     public DbSet<ReactionModel> Reactions { get; set; }
 
     public DbSet<RedirectModel> Redirects { get; set; }
+
+    public DbSet<TextTemplateModel> Templates { get; set; }
+
+    
   }
 }

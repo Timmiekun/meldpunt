@@ -264,11 +264,13 @@ h3 {
     padding: 0 10px;
     width: 50px;
   }
+
 /* List pages */
 .list-item {
   border-bottom: 1px solid #efefef;
   padding: 10px;
   overflow: hidden;
+  display: block;
 }
 
   .list-item .unapproved {
@@ -288,7 +290,7 @@ h3 {
 
   .list-item-header .oi {
     top: 3px;
-    color:brown;
+    color: brown;
   }
 
 .list-item .link-to-edit {
@@ -355,8 +357,8 @@ h3 {
 }
 
 .list-item .date-created {
-  text-align:right;
-  width:30%;
+  text-align: right;
+  width: 30%;
 }
 
 .subpages {
@@ -377,6 +379,16 @@ h3 {
   margin-bottom: 30px;
   padding: 10px;
   overflow: hidden;
+  position:relative;
+}
+
+.panel-closed .panel-content {
+  display: none;
+}
+
+.open-toggle {
+  position: absolute;
+  right: 10px;
 }
 
 .actions {
@@ -397,9 +409,10 @@ h3 {
   border-bottom: 5px solid #17a2b8;
   overflow: hidden;
 }
-.archive-tab.active {
-  border-color: #6c757d;
-}
+
+  .archive-tab.active {
+    border-color: #6c757d;
+  }
 
 .archive-toggle {
   margin-top: 10px;
@@ -411,28 +424,28 @@ h3 {
   float: left;
 }
 
-.archive-button{
-  float:right;
+.archive-button {
+  float: right;
 }
 
-  .archive-toggle .oi {
-    top: 3px;
-    margin-right:5px;
-  }
-
-.pagination{
-  margin-top:10px;
-}
-
-.pagination .btn{
+.archive-toggle .oi {
+  top: 3px;
   margin-right: 5px;
 }
 
-.toolbar-top{
-  margin-bottom: 20px;
-  text-align:right;
+.pagination {
+  margin-top: 10px;
 }
 
-.maak-plaats .btn{
+  .pagination .btn {
+    margin-right: 5px;
+  }
+
+.toolbar-top {
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+.maak-plaats .btn {
   margin-bottom: 15px;
 }

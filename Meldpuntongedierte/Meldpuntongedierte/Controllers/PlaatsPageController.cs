@@ -36,11 +36,20 @@ namespace Meldpunt.Controllers
       PlaatsPageModel plaatsModel = plaatsPageService.GetPlaatsById(Guid.Parse(id.ToString()));    
       ViewBag.HidePhoneNumber = true;
       ViewBag.RecaptchaKey = ConfigurationManager.AppSettings["recaptchaSite"];
-      return View("Plaats", new PlaatsPageViewModel
+
+      var model = new PlaatsPageViewModel
       {
         Content = plaatsModel,
         Reactions = db.Reactions.Where(r => r.GemeenteNaam == plaatsModel.Gemeentenaam && r.Approved != null)
-      });
+      };
+
+      if (plaatsModel.TemplateId.HasValue)
+      {
+        model.TemplateContent = db.Templates.Find(plaatsModel.TemplateId.Value).Text;
+        model.TemplateContent = string.Format(model.TemplateContent, plaatsModel.Gemeentenaam);
+      }
+
+      return View("Plaats", model);
     }
 
     [HttpPost, ValidateInput(false)]
