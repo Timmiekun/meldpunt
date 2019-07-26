@@ -137,13 +137,6 @@ else
   <p>Onder de gemeente @Model.Content.Gemeentenaam vallen de plaatsen: @Html.Raw(String.Join(", ", Model.Content.Plaatsen.Where(p => p != Model.Content.Gemeentenaam)))</p>
 }
 
-else if (!string.IsNullOrWhiteSpace(Model.Content.PlaatsNaam))
-{
-  <br /><br />
-  <p>@Model.Content.PlaatsNaam valt onder gemeente <a href="/ongediertebestrijding-@Model.Content.Gemeentenaam.XmlSafe()">@Model.Content.Gemeentenaam</a></p>
-}
-
-
 @Html.Partial("ReactionForm", new ReactionModel { GemeenteNaam = Model.Content.Title })
 
 @if (Model.Reactions.Any())

@@ -10,6 +10,7 @@ using Meldpunt.Services.Interfaces;
 using Meldpunt.Services;
 using Meldpunt.Models.Domain;
 using Meldpunt.Models.ViewModels;
+using Meldpunt.Utils;
 
 namespace Meldpunt.Controllers
 {
@@ -51,6 +52,8 @@ namespace Meldpunt.Controllers
         //replace readable-params. Note: string interpolations isn't possible so we use replace
         model.TemplateContent = model.TemplateContent.Replace("{plaatsnaam}", model.Content.PlaatsNaam);
         model.TemplateContent = model.TemplateContent.Replace("{gemeentenaam}", model.Content.Gemeentenaam);
+        model.TemplateContent = model.TemplateContent.Replace("{gemeente-url}", "ongediertebestrijding-" + model.Content.Gemeentenaam.XmlSafe());
+        
         model.TemplateContent = model.TemplateContent.Replace("{plaatsen}", String.Join(", ",model.Content.Plaatsen));
       }
 

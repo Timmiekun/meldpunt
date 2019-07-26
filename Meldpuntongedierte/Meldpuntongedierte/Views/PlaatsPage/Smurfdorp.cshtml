@@ -1,40 +1,59 @@
-﻿@model PlaatsPageModel
+﻿@using Meldpunt.Utils
+@model PlaatsPageModel
 
-<h1 class="plaatsheader"><span class="pre-header">Ongediertebestrijding</span> @Model.Title</h1>
+<h1 class="plaatsheader"><span class="pre-header">Ongediertebestrijding</span> @Model.PlaatsNaam</h1>
 <p>
-  @Model.Title valt onder ons servicegebied voor ongediertebestrijding. Wij bestrijden alle soorten
-  ongedierte die gevaarlijk zijn voor de omgeving of het welzijn van bewoners en bezoekers. Denk
-  hierbij vooral aan muizenbestrijding, rattenbestrijding en het bestrijden of verwijderen van een
-  wespennest. Verder bestrijden wij ook incidenteel mieren, kakkerlakken en vliegen.
-  Melding doen en afspraak maken
+  @Model.PlaatsNaam maakt onderdeel uit van ons servicegebied voor ongediertebestrijding. Wij bestrijden
+  alle soorten ongedierte die gevaarlijk zijn voor de omgeving of het welzijn van bewoners en
+  bezoekers. Denk hierbij vooral aan muizenbestrijding, rattenbestrijding en wespenbestrijding.
 </p>
 
+<h2>Afspraak maken</h2>
+<p>Ga voor het maken van een afspraak naar onze hoofdpagina van <a href="/ongediertebestrijding-@Model.Gemeentenaam.XmlSafe()">@Model.Gemeentenaam</a></p>
+
+<h2>Melding doen</h2>
 <p>
-  @Model.Title maakt onderdeel uit van een groter werkgebied. Onze ongediertebestrijder verzorgt zelf
-  de planning. U kunt daarom het beste zelf een afspraak met hem maken. Klik hier voor de juiste
-  contactgegevens.
+  Het kan zijn dat u ongedierte signaleert, maar niet direct een afspraak wilt maken. Dan kunt u
+  hiervan melding doen via ons.
 </p>
 
-<h2>Planning</h2>
+<h2>Hoe werkt het?</h2>
 <p>
-  Onze ongediertebestrijder is meerdere dagdelen per week actief in @Model.Title. Wanneer u melding
-  doet of een afspraak wilt maken, dan bent u meestal binnen één tot drie werkdagen geholpen.
+  Onze ongediertebestrijder is meerdere dagdelen per week actief in @Model.PlaatsNaam. Wanneer u een
+  afspraak heeft gemaakt, dan bent u meestal binnen één tot drie werkdagen geholpen. De
+  hoeveelheid behandelingen, de frequentie van bestrijding en de werkwijze is sterk afhankelijk van de
+  diersoort en de omvang van het probleem. Ga voor meer informatie naar één van onze pagina’s
+  over:
+</p>
+<br />
+<ul>
+  <li><a href="/ratten/rattenbestrijding">Rattenbestrijding</a></li>
+  <li><a href="/muizen/muizenbestrijding">Muizenbestrijding</a></li>
+  <li><a href="/insectengids/wespen/wespenbestrijding">Wespenbestrijding</a></li>
+  <li><a href="/mieren/mierenbestrijding">Mierenbestrijding</a></li>
+  <li><a href="/kakkerlakken/kakkerlakkenbestrijding">Kakkerlakkenbestrijding</a></li>
+</ul>
+
+<h2>Andere plaagdieren en insecten</h2>
+<p>
+  Onze ongediertebestrijding behandelt ook enkele andere plaagdieren en insecten in @Model.PlaatsNaam.
+  Ga voor meer informatie naar onze <a href="/insectengids">insectengids</a> of <a href="/plaagdierengids">plaagdierengids</a>
 </p>
 
 <h2>Belangrijk om te weten</h2>
 <p>
-  Het is voor ons belangrijk dat @Model.Title zoveel mogelijk vrij blijft van ongedierte. Er moet
+  Het is voor ons belangrijk dat @Model.PlaatsNaam zoveel mogelijk vrij blijft van ongedierte. Er moet
   desondanks goed onderscheid gemaakt worden tussen plaagdieren en dieren waar wij juist zuinig op
   moeten zijn. Het is aan onze bestrijdingsdienst om op verantwoorde wijze te beoordelen of
   bestrijding nuttig en noodzakelijk is.
 </p>
 
-<h2>Wat doen wij met een wespennest in @Model.Title?</h2>
+<h2>Wat doen wij met een wespennest in @Model.PlaatsNaam?</h2>
 <p>
   Als u last heeft van een wespennest in huis of in de tuin, dan is aan u de keuze of u het laat zitten of
   dat u het gaat (laten) bestrijden. Zelf een wespennest bestrijden of verwijderen brengt grote risico’s
-  met zich mee. Dit raden wij daarom af. Inwoners van @Model.Title kunnen het wespennest
-  daarom het beste door ons laten bestrijden. De kosten zijn beperkt en u weet dan zeker dat het vakkundig en 
-  veilig uitgevoerd wordt. Een wespennest kan pas verwijderd worden als wij de bestrijding hebben
+  met zich mee. Dit raden wij daarom af. Inwoners van @Model.PlaatsNaam laten het wespennest daarom
+  meestal door ons bestrijden. De kosten zijn beperkt en u weet zeker dat het vakkundig en veilig
+  uitgevoerd wordt. Een wespennest kan pas verwijderd worden als wij de bestrijding hebben
   uitgevoerd.
 </p>
