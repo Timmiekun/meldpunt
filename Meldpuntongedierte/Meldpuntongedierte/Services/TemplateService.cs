@@ -38,7 +38,7 @@ namespace Meldpunt.Services
 
       db.Entry(p).State = EntityState.Modified;
 
-      var existingTemplate = db.Redirects.AsNoTracking().FirstOrDefault(r => r.Id == p.Id);
+      var existingTemplate = db.Templates.AsNoTracking().FirstOrDefault(r => r.Id == p.Id);
       if (existingTemplate == null)
         db.Templates.Add(p);
 

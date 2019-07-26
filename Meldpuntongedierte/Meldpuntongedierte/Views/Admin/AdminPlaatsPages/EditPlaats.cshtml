@@ -98,9 +98,14 @@ else if (String.IsNullOrWhiteSpace(Model.PlaatsNaam))
     @if (Model.TemplateId.HasValue)
     {
       <br/>
-      <label>Template voorbeeld</label><br/>
-      <b>Let op!</b> <span>Tekst aannpassingen worden hier niet opgeslagen!</span>
-      <textarea class="form-control richtext readonly">@templates.First(t=> t.Id == Model.TemplateId).Text</textarea>
+      <div class="panel panel-closed">
+        <a href="#" class="open-toggle" title="open/close"></a>
+        <label>Template voorbeeld</label><br />
+        <div class="panel-content">
+          <b>Let op!</b> <span>Tekst aannpassingen worden hier niet opgeslagen!</span>
+          <textarea class="form-control richtext ">@templates.First(t=> t.Id == Model.TemplateId).Text</textarea>
+        </div>
+      </div>
     }
   </div>
 
@@ -112,9 +117,14 @@ else if (String.IsNullOrWhiteSpace(Model.PlaatsNaam))
     }
   }
   <div class="@className">
-    <a href="#" class="open-toggle">open/close</a>
+    <a href="#" class="open-toggle" title="open/close"></a>
     <label for="content">Content</label>
+
     <div class="panel-content">
+      @if (Model.TemplateId.HasValue)
+      {
+        <b>Let op!</b><span> Zolang er een template geselecteerd is wordt deze tekst niet gebruikt.</span>
+      }
       <textarea id="content" name="content" class="richtext">
       @Model.Content
     </textarea>

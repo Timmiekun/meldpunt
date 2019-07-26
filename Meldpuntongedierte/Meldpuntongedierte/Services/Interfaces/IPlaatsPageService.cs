@@ -6,7 +6,7 @@ namespace Meldpunt.Services.Interfaces
 {
   public interface IPlaatsPageService
   {
-    IEnumerable<PlaatsPageModel> GetAllPlaatsModels();
+    IEnumerable<PlaatsPageModel> GetAll();
 
     PlaatsPageModel GetPlaatsById(Guid id);
 

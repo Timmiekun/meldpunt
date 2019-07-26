@@ -169,7 +169,7 @@ namespace Meldpunt.Controllers
 
       // gather data
       var allMunicipalities = Utils.LocationUtils.placesByMunicipality;
-      var allPages = plaatsPageService.GetAllPlaatsModels().ToList();
+      var allPages = plaatsPageService.GetAll().ToList();
       var allFoundPlaces = new List<PlaatsPageModel>();
       WriteLine("Done. Syncing pages with places list..");
 

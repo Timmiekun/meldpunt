@@ -83,7 +83,7 @@ namespace Meldpunt
     private static void MapPlaatsRoutes(RouteCollection routes)
     {
       var plaatsPageService = DependencyResolver.Current.GetService<IPlaatsPageService>();
-      var allPlaatsPageModels = plaatsPageService.GetAllPlaatsModels().ToList();
+      var allPlaatsPageModels = plaatsPageService.GetAll().ToList();
 
       foreach (var gemeentePage in allPlaatsPageModels)
       {

@@ -374,21 +374,47 @@ h3 {
 }
 
 .panel {
-  border: 2px solid #efefef;
+  border: 1px solid #bcbcbc;
   border-radius: 5px;
   margin-bottom: 30px;
   padding: 10px;
   overflow: hidden;
-  position:relative;
+  position: relative;
+}
+
+.panel-content{
+  margin-top:10px;
 }
 
 .panel-closed .panel-content {
   display: none;
 }
 
-.open-toggle {
+.panel .open-toggle {
   position: absolute;
   right: 10px;
+  color: #999;
+  font-family: 'Icons';
+  border: 1px solid #c0c0c0;
+  padding: 3px;
+  border-radius: 3px;
+}
+
+  .panel .open-toggle:hover:before {
+    transform: translate3d(0,10%,0);
+    display: block;
+  }
+
+  .panel .open-toggle:hover {
+    text-decoration: none;
+  }
+
+  .panel .open-toggle:before {
+    content: '\e063';
+  }
+
+.panel-closed .open-toggle:before {
+  content: '\e060';
 }
 
 .actions {
@@ -448,4 +474,9 @@ h3 {
 
 .maak-plaats .btn {
   margin-bottom: 15px;
+}
+
+.field .mce-tinymce{
+  box-shadow:none;
+  border-radius: 3px;
 }

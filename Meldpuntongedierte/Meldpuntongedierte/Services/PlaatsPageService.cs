@@ -17,7 +17,7 @@ namespace Meldpunt.Services
       db = _db;
     }
 
-    public IEnumerable<PlaatsPageModel> GetAllPlaatsModels()
+    public IEnumerable<PlaatsPageModel> GetAll()
     {
       return db.PlaatsPages;
     }

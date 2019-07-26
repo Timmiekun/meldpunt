@@ -75,7 +75,7 @@ namespace Meldpunt.Controllers
     {
       var model = new SitemapViewModel();
       model.Pages = pageService.GetAllPages();
-      model.PlacePages = placePageService.GetAllPlaatsModels();
+      model.PlacePages = placePageService.GetAll();
       model.BlogItems = db.BlogModels.Where(b => b.LastModified != null && b.Published != null).ToList();
 
       Response.ContentType = "text/xml";
