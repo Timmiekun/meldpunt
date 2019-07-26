@@ -3,7 +3,7 @@ using System.IO;
 using System.Web;
 using System.Web.Mvc;
 using ImageResizer;
-using Meldpunt.Models;
+using Meldpunt.Models.Domain;
 using Meldpunt.Services.Interfaces;
 
 namespace Meldpunt.Controllers

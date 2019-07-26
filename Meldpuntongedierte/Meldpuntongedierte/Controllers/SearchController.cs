@@ -41,7 +41,7 @@ namespace Meldpunt.Controllers
       WriteLine(allPages.Count().ToString());
 
       WriteLine("Indexing places.. ");
-      var allPlaces = plaatsPageeService.GetAllPlaatsModels();
+      var allPlaces = plaatsPageeService.GetAll();
       searchService.IndexItems(allPlaces);
       WriteLine(allPlaces.Count().ToString());
 

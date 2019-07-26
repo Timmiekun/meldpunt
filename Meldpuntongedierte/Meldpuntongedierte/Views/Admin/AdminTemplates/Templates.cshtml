@@ -1,0 +1,28 @@
+﻿@model IEnumerable<TextTemplateModel>
+@{
+  ViewBag.Title = "Admin";
+  Layout = "~/Views/Shared/_Admin.cshtml";
+}
+<h1>Beheer templates</h1>
+
+@if (!ViewData.ModelState.IsValid)
+{
+  <div class="alert alert-warning">
+    @Html.ValidationSummary()
+  </div>
+}
+
+<div class="list-item list-item-header">
+  <div class="from">Naam</div>
+  <div class="lastmod">Laatst aangepast</div>
+</div>
+
+@foreach (TextTemplateModel t in Model.OrderBy(t => t.Name))
+{
+  <a href="/admin/templates/@t.Id" class="list-item">
+    <div class="from">@t.Name</div>
+    <div class="lastmod">@t.LastModified.ToString("dd MMM yyy hh:mm")</div>
+  </a>
+}
+
+<a class="btn btn-info new-button" href="/admin/templates/new" data-action="js-new-redirect">Nieuwe template</a>

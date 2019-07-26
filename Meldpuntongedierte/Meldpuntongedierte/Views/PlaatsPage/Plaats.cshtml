@@ -1,6 +1,5 @@
 ﻿@using Meldpunt.Utils;
-@using Meldpunt.Models;
-@model Meldpunt.ViewModels.PlaatsPageViewModel
+@model PlaatsPageViewModel
 @{
   // Default values
   ViewBag.HeaderTitle = "Meldpunt Ongedierte";
@@ -67,7 +66,7 @@
     </div>
   }*@
 
-@if (!String.IsNullOrWhiteSpace(Model.Content.Content))
+@if (!String.IsNullOrWhiteSpace(Model.Content.Content) || !String.IsNullOrEmpty(Model.TemplateContent))
 {
   <h1 class="plaatsheader"><span class="pre-header">Meldpunt Ongediertebestrijding</span> @Model.Content.Title</h1>
   <div class="phone-button phone-icon"><a href="tel:@Model.Content.PhoneNumber">Maak een afspraak</a></div>
@@ -119,7 +118,7 @@
   </div>
 
   <article class="created-content">
-    @Html.Raw(Model.Content.Content)
+    @Html.Raw(Model.TemplateContent ?? Model.Content.Content)
   </article>
 
 }

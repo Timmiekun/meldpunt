@@ -4,8 +4,9 @@ using System.Web;
 using System.Web.Mvc;
 using Meldpunt.Models;
 using System.Web.Routing;
-using Meldpunt.ViewModels;
 using Meldpunt.Services.Interfaces;
+using Meldpunt.Models.Domain;
+using Meldpunt.Models.ViewModels;
 
 namespace Meldpunt.Controllers
 {
@@ -74,7 +75,7 @@ namespace Meldpunt.Controllers
     {
       var model = new SitemapViewModel();
       model.Pages = pageService.GetAllPages();
-      model.PlacePages = placePageService.GetAllPlaatsModels();
+      model.PlacePages = placePageService.GetAll();
       model.BlogItems = db.BlogModels.Where(b => b.LastModified != null && b.Published != null).ToList();
 
       Response.ContentType = "text/xml";

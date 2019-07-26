@@ -4,7 +4,7 @@ using Lucene.Net.Documents;
 using Meldpunt.Services;
 using Newtonsoft.Json;
 
-namespace Meldpunt.Models
+namespace Meldpunt.Models.Domain
 {
   public class ReactionModel : IndexableItem
   {

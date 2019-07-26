@@ -3,12 +3,13 @@ using System.Linq;
 using System.Web.Mvc;
 using Meldpunt.Models;
 using System.Web.Routing;
-using Meldpunt.ViewModels;
 using System.Net;
 using Newtonsoft.Json;
 using System.Configuration;
 using Meldpunt.Services.Interfaces;
 using Meldpunt.Services;
+using Meldpunt.Models.Domain;
+using Meldpunt.Models.ViewModels;
 
 namespace Meldpunt.Controllers
 {
@@ -35,11 +36,25 @@ namespace Meldpunt.Controllers
       PlaatsPageModel plaatsModel = plaatsPageService.GetPlaatsById(Guid.Parse(id.ToString()));    
       ViewBag.HidePhoneNumber = true;
       ViewBag.RecaptchaKey = ConfigurationManager.AppSettings["recaptchaSite"];
-      return View("Plaats", new PlaatsPageViewModel
+
+      var model = new PlaatsPageViewModel
       {
         Content = plaatsModel,
         Reactions = db.Reactions.Where(r => r.GemeenteNaam == plaatsModel.Gemeentenaam && r.Approved != null)
-      });
+      };
+
+      // add template content if template is selected
+      if (plaatsModel.TemplateId.HasValue)
+      {
+        model.TemplateContent = db.Templates.Find(plaatsModel.TemplateId.Value).Text;
+
+        //replace readable-params. Note: string interpolations isn't possible so we use replace
+        model.TemplateContent = model.TemplateContent.Replace("{plaatsnaam}", model.Content.PlaatsNaam);
+        model.TemplateContent = model.TemplateContent.Replace("{gemeentenaam}", model.Content.Gemeentenaam);
+        model.TemplateContent = model.TemplateContent.Replace("{plaatsen}", String.Join(", ",model.Content.Plaatsen));
+      }
+
+      return View("Plaats", model);
     }
 
     [HttpPost, ValidateInput(false)]

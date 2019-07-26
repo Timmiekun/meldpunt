@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Meldpunt.Models
+namespace Meldpunt.Models.Domain
 {
   public class SearchResultModel
   {

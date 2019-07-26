@@ -1,4 +1,4 @@
-﻿using Meldpunt.Models;
+﻿using Meldpunt.Models.Domain;
 using System;
 using System.Collections.Generic;
 
@@ -6,7 +6,7 @@ namespace Meldpunt.Services.Interfaces
 {
   public interface IPlaatsPageService
   {
-    IEnumerable<PlaatsPageModel> GetAllPlaatsModels();
+    IEnumerable<PlaatsPageModel> GetAll();
 
     PlaatsPageModel GetPlaatsById(Guid id);
 

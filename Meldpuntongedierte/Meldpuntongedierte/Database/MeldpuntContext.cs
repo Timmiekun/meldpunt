@@ -1,4 +1,6 @@
-﻿using System.Data.Entity;
+﻿using Meldpunt.Models.Domain;
+using Meldpunt.Models.Domain;
+using System.Data.Entity;
 
 namespace Meldpunt.Models
 {
@@ -24,5 +26,9 @@ namespace Meldpunt.Models
     public DbSet<ReactionModel> Reactions { get; set; }
 
     public DbSet<RedirectModel> Redirects { get; set; }
+
+    public DbSet<TextTemplateModel> Templates { get; set; }
+
+    
   }
 }

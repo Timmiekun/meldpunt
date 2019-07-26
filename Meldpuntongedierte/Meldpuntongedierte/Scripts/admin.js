@@ -28,6 +28,16 @@ $(function () {
     }
   });
 
+  $(".open-toggle").on('click', function (evt) {
+    evt.preventDefault();
+    let target = $(this).closest(".panel");
+    console.log(this, target);
+    if (target.hasClass("panel-closed"))
+      target.removeClass("panel-closed");
+    else
+      target.addClass("panel-closed");
+  })
+
 });
 
 function readURL(input) {

@@ -1,5 +1,6 @@
 ﻿using Lucene.Net.Documents;
 using Meldpunt.CustomAttributes;
+using Meldpunt.Models.Domain;
 using Meldpunt.Services;
 using Meldpunt.Utils;
 using Newtonsoft.Json;
@@ -8,7 +9,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 
-namespace Meldpunt.Models
+namespace Meldpunt.Models.Domain
 {
   public class PlaatsPageModel : BasePageModel, IndexableItem
   {

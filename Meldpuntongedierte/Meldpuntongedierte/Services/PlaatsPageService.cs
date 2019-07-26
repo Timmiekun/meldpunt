@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Meldpunt.Models;
 using System.Data.Entity;
-using Meldpunt.Utils;
 using Meldpunt.Services.Interfaces;
+using Meldpunt.Models.Domain;
 
 namespace Meldpunt.Services
 {
@@ -17,7 +17,7 @@ namespace Meldpunt.Services
       db = _db;
     }
 
-    public IEnumerable<PlaatsPageModel> GetAllPlaatsModels()
+    public IEnumerable<PlaatsPageModel> GetAll()
     {
       return db.PlaatsPages;
     }

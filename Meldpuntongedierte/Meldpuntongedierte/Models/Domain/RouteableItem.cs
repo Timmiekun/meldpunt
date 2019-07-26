@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Meldpunt.Models
+﻿namespace Meldpunt.Models.Domain
 {
   public class RouteableItem
   {

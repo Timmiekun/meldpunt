@@ -1,5 +1,6 @@
 ﻿using Meldpunt.ActionFilters;
 using Meldpunt.Models;
+using Meldpunt.Models.Domain;
 using Meldpunt.Models.helpers;
 using Meldpunt.Services;
 using Meldpunt.Services.Interfaces;
@@ -22,11 +23,13 @@ namespace Meldpunt.Controllers
     private IPlaatsPageService plaatsPageService;
     private IImageService imageService;
     private ISearchService searchService;
+    private ITemplateService templateService;
 
-    public AdminPlaatsPagesController(IContentPageService _pageService, IPlaatsPageService _plaatsPageService, ISearchService _searchService, IImageService _imageService)
+    public AdminPlaatsPagesController(IContentPageService _pageService, IPlaatsPageService _plaatsPageService, ISearchService _searchService, IImageService _imageService, ITemplateService _templateService)
     {
       pageService = _pageService;
       plaatsPageService = _plaatsPageService;
+      templateService = _templateService;
 
       searchService = _searchService;
       imageService = _imageService;
@@ -72,6 +75,8 @@ namespace Meldpunt.Controllers
         throw new HttpException(404, "page not found");
       }
       ViewBag.Locations = LocationUtils.placesByMunicipality.OrderBy(m => m.Key);
+      ViewBag.Templates = templateService.GetAll();
+
       return View(plaatsModel);
     }
 
@@ -164,7 +169,7 @@ namespace Meldpunt.Controllers
 
       // gather data
       var allMunicipalities = Utils.LocationUtils.placesByMunicipality;
-      var allPages = plaatsPageService.GetAllPlaatsModels().ToList();
+      var allPages = plaatsPageService.GetAll().ToList();
       var allFoundPlaces = new List<PlaatsPageModel>();
       WriteLine("Done. Syncing pages with places list..");
 

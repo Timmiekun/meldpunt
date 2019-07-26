@@ -1,5 +1,5 @@
 ﻿using Meldpunt.ActionFilters;
-using Meldpunt.Models;
+using Meldpunt.Models.Domain;
 using Meldpunt.Models.helpers;
 using Meldpunt.Services;
 using System;

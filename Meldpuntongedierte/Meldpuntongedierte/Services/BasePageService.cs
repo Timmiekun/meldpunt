@@ -1,14 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Meldpunt.Models;
 using Meldpunt.CustomAttributes;
 using Newtonsoft.Json;
 using Meldpunt.Models.helpers;
+using Meldpunt.Models.Domain;
+using System;
 
 namespace Meldpunt.Services
 {
   public class BasePageService
-  {   
+  {
     public string GetJsonComponentsAsJson(BasePageModel pageToSave)
     {
       var objProps = pageToSave.GetType().GetProperties().Where(p => p.GetCustomAttributes(typeof(JsonStoreAttribute), false).Length > 0);
@@ -36,20 +37,33 @@ namespace Meldpunt.Services
     {
       if (model.Components == null)
         return;
-      
+
       // get jsoncomponents
       List<JsonComponent> jsonObjs = JsonConvert.DeserializeObject<List<JsonComponent>>(model.Components);
 
       // get jsonstore properties
       var objProps = model.GetType().GetProperties().Where(p => p.GetCustomAttributes(typeof(JsonStoreAttribute), false).Length > 0);
-      
+
       // set property values
       foreach (var prop in objProps)
       {
         var storedVal = jsonObjs.FirstOrDefault(j => j.Name == prop.Name);
         // could be data doesn't exist (anymore) or type has changed
         if (storedVal != null && storedVal.Type == prop.PropertyType)
-          prop.SetValue(model, storedVal.Content);
+        {
+          // nullable types
+          var proptype = Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType;
+
+          if (proptype == typeof(Guid) && storedVal.Content != null)
+          {
+            if (Guid.TryParse((string)storedVal.Content, out Guid storedGuid))
+              prop.SetValue(model, storedGuid);
+          }
+
+          else
+            prop.SetValue(model, storedVal.Content);
+        }
+
       }
     }
   }
