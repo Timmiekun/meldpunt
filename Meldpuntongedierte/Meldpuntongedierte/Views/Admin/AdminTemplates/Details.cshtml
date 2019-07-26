@@ -23,6 +23,7 @@
 
   <div class="field">
     @Html.LabelFor(m => m.Text, htmlAttributes: new { @class = "control-label" })
+    <p>Gebruik <b>{plaatsnaam}</b> , <b>{gemeentenaam}</b> of <b>{plaatsen}</b> in de tekst om deze te vervangen met de bijbehorende namen.</p>
     @Html.TextAreaFor(m => m.Text, htmlAttributes: new { @class = "richtext form-control" } )
 
   </div>
