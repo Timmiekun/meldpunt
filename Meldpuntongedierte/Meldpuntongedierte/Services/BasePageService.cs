@@ -35,7 +35,7 @@ namespace Meldpunt.Services
 
     public void SetJsonstoreProperties(BasePageModel model)
     {
-      if (model.Components == null)
+      if (model == null || model.Components == null)
         return;
 
       // get jsoncomponents
