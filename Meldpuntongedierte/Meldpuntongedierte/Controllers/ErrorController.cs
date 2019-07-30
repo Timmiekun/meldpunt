@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Meldpunt.Services;
+using Newtonsoft.Json;
 using Serilog;
 using System;
 using System.Linq;
@@ -9,9 +10,11 @@ namespace Meldpunt.Controllers
 {
   public class ErrorController : Controller
   {
-    public ErrorController()
-    {
+    private ISearchService searchservice;
 
+    public ErrorController(ISearchService _searchservice)
+    {
+      searchservice = _searchservice;
     }
 
     public ActionResult General(Exception exception)
@@ -37,9 +40,6 @@ namespace Meldpunt.Controllers
 
     public ActionResult Http404()
     {
-      Response.StatusCode = 404;
-      Response.ContentType = "text/html";
-
       string filePath = HostingEnvironment.MapPath("/_logs/404-.txt");
       Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Debug()
@@ -48,11 +48,28 @@ namespace Meldpunt.Controllers
 
       Log.Information("-------------------------------------------------------------------");
       Log.Information("Page not found: {0}", Request.Url.PathAndQuery);
-      if(Request.UrlReferrer != null)
+      if (Request.UrlReferrer != null)
         Log.Information("Referrer {0}", Request.UrlReferrer);
       if (Request.UserAgent != null)
         Log.Information("UserAgent {0}", Request.UserAgent);
       Log.CloseAndFlush();
+
+      if (Request.Path.StartsWith("/ongediertebestrijding-"))
+      {
+        string plaats = Request.Path.Substring(Request.Path.IndexOf('-') + 1);
+        var results = searchservice.SearchPlaatsen(plaats);
+        if(results.Total > 0)
+        {
+          var plaatsresult = results.Results.First();
+          Log.Information("--> Redirecting to: {0}", plaatsresult.Url);
+          return RedirectPermanent(plaatsresult.Url);
+        }
+      }
+
+      Response.StatusCode = 404;
+      Response.ContentType = "text/html";
+
+      
 
       return View();
     }

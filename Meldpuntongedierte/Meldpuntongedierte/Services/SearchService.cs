@@ -85,6 +85,7 @@ namespace Meldpunt.Services
 
       return Search(options);
     }
+
     public SearchResultModel Search(SearchRequestOptions options)
     {
       dir = FSDirectory.Open(indexPath);
@@ -150,6 +151,17 @@ namespace Meldpunt.Services
       return model;
     }
 
+    public SearchResultModel SearchPlaatsen(string q)
+    {
+      var options = new SearchRequestOptions
+      {
+        Q = q,
+        Filters = { { "type", SearchTypes.Place } },
+        Page = 0
+      };
+
+      return Search(options);
+    }
     private static Sort GetSorter(string q, string sort, bool sortDesc)
     {
       var sorter = new Sort();

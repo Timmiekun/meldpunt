@@ -14,5 +14,7 @@ namespace Meldpunt.Services
     SearchResultModel Search(string q, string type, int page = 0);
     SearchResultModel Search(SearchRequestOptions options);
 
+    SearchResultModel SearchPlaatsen(string q);
+
   }
 }

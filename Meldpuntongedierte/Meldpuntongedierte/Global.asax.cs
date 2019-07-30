@@ -1,6 +1,7 @@
 ﻿using Meldpunt.ActionFilters;
 using Meldpunt.Controllers;
 using Meldpunt.Models;
+using Meldpunt.Services;
 using Meldpunt.Services.Interfaces;
 using Meldpunt.Utils;
 using System;
@@ -143,7 +144,7 @@ namespace Meldpunt
             break;
         }
 
-        IController errorsController = new ErrorController();
+        IController errorsController = new ErrorController(DependencyResolver.Current.GetService<ISearchService>());
         var rc = new RequestContext(new HttpContextWrapper(Context), routeData);
         errorsController.Execute(rc);
       }
