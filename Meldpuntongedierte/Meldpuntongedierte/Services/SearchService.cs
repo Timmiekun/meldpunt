@@ -153,6 +153,13 @@ namespace Meldpunt.Services
 
     public SearchResultModel SearchPlaatsen(string q)
     {
+      // replace dash with space for search
+      q = q.Replace("-", " ");
+
+      // search exact phrase. For example "sint nicolaasga"      
+      if (q.Split(' ').Length > 1)
+        q = "\"" + q + "\"";
+
       var options = new SearchRequestOptions
       {
         Q = q,

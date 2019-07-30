@@ -1,4 +1,5 @@
-﻿using Meldpunt.Services;
+﻿using Meldpunt.Models.Domain;
+using Meldpunt.Services;
 using Newtonsoft.Json;
 using Serilog;
 using System;
@@ -32,7 +33,7 @@ namespace Meldpunt.Controllers
                 .WriteTo.File(filePath, rollingInterval: RollingInterval.Day)
                 .CreateLogger();
 
-      Log.Error(exception,"Something error happened");
+      Log.Error(exception, "Something error happened");
       Log.CloseAndFlush();
 
       return View();
@@ -56,10 +57,13 @@ namespace Meldpunt.Controllers
 
       if (Request.Path.StartsWith("/ongediertebestrijding-"))
       {
+        // get plaatsnaam. Should be after the first "-"
         string plaats = Request.Path.Substring(Request.Path.IndexOf('-') + 1);
+
         var results = searchservice.SearchPlaatsen(plaats);
-        if(results.Total > 0)
+        if (results.Total > 0)
         {
+          // should be first result
           var plaatsresult = results.Results.First();
           Log.Information("--> Redirecting to: {0}", plaatsresult.Url);
           return RedirectPermanent(plaatsresult.Url);
@@ -68,8 +72,6 @@ namespace Meldpunt.Controllers
 
       Response.StatusCode = 404;
       Response.ContentType = "text/html";
-
-      
 
       return View();
     }
