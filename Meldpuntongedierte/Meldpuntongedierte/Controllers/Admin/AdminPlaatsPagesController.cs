@@ -125,21 +125,31 @@ namespace Meldpunt.Controllers
     [Route("AddPlacePage/{id}")]
     public ActionResult AddPlacePage(Guid id, string plaats)
     {
-      var plaatsPage = plaatsPageService.GetByPlaats(plaats);
+      var plaatsPage = plaatsPageService.GetByPlaatsUntracked(plaats);
       if (plaatsPage != null)
         return RedirectToAction("EditPlaats", new { plaatsPage.Id });
 
       var gemeentePage = plaatsPageService.GetByIdUntracked(id);
-      var newPage = new PlaatsPageModel();
+      PlaatsPageModel newPage = CreatePageForPlaats(plaats, gemeentePage);
+
+      return Redirect("/admin/editplaats/" + newPage.Id.ToString());
+    }
+
+    private PlaatsPageModel CreatePageForPlaats(string plaats, PlaatsPageModel gemeentePage)
+    {
+      var newPage = plaatsPageService.GetByPlaatsUntracked(plaats);
+      if(newPage == null)
+        newPage = new PlaatsPageModel();
 
       // copy some properties for convenience
-      newPage.Gemeentenaam = gemeentePage.Gemeentenaam;
-      newPage.Components = gemeentePage.Components;
+      newPage.MetaTitle = plaats.Capitalize() + " - Meldpunt Ongedierte";
       newPage.MetaDescription = gemeentePage.MetaDescription;
+      newPage.Gemeentenaam = gemeentePage.Gemeentenaam;
       newPage.PhoneNumber = gemeentePage.PhoneNumber;
 
       newPage.PlaatsNaam = plaats;
       newPage.UrlPart = gemeentePage.Gemeentenaam.XmlSafe() + "/" + plaats.XmlSafe();
+      return newPage;
 
       plaatsPageService.UpdateOrInsert(newPage);
       searchService.IndexDocument(newPage.ToLuceneDocument(), newPage.Id.ToString());
@@ -150,7 +160,7 @@ namespace Meldpunt.Controllers
           RouteName = newPage.Id.ToString(),
           Url = newPage.Url.TrimStart('/')
         } });
-      return Redirect("/admin/editplaats/" + newPage.Id.ToString());
+      return newPage;
     }
     #endregion
 
@@ -233,6 +243,37 @@ namespace Meldpunt.Controllers
       sw.Stop();
       WriteLine("Finished in " + sw.Elapsed.ToString("c"));
 
+      WriteLine("Perhaps a new index is a good idea now.");
+
+      return new EmptyResult();
+    }
+
+    [Route("places/addplaatspages")]
+    public ActionResult AddPlaatsPages()
+    {
+      WriteLine("Adding page for ALL plaatsen");
+      WriteLine("Loading existing pages..");
+      var allPages = plaatsPageService.GetAll().Where(p => string.IsNullOrEmpty(p.PlaatsNaam)).ToList();
+
+
+      WriteLine(string.Format("Creating pages for {0} plaatsen", allPages.Sum(p=> p.Plaatsen.Count()).ToString()));
+      int succes = 0;
+      foreach (var page in allPages)
+      {
+        foreach(var plaats in page.Plaatsen)
+        {
+          if (plaats.XmlSafe() == page.Gemeentenaam.XmlSafe()) {
+            WriteLine(string.Format("Skipping {0}; same as gemeentenaam", plaats), "orange");
+            continue;
+          }
+
+          var plaatsModel = CreatePageForPlaats(plaats, page);
+          WriteLine(string.Format("Created page for {0} \t\t\t {1}",plaatsModel.PlaatsNaam,plaatsModel.Url),"green");
+          succes++;
+        }
+      }
+
+      WriteLine($"Created {succes} pages.");
       WriteLine("Perhaps a new index is a good idea now.");
 
       return new EmptyResult();

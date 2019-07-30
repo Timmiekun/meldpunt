@@ -41,9 +41,9 @@ namespace Meldpunt.Services
       return db.PlaatsPages.FirstOrDefault(p => p.UrlPart == urlPart);
     }
 
-    public PlaatsPageModel GetByPlaats(string plaats)
+    public PlaatsPageModel GetByPlaatsUntracked(string plaats)
     {
-      return db.PlaatsPages.FirstOrDefault(p => p.PlaatsNaam == plaats);
+      return db.PlaatsPages.AsNoTracking().FirstOrDefault(p => p.PlaatsNaam == plaats);
     }
 
     public PlaatsPageModel UpdateOrInsert(PlaatsPageModel pageToSave)

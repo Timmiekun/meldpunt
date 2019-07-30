@@ -17,6 +17,6 @@ namespace Meldpunt.Services.Interfaces
 
     PlaatsPageModel UpdateOrInsert(PlaatsPageModel p);
     void Delete(Guid id);
-    PlaatsPageModel GetByPlaats(string plaats);
+    PlaatsPageModel GetByPlaatsUntracked(string plaats);
   }
 }

@@ -53,7 +53,7 @@ namespace Meldpunt.Controllers
         Log.Information("Referrer {0}", Request.UrlReferrer);
       if (Request.UserAgent != null)
         Log.Information("UserAgent {0}", Request.UserAgent);
-      Log.CloseAndFlush();
+      
 
       if (Request.Path.StartsWith("/ongediertebestrijding-"))
       {
@@ -66,9 +66,12 @@ namespace Meldpunt.Controllers
           // should be first result
           var plaatsresult = results.Results.First();
           Log.Information("--> Redirecting to: {0}", plaatsresult.Url);
+          Log.CloseAndFlush();
           return RedirectPermanent(plaatsresult.Url);
         }
       }
+
+      Log.CloseAndFlush();
 
       Response.StatusCode = 404;
       Response.ContentType = "text/html";
