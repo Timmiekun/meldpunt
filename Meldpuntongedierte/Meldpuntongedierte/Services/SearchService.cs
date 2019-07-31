@@ -91,7 +91,7 @@ namespace Meldpunt.Services
       dir = FSDirectory.Open(indexPath);
       IndexSearcher searcher = new IndexSearcher(dir);
       BooleanQuery bq = new BooleanQuery();
-      int resultcount = 2000;
+      int resultcount = 5000;
 
       // check if there are any allowed types to filter
       if (options.Types.Any(t => SearchTypes.AllTypes.Contains(t)))

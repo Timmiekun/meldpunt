@@ -137,20 +137,20 @@ namespace Meldpunt.Controllers
 
     private PlaatsPageModel CreatePageForPlaats(string plaats, PlaatsPageModel gemeentePage)
     {
-      var newPage = plaatsPageService.GetByPlaatsUntracked(plaats);
-      if(newPage == null)
-        newPage = new PlaatsPageModel();
+      var newPage = new PlaatsPageModel();
 
-      // copy some properties for convenience
+      // copy/set some properties for convenience
       newPage.MetaTitle = plaats.Capitalize() + " - Meldpunt Ongedierte";
-      newPage.MetaDescription = gemeentePage.MetaDescription;
+      newPage.MetaDescription = String.Format("Bedrijven en inwoners van {0} kunnen onze bestrijdingsdienst bellen voor " +
+          "ongediertebestrijding zoals muizenbestrijding, wespenbestrijding, mierenbestrijding of " +
+          "rattenbestrijding. Een wespennest verwijderen geschiedt na het bestrijden van de wespen.", plaats);
       newPage.Gemeentenaam = gemeentePage.Gemeentenaam;
       newPage.PhoneNumber = gemeentePage.PhoneNumber;
 
       newPage.PlaatsNaam = plaats;
       newPage.UrlPart = gemeentePage.Gemeentenaam.XmlSafe() + "/" + plaats.XmlSafe();
-      return newPage;
 
+      // add to database, index and routing table
       plaatsPageService.UpdateOrInsert(newPage);
       searchService.IndexDocument(newPage.ToLuceneDocument(), newPage.Id.ToString());
       UpdateRouteForPages(new[] {
@@ -251,6 +251,8 @@ namespace Meldpunt.Controllers
     [Route("places/addplaatspages")]
     public ActionResult AddPlaatsPages()
     {
+      Stopwatch sw = new Stopwatch();
+      sw.Start();
       WriteLine("Adding page for ALL plaatsen");
       WriteLine("Loading existing pages..");
       var allPages = plaatsPageService.GetAll().Where(p => string.IsNullOrEmpty(p.PlaatsNaam)).ToList();
@@ -266,14 +268,20 @@ namespace Meldpunt.Controllers
             WriteLine(string.Format("Skipping {0}; same as gemeentenaam", plaats), "orange");
             continue;
           }
+          var existingPage = plaatsPageService.GetByPlaatsUntracked(plaats);
+          if(existingPage != null)
+          {
+            WriteLine(string.Format("Page already exists {0}; skipping", plaats), "orange");
+            continue;
+          }
 
           var plaatsModel = CreatePageForPlaats(plaats, page);
           WriteLine(string.Format("Created page for {0} \t\t\t {1}",plaatsModel.PlaatsNaam,plaatsModel.Url),"green");
           succes++;
         }
       }
-
-      WriteLine($"Created {succes} pages.");
+      sw.Stop();
+      WriteLine(string.Format("Created {0} pages in {1}",succes.ToString(), sw.Elapsed.ToString()));
       WriteLine("Perhaps a new index is a good idea now.");
 
       return new EmptyResult();
