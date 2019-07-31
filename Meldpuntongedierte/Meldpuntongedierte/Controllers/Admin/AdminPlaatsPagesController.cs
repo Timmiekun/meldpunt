@@ -139,14 +139,18 @@ namespace Meldpunt.Controllers
     {
       var newPage = new PlaatsPageModel();
 
-      // copy some properties for convenience
+      // copy/set some properties for convenience
       newPage.MetaTitle = plaats.Capitalize() + " - Meldpunt Ongedierte";
-      newPage.MetaDescription = gemeentePage.MetaDescription;
+      newPage.MetaDescription = String.Format("Bedrijven en inwoners van {0} kunnen onze bestrijdingsdienst bellen voor " +
+          "ongediertebestrijding zoals muizenbestrijding, wespenbestrijding, mierenbestrijding of " +
+          "rattenbestrijding. Een wespennest verwijderen geschiedt na het bestrijden van de wespen.", plaats);
       newPage.Gemeentenaam = gemeentePage.Gemeentenaam;
       newPage.PhoneNumber = gemeentePage.PhoneNumber;
 
       newPage.PlaatsNaam = plaats;
       newPage.UrlPart = gemeentePage.Gemeentenaam.XmlSafe() + "/" + plaats.XmlSafe();
+
+      // add to database, index and routing table
       plaatsPageService.UpdateOrInsert(newPage);
       searchService.IndexDocument(newPage.ToLuceneDocument(), newPage.Id.ToString());
       UpdateRouteForPages(new[] {
