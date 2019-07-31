@@ -4,7 +4,12 @@
   // Default values
   ViewBag.HeaderTitle = "Meldpunt Ongedierte";
   ViewBag.Title = "Ongediertebestrijding " + Model.Content.Title + " - Meldpunt Ongedierte";
-  ViewBag.Description = String.Format("Als u inwoner bent van de gemeente {0} kunt u ons bellen voor bijvoorbeeld een muizenbestrijding of een mierenbestrijding aan huis. Een wespennest verwijderen kan pas geschieden nadat wij de wespenbestrijding hebben uitgevoerd.", Model.Content.Gemeentenaam);
+  ViewBag.Description = String.Format("Inwoners en bedrijven uit de gemeente {0} kunnen onze " +
+    "bestrijdingsdienst bellen voor ratten, muizen, mieren, wespen of ander ongedierte in huis " +
+    "of op de werkplek. Het verwijderen van een wespennest kan na het bestrijden. Instellingen " +
+    "in {0} zoals scholen en kinderdagverblijven helpen wij vooral met muizenbestrijding " +
+    "en rattenbestrijding. Ongediertebestrijding brengt altijd kosten met zich mee. Maak " +
+    "daarom ook gebruik van onze tips en informatie.", Model.Content.Gemeentenaam);
 
   // Curated items
   if (!String.IsNullOrEmpty(Model.Content.MetaTitle))
@@ -18,21 +23,23 @@
   }
 
 
-  List<ContentPageModel> homeMenu = ViewBag.HomeMenuItems as List<ContentPageModel>;
-}
 
-@section style{
+
+  List<ContentPageModel> homeMenu = ViewBag.HomeMenuItems as List<ContentPageModel>;
+    }
+
+    @section style{
   <link type="text/css" rel="stylesheet" href="/css/reactions.css?v=@((string)ViewBag.AppVersion)">
 }
 
-@section script{
+    @section script{
   <script type="text/javascript" src="/Scripts/reactions.js?v=@((string)ViewBag.AppVersion)">;</script>
 }
 
-@section SD{
+    @section SD{
   <script type="application/ld+json">
     {
-    "@("@context")": "http://schema.org/",
+        "@("@context")": "http://schema.org/",
     "@("@type")": "Article",
     "dateModified" : "@Model.Content.LastModified.Value.ToString("yyyy-MM-dd")",
     "datePublished" : "@Model.Content.Published.Value.ToString("yyyy-MM-dd")",
@@ -44,7 +51,7 @@
   </script>
 }
 
-@section menu{
+    @section menu{
   <div class="menu">
     <h2>Bekijk ook</h2>
     <ul>
