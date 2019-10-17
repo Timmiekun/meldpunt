@@ -483,3 +483,16 @@ h3 {
   box-shadow:none;
   border-radius: 3px;
 }
+
+.validation-summary-errors {
+  background-color: #fefecd;
+  padding: 10px;
+  color: red;
+  margin-bottom: 10px;
+}
+
+.validation-summary-errors ul{
+  list-style-type:disc;
+  margin-bottom: 0;
+  margin-left:20px;
+}
