@@ -56,9 +56,16 @@ a.close-button {
 
 .reactions h2 {
   color: white;
-  background-color: #85003c;
   padding: 20px;
   margin-bottom: 50px;
+  background-repeat: no-repeat;
+  background-position: 10px 12px;
+  background-color: #479355;
+  line-height: 24px;
+  border-radius: 6px;
+  font-weight: 900;
+  -webkit-font-smoothing: antialiased;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .reaction-form p {
