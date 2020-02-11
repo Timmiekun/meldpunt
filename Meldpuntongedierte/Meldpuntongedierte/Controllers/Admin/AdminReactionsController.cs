@@ -28,16 +28,16 @@ namespace Meldpunt.Controllers
     }
 
     [Route("reactions")]
-    public ActionResult Reactions(string q, string archived = "false", string sort = "date", bool sortDesc = true)
+    public ActionResult Reactions(string q, string archived = "false", string sort = "date", bool sortDesc = true, int page = 0)
     {
-      var inboxResults = searchService.Search(new SearchRequestOptions() { Q = q, Sort = sort, SortDesc = sortDesc, Filters = { { "archived", "false" }, { "type", "reaction" } } });
+      var inboxResults = searchService.Search(new SearchRequestOptions() { Q = q, Page = page, Sort = sort, SortDesc = sortDesc, Filters = { { "archived", "false" }, { "type", "reaction" } } });
 
-      var archivedResults = searchService.Search(new SearchRequestOptions() { Q = q, Sort = sort, SortDesc = sortDesc, Filters = { { "archived", "true" }, { "type", "reaction" } } });
+      var archivedResults = searchService.Search(new SearchRequestOptions() { Q = q, Page = page, Sort = sort, SortDesc = sortDesc, Filters = { { "archived", "true" }, { "type", "reaction" } } });
 
       ViewBag.InboxTotal = inboxResults.Total;
       ViewBag.ArchivedTotal = archivedResults.Total;
 
-      if (archived == "false")
+      if (archived != "true")
         return View(inboxResults);
 
       return View(archivedResults);
