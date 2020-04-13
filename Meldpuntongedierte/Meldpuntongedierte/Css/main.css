@@ -155,6 +155,11 @@ h3 {
     right: 0px;
     bottom: 0px;
     width: 150px;
+    height: 100px;
+    background-size: cover;
+    background-position: center center;
+    background-image: url("/Images/aankleuren/Wespen.jpg");
+    /*background-image: url("/images/rat.png");*/
   }
 
 #tabholder {
