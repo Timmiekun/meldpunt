@@ -92,11 +92,12 @@ namespace Meldpunt.Controllers
           {
             var redirect = redirectsService.FindByFrom(oldUrl);
             if (redirect == null)
-              redirect = redirectsService.NewRedirect();
-
-            redirect.From = oldUrl;
-            redirect.To = newUrl;
-            redirectsService.SaveRedirect(redirect);
+              redirect = redirectsService.NewRedirect(oldUrl, newUrl);
+            else { 
+              redirect.From = oldUrl;
+              redirect.To = newUrl;
+              redirectsService.SaveRedirect(redirect);
+            }
           }
           else
           {

@@ -13,7 +13,7 @@ namespace Meldpunt.Services.Interfaces
 
     RedirectModel SaveRedirect(RedirectModel redirect);
 
-    RedirectModel NewRedirect();
+    RedirectModel NewRedirect(string from, string to);
 
     void DeleteRedirect(Guid id);
   }

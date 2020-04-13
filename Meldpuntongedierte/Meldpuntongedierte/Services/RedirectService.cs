@@ -42,10 +42,12 @@ namespace Meldpunt.Services
     }
 
 
-    public RedirectModel NewRedirect()
+    public RedirectModel NewRedirect(string from, string to)
     {
       var redirect = new RedirectModel();
       redirect.LastModified = DateTimeOffset.Now;
+      redirect.From = from;
+      redirect.To = to;
       db.Redirects.Add(redirect);
       db.SaveChanges();
       return redirect;
