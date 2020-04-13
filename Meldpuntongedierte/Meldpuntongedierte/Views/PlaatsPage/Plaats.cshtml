@@ -52,17 +52,25 @@
 }
 
     @section menu{
-  <div class="menu">
-    <h2>Bekijk ook</h2>
-    <ul>
-      <li class="showOnMobile"><a href="/">Home</a></li>
-      @foreach (var page in homeMenu.OrderByDescending(p => p.Sort))
-      {
-        <li><a href="@page.Url">@page.MetaTitle</a></li>
-      }
-    </ul>
-    <button class="goto-menu-mobile">menu</button>
-  </div>
+      <div class="menu">
+        <h2>Bekijk ook</h2>
+        <ul>
+          <li class="showOnMobile"><a href="/">Home</a></li>
+          @foreach (var page in homeMenu.OrderByDescending(p => p.Sort))
+          {
+            <li><a href="@page.Url">@page.MetaTitle</a></li>
+          }
+        </ul>
+        <div class="goto-menu-mobile">
+          <div class="toggle-menu" data-action="toggle-menu">
+            <div class="hamburger">
+              <div class="toppings"></div>
+              <div class="burger"></div>
+              <div class="bun"></div>
+            </div>
+          </div>
+        </div>
+      </div>
 }
 
 @*@if (Convert.ToBoolean(TempData["reactionsuccess"]))

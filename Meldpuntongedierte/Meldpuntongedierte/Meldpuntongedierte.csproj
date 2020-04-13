@@ -331,6 +331,7 @@
     <Content Include="Images\shadow_bottom.png" />
     <Content Include="Images\Wasp.JPG" />
     <Content Include="Images\wasp.png" />
+    <Content Include="Images\wesp.jpg" />
     <Content Include="Images\whatsapp.png" />
     <Content Include="robots.txt" />
     <Content Include="Scripts\tiny-mce.js" />

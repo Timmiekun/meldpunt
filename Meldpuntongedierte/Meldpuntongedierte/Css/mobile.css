@@ -2,76 +2,73 @@
   display: none;
 }
 
+
 @media only screen and (max-width:768px) {
+  .menu h2,
+  #tabs {
+    display: none;
+  }
+
   .menu ul li.showOnMobile {
     display: block;
   }
 
   .goto-menu-mobile {
     position: fixed;
-    top: 0;
-    width: 100vw;
+    top: 50vh;
+    left: -55px;
+    width: 14vw;
     text-decoration: none;
     text-transform: uppercase;
-    background-color: #efefef;
-    padding: 10px;
+    background-color: #efefef8c;
+    text-indent: -9999p;
+    padding: 15px 5px;
     cursor: pointer;
+    border-radius: 18px;
     display: block;
     text-align: center;
     font-weight: bold;
     z-index: 5;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: -3px 0px 4px 0px #d9d9d9;
     border: none;
-    transform: translate3d(0,0,0);
     transition: all 0.4s cubic-bezier(0.39, 0.58, 0.57, 1);
     user-select: none;
   }
 
-    .goto-menu-mobile.hidden {
-      transform: translate3d(0,-100%,0);
-    }
+
+  .toggle-menu {
+    position: relative;
+    left: -6px;
+  }
+
+
+
+  .goto-menu-mobile.hidden {
+    transform: translate3d(0,-100%,0);
+  }
 
   .showMe .goto-menu-mobile {
-    box-shadow: none;
-  }
-
-  #tabs {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding-top: 40px;
-    border: none;
     background-color: #efefef;
-    transform: translate3d(0,-100%,0);
-    transition: all 0.2s cubic-bezier(0.39, 0.58, 0.57, 1);
-    z-index: 2;
+    left: -45px;
   }
-
-  .topBar #tabs .tabItem {
-    list-style-type: none;
-    background-image: url(/images/chevron.svg);
-    background-repeat: no-repeat;
-    background-position: 20px 9px;
-    padding: 10px 40px;
-    display: block;
-    width: 100%;
-    color: #85003c;
-  }
-
-    .topBar #tabs .tabItem:hover,
-    .topBar #tabs .activeTab {
-      background-color: transparent;
-    }
 
   .menu {
-    display: none;
+    position: fixed;
+    top: 3vh;
+    bottom: 3vh;
+    width: 90vw;
+    height: auto;
+    margin: 0;
+    border: none;
+    background-color: #efefef;
+    transform: translate3d(100%,0,0);
+    transition: all 0.2s cubic-bezier(0.39, 0.58, 0.57, 1);
+    z-index: 2;
+    box-shadow: -3px 0px 4px 0px #d9d9d9;
   }
 
-  .showMe #tabs {
-    transform: translate3d(0,0,0);
+  .showMe .menu {
+    transform: translate3d(10%,0,0);
   }
 
   .showMe {
