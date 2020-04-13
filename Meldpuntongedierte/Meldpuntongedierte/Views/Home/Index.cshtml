@@ -43,23 +43,25 @@
   else if (subNav != null && subNav.Any() && Model.UrlPart != "home")
     {
   <nav class="menu">
-    <h2>Bekijk ook</h2>
-    <ul>
-      <li class="showOnMobile"><a href="/">Home</a></li>
-      @foreach (ContentPageModel item in subNav.OrderByDescending(p => p.Sort))
-      {
-
-        string selected = "";
-        if (item.Id == Model.Id)
+    <div class="menuContent">
+      <h2>Bekijk ook</h2>
+      <ul>
+        <li class="showOnMobile"><a href="/">Home</a></li>
+        @foreach (ContentPageModel item in subNav.OrderByDescending(p => p.Sort))
         {
-          selected = "selected";
-        }
 
-        <li class="@selected">
-          <a href="@item.Url">@item.Title</a>
-        </li>
-      }
-    </ul>
+          string selected = "";
+          if (item.Id == Model.Id)
+          {
+            selected = "selected";
+          }
+
+          <li class="@selected">
+            <a href="@item.Url">@item.Title</a>
+          </li>
+        }
+      </ul>
+    </div>
     <div class="goto-menu-mobile">
       <div class="toggle-menu" data-action="toggle-menu">
         <div class="hamburger">
@@ -69,8 +71,6 @@
         </div>
       </div>
     </div>
-
-
   </nav>
   }
   else
