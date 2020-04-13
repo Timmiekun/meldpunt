@@ -24,7 +24,7 @@ namespace Meldpunt.Controllers
       db = _db;
     }
 
-    //[OutputCache(CacheProfile = "pageCache")]
+    [OutputCache(CacheProfile = "pageCache")]
     [Route]
     public ActionResult Index()
     {
