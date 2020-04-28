@@ -247,6 +247,7 @@
     <Compile Include="Models\Domain\BasePageModel.cs" />
     <Compile Include="Models\Helpers\SearchRequestOptions.cs" />
     <Compile Include="Models\Domain\RouteableItem.cs" />
+    <Compile Include="Models\ViewModels\NavItem.cs" />
     <Compile Include="Services\BasePageService.cs" />
     <Compile Include="Services\Interfaces\ITemplateService.cs" />
     <Compile Include="Services\Interfaces\IRedirectService.cs" />
@@ -331,6 +332,7 @@
     <Content Include="Images\shadow_bottom.png" />
     <Content Include="Images\Wasp.JPG" />
     <Content Include="Images\wasp.png" />
+    <Content Include="Images\wesp.jpg" />
     <Content Include="Images\whatsapp.png" />
     <Content Include="robots.txt" />
     <Content Include="Scripts\tiny-mce.js" />
@@ -409,7 +411,7 @@
     <Content Include="Views\Admin\AdminBlog\Index.cshtml" />
     <Content Include="Views\Blog\Index.cshtml" />
     <Content Include="Views\Blog\Details.cshtml" />
-    <Content Include="Views\Shared\_Page_Tile.cshtml" />
+    <Content Include="Views\Shared\_NavMenu.cshtml" />
     <Content Include="Views\PlaatsPage\Plaats_Static_Content.cshtml" />
     <Content Include="Views\PlaatsPage\ReactionForm.cshtml" />
     <Content Include="Views\Admin\AdminReactions\Edit.cshtml" />
@@ -419,6 +421,7 @@
     <Content Include="Views\Admin\Logs.cshtml" />
     <Content Include="Views\Admin\AdminTemplates\Templates.cshtml" />
     <Content Include="Views\Admin\AdminTemplates\Details.cshtml" />
+    <Content Include="Views\Shared\_Page_Tile.cshtml" />
     <None Include="Volksgezondheid.pdf" />
     <None Include="Web.azure.config">
       <DependentUpon>Web.config</DependentUpon>

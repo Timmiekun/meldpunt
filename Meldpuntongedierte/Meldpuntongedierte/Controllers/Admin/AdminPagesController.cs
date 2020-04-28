@@ -119,6 +119,12 @@ namespace Meldpunt.Controllers
         ));
       }
 
+      // change in homepage? Clear homepage cache
+      if(oldPage.InHomeMenu != savedPage.InHomeMenu)
+      {
+        Response.RemoveOutputCacheItem("/");
+      }
+
       searchService.IndexDocument(savedPage.ToLuceneDocument(), savedPage.Id.ToString());
 
       // remove outputcache for old url

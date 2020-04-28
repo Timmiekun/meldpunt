@@ -8,24 +8,24 @@
 }
 
 @section SD{
-    <script type="application/ld+json">
-      {
-      "@("@context")": "http://schema.org/",
-      "@("@type")": "Article",
-      @if (Model.LastModified.HasValue)
-      {
-        <text>"dateModified" : "@Model.LastModified.Value.ToString("yyyy-MM-dd")",</text>
-      }
-      @if (Model.Published.HasValue)
-      {
-        <text>"datePublished" : "@Model.Published.Value.ToString("yyyy-MM-dd")",</text>
-      }
-      "headline": "@Model.MetaDescription",
-      "author" : "Meldpunt Ongedierte",
-      "publisher" : "Meldpunt Ongedierte",
-      
-      }
-    </script>  
+  <script type="application/ld+json">
+    {
+    "@("@context")": "http://schema.org/",
+    "@("@type")": "Article",
+    @if (Model.LastModified.HasValue)
+    {
+      <text>"dateModified" : "@Model.LastModified.Value.ToString("yyyy-MM-dd")",</text>
+    }
+    @if (Model.Published.HasValue)
+    {
+      <text>"datePublished" : "@Model.Published.Value.ToString("yyyy-MM-dd")",</text>
+    }
+    "headline": "@Model.MetaDescription",
+    "author" : "Meldpunt Ongedierte",
+    "publisher" : "Meldpunt Ongedierte",
+
+    }
+  </script>
 }
 <article>
   @Html.Raw(Model.Content)
@@ -42,44 +42,22 @@
   }
   else if (subNav != null && subNav.Any() && Model.UrlPart != "home")
   {
-    <nav class="menu">
-      <h2>Bekijk ook</h2>
-      <ul>
-        <li class="showOnMobile"><a href="/">Home</a></li>
-        @foreach (ContentPageModel item in subNav.OrderByDescending(p => p.Sort))
-        {
-
-          string selected = "";
-          if (item.Id == Model.Id)
-          {
-            selected = "selected";
-          }
-
-          <li class="@selected">
-            <a href="@item.Url">@item.Title</a>
-          </li>
-        }
-      </ul>
-      <button class="goto-menu-mobile">menu</button>
-
-
-    </nav>
+    @Html.Partial("_NavMenu", new NavMenu
+    {
+      Items = subNav.Select(i => { return new NavItem { Id = i.Id, Title = i.Title, Url = i.Url, Sort = i.Sort }; }),
+      CurrentPageId = Model.Id
+    });
   }
   else
   {
-    <nav class="menu">
-      <h2>Bekijk ook</h2>
-      <ul>
-        @foreach (var page in homeMenu.OrderByDescending(p => p.Sort))
-        {
-          <li><a href="@page.Url">@page.Title</a></li>
-        }
-        <li><a href="/blog">Blog</a></li>
+    var navItems = homeMenu.Select(i => { return new NavItem { Id = i.Id, Title = i.Title, Url = i.Url, Sort = i.Sort }; }).ToList();
+    navItems.Add(new NavItem { Title = "Blog", Url = "/blog" });
 
-      </ul>
-      <button class="goto-menu-mobile">menu</button>
-
-    </nav>
+    @Html.Partial("_NavMenu", new NavMenu
+    {
+      Items = navItems,
+      CurrentPageId = Model.Id
+    });
   }
 }
 
@@ -91,7 +69,7 @@
     <div class="readmore">
       @foreach (var page in subNav)
       {
-        @Html.Partial("_Page_Tile",page)
+        @Html.Partial("_Page_Tile", page)
       }
     </div>
   }
