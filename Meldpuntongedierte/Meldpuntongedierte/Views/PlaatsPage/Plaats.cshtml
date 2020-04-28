@@ -26,20 +26,20 @@
 
 
   List<ContentPageModel> homeMenu = ViewBag.HomeMenuItems as List<ContentPageModel>;
-    }
+}
 
-    @section style{
+@section style{
   <link type="text/css" rel="stylesheet" href="/css/reactions.css?v=@((string)ViewBag.AppVersion)">
 }
 
-    @section script{
+@section script{
   <script type="text/javascript" src="/Scripts/reactions.js?v=@((string)ViewBag.AppVersion)">;</script>
 }
 
-    @section SD{
+@section SD{
   <script type="application/ld+json">
     {
-        "@("@context")": "http://schema.org/",
+    "@("@context")": "http://schema.org/",
     "@("@type")": "Article",
     "dateModified" : "@Model.Content.LastModified.Value.ToString("yyyy-MM-dd")",
     "datePublished" : "@Model.Content.Published.Value.ToString("yyyy-MM-dd")",
@@ -51,26 +51,17 @@
   </script>
 }
 
-    @section menu{
-      <div class="menu">
-        <h2>Bekijk ook</h2>
-        <ul>
-          <li class="showOnMobile"><a href="/">Home</a></li>
-          @foreach (var page in homeMenu.OrderByDescending(p => p.Sort))
-          {
-            <li><a href="@page.Url">@page.MetaTitle</a></li>
-          }
-        </ul>
-        <div class="goto-menu-mobile">
-          <div class="toggle-menu" data-action="toggle-menu">
-            <div class="hamburger">
-              <div class="toppings"></div>
-              <div class="burger"></div>
-              <div class="bun"></div>
-            </div>
-          </div>
-        </div>
-      </div>
+@section menu{
+
+  @{
+    var navItems = homeMenu.Select(i => { return new NavItem { Id = i.Id, Title = i.Title, Url = i.Url, Sort = i.Sort }; });
+   
+    @Html.Partial("_NavMenu", new NavMenu
+    {
+      Items = navItems,
+      CurrentPageId = Model.Content.Id
+    });
+  }
 }
 
 @*@if (Convert.ToBoolean(TempData["reactionsuccess"]))

@@ -1,0 +1,33 @@
+﻿@using Meldpunt.Models;
+@model NavMenu
+
+<nav class="menu">
+  <div class="menuContent">
+    <h2>Bekijk ook</h2>
+    <ul>
+      <li class="showOnMobile"><a href="/">Home</a></li>
+      @foreach (NavItem item in Model.Items.OrderByDescending(p => p.Sort))
+      {
+
+        string selected = "";
+        if (item.Id == Model.CurrentPageId)
+        {
+          selected = "selected";
+        }
+
+        <li class="@selected">
+          <a href="@item.Url">@item.Title</a>
+        </li>
+      }
+    </ul>
+  </div>
+  <div class="goto-menu-mobile">
+    <div class="toggle-menu" data-action="toggle-menu">
+      <div class="hamburger">
+        <div class="toppings"></div>
+        <div class="burger"></div>
+        <div class="bun"></div>
+      </div>
+    </div>
+  </div>
+</nav>
