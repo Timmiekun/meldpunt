@@ -20,6 +20,19 @@ $(function () {
     $(evt.target).parent().find(".description").toggle();
   });
 
+  $("[data-role=phone-desktop]").on('click', function (evt) {
+    evt.preventDefault();
+
+    let el = document.querySelector("[data-role=phone-desktop]");
+    if (el.innerText == "Maak een afspraak") {
+
+      el.innerText =  el.dataset.number;
+    }
+    else {
+      el.innerText =  "Maak een afspraak";
+    }
+  });
+
   var scrollTimeout;
   var previousScroll = 0;
 
