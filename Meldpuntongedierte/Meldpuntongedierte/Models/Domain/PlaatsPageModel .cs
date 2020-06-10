@@ -78,7 +78,7 @@ namespace Meldpunt.Models.Domain
       {
         string contentstring = Meldpunt.Utils.Utils.GetStringFromHTML(Content);
 
-        return string.Join(" ", new[] { contentstring, Gemeentenaam, MetaTitle, MetaDescription, PlaatsenAsString });
+        return string.Join(" ", new[] { contentstring, Gemeentenaam, MetaTitle, MetaDescription, PlaatsenAsString, this.Components });
       }
     }
 

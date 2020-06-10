@@ -1,7 +1,4 @@
-﻿using Lucene.Net.Documents;
-using Meldpunt.Services;
-using Meldpunt.Utils;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;

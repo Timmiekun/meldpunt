@@ -2,12 +2,17 @@
 @{
   ViewBag.Title = "Templates - Admin";
   Layout = "~/Views/Shared/_Admin.cshtml";
+
+  List<SearchResult> gemeenten = ViewBag.GebruikteGemeenten as List<SearchResult>;
 }
 
 <h1>Template aanpassen</h1>
 
 <p>Laatst aangepast: @Model.LastModified.ToString("f")</p>
 
+@if(gemeenten != null && gemeenten.Any()) { 
+  <p>Deze template wordt gebruikt voor de gemeenten: @String.Join(", ", gemeenten.Select(g=> g.Title))</p>
+}
 
 <div class="actions">
   <button onclick="$('#opslaan').click()" class="btn btn-info">Opslaan</button>
