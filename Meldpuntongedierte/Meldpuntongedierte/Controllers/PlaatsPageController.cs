@@ -92,7 +92,7 @@ namespace Meldpunt.Controllers
         }
       }
 
-      return RedirectToAction("GetPlace", new { Gemeente = reaction.GemeenteNaam });
+      return RedirectToAction("GetPlace", new { guid = RouteData.Values["guid"] });
     }
 
 
